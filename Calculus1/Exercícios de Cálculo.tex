@@ -124,7 +124,7 @@ Isto significa que f \'e uma fun\c c\~ao polinomial de grau 2? Justifique e fa\c
 \end{figure}
 
 \begin{proof*}
-	Antes da formaliza\c c\~ao da prova, um bom come\c c\o \'e analisar a imagem cuidadosamente. De fato, ao fazer isso, observe a repeti\c c\~ao do termo (x - a) \`a direita de cada igualdade. Outro ponto not\'avel \'e que, para cada n, ocorre uma expans\~ao de $\sum_{i=0}^{n}a^ix^{n-i-1}$ ao lado de (x - a), em que $n\in\mathbb{N}$. Em outras palavras, isso est\'a indicando fortemente a presen\c ca de uma hip\'otese indutiva para demonstrar o resultado. 
+	Antes da formaliza\c c\~ao da prova, um bom come\c co \'e analisar a imagem cuidadosamente. De fato, ao fazer isso, observe a repeti\c c\~ao do termo (x - a) \`a direita de cada igualdade. Outro ponto not\'avel \'e que, para cada n, ocorre uma expans\~ao de $\sum_{i=0}^{n}a^ix^{n-i-1}$ ao lado de (x - a), em que $n\in\mathbb{N}$. Em outras palavras, isso est\'a indicando fortemente a presen\c ca de uma hip\'otese indutiva para demonstrar o resultado. 
 	
 	Com  efeito, provemos o caso base do item a, ou seja, n = 2. Considere o produto (x-a)(x+a):
 	$$
@@ -173,6 +173,12 @@ Portanto,
 	$$
 	(x - a)\biggl(\sum_{i=0}^{n-1}a^ix^{n-i-1}\biggr) = x^n - a^n.
 	$$
+Agora que provamos isso, utilizando n = 3, 4, 5, mostramos as identidades que faltam:
+\begin{itemize}
+\item[n=3:] $$ x^3 - a^3 = (x-a)\sum_{i=0}^{2}a^ix^{2-i} = (x-a)(a^2 + ax + x^2). $$
+\item[n=4:] $$ x^4 - a^4 = (x-a)\sum_{i=0}^{3}a^ix^{3-i} = (x-a)(a^3 + a^2x + ax^2 + x^3). $$
+\item[n=5:] $$ x^5 - a^5 = (x-a)\sum_{i=0}^{4}a^ix^{4-i} = (x-a)(a^4 + a^3x + a^2x^2 + ax^3 + x^4).$$
+\end{itemize}
 \qedsymbol	
 \end{proof*}
 
@@ -319,7 +325,7 @@ $$
 $$
 = \sum_{n=0}^{4}a^na^{4-n} = \sum_{n=0}^{4}a^{n+4-n} = \sum_{n=0}^{4}a^4 = 5a^4 .
 $$
-Como esse valor \'e exato e, consequentemente uma reta passando em um ponto s\'o, ele representa a tangente em (a, f(a)) com coeficiente angular igual a 5, pois a soma possui 5 termos, independentes do \'indice, $a^4$ iguais (apesar de n = 4, a soma come\c ca do 0, ent\~ao s\~ao n+1 = 5 termos). Esse processo pode, de fato, ser generalizado para um mon\^omio de grau n, $f(x) = x^n$, para obtermos que a tangente ao ponto $(x_0, f(x_0))$ \'e dada por $nx^{n-1}.$ Essa regra de obten\c c\~ao da tangente de um mon\^omio \'e mais conhecida como regra do tombo em cursos iniciantes, e \'e uma das bases para fazer a maioria das deriva\c c\~oes do C\'alculo diferencial. Uma observa\c c\~ao interessante para finalizar \'e o uso do exerc\'icio 1.1 parte 2 para chegar no resultado que quer\'iamos, sendo este o caso em que n = 4.
+Como esse valor \'e exato e, consequentemente uma reta passando em um ponto s\'o, ele representa a tangente em (a, f(a)) com coeficiente angular igual a 5, pois a soma possui 5 termos, independentes do \'indice, $a^4$ iguais (apesar de n = 4, a soma come\c ca do 0, ent\~ao s\~ao n+1 = 5 termos). Esse processo pode, de fato, ser generalizado para um mon\^omio de grau n, $f(x) = x^n$, para obtermos que a tangente ao ponto $(x_0, f(x_0))$ \'e dada por $nx^{n-1}.$ Essa regra de obten\c c\~ao da tangente de um mon\^omio \'e mais conhecida como regra do tombo em cursos iniciantes, e \'e uma das bases para fazer a maioria das deriva\c c\~oes do C\'alculo diferencial. Uma observa\c c\~ao interessante, para finalizar, \'e o uso do exerc\'icio 1.1 parte 2 para chegar no resultado que quer\'iamos, sendo este o caso em que n = 4 dividido por (x - a).
 \qedsymbol
 \end{sol*}
 
