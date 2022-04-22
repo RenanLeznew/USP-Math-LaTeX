@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem{definition}{\underline{Defini\c c\~ao}}
+\newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+\title{EXERC\'ICIOS DE C\'ALCULO}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+
+\begin{figure}[ht]
+	\minipage{0.76\textwidth}
+		\includegraphics[width=4cm]{../icmc.png}
+		\hspace{5cm}
+		\includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+	\endminipage	
+\end{figure}
+
+\begin{center}
+	\vspace{1cm}
+	\LARGE
+	UNIVERSIDADE DE S\~AO PAULO
+
+	\vspace{1.3cm}
+	\LARGE
+	INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+	\vspace{1.7cm}
+	\Large
+	\textbf{CONSTRUINDO OS REAIS $\mathbb{R}$}
+	\vspace{0.5cm}
+
+	\small
+	\textbf{UMA INTRODU\c C\~AO AOS CORTES DE DEDEKIND}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Renan Wenzel - 11169472}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Pedro Magalh\~aes Rios - prios@icmc.usp.br}
+
+	\vspace{1.3cm}
+	\today
+\end{center}
+
+\newpage
+\section{Breve Introdu\c c\~ao}
+
+\paragraph{} O uso dos cortes de Dedekind tem como preceito a constru\c c\~ao dos n\'umeros reais a partir dos racionais, e se baseia em subconjuntos espec\'ificos que satisfazem o axioma do supremo. A forma que isso resulta nos n\'umeros reais segue de um teorema (que assumiremos ser verdade aqui) que diz que o conjunto dos reais \'e o \'unico corpo ordenado que satisfaz o axioma do Supremos, ou seja, mostrando que os cortes satisfazem ele, seu conjunto deve ser R tamb\'em. 
+
+Sem mais delongas, vamos defin\'i-los a seguir e provar algumas propriedades antes de prosseguir com a constru\c c\~ao dos reais em seguida.
+
+\section{Defini\c c\~ao e Resultados b\'asicos}
+\begin{definition}[Cortes] 
+Um corte \'e um conjunto $\alpha\subset\mathbb{Q}$ tal que:
+\begin{itemize}
+\item [i)] $\alpha\neq\emptyset$ e $\alpha\neq\mathbb{Q}$;
+\item [ii)] Se $p\in\alpha, q\in\mathbb{Q}$ e $q<p$ , ent\~ao $q\in\alpha$;
+\item [iii)] Se $p\in\alpha$, ent\~ao existe $r\in\alpha$ tal que $p < r$.
+\end{itemize}
+\end{definition}
+
+\paragraph{} Vale adicionar alguns coment\'arios para esclarecer e entender essa defini\c c\~ao. Em primeiro lugar, garantimos que um corte n\~ao ser\'a vazio e nem o conjunto todo, at\'e porque iremos de alguma forma construir os reais a partir disso, ent\~ao um corte n\~ao pode totalizar os racionais. A segunda propriedade garante que todo elemento racoinal \`a esquerda de um corte tamb\'em pertencer\'a a ele. Por fim, a \'ultima propriedade afirma que um corte n\~ao possui um elemento maximal, visto que, dado qualquer n\'umero pertencente ao corte, \'e poss\'ivel encontrar um maior que ele.
+
+\paragraph{} Antes de provarmos que h\'a um axioma do supremo, \'e necess\'ario definir uma rela\c c\~ao de ordem entre os cortes. Utilizaremos como base as rela\c c\~oes de pertin\^encias entre conjuntos.
+
+\begin{definition}
+Uma rela\c c\~ao de ordem $<$ entre cortes \'e dada por: $\alpha < \beta \Rightarrow \alpha\subsetneq\beta$
+\end{definition}
+
+Verifiquemos, por fim, que essa rela\c c\~ao \'e realmente uma ordem:
+\begin{proof*} No que segue, sejam $\alpha, \beta, \gamma$ cortes de Dedekind
+
+a) Transitividade: Suponha que $\alpha < \beta, \beta < \gamma.$ Explicitamente falando, isso significa que $\alpha\subsetneq\beta, \beta\subsetneq\gamma.$ A partir disto, segue das propriedades de pertin\^encia de conjuntos que:
+$$
+	\alpha\subsetneq\beta\subsetneq\gamma \Rightarrow \alpha\subsetneq\gamma.
+$$
+Logo, por defini\c c\~ao, $\alpha < \gamma.$
+
+b)Tricotomia: Em primeiro lugar, suponha que $\alpha < \beta.$ Ent\~ao, $\alpha\subsetneq\beta$, ou seja, $\alpha$ est\'a exclusivamente contido em $\beta$, do que segue que $\beta$ n\~ao pode estar exclusivamente contido em $\alpha$, isto \'e, $\beta \nless \alpha.$ A prova de que se $\beta < \alpha$, ent\~ao $\alpha \nless \beta$ \'e an\'aloga. Por fim, caso $\alpha = \beta$, ent\~ao $\alpha\subseteq\beta$ e $\beta\subseteq\alpha$, tal que a conten\c c\~ao n\~ao \'e restrita em nenhum dos casos. Destarte, apenas a igualdade pode ocorrer.
+
+Portanto, $<$ define uma ordem entre os cortes.
+\qedsymbol
+\end{proof*}
+
+\section{O Axioma do Supremo}
+Nesta se\c c\~ao, provareos que o conjunto dos cortes munido da ordem definida satisfaz o axioma do supremo.
+\end{document}
