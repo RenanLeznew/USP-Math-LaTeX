@@ -23,7 +23,9 @@
     urlcolor=black
 }
 
+\newtheorem*{proposition*}{\underline{Proposi\c c\~ao:}}
 \newtheorem{definition}{\underline{Defini\c c\~ao}}
+\newtheorem*{theorem*}{\underline{Teorema:}}
 \newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
 \newtheorem*{proof*}{\underline{Prova:}}
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -86,7 +88,7 @@ Um corte \'e um conjunto $\alpha\subset\mathbb{Q}$ tal que:
 \begin{itemize}
 \item [i)] $\alpha\neq\emptyset$ e $\alpha\neq\mathbb{Q}$;
 \item [ii)] Se $p\in\alpha, q\in\mathbb{Q}$ e $q<p$ , ent\~ao $q\in\alpha$;
-\item [iii)] Se $p\in\alpha$, ent\~ao existe $r\in\alpha$ tal que $p < r$.
+\item [iii)] Se $p\in\alpha$, ent\~ao existe $r\in\alpha$ tal que $r < p$.
 \end{itemize}
 \end{definition}
 
@@ -114,8 +116,84 @@ Portanto, $<$ define uma ordem entre os cortes.
 \end{proof*}
 
 \section{O Axioma do Supremo}
-Nesta se\c c\~ao, provareos que o conjunto dos cortes munido da ordem definida satisfaz o axioma do supremo.
+Nesta se\c c\~ao, provaremos que o conjunto dos cortes munido da ordem definida satisfaz o axioma do supremo.
+\begin{theorem*}
+O conjunto $\mathbb{R}$ munido da ordem de cortes satisfaz o axioma do supremo.
+\end{theorem*}
+\begin{proof*}
+Seja A um conjunto n\~ao-vazio de $\mathbb{R}$ e $\beta\in\mathbb{R}$ um limitante superior de A. Seja $\gamma=\bigcup_{\alpha\in{A}}\alpha.$ Como A \'e n\~ao-vazio, existe um elemento $\alpha_0\in{A}$ n\~ao-vazio (pois \'e um corte). Como $\alpha_0\subseteq\gamma, \gamma\neq\emptyset$ e $\gamma\subset\beta$, j\'a que $\beta > \alpha$ para todo corte $\alpha.$
 
+Precisamos, tamb\'em, explicar que $\gamma$ n\~ao \'e o conjunto todo dos racionais. Para tal, note que, como $\beta > \alpha$ para todo $\alpha, \beta > \bigcup_{\alpha\in{A}} = \gamma.$ Por $\beta$ ser um corte, $\beta\subsetneq\mathbb{Q}$ e, como a rela\c c\~ao de ordem definida \'e conten\c c\~ao de conjuntos restrita, temos 
+$$ 
+\gamma \subsetneq \beta \subsetneq \mathbb{Q} \Rightarrow \gamma\subsetneq\mathbb{Q}.
+$$
+Desta forma, $\gamma\neq\mathbb{Q}.$ 
+
+O pr\'oximo passo \'e mostrar que $\gamma$ n\~ao possui m\'aximo. Para isso, tome $r\in\gamma.$ Ent\~ao, $r\in\alpha_0$ para algum $\alpha_0,$ tal que existe um $s\in\alpha_0$ para o qual vale $s > r.$ Assim, n\~ao importa qual elemento de $\gamma$ seja selecionado, sempre \'e poss\'ivel encontrar um outro maior que ele.
+
+Por fim, afirmamos que $\gamma = \sup{A}.$ J\'a sabemos que $\gamma$ \'e cota superior de todo $\alpha,$ visto que $\gamma > \alpha.$ Seja $\gamma'\in\mathbb{R}$ tal que $\gamma' < \gamma$, ou seja, $\gamma' \subsetneq \gamma,$ de modo que existe um $q\in\gamma'$ e que $q\notin\gamma.$ Assim, existe um $\alpha\in{A}$ para o qual $q\in\alpha$ e, consequentemente, $\gamma' < \alpha \leq \gamma.$ Portanto, $\gamma=\sup{A},$ mostrando que o conjunto $\mathbb{R}$ satisfaz o axioma do supremo.
+  
+\qedsymbol
+\end{proof*}
+
+\section{Axiomas de Corpo}
+
+Juntando o que obtivemos nas \'ultimas duas se\c c\~oes, chegamos em um conjunto $\mathbb{R}$ formado pelos cortes e que satisfaz o axioma do supremo. A seguir, vamos acrescentar duas opera\c c\~oes, + e ., a fim de tornar este conjunto um corpo ordenado.
+
+\begin{definition}[Soma]
+Em $\mathbb{R}$, defina a seguinte opera\c c\~ao entre os cortes:
+$$
+\alpha + \beta:= \{r + s: r\in\alpha, s\in\beta\}
+$$
+\end{definition}
+\begin{proposition*}
+$(\mathbb{R}, +)$ \'e um grupo abeliano (satisfaz as propriedades de soma de corpo) cujo elemento nulo \'e $\theta:=\{r\in\mathbb{Q}: r < 0\}$
+\end{proposition*}
+\begin{proof*}
+Para poupar tempo, mostraremos apenas a propriedade do elemento nulo. Deixando ela expl\'icita, queremos mostrar que $\alpha + \theta = \alpha$ e, se tratando de conjuntos, isso \'e o mesmo que mostrar que $\alpha + \theta \subseteq \alpha \text{ e } \alpha \subseteq \alpha + \theta.$ Com efeito, tome $\alpha\in\mathbb{R}$ e seja $\theta$ como no enunciado acima. Segue que:
+$$
+\alpha + \theta = \{r + q: r\in\mathbb{Q}, q < 0\}
+$$
+Mas, note que $r + q < r$, ou seja, $r + q\in\alpha$ pela propriedade 2 dos cortes. Com isso, $\alpha + \theta \subseteq \alpha$
+
+Por outro lado, sejam $s, r\in\alpha$ tais que $s > r$. Ent\~ao, $r - s < 0$, tal que $r - s\in\theta$ e $r = s + (r - s) \in\alpha + \theta.$ Destarte, $\alpha\subseteq\alpha + \theta,$ donde segue que $\alpha + \theta = \alpha$. 
+\end{proof*}
+
+Antes de dar a defini\c c\~ao do produto em si, definimos a opera\c c\~ao, para $\alpha > \theta, \beta > \theta$, $\alpha\circ\beta:=\{pq: p\in\alpha, q\in\beta\}$ e afirmamos (sem provar que ela) \'e um corte. Com isso, o produto entre cortes \'e dado por:
+
+\begin{definition}[Produto]
+Em $\mathbb{R}$, defina a seguinte opera\c c\~ao entre os cortes:
+$$
+\alpha\cdot\beta = \left\{\begin{array}{ll}
+		\alpha\circ\beta, & \quad \text{se } \alpha > \theta, \beta > \theta \\
+		(-\alpha)\circ\beta, & \quad \text{se } \alpha < \theta, \beta > \theta\\
+		\alpha\circ(-\beta), & \quad \text{se } \alpha > \theta, \beta < \theta \\
+		(-\alpha)\circ(-\beta), & \quad \text{se } \alpha < \theta, \beta < \theta
+\end{array}\right.
+$$
+\end{definition}
+
+O elemento neutro da multiplica\c c\~ao \'e o conjunto $\mathfrak{1}:=\{q\in\mathbb{Q}: q < 1\}$
+
+\begin{proposition*}
+$(\mathbb{R}, .)$ satisfaz as propriedades de multiplica\c c\~ao de corpo
+\end{proposition*}
+\begin{proof*}
+Para poupar tempo, mostraremos apenas a propriedade do elemento neutro. Com efeito, seja $\alpha > \theta$. Ent\~ao, 
+$$
+\alpha\cdot\mathfrak{1}=\{pq: p\in\alpha, q < 1\}
+$$
+Assim, os elementos de $\alpha\cdot\mathfrak{1}$ s\~ao tais que $pq < p\cdot{1} = p\in\alpha$, ou seja, $\alpha\cdot\mathfrak{1}\subseteq\alpha.$
+
+Por outro lado, tome um elemento de $p, q\in\alpha, p < q$ Ent\~ao, $p = (p \cdot q^{-1}) \cdot q.$ Como $p < q, p\cdot{q^{1}} < q$, de forma que $p\in\alpha\mathfrak{1}$, mostrando como $\alpha\subseteq\alpha\cdot\mathfrak{1}$. Portanto, $\alpha = \alpha\cdot\mathfrak{1}.$
+\qedsymbol
+\end{proof*}
+
+\section{A Conclus\~ao}
+
+\paragraph{}Com essas duas coisas, obtivemos um corpo odernado que satisfaz a propriedade do supremo, donde segue de um resultado famoso na matem\'atica que ele deve ser os reais $\mathbb{R}.$ Aqui, muitos passos foram pulados para economizar tempo, mas para quem se interessar, posso mandar coisas extras e exerc\'icios sobre cortes e a constru\c c\~ao.
+
+Enfim conclui-se a constru\c c\~ao de Dedekind dos n\'umeros reais.
 \begin{thebibliography}{9}
 \bibitem{Rudin}
 Rudin, w.: "Principles of Mathematical Analysis", 3rd ed., McGraw-Hill Book Company, New York, 1976
