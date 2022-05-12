@@ -133,22 +133,18 @@ Isto significa que f \'e uma fun\c c\~ao polinomial de grau 2? Justifique e fa\c
 	$$
 	Destarte, obtivemos o caso base como verdadeiro. Nessa linha de racioc\'inio, a hip\'otese indutiva afirma que, dado uma base verdadeira, o resultado ser\'a provado se, assumindo o caso n-1 como verdade, o caso n tamb\'em ser\'a (pois assim, o caso 1 sendo verdadeiro implica que o 2 tamb\'em \'e, consequentemente o 3, o 4, etc.). Suponha que o resultado vale para n - 1, isto \'e, para $n\neq{0}$ 
 	$$	
-	x^{n - 1} - a^{n - 1} = (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-1}\biggr).
+	x^{n - 1} - a^{n - 1} = (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-2}\biggr).
 	$$
 	Em part\'icular, somando $2a^{n-1}, $segue que:
 	$$
-	x^{n - 1} + a^{n - 1} = (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-1}\biggr) + 2a^{n-1}.
+	x^{n - 1} + a^{n - 1} = (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-2}\biggr) + 2a^{n-1}.
 	$$
-	Ent\~ao, temos
-	$$
-	\sum_{i=0}^{n-1}a^ix^{n-1} = x^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr) + a^{n-1}.
-	$$ 
 	Multiplicando ambos os lados por (x-a), chegamos em:
 	$$
 	(x - a)\biggl(\sum_{i=0}^{n-1}a^ix^{n-i-1}\biggr)  = (x - a)(x^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr) + a^{n-1})  = (x - a)(x^{n-1} + a^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr))  = 
 	$$
 	$$
-	= (x - a)(2a^{n-1} + (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-1}\biggr) + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr))  = (x - a)(2a^{n-1} + x^{n-1} - a^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr)) = 
+	= (x - a)(2a^{n-1} + (x - a)\biggl(\sum_{i=0}^{n-2}a^ix^{n-i-2}\biggr) + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr))  = (x - a)(2a^{n-1} + x^{n-1} - a^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr)) = 
 	$$
 	$$
 	= 2xa^{n-1} - 2a^n + (x-a)\biggl(x^{n-1} - a^{n-1} + \biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr)\biggr) = 2xa^{n-1} - 2a^n + x^{n} - xa^{n-1} -a^{n-1}x + a^{n} + (x-a)\biggl(\sum_{i=1}^{n-2}a^ix^{n-i-1}\biggr)\biggr) = 
@@ -409,15 +405,15 @@ $$
 $$
 O $\epsilon$ ali pode ser visto como um meio para encontrarmos o $\delta$, j\'a que \'e o que precisamos fazer. Deixando isso de lado, manipularemos o m\'odulo como segue:
 $$
-|\sin(x)| < \epsilon \Rightarrow -\epsilon < \sin(x) < \epsilon \Rightarrow \arcsin(-\epsilon) < x < \arcsin(\epsilon).
+|\sin(x)| < \epsilon \Rightarrow -\epsilon < \sin(x) < \epsilon \Rightarrow \sin^{-1}(-\epsilon) < x < \sin^{-1}(\epsilon).
 $$
 Subtraindo $\pi$ dos dois lados, obtemos
 $$
-\arcsin(-\epsilon) - \pi < x - \pi < \arcsin(\epsilon) - \pi.
+\sin^{-1}(-\epsilon) - \pi < x - \pi < \sin^{-1}(\epsilon) - \pi.
 $$
-Foquemos no lado \`a esquerda primeiro, tal que, definindo $\delta_1 = \arcsin(\epsilon) + \pi$, vale que, quando $-\delta_1 < x - \pi < 0$, 
+Foquemos no lado \`a esquerda primeiro, tal que, definindo $\delta_1 = \sin^{-1}(\epsilon) + \pi$, vale que, quando $-\delta_1 < x - \pi < 0$, 
 $$
--\delta_1 = -\arcsin(\epsilon) - \pi = \arcsin(-\epsilon) - \pi < x - \pi.
+-\delta_1 = -\sin^{-1}(\epsilon) - \pi = \sin^{-1}(-\epsilon) - \pi < x - \pi.
 $$
 Pelo racioc\'inio acima, isso implica que 
 $$
@@ -427,9 +423,9 @@ ou seja,
 $$
 \lim_{x\to\pi^{-}}f(x) = 0.
 $$
-Por outro lado, quanto ao limite lateral \`a direita (isto \'e, $x > \pi$), observando a desigualdade obtida para o mesmo lado e definindo $\delta_2 = \arcsin(\epsilon) - \pi $, se $0 < x - \pi < \delta_2$, temos:
+Por outro lado, quanto ao limite lateral \`a direita (isto \'e, $x > \pi$), observando a desigualdade obtida para o mesmo lado e definindo $\delta_2 = \sin^{-1}(\epsilon) - \pi $, se $0 < x - \pi < \delta_2$, temos:
 $$
-x - \pi < \delta_2 = \arcsin(\epsilon) - \pi,
+x - \pi < \delta_2 = \sin^{-1}(\epsilon) - \pi,
 $$
 donde segue que $|f(x) - 0| = |\sin(-x)| = |\sin(x)| < \epsilon$. Logo,
 $$
@@ -499,7 +495,45 @@ f(x) = \left\{\begin{array}{ll}
 		x + 5, & \quad \text{se } x\geq 1
 \end{array}\right.
 $$
-quais s\~ao os pontos de $D_f$, em torno do ponto p = 1 para $\epsilon = 1$ que causam descontinuidade na fun\c c\~ao (``Caem fora do intervalo aberto $(f(1) - 1, f(1)+ 1))$''). Esta fun\c c\~ao \'e cont\'inua em p = 1? Justifique. 
+quais s\~ao os pontos de $D_f$, em torno do ponto p = 1 para $\epsilon = 1$ que causam descontinuidade na fun\c c\~ao (``Caem fora do intervalo aberto $(f(1) - 1, f(1) + 1))$''). Esta fun\c c\~ao \'e cont\'inua em p = 1? Justifique. 
+\begin{sol*}
+Analisando a fun\c c\~ao acima no ponto 1, observa-se que ela tem valor f(1) = 6. Com isso, o intervalo desejado \'e equivalente a:
+$$
+(f(1) - 1, f(1) + 1) = (6 - 1, 6 + 1) = (5, 7).
+$$
+Pelo jeito que a f foi definida, todos os pontos em $\mathfrak{D}:=\{x\in{D_{f}}: x < 1\} \subset{D_{f}}$ caem fora desse intervalo, pois $f(x) = 2\notin{(5, 7)}$ para todo $x\in\mathfrak{D}.$ Em outras palavras, os pontos de $D_f$ que satisfazem o que foi pedido s\~ao aqueles que pertencem a $\mathfrak{D} = (-\infty, 1)\cap{D_{f}}$. 
+
+Dito isto, verifiquemos a continuidade da f em p = 1. Para mostrar que uma fun\c c\~ao n\~ao \'e cont\'inua em um ponto, \'e precisa tomar a nega\c c\~ao da defini\c c\~ao de continuidade. Em outras palavras:
+
+\textbf{ "Uma fun\c c\~ao f n\~ao \'e cont\'inua no ponto p se existe um $\epsilon > 0$, tal que, para todo $\delta > 0$, se $0 < |x - p| < \delta$, vale $|f(x) - f(p)|\geq\epsilon$."}
+
+Tentaremos aplicar isso nesse item do exerc\'icio. Note que, para f ser cont\'inua neste ponto, \'e preciso que, dado $\epsilon > 0$, ocorra:
+$$
+-\epsilon < f(x) - 6 < \epsilon \Rightarrow -\epsilon + 6 < f(x) < \epsilon + 6.
+$$
+Vamos olhar os casos da defini\c c\~ao. Suponha, primeiramente, que $x\geq 1$. Nesta hip\'otese, segue que 
+$$
+-\epsilon + 6 < f(x) < \epsilon + 6. \Leftrightarrow -\epsilon + 6 < x + 5 < \epsilon + 6 \Rightarrow -\epsilon < x - 1 < \epsilon,
+$$
+ou seja, podemos tomar $\delta = \epsilon$ neste caso e est\'a tudo bem. Por outro lado, assuma que $x < 1$, tal que
+$$
+-\epsilon + 6 < 2 < \epsilon + 6.
+$$
+Note que, para $\epsilon = \frac{1}{2}$, se existisse um $\delta > 0$ tal que
+$$
+|x - 1| < \delta \Rightarrow |f(x) - 2| < \epsilon = \frac{1}{2},
+$$
+ocorreria uma contradi\c c\~ao:
+$$
+\frac{11}{2} < 2 < \frac{13}{2}.
+$$
+De fato, tomando qualquer $0 < \epsilon \leq 4$, \'e poss\'ivel chegar numa contradi\c c\~ao similar, pois se existisse $\delta$ satisfazendo a condi\c c\~ao, ent\~ao ter\'iamos
+$$
+-\epsilon + 6 \leq 2 < 2 < \epsilon + 6.
+$$
+Portanto, conclui-se que f n\~ao \'e cont\'inua no ponto p = 1.
+\qedsymbol
+\end{sol*}
 
 \subsubsection{Exerc\'icio 3} 
 \paragraph{} Parte 1 - Mostre que uma fun\c c\~ao afim \'e cont\'inua em qualquer ponto do seu dom\'inio e que f(x) = -5x + 2 \'e cont\'inua em qualquer ponto do seu dom\'inio.
@@ -522,6 +556,29 @@ Em outras palavras, f \'e cont\'inua em p. Como p \'e um p qualquer, \'e v\'alid
 \end{proof*}
 
 \paragraph{} Parte 2 - Mostre que as fun\c c\~oes $f(x) = x^3$ \'e cont\'inua em p = 1 e que $f(x) = x^4$ \'e cont\'inua em p = 2. O $\epsilon$ \'e qualquer? Isso \'e um problema, uma vez que continuidade \'e uma an\'alise local?
+\begin{sol*}
+Comecemos pelo caso de $f(x) = x^3$. Seja $\epsilon > 0$ qualquer e considere a desigualdade
+$$
+-\epsilon < x^3 - 1^3 < \epsilon \Leftrightarrow -\epsilon < x^3 - 1 < \epsilon.
+$$
+
+Note que, como visto anteriormente, $x^3 - 1 = (x - 1)(x^2 + x + 1)$, tal que
+$$
+|x^3 - 1| = |x - 1||x^2 + x + 1| \leq |x - 1|(|x^2| + |x| + 1).
+$$
+Seja $\delta \leq 1$. Se $|x - 1| < \delta$, ent\~ao $|x| = |x - 1 + 1| \leq |x - 1| + 1 < 1 + 1 = 2.$ Assim, temos
+$$
+|x^3 - 1| = |x - 1||x^2 + x + 1| \leq |x - 1|(|x^2| + |x| + 1) < |x-1|(|4| + |2| + 1) = 7|x - 1|.
+$$
+Em outras palavras, se definirmos $\delta = \min{1,\frac{\epsilon}{7}}$, segue o seguinte:
+
+Dado $\epsilon > 0$, suponha que $\delta = \min{1, \frac{\epsilon}{7}}$. Ent\~ao, se $|x - 1| < \delta,$ obtemos, \textbf{para qualquer} $\epsilon > 0$,
+$$
+|f(x) - f(1)| = |x^3 - 1| < 7|x - 1| < 7\delta \leq \epsilon \Rightarrow |f(x) - f(1)| < \epsilon.
+$$
+Portanto, $f(x) = x^3$ \'e cont\'inua em p = 1.
+
+\end{sol*}
 
 \subsection{Limites: Mais pr\'atico} 
 \subsubsection{Exerc\'icio 4} 
@@ -529,28 +586,416 @@ Em outras palavras, f \'e cont\'inua em p. Como p \'e um p qualquer, \'e v\'alid
 $$
 f(x) = \frac{x^3 + 1}{x^2  + 4x + 3}.
 $$
+\begin{sol*}
+Comecemos pelo dom\'inio. Note que 
+$$
+	x^2 + 4x + 3 = 0 \iff x\in\{-1, -3\},
+$$
+tal que o dom\'inio de f \'e $D_f = \mathbb{R}\slash\{-1, -3\} = \{x\in\mathbb{R}: x\neq{-1} \text{ e } x\neq{-3}\}.$ Como o polin\^omio possui duas ra\'izes, fica mais simples de fator\'a-lo neste caso:
+$$
+x^2 + 4x + 3 = (x + 1)(x + 3),
+$$
+resta fatorar o numerador. Note que, no caso dele, -1 \'e uma ra\'iz, j\'a que $-1^3 + 1 = -1 + 1 = 0$, ent\~ao vamos buscar fatorar (x + 1) dele. Com efeito, come\c camos dividindo o primeiro termo por x para reduzir seu grau a 1, multiplicar (x + 1) por x e subtrair do polin\^omio inicial:
+$$
+\frac{x^2}{x} = x \Rightarrow x^2 + 4x + 3 - x(x + 1) = x^2 + 4x + 3 - x^2 - x = 3x + 3.
+$$
+Repetiremos isso, agora para remover o x:
+$$
+\frac{3x}{x} = 3 \Rightarrow 3x + 3 - 3(x + 1) = 3x - 3x + 3 - 3 = 0.
+$$
+Somamos os dois n\'umeros usados para dividir, isto \'e, x e 3 - este passo \'e preciso para obter o polin\^omio h(x) que aparece em $(x - a)h(x)$, neste caso sendo h(x) = x + 3 - e obtemos a fatora\c c\~ao:
+$$
+x^2 + 4x + 3 = (x + 1)(x + 3).
+$$
+Agora, simplifiquemos a fra\c c\~ao:
+$$
+f(x) = \frac{x^3 + 1}{x^2  + 4x + 3} = \frac{(x + 1)(x + 3)}{(x + 1)(x + 3)} = 1.
+$$
+Logo, ap\'os fatorar a fra\c c\~ao, chegamos na forma fatorada de f(x)=1.
+\qedsymbol
+\end{sol*}
 
 \paragraph{} Parte 2 - Considere a mesma f do exerc\'icio anterior. A fun\c c\~ao g, definida tal que ela \'e igual a f em todos os pontos diferentes de menos 1, explicitamente
 $$
 g(x) = \frac{x^2 - x + 1}{x + 3}
 $$
 \'e uma fun\c c\~ao igual a f ou uma simplifica\c c\~ao de f?
+\begin{sol*}
+Ela \'e uma simplifica\c c\~ao de f, visto que 
+$$
+g(x)\frac{x+1}{x+1} = \frac{x^2 - x + 1}{x + 3}\frac{x+1}{x+1} = \frac{x^3 - x^2 + x + x^2 - x - 1}{(x+1)(x+3)} = \frac{x^3 - 1}{x^2 + 4x + 3} = f(x).
+$$
+\qedsymbol
+\end{sol*}
 
 \paragraph{} Parte 3 - Qual \'e a t\'ecnica que pode ser aplicada quando numerador e denominador t\^em uma ra\'iz em comum para calcular o limite de fun\c c\~oes racionais em pontos onde elas n\~ao est\~ao definidas? Por que ela funciona?
+\begin{sol*}
+Quando ambos t\^em uma ra\'iz comum, ela pode ser fatorada do polin\^omio, isto \'e, se q(x) for um polin\^omio com ra'iz a, ele pode ser escrito como o produto a diferen\c ca da vari\'avel e da ra\'iz por outro polin\^omio:
+$$
+q(x) = (x - a)h(x), a\in\mathbb{R}.
+$$
+Com base nisso, se o numerador e o denominador t\^em uma ra\'iz comum, segue que a fra\c c\~ao pode ser escrita como:
+$$
+f(x) = \frac{p(x)}{q(x)} = \frac{(x-a)h_1(x)}{(x-a)(h_2(x))} = \frac{h_1(x)}{h_2(x)}.
+$$
+Desta forma, pode-se reescrever a fra\c c\~ao at\'e que os pontos em que o denominador se torna problem\'atico (q(x) = 0) sejam removidos. Por conta disso, calcular o limite se torna uma aplica\c c\~ao simples das propriedades vistas anteriormente, pois n\~ao haver\'a mais o problema do denominador que se anula.
+\qedsymbol
+\end{sol*}
 
 \subsubsection{Exerc\'icio 5}
 \paragraph{} Parte 1 - Crie exemplos de c\'alculos de limite em que sejam aplicadas as t\'ecnicas da divis\~ao, soma e produto de limites. 
+\begin{sol*}
+Vamos analisar cada caso separadamente. 
+Come\c cando pela soma, considere a fun\c c\~ao $f_1(x) = ax$ e a fun\c c\~ao $f_2(x) = b$, para as quais, dado um $p\in{D_{f_1}}\cap{D_{f_2}}, \lim_{x\to{p}}f_1(x) = ap$ e $\lim_{x\to{p}}f_2(x) = b.$ Nessas condi\c c\~oes, utilizando a propriedade da soma de limites, \'e poss\'ivel encontrar o limite da fun\c c\~ao afim ax + b quando x tende a p:
+$$
+\lim_{x\to{p}}ax + b = \lim_{x\to{p}}ax + \lim_{x\to{p}}b = ap + b.
+$$
 
+Um exemplo cl\'assico de aplica\c c\~ao de produto \'e com as fun\c c\~oes utiliza $f(x) = g(x) = x$ e $p\in{D_f\cap D_g}$. Como $\lim_{x\to{p}}f(x) = \lim_{x\to{p}} g(x) = p$, segue que 
+$$
+\lim_{x\to{p}}x^2 = \lim_{x\to{p}}x\lim_{x\to{p}}x = \lim_{x\to{p}}f(x)\lim_{x\to{p}}g(x) = p\cdot{p} = p^2
+$$
+
+Por fim, quanto \`a divis\~ao, sejam $f(x) = x^2 - 9$ e $g(x) = x + 3$. Ent\~ao, $\lim_{x\to{p}}f(x) = p^2 - 9, \lim_{x\to{p}}g(x) = p + 3$
+tal que
+$$
+\lim_{x\to{p}}x - 3 = \lim_{x\to{p}}\frac{(x - 3)(x + 3)}{x + 3} = \lim_{x\to{p}}\frac{x^2 - 9}{x + 3} = \lim_{x\to{p}}\frac{f(x)}{g(x)} = \frac{p^2 - 9}{p + 3} = p - 3.
+$$
+\qedsymbol
+\end{sol*}
 \paragraph{} Parte 2 - Explicite o dom\'inio das fun\c c\~oes racionais abaixo:
 $$
 	f(x) = \frac{x^2 - 5x + 6}{x - 2}, \hspace{0.5cm} g(x) = \frac{x^3 + x^2 - x - 1}{x - 1}, \hspace{0.5cm} h(x) = \frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9}.
 $$
-
+\begin{sol*}
+Para definir o dom\'inio de cada fun\c c\~ao racional, \'e preciso analisar os pontos em que o denominador "d\'a problema", basicamente, os pontos em que seria igual a dividir por zero, o que corresponde \`as ra\'izes dos polin\^omios do denominador. Neste prisma, vamos analisar cada item acima e, com isso, definir o dom\'inio:
+\begin{align*}
+		x - 2 = 0 \Leftrightarrow x = 2 \\
+		x - 1 = 0 \Leftrightarrow x = 1 \\
+		x^2 - 6x + 9 \Leftrightarrow x = 3
+\end{align*}
+Obtendo essas ra\'izes, \'e poss\'ivel definir o dom\'inio das fun\c c\~oes tomando o conjunto dos reais menos esses n\'umeros. Assim, chegamos em:
+$$
+D_f = \mathbb{R}\slash\{2\}, D_g = \mathbb{R}\slash\{1\}, D_h = \mathbb{R}\slash\{3\},
+$$
+Concluindo a busca pelos dom\'inios das fun\c c\~oes.
+\qedsymbol
+\end{sol*}
 \paragraph{} Parte 3 - Calcule cada um dos limites, deixando claro o passo a passo utilizado: 
 $$
 \lim_{x\to1} \frac{x^3 + x^2 - x - 1}{x - 1}, \hspace{0.5cm} \lim_{x\to3}\frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9}.
 $$
-\newpage
+\begin{sol*}
+A priori, utilizaremos o resultado de que, dada uma fun\c c\~ao racional com 0 em x = p tanto no numerador quanto no denominador, podemos fatorar (x - p) de ambos e simplificar a fra\c c\~ao. Observando o denominador da primeira fun\c c\~ao, \'e poss\'ivel perceber que, de fato, 1 \'e um 0 dele, pois 1 - 1 = 0. Analogamente, 1 \'e um zero do numerador, pois $1^3 + 1^2 - 1 - 1 = 2 - 2 = 0$. Fatoremos do numerador o termo (x - 1):
+$$
+\frac{(x^3 + x^2 - x - 1)}{x - 1} = x^2 + 2x + 1.
+$$
+Deste modo, chegamos em: 
+$$
+\lim_{x\to{1}}\frac{x^3 + x^2 - x - 1}{x - 1} = \lim_{x\to{1}}x^2 + 2x + 1 = 1 + 2 + 1 = 4.
+$$
+
+Vejamos o outro limite agora. O primeiro passo \'e conferir se o ponto no qual o limite est\'a sendo tomado \'e uma ra\'iz. Com efeito:
+$$
+3^3 - 3^2 - 21\cdot{3} + 45 = 27 - 9 - 63 + 45 = 72 - 72 = 0 
+$$
+e
+$$
+3^2 - 6\cdot{3} + 9 = 9 + 9 - 18 = 0.
+$$
+Com isso, conseguimos fatorar (x - 3) dos polin\^omios, de forma a obter
+$$
+\frac{x^3 - x^2 - 21x + 45}{x-3} = x^2 + 2x - 15
+$$
+e
+$$
+\frac{x^2 - 6x + 9}{x - 3}  = (x - 3)^2
+$$
+Mas, note que $3^2 + 2\cdot{3} - 15 = 15 - 15 = 0$, tal que podemos fatorar novamente x - 3:
+$$
+\frac{x^2 + 2x - 15}{x - 3} = x + 5
+$$
+Desta forma, obtemos, juntando as tr\^es fatora\c c\~oes:
+$$
+\lim_{x\to3}\frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9} = \lim_{x\to3}\frac{(x - 3)^2 (x+5)}{(x - 3)^2} = \lim_{x\to3}x + 5 = 8.
+$$
+\qedsymbol
+\end{sol*}
+
+\subsection{Pr\'e Limites Infinitos}
+\paragraph{} Antes de come\c car os exerc\'icios, \'e \'util adicionar uma nota sobre como calcular limites infinitos ou no infinito. Na defini\c c\~ao, h\'a diferentes formas de manipular os $\epsilon's-\delta's$, de modo que h\'a em torno de quatro defini\c c\~oes diferentes. No entanto, h\'a uma forma mais simples de lembrar como definir cada coisa e, para isso, comecemos com a hip\'otese de que "Para cada $\epsilon > 0$ existe um $\delta > 0$". 
+
+Com isso em mente, o que determina o sinal de cada infinito que aparece? A resposta pode ser quebrada em quatro casos - $f(x) > \epsilon, f(x) < -\epsilon, x > \delta, x < -\delta$. Desta forma, para lembrar qual tipo de infinito ser\'a, pode-se pensar que o sinal do $\epsilon$ na desigualdade determina o sinal do limite infinito, ou seja, se a igualdade for do tipo $\lim f(x) = +\infty$, o sinal do $\epsilon$ ser\'a positivo ($f(x) > \epsilon$) e negativo se $\lim f(x) = -\infty$ ($f(x) < -\epsilon$). 
+
+Analogamente, o sinal do $\delta$ na desigualdade determina o sinal do limite no infinito, isto \'e, se o limite for da forma 
+$$
+\lim_{x\to+\infty} f(x) = p,
+$$
+ent\~ao a desigualdade do delta ter\'a a forma $x > \delta$. Similarmente, se tiver a forma 
+$$
+\lim_{x\to-\infty} f(x) = p,
+$$
+a desigualdade assumir\'a o tipo $x < -\delta.$
+
+\subsection{Limites Infinitos}
+\subsubsection{Exerc\'icio 6} 
+\paragraph{}Parte 1 - Utilizando limites j\'a conhecidos e propriedades dos limites, ou via a defini\c c\~ao, mostre que:
+$$
+\text{a) }\lim_{x\to{0^{-}}}{\frac{1}{x}} = -\infty, \quad \text{b) }\lim_{x\to+\infty} -x^2 = -\infty
+$$
+\begin{sol*}
+a) Precisamos mostrar que, dado $\epsilon > 0$, existe $\delta > 0$ tal que se $-\delta < x < 0$, ent\~ao 
+$$
+\frac{1}{x} < -\epsilon.
+$$
+Escrevendo a desigualdade do $\epsilon$ em outras palavras, $x > -\frac{1}{\epsilon}$, de forma que pondo $\delta = \frac{1}{\epsilon}$, segue o seguinte: Se $-\delta < x < 0$,  
+$$
+-\delta  = -\frac{1}{\epsilon} < x \Rightarrow \frac{1}{x} < -\epsilon,
+$$
+de maneira que 
+$$
+\lim_{x\to{0^{-}}}{\frac{1}{x}} = -\infty
+$$
+
+b) Agora, precisamos mostrar que, dado $\epsilon > 0$, existe $\delta > 0$ para o qual $x > \delta$ implica em
+$$
+-x^2 < -\epsilon.
+$$
+Com efeito, analisando a desigualdade acima, chegamos em sua forma equivalente:
+$$
+x^2 > \epsilon\Rightarrow x > \sqrt{\epsilon} > 0.
+$$
+Desta forma, colocando $\delta = \sqrt{\epsilon}$, segue o seguinte: Se $x > \delta$, ent\~ao:
+$$
+-x^2 < -\delta^2 = -(\sqrt{\epsilon})^2 = -\epsilon.
+$$
+Portanto, 
+$$
+\lim_{x\to+\infty} -x^2 = -\infty.
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{}Parte 2 - Identifique cada igualdade abaixo como verdadeira ou falsa. Quando verdadeira, justifique e, quando falsa, explique ou mostre qual o valor real do limite.
+\begin{itemize}
+\item [a)] $\lim_{x\to2}\frac{1}{|x - 2|}=+\infty$
+\item [b)] $\lim_{x\to5^-}\frac{2}{x - 5}=+\infty$
+\item [c)] $\lim_{x\to5^+}\frac{2}{x - 5}=+\infty$
+\item [d)] $\lim_{x\to0}\frac{1}{x^2 - 5x + 3}=+\infty$
+\item [e)] $\lim_{x\to\infty}\frac{2x^3 - 2}{x - 5}=0$
+\end{itemize}
+\begin{sol*}
+a) O limite \'e verdadeiro. De fato, considere $\epsilon > 0$ qualquer. Segue que 
+$$
+\frac{1}{|x - 2|} > \epsilon \Rightarrow |x - 2| < \frac{1}{\epsilon}
+$$
+Assim, definindo $\delta = \frac{1}{\epsilon}$, obtemos: Se $0 < |x - 2| < \delta$, ent\~ao:
+$$
+\frac{1}{|x - 2|} > \frac{1}{\delta} = \epsilon,
+$$
+mostrando que 
+$$
+\lim_{x\to2}\frac{1}{|x - 2|}=+\infty
+$$
+
+b)O limite \'e falso. De fato, segue que  $\lim_{x\to5^-}\frac{2}{x - 5} = 2\lim_{x\to5^-}\frac{1}{x - 5}.$ Demonstremos que $\lim_{x\to5^-}\frac{1}{x - 5} = -\infty:$ Dado $\epsilon > 0$, precisamos encontrar $\delta > 0$ tal que se $-\delta < x - 5< 0$, ent\~ao
+$$
+\frac{1}{x - 5} < -\epsilon.
+$$ 
+Com efeito, seja $\delta = \frac{1}{\epsilon}.$ Assim, se $-\delta < x - 5< 0$, temos
+$$
+\frac{1}{x - 5} < -\frac{1}{\delta} = -\epsilon.
+$$
+Logo, 
+$$
+2\lim_{x\to5^-}\frac{1}{x - 5} = -\infty.
+$$
+
+c) O limite \'e verdadeiro. Realmente, pois dado $\epsilon > 0$, considere a desigualdade
+$$
+\frac{1}{x - 5} > \epsilon \Rightarrow x - 5 < \frac{1}{\epsilon}.
+$$
+Assim, tomando $\delta = \frac{1}{\epsilon}$, segue que se $0 < x - 5 < \delta$, 
+$$
+\frac{1}{x - 5} > \frac{1}{\delta} = \epsilon,
+$$
+tal que 
+$$
+\lim_{x\to5^+}\frac{2}{x - 5} = 2\lim_{x\to5^-}\frac{1}{x - 5} = +\infty
+$$
+
+d)O limite \'e falso, pois, conforme x tende a zero, o termo $x^2 - 5x$ se torna 0. Deste modo, a fra\c c\~ao e, consequentemente, o limite, ficam:
+$$
+\lim_{x\to0}\frac{1}{x^2 - 5x + 3} = \frac{1}{3}.
+$$
+
+e)O limite \'e falso. Com efeito, conforme visto na aula do dia 08 de Maio de 2022, \'e poss\'ivel encontrar o limite no inifinito de polin\^omios da seguinte forma: Dados polin\^omios $p_n(x), p_m(x)$ com graus n e m respectivamente, ent\~ao
+$$
+\lim_{x\to+\infty}\frac{p_n(x)}{p_m(x)} = 
+\left\{\begin{array}{ll}
+	+\infty, & \quad n\geq{m}\\
+	0, & \quad n < m\\
+	\frac{p_0}{q_0}, & \quad n = m.\\
+\end{array}\right.
+$$
+Com isso, como $2x^3$, o termo l\'ider do polin\^omio do numerador, tem grau maior que o termo l\'ider do denominador, $x$, obtemos
+$$
+\lim_{x\to+\infty}\frac{2x^3 - 2}{x-5} = +\infty.
+$$
+\qedsymbol
+\end{sol*}
+
+\subsubsection{Exerc\'icio 7}
+\paragraph{}Parte 1 - Utilizando o m\'etodo de estimar o valor do limite testando n\'umeros diferentes na conta, mostre que:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{1}{x + 5} = 0,\hspace{3.3cm}
+\text{b) }\lim_{x\to+\infty}\frac{1}{5x} = 0,\hspace{3.3cm}
+\text{c) }\lim_{x\to+\infty}3 = 3.
+$$
+\begin{sol*}
+a) tome $x_1 = 9999999995$ e $x_2 = 5$, tal que $x_1 > x_2$. Comparemos os valores de $f(x_1), f(x_2):$
+$$
+\frac{1}{9999999995 + 5} =\frac{1}{10^10} < \frac{1}{10} = \frac{1}{5 + 5}.
+$$
+Assim, quanto maior o valor de x, menor ser\'a f(x), tal que 0 \'e o candidato a limite nessa situa\c c\~ao. Mostremos que ele \'e realmente o valor esperado, isto \'e, seja $\epsilon > 0$. Ent\~ao, 
+$$
+\frac{1}{|x + 5|} < \epsilon \Rightarrow |x + 5| > \frac{1}{\epsilon}.
+$$
+Tome $\delta = \frac{1}{\epsilon}.$ Deste modo, se $x > \delta$, $x > 0$, tal que $|x + 5| = x + 5 > x > \delta$, obtemos:
+$$
+\frac{1}{|x + 5|} < \frac{1}{\delta} = \epsilon.
+$$
+Logo, 
+$$
+\lim_{x\to+\infty}\frac{1}{x + 5} = 0.
+$$
+
+b)Tome $x_1 = 2\cdot{10^{1203478}}$ e $x_2 = 20.$ Novamente, vamos comparar $f(x_1), f(x_2)$:
+$$
+\frac{1}{5x_1} = \frac{1}{5\cdot2\cdot{10^{1203478}}} = \frac{1}{10^{1203479}} < \frac{1}{10^2}.
+$$
+Novamente, isso faz com que 0 seja um palpite para o valor do limite. Com efeito, tome $\epsilon > 0$. Temos:
+$$
+\frac{1}{5x} < \epsilon \Rightarrow x > \frac{5}{\epsilon}.
+$$
+Desta forma, seja $\delta = \frac{5}{\epsilon}.$ Ent\~ao, se $x > \delta$, segue que 
+$$
+\frac{1}{5x} < 5\frac{1}{\delta} = 5\frac{\epsilon}{5} = \epsilon.
+$$
+Destarte, 
+$$
+\lim_{x\to+\infty}\frac{1}{5x} = 0.
+$$
+
+c)Considere agora $x_1 = 5$ e $x_2 = 9$. Ent\~ao, $f(x_1) = f(x_2) = 3.$ Como a fun\c c\~ao \'e constante, 
+$$
+\lim_{x\to+\infty}3 = 3.
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{}Parte 2 - Atrav\'es das propriedades dos limites, justifique:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{1}{x^5} = 0,\hspace{3.3cm}
+\text{b) }\lim_{x\to+\infty}\frac{1}{x^n} = 0,\hspace{.3cm} n\in\mathbb{N}\slash\{0\}
+$$
+\begin{proof*}
+Sabemos do v\'ideo e das aulas que
+$$
+\lim_{x\to+\infty}\frac{1}{x} = 0.
+$$
+A partir disso, sabe-se tamb\'em que $\lim_{x\to{p}}f(x)g(x) = \lim_{x\to{p}}f(x)\lim_{x\to{p}}g(x)$, tal que:
+a)
+$$
+\lim_{x\to+\infty}\frac{1}{x^5} = \lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x} = 0\cdots0 = 0.
+$$
+
+b)
+$$
+\lim_{x\to+\infty}\frac{1}{x^n} = \lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\cdots\underbrace{\cdots}_{\text{n vezes}}\lim_{x\to+\infty}\frac{1}{x} = 0\underbrace{\cdots}_{\text{n vezes}}0
+$$
+para qualquer n natural diferente de 0.
+\qedsymbol
+\end{proof*}
+
+\paragraph{}Parte 3 - Utilizando a t\'ecnica de p\^or em evid\^encia, calcule os limites abaixo:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{x^3 - 3x + 2}{3x^3 + 1},\hspace{2.5cm}
+\text{b) }\lim_{x\to+\infty}\frac{2x^5 + 3x^2 - x + 7}{-5x^2 + 2x - 9}
+$$
+
+$$
+\text{c) }\lim_{x\to+\infty}\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79},\hspace{2.5cm}
+\text{d) }\lim_{x\to+\infty}\frac{x^3 + 1}{x^7 + 2}.
+$$
+\begin{sol*}
+Vamos fatorar o termo l\'ider do numerador e denominador de cada item e calcular os limites
+a)Como tanto no denominador quanto no numerador o termo l\'ider \'e $x^3$, \'e ele que vamos fatorar:
+$$
+\frac{x^3 - 3x + 2}{3x^3 + 1} = \frac{x^3 (1 - \frac{3}{x^2} + \frac{2}{x^3})}{x^3(3 + \frac{1}{x^3})} = \frac{1 - \frac{3}{x^2} + \frac{2}{x^3}}{3 + \frac{1}{x^3}},
+$$
+de maneira que chegamos em um ter\c co ao tomar o limite porque todos os outros termos, que possuem x no denominador, ir\~ao a zero:
+$$
+\lim_{x\to+\infty}\frac{1 - \frac{3}{x^2} + \frac{2}{x^3}}{3 + \frac{1}{x^3}} = \frac{1}{3}.
+$$
+
+b)O termo l\'ider no numerador \'e $x^5$, enquanto que no denominador \'e $x^2$. Com isso, vamos \`a fatora\c c\~ao:
+$$
+\frac{2x^5 + 3x^2 - x + 7}{-5x^2 + 2x - 9} = \frac{x^5(2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5})}{x^2(-5 + \frac{2}{x} - \frac{9}{x^2})} = x^3\frac{2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5}}{-5 + \frac{2}{x} - \frac{9}{x^2}}.
+$$
+Assim como antes, os termos que possuem alguma fra\c c\~ao de $\frac{1}{x^n}$ se tornam 0 quando x tende a infinito. No entanto, note a exist\^encia de $x^3$ desta vez - Esse simples termo faz com que o limite seja alterado. Realmente, chegamos em:
+$$
+\lim_{x\to+\infty}x^3\frac{2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5}}{-5 + \frac{2}{x} - \frac{9}{x^2}} = \lim_{x\to+\infty}x^3\frac{2}{-5} = -1\lim_{x\to+\infty}x^3\frac{2}{5} = -\infty.
+$$
+
+c)Desta vez, o termo l\'ider do numerador \'e $x^4$ e o do denominador \'e $x^5$, de forma que fatoramos:
+$$
+\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79} = \frac{x^4(5 - \frac{2}{x^3} + \frac{8}{x^4})}{x^5(1 + \frac{2}{x^3} + \frac{79}{x^5})} = \frac{1}{x}\frac{5 - \frac{2}{x^3} + \frac{8}{x^4}}{1 + \frac{2}{x^3} + \frac{79}{x^5}}
+$$.
+Deste modo, como no exemplo b), todos os termos com $\frac{1}{x^n}$ se tornam 0, mas o fato de ter um $\frac{1}{x}$ multiplicando tudo, um termo que tamb\'em tende a 0, faz com que o limite seja:
+$$
+\lim_{x\to+\infty}\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79} = \lim_{x\to\infty}\frac{1}{x}\frac{5 - \frac{2}{x^3} + \frac{8}{x^4}}{1 + \frac{2}{x^3} + \frac{79}{x^5}} = 0.
+$$.
+
+d)Por fim, o termo dominante no numerador \'e $x^3$, mas no denominador \'e $x^7$. Fatorando,
+$$
+\frac{x^3 + 1}{x^7 + 2} = \frac{x^3(1 + \frac{1}{x^3})}{x^7(1 + \frac{2}{x^7})} = \frac{1}{x^4}\frac{1 + \frac{1}{x^3}}{1 + \frac{2}{x^7}.}
+$$
+Assim, como h\'a uma fra\c c\~ao de x quando o limite for tomado, o resultado ser\'a zero, pois ser\'a 0 multiplicando outro n\'umero. Explicitamente:
+$$
+\lim_{x\to+\infty}\frac{x^3 + 1}{x^7 + 2} = \lim_{x\to+\infty}\frac{1}{x^4}\lim_{x\to+\infty}\frac{1 + \frac{1}{x^3}}{1 + \frac{2}{x^7}} = 0\frac{1}{1} = 0.
+$$
+\qedsymbol
+\end{sol*}
+
+\subsubsection{Exerc\'icio 8} 
+\paragraph{} Calcule, explicitando o passo-a-passo, os limites a seguir:
+$$
+a) \lim_{x\to+\infty} \sqrt{x + 5} - \sqrt{x} \hspace{5cm} b)\lim_{x\to+\infty} \sqrt{x^3 + 1} - \sqrt{x^4 + 3}.
+$$
+\begin{sol*}
+a) O princ\'ipio por tr\'as da resolu\c c\~ao de limites dessa forma \'e mover a ra\'iz para um denominador sem subtra\c c\~ao, para que seja poss\'ivel obter um limite igualando a 0. Com base nisso e com a igualdade $a^2 - b^2 = (a + b)(a - b)$, multipliquemos a express\~ao dada por:
+$$
+(\sqrt{x + 5} - \sqrt{x})\underbrace{\biggl(\frac{\sqrt{x + 5} + \sqrt{x}}{\sqrt{x + 5} + \sqrt{x}}\biggr)}_{= 1} = \frac{x + 5 - x}{\sqrt{x + 5} + \sqrt{x}} = \frac{5}{\sqrt{x + 5} + \sqrt{x}}.
+$$
+Assim, ao calcular o limite, chegamos em:
+$$
+\lim_{x\to+\infty} \sqrt{x + 5} - \sqrt{x} = \lim_{x\to+\infty} \frac{5}{\sqrt{x + 5} + \sqrt{x}} = 0.
+$$
+
+b)O processo neste caso \'e an\'alogo ao utilizado no item a, isto \'e, vamos multiplicar tudo para mudar as ra\'izes do numerador para denominador:
+$$
+(\sqrt{x^3 + 1} - \sqrt{x^4 + 3})\underbrace{\biggl(\frac{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}\biggr)}_{= 1} = \frac{x^3 + 1 - x^4 - 3}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} = \frac{x^3 - x^4 - 2}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} =
+$$
+$$
+= \frac{x^4(\frac{1}{x} - 1 - \frac{2}{x^4})}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}.
+$$
+Aplicando a estrat\'egia do termo l\'ider de denominador versus numerador e como $x^4$ \'e maior que o $x^2$ do denominador, chegamos em:
+$$
+\lim_{x\to+\infty} \sqrt{x^3 + 1} - \sqrt{x^4 + 3} = \lim_{x\to+\infty}x^4\lim_{x\to+\infty}\frac{\frac{1}{x} - 1 - \frac{2}{x^4}}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} = -\infty.
+$$
+\qedsymbol
+\end{sol*}
 
 \newpage
 \section{Reta Tangente, Derivada, Derivada de Algumas fun\c c\~oes, Regra da Cadeia}
