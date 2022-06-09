@@ -1,0 +1,26 @@
+\section{Reta Tangente, Derivada, Derivada de Algumas fun\c c\~oes, Regra da Cadeia}
+\subsection[Derivadas de Ordem Superior]{Derivadas de Ordem Superior}
+\subsubsection{Exerc\'icio 1.}
+\paragraph{} Nosso objetivo \'e obter f\'ormulas gerais para a n-\'esima derivada de $\cos(x) \text{ e } \frac{1}{x}$. Para isso, vamos levar em conta 
+o processo realizado com rela\c c\~ao ao seno. A natureza c\'iclica de ambas as fun\c c\~oes sinaliza
+a liga\c c\~ao entre as derivadas. Com efeito, 
+
+$$
+\begin{array}{ll}
+	\frac{d \cos(x)}{d x} = -\sin(x) \\
+	\frac{d^2 \cos(x)}{d x^2} = -\frac{d}{dx}\sin(x) = -\cos(x)\\
+	\frac{d^3 \cos(x)}{d x^3}\cos(x) = -\frac{d^2}{dx^2}\sin(x) = -\frac{d}{dx}\cos(x) = \sin(x)\\
+	\frac{d^4 \cos(x)}{d x^4}\cos(x) = -\frac{d^3}{dx^3}\sin(x) = -\frac{d^2}{dx^2}\cos(x) = \frac{d}{dx}\sin(x) = \cos(x)
+\end{array}
+$$  
+Com base nisso, \'e poss\'ivel concluir que as derivadas de cosseno tamb\'em formam um ciclo e, portanto, podemos escrever uma forma geral como:
+$$
+\frac{d^n \cos(x)}{d x^n} = \left\{
+\begin{array}{ll}
+	\cos(x), &\quad x\equiv 0\text{ mod}4 \\
+	-\sin(x), &\quad x\equiv 1\text{ mod}4\\
+	-\cos(x), &\quad x\equiv 2\text{ mod}4\\
+	\sin(x), &\quad x\equiv 3\text{ mod}4 \\
+\end{array}
+\right.
+$$

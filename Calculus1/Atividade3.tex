@@ -1,0 +1,276 @@
+\subsection{Pr\'e Limites Infinitos}
+\paragraph{} Antes de come\c car os exerc\'icios, \'e \'util adicionar uma nota sobre como calcular limites infinitos ou no infinito. Na defini\c c\~ao, h\'a diferentes formas de manipular os $\epsilon's-\delta's$, de modo que h\'a em torno de quatro defini\c c\~oes diferentes. No entanto, h\'a uma forma mais simples de lembrar como definir cada coisa e, para isso, comecemos com a hip\'otese de que "Para cada $\epsilon > 0$ existe um $\delta > 0$". 
+
+Com isso em mente, o que determina o sinal de cada infinito que aparece? A resposta pode ser quebrada em quatro casos - $f(x) > \epsilon, f(x) < -\epsilon, x > \delta, x < -\delta$. Desta forma, para lembrar qual tipo de infinito ser\'a, pode-se pensar que o sinal do $\epsilon$ na desigualdade determina o sinal do limite infinito, ou seja, se a igualdade for do tipo $\lim f(x) = +\infty$, o sinal do $\epsilon$ ser\'a positivo ($f(x) > \epsilon$) e negativo se $\lim f(x) = -\infty$ ($f(x) < -\epsilon$). 
+
+Analogamente, o sinal do $\delta$ na desigualdade determina o sinal do limite no infinito, isto \'e, se o limite for da forma 
+$$
+\lim_{x\to+\infty} f(x) = p,
+$$
+ent\~ao a desigualdade do delta ter\'a a forma $x > \delta$. Similarmente, se tiver a forma 
+$$
+\lim_{x\to-\infty} f(x) = p,
+$$
+a desigualdade assumir\'a o tipo $x < -\delta.$
+
+\subsection{Limites Infinitos}
+\subsubsection{Exerc\'icio 6} 
+\paragraph{}Parte 1 - Utilizando limites j\'a conhecidos e propriedades dos limites, ou via a defini\c c\~ao, mostre que:
+$$
+\text{a) }\lim_{x\to{0^{-}}}{\frac{1}{x}} = -\infty, \quad \text{b) }\lim_{x\to+\infty} -x^2 = -\infty
+$$
+\begin{sol*}
+a) Precisamos mostrar que, dado $\epsilon > 0$, existe $\delta > 0$ tal que se $-\delta < x < 0$, ent\~ao 
+$$
+\frac{1}{x} < -\epsilon.
+$$
+Escrevendo a desigualdade do $\epsilon$ em outras palavras, $x > -\frac{1}{\epsilon}$, de forma que pondo $\delta = \frac{1}{\epsilon}$, segue o seguinte: Se $-\delta < x < 0$,  
+$$
+-\delta  = -\frac{1}{\epsilon} < x \Rightarrow \frac{1}{x} < -\epsilon,
+$$
+de maneira que 
+$$
+\lim_{x\to{0^{-}}}{\frac{1}{x}} = -\infty
+$$
+
+b) Agora, precisamos mostrar que, dado $\epsilon > 0$, existe $\delta > 0$ para o qual $x > \delta$ implica em
+$$
+-x^2 < -\epsilon.
+$$
+Com efeito, analisando a desigualdade acima, chegamos em sua forma equivalente:
+$$
+x^2 > \epsilon\Rightarrow x > \sqrt{\epsilon} > 0.
+$$
+Desta forma, colocando $\delta = \sqrt{\epsilon}$, segue o seguinte: Se $x > \delta$, ent\~ao:
+$$
+-x^2 < -\delta^2 = -(\sqrt{\epsilon})^2 = -\epsilon.
+$$
+Portanto, 
+$$
+\lim_{x\to+\infty} -x^2 = -\infty.
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{}Parte 2 - Identifique cada igualdade abaixo como verdadeira ou falsa. Quando verdadeira, justifique e, quando falsa, explique ou mostre qual o valor real do limite.
+\begin{itemize}
+\item [a)] $\lim_{x\to2}\frac{1}{|x - 2|}=+\infty$
+\item [b)] $\lim_{x\to5^-}\frac{2}{x - 5}=+\infty$
+\item [c)] $\lim_{x\to5^+}\frac{2}{x - 5}=+\infty$
+\item [d)] $\lim_{x\to0}\frac{1}{x^2 - 5x + 3}=+\infty$
+\item [e)] $\lim_{x\to\infty}\frac{2x^3 - 2}{x - 5}=0$
+\end{itemize}
+\begin{sol*}
+a) O limite \'e verdadeiro. De fato, considere $\epsilon > 0$ qualquer. Segue que 
+$$
+\frac{1}{|x - 2|} > \epsilon \Rightarrow |x - 2| < \frac{1}{\epsilon}
+$$
+Assim, definindo $\delta = \frac{1}{\epsilon}$, obtemos: Se $0 < |x - 2| < \delta$, ent\~ao:
+$$
+\frac{1}{|x - 2|} > \frac{1}{\delta} = \epsilon,
+$$
+mostrando que 
+$$
+\lim_{x\to2}\frac{1}{|x - 2|}=+\infty
+$$
+
+b)O limite \'e falso. De fato, segue que  $\lim_{x\to5^-}\frac{2}{x - 5} = 2\lim_{x\to5^-}\frac{1}{x - 5}.$ Demonstremos que $\lim_{x\to5^-}\frac{1}{x - 5} = -\infty:$ Dado $\epsilon > 0$, precisamos encontrar $\delta > 0$ tal que se $-\delta < x - 5< 0$, ent\~ao
+$$
+\frac{1}{x - 5} < -\epsilon.
+$$ 
+Com efeito, seja $\delta = \frac{1}{\epsilon}.$ Assim, se $-\delta < x - 5< 0$, temos
+$$
+\frac{1}{x - 5} < -\frac{1}{\delta} = -\epsilon.
+$$
+Logo, 
+$$
+2\lim_{x\to5^-}\frac{1}{x - 5} = -\infty.
+$$
+
+c) O limite \'e verdadeiro. Realmente, pois dado $\epsilon > 0$, considere a desigualdade
+$$
+\frac{1}{x - 5} > \epsilon \Rightarrow x - 5 < \frac{1}{\epsilon}.
+$$
+Assim, tomando $\delta = \frac{1}{\epsilon}$, segue que se $0 < x - 5 < \delta$, 
+$$
+\frac{1}{x - 5} > \frac{1}{\delta} = \epsilon,
+$$
+tal que 
+$$
+\lim_{x\to5^+}\frac{2}{x - 5} = 2\lim_{x\to5^-}\frac{1}{x - 5} = +\infty
+$$
+
+d)O limite \'e falso, pois, conforme x tende a zero, o termo $x^2 - 5x$ se torna 0. Deste modo, a fra\c c\~ao e, consequentemente, o limite, ficam:
+$$
+\lim_{x\to0}\frac{1}{x^2 - 5x + 3} = \frac{1}{3}.
+$$
+
+e)O limite \'e falso. Com efeito, conforme visto na aula do dia 08 de Maio de 2022, \'e poss\'ivel encontrar o limite no inifinito de polin\^omios da seguinte forma: Dados polin\^omios $p_n(x), p_m(x)$ com graus n e m respectivamente, ent\~ao
+$$
+\lim_{x\to+\infty}\frac{p_n(x)}{p_m(x)} = 
+\left\{\begin{array}{ll}
+	+\infty, & \quad n\geq{m}\\
+	0, & \quad n < m\\
+	\frac{p_0}{q_0}, & \quad n = m.\\
+\end{array}\right.
+$$
+Com isso, como $2x^3$, o termo l\'ider do polin\^omio do numerador, tem grau maior que o termo l\'ider do denominador, $x$, obtemos
+$$
+\lim_{x\to+\infty}\frac{2x^3 - 2}{x-5} = +\infty.
+$$
+\qedsymbol
+\end{sol*}
+
+\subsection{Limites no Infinito}
+\subsubsection{Exerc\'icio 7}
+\paragraph{}Parte 1 - Utilizando o m\'etodo de estimar o valor do limite testando n\'umeros diferentes na conta, mostre que:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{1}{x + 5} = 0,\hspace{3.3cm}
+\text{b) }\lim_{x\to+\infty}\frac{1}{5x} = 0,\hspace{3.3cm}
+\text{c) }\lim_{x\to+\infty}3 = 3.
+$$
+\begin{sol*}
+a) tome $x_1 = 9999999995$ e $x_2 = 5$, tal que $x_1 > x_2$. Comparemos os valores de $f(x_1), f(x_2):$
+$$
+\frac{1}{9999999995 + 5} =\frac{1}{10^10} < \frac{1}{10} = \frac{1}{5 + 5}.
+$$
+Assim, quanto maior o valor de x, menor ser\'a f(x), tal que 0 \'e o candidato a limite nessa situa\c c\~ao. Mostremos que ele \'e realmente o valor esperado, isto \'e, seja $\epsilon > 0$. Ent\~ao, 
+$$
+\frac{1}{|x + 5|} < \epsilon \Rightarrow |x + 5| > \frac{1}{\epsilon}.
+$$
+Tome $\delta = \frac{1}{\epsilon}.$ Deste modo, se $x > \delta$, $x > 0$, tal que $|x + 5| = x + 5 > x > \delta$, obtemos:
+$$
+\frac{1}{|x + 5|} < \frac{1}{\delta} = \epsilon.
+$$
+Logo, 
+$$
+\lim_{x\to+\infty}\frac{1}{x + 5} = 0.
+$$
+
+b)Tome $x_1 = 2\cdot{10^{1203478}}$ e $x_2 = 20.$ Novamente, vamos comparar $f(x_1), f(x_2)$:
+$$
+\frac{1}{5x_1} = \frac{1}{5\cdot2\cdot{10^{1203478}}} = \frac{1}{10^{1203479}} < \frac{1}{10^2}.
+$$
+Novamente, isso faz com que 0 seja um palpite para o valor do limite. Com efeito, tome $\epsilon > 0$. Temos:
+$$
+\frac{1}{5x} < \epsilon \Rightarrow x > \frac{5}{\epsilon}.
+$$
+Desta forma, seja $\delta = \frac{5}{\epsilon}.$ Ent\~ao, se $x > \delta$, segue que 
+$$
+\frac{1}{5x} < 5\frac{1}{\delta} = 5\frac{\epsilon}{5} = \epsilon.
+$$
+Destarte, 
+$$
+\lim_{x\to+\infty}\frac{1}{5x} = 0.
+$$
+
+c)Considere agora $x_1 = 5$ e $x_2 = 9$. Ent\~ao, $f(x_1) = f(x_2) = 3.$ Como a fun\c c\~ao \'e constante, 
+$$
+\lim_{x\to+\infty}3 = 3.
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{}Parte 2 - Atrav\'es das propriedades dos limites, justifique:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{1}{x^5} = 0,\hspace{3.3cm}
+\text{b) }\lim_{x\to+\infty}\frac{1}{x^n} = 0,\hspace{.3cm} n\in\mathbb{N}\slash\{0\}
+$$
+\begin{proof*}
+Sabemos do v\'ideo e das aulas que
+$$
+\lim_{x\to+\infty}\frac{1}{x} = 0.
+$$
+A partir disso, sabe-se tamb\'em que $\lim_{x\to{p}}f(x)g(x) = \lim_{x\to{p}}f(x)\lim_{x\to{p}}g(x)$, tal que:
+a)
+$$
+\lim_{x\to+\infty}\frac{1}{x^5} = \lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x} = 0\cdots0 = 0.
+$$
+
+b)
+$$
+\lim_{x\to+\infty}\frac{1}{x^n} = \lim_{x\to+\infty}\frac{1}{x}\lim_{x\to+\infty}\frac{1}{x}\cdots\underbrace{\cdots}_{\text{n vezes}}\lim_{x\to+\infty}\frac{1}{x} = 0\underbrace{\cdots}_{\text{n vezes}}0
+$$
+para qualquer n natural diferente de 0.
+\qedsymbol
+\end{proof*}
+
+\paragraph{}Parte 3 - Utilizando a t\'ecnica de p\^or em evid\^encia, calcule os limites abaixo:
+$$
+\text{a) }\lim_{x\to+\infty}\frac{x^3 - 3x + 2}{3x^3 + 1},\hspace{2.5cm}
+\text{b) }\lim_{x\to+\infty}\frac{2x^5 + 3x^2 - x + 7}{-5x^2 + 2x - 9}
+$$
+
+$$
+\text{c) }\lim_{x\to+\infty}\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79},\hspace{2.5cm}
+\text{d) }\lim_{x\to+\infty}\frac{x^3 + 1}{x^7 + 2}.
+$$
+\begin{sol*}
+Vamos fatorar o termo l\'ider do numerador e denominador de cada item e calcular os limites
+a)Como tanto no denominador quanto no numerador o termo l\'ider \'e $x^3$, \'e ele que vamos fatorar:
+$$
+\frac{x^3 - 3x + 2}{3x^3 + 1} = \frac{x^3 (1 - \frac{3}{x^2} + \frac{2}{x^3})}{x^3(3 + \frac{1}{x^3})} = \frac{1 - \frac{3}{x^2} + \frac{2}{x^3}}{3 + \frac{1}{x^3}},
+$$
+de maneira que chegamos em um ter\c co ao tomar o limite porque todos os outros termos, que possuem x no denominador, ir\~ao a zero:
+$$
+\lim_{x\to+\infty}\frac{1 - \frac{3}{x^2} + \frac{2}{x^3}}{3 + \frac{1}{x^3}} = \frac{1}{3}.
+$$
+
+b)O termo l\'ider no numerador \'e $x^5$, enquanto que no denominador \'e $x^2$. Com isso, vamos \`a fatora\c c\~ao:
+$$
+\frac{2x^5 + 3x^2 - x + 7}{-5x^2 + 2x - 9} = \frac{x^5(2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5})}{x^2(-5 + \frac{2}{x} - \frac{9}{x^2})} = x^3\frac{2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5}}{-5 + \frac{2}{x} - \frac{9}{x^2}}.
+$$
+Assim como antes, os termos que possuem alguma fra\c c\~ao de $\frac{1}{x^n}$ se tornam 0 quando x tende a infinito. No entanto, note a exist\^encia de $x^3$ desta vez - Esse simples termo faz com que o limite seja alterado. Realmente, chegamos em:
+$$
+\lim_{x\to+\infty}x^3\frac{2 + \frac{3}{x^3} - \frac{1}{x^4} + \frac{7}{x^5}}{-5 + \frac{2}{x} - \frac{9}{x^2}} = \lim_{x\to+\infty}x^3\frac{2}{-5} = -1\lim_{x\to+\infty}x^3\frac{2}{5} = -\infty.
+$$
+
+c)Desta vez, o termo l\'ider do numerador \'e $x^4$ e o do denominador \'e $x^5$, de forma que fatoramos:
+$$
+\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79} = \frac{x^4(5 - \frac{2}{x^3} + \frac{8}{x^4})}{x^5(1 + \frac{2}{x^3} + \frac{79}{x^5})} = \frac{1}{x}\frac{5 - \frac{2}{x^3} + \frac{8}{x^4}}{1 + \frac{2}{x^3} + \frac{79}{x^5}}
+$$.
+Deste modo, como no exemplo b), todos os termos com $\frac{1}{x^n}$ se tornam 0, mas o fato de ter um $\frac{1}{x}$ multiplicando tudo, um termo que tamb\'em tende a 0, faz com que o limite seja:
+$$
+\lim_{x\to+\infty}\frac{5x^4 - 2x + 8}{x^5 + 2x^2 + 79} = \lim_{x\to\infty}\frac{1}{x}\frac{5 - \frac{2}{x^3} + \frac{8}{x^4}}{1 + \frac{2}{x^3} + \frac{79}{x^5}} = 0.
+$$.
+
+d)Por fim, o termo dominante no numerador \'e $x^3$, mas no denominador \'e $x^7$. Fatorando,
+$$
+\frac{x^3 + 1}{x^7 + 2} = \frac{x^3(1 + \frac{1}{x^3})}{x^7(1 + \frac{2}{x^7})} = \frac{1}{x^4}\frac{1 + \frac{1}{x^3}}{1 + \frac{2}{x^7}.}
+$$
+Assim, como h\'a uma fra\c c\~ao de x quando o limite for tomado, o resultado ser\'a zero, pois ser\'a 0 multiplicando outro n\'umero. Explicitamente:
+$$
+\lim_{x\to+\infty}\frac{x^3 + 1}{x^7 + 2} = \lim_{x\to+\infty}\frac{1}{x^4}\lim_{x\to+\infty}\frac{1 + \frac{1}{x^3}}{1 + \frac{2}{x^7}} = 0\frac{1}{1} = 0.
+$$
+\qedsymbol
+\end{sol*}
+
+\subsection{Diferen\c cas de Infinito}
+\subsubsection{Exerc\'icio 8} 
+\paragraph{} Calcule, explicitando o passo-a-passo, os limites a seguir:
+$$
+a) \lim_{x\to+\infty} \sqrt{x + 5} - \sqrt{x} \hspace{5cm} b)\lim_{x\to+\infty} \sqrt{x^3 + 1} - \sqrt{x^4 + 3}.
+$$
+\begin{sol*}
+a) O princ\'ipio por tr\'as da resolu\c c\~ao de limites dessa forma \'e mover a ra\'iz para um denominador sem subtra\c c\~ao, para que seja poss\'ivel obter um limite igualando a 0. Com base nisso e com a igualdade $a^2 - b^2 = (a + b)(a - b)$, multipliquemos a express\~ao dada por:
+$$
+(\sqrt{x + 5} - \sqrt{x})\underbrace{\biggl(\frac{\sqrt{x + 5} + \sqrt{x}}{\sqrt{x + 5} + \sqrt{x}}\biggr)}_{= 1} = \frac{x + 5 - x}{\sqrt{x + 5} + \sqrt{x}} = \frac{5}{\sqrt{x + 5} + \sqrt{x}}.
+$$
+Assim, ao calcular o limite, chegamos em:
+$$
+\lim_{x\to+\infty} \sqrt{x + 5} - \sqrt{x} = \lim_{x\to+\infty} \frac{5}{\sqrt{x + 5} + \sqrt{x}} = 0.
+$$
+
+b)O processo neste caso \'e an\'alogo ao utilizado no item a, isto \'e, vamos multiplicar tudo para mudar as ra\'izes do numerador para denominador:
+$$
+(\sqrt{x^3 + 1} - \sqrt{x^4 + 3})\underbrace{\biggl(\frac{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}\biggr)}_{= 1} = \frac{x^3 + 1 - x^4 - 3}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} = \frac{x^3 - x^4 - 2}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} =
+$$
+$$
+= \frac{x^4(\frac{1}{x} - 1 - \frac{2}{x^4})}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}}.
+$$
+Aplicando a estrat\'egia do termo l\'ider de denominador versus numerador e como $x^4$ \'e maior que o $x^2$ do denominador, chegamos em:
+$$
+\lim_{x\to+\infty} \sqrt{x^3 + 1} - \sqrt{x^4 + 3} = \lim_{x\to+\infty}x^4\lim_{x\to+\infty}\frac{\frac{1}{x} - 1 - \frac{2}{x^4}}{\sqrt{x^3 + 1} + \sqrt{x^4 + 3}} = -\infty.
+$$
+\qedsymbol
+\end{sol*}

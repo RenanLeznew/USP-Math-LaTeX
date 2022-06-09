@@ -1,0 +1,365 @@
+\section{Propriedades dos Limites, Limites Laterais, Limites de Determinadas Fun\c c\~oes, Fun\c c\~oes Cont\'inuas e Suas Propriedades}
+\subsection{Continuidade e Limite}
+\subsubsection{Exerc\'icio 1}
+\paragraph{} Parte 1 - Classifique como verdadeira ou falsa a seguinte afirma\c c\~ao e demonstre ou d\^e um contra-exemplo.
+``Se $f: \mathbb{R}\rightarrow\mathbb{R}$ \'e uma fun\c c\~ao, ent\~ao
+$$
+\lim_{x\to{1}}f(x) = f(1).\text{''}
+$$
+\begin{sol*}
+Considere a seguinte fun\c c\~ao:
+$$
+f(x) = \left\{
+\begin{array}{ll}
+	x, &\quad \text{se } x\neq{1}\\
+	9, & \quad \text{se } x=1.
+\end{array}
+\right.
+$$
+
+Seja $\epsilon > 0$ qualquer e analisemos a seguinte inequa\c c\~ao para $|x|\neq 1$:
+$$
+	|f(x) - 1| = |x - 1|.
+$$
+Com isso, tome $\delta = \epsilon$ e suponha que $0 < |x - 1| < \delta$, tal que x nunca ser\'a igual a 1. Com isso, segue que 
+$$
+	|f(x) - 1| = |x - 1| < \delta = \epsilon \Rightarrow |f(x) - 1| < \epsilon.
+$$
+Logo, $\lim_{x\to{1}}f(x) = 1$, mas f(1) = 9, mostrando que a afirma\c c\~ao \'e falsa.
+\qedsymbol
+\end{sol*}
+\paragraph{} Parte 2 - \'E poss\'ivel, dada uma fun\c c\~ao $f:\mathbb{R}-\{\pi\}\rightarrow \mathbb{R}$, n\~ao definida no ponto $x=\pi$, calcular 
+$$
+\lim_{x\to\pi}f(x)?
+$$
+D\^e um exemplo e justifique.
+\begin{sol*}
+Ao definir um limite no ponto p, utilizamos o fato de p ser, por hip\'otese, ponto de acumula\c c\~ao do dom\'inio da fun\c c\~ao. Consequentemente, p n\~ao necessariamente precisa estar nesse dom\'inio para que possamos calcular o limite de f nele. Esse \'e o caso mais geral do que foi pedido no exerc\'icio, ent\~ao, para exemplificar, tome $f:\mathbb{R}-\{\pi\}\rightarrow\mathbb{R}$ como:
+$$
+f(x) = \left\{\begin{array}{ll}
+	\sin(x) & \quad \text{se } x < \pi \\
+	\sin(-x) & \quad \text{se } \pi < x
+\end{array}\right.
+$$
+Note que a fun\c c\~ao est\'a definida em $\mathbb{R}-\{\pi\}.$ Com isso, seja $\epsilon > 0$ qualquer. Vamos calcular o limite por meio dos limites laterais, mostrando que eles s\~ao iguais quando x tende a $\pi$. Come\c cando pelo limite lateral \`a esquerda, note que
+$$
+|f(x) - 0| = |\sin(x) - 0| = |\sin(x) - 0| = |\sin(x)|< \epsilon.
+$$
+O $\epsilon$ ali pode ser visto como um meio para encontrarmos o $\delta$, j\'a que \'e o que precisamos fazer. Deixando isso de lado, manipularemos o m\'odulo como segue:
+$$
+|\sin(x)| < \epsilon \Rightarrow -\epsilon < \sin(x) < \epsilon \Rightarrow \sin^{-1}(-\epsilon) < x < \sin^{-1}(\epsilon).
+$$
+Subtraindo $\pi$ dos dois lados, obtemos
+$$
+\sin^{-1}(-\epsilon) - \pi < x - \pi < \sin^{-1}(\epsilon) - \pi.
+$$
+Foquemos no lado \`a esquerda primeiro, tal que, definindo $\delta_1 = \sin^{-1}(\epsilon) + \pi$, vale que, quando $-\delta_1 < x - \pi < 0$, 
+$$
+-\delta_1 = -\sin^{-1}(\epsilon) - \pi = \sin^{-1}(-\epsilon) - \pi < x - \pi.
+$$
+Pelo racioc\'inio acima, isso implica que 
+$$
+|f(x) - 0| < \epsilon,
+$$
+ou seja, 
+$$
+\lim_{x\to\pi^{-}}f(x) = 0.
+$$
+Por outro lado, quanto ao limite lateral \`a direita (isto \'e, $x > \pi$), observando a desigualdade obtida para o mesmo lado e definindo $\delta_2 = \sin^{-1}(\epsilon) - \pi $, se $0 < x - \pi < \delta_2$, temos:
+$$
+x - \pi < \delta_2 = \sin^{-1}(\epsilon) - \pi,
+$$
+donde segue que $|f(x) - 0| = |\sin(-x)| = |\sin(x)| < \epsilon$. Logo,
+$$
+\lim_{x\to\pi^{+}}f(x) = 0.
+$$
+Portanto, como os dois limites s\~ao iguais, segue que $\lim_{x\to\pi} f(x) = 0$, o que ilustre que \'e poss\'ivel calcular o limite em um ponto fora do dom\'inio da fun\c c\~ao.
+\qedsymbol
+\end{sol*}
+\paragraph{} Parte 3 - Escreva formalmente o que significa uma fun\c c\~ao ser con\'tinua em um ponto de seu dom\'inio.
+\begin{sol*}
+	A ideia por tr\'as da continuidade \'e a falta de quebras no gr\'afico da fun\c c\~ao (em termo popular: pode ser desenhada sem tirar o l\'apis do papel). A deifni\c c\~ao matem\'atica por tr\'as dele procura preservar essa no\c c\~ao atrav\'es da ideia de que, n\~ao importa qu\~ao pr\'oximos sejam dois pontos, sempre \'e poss\'ivel fazer o gr\'afico da fun\c c\~ao neles igualmente pr\'oximos, ou seja, dados dois pontos da fun\c c\~ao, o erro da aproxima\c c\~ao tende a zero quando calcula-se ela nesses dois pontos. 
+
+Rigorosamente falando, essas ideias s\~ao formuladas no jarg\~ao $\epsilon-\delta$, enunciado a seguir: Uma fun\c c\~ao $f:\mathbb{R}\rightarrow\mathbb{R}$ \'e dita cont\'inua no ponto $p\in{D_{f}}$ dado que, para cada $\epsilon > 0$, existe um $\delta > 0$ tal que se $|x - p| < \delta$ (note a diferen\c ca entre essa defini\c c\~ao e a de limite: Aqui, o ponto p em si faz parte da conta, ent\~ao n\~ao \'e preciso que $0 < |x - p|$), vale 
+$$
+|f(x) - f(p)| < \epsilon.
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{} Parte 4 - Aplique a defini\c c\~ao $\epsilon-\delta$ de continuidade para garantir que f(x) = x - 2 \'e continua em p = 5. Repita o processo para p = 7 e, depois, para um $p\in{D_f}$ qualquer.
+\begin{proof*}
+Em provas por $\epsilon-\delta$, o que significa "Para todo $\epsilon > 0$ existe um $\delta > 0$ tal que se $0 < |x - p| < \delta$, ent\~ao $|f(x) - f(p)| < \epsilon$? Ou melhor, por onde come\c car? Pelo come\c co, claro, ent\~ao definamos nossa fun\c c\~ao f como sendo $f:D_f\rightarrow\mathbb{R}, f(x) = ax + b$
+
+Ao fazer essas demonstra\c c\~oes, n\'os come\c camos com um $\epsilon$ qualquer, isto \'e, escrito formalmente:
+
+\textbf{"Seja $\epsilon > 0.$''}
+
+Agora, como temos um $\epsilon$, vamos considerar a desigualdade e ver o que obtemos a partir disso:
+
+\textbf{"Considere a desigualdade $|f(x) - f(p)| = |(ax + b) - (ap - b)| = |a(x - p)| = |a||x - p|< \epsilon$.'' }
+
+A partir disso, normalmente temos que chegar em $|x - p|$, j\'a que \'e isso que determina o $\delta.$ De fato, apesar de estar omitido, $\delta$ pode ser visto como uma fun\c c\~ao de $\epsilon,$ no sentido $\delta := \delta(\epsilon).$
+No caso desse exemplo, chegamos em $|f(x) - f(p)| = |a||x - p| < \epsilon \Rightarrow |x - p| < \frac{\epsilon}{|a|},$ ou seja, nosso $\delta$ ser\'a $\frac{\epsilon}{|a|}$. Ao continuar com a escrita, obt\'em-se
+
+\textbf{``
+Tome $\delta = \frac{\epsilon}{|a|}.$ Ent~ao, se $0 < |x - a| < \delta$, temos
+$$
+|f(x) - f(p)| = |a||x - p| < |a|\delta = |a|\frac{\epsilon}{|a|},
+$$
+ou seja, $|f(x) - f(p)| < \epsilon,$ provando que $\lim{x\to{a}} f(x) = f(p)$, o que significa que f \'e cont\'inua em p qualquer.
+''}
+
+Juntando isso tudo, temos a demonstra\c c\~ao:
+
+Seja $\epsilon > 0$ qualquer e f(x) = ax + b, em que $a, b\in\mathbb{R}$. Considere a desigualdade 
+$$
+|f(x) - f(p)| = |(ax + b) - (ap - b)| = |a(x - p)| = |a||x - p|< \epsilon.
+$$
+Como j\'a temos $|x - p|$, podemos tomar $\delta = \frac{\epsilon}{|a|}.$ Desta forma, vamos conferir a defini\c c\~ao: Suponha que $0 < |x - p| < \delta.$ Ent\~ao, 
+$$
+|f(x) - f(p)| = |a||x - p| < |a|\delta = |a|\frac{\epsilon}{|a|} = \epsilon.
+$$
+Assim, para todo $\epsilon > 0$, existe um $\delta > 0$ tal que se $0 < |x - p| < \delta$, ent\~ao
+$$
+|f(x) - f(p)| < \epsilon.
+$$
+Em outras palavras, f \'e cont\'inua em p. Assim, tomando a = 1 e b = -2, todos os casos s\~ao provados, pois mostramos que o geral 'e cont\'inuo, concluindo o exerc\'icio.
+\qedsymbol
+\end{proof*}
+
+\subsection{DesContinuidade}
+\subsubsection{Exerc\'icio 2}
+\paragraph{} Identifique na fun\c c\~ao $f:\mathbb{R}\rightarrow\mathbb{R}$ dada por 
+$$
+f(x) = \left\{\begin{array}{ll}
+		2, & \quad \text{se } x < 1,\\
+		x + 5, & \quad \text{se } x\geq 1
+\end{array}\right.
+$$
+quais s\~ao os pontos de $D_f$, em torno do ponto p = 1 para $\epsilon = 1$ que causam descontinuidade na fun\c c\~ao (``Caem fora do intervalo aberto $(f(1) - 1, f(1) + 1))$''). Esta fun\c c\~ao \'e cont\'inua em p = 1? Justifique. 
+\begin{sol*}
+Analisando a fun\c c\~ao acima no ponto 1, observa-se que ela tem valor f(1) = 6. Com isso, o intervalo desejado \'e equivalente a:
+$$
+(f(1) - 1, f(1) + 1) = (6 - 1, 6 + 1) = (5, 7).
+$$
+Pelo jeito que a f foi definida, todos os pontos em $\mathfrak{D}:=\{x\in{D_{f}}: x < 1\} \subset{D_{f}}$ caem fora desse intervalo, pois $f(x) = 2\notin{(5, 7)}$ para todo $x\in\mathfrak{D}.$ Em outras palavras, os pontos de $D_f$ que satisfazem o que foi pedido s\~ao aqueles que pertencem a $\mathfrak{D} = (-\infty, 1)\cap{D_{f}}$. 
+
+Dito isto, verifiquemos a continuidade da f em p = 1. Para mostrar que uma fun\c c\~ao n\~ao \'e cont\'inua em um ponto, \'e precisa tomar a nega\c c\~ao da defini\c c\~ao de continuidade. Em outras palavras:
+
+\textbf{ "Uma fun\c c\~ao f n\~ao \'e cont\'inua no ponto p se existe um $\epsilon > 0$, tal que, para todo $\delta > 0$, se $0 < |x - p| < \delta$, vale $|f(x) - f(p)|\geq\epsilon$."}
+
+Tentaremos aplicar isso nesse item do exerc\'icio. Note que, para f ser cont\'inua neste ponto, \'e preciso que, dado $\epsilon > 0$, ocorra:
+$$
+-\epsilon < f(x) - 6 < \epsilon \Rightarrow -\epsilon + 6 < f(x) < \epsilon + 6.
+$$
+Vamos olhar os casos da defini\c c\~ao. Suponha, primeiramente, que $x\geq 1$. Nesta hip\'otese, segue que 
+$$
+-\epsilon + 6 < f(x) < \epsilon + 6. \Leftrightarrow -\epsilon + 6 < x + 5 < \epsilon + 6 \Rightarrow -\epsilon < x - 1 < \epsilon,
+$$
+ou seja, podemos tomar $\delta = \epsilon$ neste caso e est\'a tudo bem. Por outro lado, assuma que $x < 1$, tal que
+$$
+-\epsilon + 6 < 2 < \epsilon + 6.
+$$
+Note que, para $\epsilon = \frac{1}{2}$, se existisse um $\delta > 0$ tal que
+$$
+|x - 1| < \delta \Rightarrow |f(x) - 2| < \epsilon = \frac{1}{2},
+$$
+ocorreria uma contradi\c c\~ao:
+$$
+\frac{11}{2} < 2 < \frac{13}{2}.
+$$
+De fato, tomando qualquer $0 < \epsilon \leq 4$, \'e poss\'ivel chegar numa contradi\c c\~ao similar, pois se existisse $\delta$ satisfazendo a condi\c c\~ao, ent\~ao ter\'iamos
+$$
+-\epsilon + 6 \leq 2 < 2 < \epsilon + 6.
+$$
+Portanto, conclui-se que f n\~ao \'e cont\'inua no ponto p = 1.
+\qedsymbol
+\end{sol*}
+
+\subsubsection{Exerc\'icio 3} 
+\paragraph{} Parte 1 - Mostre que uma fun\c c\~ao afim \'e cont\'inua em qualquer ponto do seu dom\'inio e que f(x) = -5x + 2 \'e cont\'inua em qualquer ponto do seu dom\'inio.
+\begin{proof*}
+Seja $\epsilon > 0$ qualquer e $f:\mathbb{R}\rightarrow\mathbb{R}$ com f(x) = ax + b a fun\c c\~ao afim, em que $a, b\in\mathbb{R}$. Considere a desigualdade 
+$$
+|f(x) - f(p)| = |(ax + b) - (ap - b)| = |a(x - p)| = |a||x - p|< \epsilon.
+$$
+Como j\'a temos $|x - p|$, podemos tomar $\delta = \frac{\epsilon}{|a|}.$ Desta forma, vamos conferir a defini\c c\~ao: Suponha que $0 < |x - p| < \delta.$ Ent\~ao, 
+$$
+|f(x) - f(p)| = |a||x - p| < |a|\delta = |a|\frac{\epsilon}{|a|} = \epsilon.
+$$
+Assim, para todo $\epsilon > 0$, existe um $\delta > 0$ tal que se $0 < |x - p| < \delta$, ent\~ao
+$$
+|f(x) - f(p)| < \epsilon.
+$$
+Em outras palavras, f \'e cont\'inua em p. Como p \'e um p qualquer, \'e v\'alido para todos os pontos do dom\'inio. Assim, tomando a = -5 e b = +2, f(x) = -5x + 2 \'e cont\'inua em todos os pontos do dom\'inio pois o caso geral tamb\'em \'e.
+
+\qedsymbol
+\end{proof*}
+
+\paragraph{} Parte 2 - Mostre que as fun\c c\~oes $f(x) = x^3$ \'e cont\'inua em p = 1 e que $f(x) = x^4$ \'e cont\'inua em p = 2. O $\epsilon$ \'e qualquer? Isso \'e um problema, uma vez que continuidade \'e uma an\'alise local?
+\begin{sol*}
+Comecemos pelo caso de $f(x) = x^3$. Seja $\epsilon > 0$ qualquer e considere a desigualdade
+$$
+-\epsilon < x^3 - 1^3 < \epsilon \Leftrightarrow -\epsilon < x^3 - 1 < \epsilon.
+$$
+
+Note que, como visto anteriormente, $x^3 - 1 = (x - 1)(x^2 + x + 1)$, tal que
+$$
+|x^3 - 1| = |x - 1||x^2 + x + 1| \leq |x - 1|(|x^2| + |x| + 1).
+$$
+Seja $\delta \leq 1$. Se $|x - 1| < \delta$, ent\~ao $|x| = |x - 1 + 1| \leq |x - 1| + 1 < 1 + 1 = 2.$ Assim, temos
+$$
+|x^3 - 1| = |x - 1||x^2 + x + 1| \leq |x - 1|(|x^2| + |x| + 1) < |x-1|(|4| + |2| + 1) = 7|x - 1|.
+$$
+Em outras palavras, se definirmos $\delta = \min{1,\frac{\epsilon}{7}}$, segue o seguinte:
+
+Dado $\epsilon > 0$, suponha que $\delta = \min{1, \frac{\epsilon}{7}}$. Ent\~ao, se $|x - 1| < \delta,$ obtemos, \textbf{para qualquer} $\epsilon > 0$,
+$$
+|f(x) - f(1)| = |x^3 - 1| < 7|x - 1| < 7\delta \leq \epsilon \Rightarrow |f(x) - f(1)| < \epsilon.
+$$
+Portanto, $f(x) = x^3$ \'e cont\'inua em p = 1.
+
+\end{sol*}
+
+\subsection{Limites: Mais pr\'atico} 
+\subsubsection{Exerc\'icio 4} 
+\paragraph{} Parte 1 - Explicite o dom\'inio da fun\c c\~ao e exiba o passo a passo da fatora\c c\~ao polinomial da fun\c c\~ao
+$$
+f(x) = \frac{x^3 + 1}{x^2  + 4x + 3}.
+$$
+\begin{sol*}
+Comecemos pelo dom\'inio. Note que 
+$$
+	x^2 + 4x + 3 = 0 \iff x\in\{-1, -3\},
+$$
+tal que o dom\'inio de f \'e $D_f = \mathbb{R}\slash\{-1, -3\} = \{x\in\mathbb{R}: x\neq{-1} \text{ e } x\neq{-3}\}.$ Como o polin\^omio possui duas ra\'izes, fica mais simples de fator\'a-lo neste caso:
+$$
+x^2 + 4x + 3 = (x + 1)(x + 3),
+$$
+resta fatorar o numerador. Note que, no caso dele, -1 \'e uma ra\'iz, j\'a que $-1^3 + 1 = -1 + 1 = 0$, ent\~ao vamos buscar fatorar (x + 1) dele. Com efeito, come\c camos dividindo o primeiro termo por x para reduzir seu grau a 1, multiplicar (x + 1) por x e subtrair do polin\^omio inicial:
+$$
+\frac{x^2}{x} = x \Rightarrow x^2 + 4x + 3 - x(x + 1) = x^2 + 4x + 3 - x^2 - x = 3x + 3.
+$$
+Repetiremos isso, agora para remover o x:
+$$
+\frac{3x}{x} = 3 \Rightarrow 3x + 3 - 3(x + 1) = 3x - 3x + 3 - 3 = 0.
+$$
+Somamos os dois n\'umeros usados para dividir, isto \'e, x e 3 - este passo \'e preciso para obter o polin\^omio h(x) que aparece em $(x - a)h(x)$, neste caso sendo h(x) = x + 3 - e obtemos a fatora\c c\~ao:
+$$
+x^2 + 4x + 3 = (x + 1)(x + 3).
+$$
+Agora, simplifiquemos a fra\c c\~ao:
+$$
+f(x) = \frac{x^3 + 1}{x^2  + 4x + 3} = \frac{(x + 1)(x + 3)}{(x + 1)(x + 3)} = 1.
+$$
+Logo, ap\'os fatorar a fra\c c\~ao, chegamos na forma fatorada de f(x)=1.
+\qedsymbol
+\end{sol*}
+
+\paragraph{} Parte 2 - Considere a mesma f do exerc\'icio anterior. A fun\c c\~ao g, definida tal que ela \'e igual a f em todos os pontos diferentes de menos 1, explicitamente
+$$
+g(x) = \frac{x^2 - x + 1}{x + 3}
+$$
+\'e uma fun\c c\~ao igual a f ou uma simplifica\c c\~ao de f?
+\begin{sol*}
+Ela \'e uma simplifica\c c\~ao de f, visto que 
+$$
+g(x)\frac{x+1}{x+1} = \frac{x^2 - x + 1}{x + 3}\frac{x+1}{x+1} = \frac{x^3 - x^2 + x + x^2 - x - 1}{(x+1)(x+3)} = \frac{x^3 - 1}{x^2 + 4x + 3} = f(x).
+$$
+\qedsymbol
+\end{sol*}
+
+\paragraph{} Parte 3 - Qual \'e a t\'ecnica que pode ser aplicada quando numerador e denominador t\^em uma ra\'iz em comum para calcular o limite de fun\c c\~oes racionais em pontos onde elas n\~ao est\~ao definidas? Por que ela funciona?
+\begin{sol*}
+Quando ambos t\^em uma ra\'iz comum, ela pode ser fatorada do polin\^omio, isto \'e, se q(x) for um polin\^omio com ra'iz a, ele pode ser escrito como o produto a diferen\c ca da vari\'avel e da ra\'iz por outro polin\^omio:
+$$
+q(x) = (x - a)h(x), a\in\mathbb{R}.
+$$
+Com base nisso, se o numerador e o denominador t\^em uma ra\'iz comum, segue que a fra\c c\~ao pode ser escrita como:
+$$
+f(x) = \frac{p(x)}{q(x)} = \frac{(x-a)h_1(x)}{(x-a)(h_2(x))} = \frac{h_1(x)}{h_2(x)}.
+$$
+Desta forma, pode-se reescrever a fra\c c\~ao at\'e que os pontos em que o denominador se torna problem\'atico (q(x) = 0) sejam removidos. Por conta disso, calcular o limite se torna uma aplica\c c\~ao simples das propriedades vistas anteriormente, pois n\~ao haver\'a mais o problema do denominador que se anula.
+\qedsymbol
+\end{sol*}
+
+\subsubsection{Exerc\'icio 5}
+\paragraph{} Parte 1 - Crie exemplos de c\'alculos de limite em que sejam aplicadas as t\'ecnicas da divis\~ao, soma e produto de limites. 
+\begin{sol*}
+Vamos analisar cada caso separadamente. 
+Come\c cando pela soma, considere a fun\c c\~ao $f_1(x) = ax$ e a fun\c c\~ao $f_2(x) = b$, para as quais, dado um $p\in{D_{f_1}}\cap{D_{f_2}}, \lim_{x\to{p}}f_1(x) = ap$ e $\lim_{x\to{p}}f_2(x) = b.$ Nessas condi\c c\~oes, utilizando a propriedade da soma de limites, \'e poss\'ivel encontrar o limite da fun\c c\~ao afim ax + b quando x tende a p:
+$$
+\lim_{x\to{p}}ax + b = \lim_{x\to{p}}ax + \lim_{x\to{p}}b = ap + b.
+$$
+
+Um exemplo cl\'assico de aplica\c c\~ao de produto \'e com as fun\c c\~oes utiliza $f(x) = g(x) = x$ e $p\in{D_f\cap D_g}$. Como $\lim_{x\to{p}}f(x) = \lim_{x\to{p}} g(x) = p$, segue que 
+$$
+\lim_{x\to{p}}x^2 = \lim_{x\to{p}}x\lim_{x\to{p}}x = \lim_{x\to{p}}f(x)\lim_{x\to{p}}g(x) = p\cdot{p} = p^2
+$$
+
+Por fim, quanto \`a divis\~ao, sejam $f(x) = x^2 - 9$ e $g(x) = x + 3$. Ent\~ao, $\lim_{x\to{p}}f(x) = p^2 - 9, \lim_{x\to{p}}g(x) = p + 3$
+tal que
+$$
+\lim_{x\to{p}}x - 3 = \lim_{x\to{p}}\frac{(x - 3)(x + 3)}{x + 3} = \lim_{x\to{p}}\frac{x^2 - 9}{x + 3} = \lim_{x\to{p}}\frac{f(x)}{g(x)} = \frac{p^2 - 9}{p + 3} = p - 3.
+$$
+\qedsymbol
+\end{sol*}
+\paragraph{} Parte 2 - Explicite o dom\'inio das fun\c c\~oes racionais abaixo:
+$$
+	f(x) = \frac{x^2 - 5x + 6}{x - 2}, \hspace{0.5cm} g(x) = \frac{x^3 + x^2 - x - 1}{x - 1}, \hspace{0.5cm} h(x) = \frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9}.
+$$
+\begin{sol*}
+Para definir o dom\'inio de cada fun\c c\~ao racional, \'e preciso analisar os pontos em que o denominador "d\'a problema", basicamente, os pontos em que seria igual a dividir por zero, o que corresponde \`as ra\'izes dos polin\^omios do denominador. Neste prisma, vamos analisar cada item acima e, com isso, definir o dom\'inio:
+\begin{align*}
+		x - 2 = 0 \Leftrightarrow x = 2 \\
+		x - 1 = 0 \Leftrightarrow x = 1 \\
+		x^2 - 6x + 9 \Leftrightarrow x = 3
+\end{align*}
+Obtendo essas ra\'izes, \'e poss\'ivel definir o dom\'inio das fun\c c\~oes tomando o conjunto dos reais menos esses n\'umeros. Assim, chegamos em:
+$$
+D_f = \mathbb{R}\slash\{2\}, D_g = \mathbb{R}\slash\{1\}, D_h = \mathbb{R}\slash\{3\},
+$$
+Concluindo a busca pelos dom\'inios das fun\c c\~oes.
+\qedsymbol
+\end{sol*}
+\paragraph{} Parte 3 - Calcule cada um dos limites, deixando claro o passo a passo utilizado: 
+$$
+\lim_{x\to1} \frac{x^3 + x^2 - x - 1}{x - 1}, \hspace{0.5cm} \lim_{x\to3}\frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9}.
+$$
+\begin{sol*}
+A priori, utilizaremos o resultado de que, dada uma fun\c c\~ao racional com 0 em x = p tanto no numerador quanto no denominador, podemos fatorar (x - p) de ambos e simplificar a fra\c c\~ao. Observando o denominador da primeira fun\c c\~ao, \'e poss\'ivel perceber que, de fato, 1 \'e um 0 dele, pois 1 - 1 = 0. Analogamente, 1 \'e um zero do numerador, pois $1^3 + 1^2 - 1 - 1 = 2 - 2 = 0$. Fatoremos do numerador o termo (x - 1):
+$$
+\frac{(x^3 + x^2 - x - 1)}{x - 1} = x^2 + 2x + 1.
+$$
+Deste modo, chegamos em: 
+$$
+\lim_{x\to{1}}\frac{x^3 + x^2 - x - 1}{x - 1} = \lim_{x\to{1}}x^2 + 2x + 1 = 1 + 2 + 1 = 4.
+$$
+
+Vejamos o outro limite agora. O primeiro passo \'e conferir se o ponto no qual o limite est\'a sendo tomado \'e uma ra\'iz. Com efeito:
+$$
+3^3 - 3^2 - 21\cdot{3} + 45 = 27 - 9 - 63 + 45 = 72 - 72 = 0 
+$$
+e
+$$
+3^2 - 6\cdot{3} + 9 = 9 + 9 - 18 = 0.
+$$
+Com isso, conseguimos fatorar (x - 3) dos polin\^omios, de forma a obter
+$$
+\frac{x^3 - x^2 - 21x + 45}{x-3} = x^2 + 2x - 15
+$$
+e
+$$
+\frac{x^2 - 6x + 9}{x - 3}  = (x - 3)^2
+$$
+Mas, note que $3^2 + 2\cdot{3} - 15 = 15 - 15 = 0$, tal que podemos fatorar novamente x - 3:
+$$
+\frac{x^2 + 2x - 15}{x - 3} = x + 5
+$$
+Desta forma, obtemos, juntando as tr\^es fatora\c c\~oes:
+$$
+\lim_{x\to3}\frac{x^3 - x^2 - 21x + 45}{x^2 - 6x + 9} = \lim_{x\to3}\frac{(x - 3)^2 (x+5)}{(x - 3)^2} = \lim_{x\to3}x + 5 = 8.
+$$
+\qedsymbol
+\end{sol*}
