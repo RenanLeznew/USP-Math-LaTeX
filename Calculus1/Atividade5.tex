@@ -1,7 +1,10 @@
 \section{Reta Tangente, Derivada, Derivada de Algumas fun\c c\~oes, Regra da Cadeia}
 \subsection[Derivadas de Ordem Superior]{Derivadas de Ordem Superior}
-\subsubsection{Exerc\'icio 1.}
-\paragraph{} Nosso objetivo \'e obter f\'ormulas gerais para a n-\'esima derivada de $\cos(x) \text{ e } \frac{1}{x}$. Para isso, vamos levar em conta 
+\subsubsection{Exerc\'icio 1.} Encontre uma forma de expressar as derivadas de ordem qualquer 
+das fun\c c\~oes $\cos(x)$ e 1/x.
+
+\begin{proof*}
+Nosso objetivo \'e obter f\'ormulas gerais para a n-\'esima derivada de $\cos(x) \text{ e } \frac{1}{x}$. Para isso, vamos levar em conta 
 o processo realizado com rela\c c\~ao ao seno. A natureza c\'iclica de ambas as fun\c c\~oes sinaliza
 a liga\c c\~ao entre as derivadas. Com efeito, 
 
@@ -20,7 +23,180 @@ $$
 	\cos(x), &\quad x\equiv 0\text{ mod}4 \\
 	-\sin(x), &\quad x\equiv 1\text{ mod}4\\
 	-\cos(x), &\quad x\equiv 2\text{ mod}4\\
-	\sin(x), &\quad x\equiv 3\text{ mod}4 \\
+	\sin(x), &\quad x\equiv 3\text{ mod}4 
 \end{array}
 \right.
 $$
+Agora, lidemos com a quest\~ao da inversa de x. Note que $\frac{1}{x} = x^{-1}$, e provemos por indu\c c\~ao que a 
+n-\'esima derivada de x \'e $\frac{d^n}{d x^n}\frac{1}{x} = (-1)^n\frac{1}{x^{n+1}}$. Come\c cando 
+com o caso base n = 1:
+$$
+\frac{d}{dx}\frac{1}{x} = \frac{d}{dx}x^{-1} = -x^{-2} = -\frac{1}{x^2}.
+$$
+Agora, suponha que seja verdade para o caso n-1, isto \'e, 
+$$
+\frac{d^{n-1}}{d x^{n-1}}\frac{1}{x} = (-1)^{n-1}\frac{1}{x^n}. 
+$$
+Ent\~ao, temos:
+$$
+\frac{d^{n}}{d x^{n}}\frac{1}{x} = \frac{d}{dx}\biggl(\frac{d^{n-1}}{d x^{n-1}}\frac{1}{x}\biggr) = 
+$$
+$$
+=\frac{d}{dx}\biggl((-1)^{n-1}\frac{1}{x^n}\biggr) 
+= (-1)^{n-1}\frac{d}{dx}\frac{1}{x^n} = (-1)^{n-1}(-1)\frac{1}{x^{n+1}}
+= \frac{(-1)^n}{x^{n+1}}.
+$$
+Portanto, segue que
+$$
+\frac{d^{n}}{d x^{n}}\frac{1}{x} = \frac{(-1)^n}{x^{n+1}}.
+$$
+\end{proof*}
+
+\subsubsection{Exerc\'icio 2.}Determine a f\'ormula da derivada de ordem superior de duas das fun\c c\~oes abaixo:
+\begin{align*}
+	a)f(x) = e^{ax}, a\neq{0} \\
+	b)h(x) = \ln(ax), a\geq1 \\
+	c)i(x) = \sin(ax)
+\end{align*}
+
+\begin{proof*}
+Considere uma fun\c c\~ao f(ax) qualquer, com $a\in{X}$, $X\subseteq{\mathbb{R}}$. Quando derivamos
+a fun\c c\~ao com rela\c c\~ao a x, obtemos, pela regra da cadeia:
+$$
+\frac{d}{dx}f(ax) = f^{'}(ax)\frac{d}{dx}ax = f^{'}(ax)a.
+$$
+Por indu\c c\~ao, supondo que o caso n-1 seja verdade, isto \'e, $\frac{d^{n-1}}{d x^{n-1}}f(ax) = a^{n-1}f^{(n-1)}(ax)$,
+temos o caso para um n geral:
+$$
+\frac{d^n}{d x^n}f(ax) = \frac{d}{dx}\biggl(\frac{d^{n-1}}{d x^{n-1}}f(ax)\biggr) =
+$$
+$$
+= \frac{d}{dx}a^{n-1}f^{(n-1)}(ax) = a\cdot{a^{n-1}}f^{(n)}(ax) = a^{n}f^{(n)}(ax)
+$$
+
+Para $a\in{\mathbb{R}\backslash\{0\}}$, defina $f(x) = e^x$. Pelo processo visto acima, segue que:
+$$
+f^{(n)}(ax) = a^nf^{n}(ax) = a^ne^{ax}
+$$
+
+Por outro lado, para $a\in{\mathbb{R}_{\geq1}}$, coloque $f(x) = \ln(ax)$ e note que 
+$$
+\frac{d^n}{dx^n}\ln(x) = \frac{d^{n-1}}{dx^{n-1}}\frac{1}{x},
+$$
+tal que 
+$$
+\frac{d^n}{dx^n}\ln(ax) = a^{n}\frac{1}{a}\frac{1}{x^{n+1}}
+$$
+\end{proof*}
+
+\subsubsection{Exerc\'icio 3.} Dada $f(x) = ax^2 + bx + c, a\neq{0}$, se $a > 0$, mostre que 
+a concavidade da par\'abola est\'a virada para cima e que, caso contr\'ario, para baixo.
+
+\begin{proof*}
+Segundo o que foi visto nas aulas de c\'alculo, a concavidade de uma fun\c c\~ao \'e determinada
+por sua segunda derivada. Explicitamente falando, isso quer dizer que a concavidade ser\'a para
+cima se $f^{''}(x) > 0$ e para baixo caso contr\'ario.
+
+Com base nisso, analisemos a quest\~ao com rela\c c\~ao a f(x) do exerc\'icio. De fato, derivando 
+duas vezes com respeito a x por meio da regra do tombo, chegamos em:
+$$
+\frac{d^2}{dx^2}f(x) = 2a.
+$$
+Como 2 \'e uma constante, o sinal da segunda derivada \'e puramente determinado pelo valor de a,
+tal que, se $a > 0$, ent\~ao $2a > 0$ e, logo, $f^{''}(x) > 0$, o que significa que a concavidade
+\'e para cima. Analogamente, caso $a < 0$, segue que $2a < 0$, de modo tal que $f^{''}(x) < 0$ e
+a concavidade \'e para baixo. Portanto, segue o que quer\'iamos.
+\qedsymbol 
+\end{proof*}
+
+\subsubsection{Exerc\'icio 4.} 
+Com base nos itens anteriores, estude a fun\c c\~ao 
+$$
+f(x) = \ln(|x|), \quad x\neq{0}
+$$
+por completo, incluindo os limites em infinito e infinito negativo.
+
+\begin{proof*}
+O primeiro passo \'e separar a fun\c c\~ao com base no m\'odulo de x. Neste prisma,
+$$
+f(x) = \left\{\begin{array}{ll}
+	\ln(x), \quad& x > 0\\
+	\ln(-x), \quad& x < 0
+\end{array}\right.
+$$
+Comecemos pelo caso em que $x > 0$, ou seja, quando
+$$
+f(x) = \ln(x).
+$$
+Sabe-se que o logaritmo \'e cont'inua nesse intervalo $(0, \infty)$, 
+ou seja, dado $x_0 > 0$, temos
+$$
+\lim_{x\to{x_0}}\ln(x) = \ln(x_0).
+$$
+Al\'em disso, com rela\c c\~ao \`as derivadas da fun\c c\~ao, podemos determinar que a concavidade do 
+gr\'afico da fun\c c\~ao \'e sempre para baixo, pois
+$$
+\frac{d^2}{dx^2}\ln(x) = -\frac{1}{x^2} < 0, \quad \forall x\neq0
+$$
+e que, com rela\c c\~ao ao seu crescimento,
+$$
+\frac{d}{dx}\ln(x) = \frac{1}{x} > 0, \quad \forall x > 0.
+$$
+Em outras palavras, a fun\c c\~ao \'e estritamente crescente no intervalo de 0 a infinito.
+
+Agora, precisamos estudar o caso em que $x < 0$. Neste caso, a fun\c c\~ao se torna
+$$
+f(x) = \ln(-x), \quad x < 0.
+$$
+J\'a que $-x\in(0, \infty)$, a fun\c c\~ao continua sendo con\t'inua no intervalo, tal que
+$$
+\lim_{x\to{x_0}}\ln(-x) = \ln(-x_0), \quad x_0 < 0.
+$$
+Por outro lado, diferente do caso anterior, ao derivarmos a nova fun\c c\~ao, chegamos em:
+$$
+\frac{d}{dx}\ln(-x) = -\frac{1}{x}\cdot\frac{d}{dx}(-x) = \frac{1}{x} < 0, \quad \forall x < 0
+$$
+Com isto, conclu\'imos que a fun\c c\~ao \'e decrescente para x negativo. Agora, analisemos a 
+segunda derivada com respeito a x para que possamos concluir sobre a concavidade:
+$$
+\frac{d^2}{d x^2}ln(-x) = \frac{d}{dx}\frac{1}{x} = -\frac{1}{x^2} < 0, \quad \forall x < 0. 
+$$
+Portanto, a fun\c c\~ao tem concavidade para baixo quando x \'e negativo.
+\end{proof*}
+
+\subsubsection{Exerc\'icio 5.}
+Estenda a constru\c c\~ao do polin\^omio de Taylor para os graus 3, 4 e 5. Al\'em disto, escolha 
+duas fun\c c\~oes do Exerc\'icio 2 para aplicar o conceito do polin\^omio de Taylor e esboce seus
+gr\'aficos.
+\begin{proof*}
+	Considere uma fun\c c\~ao qualquer f(x) e seja 
+$$
+h(x) = f(x_0) + f^{(1)}(x-x_0) + \frac{f^{(2)}}{2}(x-x_0)^2 + m_3(x-x_0)^3.
+$$
+Note que, quando $x = x_0, h(x_0) = f(x_0)$, de onde obtemos $h^{(3)}(x_0) = f^{(3)}(x_0)$. Por outro
+lado, 
+$$
+\frac{d^3}{dx^3}h(x) = 6m_3
+$$
+\end{proof*}
+
+\subsection{Taxas de Varia\c c\~ao.}
+\subsubsection{Exerc\'icio 1.} Com a aplica\c c\~ao da segunda lei de Newton, diga se 
+o movimento da part\'icula dada por 
+$$
+s(t) = (t^2 + e)ln(t), \quad t>0, \quad s(0) = 0
+$$
+\'e el\'astico.
+\begin{proof*}
+Para determinar se um movimento el\'astico, \'e necess\'ario analisar sua segunda derivada. De 
+forma expl\'icita, uma fun\c c\~ao de tempo x(t) descrevendo uma part\'icula ser\'a el\'astica se 
+$$
+\ddot{x}(t) = -kx(t), \quad k\in\mathbb{R},
+$$
+em que $\ddot{x}(t)$ denota a segunda derivada de x com respeito a t, ou seja, sua acelera\c c\~ao com o tempo. Vamos aplicar esta ideia 
+\`a fun\c c\~ao fornecida:
+$$
+a(t) = \frac{d^2}{dx^2} s(t) = 2\ln (t) -1 - \frac{e}{t^2} + 4 \neq -kx(t)
+$$
+Portanto, o movimento n\~ao \'e el\'astico.
+\end{proof*}
