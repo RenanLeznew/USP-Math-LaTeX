@@ -170,22 +170,7 @@ por completo, incluindo os limites em infinito e infinito negativo.
 
 	Agora, precisamos estudar o caso em que $x < 0$. Neste caso, a fun\c c\~ao se torna
 	\[
-		f
-		(
-		x
-		)
-		=
-		\ln
-		(
-		-
-		x
-		)
-		,
-		\quad
-		x
-		<
-		0
-		.
+		f(x) = \ln(-x),\quad x < 0.
 	\]
 	J\'a que $-x\in(0, \infty)$, a fun\c c\~ao continua sendo con\t'inua no
 	intervalo, tal que
@@ -204,6 +189,37 @@ por completo, incluindo os limites em infinito e infinito negativo.
 		\frac{d^{2}}{d x^{2}}ln(-x) = \frac{d}{dx}\frac{1}{x}= -\frac{1}{x^{2}}< 0, \quad \forall x < 0.
 	\]
 	Portanto, a fun\c c\~ao tem concavidade para baixo quando x \'e negativo.
+
+	Resta procurarmos ass\'intotas para essa fun\c c\~ao. Comecemos pelas ass\'intotas horizontais,
+	ou seja, provemos o seguinte limite:
+	$$
+		\lim_{x\to\infty} \ln(|x|) = \infty.
+	$$
+	Seja $\epsilon > 0$. Buscamos um $\delta > 0$ tal que se $x > \delta$, ent\~ao $|\ln(|x|)| = \ln(|x|) > \epsilon$.
+	Em outras palavras $\ln(|x|) > \epsilon$. Manipulando a express\~ao:
+	$$
+		\ln(|x|) > \epsilon \Rightarrow |x| >  e^{\epsilon}.
+	$$
+	Assim, tomando $\delta = e^{\epsilon}$, segue que se $x > \delta$,
+	$$
+		\lim_{x\to+\infty}\ln(|x|) = \infty.
+	$$
+	Logo, a fun\c c\~ao n\~ao possui ass\'intotas horizontais. Com rel\c c\~ao \`as ass\'intotas
+	verticais, a fun\c c\~ao inversa dela, a exponencial, nunca assume o valor zero, ent\~ao \'e esse valor
+	que ser\'a uma ass\'intota vertical da fun\c c\~ao. Verifiquemos se \'e, realmente, uma ass\'intota (ou seja, um dos 
+	limites \'e infinito) calculando o seguinte limite:
+	$$
+		\lim_{x\to0}\ln(|x|) = -\infty.
+	$$
+	A priori, seja $\epsilon > 0$ qualquer. Segue que, para o limite acontecer, 
+	$$
+		-\epsilon > \ln(|x|) \Rightarrow e^{-\epsilon} > |x| \Rightarrow \frac{1}{e^{\epsilon}} > |x| 
+	$$
+	Assim, basta tomar $\delta = e^{-\epsilon}$ e, dado que $|x| < \delta$, segue que:
+	$$
+		\ln(|x|) < ln(\delta) = ln(e^{-\epsilon}) = -\epsilon.
+	$$
+	Portanto, 0 \'e uma ass\'intota vertical da fun\c c\~ao.
 \end{proof*}
 
 \subsubsection{Exerc\'icio 5.}
@@ -211,29 +227,30 @@ Estenda a constru\c c\~ao do polin\^omio de Taylor para os graus 3, 4 e 5. Al\'e
 disto, escolha duas fun\c c\~oes do Exerc\'icio 2 para aplicar o conceito do polin\^omio
 de Taylor e esboce seus gr\'aficos.
 \begin{proof*}
-	Considere uma fun\c c\~ao qualquer f(x) e seja
+	Considere uma fun\c c\~ao qualquer f(x) e seja $m_n$ tal que
 	\[
-		h(x) = f(x_{0}) + \sum_{i=1}^{n}m_{i}(x-x_{0})^{i}.
+		f(x) = f(x_{0}) + \sum_{i=1}^{n}m_{i}(x-x_{0})^{i}.
 	\]
 	Vamos mostrar por indu\c c\~ao que cada coeficiente
-	$m_{i}= \frac{f^{(i)(x_0)}}{i!}$. Com efeito, suponha v\'alido para n-1. Ent\~ao,
+	$m_{i}= \frac{f^{(i)(x_0)}}{i!}$, considerando os casos bases mostrados no v\'ideo.
+	Com efeito, suponha v\'alido para n-1. Ent\~ao,
 	podemos definir uma fun\c c\~ao com cada $m_{i}= \frac{f^{(i)(x_0)}}{i!}$ da
 	seguinte forma:
 	\[
-		\mathfrak{h}(x) = f(x_{0}) + \sum_{i=1}^{n-1}\frac{f^{(i)}(x)}{i!}(x-x_{0})^{i}. \Rightarrow \mathfrak{h}(x_{0}) = f(x_{0})
+		\mathfrak{h}(x) = \sum_{i=0}^{n-1}\frac{f^{(i)}(x)}{i!}(x-x_{0})^{i}. 
 	\]
-	Nessas condi\c c\~oes, seja $h(x) = f(x_{0}) - \mathfrak{h}(x) - m_{n}(x-x_{0})
-	^{n}$ tal que $h(x_{0}) = 0$. Temos:
+	Nessas condi\c c\~oes, seja $p(x) = f(x_{0}) - \mathfrak{h}(x) - m_{n}(x-x_{0})
+	^{n}$ tal que $p(x_{0}) = 0$. Como $\mathfrak{h}^{(n)}(x) = 0$ para todo x, segue que:
 	\[
-		\frac{d^{n-1}h(x)}{dx^{n-1}}= \frac{d^{n-1}\mathfrak{h}(x)}{dx^{n-1}}- n!m_{n}(x-x_{0}) = \frac{(n-1)!f^{(n-1)}(x_{0})}{(n-1)!}- n!m_{n}(x-x_{0}) = f^{(n-1)}(x_{0}) - n!m_{n}(x-x_{0}).
+		0 = \frac{d^n p(x_0)}{dx^n} = \frac{d^n f_{x_0}}{dx^n} - \frac{d^n \mathfrak{h}(x_0)}{dx^n} - n!m_n = \frac{d^n f^{(n)}(x_0)}{dx^n} - n!m_n
 	\]
-	Agora, vamos derivar novamente para obtermos o caso n:
+	Logo, 
 	\[
-		f^{(n)}(x_{0}) - n!m_{n}= \frac{d^{n}h(x)}{dx^{n}}\Rightarrow f^{(n)}(x_{0}) - n!m_{n}= \frac{d^{n}h(x_{0})}{dx^{n}}= 0 \Rightarrow f^{(n)}(x_{0}) = n!m_{n}\Rightarrow \frac{f^{(n)}}{n!}= m_{n}
+		0 = f^{(n)}(x_0) - n!m_n \Rightarrow m_n = \frac{f^{(n)}(x_0)}{n!}	
 	\]
-	Portanto, temos
+	Portanto, definindo $f(x) = \mathfrak{h}(x) + m_n(x-x_0)^n$, temos:
 	\[
-		h(x) = \sum_{i=0}^{n}\frac{f^{(i)}(x_{0})}{i!}(x-x_{0})^{i}
+		f(x) = \sum_{i=0}^{n}\frac{f^{(i)}(x_{0})}{i!}(x-x_{0})^{i}
 	\]
 	Com isso, seguem os casos desejados!
 	\begin{itemize}
@@ -256,16 +273,19 @@ de Taylor e esboce seus gr\'aficos.
 	\begin{itemize}
 		\item $e^{ax}$
 			\[
-				e^{ax}= e^{ax_0}+ ae^{ax_0}(x-x_{0}) + \frac{a^{2}e^{ax_0}}{2}(x-x_{0})^{2}
+				e^{ax}= e^{ax_0}+ ae^{ax_0}(x-x_{0}) + \frac{a^{2}e^{ax_0}}{2}(x-x_{0})^{2} = e^{ax_0}(1 + a(x-x_0) + \frac{a^2}{2}(x-x_0)^2 + \frac{a^3}{6}(x-x_0)^3) =
 			\]
-
+			De fato, 
+			$$
+			e^{ax_0}(1 + a(x-x_0) + \frac{a^2}{2}(x-x_0)^2 + \frac{a^3}{6}(x-x_0)^3) \approxeq e^{ax_0}e^{a(x-x_0)} = e^{ax_0 + ax - ax_0} = e^{ax}.
+			$$
 			Comparemos os dois gr\'aficos, tomando a = 2 e $x_{0}= 2$ como exemplos,
 			para ilustrar a compara\c c\~ao entre a fun\c c\~ao original e a aproxima\c
 			c\~ao:
 
 			\begin{tikzpicture}
-				\begin{axis}[]
-					\addplot[ domain = 0:10, smooth, ] {exp(2*x)}; \legend{ Gr\'afico de {$e^{ax}, a = 2$} }
+				\begin{axis}
+					\addplot[ domain = 0:10, smooth,] {exp(2*x)}; \legend{ Gr\'afico de {$e^{ax}, a = 2$} }
 				\end{axis}
 			\end{tikzpicture}
 			\begin{tikzpicture}
@@ -361,8 +381,9 @@ cada passagem e esbo\c cando o gr\'afico:
 	Disto, conclu\'imos que a fun\c c\~ao g \'e estritamente crescente para x
 	menor que $\frac{1}{3}$ e estritamente decrescente para x maior que
 	$\frac{1}{3}$. Ademais, no ponto $x = \frac{1}{3}$, ela tem um ponto de m\'aximo
-	local, pois sua derivada \'e zero e ela come\c ca a diminuir logo ap\'os este
-	ponto Por fim, analisando a segunda derivada,
+	local, pois sua derivada \'e zero e ela come\c ca a diminuir \`a direita do ponto 
+	(afinal, $x > \frac{1}{3}$ faz com que a fun\c c\~ao decres\c ca). 
+	Por fim, analisando a segunda derivada,
 	\[
 		g^{''}(x) = -3e^{-3x}(-3x + 1) -3e^{-3x}= -3e^{-3x}(-3x + 1) = -3g^{'}(x).
 	\]
@@ -381,7 +402,8 @@ cada passagem e esbo\c cando o gr\'afico:
 	c\~ao ser\'a estritamente crescente, mas ser\'a estritamente decrescente
 	quando $-\ln(2) > x.$ No ponto $-\ln(2) = x,$ a fun\c c\~ao possui um ponto de
 	inflex\~ao que ser\'a um m\'inimo local, visto que a exponencial come\c car\'a
-	a crescer e dominar a fun\c c\~ao. Com rela\c c\~ao \`a segunda derivada,
+	a crescer e dominar a fun\c c\~ao, pois em $x > -\ln(2)$, ou seja, \`a direito do ponto de
+	anulamento, a fun\c c\~ao \'e crescente. Com rela\c c\~ao \`a segunda derivada,
 	temos:
 	\[
 		f^{''}(x) = e^{-x},
@@ -391,9 +413,15 @@ cada passagem e esbo\c cando o gr\'afico:
 
 	\begin{tikzpicture}
 		\begin{axis}[]
+			\addplot[ domain = 0:10, smooth, ] {x/(x+1)}; \legend{ Gr\'afico de y}
+		\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[]
 			\addplot[ domain = 0:10, smooth, ] {x*exp(-3*x)}; \legend{ Gr\'afico de g(x)}
 		\end{axis}
 	\end{tikzpicture}
+
 	\begin{tikzpicture}
 		\begin{axis}[]
 			\addplot[ domain = -90:90, smooth, ] {2*x + 1 + exp(-x)}; \legend{ Gr\'afico de f(x) }
