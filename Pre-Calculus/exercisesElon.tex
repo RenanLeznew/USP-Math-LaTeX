@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+
+\newtheorem*{exercise*}{Enunciado}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\title{Exerc\'icios do Elon}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \newpage
+    \tableofcontents
+    \newpage
+    
+    \section{Cap\'itulo 3}
+    \subsection{Exerc\'icio 1}
+    \subsection{Exerc\'icio 2}
+    \begin{exercise*}
+        $f:X\rightarrow{Y}$ \'e injetora se, e somente se, existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$.
+    \end{exercise*}
+    
+    \paragraph{} Comecemos pela implica\c c\~ao 
+    \textit{\begin{quote}"    
+    Se $f:X\rightarrow{Y}$ \'e injetora, ent\~ao
+    existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$.
+    "\end{quote}} 
+    A ideia
+    aqui \'e que n\'os definamos uma "coisa" $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$
+    que n\'os ainda n\~ao sabemos se \'e uma fun\c c\~ao ou n\~ao. A partir disso, vamos mostrar que,
+    de fato, essa g \'e uma fun\c c\~ao. Em outras palavras, mostrar que ela \'e bem-definida (o que
+    significa que se $y_1 = y_2$, ent\~ao $g(y_1) = g(y_2)$).
+
+    A priori, suponha que $y_1 = y_2$, mas $g(y_1) \neq g(y_2)$. Suponha tamb\'em que $y_1, y_2$ 
+    pertencem \`a imagem da fun\c c\~ao f. Em outras palavras, $y_1 = f(x_1), y_2 = f(x_2)$ para 
+    algum $x_1, x_2\in{X}$. Neste caso, se $g(y_1) \neq g(y_2)$, ent\~ao $g(f(x_1)) = x_1 \neq 
+    x_2 = g(f(x_2))$. No entanto, isso \'e uma contradi\c c\~ao, pois f \'e injetora, tal que
+    $y_1 = y_2$ implica que $f(x_1) = f(x_2)$. 
+    
+    Agora, lidemos com o caso em que $y_1, y_2$ n\~ao pertencem \`a imagem de f. Com isso, podemos
+    definir a fun\c c\~ao g da maneira que desejarmos, pois o caso que importa \'e quando ela \'e
+    aplicada a algum elemento da imagem de f. Assim, definindo, por exemplo, $g(y) = 1$ para todo
+    y fora da imagem de f. Ent\~ao, se $y_1 = y_2,$ segue que $g(y_1) = 1 = g(y_2)$, tal que a fun\c c\~ao
+    est\'a, de fato, bem-definida.
+
+    Resta lidar com a outra implica\c c\~ao, isto \'e,
+    \begin{quote}
+        Se existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$, 
+        ent\~ao f \'e injetora.
+    \end{quote}
+    Explicitamente, precisamos mostrar que se $f(x_1) = f(x_2)$, ent\~ao $x_1 = x_2$. De fato,
+    suponha que $f(x_1) = f(x_2)$. Aplicando g, segue que:
+    $$
+        x_2 = g(f(x_2)) = g(f(x_1)) = x_1.
+    $$
+    Portanto, a fun\c c\~ao \'e injetora.
+    \qedsymbol
+    
+    \subsection{Exerc\'icio 3}
+    \begin{exercise*}
+        \begin{quote}"
+            Se $f:X\rightarrow{Y}$ \'e injetora, ent\~ao
+            existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$.            
+        "\end{quote}
+    \end{exercise*}
+
+    \subsection{Exerc\'icio 4}
+    \subsection{Exerc\'icio 5}
+    \subsection{Exerc\'icio 6}
+\end{document}
