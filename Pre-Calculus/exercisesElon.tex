@@ -28,6 +28,17 @@
     
     \section{Cap\'itulo 3}
     \subsection{Exerc\'icio 1}
+    \begin{exercise*}
+        Seja $f:X\rightarrow{Y}$ uma fun\c c\~ao. A imagem inversa por f de um conjunto $B\subset{Y}$
+        \'e o conjunto $f^{-1}(B) = {x\in{X}: f(x)\in{B}}$. Prove que vale sempre $A\subset{f^{-1}(f(A))}$
+        para todo $A\subset{X}$ e $f(f^{-1}(B)) \subset{B}$ para todo $B\subset{Y}$. Prove tamb\'em que
+        f \'e injetora se, e somente se, $f^{-1}(f(A)) = A$ para todo $A\subset{X}$. Analogamente, mostre
+        que f \'e sobrejetora se, e somente se, $f(f^{-1}(B)) = B$ para todo $B\subset{Y}$.       
+    \end{exercise*}
+
+    \qedsymbol
+    \newpage
+    
     \subsection{Exerc\'icio 2}
     \begin{exercise*}
         $f:X\rightarrow{Y}$ \'e injetora se, e somente se, existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que g(f(x)) = x para todo $x\in{X}$.
@@ -73,10 +84,32 @@
     \subsection{Exerc\'icio 3}
     \begin{exercise*}
         Se $f:X\rightarrow{Y}$ \'e sobrejetora, ent\~ao
-        existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que f(g(x)) = x para todo $x\in{X}$.            
+        existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que f(g(y)) = y para todo $y\in{Y}$.            
     \end{exercise*}
 
+    Vamos mostrar que se $f:X\rightarrow{Y}$ \'e sobrejetora, existe uma fun\c c\~ao $g:Y\rightarrow{X}$ 
+    tal que f(g(x)) = x para todo $x\in{X}$ de maneira an\'aloga ao exerc\'icio anterior. Com efeito,
+    suponha que $g(y_1) \neq g(y_2)$. Ent\~ao,$y_1 = f(g(y_1)) \neq f(g(y_2)) = y_2,$ tal que g est\'a
+    bem-definida para todo y em Y, pois ambos eram arbitr\'arios, completando a prova.
+    
+    Por outro lado, suponha que existe uma fun\c c\~ao $g:Y\rightarrow{X}$ tal que f(g(y)) = y para todo $y\in{Y}$.
+    Note que g(y) \'e, por defini\c c\~ao de g, um elemento de X. Em outras palavras, dado $y\in{Y}$, 
+    podemos escrever y como f(g(y)), ou seja, todo elemento de Y pode ser escrito como a f aplicada a
+    um elemento de X. Portanto, f \'e sobrejetora. 
+    \qedsymbol
+    \newpage
+
     \subsection{Exerc\'icio 4}
-    \subsection{Exerc\'icio 5}
-    \subsection{Exerc\'icio 6}
+    \begin{exercise*}
+        Dada uma fun\c c\~ao $f:X\rightarrow{Y}$ e $g, h:Y\rightarrow{X}$ tais que g(f(x)) = x 
+        para todo $x\in{X}$ e $f(h(y)) = y$ para todo $y\in{X}$. Prove que g = h.
+    \end{exercise*}
+
+    Seja $y\in{Y}$. Como h \'e tal que $f(h(y)) = y$, segue que f \'e sobrejetora. Analogamente,
+    como g \'e tal que $g(f(x)) = x$, f \'e injetora. Assim, temos: 
+    $$
+        h(y) = g(f(h(y))) = g(y).
+    $$
+    Portanto, como y era um elemento qualquer, segue que h = g.
+    \qedsymbol
 \end{document}
