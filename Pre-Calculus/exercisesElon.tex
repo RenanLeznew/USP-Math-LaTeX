@@ -112,4 +112,33 @@
     $$
     Portanto, como y era um elemento qualquer, segue que h = g.
     \qedsymbol
+
+    \section{Cap\'itulo 7}
+    \begin{exercise*}
+        Diz-se que o n\'umero real $\alpha$ \'e uma ra\'iz de multiplicidade m do polin\^omio p(x) quando se    
+        tem p(x) = $(x - \alpha)^mq(x),$ com $q(\alpha) \neq 0$. Se m = 1 ou m = 2, ela \'e chamada ra\'iz simples
+        ou dupla, respectivamente. Prove que $\alpha$ \'e uma ra\'iz simples se, e somente se, $p(\alpha) = 0$ e $p^{'}(\alpha) \neq 0$
+        e que $\alpha$ \'e uma ra\'iz dupla se, e somente se, $p(\alpha) = p^{'}(\alpha) = 0$ e $p^{''}(\alpha) \neq 0$. Generalize.
+    \end{exercise*}
+        Suponha que \'e v\'alido para n-1, isto \'e, $\alpha$ \'e uma ra\'iz de multiplicidade n-1. Explicitamente,
+        isso significa que
+        $$
+            p(x) = (x - \alpha)^{n-1}q(x)
+        $$
+        implica em $p^{(n-1)}(\alpha) = (n-1)!q^{(n-1)}(\alpha)\neq 0$. Suponha que $\alpha$ \'e uma ra\'iz de 
+        multiplicidade n. Ent\~ao, $p^{i}(x) = i!(x - \alpha)^{n-1-i}q^{i}(\alpha)$, tal que 
+        $$
+        p^{i}(\alpha) = i!(\alpha - \alpha)^{n-1-i}q^{i}(\alpha) = 0. 
+        $$
+        No entanto, em i = n, temos:
+        $$
+        p^{n}(\alpha) = n!q^{n}(\alpha) \neq 0,
+        $$
+        mostrando o que quer\'iamos. Por outro lado, suponha que $p^{i}(\alpha) = 0$ para todo $0\leq{i}<n$ e 
+        $p^{n}(\alpha) \neq 0$. Ent\~ao, disto segue:
+        $$
+        p(x) = (x - \alpha)^m.
+        $$ 
+        Definindo q(x) = 1, temos $p(x) = (x - \alpha)^mq(x)$ com $q(\alpha) \neq 0$. Portanto, $\alpha$ \'e uma 
+        ra\'iz de multiplicidade n do polin\^omio p(x).
 \end{document}
