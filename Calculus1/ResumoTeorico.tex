@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem*{def*}{\underline{Defini\c c\~ao}}
+\newtheorem*{prop*}{\underline{Propriedades:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\newtheorem*{thm*}{\underline{Teorema:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\title{Resumo Te\'orico - Derivadas e Integrais}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \newpage
+
+    \tableofcontents
+
+    \newpage
+    \section{Derivadas}
+    \subsection{Defini\c c\~oes e Propriedades}
+    \begin{def*}
+        Dada uma fun\c c\~ao $f:[a, b]\rightarrow\mathbb{R}$ cont\'inua em $x_0$, dizemos que ela \'e deriv\'avel em $x_0$ se existe o limite:
+        $$
+        \lim_{x\to{x_0}}\frac{f(x) - f(x_0)}{x - x_0} = f^{'}(x_0) = \frac{d}{dx}f(x_0).
+        $$
+    \end{def*}
+    Note que escrevendo $h = x - x_0$, a defini\c c\~ao acima equivale ao limite 
+    $$
+    \lim_{h\to{0}}\frac{f(x_0 + h) - f(x_0)}{h} = f^{'}(x_0) = \frac{d}{dx}f(x_0).
+    $$
+    \begin{prop*}
+        A derivada satisfaz as seguintes propriedades:
+        \begin{enumerate}
+            \item[Propriedade I)] $$(f + g)'(x_0) = f'(x_0) + g'(x_0).$$
+            \item[Propriedade II)] $$(f \cdot g)'(x_0) = f'(x_0)g(x_0) + g'(x_0)f(x_0).$$
+            \item[Propriedade III)] $$(cf)'(x_0) = cf'(x_0),\quad c\in\mathbb{R}.$$
+            \item[Propriedade IV)] $$\biggl(\frac{f}{g}\biggr)'(x_0) = \frac{f'(x_0)g(x_0) - g'(x_0)f(x_0)}{(g(x))^2}.$$
+            \item[Propriedade V)] $$f(g(x_0))' = f'(g(x_0))g'(x_0).$$
+            \item[Propriedade VI)] $$\frac{d}{dx} e^x = e^x, \quad\frac{d}{dx} ln(x) = \frac{1}{x}.$$  
+            \item[Propriedade VII)] $$\frac{d}{dx} x^n = nx^{n-1}.$$
+            \item[Propriedade VIII)] $$(\sin)'(x_0) = (\cos)(x_0), \quad (\cos)'(x_0) = -\sin(x_0).$$ 
+            \item[Propriedade IX)] $$(f^{-1})'(x_0) = \frac{1}{f'(f^{-1}(x_0))}.$$ 
+        \end{enumerate}
+    \end{prop*}
+    Resuminho: A derivada pode ser vista como a taxa de mudan\c ca de uma fun\c c\~ao, al\'em de ser super \'util no estudo do gr\'afico das fun\c c\~oes, como veremos 
+    posteriormente. Por agora, familiarize-se com as propriedades e tente prov\'a-las, \'e um bom treino.
+
+    \begin{def*}
+        Se a derivada de uma fun\c c\~ao for cont\'inua num ponto $x_0$ e o limite 
+        $$
+        \lim_{x\to{x_0}}\frac{f^{'}(x) - f^{'}(x_0)}{x - x_0} = f^{''}(x_0) = \frac{d^2}{dx^2}f(x_0)
+        $$
+        existir, chamamos este valor de segunda derivada de f em $x_0$.
+    \end{def*}
+    Este processo pode ser repetido "infinitamente", contanto que os limites continuem existindo. 
+
+    \begin{def*}
+        Seja I um intervalo e $f: I\rightarrow\mathbb{R}$ uma fun\c c\~ao. Diremos que $x_0\in{I}$ \'e um ponto de m\'aximo local de f, se existir $\delta > 0$
+        tal que $f(x) \leq f(x_0)$ para todo $x\in(x_0 - \delta, x_0 + \delta)\cap{I}.$ Neste caso, diremos que $f(x_0)$ \'e um m\'aximo local. Se o que ocorrer for 
+        $f(x) \geq f(x_0)$, ent\~ao diremos que $f(x_0)$ \'e um m\'inimo local. Em qualquer dos casos, $x_0\in{I}$ ser\'a chamado de ponto extremo local.
+    \end{def*}
+
+    \begin{def*}
+        Seja I um intervalo e $f: I\rightarrow\mathbb{R}$ uma fun\c c\~ao. Diremos que $x_0\in{I}$ \'e um ponto de m\'aximo global de f, se $f(x) \leq f(x_0)$ para todo 
+        $x\in{I}.$ Neste caso, diremos que $f(x_0)$ \'e um m\'aximo global. Se o que ocorrer for $f(x) \geq f(x_0)$, ent\~ao diremos que $f(x_0)$ \'e um m\'inimo local.
+        Em qualquer dos casos, $x_0\in{I}$ ser\'a chamado de ponto extremo global.
+    \end{def*}
+
+    \begin{def*}
+        Um ponto cr\'itico de uma fun\c c\~ao f \'e um ponto c em que $f'(x) = 0$ ou $f'(c)$ n\~ao existe.
+    \end{def*}
+
+    \subsubsection{Resultados Importantes}
+    Come\c camos com o teorema de Rolle, que afirma que se uma fun\c c\~ao for cont\'inua e diferenci\'avel num intervalo em que os valores do ponto inicial e final
+    coincidem, ent\~ao essa fun\c c\~ao assume seu m\'aximo ou m\'inimo em um ponto deste intervalo. 
+    \begin{thm*}
+        Seja $f:[a, b]\rightarrow\mathbb{R}$ uma fun\c c\~ao cont\'inua em $[a, b]$ e diferenci\'avel em $(a, b)$. Se f(a) = f(b), ent\~ao existir\'a $c\in(a, b)$ 
+        tal que $f'(c) = 0.$ 
+    \end{thm*}
+
+    Com o teorema de Rolle como base, vamos ao Teorema do Valor M\'edio, um dos, se n\~ao o mais importante resultado do curso:
+    \begin{thm*}
+        Seja $f:[a, b]\rightarrow\mathbb{R}$ uma fun\c c\~ao cont\'inua em $[a, b]$ e diferenci\'avel em $(a, b)$. Ent\~ao, existe $c\in(a, b)$ tal que
+        $$
+            f(b) - f(a) = f'(c)(b - a),
+        $$
+        equivalente a 
+        $$
+            f'(c) = \frac{f(b) - f(a)}{b - a}.
+        $$
+    \end{thm*}
+
+    Tendo estas duas ferramentas, \'e poss\'ivel estudar a fundo pontos de m\'aximo, m\'inimo e comportamento de fun\c c\~oes quanto ao seu crescimento ou decrescimento,
+    al\'em da concavidade delas.
+
+    \begin{thm*}
+        Sejam $f:D_f\subset\mathbb{R}\rightarrow\mathbb{R}$ uma fun\c c\~ao cont\'inua e c um ponto cr\'itico de f.
+
+        \quad Se o sinal de f' mudar de positivo para negativo em c, ent\~ao f ter\'a um m\'aximo local em c.
+
+        \quad Se o sinal de f' mudar de negativo para positivo em c, ent\~ao f ter\'a um m\'inimo local em c.
+    \end{thm*}
+
+    \begin{thm*}
+        Seja f uma fun\c c\~ao cont\'inua num intervalo $[a, b]$ e diferenci\'avel em $(a, b)$. 
+        
+        \quad Se $f'(x) > 0$ para todo $x\in(a, b)$, ent\~ao f ser\'a estritamente crescente em $[a, b].$
+
+        \quad Se $f'(x) < 0$ para todo $x\in(a, b)$, ent\~ao f ser\'a estritamente decrescente em $[a, b].$
+
+        \quad Se $f'(x) = 0$ para todo $x\in(a, b)$, ent\~ao f ser\'a constante em $[a, b].$
+    \end{thm*}
+
+    \begin{thm*}
+        Seja f uma fun\c c\~ao diferenci\'avel em $(a, b)$.
+
+        \quad Se $f{''}(x) > 0$ para todo $x\in(a, b)$, ent\~ao f ter\'a concavidade para cima em $(a, b).$
+
+        \quad Se $f{''}(x) < 0$ para todo $x\in(a, b)$, ent\~ao f ter\'a concavidade para baixo em $(a, b).$
+    \end{thm*}
+    
+    A seguir, veremos a Regra de L'Hopital, que permite calcular um limite a partir dos limites das derivadas das fun\c c\~oes, o que normalmente simplifica a conta.
+    \begin{thm*}
+        Sejam f e g fun\c c\~oes deriv\'aveis num intervalo com $g'(x)\neq0$ para todo $x\in{I}$. Ent\~ao, se $\lim_{x\to{p}}f(x) = \lim_{x\to{p}}g(x) = 0$ ou 
+        $\lim_{x\to{p}}f(x) = \lim_{x\to{p}}g(x) = \infty$ e se 
+        $$
+            \lim_{x\to{p}}\biggl(\frac{f'(x)}{g'(x)}\biggr) = \lambda, \quad\lambda\in\mathbb{R},
+        $$
+        segue que 
+        $$ 
+            \lim_{x\to{p}}\biggl(\frac{f(x)}{g(x)}\biggr) = \lambda.
+        $$
+    \end{thm*}
+    
+    Por fim, as expans\~oes de Taylor permitem estudar fun\c c\~oes cont\'inuas e diferenci\'aveis como polin\^omios, que s\~ao muito mais simples:
+    \begin{thm*}
+        A s\'erie de Taylor de uma fun\c c\~ao $f:[a, b]\rightarrow\mathbb{R}$ infinitamente diferenci\'avel (ou seja, todas as derivadas existem) no ponto $x_0$ \'e
+        dada por:
+        $$
+            f(x) = \sum_{i=0}^{\infty}\frac{f^{(i)(x_0)}}{i!}(x-x_0)^i.
+        $$
+        Tamb\'em pode-se definir o polin\^omio de Taylor de grau n como
+        $$
+            p(x) = \sum_{i=0}^{n}\frac{f^{(i)(x_0)}}{i!}(x-x_0)^i.
+        $$
+    \end{thm*}
+    Da defini\c c\~ao acima, segue que a s\'erie de Taylor da fun\c c\~ao \'e o limite de n indo pra infinito do polin\^omio de Taylor.\vspace{0.5cm}
+
+    Segue abaixo um algor\'itmo para analisar o gr\'afico de uma fun\c c\~ao:
+
+    Determine, se poss\'ivel, os pontos em que f se anula e os intervalos em que ela \'e positiva ou negativo. 
+    
+    Em seguida, encontre as ass\'intotas verticais e horizontais
+    de f e os pontos cr\'iticos de f. 
+    
+    A seguir, estude o sinal de f' para determinar o crescimento de f. 
+    
+    Calcular f'' para dizer a concavidade da fun\c c\~ao em cadaintervalo.
+
+\end{document}
