@@ -10,6 +10,7 @@
 \usepackage[portuguese]{babel}
 \usepackage{hyperref}
 \usepackage{lastpage}
+\usepackage{physics}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -182,4 +183,103 @@
     
     Calcular f'' para dizer a concavidade da fun\c c\~ao em cadaintervalo.
 
+    \newpage
+    \section{Integra\c c\~ao}
+    \subsection{Defini\c c\~oes e Propriedades}
+    \begin{def*}
+        Uma antiderivada de uma fun\c c\~ao $f:[a, b]\rightarrow\mathbb{R}$ \'e uma fun\c c\~ao deriv\'avel F definida em $[a, b]$ tal que
+        $$  
+            \frac{d}{dx}(F(x) + k) = f(x), \quad k\in\mathbb{R}
+        $$
+        Denotamos a fam\'ilia de primitivas de f por:
+        $$
+            \int f(x)dx = F(x) + k, \quad k\in\mathbb{R},
+        $$
+        tamb\'em chamada integral indefinida de f com respeito a x.
+    \end{def*}
+    \begin{prop*}    
+        Assim como a derivada, a integral satisfaz algumas propriedades:
+        \begin{enumerate}
+            \item[Propriedade I)] $$\int f(x) + g(x)dx = \int f(x)dx + \int g(x)dx.$$
+            \item[Propriedade II)] $$\int cf(x)dx = c\int f(x)dx.$$
+            \item[Propriedade IV)] $$|\int f(x)dx| \leq \int |f(x)dx.$$
+        \end{enumerate}
+    \end{prop*}
+    A ideia da integral indefinida por si n\~ao apresenta muito significado e, para isso, \'e preciso introduzir as integrais definidas, respons\'aveis por grande
+    parte das aplica\c c\~oes das integrais. Antes, no entanto, introduz-se a base das integrais definidas, as somas de Riemann e as parti\c c\~oes.
+    \begin{def*}
+        Uma parti\c c\~ao de um intervalo fechado $[a, b]$ \'e um subconjunto $P: a = t_0 < t_1 < t_2 < \cdots < t_n = b.$ Dada uma parti\c c\~ao e uma fun\c c\~ao 
+        $f:[a, b]\rightarrow\mathbb{R}$, a soma inferior e a soma superior s\~ao:
+        $$
+            s(f, P):=\sum_{i=1}^{n}m_i\Delta{t_i}, \quad S(f, P):= \sum_{i=1}^{n}M_i\Delta{t_i},
+        $$
+        em que $m_i = \inf\{f(x): x\in(t_{i-1}, t_{i})\}$ e $M_i = \sup\{f(x): x\in(t_{i-1}, t_{i})\}$ e $\Delta{t_i} = t_i - t_{i-1}.$
+    \end{def*}
+    \begin{prop*}
+        As somas superiores e inferiores satisfazem as seguintes propriedades: Sejam $f:[a, b]\rightarrow\mathbb{R}$ uma fun\c c\~ao limitada, 
+        $P: a = t_0 < t_1 < \cdots < t_n = b$ e $Q: a = q_0 < q_1 < \cdots < q_n = b$ parti\c c\~oes de $[a, b].$
+        \begin{enumerate}
+            \item[Propriedade I)] $$m(b-a)\leq{s(f, P)}\leq{S(f, P)}\leq{M(b-a)}, \quad m=\inf\{f(x): x\in[a, b]\}, \quad M=\sup\{f(x): x\in[a, b]\}.$$
+            \item[Propriedade II)] $$s(f, P) \leq s(f, P\cup{Q}) \leq S(f, P\cup{Q}) \leq S(f, Q).$$ 
+        \end{enumerate}
+    \end{prop*}
+    \begin{def*} 
+        Seja $f:[a, b]\rightarrow\mathbb{R}$ uma fun\c c\~ao limitada. Escrevemos:
+        $$
+            \int_{\underline{a}}^{b} f(x)dx := \lim_{\Delta{t}\to0} s(f, P) = \sup_{P}\{s(f, P)\}
+        $$
+        e
+        $$
+            \int_{a}^{\overline{b}} f(x)dx := \lim_{\Delta{t}\to0} S(f, P) = \inf_{P}\{S(f, P)\}
+        $$
+        para a integral definida inferior e superior de f com respeito a x, respectivamente. No caso em que 
+        $\int_{\underline{a}}^{b} f(x)dx = \int_{a}^{\overline{b}} f(x)dx$, dizemos que f \'e integr\'avel em $[a, b]$ e escrevemos simplesmente
+        $$
+            \int_{\underline{a}}^{b} f(x)dx = \int_{a}^{\overline{b}} f(x)dx = \int_{a}^{b} f(x)dx.
+        $$
+    \end{def*}
+    \begin{prop*}
+        As integrais definidas satisfazem:
+        \begin{enumerate}
+            \item[Propriedade I)] $$m(b-a)\leq{s(f, P)}\leq{S(f, P)}\leq{M(b-a)}, \quad m=\inf\{f(x): x\in[a, b]\}, \quad M=\sup\{f(x): x\in[a, b]\}.$$
+            \item[Propriedade II)] $$\int_{a}^{b} f(x)dx = \int_{a}^{c} f(x)dx + \int_{c}^{b} f(x)dx, \quad c\in(a, b) \text{(v\'alido para todas)}$$
+            \item[Propriedade III)] $$\int_{a}^{\overline{b}} f(x) + g(x)dx \leq \int_{a}^{\overline{b}} f(x)dx + \int_{a}^{\overline{b}} g(x)dx, \quad\text{g limitada}.$$
+            \item[Propriedade IV)] $$\int_{a}^{b} f(x)dx \leq \int_{a}^{b} g(x)dx, \quad f(x)\leq{g(x)} \text{(v\'alido para todas)}.$$ 
+            \item[Propriedade V)] $$\int_{a}^{b} f(x)dx = -\int_{b}^{a} f(x)dx, \quad \int_{a}^{a} f(x)dx = 0.$$
+        \end{enumerate}
+    \end{prop*}
+    \subsection{Resultados}
+
+    Para encontrar as integrais indefinidas, existem t\'ecnicas que podemos utilizar para facilitar o processo. A primeira delas \'e a substitui\c c\~ao de vari\'avel,
+    baseada em alterar "o dx para outra vari\'avel mais simples du", o equivalente \`a regra da cadeia para integrais:
+    \begin{prop*}
+        Sejam f e g tais que $\Im(g)\subset{D_f}$ e suponha que F \'e uma primitiva de f. Ent\~ao, $f(g(x))g'(x)$ tem como primitiva F(g(x)). Escrevendo F' como f
+        e g(x) = u, segue a Regra da Substitui\c c\~ao:
+        $$
+            \int F'(g(x))g'(x)dx = \int f(u) du.
+        $$
+    \end{prop*}
+    A outra \'e an\'aloga \`a regra da derivada do produto, mas para as integrais, tamb\'em conhecida como Integra\c c\~ao por Partes:
+    \begin{prop*}
+        Sejam $f, g:[a, b]\rightarrow\mathbb{R}$ deriv\'aveis em $(a, b).$ Ent\~ao, vale:
+        $$
+            \int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx.
+        $$
+    \end{prop*}
+    \underline{Observa\c c\~ao:}(Tamb\'em tem a substitui\c c\~ao trigonom\'etrica, mas eu n\~ao sei comentar muito sobre ela, pe\c co desculpas.)
+
+    Com rela\c c\~ao a uma fun\c c\~ao ser integr\'avel, temos os seguintes resultados:
+    \begin{thm*}
+        Toda fun\c c\~ao $f:[a, b]\rightarrow\mathbb{R}$ cont\'inua \'e integr\'avel.
+    \end{thm*}
+    \begin{thm*}
+        Toda fun\c c\~ao $f:[a, b]\rightarrow\mathbb{R}$ cont\'inua possui primitiva.
+    \end{thm*}
+    Com base nesses dois, chegamos no Teorema Fundamental do C\'alculo, que disputa com o Teorema do Valor M\'edio como o mais importante do curso.
+    \begin{thm*}
+        Seja $f:[a, b]\rightarrow\mathbb{R}$ integr\'avel. Se F \'e uma primitiva de f, ent\~ao
+        $$
+            \int_{a}^{b} f(x)dx = \eval{F(x)}_{a}^{b} = F(b) - F(a).
+        $$
+    \end{thm*}
 \end{document}
