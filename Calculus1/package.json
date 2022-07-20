@@ -1,5 +1,5 @@
 {
-    "scripts":{
-        "prettier": "prettier"
-    }
+  "scripts": {
+    "prettier": "prettier"
+  }
 }
