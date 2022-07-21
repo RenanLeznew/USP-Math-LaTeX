@@ -7,14 +7,73 @@
 \usepackage[portuguese]{babel}
 \usepackage{titling}
 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+
 \posttitle{\par\end{center}\vspace{30em}}
 
-\title{\textbf{O Problema da Sala Reprovada}\\ \large Uma Releitura do Problema dos 100 Prisioneiros}
-\author{Renan Wenzel}
-\date{\today}
-
 \begin{document}
-    \maketitle
+\begin{figure}[ht]
+	\minipage{0.76\textwidth}
+		\includegraphics[width=4cm]{../../icmc.png}
+		\hspace{5cm}
+		\includegraphics[height=4.9cm,width=4cm]{../../brasao_usp_cor.jpg}
+	\endminipage	
+\end{figure}
+
+    \begin{center}
+        \vspace{1cm}
+        \LARGE
+        UNIVERSIDADE DE S\~AO PAULO
+
+        \vspace{1.3cm}
+        \LARGE
+        INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+        \vspace{1.7cm}
+        \Large
+        \textbf{O Problema da Sala Reprovada}\\ 
+        \large Uma Releitura do Problema dos 100 Prisioneiros
+
+        \vspace{1.3cm}
+        \large
+        \textbf{Renan Wenzel - 11169472}
+
+        \vspace{1.3cm}
+        \large
+        \textbf{Pedro Rios - prios@icmc.usp.br}
+
+        \vspace{1.3cm}
+        \today
+    \end{center}
     \newpage  
     
     \tableofcontents
