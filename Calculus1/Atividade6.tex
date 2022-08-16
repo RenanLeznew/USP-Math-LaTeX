@@ -1,0 +1,70 @@
+\section{Integrais e Primitivas}
+\subsection{Exerc\'icio 1} Utilize a ideia de s\'olido de rota\c c\~ao para encontrar os volumes das 
+seguintes constru\c c\~oes: 
+
+a.) Um cilindro de altura h e raio da base r;
+
+b.) Um cone de altura h e raio da base r;
+
+c.) de um dirig\'ivel sim\'etrico, cuja parte inferior quando observada lateralmente \'e modelada
+em termos do gr\'afico da fun\c c\~ao dada implicitamente por uma elipse.
+
+\begin{sol*}
+    
+    a.) Pensando no formato do cilindro, concluimos que a fun\c c\~ao respons\'avel por ger\'a-lo \'e dada
+    por f(x) = r. Com isso, basta aplicarmos a f\'ormula para o volume de s\'olidos de rota\c c\~ao:
+    $$
+        V = \pi\int_{0}^{h}f(x)^2dx = \pi\int_{0}^{h}r^2dx = \pi{r^2}x\biggr\rvert_{0}^{h} = \pi{r^2}h.
+    $$
+    
+    b.) Agora, usando a fun\c c\~ao $f(x) = \frac{r}{h}x$ como geratriz do cone, segue que 
+    $$  
+        V = \pi\int_{0}^{h}f(x)^2dx = \pi\int_{0}^{h}\frac{r^2}{h^2}x^2dx = \pi\frac{r^2}{h^2}\int_0^h x^2dx =
+    $$
+    $$
+        = \pi\frac{r^2}{h^2}\frac{x^3}{3}\biggr\rvert_{0}^{h} = \pi\frac{r^2h^3}{3h^2} = \frac{\pi{r^2}h}{3}.
+    $$
+    
+    c.) Observe que um dirig\'ivel sim\'etrico \'e, essencialmente, uma elipse com eixo maior no x. Com isso,
+    levando como base a f\'ormula geral da elipse:
+    $$
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1,
+    $$
+    isolamos o y (como f(x)) a fim de obter 
+    $$
+        f(x) = \sqrt{(1-\frac{x^2}{a^2})b^2} = b\sqrt{1-\frac{x^2}{a^2}}.
+    $$
+    Agora, repetimos os processos anteriores para obtermos o volume do dirig\'ivel:
+    $$  
+        V = \pi{b^2}\int_{-a}^{a} 1-\frac{x^2}{a^2}dx = \pi{b^2}\biggl(\int_{-a}^{a}1 dx - \int_{a}^{a}\frac{x^2}{a^2}\biggr) =
+    $$
+    $$
+        = \pi{b^2}(2a - \frac{2}{3}a) = \frac{4\pi{b^2}a}{3}
+    $$
+\qedsymbol
+\end{sol*}
+\subsection{Exerc\'icio 2}
+Agora, encontre a \'area de superf\'icie de cada um dos itens anteriores.
+
+\begin{sol*}
+    Come\c camos lembrando a f\'ormula para a \'area de superf\'icie de um s\'olido de revolu\c c\~ao:
+    $$
+        A = \int_{0}^{h}2\pi f(x)\sqrt{1 + f'(x)^2}dx.
+    $$
+    Tendo isso em mente, damos continuidade ao exerc\'icio: 
+
+    a.) Segue da f\'ormula acima que a \'area de superf\'icie do cilindro \'e:
+    $$
+        A = 2\pi \int_{0}^{h} r\sqrt{1 + 0}dx = 2\pi rx\biggr\rvert_{0}^{h} = 2\pi rh.
+    $$
+
+    b.) Para o cone fornecido, uma aplica\c c\~ao simples da f\'ormula dada e um pouco de \'algebra resulta em:
+    $$
+        A = 2\pi \int_{0}^{h} \frac{rx}{h}\sqrt{1 + \frac{r^2}{h^2}}dx = 
+        \frac{2\pi{r}}{h}\sqrt{\frac{h^2 + r^2}{h^2}}\int_{0}^{h}xdx = 
+    $$
+    $$
+        = \frac{2\pi{r}}{h}\sqrt{\frac{h^2 + r^2}{h^2}} \frac{h^2}{2} = \pi{r}\sqrt{r^2 + h^2}.
+    $$
+\qedsymbol
+\end{sol*}
