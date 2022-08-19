@@ -1,0 +1,127 @@
+\section{Espa\c cos Vetoriais}
+Para falar sobre espa\c cos vetoriais, \'e preciso antes falar sobre corpos, pois espa\c cos
+vetoriais s\~ao definidos com base nessas estruturas, que ser\~ao "onde os vetores ir\~ao morar".
+Para exemplificar, um espa\c co vetorial sobre $\mathbb{R}$ ter\'a como vetores n\'umeros reais,
+e um espa\c co vetorial sobre $\mathbb{C}$ ter\'a como vetores n\'umeros complexos. O que 
+faremos a seguir \'e definir mais precisamente cada um destes conceitos, desde corpos a vetores.
+\subsection{Corpos e Espa\c cos Vetoriais}
+\begin{def*}
+    \text{Diremos que um conjunto} $\mathbb{K}$ \text{\'e  um corpo se ele satisfaz as seguintes
+    propriedades: }
+    \begin{itemize}
+        \item [A1)] x + y = y + x, $\forall x, y\in\mathbb{K}$
+        \item [A2)] (x + y) + z = x + (y + z), $\forall x, y, z\in\mathbb{K}$
+        \item [A3)] \text{Existe um elemento 0 tal que } x + 0 = 0 + x = x, $\forall x \in\mathbb{K}$
+        \item [A4)] \text{Para todo x, existe um elemento -x tal que } x + (-x) = -x + x = 0, $\forall x \in\mathbb{K}$. 
+        \item [M1)] $x\cdot{}y = y\cdot{}x, \forall x, y\in\mathbb{K}$
+        \item [M2)] ($x\cdot{y})\cdot{z} = x(y\cdot{z}), \forall x, y, z \in\mathbb{K}$
+        \item [M3)] \text{Existe um elemento 1 tal que } $x\cdot{1} = 1\cdot{x} = x, \forall x \in\mathbb{K}$
+        \item [M4)] \text{Para todo x, existe um elemento } $x^{-1}$ \text{ tal que } $x^{-1}\cdot{}x = x\cdot{x^{-1}} = 1, \forall x \in\mathbb{K}$
+        \item [D1)] $x\cdot{}(y + z) = x\cdot{y} + x\cdot{z}$
+        \item [D2)] $(x + y)\cdot{}z = x\cdot{z} + y\cdot{z}$
+    \end{itemize}
+\end{def*}
+Faremos algumas conven\c c\~oes com rela\c c\~ao a essa defini\c c\~ao. Ao inv\'es de escrevermos x + (-x), $x\cdot{y}, x^{-1}$, faremos:
+$$
+    x - x := x + (-x), \quad x\cdot{y} := xy, \quad x^{-1} := \frac{1}{x}.
+$$
+Exemplos b\'asicos de corpos s\~ao o corpo dos n\'umeros reais, dos n\'umeros racoinais e dos n\'umeros complexos. 
+Um bom exerc\'icio para se acostumar com esses conceitos \'e provar que eles s\~ao realmente corpos e mostrar que
+os n\'umeros inteiros n\~ao formam um corpo. 
+
+Agora que temos uma ideia sobre corpos, podemos definir um espa\c co vetorial:
+\begin{def*}
+    Dizemos que um conjunto V \'e um espa\c co vetorial se seus elementos, chamados vetores, satisfazem os axiomas abaixo:
+    \begin{itemize}
+        \item [V1)] u + v = v + u, $v, u\in{V}$;
+        \item [V2)] u + (v + w) = (u + v) + w, $v, u, w\in{V}$;
+        \item [V3)] Existe $0\in{V}$ tal que v + 0 = v, $v\in{V}$;
+        \item [V4)] Para todo $v\in{V}, $ existe $-v\in{V}$ tal que v - v = 0;
+        \item [E1)] Dado $v\in{V}, 1v = v$;
+        \item [E2)] Dados $\alpha, \beta\in\mathbb{K}, (\alpha\beta)v = \alpha(\beta{v}), v\in{V}$;
+        \item [DV1)] $\alpha(u + v) = \alpha{u} + \alpha{v}$;
+        \item [DV2)] $(\alpha + \beta)v = \alpha{v} + \beta{v}$.
+    \end{itemize}
+\end{def*}
+
+Vamos ver um exemplo de espa\c co vetorial:
+
+\begin{example}
+\label{Vspace}
+    Considere o corpo $\mathbb{R}^2$. Vamos mostrar que $\mathbb{R}$ \'e um espa\c co vetorial sobre $\mathbb{R}^2$.
+    Esse tipo de demonstra\c c\~ao \'e, em geral, sempre igual. Tome dois elementos $v, u\in\mathbb{R}$ e dois escalares
+    $\mathbf{k_1}, \mathbf{k_2}\in\mathbb{R}^2$. 
+    
+    Segue das propriedades dos n\'umeros reais que existe um elemento neutro da adi\c c\~ao, o 0 usual, um inverso
+    aditivo (dado $x\in\mathbb{R}, -x\in\mathbb{R}$) e as propriedades usuais de soma, isto \'e, comutatividade e
+    associatividade. Agora, coloque $\mathbf{k_1} = (\alpha_1, \beta_1), \mathbf{k_2 = (\alpha_2, \beta_2)}$ e 
+    1 = (1, 0).
+    Com isto, temos:
+    $$
+        1.x = (1, 0).x = (1.x, 0.x) = (x, 0) = x, 
+    $$
+    $$
+        (\mathbf{k_1}\mathbf{k_2})x = ((\alpha_1\alpha_2, \beta_1\beta_2))(x, 0) = ((\alpha_1\alpha_2){x}, \beta_1\beta_2{0}) =
+        = (\alpha_1(\alpha_2{x}), 0) = (\alpha_1, \beta_1)((\alpha_2, \beta_2)(x, 0)) = k_1(k_2x).
+    $$
+    Resta mostrar a distributiva. Note que 
+    $$
+        (\mathbf{k_1} + \mathbf{k_2})x = (\alpha_1 + \alpha_2, \beta_1 + \beta_2)x = (\alpha_1x + \alpha_2x, 0) = (\alpha_1, \beta_1)x + (\alpha_2, \beta_2)x.
+    $$
+    e
+    $$
+        (x + y)\mathbf{k_1} = ((x, 0) + (y, 0))(\alpha_1, \beta_1) = (x + y, 0)(\alpha_1, \beta_1) = (x\alpha_1 + y\alpha_1, 0) = x\mathbf{k_1} + y\mathbf{k_1}. 
+    $$
+\qedsymbol
+\end{example}
+Agora que temos uma no\c c\~ao b\'asica de espa\c cos vetoriais, aprofundaremos na teoria.
+
+\subsection{Bases}
+Sabe como todo n\'umero real pode ser escrito como 1.x? Vamos buscar uma forma an\'aloga para um espa\c co vetorial
+qualquer. Para isso, ser\'a introduzido o conceito da combina\c c\~ao linear e independ\^encia linear de vetores quaisquer.
+
+\begin{def*}
+    Dado um  espa\c co vetorial V sobre $\mathbb{K}$, diremos que um conjunto de vetores $\mathcal{B}: v_1, \cdots{}, v_n$ gera V
+    se qualquer elemento $v\in{V}$ puder ser escrito como: 
+    $$
+        v = \sum_{i=1}^{n}\alpha_iv_i,
+    $$
+    com $\alpha_i\in\mathbb{K}$ para cada i.
+\end{def*}
+H\'a, por\'em, um problema com isso. Vamos ilustrar isso no exemplo a seguir: 
+\begin{example}[NB]
+\label{Not basis}
+    Considerando $\mathbb{C}^2$ como um espa\c co vetorial sobre $\mathbb{C}$, o conjunto de vetores 
+    $\mathcal{B}: (1, 0), (0, i), (i, 0), (0, 1)$ gera $\mathbb{C}^2$.
+    
+    De fato, visto que um elemento $(a, b) = (x + iy, z + iw)$, em que $a, b\in\mathbb{C}, x, y, z, w\in\mathbb{R}$, pode ser escrito como:
+    $$
+        (a, b) = x(1, 0) + y(i, 0) + z(0, 1) + w(0, i) 
+    $$
+    No entanto, observe que se $(a, b) = (0, 0)$, ent\~ao 
+    $$
+        (0, 0) = 1(1, 0) + i(i, 0) + 0(0, 1) + 0(0, i).
+    $$
+    Assim, o elemento $(0, 0)$ pode ser escrito de duas formas diferentes! Sendo a outra:
+    $$
+        (0, 0) = 0(1, 0) + 0(i, 0) + 0(0, 1) + 0(0, i).
+    $$
+\end{example}
+Explicitamente, queremos representar \textbf{de maneira \'unica} cada elemento de V. \'E para isso que surge
+a no\c c\~ao de independ\^encia linear e de base, isto \'e, 
+\begin{def*}
+    Dado um  espa\c co vetorial V sobre $\mathbb{K}$, diremos que um conjunto de vetores $\mathcal{B}: v_1, \cdots{}, v_n$ gera V
+    se: 
+    $$
+        \sum_{i=1}^{n}\alpha_iv_i = 0 \Leftrightarrow \alpha_1 = \alpha_2 = \cdots = \alpha_n = 0,
+    $$
+    com $\alpha_i\in\mathbb{K}$ para cada i.    
+\end{def*} 
+
+\begin{def*}
+    Dado um  espa\c co vetorial V sobre $\mathbb{K}$, diremos que um conjunto de vetores $\mathcal{B}: v_1, \cdots{}, v_n$ \'e uma base de V
+    $\mathcal{B}$ gera V e \'e linearmente independente.
+\end{def*}
+
+Conclui-se que o conjunto apresentado no exemplo \ref{Not basis} n\~ao \'e uma base! (por que?). Com base nisso, 
+voc\^e consegue encontrar uma base para o espa\c co vetorial do exemplo? E para o exemplo \ref{Vspace}?

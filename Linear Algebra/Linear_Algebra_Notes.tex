@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\pgfplotsset{compat = 1.18}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem*{def*}{\underline{Defini\c c\~ao}}
+\newtheorem{example}{\underline{Exemplo:}}[section]
+\newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+\title{EXERC\'ICIOS DE C\'ALCULO}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+
+\begin{figure}[ht]
+	\minipage{0.76\textwidth}
+		\includegraphics[width=4cm]{../icmc.png}
+		\hspace{5cm}
+		\includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+	\endminipage	
+\end{figure}
+
+\begin{center}
+	\vspace{1cm}
+	\LARGE
+	UNIVERSIDADE DE S\~AO PAULO
+
+	\vspace{1.3cm}
+	\LARGE
+	INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+	\vspace{1.7cm}
+	\Large
+	\textbf{ANOTA\c C\~OES E RESUMOS DE \'ALGEBRA LINEAR}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Renan Wenzel - 11169472}
+
+	\vspace{1.3cm}
+	\today
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introdu\c c\~ao}
+
+A \'algebra linear se preocupa em generalizar alguns conceitos fundamentais da matem\'atica.
+Durante o ensino m\'edio e no primeiro semestre, o estudante aprendeu sobre a estrutura
+dos n\'umeros inteiros, reais, racionais e, talvez, sobre os complexos. Agora, vamos ver o que 
+tem de mais profundo por tr\'as deles, estudando, por exemplo, quest\~oes da dimens\~ao, de 
+opera\c c\~oes e dos objetos que sofrem delas. 
+
+Na segunda parte do curso, o estudante costuma aprender sobre funcionais e transforma\c c\~oes 
+lineares, que relacionam dois espa\c cos vetoriais (ou um corpo) e satisfazem algumas condi\c c\~oes. 
+Um exemplo j\'a visto de uma transforma\c c\~ao linear \'e a derivada, que serve de motiva\c c\~ao 
+para uma constru\c c\~ao futura chamada Espa\c co Tangente.
+
+Saber manipular e trabalhar com esses conceitos \'e essencial na carreira de matem\'atico, porque
+muitos conceitos futuros tomam como base o que ser\'a visto aqui, em todas as \'areas da matem\'atica e,
+para isso, espero que essas notas sirvam como um guia para quem necessita de uma luz nesse curso.
+
+\include{./Chapter_1}
+
+\end{document}
