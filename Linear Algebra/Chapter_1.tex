@@ -33,14 +33,14 @@ Agora que temos uma ideia sobre corpos, podemos definir um espa\c co vetorial:
 \begin{def*}
     Dizemos que um conjunto V \'e um espa\c co vetorial se seus elementos, chamados vetores, satisfazem os axiomas abaixo:
     \begin{itemize}
-        \item [V1)] u + v = v + u, $v, u\in{V}$;
-        \item [V2)] u + (v + w) = (u + v) + w, $v, u, w\in{V}$;
-        \item [V3)] Existe $0\in{V}$ tal que v + 0 = v, $v\in{V}$;
-        \item [V4)] Para todo $v\in{V}, $ existe $-v\in{V}$ tal que v - v = 0;
-        \item [E1)] Dado $v\in{V}, 1v = v$;
-        \item [E2)] Dados $\alpha, \beta\in\mathbb{K}, (\alpha\beta)v = \alpha(\beta{v}), v\in{V}$;
-        \item [DV1)] $\alpha(u + v) = \alpha{u} + \alpha{v}$;
-        \item [DV2)] $(\alpha + \beta)v = \alpha{v} + \beta{v}$.
+        \item [V1)] u + v = v + u, $v, u\in{V}$; \label{V1}
+        \item [V2)] u + (v + w) = (u + v) + w, $v, u, w\in{V}$; \label{V2}
+        \item [V3)] Existe $0\in{V}$ tal que v + 0 = v, $v\in{V}$; \label{V3}
+        \item [V4)] Para todo $v\in{V}, $ existe $-v\in{V}$ tal que v - v = 0; \label{V4}
+        \item [E1)] Dado $v\in{V}, 1v = v$; \label{E1}
+        \item [E2)] Dados $\alpha, \beta\in\mathbb{K}, (\alpha\beta)v = \alpha(\beta{v}), v\in{V}$; \label{E2}
+        \item [DV1)] $\alpha(u + v) = \alpha{u} + \alpha{v}$; \label{DV1}
+        \item [DV2)] $(\alpha + \beta)v = \alpha{v} + \beta{v}$. \label{DV2}
     \end{itemize}
 \end{def*}
 
@@ -86,12 +86,14 @@ qualquer. Para isso, ser\'a introduzido o conceito da combina\c c\~ao linear e i
     $$
         v = \sum_{i=1}^{n}\alpha_iv_i,
     $$
-    com $\alpha_i\in\mathbb{K}$ para cada i.
+    com $\alpha_i\in\mathbb{K}$ para cada i. Dado um conjunto $\mathcal{B}$, dizemos que ele \'e um conjunto 
+    gerador de V se todo elemento de V pode ser escrito como combina\c c\~ao linear finita de elementos de 
+    $\mathcal{B}$.
 \end{def*}
 H\'a, por\'em, um problema com isso. Vamos ilustrar isso no exemplo a seguir: 
 \begin{example}[NB]
 \label{Not basis}
-    Considerando $\mathbb{C}^2$ como um espa\c co vetorial sobre $\mathbb{C}$, o conjunto de vetores 
+    Considerando $\mathbb{C}^2$ como um espa\c co vetorial sobre $\mathbb{C}$, o conjunto 
     $\mathcal{B}: (1, 0), (0, i), (i, 0), (0, 1)$ gera $\mathbb{C}^2$.
     
     De fato, visto que um elemento $(a, b) = (x + iy, z + iw)$, em que $a, b\in\mathbb{C}, x, y, z, w\in\mathbb{R}$, pode ser escrito como:
@@ -115,13 +117,304 @@ a no\c c\~ao de independ\^encia linear e de base, isto \'e,
     $$
         \sum_{i=1}^{n}\alpha_iv_i = 0 \Leftrightarrow \alpha_1 = \alpha_2 = \cdots = \alpha_n = 0,
     $$
-    com $\alpha_i\in\mathbb{K}$ para cada i.    
+    com $\alpha_i\in\mathbb{K}$ para cada i. Caso isso n\~ao ocorra, ou seja, existe ao menos um $\alpha_i\in\mathbb{K}\neq{0}$ para cada i.
+    tal que 0 pode ser escrito como combina\c c\~ao linear que inclua $\alpha_iv_i$, diremos que o conjunto \'e
+    linearmente dependente.
 \end{def*} 
 
 \begin{def*}
-    Dado um  espa\c co vetorial V sobre $\mathbb{K}$, diremos que um conjunto de vetores $\mathcal{B}: v_1, \cdots{}, v_n$ \'e uma base de V
+    Dado um  espa\c co vetorial V sobre $\mathbb{K}$, diremos que um conjunto de vetores $\mathcal{B}: b_1, b_2, \cdots{}, b_n$ \'e uma base de V
     $\mathcal{B}$ gera V e \'e linearmente independente.
 \end{def*}
 
 Conclui-se que o conjunto apresentado no exemplo \ref{Not basis} n\~ao \'e uma base! (por que?). Com base nisso, 
 voc\^e consegue encontrar uma base para o espa\c co vetorial do exemplo? E para o exemplo \ref{Vspace}?
+
+A seguir, seguem algumas propriedades dos conceitos vistos acima que s\~ao \'uteis para treinar demonstra\c c\~ao,
+ent\~ao recomendo que voc\^es tentem:
+
+\begin{proposition*}
+    \begin{itemize}
+        \item[a)] Seja $\mathcal{B}$ um conjunto gerador de V. Ent\~ao, todo subconjunto W de V que cont\'em $\mathcal{B}$ \'e um 
+        conjunto gerador de V.
+        \item[b)] Todo conjunto contendo o vetor nulo \'e linearmente dependente.
+        \item[c)] Todo subconjunto de um conjunto linearmente independente \'e linearmente independente. 
+    \end{itemize}
+\end{proposition*}
+
+Seguem abaixo alguns resultados um pouco mais complicados para serem deixados como exerc\'icio, junto de uma nova defini\c c\~ao.
+
+\begin{def*}
+    Dizemos que um espa\c co vetorial V sobre $\mathbb{K}$ \'e finitamente gerado se possuir um conjunto gerador finito.
+\end{def*}
+
+\begin{proposition*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial finitamente gerado n\~ao nulo e suponha que $\{v_1, \cdots, v_m\}$ seja
+    um conjunto gerador de V. Ent\~ao todo conjunto linearmente independente de vetores em V tem no m\'aximo m elementos.
+\end{proposition*}
+\begin{proof*}
+    Vamos mostrar algo equivalente a isso, ou seja, se um conunto tem mais que m elementos, ele \'e linearmente dependente.
+Com efeito, considere $\mathcal{A} = \{v_1, \cdots, v_n\} \subset{V}, n > m.$ Como $\{v_1, \cdots, v_m\}$ gera V, associamos
+para cada \'indice $u_j, j = 1, \cdots, n$ uma combina\c c\~ao linear da forma:
+$$
+    u_{j} = \alpha_{1j}v_1 + \cdots + \alpha_{mj}v_m = \sum_{i=1}^{m} \alpha_{ij}v_i.
+$$
+Agora, vamos supor que o conjunto dos $u_{j}'s$ gera 0, ou seja,
+$$
+    0 = \sum_{j=1}^{n} \lambda_{j}u_{j}.
+$$
+Reescrevendo cada $u_{j}$, temos
+$$
+  0 = \sum_{j=1}^{n} \lambda_{j}u_{j} = \sum_{j=1}^{n}\lambda_{j}\underbrace{\sum_{i=1}^{m}{\alpha_{ij}v_i}}_{\mathclap{\substack{\text{essa soma vem da}, \\ \text{expans\~ao dos } u_j, \\ \text{sei que pode parecer intimidador,} \\ \text{mas juro que n\~ao morde!}.}}}
+$$
+$$
+    = \underbrace{\sum_{j=1}^{n}\sum_{i=1}^{m}}_{\mathclap{\substack{\text{reorganizei a soma} \\ \text{pra ficar mais limpo visualmente}}}} \lambda_{j}\alpha_{ij}v_{i} \overbrace{=}^{\text{inverte a ordem}} \sum_{i=1}^{m}\biggl(\sum_{j=1}^{n}\lambda_{j}\alpha_{ij}\biggr)v_{i}
+$$
+
+Agora que temos essa soma, pense em cada termo de $\sum_{j=1}^{n}\lambda_{j}\alpha_{ij}$ como um escalar (a soma de escalares \'e um escalar) e suponha que 
+$\sum_{j=1}^{n}\lambda_{j}\alpha_{ij} = 0$ para analisarmos o tipo de depend\^encia desse termo. Para cada $i = 1, 2, \cdots, m$, temos 
+uma equa\c c\~ao do tipo 
+$$
+\lambda_{1}\alpha_{i1} + \lambda_{2}\alpha_{i2} + \cdots + \lambda_{n}\alpha_{in} = 0,
+$$
+o que sugere um sistema linear para cada valor de i na inc\'ognita $\lambda_{j}$:
+$$
+\left\{\begin{array}{ll}
+    \lambda_{1}\alpha_{11} + \lambda_{2}\alpha_{12} + \cdots + \lambda_{n}\alpha_{1n} = 0, \\
+    \lambda_{1}\alpha_{21} + \lambda_{2}\alpha_{22} + \cdots + \lambda_{n}\alpha_{2n} = 0, \\
+    \vdots \\
+    \lambda_{1}\alpha_{m1} + \lambda_{2}\alpha_{m2} + \cdots + \lambda_{n}\alpha_{mn} = 0,
+\end{array}\right.
+$$
+Agora, como n \'e maior que m, h\'a mais inc\'ognitas que equa\c c\~oes! Em outras palavras, o sistema possui ao menos
+uma solu\c c\~ao n\~ao nula, ou seja, existem $\gamma_1, \cdots, \gamma_n\in\mathbb{K}$ tais que nem todos s\~ao nulos e
+$$
+    \sum_{j=1}^{n} \gamma_{i}\alpha_{ij} = 0.
+$$
+Disto segue que existem $\gamma_{i}'s$ nem todos nulos tais que
+$$
+    0 = \sum_{i=1}^{m}\biggl(\sum_{j=1}^{n}\gamma_{j}\alpha_{ij}\biggr)v_{i} = \sum_{j=1}^{n}\sum_{i=1}^{m}\lambda_{j}\alpha_{ij}v_{i} =
+$$
+$$
+    = \sum_{j=1}^{n}\sum_{i=1}^{m}\lambda_{j}u_{j}.
+$$
+Portanto, $\{u_1, \cdots, u_n\}$ \'e linearmente dependente, consequentemente $\mathcal{A}$ \'e tamb\'em.
+\end{proof*}
+\begin{corol*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial finitamente gerado n\~ao nulo. Ent\~ao, duas bases quaisquer de V t\^em
+    o mesmo n\'umero de elementos.
+\end{corol*}
+
+Em vista disso, podemos definir o tamanho de um espa\c co vetorial unicamente de acordo com o n\'umero de elementos
+da base, o que chamamos de dimens\~ao:
+
+\begin{def*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial. Se V admite uma base finita, chamamos de dimens\~ao de V o n\'umero
+    de elementos da base. Em outras palavras, se a base tem n elementos, ent\~ao 
+    $$
+        \dim_{\mathbb{K}}V = n.
+    $$
+    Caso n\~ao exista base finita, dizemos que V possui dimens\~ao infinita.
+\end{def*}
+
+Alguns resultados que eu n\~ao vou provar por um tempo seguem:
+\begin{proposition*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial. Se V possui dimens\~ao $dim_{\mathbb{K}}V = n \geq 1$ e seja 
+$\mathcal{B}$ um subconjunto de V com n elementos. As seguintes afirma\c c\~oes s\~ao equivalentes:
+\begin{itemize}
+    \item [a)] $\mathcal{B}$ \'e uma base.
+    \item [b)] $\mathcal{B}$ \'e linearmente independente.
+    \item [c)] $\mathcal{B}$ \'e um conjunto gerador.
+\end{itemize}
+\end{proposition*}
+\begin{proposition*}
+\label{Base_completion}
+    Seja V um $\mathbb{K}$-espa\c co vetorial e considere $\mathcal{B} = \{v_1, \cdots, v_m\}$ um conjunto linearmente
+independente em V. Se existir $v\in{V}$ que n\~ao seja combina\c c\~ao linear dos elementos de $\mathcal{B}$, ent\~ao
+$\{v_1, \cdots, v_m, v\}$ \'e  linearmente independente. (Isso permite o m\'etodo de completamento de base!).
+\end{proposition*}
+\begin{theorem*}
+    Todo espa\c co vetorial finitamente gerado n\~ao nulo possui uma base. 
+\end{theorem*}
+\begin{proposition*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial de dimens\~ao $n\geq{1}$ e seja $\mathcal{B}\subseteq{V}$. As seguintes
+afirma\c c\~oes s\~ao equivalentes:
+\begin{enumerate}
+    \item [a)] $\mathcal{B}$ \'e uma base de V.
+    \item [b)] Cada elemento de V se escreve unicamente como combina\c c\~ao linear de elementos de $\mathcal{B}.$
+\end{enumerate}
+\end{proposition*}
+
+Como conseque\^encia dessa \'ultima proposi\c c\~ao, podemos introduzir a noc\c c\~ao de coordenada. Seja V
+um $\mathbb{K}$-espa\c co vetorial de dimens\~ao $n \geq{1}$ e seja $\mathcal{B} = \{v_1, \cdots, v_n\}$ uma base.
+Vamos fixar a ordem dos elementos de $\mathcal{B}$, formando o que chamamos de base ordenada de V, e agora aplicamos
+a proposi\c c\~ao acima. 
+
+Dado $v\in{V}$, existem \'unicos $\alpha_1, \cdots, \alpha_n\in\mathbb{K}$ tais que $v = \sum_{i=1}^{n}\alpha_iv_i$. 
+Por conta dessa unicidade, \'e comum determinarmos v puramente pelos coeficientes, e escrevemos 
+$$
+    [v] = (\alpha_1, \alpha_2, \cdots, \alpha_n)_{\mathcal{B}}
+$$
+e dizemos que $\alpha_1, \alpha_2, \cdots, \alpha_n$ s\~ao as coordenadas de v com rela\c c\~ao \`a base $\mathcal{B}.$
+
+\subsection{Subespa\c cos Vetoriais e Somas de Espa\c cos}
+Tal como um conjunto possui um subconjunto, sob quais condi\c c\~oes um espa\c co vetorial possui
+outro espa\c co vetorial "dentro de si"? Esta no\c c\~ao, conhecida como subespa\c co vetorial,
+inclui conceitos como $\mathbb{R}^2$ ser basicamente "duas retas $\mathbb{R}$, sobre todo n\'umero
+racional ser tamb\'em um n\'umero real e sobre todo n\'umero real ser um n\'umero complexo.
+
+Com base nessa motiva\c c\~ao, damos continuidade para formalizar esses conceitos.
+
+\begin{def*}
+    Seja V um espa\c co vetorial sobre $\mathbb{K}$ e W um subconjunto \textbf{do conjunto V}. 
+    Diremos que W \'e um subespa\c co vetorial de V se:
+    \begin{itemize}
+        \item [SS1)] $0\in{W}$ \label{SS1}
+        \item [SS2)] Se $w_1, w_2\in{W}$, ent\~ao $w_1 + w_2 \in{W}$ \label{SS2}
+        \item [SS3)] Dados $w_1 \in{W}, k\in\mathbb{K}$, ent\~ao $kw_1 \in{W}.$ \label{SS3}
+    \end{itemize}
+\end{def*}
+
+Vamos checar que W com essas condi\c c\~oes \'e realmente um espa\c co vetorial:
+
+Sejam $w_1, w_2, w_3\in{W}$ e $k_1, k_2\in\mathbb{K}$. Como $0\in{W}$, segue da propriedade \ref{SS2} 
+que $w_1 + 0 = w_1 \in{W}$, satisfazendo a propriedade \ref{V4} de espa\c co vetorial. Al\'em disso, sendo
+em particular $w_1, w_2, w_3\in{V}$ (pois $W\subseteq{V}$), eles satisfazem \ref{V1}, \ref{V2} e \ref{V3}.
+Juntando isso com a propriedade \ref{SS2}, segue que $w_1 + w_2 = w_2 + w_1, w_1 + (w_2 + w_3) = (w_1 + w_2) + w_3$ e
+existe $-w_1\in{W}$ tal que $w_1 - w_1 = 0$ e todas essas opera\c c\~oes est\~ao em W por conta de \ref{SS2}.
+\paragraph*{} Agora, vamos verificar as opera\c c\~oes com escalares. Como 1 \'e um escalar, segue
+da propriedade \ref{E1} que $1w_1 = w_1$ e, por conta de \ref{SS3}, $1.w_1\in{W}.$ Al\'em disso,
+de \ref{E2} e \ref{SS3}. \'e v\'alido em W que $(k_1k_2)w_1 = k_1(k_2w_1)\in{W}.$ Logo, W
+satisfaz as opera\c c\~oes dos escalares.
+\paragraph*{} Por fim, a checagem da distributiva \'e como feito acima, usando as opera\c c\~oes 
+de V como espa\c co vetorial e \ref{SS2}, \ref{SS3}.
+
+Portanto, W \'e um espa\c co vetorial dentro de V! Um exerc\'icio bom para treinar a ideia \'e
+tentar provar que $\mathbb{Q}$ \'e subespa\c co de $\mathbb{R}$.
+
+Se tivermos dois espa\c cos vetoriais $V_1, V_2$, uma constru\c c\~ao importante \'e a soma 
+deles como espa\c cos. Assim, obtemos um espa\c co $V_1 + V_2$ sobre $\mathbb{K}$ cujos elementos
+s\~ao da forma $v_1 + v_2, v_1\in{V_1}, v_2\in{V_2}$. (Fica de exerc\'icio conferir provar
+que \'e de fato um espa\c co vetorial). Um tipo espec\'ifico de soma de espa\c cos importante
+\'e aquele em que cada elemento pode ser escrito de maneira \'unica como soma de elementos de cada
+um, formando o que se chama Soma Direta:
+\begin{def*}
+    Dados dois espa\c cos vetoriais $V_1, V_2$ tais que $V_1\cap{V_2} = \{0\}$, escrevemos 
+    $$  
+        V_1 \oplus{V_2}
+    $$
+    para denotar a soma desses espa\c cos, e chamamos ela de Soma Direta.
+\end{def*}
+
+\begin{example}
+    Considere a reta real $\mathbb{R}$ e o conjunto dos n\'umeros imagin\'arios $\mathbb{I}.$ Note
+    que o \'unico n\'umero que \'e tanto um real quanto um imagin\'ario \'e o 0, pois $0.i = 0$.
+    Em outras palavras, $\mathbb{R}\cap\mathbb{I} = \{0\}.$ 
+    
+    Agora, \'e poss\'ivel definir um espa\c co vetorial que seja a soma direta de ambos e que cada elemento ter\'a a forma
+    $a + b, a\in\mathbb{R}, b\in\mathbb{I}$. No entanto, como $b\in{\mathbb{I}}, b = ix, x\in\mathbb{R}
+    , i = \sqrt{-1}.$ Logo, temos um elemento da forma $a + ix \in\mathbb{R}\oplus\mathbb{I}.$
+    Isso te lembra alguma coisa? Caso n\~ao, note que esse n\'umer obtido \'e um n\'umero complexo,
+    ou seja, a soma direta de $\mathbb{R}$ com $\mathbb{I}$ \'e:
+    $$
+        \mathbb{R}\oplus\mathbb{I} := \mathbb{C}.
+    $$
+    
+    \textbf{Observa\c c\~ao:} o conjunto dos imagin\'arios $\mathbb{I}$ \'e o dos n\'umeros 
+    que possuem a forma $\mathbb{I}=\{ix: x\in\mathbb{R}, i = \sqrt{-1}\}.$
+\end{example}
+
+\begin{proposition*}
+    Sejam V um espa\c co vetorial e $W_1, W_2$ dois subespa\c cos vetoriais de V, ambos de dimens\~ao finita. Ent\~ao,
+$$
+    \dim_{\mathbb{K}} (W_1 + W_2) = \dim_{\mathbb{K}} W_1 + \dim_{\mathbb{K}} W_2 + \dim_{\mathbb{K}}(W_1\cap W_2).
+$$
+\end{proposition*}
+\begin{proof*}
+    Essa demonstra\c c\~ao serve como um grande exemplo de manipula\c c\~ao de bases, isto \'e, completamento e remo\c c\~ao
+de elementos da base. Vamos supor, a priori, que a intersec\c c\~ao dos dois espa\c cos \'e n\~ao-trivial, ou seja, 
+$W_1\cap{W_2} \neq \{0\}$ e seja $\mathcal{B} = \{w_1, \cdots, w_n\}$ uma base de $W_1\cap{W_2}$. Como $W_1\cap{W_2}$
+\'e subespa\c co tanto de $W_1$ quanto de $W_2$, \'e poss\'ivel estender a base at\'e ambos.
+
+Considere $\mathcal{B'} = \{w_1, \dots, w_n, v_1, \cdots, v_r\}, \mathcal{B''} = \{w_1, \cdots, w_n, u_1, \cdots, u_s\}$ 
+bases de $W_1$ e de $W_2$ respectivamente. A constru\c c\~ao dessas duas bases tem como base "aumentar o tamanho de 
+$\mathcal{B}$ adicionando novos elementos". O objetivo disso \'e mostrar que o conjunto $\mathcal{C} = \{w_1, \cdots, 
+w_n, v_1, \cdots, v_r, u_1, \cdots, u_s\}$ \'e uma base de $W_1 + W_2.$
+
+H\'a muitos \'indices aqui, ent\~ao recapitulando: come\c camos com uma base com n elementos da interse\c c\~ao $W_1\cap{W_2}$,
+representando a dimens\~ao de $W_1\cap{W_2}$, $\dim_{\mathbb{K}}(W_1\cap{W_2}) = n.$ A partir disso, adicionamos novos r
+elementos, representando a dimens\~ao de $W_1$, $\quad\dim_{\mathbb{K}}(w_1) = n + r$ e outros s elementos, representado
+a dimens\~ao de $W_2$, $\dim_{\mathbb{K}}(W_2) = n + s.$ O resultado que queremos provar se resume a encontrar uma base de
+$W_1 + W_2$ que possua 
+$$
+    \dim_{\mathbb{K}}(W_1) + \dim_{\mathbb{K}}(W_2) - \dim_{\mathbb{K}}(W_1\cap{W_2}) = n + r + n + s - n = n + r + s
+$$
+elementos, e por isso o nosso objetivo \'e aquele!
+
+Dando continuidade, come\c camos mostrando que $\mathcal{C}$ gera $W_1 + W_2$. Seja $v\in{W_1+W_2}$, ou seja, 
+$v = w_1 + w_2, w_1\in{W_1}, w_2\in{W_2}$. Usando as bases de cada respectivo espa\c co e da interse\c c\~ao, temos 
+$$
+    w_1 = \sum_{i=1}^{n}\lambda_{i}w_{i} + \sum_{j=1}^{r}\gamma_{j}v_{j} 
+$$
+e
+$$
+    w_2 = \sum_{i=1}^{n}\alpha_{i}w_{i} + \sum_{l=1}^{s}\beta_{l}u_{l}.
+$$
+Assim, v pode ser escrito como 
+$$
+    v = w_1 + w_2 = \sum_{i=1}^{n}\lambda_{i}w_{i} + \sum_{j=1}^{r}\gamma_{j}v_{j} + 
+    \sum_{i=1}^{n}\alpha_{i}w_{i} + \sum_{l=1}^{s}\beta_{l}u_{l} =
+$$
+$$
+    = \biggl(\sum_{i=1}^{n}\lambda_{i}w_{i} + \sum_{i=1}^{n}\alpha_{i}w_{i}\biggr) + \sum_{j=1}^{r}\gamma_{j}v_{j} + \sum_{l=1}^{s}\beta_{l}u_{l} 
+$$
+$$
+    = \sum_{i=1}^{n}(\lambda_{i} + \alpha_{i})w_{i} + \sum_{j=1}^{r}\gamma_{j}v_{j} + \sum_{l=1}^{s}\beta_{l}u_{l}.
+$$
+Portanto, como a soma $\lambda_{i} + \alpha_{i}$ \'e tamb\'em um escalar, v \'e combina\c c\~ao linear de elementos de $\mathcal{C}$ e,
+por termos escolhido v sendo qualquer, $\mathcal{C}$ gera $W_1 + W_2.$ 
+
+O pr\'oximo e \'ultimo passo \'e mostrar que $\mathcal{C}$ \'e linearmente independente. Considere a soma 
+$$
+    (2.3)\quad\sum_{i=1}^{n}\alpha_{i}w_{i} + \sum_{j=1}^{r}\gamma_{j}v_{j} + \sum_{l=1}^{s}\beta_{l}u_{l} = 0, \label{EQ1}
+$$
+em que $\alpha_{i}, \beta_{j}, \gamma_{l}\in\mathbb{K}$. Assim, reescrevendo a equa\c c\~ao, obtemos:
+$$
+    \sum_{l=1}^{s}\beta_{l}u_{l} = \sum_{i=1}^{n}(-\alpha_{i})w_{i} + \sum_{j=1}^{r}(-\gamma_{j})v_{j}, \in{W_1\cap{W_2}}
+$$
+sendo, ao mesmo tempo, combina\c c\~ao linear de elementos de $\mathcal{B'}$ e de elementos de $\mathcal{B''}.$ 
+Logo, existem $\lambda_1, \cdots, \lambda_n\in\mathbb{K}$ tais que 
+$$
+    \sum_{l=1}^{s}\beta_{l}u_{l} = \sum_{i=1}^{n}\lambda_{i}u_{i}, 
+$$
+isto \'e, 
+$$
+    \sum_{l=1}^{s}\beta_{l}u_{l} + \sum_{i=1}^{n}(-\lambda_{i})u_{i} = 0.
+$$
+Como $\{u_1, \cdots, u_s, w_1, \cdots, w_n\}$ \'e linearmente independente, temos $\beta_l = 0$ para todo 
+$l = 1, \cdots, s$ e $\lambda_i = 0$, para todo $i = 1, \cdots, n.$ Em particular, a equa\c c\~ao \ref{EQ1} se reduz
+a 
+$$
+    \sum_{i=1}^{n}\alpha_{i}w_{i} + \sum_{j=1}^{r}\gamma_{j}v_{j} = 0.
+$$
+Sendo $\{w_1, \cdots, w_n, v_1, \cdots, v_r\}$ \'e linearmente independente, teremos $\alpha_{i} = 0$ para todo
+$i = 1, \cdots, n$ e $\gamma_{j} = 0$ para todo $j = 1, \cdots, r$. Portanto, $\{w_1, \cdots, w_n, v_1, \cdots, v_r, u_1,
+\cdots, u_s\}$ \'e linearmente independente e uma base de $W_1 + W_2.$
+
+No caso em que $W_1\cap{W_2} = \{0\}$, sejam $\mathcal{B_1}, \mathcal{B_2}$ bases respectivas de $W_1, W_2$. Por um
+processo an\'alogo ao que foi feito, mostra-se que $\mathcal{B_1}\cup\mathcal{B_2}$ \'e uma base de $W_1 + W_2$. 
+Portanto, a demonstra\c c\~ao est\'a completa. 
+
+\end{proof*}
+Finalizamos esta parte com duas proposi\c c\~oes de exerc\'icios, j\'a que \'e uma aplica\c c\~ao do que foi visto
+at\'e agora:
+\begin{proposition*}
+    Sejam V um $\mathbb{K}$-espa\c co vetorial e $W_1, W_2$ dois subespa\c cos de V. Ent\~ao, $V = W_1 \oplus W_2$ se e 
+s\'o se cada elemento $v\in{V}$ se escreve de maneira \'unica como uma soma $x_1 + x_2$, com $x_1\in{W_1}, x_2\in{W_2}.$
+\end{proposition*}
+\begin{proposition*}
+    Sejam V um $\mathbb{K}$-espa\c co vetorial finitamente gerado n\~ao nulo e $W_1$ um subespa\c co de V. Ent\~ao,
+existe um subespa\c co $W_2$ de V tal que $V = W_1 \oplus W_2$.
+\end{proposition*}
+
+

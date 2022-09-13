@@ -11,6 +11,7 @@
 \usepackage[portuguese]{babel}
 \usepackage{hyperref}
 \usepackage{lastpage}
+\usepackage{mathtools}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -26,7 +27,10 @@
 }
 
 \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+\newtheorem*{theorem*}{\underline{Teorema:}}
 \newtheorem{example}{\underline{Exemplo:}}[section]
+\newtheorem*{proposition*}{\underline{Proposi\c c\~ao:}}
+\newtheorem*{corol*}{\underline{Corol\'ario:}}
 \newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
 \newtheorem*{proof*}{\underline{Prova:}}
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -92,5 +96,7 @@ muitos conceitos futuros tomam como base o que ser\'a visto aqui, em todas as \'
 para isso, espero que essas notas sirvam como um guia para quem necessita de uma luz nesse curso.
 
 \include{./Chapter_1}
+
+\include{./Chapter_2}
 
 \end{document}
