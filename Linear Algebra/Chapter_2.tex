@@ -69,5 +69,151 @@ $$
     Denotamos o espa\c co de todas as transforma\c c\~oes lineares entre dois espa\c cos U e V por 
 $Lin_{\mathbb{K}}(U, V)$. Em outras palavras, o conjunto \'e dado por 
 $$
-    Lin_{\mathbb{K}}(U, V):=\{T:U\rightarrow V: T \text{ \'e transforma\c c\~ao linear.}\}
+    Lin_{\mathbb{K}}(U, V):=\{T:U\rightarrow V: T \text{ \'e transforma\c c\~ao linear.}\}.
 $$
+Para transformar isso em um espa\c co propriamente dito, vamos definir as opera\c c\~oes nele: 
+\begin{itemize}
+    \item $(T_1 + T_2)u := T_1u + T_2u$
+    \item $(kT)u := kTu$.
+\end{itemize}
+O elemento neutro aqui \'e a transforma\c c\~ao $0: u\mapsto{0}$ (0(u) = 0 para todo $u\in{U}$), basta verificar
+que (T+0)u = Tu para todo u de U. 
+
+Uma coisa importante que acontece \'e com rela\c c\~ao \`as bases de um espa\c co vetorial sob uma transforma\c c\~ao
+linear - elas s\~ao preservadas. Especificamente,
+
+\begin{proposition*}
+    Sejam U e V $\mathbb{K}-$espa\c cos vetoriais e considere bases $b_1, \cdots, b_n$ de U e $v_1, \cdots, v_n$ de V.
+Ent\~ao, existe uma aplica\c c\~ao linear $A:U \rightarrow V$ \'unica e que satisfaz $Ab_j = v_j$ para todo
+$j = 1, \cdots, n$.
+\end{proposition*}
+\begin{proof*}
+    Sabe-se que todo elemento $u\in{U}$ satisfaz a igualdade 
+    $$
+        u = \sum_{i=1}^{n}\lambda_ib_i, \lambda_i\in\mathbb{K}.
+    $$
+    A partir disso, aplicando-se A, obtemos
+    $$
+        Au = A\biggl(\sum_{i=1}^{n}\lambda_ib_i = \sum_{i=1}^{n}\lambda_iAb_i,  \lambda_i\in\mathbb{K}\biggr).
+    $$
+    Com isso, vamos definir a aplica\c c\~ao desejada por $Au:= \sum_{i=1}^{n}\lambda_iv_i.$ Assim, segue que 
+    $Ab_i = v_i$ e segue a unicidade, pois temos:
+    $$
+        0 = Au - Au = \sum_{i=1}^{n}\lambda_iAb_i - \sum_{i=1}^{n}\lambda_iv_i = \sum_{i=1}^{n}\lambda_i(Ab_i - v_i).
+    $$
+    Resta checarmos que essa A \'e de fato uma transforma\c c\~ao linear. Para isso, tome outro elemento $u' = 
+    \sum_{i=1}^{n}\lambda_i'b_i.$ Vamos primeiro calcular A em u e, em seguida, em u', para assim compararmos a soma 
+    dos dois elementos. Com efeito,
+    $$
+        Au = \sum_{i=1}^{n}\lambda_iv_i \quad Au' = \sum_{i=1}^{n}\lambda_i'v_i 
+    $$
+    de maneira que 
+    $$
+        A(u+u') = \sum_{i=1}^{n}(\lambda_i + \lambda_i')v_i = \sum_{i}\lambda_iv_i + \sum_{i}^{n}\lambda_i'v_i
+        = Au + Au'.
+    $$
+    Assim, resta provar apenas que A comuta com escalares. Nesta linha de racioc\'inio, dado um escalar $k\in\mathbb{K}$,
+    percebemos que
+    $$
+        A(ku) = \sum_{i=1}^{n}k\lambda_iv_i = k\sum_{i=1}^{n}\lambda_iv_i = kAu.
+    $$
+    Portanto, A \'e uma aplica\c c\~ao linear \'unica que satisfaz a propriedade desejada.
+    \qedsymbol
+\end{proof*}
+\begin{corol*}
+    Se duas aplica\c c\~oes lineares coincidem em uma base linear, elas s\~ao iguais.
+\end{corol*}
+\begin{proof*}
+    Sejam $A_1, A_2$ duas aplica\c c\~oes lineares coincidindo em uma base linear. Em outras palavras, dado
+    um elemento da base $b\in{\mathcal{B}}$, vale que $A_1b = A_2b$. Assim, dado um elemento u de V, sabemos que 
+    $$
+        u = \sum_{i=1}^{n}\lambda_ib_i,
+    $$
+    em que $\lambda_i\mathbb{K}$ s\~ao escalares e $b_i\in\mathcal{B}.$ Agora, nessas condi\c c\~oes, 
+    $$
+        A_1u = \sum_{i=1}^{n}\lambda_iA_1b_i = \sum_{i=1}^{n}\lambda_iA_2b_i = A_2u.
+    $$
+    Portanto, as duas aplica\c c\~oes coincidem em todos os elementos, ou seja, s\~ao iguais.
+    \qedsymbol
+\end{proof*}
+\begin{def*}
+    Seja $A:U\rightarrow{V}$ uma aplica\c c\~ao entre $\mathbb{K}$-espa\c cos vetoriais. Chamamos $A^{-1}0 =
+    \{u\in{U}: Au = 0\}$ de n\'ucleo (ou kernel) de A.
+\end{def*}
+    Uma pergunta que surge \'e - j\'a que aplica\c c\~oes lineares preservam as opera\c c\~oes dos espa\c cos vetoriais,
+ser\'a que elas preservam outras estruturas, como os subespa\c cos? A resposta, afinal, \'e sim!
+\begin{proposition*}
+    Seja $A:U\rightarrow{V}$ uma aplica\c c\~ao entre $\mathbb{K}-$espa\c cos vetoriais e sejam $U'\leq{U'}$ e
+    $V'\leq{V}$ subespa\c cos. Ent\~ao, a imagem AU' e a imagem inversa $A^{-1}V'$ s\~ao subespa\c cos, 
+    $AU'\leq{V} \text{ e } A^{-1}V'\leq{U}.$ Em particular, o n\'ucleo de A \'e um subespa\c co de U.
+\end{proposition*}
+\begin{proof*}
+    Nas hip\'oteses da proposi\c c\~ao, tome dois elementos $v_1, v_2\in{AU'}$ e $k\in\mathbb{K}$. Primeiramente,
+    note que 0 = 0.Au = A(u.0) = A0, ou seja, $0\in{AU'}$. Al\'em disso, 
+    $$
+        v_1 + v_2 = Au_1 + Au_2 = A(u_1 + u_2)
+    $$    
+    e, como U' \'e um subespa\c co, $u_1 + u_2\in{U'}$. Assim, $v_1 + v_2\in{AU'}$. Al\'em disso, 
+    $$
+        kv_1 =  kAu_1 = A(ku_1) 
+    $$
+    novamente, como U' \'e um subespa\c co, $ku_1\in{U'}$ e $kv_1\in{AU'}$, mostrando que \'e um subespa\c co. Para
+    $A^{-1}V'$, o processo \'e an\'alogo. Para o n\'ucleo, \'e claro que $0\in{A0}$, mas agora considere
+    $w_1, w_2\in{A0}.$ Ent\~ao, 
+    $$
+        A(w_1 + w_2) = A(w_1) + A(w_2) = 0 + 0 = 0,
+    $$
+    tal que $w_1 + w_2\in{A0}.$ Ademais, fornecido um escalar $k\in\mathbb{K}$, 
+    $$
+        A(kw_1) = kAw_1 = k0 = 0,
+    $$
+    que tamb\'em partence a A0. Portanto, A0 \'e um subespa\c co vetorial.
+    \qedsymbol
+\end{proof*}
+    Uma vantajem de definirmos o n\'ucleo de uma aplica\c c\~ao linear \'e que ele nos fornece um crit\'erio para 
+    a aplica\c c\~ao ser injetora:
+\begin{proposition*}
+    Seja $A:U\rightarrow{V}$ uma aplica\c c\~ao entre $\mathbb{K}-$espa\c cos vetoriais. Ent\~ao, A \'e um 
+    monomorfismo se, e s\'o se, o n\'ucleo de A \'e nulo.
+\end{proposition*}
+\begin{proof*}
+    Por um lado, suponha que A \'e um monomorfismo (injetora). Ent\~ao, dado $u\in{U}$, Au = 0 implica que u = 0, 
+    isto \'e, $A0 = \{0\},$ provando o que quer\'iamos. 
+
+    Por outro lado, suponha que o n\'ucleo de A \'e nulo. Suponha que $u_1, u_2\in{U}$ s\~ao tais que $Au_1 = Au_2$,
+    de forma que
+    $$
+        0 = Au_1 - Au_2 = A(u_1 - u_2).
+    $$
+    Em outras palavras, $u_1 - u_2\in{A0}$. Como o n\'ucleo \'e nulo, $u_1 - u_2 = 0$. Portanto, $u_1 = u_2$, e A
+    \'e injetora.
+\end{proof*}
+\begin{proposition*}
+    Seja $A:U\rightarrow{V}$ uma aplica\c c\~ao entre $\mathbb{K}$-espa\c cos vetoriais com U finitamente gerado e 
+    seja W um subespa\c co complementar ao n\'ucleo $N:= A^{-1}0$ de A, isto \'e, $U = N \oplus W$. Ent\~ao, 
+    $A|W: W \rightarrow AU$ \'e um isomorfismo.
+\end{proposition*}
+\begin{proof*}
+    Considere um elemento $u\in{U}$ e seu respectivo $Au\in{AU}$. Tome tamb\'em um representante $v\in{N}$. Nessas
+    condi\c c\~oes, observe que u pode ser escrito como u = w + v, para algum w de W, de modo que 
+    $$
+        Au = A(w + v) = Aw + Av = Aw + 0 = Aw.
+    $$
+    Em outras palavras, $A|_W: W\rightarrow AU$ \'e sobrejetora, pois todo elemento de AU pode ser escrito como
+    um esta aplica\c c\~ao agindo em um elemento de w. Al\'em disso, considere o n\'ucleo $N|_W:=\{w\in{W}: Aw = 0\}.$
+    Ent\~ao, se $w\in{N|_W}$, temos Aw = 0, ou seja, $w\in{N}.$ Como $U = N\oplus{W}, N\cap{W} = \{0\}$ e, como 
+    $w\in{N\cap{W}}, w = 0.$ Logo, $N|_W = \{0\}$, donde segue que $A|_W$ \'e injetora. Portanto, $A|_W$ \'e um
+    isomorfismo.
+    \qedsymbol 
+\end{proof*}
+    Com este resultado em m\~aos, obtivemos uma caracteriza\c c\~ao importante: A imagem da Aplica\c c\~ao agindo
+sobre um espa\c co vetorial U independe dos elementos do n\'ucleo, podendo ser vista como o resultado da a\c c\~ao
+dela a uma restri\c c\~ao de seu dom\'inio. Outra consequ\^encia imediata de $U = N \oplus{W}$ \'e que 
+$\dim_{\mathbb{K}}A^{-1}0 + \dim_{\mathbb{K}} AU = \dim_{\mathbb{K}}$.
+\begin{def*}
+    A dimens\~ao da imagem de A \'e chamada posto de A, e ser\'a denotada por $rkA:=\dim_{\mathbb{K}}AU.$
+\end{def*}
+    O pr\'oximo passo na jornada das aplica\c c\~oes lineares \'e uma liga\c c\~ao essencial entre elas e as matrizes.
+Como ser\'a visto, toda matriz pode ser vista como uma aplica\c c\~ao linear e vice-versa. Essa rela\c c\~ao \'e,
+de fato, muito mais intr\'inseca do que aparenta ser, n\~ao dependendo nem mesmo da base do espa\c co (por isso, diz
+-se que \'e uma tradu\c c\~ao ``natural'' entre os dois conceitos)
