@@ -216,4 +216,17 @@ $\dim_{\mathbb{K}}A^{-1}0 + \dim_{\mathbb{K}} AU = \dim_{\mathbb{K}}$.
     O pr\'oximo passo na jornada das aplica\c c\~oes lineares \'e uma liga\c c\~ao essencial entre elas e as matrizes.
 Como ser\'a visto, toda matriz pode ser vista como uma aplica\c c\~ao linear e vice-versa. Essa rela\c c\~ao \'e,
 de fato, muito mais intr\'inseca do que aparenta ser, n\~ao dependendo nem mesmo da base do espa\c co (por isso, diz
--se que \'e uma tradu\c c\~ao ``natural'' entre os dois conceitos)
+-se que \'e uma tradu\c c\~ao ``natural'' entre os dois conceitos). Vamos ver como construir isso.
+
+    Sejam U e V $\mathbb{K}$-espa\c cos vetoriais, seja $\beta: b_1, b_2, \cdots, b_n$ uma base linear de U e seja 
+$\gamma: c_1, c_2, \cdots, c_m$ uma base linear de V. Tomemos uma aplica\c c\~ao linear qualquer $A: U \rightarrow{V}$.
+Ent\~ao, para todo $j = 1, 2, \cdots, n$, vale que $Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_i$ para \'unicos $a_{ij}\in\mathbb{K}$.
+Essa identifica\c c\~ao \'e respons\'avel por dar para cada elemento $b_j$ da base $\beta$ uma imagem escrita em termos
+da base $\gamma$ com coordenada $(a_{1j}, a_{2j}, \cdots, a_{mj})$. Associamos \`a aplica\c c\~ao linear A a 
+($m \times n$)-matriz $[A]_{\gamma}^{\beta}:=[a_{ij}]$ com coeficientes em $\mathbb{K}$. Com este processo, 
+associamos a cada transforma\c c\~ao linear uma matriz correspondente; agora, faremos a rec\'iproca disso.
+
+    Considere $[a_{ij}]$ uma ($m\times{n}$)-matriz qualquer com coeficientes em $\mathbb{K}$. Vimos que existe uma
+\'unica aplica\c c\~ao linear $A:U\rightarrow{V}$ tal que $Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_i$ para todo $j = 1,
+2, \cdots, n$. Com isso, quando bases s\~ao dadas em ambos os espa\c cos, temos um dicion\'ario entre as aplica\c c\~oes`
+de $Lin_{\mathbb{K}}(U, V)$ e as ($m\times{n}$)-matrizes escalares.
