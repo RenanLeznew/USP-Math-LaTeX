@@ -213,7 +213,9 @@ $\dim_{\mathbb{K}}A^{-1}0 + \dim_{\mathbb{K}} AU = \dim_{\mathbb{K}}$.
 \begin{def*}
     A dimens\~ao da imagem de A \'e chamada posto de A, e ser\'a denotada por $rkA:=\dim_{\mathbb{K}}AU.$
 \end{def*}
-\subsection{Transforma\c c\~oes Lineares e Matrizes}
+
+\subsection{Aplica\c c\~oes Lineares e Matrizes}
+
     O pr\'oximo passo na jornada das aplica\c c\~oes lineares \'e uma liga\c c\~ao essencial entre elas e as matrizes.
 Como ser\'a visto, toda matriz pode ser vista como uma aplica\c c\~ao linear e vice-versa. Essa rela\c c\~ao \'e,
 de fato, muito mais intr\'inseca do que aparenta ser, n\~ao dependendo nem mesmo da base do espa\c co (por isso, diz
@@ -224,14 +226,138 @@ $\gamma: c_1, c_2, \cdots, c_m$ uma base linear de V. Tomemos uma aplica\c c\~ao
 Ent\~ao, para todo $j = 1, 2, \cdots, n$, vale que $Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_i$ para \'unicos $a_{ij}\in\mathbb{K}$.
 Essa identifica\c c\~ao \'e respons\'avel por dar para cada elemento $b_j$ da base $\beta$ uma imagem escrita em termos
 da base $\gamma$ com coordenada $(a_{1j}, a_{2j}, \cdots, a_{mj})$. Associamos \`a aplica\c c\~ao linear A a 
-($m \times n$)-matriz $[A]_{\gamma}^{\beta}:=[a_{ij}]$ com coeficientes em $\mathbb{K}$. Com este processo, 
+($m \times n$)-matriz $[A]_{\gamma}^{\beta}:=[a_{ij}]$ (leia da seguinte forma: A representa a transfoma\c c\~ao dos elementos
+da base $\beta$ \`a sua respectiva combina\c c\~ao linear em $\gamma$.) com coeficientes em $\mathbb{K}$. Com este processo, 
 associamos a cada transforma\c c\~ao linear uma matriz correspondente; agora, faremos a rec\'iproca disso.
 
     Considere $[a_{ij}]$ uma ($m\times{n}$)-matriz qualquer com coeficientes em $\mathbb{K}$. Vimos que existe uma
 \'unica aplica\c c\~ao linear $A:U\rightarrow{V}$ tal que $Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_i$ para todo $j = 1,
-2, \cdots, n$. Com isso, quando bases s\~ao dadas em ambos os espa\c cos, temos um dicion\'ario entre as aplica\c c\~oes`
-de $Lin_{\mathbb{K}}(U, V)$ e as ($m\times{n}$)-matrizes escalares.
+2, \cdots, n$. Com isso, quando bases s\~ao dadas em ambos os espa\c cos, temos um dicion\'ario entre as aplica\c c\~oes
+de $\Lin{U, V}$ e as ($m\times{n}$)-matrizes escalares. Para todo $j = 1, \cdots, n$, temos 
+$Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_{i}$ e $A'b_j = \sum\limits_{i=1}^{m}a'_{ij}c_{i}$, em que 
+$a_{ij}, a'_{ij}\in\mathbb{K}.$ Ent\~ao, 
+$$
+    (A + A')b_j = Ab_j + A'b_j = \sum_{i=1}^{m}(a_{ij} + a'_{ij})c_{i}, \quad \text{\&} \quad
+    (kA)b_j = kAb_j = \sum\limits_{i=1}^{m}(ka_{ij})c_{i}.
+$$  
+Em outras palavras, $[A]^\beta_\gamma = [a_{ij}], [A']_\gamma^\beta, [A + A']^\beta_\gamma = [a_{ij} + a'_{ij}],
+\text{ e } [kA]_\gamma^\beta = k[A]_\gamma^\beta.$
+    Al\'em disso, escrevendo $[u]_\beta = \begin{bmatrix} k_{1} \\ k_{2} \\ \vdots \\ k_{n} \end{bmatrix} $,
+ent\~ao 
+$$
+    Au = \sum_{j=1}^{n}k_jAb_j = \sum_{j=1}^{n}k_j\biggl(\sum_{i=1}^{m}a_{ij}c_{i}\biggr)
+    = \sum_{i=1}^{m}\biggl(\sum_{j=1}^{n}a_{ij}k_j\biggr)c_{i},
+$$
+de modo que, notando como $\sum\limits_{j=1}^{n}a_{ij}k_j$ \'e o i-\'esimo coeficiente da coluna da matriz
+produto $[a_{ij}]\begin{bmatrix} k_{1} \\ k_{2} \\ \vdots \\ k_{n} \end{bmatrix}$, ent\~ao
+$[Au]_\gamma = [A]_\gamma^\beta[u]_\beta$ para todos $u\in{U}, A\in{\Lin{U, V}}$. Traduzindo isso para
+um portugu\^es leg\'ivel, acabamos de mostrar que a a\c c\~ao de uma transforma\c c\~ao linear num elemento
+qualquer $u\in{U}$ \'e descrita pelo produto dos coeficientes dessa transforma\c c\~ao com a matriz dos coeficientes
+de u!
+    Essa quest\~ao levanta um inqu\'erito importante - o que acontece com a composi\c c\~ao de duas transforma\c c\~oes?
+Se considerarmos agora uma base $\delta: d_1, d_2, \cdots, d_l$ uma base linear de W, chamando a outra matriz de 
+$[B]_\delta^\gamma = [b_{si}]$, s\~ao dadas pelas igualdades $Ab_j = \sum\limits_{i=1}^{m}a_{ij}c_{i}$ para todo 
+$j = 1, \cdots, n$ e $Bc_i = \sum\limits_{s=1}^{l}b_{si}d_{s}$ para todo $i = 1, \cdots, m$, ent\~ao
+$$
+    (B\circ{A})b_j = B(Ab_j) = B(\sum_{i=1}^{m}a_{ij}c_{i}) = \sum_{i=1}^{m}a_{ij}Bc_i = \sum_{i=1}^{m}a_{ij}
+    \biggl(\sum_{s=1}^{l}b_{si}d_s\biggr) = \sum_{s=1}^{l}\biggl(\sum_{i=1}^{m}b_{si}a_{ij}\biggr)d_s.
+$$
+Assim, o sj-\'esimo coeficiente da matriz $[B\circ{A}]_{\delta}^{\beta}$ \'e igual a $\sum\limits_{i=1}^{m}
+b_{si}a_{ij}$. Note que este coeficiente \'e o mesmo que o produto de duas matrizes, sendo elas 
+$[B\circ{A}]_{\delta}^{\beta} = [B]_{\delta}^{\beta}\cdot[A]_{\gamma}^{\beta}.$ Conclu\'imos disso que
+a composta de aplica\c c\~oes lineares \'e o produto das matrizes de cada uma!
 
-	Como consequ\^encia dessa liga\c c\~ao, obtemos um isomorfismo entre os espa\c cos $Lin_{\mathbb{K}}(U, V)$ de aplica
-\c c\~oes lineares e $Matr_{m\times{n}}\mathbb{K}$ das matrizes ($m\times{n}$) arbitr\'arias com coeficientes em $\mathbb{K}.$
-Com efeito, sejam $A, A\in{\Lin{U, V}}$ e seja $k\in\mathbb{K}$.
+    Com tudo isso, obtemos um exemplo particularmente importante de matriz, a chamada mudan\c ca de base:
+\begin{def*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial e sejam $\beta, \gamma$ duas bases lineares de V. A matriz
+$M_\gamma^{\beta} := [1_V]_{\gamma}^{\beta}$ \'e chamada matriz de mudan\c ca de base $\beta$ para $\gamma$.
+\end{def*}
+
+\subsection{Funcionais Lineares e Espa\c co Dual}
+Um tipo particular de aplica\c c\~oes lineares s\~ao os funcionais lineares, definidos a seguir
+\begin{def*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial. Um funcional linear \'e um mapeamento $f: V\rightarrow{\mathbb{K}}$ 
+que satisfaz, para $u, v\in{V}, k\in\mathbb{K}$, as seguintes propriedades
+    $$
+        f[u + v] = f[u] + f[v]
+        f[ku] = kf[u].
+    $$
+\end{def*}
+    Essencialmente, a diferen\c ca entre funcionais lineares e aplica\c c\~oes lineares \'e que, quando falando de
+aplica\c c\~oes lineares, damos entrada de vetores para receber outros vetores no outro espa\c co, e no caso dos 
+funcionais, damos entrada de vetores para a fun\c c\~ao e obtemos escalares na imagem.
+    Em particular, o conjunto dos funcionais lineares de um espa\c co vetorial V forma um espa\c co sobre $\mathbb{K}$,
+o chamado espa\c co dual $V^*$.
+\begin{example}
+    Considere V = $\mathbb{K}^n$. Podemos exibir um funcional linear 
+    $$
+        f: \mathbb{K}^n\rightarrow{\mathbb{K}},
+    $$ 
+$f(x_1, \cdots, x_n) = \sum\limits_{i=1}^{n}\alpha_ix_i, \alpha_1, \cdots, \alpha_n\in{\mathbb{K}}.$ H\'a um outro
+funcional $\pi: \mathbb{K}^{n}\rightarrow\mathbb{K}$ nesse espa\c co dado por $\pi(x_1, \cdots, x_n) = x_i$, a chamada
+i-\'esima proje\c c\~ao de $\mathbb{K}^{n}$ em $\mathbb{K}$.
+\qedsymbol
+\end{example}
+    Um exemplo particularmente interessante j\'a \'e um velho amigo conhecido do c\'alculo diferencial e integral
+\begin{example}
+    Considere o espa\c co das fun\c c\~oes cont\'inuas de um intervalo $[a, b] \text{ em } \mathbb{C}, 
+\mathcal{C}([a, b], \mathbb{C}).$ Definimos um funcional linear $I:\mathcal{C}([a, b], \mathbb{C})\rightarrow
+\mathbb{C}$ dado por 
+    $$
+        I(x) = \int_a^b x(t)dt.
+    $$
+Em geral, note que integrais e derivadas podem ser vistas como aplica\c c\~oes lineares devido \`as suas propriedades
+de soma e multiplica\c c\~ao por escalar, enquanto a integral definida \'e um funcional, pois ela devolve um valor
+num\'erico como resultado.
+\end{example}
+    Nosso pr\'oximo passo \'e construir uma base para o espa\c co dual tendo como refer\^encia a base do espa\c co
+vetorial.
+    Seja $\beta: b_1, b_2, \cdots, b_n$ uma base de V. Para todo $j = 1, 2, \cdots, n$, podemos encontrar um 
+\'unico funcional linear $b_j^*: V\rightarrow\mathbb{K}$ dado por $b_j^*b_j = 1, b_j^*b_i = 0$ para $i\neq{j}$.
+Com isso, $\beta^*: b_1^*, b_2^*, \cdots, b_n^*$ forma uma base para $V^*$, chamada base dual. A independ\^encia linear 
+n\~ao \'e complicada de ser mostrada, ent\~ao vamos mostrar que esse candidato a base gera o espa\c co. Com efeito,
+seja $f\in{V^*}$. Temos 
+$$
+    \biggl(\sum_{j=1}^{n}fb_jb_j^*\biggr) = \sum_{j=1}^{n}(fb_j)(b_j^*b_i) = fb_i (\text{ todas as outras parcelas s\~ao 0}).
+$$
+Logo, todo funcional pode ser escrito como uma combina\c c\~ao linear de elementos de $\beta^*$ de maneira \'unica,
+tornando $\beta^*$ uma base.
+    Em suma, constru\'imos manualmente uma base para o espa\c co dual $V^*$ usando a base de V. Esta nomenclatura,
+\textit{dual}, se origina do fato de que podemos escrever elementos de um espa\c co com base nos elementos do outro,
+num processo formalizado no seguinte Teorema
+\begin{theorem*}
+    Seja V um $\mathbb{K}$-espa\c co de dimens\~ao finita com base $\beta: b_1, b_2, \cdots, b_n$. Ent\~ao, existe
+uma \'unica base $\beta^*: b_1^*, b_2^*, \cdots, b_n^*$ tal que $b_j^*b_i = 0, i\neq{j}, \& b_j^*b_j = 1$. Al\'em
+disto, para cada $v\in{V}$, temos 
+    $$
+        v = \sum_{i=1}^{n}b_i^*(v)b_i
+    $$
+e, para cada $f\in{V*}$, 
+    $$
+        f = \sum_{i=1}^{n}f(b_i)b_i^*
+    $$
+\end{theorem*}
+    Emerge uma quest\~ao - \'e poss\'ivel fazer o caminho oposto? Dada uma base de $V^*$, conseguimos construir um
+espa\c co dual a este, resultando em uma base $\beta$ de V? A resposta disso leva ao surgimento de um espa\c co
+chamado bidual, definido a seguir
+\begin{def*}
+    Seja V um $\mathbb{K}$-espa\c co vetorial. Chamamos o espa\c co $(V^*)^*$ de espa\c co bidual a V e usamos
+a nota\c c\~ao $V^{**}$.
+\end{def*}
+    Temos uma aplica\c c\~ao natural $I_V: V\rightarrow{V^{**}}$ agindo em $v\in{V}, f\in{V*}$ que \'e dada por 
+$(I_Vv)f:= f[v]\in{\mathbb{K}}$, ou seja, entendemos qualquer $v\in{V}$ como um funcional linear sobre $V^*$,
+enviando $f\in{V^*}$ para $f[v]\in\mathbb{K}.$ Vamos conferir que o representante $I_Vv$ \'e linear:
+    $$
+        (I_Vv)(f_1 + f_2) = (f_1 + f_2)[v] = f_1[v] + f_2[v] = (I_Vv)(f_1) + (I_Vv)(f_2), \quad 
+        (I_Vv)(kf_1) = (kf_1)[v] = k(I_Vv)(f_1)
+    $$
+para $f_1, f_2\in{V*}, k\in\mathbb{K}, v\in{V}$. Precisamos agora mostrar que a aplica\c c\~ao $I_V$ \'e linear.
+Para isso, tome $v_1, v_2\in{V}, f\in{V^*}, k\in\mathbb{K}$. Assim,
+    $$
+        (I_V(v_1 + v_2))f = f[v_1 + v_2] = f[v_1] + f[v_2] = (I_Vv_1)f + (I_Vv_2)f, \quad
+        (I_V(kv_1))f = f[kv_1] = kf[v_1] = k(I_Vv_1)f.
+    $$
+Portanto, esta aplica\c c\~ao \'e linear entre os espa\c cos. No entanto, qual \'e o sentido de fazermos essa 
+constru\c c\~ao? A resposta \'e que ela prov\'em um isomorfismo entre $V^{**}$ e V, ou seja, o espa\c co bidual
+\'e igual ao espa\c co original!! (N\~ao ser\'a provado, acredito que saia do escopo das notas, essa \'ultima 
+constru\c c\~ao \'e mais a t\'itulo de curiosidade.)
