@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{mathtools}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\pgfplotsset{compat = 1.18}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newtheorem*{def*}{\underline{Definition}}
+\newtheorem*{theorem*}{\underline{Theorem:}}
+\newtheorem{example}{\underline{Example:}}[section]
+\newtheorem*{proof*}{\underline{Proof:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+\title{EXERC\'ICIOS DE C\'ALCULO}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Campos e Potenciais}
+\subsection{Exerc\'icio 12}
+Dada a fun\c c\~ao $\vec{F}(x, y) = (e^{x}y ^{3} + y, 3e^{x}y^2 + x)$, buscamos uma fun\c c\~ao f tal que 
+$\vec{\nabla}{f} = \vec{F}$. Assim, basta integrar a primeira entrada com rela\c c\~ao a x e a segunda com rela\c c
+\~ao a y:
+  $$
+  f(x, y) = (e^{x}y ^{3} + yx, e^{x}y^3 + yx)
+  $$
+
+  Por outro lado, se $\vec{F}(x, y, z) = (12x^2, \cos(y)\cos(z), 1 - \sin(y)\sin(z),$ ser\'a preciso integrar f
+nas 3 coordenadas. Com efeito, obtemos
+  $$
+  f(x, y, z) = (4x ^{3}, \sin(y)\cos(z), z + \sin(y)\cos(z)).
+  $$
+\qedsymbol
+
+\subsection{Exerc\'icio 13}
+Primeiramente, sem utilizar o TFIL, a resolu\c c\~ao se torna uma aplica\c c\~ao mec\^anica do que foi visto ao longo
+do curso, ou seja, basta calcular
+\begin{align*}
+  \int_{C}\vec{F}\dot{}dr & = \int_{1}^{e} F(\gamma(t))\gamma'(t)dt = \int_{1}^{e}(2t^2\ln{t}, \frac{t ^{4}}{t} + t ^{2}, 2t.t)\cdot{}
+  (2t, 1, 1)dt \\ 
+  & =\int_{1}^{e}4t^3\ln{t} + t^3 + t^2 + 2t^2dt = \int_{1}^{e}t^3(4\ln{t^2} + 1) + 3t^2dt\\
+  & =4\int_{1}^{e}t^3\ln{t}dt + \int_{1}^{e}t^3dt + 3\int_{1}^{e}t^2dt = (t^4\ln{t} - \frac{t^4}{4} + \frac{t ^{4}}{4} + t^3)\bigg|_{1}^{e} \\
+  & =(t^4\ln{t} + t^3)\bigg|_{1}^{e} = e^{4} + e^{3} - 1 
+\end{align*}
+
+O segundo m\'etodo, ou seja, utilizando o TFIL, \'e mais interessante. Buscaremos uma fun\c c\~ao f tal que $\vec{\nabla}=\vec{F}$
+\end{document}
