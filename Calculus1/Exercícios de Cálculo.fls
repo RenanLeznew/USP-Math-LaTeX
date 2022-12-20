@@ -1,7 +1,7 @@
-PWD C:\Users\renan\OneDrive\Desktop\LaTeX\USP-Math-LaTeX-master\Calculus 2\exs
+PWD C:\Users\renan\OneDrive\Desktop\LaTeX\USP-Math-LaTeX-master\Calculus1
 INPUT C:\Users\renan\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT mintegral.tex
-OUTPUT mintegral.log
+INPUT Exercícios de Cálculo.tex
+OUTPUT Exercícios de Cálculo.log
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -929,41 +929,6 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.s
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\lastpage\lastpage.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
@@ -975,10 +940,25 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\mintegral.aux
-INPUT mintegral.aux
-INPUT mintegral.aux
-OUTPUT mintegral.aux
+INPUT .\Exercícios de Cálculo.aux
+INPUT Exercícios de Cálculo.aux
+INPUT Exercícios de Cálculo.aux
+INPUT .\Atividade1.aux
+INPUT Atividade1.aux
+INPUT Atividade1.aux
+INPUT .\Atividade2.aux
+INPUT Atividade2.aux
+INPUT Atividade2.aux
+INPUT .\Atividade3.aux
+INPUT Atividade3.aux
+INPUT Atividade3.aux
+INPUT .\Atividade5.aux
+INPUT Atividade5.aux
+INPUT Atividade5.aux
+INPUT .\Atividade6.aux
+INPUT Atividade6.aux
+INPUT Atividade6.aux
+OUTPUT Exercícios de Cálculo.aux
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -999,66 +979,157 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-s
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
-INPUT .\mintegral.out
-INPUT mintegral.out
-INPUT .\mintegral.out
-INPUT mintegral.out
-INPUT .\mintegral.out
-INPUT mintegral.out
-INPUT .\mintegral.out
-INPUT mintegral.out
-OUTPUT mintegral.pdf
-INPUT .\mintegral.out
-INPUT .\mintegral.out
-OUTPUT mintegral.out
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\Exercícios de Cálculo.out
+INPUT Exercícios de Cálculo.out
+INPUT .\Exercícios de Cálculo.out
+INPUT Exercícios de Cálculo.out
+INPUT .\Exercícios de Cálculo.out
+INPUT Exercícios de Cálculo.out
+INPUT .\Exercícios de Cálculo.out
+INPUT Exercícios de Cálculo.out
+OUTPUT Exercícios de Cálculo.pdf
+INPUT .\Exercícios de Cálculo.out
+INPUT .\Exercícios de Cálculo.out
+OUTPUT Exercícios de Cálculo.out
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\icmc.png
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
+INPUT ..\brasao_usp_cor.jpg
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT .\Exercícios de Cálculo.toc
+INPUT Exercícios de Cálculo.toc
+INPUT Exercícios de Cálculo.toc
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT mintegral.aux
-INPUT .\mintegral.out
-INPUT .\mintegral.out
+OUTPUT Exercícios de Cálculo.toc
+INPUT .\Atividade1.tex
+INPUT .\Atividade1.tex
+INPUT .\Atividade1.tex
+OUTPUT .\Atividade1.aux
+INPUT .\Atividade1.tex
+INPUT .\Atividade1.tex
+INPUT .\Atividade1.tex
+INPUT Atividade1.tex
+INPUT .\Atividade1.tex
+INPUT Atividade1.tex
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT .\identidades.png
+INPUT .\identidades.png
+INPUT identidades.png
+INPUT .\identidades.png
+INPUT .\identidades.png
+INPUT .\identidades.png
+INPUT .\identidades.png
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\Atividade2.tex
+INPUT .\Atividade2.tex
+INPUT .\Atividade2.tex
+OUTPUT .\Atividade2.aux
+INPUT .\Atividade2.tex
+INPUT .\Atividade2.tex
+INPUT .\Atividade2.tex
+INPUT Atividade2.tex
+INPUT .\Atividade2.tex
+INPUT Atividade2.tex
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm5.tfm
+INPUT .\Atividade3.tex
+INPUT .\Atividade3.tex
+INPUT .\Atividade3.tex
+OUTPUT .\Atividade3.aux
+INPUT .\Atividade3.tex
+INPUT .\Atividade3.tex
+INPUT .\Atividade3.tex
+INPUT Atividade3.tex
+INPUT .\Atividade3.tex
+INPUT Atividade3.tex
+INPUT .\Atividade5.tex
+INPUT .\Atividade5.tex
+INPUT .\Atividade5.tex
+OUTPUT .\Atividade5.aux
+INPUT .\Atividade5.tex
+INPUT .\Atividade5.tex
+INPUT .\Atividade5.tex
+INPUT Atividade5.tex
+INPUT .\Atividade5.tex
+INPUT Atividade5.tex
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcti1000.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT .\Atividade6.tex
+INPUT .\Atividade6.tex
+INPUT .\Atividade6.tex
+OUTPUT .\Atividade6.aux
+INPUT .\Atividade6.tex
+INPUT .\Atividade6.tex
+INPUT .\Atividade6.tex
+INPUT Atividade6.tex
+INPUT .\Atividade6.tex
+INPUT Atividade6.tex
+INPUT Exercícios de Cálculo.aux
+INPUT .\Atividade1.aux
+INPUT Atividade1.aux
+INPUT Atividade1.aux
+INPUT .\Atividade2.aux
+INPUT Atividade2.aux
+INPUT Atividade2.aux
+INPUT .\Atividade3.aux
+INPUT Atividade3.aux
+INPUT Atividade3.aux
+INPUT .\Atividade5.aux
+INPUT Atividade5.aux
+INPUT Atividade5.aux
+INPUT .\Atividade6.aux
+INPUT Atividade6.aux
+INPUT Atividade6.aux
+INPUT .\Exercícios de Cálculo.out
+INPUT .\Exercícios de Cálculo.out
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcti1000.pk
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcti1000.pk
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
@@ -1079,8 +1150,16 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

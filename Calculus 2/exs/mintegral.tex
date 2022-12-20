@@ -44,18 +44,28 @@
 \section*{Campos e Potenciais}
 \subsection{Exerc\'icio 12}
 Dada a fun\c c\~ao $\vec{F}(x, y) = (e^{x}y ^{3} + y, 3e^{x}y^2 + x)$, buscamos uma fun\c c\~ao f tal que 
-$\vec{\nabla}{f} = \vec{F}$. Assim, basta integrar a primeira entrada com rela\c c\~ao a x e a segunda com rela\c c
-\~ao a y:
+$\vec{\nabla}{f} = \vec{F}$. Assim, basta integrar a primeira entrada com rela\c c\~ao a x:
   $$
-  f(x, y) = (e^{x}y ^{3} + yx, e^{x}y^3 + yx)
+  f(x, y, z) = e^{x}y^{3} + yx + g(y)
   $$
-
-  Por outro lado, se $\vec{F}(x, y, z) = (12x^2, \cos(y)\cos(z), 1 - \sin(y)\sin(z),$ ser\'a preciso integrar f
+derivando f com respeito a y, chegamos em 
+  $$
+  \frac{\partial{f}}{\partial{y}} = 3e^{x}y^{2} + x + g'(y)\Longleftrightarrow 3e^{x}y^{2} + x = 3e^{x}y^{2} + x + g'(y)\Rightarrow g'(y) = 0
+  $$
+Logo, $g(y) = k, k\in\mathbb{R}$ e $f(x, y, z) = e^{x}y^{3} + yx + k$.
+  Por outro lado, se $\vec{F}(x, y, z) = (12x^2, \cos(y)\cos(z), 1 - \sin(y)\sin(z),$ ser\'a preciso repetir o \'ultimo racioc\'inio 
 nas 3 coordenadas. Com efeito, obtemos
   $$
-  f(x, y, z) = (4x ^{3}, \sin(y)\cos(z), z + \sin(y)\cos(z)).
+  f(x, y, z) = 4x^{3} + g(y, z)\Rightarrow \frac{\partial{f}}{\partial{y}} = g'(y, z)\Longleftrightarrow g'(y, z) = \cos(y)\cos(z),
   $$
-\qedsymbol
+donde segue que $g(y, z) = \sin(y)\cos(z) + h(z)$, ou seja, $f(x, y, z) = 4x^{3} + \sin(y)\cos(z) + h(z)$. Vamos finalizar encontrando h(z):
+  $$
+  \frac{\partial{f}}{\partial{z}} = -\sin(y)\sin(z) + h'(z)\Longleftrightarrow 1 - \sin(y)\sin(z) = -\sin(y)\sin(z) + h'(z)\Rightarrow h'(z) = 1,
+  $$
+de forma que $h(z) = z + k$. Portanto, 
+  $$
+  f(x, y, z) = 4x^{3} + \sin(y)\cos(z) + z + k. \text{    \qedsymbol}
+  $$
 
 \subsection{Exerc\'icio 13}
 Primeiramente, sem utilizar o TFIL, a resolu\c c\~ao se torna uma aplica\c c\~ao mec\^anica do que foi visto ao longo
@@ -68,5 +78,233 @@ do curso, ou seja, basta calcular
   & =(t^4\ln{t} + t^3)\bigg|_{1}^{e} = e^{4} + e^{3} - 1 
 \end{align*}
 
-O segundo m\'etodo, ou seja, utilizando o TFIL, \'e mais interessante. Buscaremos uma fun\c c\~ao f tal que $\vec{\nabla}=\vec{F}$
+O segundo m\'etodo, ou seja, utilizando o TFIL, \'e mais interessante. Buscaremos uma fun\c c\~ao f tal que $\vec{\nabla}f=\vec{F}$
+Para isto, integraremos as entradas de F. Com efeito,
+\begin{align*}
+  &\frac{\partial{f(x, y, z)}}{\partial{x}} = 2x\ln{y} \\
+  &\frac{\partial{f(x, y, z)}}{\partial{y}} = \frac{x ^{2}}{y} + z ^{2}\\
+  &\frac{\partial{f(x, y, z)}}{\partial{z}} = 2yz\\
+  &\Rightarrow x^2\ln{y} + g(y, z) = f(x, y, z),
+\end{align*}
+
+em que o \'ultimo passo foi dado integrando a primeira derivada parcial de f com rela\c c\~ao a x. Utilizando
+a segunda das derivadas parciais, chegamos em
+  $$
+  \frac{\partial{f}}{\partial{y}} = \frac{x^2}{y} + \frac{\partial{g}}{\partial{y}}\Longleftrightarrow \frac{x^2}{y} + z^2 = \frac{x^2}{y} + \frac{\partial{g}}{\partial{y}}\Rightarrow \frac{\partial{g}}{\partial{y}} = z^2.
+  $$
+Ao integrar este resultado com respeito a y, obtemos $g(y, z) = z^{2}y + h(z)$, tal que 
+  $$
+  f(x, y, z) = x^{2}\ln{y} + g(y, z) = x^{2}\ln{y} + z^{2}y + h(z).
+  $$
+Repetiremos o racioc\'inio para a derivada parcial de f com respeito a z, ou seja, 
+  $$
+  \frac{\partial{f}}{\partial{z}} = 2zy + h'(z)\Longleftrightarrow 2yz = 2zy + h'(z)\Rightarrow h'(z) = 0,
+  $$
+ou seja, $h(z) = k, k\in\mathbb{R}.$ Juntando tudo, obtemos
+  $$
+  f(x, y, z) = x^{2}\ln{y} + z^{2}y + k
+  $$
+
+Agora, pelo TFIL, segue que 
+  $$
+  \int_{C}^{}\vec{F}dr = f(\gamma(b)) - f(\gamma(a)) = f(\gamma(e)) - f(\gamma(1)).
+  $$
+Vamos por partes. Come\c cando pelos valores da curva nos pontos dados, segue que 
+\begin{align*}
+ &\gamma(e) = (e ^{2}, e, e) \\
+ &\gamma(1) = (1, 1, 1).
+\end{align*}
+Al\'em disso, o valor de f nesses pontos \'e
+  $$
+  f(\gamma(e)) = e^{4} + e^{3} + k, \quad f(\gamma(1)) = 1 + k
+  $$
+Portanto, 
+  $$
+  \int_{C}^{}\vec{F}dr = f(\gamma(e)) - f(\gamma(1)) = e^{4} + e^{3} - 1 \text{  \qedsymbol}
+  $$
+
+\subsection{Exerc\'icio 16}
+Para mostrar que o campo $\vec{F}$ \'e conservativo, precisamos mostrar que $\frac{\partial{P}}{\partial{x}} = \frac{\partial{Q}}{\partial{y}}.$
+Com efeito, temos 
+  \begin{align*}
+    &\frac{\partial{P(x, y)}}{\partial{y}} = \frac{2xy}{x^{2} + y^{2}}^2 \\
+    &\frac{\partial{Q(x, y)}}{\partial{y}} = \frac{2xy}{X^{2} + y^{2}}^2
+  \end{align*}
+Portanto, como as derivadas s\~ao iguais, o campo \'e conservativo.
+ 
+\subsection{Exerc\'icio 18}  
+\subsubsection*{a.)} O campo ser\'a dito conservativo se ele possui rotacional nulo, ou seja,
+\begin{align*}
+  &rot\vec{F} = \vec{\nabla} \times \vec{F} =   
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    \frac{\partial{}}{\partial{x}} & \frac{\partial{}}{\partial{y}} & \frac{\partial{}}{\partial{z}} \\
+    P & Q & R 
+  \end{vmatrix} \\
+  &= (\frac{\partial{R}}{\partial{y}} - \frac{\partial{Q}}{\partial{z}})\vec{i} + (\frac{\partial{P}}{\partial{z}} - \frac{\partial{R}}{\partial{x}})\vec{j} + (\frac{\partial{Q}}{\partial{x}} - \frac{\partial{P}}{\partial{y}})\vec{k} = 0
+\end{align*} 
+Utilizando o campo dado, temos P = x, Q = x + z, R = -y, de maneira que
+ \begin{align*}
+  rot\vec{F} = (0 - 1, 0 - 0, 1 - 0) \neq \vec{0}.
+ \end{align*}
+Conclui-se que $\vec{F}$ n\~ao \'e conservativo.
+
+\subsubsection*{b.)}Construiremos a curva $\gamma_{1} = (t, 2t, 3t), 0\leq{t}\leq{1}$ e $\gamma_2=(-t, -2t, -3t), -1\leq{t}\leq{0}.$
+Com essas condi\c c\~oes, as integrais s\~ao
+ \begin{align*}
+  &\int_{\gamma_1}^{}\vec{F}dr = \int_{0}^{1}(t, 4t, -2t)\cdot(1, 2, 3)dt = \int_{0}^{1}t+8t-6tdt = \int_{0}^{1}3tdt = \frac{3}{2} \\
+  &\int_{\gamma_{2}}^{}\vec{F}dr = \int_{-1}^{0}(-t, -4t, 2t)\cdot(-1, -2, -3)dt = \int_{-1}^{0}t + 8t -6tdt = \int_{-1}^{0}3tdt = -\frac{3}{2}\\
+  &\Rightarrow \int_{\gamma_1}^{}\vec{F}dr \neq \int_{\gamma_{2}}^{}\vec{F}dr
+ \end{align*}  
+Portanto, o campo n\~ao \'e independente de caminho e nem conservativo. \qedsymbol
+
+\section*{Teorema de Green}
+\subsection{Exerc\'icio 22}
+\subsubsection*{a.}
+Neste caso, escreveremos 
+  $$
+  \vec{F}(x, y, z) = (a_1x + a_2y + a_3)\vec{i} + (b_1x + b_2y + b_3)\vec{j}
+  $$
+tal que 
+  $$
+  \frac{\partial{P}}{\partial{y}} = a_2, \quad \frac{\partial{Q}}{\partial{x}} = b_1.
+  $$
+Com isso, segue do Teorema de Green que 
+  $$
+  \oint_{\partial{D}}P(x, y)dx + Q(x, y)dy = \iint_{D}-a_2 + b_1dA = -\iint_{D}a_2dA + \iint_{D}b_1dA =
+  \iint_{D}dA (b_1 - a_2) = \text{\'Area(D)}(b_1 - a_2). \text{    \qedsymbol}
+  $$
+
+\section{Aula de Hoje}
+\subsection{Exemplo}Calcule o fluxo exterior do campo vetorial $\vec{F} = \frac{(x, y, z)}{x^{2} + y^{2} + z^{2}}$
+atrav\'es do s\'olido E limitado pelas esferas $x^{2} + y^{2} + z^{2} = a^{2}, x^{2} + y^{2} + z^{2} = b^{2}, 0 < a < b.$
+
+A fronteira dele \'e dada por $\partial{E} = S_{a}\cup{S_{b}}$. Assim, o fluxo de exterior de $\vec{F}$ \'e:
+  $$
+  \iint_{\partial E = S_{a}\cup{S_{b}}} (\\vec{F}\cdot\vec{n})dS
+  $$
+\'E poss\'ivel fazer essa conta de dois modos. O primeiro \'e uma conta direta,
+  $$
+  \iint_{\partial E = S_{a}\cup{S_{b}}} (\vec{F}\cdot\vec{n})dS = \iint_{S_{a}}(\vec{F}\cdot\vec{n})dS + \iint_{S_{b}}(\vec{F}\cdot\vec{n})dS.
+  $$
+O segundo, por outro lado, \'e pelo teorema de diverg\^encia, i.e.,
+  $$
+  \iint_{\partial{E}}(\vec{F}\cdot\vec{n})dS = \iiint_{E}div \vec{F}dV.
+  $$
+Come\c camos calculando a diverg\^encia de F
+ \begin{align*}
+   div \vec{F}(x, y, z) &= \frac{\partial{}}{\partial{x}}\frac{x}{x^{2} + y^{2} + z^{2}} + \frac{\partial{}}{\partial{y}}\frac{y}{x^{2} + y^{2} + z^{2}} +
+   \frac{\partial{}}{\partial{z}}\frac{z}{x^{2} + y^{2} + z^{2}} \\
+    &= \frac{-x^{2}x^{2} + y^{2} + z^{2}}{(x^{2} + y^{2} + z^{2})^{2}}  + \frac{-y^{2}}{(x^{2} + y^{2} + z^{2})^{2}} + \frac{-z^{2} + x^{2} + y^{2}}{(x^{2} + y^{2} + z^{2})^{2}} \\
+    &= \frac{2(x^{2} + y^{2} + z^{2}) - (x^{2} + y^{2} + z^{2})}{(x^{2} + y^{2} + z^{2})^{2}} = \frac{1}{x^{2} + y^{2} + z^{2}}.
+ \end{align*}
+ Consequentemente, a integral se torna
+ \begin{align*}
+   \iint_{\partial{e}}\vec{F}\cdot \vec{n}dS &= \iiint_{E}div \vec{F}dV = \iiint_{E}\frac{1}{x^{2} + y^{2} + z^{2}}dV \underbrace{=}_{\mathclap{\substack{\text{Coord. Esf\'erica}}}}
+   \int_{0}^{2\pi}\int_{0}^{\pi}\int_{a}^{b}\frac{1}{\rho^2}\rho^2\sin{\phi}d\rho d\phi d\theta \\
+   &= \int_{0}^{2\pi}d\theta \int_{0}^{\pi}\sin{\phi}d\phi \int_{a}^{b}d\rho = 2\pi.2.(b-a) = 4\pi(b - a).
+ \end{align*}
+ 
+ \subsection{Exemplo}Sejam $\vec{F}(x, y, z) = (x, y, z)$ um campo vetorial de $\mathbb{R}^{3}$ de classe $C^1$ e W a pir\^amide de v\'ertices 0 = (0, 0, 0),
+ A = (0, 1, 0), B = (0, 0, 1), C = (c, 1, 0), com $c>0$. Calcule o valor de c sabendo que 
+  $$
+  \iint_{S_W}(\vec{F}\cdot \vec{n})dS + \iint_{S_{ABC}}(\vec{F}\cdot \vec{n})dS = 1,
+  $$
+em que $S_W$ \'e a superf\'icie da pir\^amide e $S_{ABC}$ \'e a face da pir\^amide de v\'ertices A, B e C e $\vec{n}$ \'e o campo vetorial
+normal unit\'ario externo \'a pir\^amide. Segue que 
+ \begin{align*}
+   I = \iint_{S_{W}}(\vec{F}\cdot \vec{n})dS &\underbrace{=}_{\mathclap{\substack{\text{Teorema da} \\ \text{Diverg\^encia}}}} \iiint_{W}div \vec{F}dV = \iiint_{W}3dV \\
+  &= \iint_{D}\biggl(\int_{0}^{1-y}3dz\biggr)dA = \iint_{D}3z\biggl|^{z = 1-y}_{z=0}dA \\
+  &= \iint_{D}3(1-y)dA = \int_{0}^{1}\biggl(\int_{0}^{cy}3(1-y)dx\biggr)dy = \frac{c}{2}.
+ \end{align*}
+ em que $W = \{(x, y, z)\in \mathbb{R}^{3}: 0\leq{z}\leq{1-y}, (x, y)\in{D}\}$, sendo D a proje\c c\~ao de W no plano xy 
+ ($D = \{(x, y)\in \mathbb{R}^{2}: 0\leq{x}\leq{cy}, 0\leq{y}\leq{1}\}$). Resta calcularmos a segunda integral. Com efeito,
+ come\c camos parametrizando $S_{ABC}$ colocando r(x, y) = (x, y, 1-y), $(x, y)\in{D}$. Deste modo, temos duas op\c c\~oes
+\begin{align*}
+  r_x \times r_y = \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k} \\
+    1 & 0 & 0 \\
+    0 & 1 & -1
+  \end{vmatrix} = 0\vec{i} + \vec{j} + \vec{k}
+\end{align*}
+Como a orienta\c c\~ao dada \'e um campo vetorial norma unit\'ario externo, podemos usar esse valor, pois o sinal de $\vec{k}$ \'e positivo. 
+Assim, a integral se torna
+\begin{align*}
+  \mathbb{I} = \iint_{S_{ABC}} (\vec{F}\cdot \vec{n})dS &= \iint_{D}(\vec{F}\cdot r_x \times r_y)dA = \iint_{D}\vec{F}(x, y, 1-y)\cdot(0, 1, 1)dA \\
+  &= \iint_{D}(x, y, 1-y)\cdot(0, 1, 1)dA = \iint_{D}1dA = \text{\'Area}(D) = \frac{c}{2}.
+\end{align*}
+Portanto, concluimos que 
+  $$
+  I + \mathbb{I} = 1\Longleftrightarrow \frac{c}{2}+\frac{c}{2} = 1\Rightarrow c=1 \text{    \qedsymbol}
+  $$
+
+\subsection{Exemplo} Dado rot$\vec{F}(x, y, z) = (x, -2y, z)$, calcule $\oint_{C}\vec{F}dr$, em que C \'e o bordo da por\c c\~ao da esfera centrada de (0, 0, 0)
+de raio a para $0\leq{\theta}\leq{\frac{\pi}{4}}$, orientada no sentido anti-hor\'ario quando vista de cima segundo a figura:
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{center}
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,440); %set diagram left start at 0, and has height of 440
+
+%Shape: Axis 2D [id:dp875913965561522] 
+\draw  (210,217.6) -- (414,217.6)(230.4,79) -- (230.4,233) (407,212.6) -- (414,217.6) -- (407,222.6) (225.4,86) -- (230.4,79) -- (235.4,86)  ;
+%Straight Lines [id:da6959938884088497] 
+\draw    (241,201) -- (156.43,341.89) ;
+\draw [shift={(155.4,343.6)}, rotate = 300.98] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da2836128055887688] 
+\draw    (232,120) .. controls (263,126) and (337,219) .. (295,285) ;
+%Curve Lines [id:da9503852325803412] 
+\draw    (182,305) .. controls (160,247) and (192,150) .. (232,120) ;
+%Curve Lines [id:da4201483796907626] 
+\draw    (182,305) .. controls (191,316) and (255,315) .. (295,285) ;
+%Straight Lines [id:da3379748546475865] 
+\draw    (230.4,217.6) -- (330.4,317.6) ;
+\draw   (284.04,189.19) -- (274.88,156.92) -- (306.19,168.96) ;
+\draw   (215.9,175.34) -- (186.38,191.28) -- (191.34,158.1) ;
+\draw   (216.07,292) -- (244.96,309.04) -- (214,321.93) ;
+%Curve Lines [id:da5153229413851592] 
+\draw    (212,246) .. controls (232,255) and (232,256) .. (258,246) ;
+
+% Text Node
+\draw (214,249.4) node [anchor=north west][inner sep=0.75pt]    {$\theta \ =\ \frac{\pi }{4}$};
+% Text Node
+\draw (140,318) node [anchor=north west][inner sep=0.75pt]   [align=left] {x};
+% Text Node
+\draw (415,189.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (253,66.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+\end{tikzpicture}
+\end{center}
+Pelo Teorema de Stokes, 
+  $$
+  \oint_{C}\vec{F}dr = \iint_{S}(rot \vec{F}\cdot \vec{n})dS.
+  $$
+  Uma forma de parametrizar S \'e colocando $r(\theta, \phi) = (a\cos(\theta)\sin(\phi), a\sin(\theta)\sin(\phi), a\cos(\phi)), 0\leq{\theta}\leq{\frac{\pi}{4}},
+  0<\phi\leq{\frac{\pi}{2}}$, que possui vetor normal
+    $$
+      r_{\phi}\times r_{\theta} = (a^{2}\cos(\theta)\sin^{2}(\phi), a^{2}\sin(\theta)\sin^2(\phi), a^2\sin(\phi)\cos(\phi)).
+    $$
+  Com isto, podemos calcular a integral, finalmente
+ \begin{align*}
+   \iint_{S}(rot \vec{F}\cdot \vec{n})dS &= \iint_{[0, \frac{\pi}{4}]\times[0, \frac{\pi}{2}]}rot(\vec{F(r(\theta, \phi))})\cdot r_{\phi}\times{r_{\theta}}d \theta d \phi \\
+   &=\iint_{[0, \frac{\pi}{4}]\times[0, \frac{\pi}{2}]}a^{3}((1-3\sin^{2}\theta)\sin^{3}\theta + \sin(\phi)\cos^{2}(\phi))d\theta d\phi \\ 
+   &=\iint_{[0, \frac{\pi}{4}]\times[0, \frac{\pi}{2}]}a^{3}(1-3\sin^{2}\theta)\sin^3(\phi)d\theta d\phi + \iint_{[0, \frac{\pi}{4}]\times[0, \frac{\pi}{2}]}a^{3}\sin(\phi)\cos^2(\phi)d\theta d\phi \\
+   &= a^3\biggl(\int_{0}^{\frac{\pi}{2}}\sin^3(\phi)d\phi \int_{0}^{\frac{\pi}{4}}(1-3\sin^2(\theta))d\theta + \int_{0}^{\frac{\pi}{4}}d\theta \int_{0}^{\frac{\pi}{2}}\sin(\phi)\cos^2(\phi)d\phi\biggr) = \frac{a^3}{2} \text{    \qedsymbol}
+ \end{align*}
+
+ \subsection{Exemplo Poranga}
+ Considere S uma superf\'icie suave segundo uma poranga (Google) tendo como bordo a curva C de equa\c c\~ao $x^{2} + y^{2} = 1, z = 0,$ 
+orientada no sentido anti-hor\'ario. Calcule
+  $$
+  \iint_{S} (rot\vec{F}\cdot \vec{n})dS,
+  $$
+em que $rot(\vec{F})(x, y, z) = (y, -x, e^{xz})$.
+
+Por Stokes, temos, parametrizando $C: r(t)=(\cos{t}, \sin{t}, 0), 0\leq{t}\leq{2\pi}$
+\begin{align*} 
+  \iint_{S}(rot(\vec{F})\cdot \vec{n})dS = \int_{C}^{}\vec{F}dr &= \int_{0}^{2\pi}\vec{F(r(t))}\cdot r'(t)dt = \oint_{C}ydx - xdy \\
+                                                                &= \iint_{D}\biggl[\frac{\partial{}}{\partial{x}}(-x) - \frac{\partial{}}{\partial{y}}(y)\biggr]dA =
+                                                                \iint_{D}-2dA \\
+                                                                &= -2\text{\'Area(D)} = -2\pi. \text{    \qedsymbol}
+  \end{align*}
 \end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  16 DEC 2022 10:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  12 DEC 2022 10:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**./mintegral.tex
-(mintegral.tex
+**./exercises.tex
+(exercises.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02>
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -846,79 +846,48 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
 Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 )
-(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
-Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
-(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count318
-\calc@Bcount=\count319
-\calc@Adimen=\dimen299
-\calc@Bdimen=\dimen300
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count320
-\calc@Cskip=\skip67
-)
-(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
-Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-)
-\g_MT_multlinerow_int=\count321
-\l_MT_multwidth_dim=\dimen301
-\origjot=\skip68
-\l_MT_shortvdotswithinadjustabove_dim=\dimen302
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen303
-\l_MT_above_intertext_sep=\dimen304
-\l_MT_below_intertext_sep=\dimen305
-\l_MT_above_shortintertext_sep=\dimen306
-\l_MT_below_shortintertext_sep=\dimen307
-\xmathstrut@box=\box67
-\xmathstrut@dim=\dimen308
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 27.
-\c@example=\count322
+Package hyperref Info: Option `colorlinks' set `true' on input line 24.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count323
-\l__pdf_internal_box=\box68
-) (mintegral.aux)
-\openout1 = `mintegral.aux'.
+\l__color_backend_stack_int=\count318
+\l__pdf_internal_box=\box67
+) (exercises.aux)
+\openout1 = `exercises.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
-\scratchdimen=\dimen309
-\scratchbox=\box69
-\nofMPsegments=\count325
-\nofMParguments=\count326
+\scratchcounter=\count319
+\scratchdimen=\dimen299
+\scratchbox=\box68
+\nofMPsegments=\count320
+\nofMParguments=\count321
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count327
-\MPscratchDim=\dimen310
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen300
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
 \everyMPtoPDFconversion=\toks48
 )
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -931,8 +900,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package pgfplots notification 'compat/show suggested version=true': document ha
-s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -968,21 +940,21 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 41.
-(mintegral.out) (mintegral.out)
+Package hyperref Info: Link coloring ON on input line 35.
+(exercises.out) (exercises.out)
 \@outlinefile=\write4
-\openout4 = `mintegral.out'.
+\openout4 = `exercises.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 41.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+(lastpage)             ! on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -991,52 +963,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (15.40126pt too wide) detected at line 176
-[][] \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 )\
-OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 Q\OT1/cmr/m/n/10 (\OML/cm
-m/m/it/10 x; y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dy \OT1/cmr/m/n/10 = [] [][] \O
-MS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b[]dA
- \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@ [] [][] \OML/cmm/m/it/10 a[]dA \OT1/cmr
-/m/n/10 + [] [][] \OML/cmm/m/it/10 b[]dA \OT1/cmr/m/n/10 = [] [][] \OML/cmm/m/i
-t/10 dA\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it
-/10 a[]\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 ^^@ \OML/cm
-m/m/it/10 a[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :[]
- []
-
-[3] [4] [5] 
+[3] 
 AED: lastpage setting LastPage
-[6] (mintegral.aux)
-Package rerunfilecheck Info: File `mintegral.out' has not changed.
-(rerunfilecheck)             Checksum: 4C254D924268FC873B93C755AA02D8D0;1091.
+[4] (exercises.aux)
+Package rerunfilecheck Info: File `exercises.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33388 strings out of 475284
- 779193 string characters out of 2774105
- 1218731 words of memory out of 3000000
- 54304 multiletter control sequences out of 15000+600000
- 477122 words of font info for 59 fonts, out of 8000000 for 9000
+ 32661 strings out of 475284
+ 765521 string characters out of 2774105
+ 1199601 words of memory out of 3000000
+ 53602 multiletter control sequences out of 15000+600000
+ 472217 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,21n,103p,728b,663s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,12n,103p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/renan/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
-/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-5.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/renan/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on mintegral.pdf (6 pages, 208846 bytes).
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/renan/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
+/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on exercises.pdf (4 pages, 157861 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{mathtools}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\pgfplotsset{compat = 1.18}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\newtheorem*{def*}{Definition}
+
+\title{CANTOR SETS AND SEQUENCE SPACES}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Day 12/12/2022}
+\subsection{Reviewing}
+Topics from last class:
+Showed that cylinders form open sets and are equivalent to open balls with the metric:
+  $$
+  d_{\lambda}(\omega, \omega') = \sum_{n=-\infty}^{\infty}\frac{|\omega _{n} - \omega' _{n}|}{\lambda ^{|n|}}
+  $$
+
+Found a connection between product topology and metric topology
+
+Showed that cylinders are clopen sets
+
+Showed that the metric above has less contributions from higher order terms.
+\subsection{Connectedness}
+On today's seminar, we are going to see a few topological concepts needed to better grasp the ideas behind
+the relationship between Cantor Sets and Sequence Spaces. Starting with the notion of connectedness of a space,
+the intuition behind is that of a "space that is a single piece." Formally, we define it as
+\begin{def*}
+  If X is a set such that it cannot be divided into two disjoint non-empty open sets, then X is connected.
+\end{def*}
+For our purposes, even though this definition given is the most intuitive, we are going to use an equivalent 
+definition, namely 
+ \begin{def*}
+   A space X is connected when the only two sets that are both open and closed are X and $\emptyset.$
+ \end{def*}
+ The usefulness comes from the fact that since our Cylinder sets are clopen, just like it was proved on the last
+seminar, there is no connected subspace of X other than one-point sets, which are trivially connected. Thus the 
+space is totally disconnected. Hence, we've cooked one ingredient in our Cantor Set homeomorphism soup.
+
+\subsection{Perfect Set}
+To cut it short, 
+\begin{def*}
+  A set X is said to be perfect if it is closed and has no isolated point.
+\end{def*}
+However, we must clarify what is an isolated point. We define an element x of X to be an isolated point provided
+that there exists a neighborhood U of x that contains no other points besides x itself. In other words,
+a point is not an isolated points if every neighborhood U of x contains at least one more point p other than x.
+
+Now, recall from calculus and analysis the definition of a limit point:
+\begin{quote}
+  ``An element x of a set S is said to be a limit point if every neighorhood U of x contains at least one point
+  p such that $p\neq{x}.$"  
+\end{quote}
+We conclude that a set X is perfect provided that it is closed AND every point of X is a limit point! 
+
+Let's show that $\Omega _{2} ^{R}$ is a perfect set, i.e., we are going to prove that given a point $\omega\in\Omega _{2}^{R}$,
+then $\omega\in{C _{\alpha_i}^{n_i}}.$ However, notice that whichever other $\omega'\in\Omega$ whose i-th entry is also
+$\alpha_i$ also belongs to that neighborhood of $\omega$. Hence, the same reasoning shows that any neighborhood of
+$\omega$ contains other points different from it. Thus, since our point was arbitrary, this is true for any element
+of $\Omega _{2}^{R}$, showing that any point is a limit point. We conclude from this that our space is perfect.
+\end{document}
+

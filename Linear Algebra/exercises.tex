@@ -1,0 +1,335 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem*{tm*}{\underline{Teorema:}}
+\newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+\title{LINEAR ALGEBRA}
+\author{Renan Wenzel}
+\date{\today}
+ \begin{document}
+  \section*{Exerc\'icio 1} 
+  a.) 
+  \[ 
+    \begin{bmatrix}
+      -1 \\
+      2
+    \end{bmatrix}
+    \cdot 
+    \begin{bmatrix}
+        -1 \\
+        2
+    \end{bmatrix} 
+    = -1.(-1) + 2.2 = 1 + 4 = 5. 
+  \] 
+  \qedsymbol 
+
+  \[ 
+  \begin{bmatrix}
+   -1 \\
+   2
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    4 \\
+    6
+  \end{bmatrix}
+  = -1.4 + 2.6 = -4 + 12 = 8. 
+  \]
+  \qedsymbol
+
+  Por fim, basta dividirmos um resultado pelo outro:
+  $$
+    \frac{u.v}{u.u} = \frac{8}{5}
+  $$
+
+  b.)
+  $$
+    \begin{bmatrix}
+      3 \\
+      -1 \\ 
+      -5
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+      3 \\
+      -1 \\
+      -5
+    \end{bmatrix}
+  = 3.3 + 1.1 + 5.5 = 9 + 1 + 25 = 35
+  $$ \qedsymbol
+
+  $$
+  \begin{bmatrix}
+    -5 
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    6 \\
+    -2 \\
+    3
+  \end{bmatrix}
+  = 3.6 + (-1)(-2) + (-5)(3) = 18 + 2 - 15 = 5
+  $$\qedsymbol
+ 
+  Como antes, resta dividir os dois resultados:
+  $$
+    \frac{x.w}{w.w} = \frac{5}{35} = \frac{1}{7}
+  $$ \qedsymbol
+
+  c.) Agora, \'e simplesmente dividir cada valor da matriz por 35 para obtermos o valor em quest\~ao:
+  $$
+    \frac{w}{w.w} = \begin{bmatrix}
+      \frac{3}{35} \\
+      \frac{-1}{35} \\
+      \frac{-5}{35} \\
+    \end{bmatrix} = \begin{bmatrix}
+      \frac{3}{35} \\
+      \frac{-1}{35} \\
+      \frac{-1}{7}
+    \end{bmatrix}
+  $$
+
+  d.) Finalmente, primeiro calculamos a divis\~ao e, em seguida, dividimos o vetor x pelo valor obtido.
+  Segue que
+  $$
+  \frac{1}{343} = \frac{x.w}{x.x}
+  $$
+  tal que 
+  $$
+  \frac{1}{343}.x = \begin{bmatrix}
+    \frac{6}{343} \\
+    \frac{-2}{343} \\
+    \frac{3}{343}
+  \end{bmatrix}
+  $$ \qedsymbol
+  
+  \section*{Exerc\'icio 2}
+
+  a.) \'E preciso normalizar o vetor para encontrar o seu unit\'ario, ou seja, dividimos ele por "seu tamanho". Com
+  efeito, temos $v.v = -30.-30 + 40.40 = 2500$ e $\sqrt{v.v} = 50$. Assim, segue que o versor de v \'e:
+  $$
+  \begin{bmatrix}
+    \frac{-30}{50} \\
+    \frac{40}{50}
+  \end{bmatrix} = 
+  \begin{bmatrix}
+    \frac{-3}{5}\\
+    \frac{4}{5} 
+  \end{bmatrix}
+  $$
+
+  b.) Agora, calculando a norma desse vetor, obt\'em-se $v.v = -6.(-6) + 4.4 + (-3)(-3) = 36 + 16 + 9 = 61$, ou seja,
+o vetor unit\'ario \'e dado por:
+  $$
+  \begin{bmatrix}
+    \frac{-6}{\sqrt{61}} \\
+    \frac{4}{\sqrt{61}} \\
+    \frac{-3}{\sqrt{61}}
+  \end{bmatrix}
+  $$
+
+  \section*{Exerc\'icio 3}
+
+  Calculamos a ra\'iz da diferen\c ca para obter a dist\^ancia, i.e., 
+  $$
+    d(x, u) = \sqrt{(u_1 - x_1)^2 + (u_2 - x_2)^2} = \sqrt{121 + 25} = \sqrt{146}
+  $$
+  Assim, conclu\'imos que a dist\^ancia entre os vetores \'e $\sqrt{146}$.
+
+  \section*{Exerc\'icio Qualquer}
+  
+  \textbf{Mostre que se $<u, v> = 0$ para todo v, ent\~ao u = 0}
+
+  \textit{Prova:} Suponha, primeiramente, que $\left<u, v\right> = 0$ para todo v no espa\c co. Em particular, como \'e
+v\'alido para todo v, tome v = u. Por hip\'otese, $\left< u, u \right> = 0$. Portanto, u=0. \qedsymbol
+
+  \section*{Exerc\'icio 8}
+
+  Suponha que y \'e ortogonal a u e a v, ou seja, 
+  $$
+  \left< y, u \right> = \left< y, v \right> = 0.
+  $$
+  Logo, o produto
+  $$
+  \left< y, u+v \right> = \left< y, u \right> + \left< y, v \right> = 0 + 0 = 0.
+  $$
+  Implica que y \'e ortogonal a u + v. \qedsymbol
+
+  \section*{Exerc\'icio 10}
+c.) Utilizando o item b, temos, para quaisquer ind\'ices i, j:
+  $$
+  \left< f(e_i), f(e_j) \right> = \left< e_i, e_j \right> = 0, i\neq{j} \quad\& \left< f(e_i), f(e_i) \right>
+  = \left< e_i, e_i \right> = 1.
+  $$
+  Para ver que \'e realmente uma base, considere o conjunto $\mathcal{B} = \{f(e_1), \cdots, f(e_n)\}$ e suponha que 
+  $$
+  0 = \alpha_1f(e_1) + \cdots + \alpha_nf(e_n).
+  $$
+  Ent\~ao, segue que para algum i, 
+  $$
+    0 = \left< f(e_i), \alpha_1f(e_1) + \cdots + \alpha_nf(e_n) \right> = \left< f(e_i), \alpha_1f(e_1) \right> + \cdots
++ \left< f(e_i), \alpha_if(e_i) \right> + \cdots + \left< f(e_i), \alpha_nf(e_n) \right> = 
+  $$
+  $$
+  \left< f(e_i), \alpha_if(e_i) \right> = \alpha_i\left< f(e_i), f(e_i) \right> = \alpha_i.
+  $$
+  Como i era arbitr\'ario, vale que $\alpha_i = 0, \forall 1\leq{i}\leq{n}$, donde conclu\'imos que $\mathcal{B}$ \'e
+uma independ\^encia linear. Portanto, forma uma base. \qedsymbol
+
+d.) Utilzando o item c, obtemos
+  $$
+    f(v) = x_1f(e_1) + \cdots + x_nf(e_n).
+  $$
+  tal que 
+  $$
+    \left< f(v), u_i \right> = \left< f(v), f(e_i) \right> = \left< x_1f(e_1), f(e_i) \right> + \cdots + \left< x_n, f(e_n) \right> =
+  $$
+  $$
+    \left< x_if(e_i), f(e_i) \right> = x_i
+  $$
+
+e.) N\~ao entendi :(.
+
+\section*{Exerc\'icio 11}
+Suponha que $A:E\rightarrow E$ e $B:E\rightarrow E$ s\~ao transforma\c c\~oes lineares auto-adjuntas, ou seja,
+  $\left< Au, v \right> = \left< u, Av \right>$ e $\left< Bu, v \right> = \left< u, Bv \right>$. Al\'em disso,
+por hip\'otese, exigimos que $\left< Au, u \right> = \left< Bu, u \right>.$ Com isso, temos:
+  $$
+  \left< Au, u \right> = \left< Bu, u \right> \Rightarrow \left< Au - Bu, u \right> = 0 \Rightarrow \left< (A-B)u, u \right> = 0.
+  $$
+  Como A e B s\~ao autoadjuntos, segue da \'ultima igualdade que  A - B = 0. Portanto, A = B. \qedsymbol
+
+  \section*{Exerc\'icio 12}
+Seja $A:E\rightarrow E$ auto-adjunto e que $A^kv = 0$, tal que $\left< A^kv, v \right> = 0.$ Sendo A auto-adjunto,
+obtemos
+  $$
+  0 = \left< A^kv, v \right> = \left< A(A^{k-1}v), v \right> \Rightarrow A^{k-1} = 0
+  $$
+Agora, temos
+  $$
+  0 = \left< A^{k-1}v, v \right> = \left< A(A^{k-2}v), v \right> \Rightarrow A^{k-2} = 0
+  $$
+  $$
+  \vdots
+  $$
+  $$
+  0 = \left< A^2v, v \right> = \left< A(Av), v \right> \Rightarrow A = 0
+  $$
+Portanto, Av = 0. \qedsymbol
+
+\section*{Exerc\'icio 2.6}
+Come\c cando pela implica\c c\~ao de que se A \'e normal, ent\~ao BC = CB, vamos computar $\left< Au, Av \right>$, $\left< A*u, A*v \right>$
+e comparar os resultados. Com efeito,
+  $$
+  \left< Au, Av \right> = \left< (B+C)u, (B+C)v \right> = \left< Bu, Bv \right> + \left< Bu, Cv \right> + \left< Cu, Bv \right> +
+  \left< Cu, Cv \right> =
+  $$
+  $$
+  \left< B^{2}u, v \right> + \left< (BC - CB)u, v \right> - \left< C  ^{2}, v \right> 
+  $$
+Repetindo o mesmo para o outro produto,
+  $$
+  \left< A ^{*}u, A ^{*}v \right> = \left< (B ^{*} + C ^{*})u, (B ^{*} + C ^{*})v \right> = \left< B^2u, v \right> + \left< (CB - BC)u, v \right>
+  - \left< C ^{2}, v \right>
+  $$
+Agora, observe que $\left< Au, Av \right> - \left< A ^{*}u, A ^{*}v \right> = 0.$ Logo,
+  $$
+\left< B^2u, v \right> + \left< (BC - CB)u, v \right> - \left< C ^{2}, v \right> - \left< B^{2}u, v \right> - \left< (BC - CB)u, v \right> + \left< C  ^{2}, v \right> =
+  $$
+  $$
+  2\left< (BC - CB)u, v \right> = 0 \Rightarrow \left< (BC - CB)u, v \right> = 0.
+  $$
+Como u e v s\~ao arbitr\'arios, a \'unica alternativa \'e que BC - CB = 0. Portanto, BC = CB.
+
+  Por outro lado, caso BC = CB, utilizando as expans\~oes obtidas acima, temos:
+  $$
+  \left< A ^{*}u, A ^{*}v \right> = \left< B ^{2}u, v \right> + \left< (CB - BC)u, v \right> - \left< C ^{2}u, v \right> =
+  \left< B ^{2}u, v \right> + \left< (BC - CB)u, v \right> - \left< C ^{2}u, v \right> = \left< Au, Av \right>
+  $$
+  Portanto, A \'e normal.
+\qedsymbol
+
+\section*{Exerc\'icio 2.7}
+Supondo que A \'e ortogonal, segue que $A ^{T} = A ^{-1}$. Al\'em disso, suponha que A \'e triangular superior, ou seja,
+  $$
+  A = \begin{bmatrix}
+    a _{11} & 0 & 0 & \cdots & 0 \\
+    a_{21} & a _{22} & 0 & \cdots & 0 \\
+    \vdots & & \ddots & & \vdots\\
+    a _{n1} & a _{n2} & a _{n3} & \cdots & a _{nn}
+  \end{bmatrix}
+  $$
+Nessas condi\c c\~oes, as contas mostram que a transposta dessa matriz ser\'a a vers\~ao triangular superior dela mesma,
+ou seja, $Id = AA^{-1}$ \'e o produto de duas matrizes triangulares, uma superior e outra inferior. Assim, um elemento
+da matriz produto ser\'a igual a
+  $$
+    c_{ij} = \sum_{l=1}^{n} a _{il}a _{lj}.
+  $$
+  Com isso, note que, se $i\neq{j}$, ent\~ao ou $a_{ij} = 0$, ou $a _{ji} = 0$. Logo, os \'unicos elementos que 
+  s\~ao n\~ao-nulos t\^em a forma $c _{ii}$. Por\'em, $c_{ii} = 1$, pois $Id = AA ^{-1}$, de modo que 
+  $$
+    1 = \sum_{l=1}^{n} a_{il}a_{li} = \sum_{l=1}^{n} a _{ll}a _{ll} = \sum _{l=1}^{n} a _{ll}^{2}
+  $$
+Em outras palavras, mostramos duas coisas: A primeira \'e que todos os elementos que n\~ao possuem ind\'ices iguais
+s\~ao nulos (Caso contr\'ario, a matriz n\~ao seria ortogonal, pois seu produto pela transposta n\~ao daria a identidade).
+A segunda \'e que, como os \'unicos elementos restantes est\~ao na diagonal, o produto dela pela transposta \'e formado
+por apenas coeficientes de A elevados ao quadrado e todos eles valem 1. Portanto, a matriz A \'e diagonal e seu
+quadrado \'e a identidade.
+
+\section*{Ap\^endice: Base ortonormal}
+\textbf{Encontre uma base ortonormal a partir de } $\mathcal{B} = \{(1, 1), (0, 1)\}$ \textbf{de} $\mathbb{R} ^{2}$.
+
+\textit{Solu\c c\~ao}: Obtemos o primeiro vetor fazendo 
+  $$
+  c _{1} = \frac{b _{1}}{||b _{1}||} = \frac{(1, 1)}{\sqrt{\left< b_1, b_1 \right>}} = \biggl(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\biggr)
+  $$
+temos nosso primeiro vetor da base ortonormal. Com isso, obtemos o segundo pela f\'ormula 
+  $$
+  c_2' = b_2 - \sum _{i=1}^{1} \frac{\left< b _{2}, c _{i} \right>}{\left< c _{i}, c _{i} \right>}c _{i} =
+  (0, 1) - \frac{\frac{1}{\sqrt{2}}}{1}\biggl(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\biggr) = (-\frac{1}{2}, \frac{1}{2})
+  $$
+  Agora, normalizamos este vetor, notando que sua norma \'e $\sqrt{\frac{1}{4} + \frac{1}{4}} = \frac{1}{\sqrt{2}}$, tal que
+o segundo vetor da nossa base ortonormal ser\'a
+  $$
+  c _{2} = \frac{c _{2}'}{||c _{2}'||} = \biggl(\frac{-\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\biggr)
+  $$
+  Portanto, a base obtida \'e $\mathcal{O} = ((\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}), (-\frac{\sqrt{2}}{\sqrt{2}}, \frac{\sqrt{2}}{\sqrt{2}})$.Resta conferir se \'e de fato ortonormal. Com efeito,
+  $$
+  \left< c _{1}, c _{2} \right> = -1 + 1 = 0,
+  $$
+  $$
+  \left< c _{1}, c _{1} \right> = \sqrt{\frac{1}{2} + \frac{1}{2}} = 1,
+  $$
+  $$
+  \left< c _{2}, c _{2} \right> = \sqrt{\frac{2}{4} + \frac{2}{4}} = 1.
+  $$
+  \qedsymbol
+\end{document}
+
+

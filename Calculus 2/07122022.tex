@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheorem*{tm*}{\underline{Teorema:}}
+\newtheorem*{sol*}{\underline{Solu\c c\~ao:}}
+\newtheorem*{proof*}{\underline{Prova:}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+\title{C\'ALCULO 2}
+\author{Renan Wenzel}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Teorema de Stokes}
+
+ \begin{tm*}
+  Seja S uma superf\'icie orientada, suave por partes, cuja fronteira \'e formada por uma curva
+C fechada, simples, suave por partes e orientada positivamente. Seja F um campo vetorial de classe $C^1$ em uma
+regi\~ao aberta de $\mathbb{R}^2$ contendo S, ent\~ao:
+  $$\iint_{S}(\text{rot}\vec{F}\cdot{}\vec{n})dS = \oint_{C}\vec{F}\cdot{}dr $$ 
+ \end{tm*}
+\end{document}d

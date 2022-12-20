@@ -1,0 +1,43 @@
+\begin{document}
+\maketitle
+
+\section*{Integrais de Superf\'icie}
+
+Definida a parametriza\c c\~ao de superf\'icies, vamos entender como funcionam as integrais de uma fun\c c\~ao
+sobre uma superf\'icie parametrizada.
+
+    Seja S uma superf\'icie suave parametrizada por 
+    $$
+        r(u, v) = (x(u, v), y(u, v), z(u, v))
+    $$
+    em que $D\subseteq\mathbb{R}^2$ e f(x, y, z) \'e uma fun\c c\~ao escalar definida e cont\'inua num dom\'inio
+em $\mathbb{R}^3$ contendo S. A integral de superf\'icie de f sobre S \'e definida por 
+    $$
+        \iint_Sf(x, y, z)dS = \iint_D f(r(u, v))||r_u\times{r_v}||dA,
+    $$
+em que 
+    $$
+        r_u = \frac{\partial{x}}{\partial u}\vec{i} + \frac{\partial{y}}{\partial u}\vec{j} + \frac{\partial{z}}{\partial u}\vec{k},
+        r_v =  \frac{\partial{x}}{\partial v}\vec{i} + \frac{\partial{y}}{\partial v}\vec{j} + \frac{\partial{z}}{\partial v}\vec{k}.
+    $$
+
+    \textbf{Exemplo 1} Calcule a integral de superf\'icie $\iint_S (x+y^2)dS,$ em que S \'e o cilindro 
+$x^2 + y^2 = 4, 0 \leq z \leq 3$.a
+\texttt{Solu\c c\~ao} Uma poss\'ivel parametriza\c c\~ao \'e 
+    $$
+        r(u, v) = (2\cos{u}, 2\sin{u}, v), 0 \leq u \leq 2\pi, 0 \leq v \leq 3.
+    $$
+    Assim, os vetores tangentes s\~ao $r_u = (-2\sin{u}, 2\cos{u}, 0), r_v = (0, 0, 1)$, tal que o 
+$r_u \times r_v = (2\cos{u}, 2\sin{u}, 0)$ e $||r_u \times r_v|| = 2$. Com a defini\c c\~ao que demos, chegamos
+em:
+    $$
+        \iint_S f(x, y, z)dS = \iint_D f(r(u, v))||r_u \times r_v|| = \int_0^3\int_0^{2\pi}2\cos{u} + 4\sin^2{u}dudv =
+    = 8\pi.
+    $$
+
+    Estando trabalhando com superf\'icies, \'e necess\'ario lidar com a quest\~ao da orienta\c c\~ao dela. No entanto,
+por quest\~oes dimensionais, n\~ao basta dizer "para frente" ou "para tr\'as", pois h\'a outras dire\c c\~oes, tais
+quais "para dentro", "para fora", "para cima", "para baixo". \'E preciso, portanto, formalizar essas no\c c\~oes, afim
+de lidar com as dificuldades que surgir\~ao, o que motiva a defini\c c\~ao a seguir - Para qualquer ponto (x, y, z) da
+superf\'icie S, caso o vetor normal $\vec{n}$ varie continuamente nele, dizemos que S \'e orient\'avel.
+\end{document}
