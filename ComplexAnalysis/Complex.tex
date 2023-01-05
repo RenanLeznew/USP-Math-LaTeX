@@ -1,0 +1,540 @@
+  \documentclass{article}
+  \usepackage{amsmath}
+  \usepackage{amsthm}
+  \usepackage{amssymb}
+  \usepackage{pgfplots}
+  \usepackage{amsfonts}
+  \usepackage[margin=2.5cm]{geometry}
+  \usepackage{graphicx}
+  \usepackage[export]{adjustbox}
+  \usepackage{fancyhdr}
+  \usepackage[portuguese]{babel}
+  \usepackage{hyperref}
+  \usepackage{lastpage}
+  \usepackage{mathtools}
+
+  \pagestyle{fancy}
+  \fancyhf{}
+
+  \pgfplotsset{compat = 1.18}
+
+  \hypersetup{
+      colorlinks,
+      citecolor=black,
+      filecolor=black,
+      linkcolor=black,
+      urlcolor=black
+  }
+  \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+  \newtheorem*{theorem*}{\underline{Teorema}}
+  \newtheorem{example}{\underline{Exemplo}}[section]
+  \newtheorem*{proof*}{\underline{Prova}}
+  \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
+  \newtheorem*{crl*}{\underline{Corol\'ario}}
+  \newtheorem*{exer*}{\underline{Exerc\'icios}}
+  \renewcommand\qedsymbol{$\blacksquare$}
+
+  \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+  \title{Complex Analysis}
+  \author{Renan Wenzel}
+  \date{\today}
+
+  \begin{document}
+  \maketitle
+  \newpage
+  \tableofcontents
+  \newpage
+
+  \section{Aula 01 - 03/01/2023}
+  \subsection{Motiva\c c\~oes}
+  \begin{itemize}
+   \item Definir o corpos dos complexos
+   \item Definir a topologia no corpo dos complexos
+   \item Esfera de Riemann
+  \end{itemize}
+
+  \subsection{Defini\c c\~oes B\'asicas}
+  \begin{def*}
+    Um corpo f \'e um conjunto n\~ao vazio em que definem-se duas opera\c c\~oes $+:F\times{F}\rightarrow F, \cdot:F\times{F}\rightarrow F$ satisfazendo:
+  \begin{itemize}
+    \item[i)] w + z = z + w
+    \item[ii)] w + (z+ u) = (w + z) + u
+    \item[iii)] Existe 0 em F tal que w + 0 = w
+    \item[iv)] Para cada $w\in F$, existe $-w \in F$ tal que w + (-w) = 0
+    \item[v)] $w\cdot z = z\cdot w$
+    \item[vi)] $w\cdot(z\cdot u) = (w\cdot z)\cdot u$
+    \item[vii)] Existe $e\in \mathbb{F}$ tal que $w\cdot{e} = w$
+    \item[viii)] Para cada $w\in{F-\{0\}}$, existe $w ^{-1}\in{F}$ tal que $w\cdot w ^{-1} = e$
+    \item[ix)] $(w+z)\cdot{u} = w\cdot u + z\cdot u,$
+  \end{itemize}
+  em que w, z, u pertencem a F.
+  \end{def*}
+  Considere F um corpo contendo $\mathbb{R}$ e tal que 
+  $$
+  x ^{2} + 1 = 0
+  $$
+tenha solu\c c\~ao. Seja i esta solu\c c\~ao. Segue que -i \'e solu\c c\~ao dela tamb\'em, -1.z = z e 0.z = 0 para z em F. Definimos
+  $$
+  \mathbb{C}:= \{a + bi: a, b\in \mathbb{R}\,
+  $$
+de maneira que os elementos de $\mathbb{C}$ s\~ao unicmaente determinados, $\mathbb{C}$ \'e subcorpo de F e a estrutura 
+alg\'ebrica de $\mathbb{C}$ n\~ao depende de F. Al\'em disso, este corpo existe.
+
+  Com efeito, 
+  \subsubsection{Unicidade}
+  Sejam a, b, c, d $\in \mathbb{R}$ tais que 
+  $$
+  a + bi = c + di.
+  $$
+  Assim, $a-c = i(d-b)\Rightarrow (a-c)^{2} = (d-b)^{2}$, donde segue a unicidade a = c e d = b
+  \subsubsection{Subcorpo}
+  Exerc\'icio.
+  \subsubsection{Estrutura Alg\'ebrica Independe de F}
+  Seja F\ outro corpo contendo $\mathbb{R}$ em que $x ^{2} + 1 = 0$ possui solu\c c\~ao. Considere $\mathbb{C}' = \mathbb{R} + j \mathbb{R},$
+  em que j \'e a solu\c c\~ao da equa\c c\~ao em F'. Definimos $T:\mathbb{C}\rightarrow \mathbb{C}'$ por 
+  $$
+  T(a + bi) = a + bj
+  $$
+e, neste caso, T(z + w) = T(z) + T(w), T(zw) = T(z)T(w) para todos $z, w\in \mathbb{C}.$ (Exerc\'icio.)
+  \subsubsection{Exist\^encia}
+  Seja $F = \{(a, b):a, b\in \mathbb{R}\}$ munido das opera\c c\~oes $+:F\times{F}\rightarrow F, \cdot:F\times{F}\rightarrow F$ dadas por
+ \begin{align*}
+  +((a, b), (c,d)) = (a + c, b + d) \\
+  \cdot((a, b), (c, d)) = (ac - bd, ad + bc).
+ \end{align*}
+  Note que $(0, 1)^{2} = (-1, 0)$. Assim, (F, +, .) \'e um corpo contendo $\mathbb{R}.$ (Exerc\'icio).
+
+  Algumas propriedades(Exerc\'icios):
+ \begin{itemize}
+   \item[a)] $Re(z)\leq{|z|}$ e $Im(z)\leq{|z|}$
+   \item[b)] $\overline{z+w} = \overline{z}+\overline{w}$ e $\overline{z\cdot w} = \overline{z}\cdot\overline{w}$
+   \item[c)] $\overline{\frac{1}{z}} = \frac{1}{\overline{z}}$
+   \item[d)] $|z| = |\overline{z}|$ e $|z|^{2} = z\cdot\overline{z}$
+   \item[e)] $z + \overline{z} = 2Re(z), z - \overline{z} = 2iIm(z)$ e $\frac{1}{z} = \frac{\overline{z}}{|z|^{2}}$
+ \end{itemize}
+  \subsection{Representa\c c\~ao Polar de $\mathbb{C}$}
+  Dado $z\in \mathbb{C}$, temos 
+  $$
+  z = |z|(\cos{\theta} + i\sin{\theta}), \quad \theta = arg z.
+  $$
+  Neste caso, temos, para z n\~ao-nulo,
+  $$
+  z ^{-1} = |z|^{-1}(\cos{-\theta} + i\sin{-\theta}) = |z|^{-1}(\cos{\theta}-i\sin{-\theta})
+  $$
+  Para $z _{1}, z _{2}\in \mathbb{C},$ temos
+  $$
+  z _{1}\cdot z _{2} = |z _{1}||z _{2}|(\cos(\theta _{1} + \theta _{2}) + i\sin(\theta _{1} + \theta _{2}))
+  $$
+com $\theta _{1} = arg z _{1}, \theta _{2} = z _{2}.$ Mais geralmente, 
+  $$
+  \prod_{k=1}^{n}z _{k} = \prod_{k=1}^{n} |z _{k}|(\cos(\sum_{k=1}^{n}\theta _{k}) + i\sin(\sum_{k=1}^{n}\theta _{k})),
+  $$
+com $\theta _{k} = arg z _{k}$. Em particular, 
+  $$
+  z ^{n} = |z|^{n}(\cos(n\theta)+i\sin(n \theta)), \quad n\in \mathbb{N}.
+  $$
+  Buscando w tal que $w ^{n} = z$ para dado z n\~ao-nulo,
+  $$
+  w = |z|^{\frac{1}{2}}(\cos(\frac{\theta + 2k\pi}{n}) + i\sin(\frac{\theta + 2k\pi}{n})), \quad k = 0, 1, \cdots, n.
+  $$
+
+  \subsection{A Esfera de Riemann}
+  Considere $\mathbb{S}^{2}\subset{\mathbb{R}^{3}}$ a esfera 
+  $$
+  \mathbb{S}^{2}:= \{(x, y, z): x ^{2} + y ^{2} + z ^{2}\leq{1}\}.
+  $$
+  Chame N=\{0, 0, 1\} de polo norte. Fazemos uma associa\c c\~ao entre $\mathbb{S}^{2}-\{N\}$ e o plano z=0 de $\mathbb{R}^{3}$,
+chamada de proje\c c\~ao estereogr\'afica. Nessa associa\c c\~ao, o ponto $z(=x + iy)\in\mathbb{C}$ \'e associado a (x, y, 0), e
+definimos uma reta por N e z como r: N + t(x, y, -1), $t\in \mathbb{R}$. Assim,
+  $$
+  r\cap{\mathbb{S}^{2}} \Rightarrow S _{z} = \biggl(\frac{2x}{|z|^{2}+1}, \frac{2y}{|z|^{2}+1}, \frac{|z|^{2}-1}{|z|^{2}+1}\biggr)\in \mathbb{S}^{2}
+  $$
+  Reciprocramente, o ponto (x, y, z) de $\mathbb{S}^{2}$ pode ser associado ao considerar a reta r: N + t(x, y, s-1), em que
+s \'e um n\'umero real. Com isso, a intersec\c c\~ao $r\cap \{(x, y, 0): x, y \in \mathbb{R}\}\Rightarrow t=\frac{1}{1-s}$ mostra que 
+$z = \biggl(\frac{x}{1-s}, \frac{y}{1-s}, 0\biggr)$ corresponde ao ponto z de $\mathbb{C}$.
+  
+  Associando N ao infinito, obtemos o plano estendido $\mathbb{C}_{\infty} = \mathbb{C}\cup \{\infty\}$, chamado de Esfera de Riemann. Se $\phi:\mathbb{C}_{\infty}\rightarrow \mathbb{S}^{2}$
+  \'e dada por $\phi(\infty) = N$ e, para $z\neq{\infty},$
+    $$
+    \phi(z) = (\frac{z + \overline{z}}{|z|^{2} + 1}, \frac{z - \overline{z}}{|z|^{2}+1}, \frac{|z|^{2}-1}{|z|^{2}+1}),
+    $$
+  ent\~ao dados $z, w\in \mathbb{C}_{\infty},$ definimos a m\'etrica
+    $$
+    d(z, w)=\left\{
+      \begin{array}{ll}
+        ||\phi(z) - \phi(w)||, & \quad z, w\neq{\infty} \\
+        0, & \quad z = w = \infty \\
+        \infty, & \quad \text{ caso contr\'ario}
+      \end{array}\right.
+    $$
+   \begin{example}
+     Se $z, w\neq{\infty}$, ent\~ao
+     $$
+     d(z, w) = d(\phi(z), \phi(w)) = \frac{2|z - w|}{[(1+|z|^{2})(1+|w|^{2})]^{\frac{1}{2}}}
+     $$
+    e, se $z\neq\infty$,
+     $$
+     d(z, \infty) = ||\phi(z) - N|| = \frac{2}{(1+|z|^{2})^{\frac{1}{2}}}
+     $$
+   \end{example}
+
+   \subsection{Topologia de $\mathbb{C}$}
+  \begin{def*}
+    Sejam X um conjunto e $d:X\times{X}\rightarrow X$ uma fun\c c\~ao. Dizemos que d \'e uma m\'etrica se
+   \begin{itemize}
+     \item[i)] $d(x, y) \geq{0}, d(x, y) = 0\Longleftrightarrow x=y$
+     \item[ii)] $d(x, y) = d(y, x)$
+     \item[iii)] $d(x, z) \leq d(x, y) + d(y, z)$,
+   \end{itemize}
+   em que x, y, z pertencem a X. Neste caso, chamamos a terna (X, d) de espa\c co m\'etrico.
+  \end{def*}
+   Considere (X, d) um espa\c co m\'etrico. Dado x em X e $r > 0$,
+   $$
+   B(x, r):= \{y\in{X}: d(x, y)< r\}
+   $$
+   \'e a bola aberta, seu fecho \'e
+   $$
+   B_c(x, r):= \{y\in{X}: d(x, y) = r\}
+   $$
+   e a bola fechada \'e a uni\~ao deles, ou seja, 
+   $$
+   \overline{B(x, r)}:= \{y\in{X}: d(x, y) \leq{r}\}
+   $$
+  \begin{example}
+    Considere X n\~ao-nulo e d(x, y) = $\delta _{x,y}.$ (X, d) \'e metrico e 
+    $$
+    B\biggl(x, \frac{1}{2}\biggr) = \{x\} = \overline{B\biggl(x, \frac{1}{2}\biggr)} = B\biggl(x, \frac{1}{333}\biggr), x\in{X}
+    $$
+    $$
+    B(x, 2) = X = B(x, 1001), x\in{X}
+    $$
+  \end{example}
+  Utilizando bolas, definimos que um conjunto $A\subset{X}$ \'e aberto se para todo x em A, existe $r > 0$ tal que 
+B(x, r) est\'a contido em A. Por outro lado, um conjunto \'e fechado se seu complemenetar \'e aberto. A uni\~ao infinita
+de abertos \'e aberta e, pelas Leis de DeMorgan, a intersec\c c\~ao infinita de fechados \'e fechada. Al\'em disso, intersec\c c\~oes
+finitas de abertos \'e aberta e uni\~ao finita de fechados \'e fechado.
+
+  Definimos, tamb\'em, o interior de A como $A^{\circ}:= \cup_{B} \{B\subset{A}: B \text{ aberto}\}$, o fecho de A
+  como $\overline{A} = \cap_{F} \{A\subseteq{F}: F \text{ fechado}\}$ e o bordo de A como $\partial{A} = \overline{A}\cap\overline{A^c}.$
+  Diremos que A \'e denso quando $\overline{A} = X.$
+\begin{prop*}
+  Seja (X, d) um espa\c co m\'etrico e A um subconjunto. Ent\~ao,
+ \begin{itemize}
+   \item[i)] A \'e aberto se, e s\'o se, $A = A^{\circ}$
+   \item[ii)] A \'e fechado se, e s\'o se, $A = \overline{A}$
+   \item[iii)] Se x pertence a $A^{\circ}$, ent\~ao existe $\epsilon>0$ tal que $B(x, \epsilon)\subseteq{A}$.
+   \item[iv)] Se x pertence a $\overline{A}$, ent\~ao para todo $\epsilon > 0$ tal que $B(x, \epsilon)\cap{A}\neq\emptyset$.
+ \end{itemize}
+\end{prop*}
+
+  Um espa\c co m\'etrico (X, d) \'e conexo se os \'unicos subconjuntos abertos e fechados de X s\~ao X e vazio. Caso contr\'ario,
+X \'e dito ser desconexo, ou seja, existem abertos disjunto n\~ao-vazios cuja uni\~ao d\'a o espa\c co todo. Um exerc\'icio \'e mostrar
+mostrar que um conjunto \'e conexo se, e s\'o se, ele \'e um intervalo.
+
+  Dados z, w em $\mathbb{C}$, o segmento [z, w] \'e o conjunto
+  $$
+  [z, w]:= \{tw + (1-t)z: t\in[0, 1]\}
+  $$
+  Al\'em disso, dados $z _{1}, \cdots, z _{n}$, a poligonal com esses v\'ertices \'e
+  $$
+  [z _{1}, \cdots, z _{n}] = \bigcup _{k=1}^{n-1}[z _{k}, z _{k+1}]
+  $$
+ \begin{prop*}
+   Seja G um subconjunto de $\mathbb{C}$ aberto. Ent\~ao, G \'e conexo se, e s\'o se para todo z, w em G, existe uma poligonal
+  $[z, z _{1}, \cdots, z _{n}, w]\subseteq{G}.$
+ \end{prop*}
+\begin{proof*}
+  $\Leftarrow)$ Assumindo que G satisfaz a propriedade da poligonal, suponha tamb\'em que G n\~ao \'e conexo. Assim,
+podemos escrever $G = B\cup{C}$ com $B\cap{C}=\emptyset$ e B, C n\~ao-vazios. Pela propriedade de G, existe 
+  $[b, z _{1}, \cdots, z _{n}, c]\subseteq{G}$. Neste caso, existe k tal que $z _{k}\in{B}$ e $z _{k+1}\in{C}.$ Agora,
+  considere os conjuntos 
+ \begin{align*}
+   &B' = \{t\in[0, 1]: tz _{k} + (1 - t)z _{k+1}\in{B}\}\\
+   &C' = \{t\in[0, 1]: tz _{k} + (1 - t)z _{k+1}\in{C}\}
+ \end{align*}
+e note que $B'\neq{\emptyset}$ pois $z _{k}\in{B}$ e $1\in{B'}$. Analogamente, C' \'e n\~ao-vazio. No entanto, isso \'e um absurdo,
+pois [0, 1] seria conexo e $B'\cup{C'}$ seria uma cis\~ao n\~ao trivial
+
+ $\Rightarrow)$ Suponha, agora, que G \'e conexo e seja z um elemento dele. Defina 
+ $$
+ C = \{w\in{G}: \text{Existe } [z, z _{1}, \cdots, z _{n}, w]\subseteq{G}\}
+ $$
+ Observe que C \'e n\~ao-vazio, z pertence a G e [z] \'e subconjunto de G. Mostremos que C \'e aberto e fechado (pois implicar\'a em C = G).
+Com efeito, se $w\in{C}\subseteq{G}$, existe $r>0$ tal que B(w, r) est\'a contigo em G, pois G \'e aberto.
+ Assim, para todo $s\in B(w, r)$, temos $[s, w]\subseteq{B(w, r)}$ e, com isso, existe uma poligonal ligando s a z com $s\in{C},$ mostrando 
+que C \'e aberto.
+
+  Mostrar que o complementar de C \'e aberto \'e an\'alogo. Com efeito, se $C ^{c} = \emptyset,$ o resultado est\'a provado. Por outro
+lado, se $C ^{c}\neq\emptyset$, seja $w\in{C ^{c}}$ = G - C. Logo, existe $r > 0$ tal que $B(w, r)\subseteq{G}$. Afirmamos
+que $B(w, r)\subseteq{G-C}$. Caso contr\'ario, existe s em B(w, r) contido, tamb\'em, em C. Neste caso, existe uma poligonal
+ligando s a z e s a w, uma contradi\c c\~ao, pois isso conectaria w a z, mesmo com w no complementar de z. Portanto, o complementar
+\'e aberto e C \'e aberto e fechado. \qedsymbol
+\end{proof*}
+
+\section{Aula 02 - 05/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Sequ\^encias e suas converg\^encias;
+  \item Teorema de Cantor para espa\c cos completos;
+  \item Compacidade e Heine-Borel;
+  \item Continuidade e converg\^encia de fun\c c\~oes.
+\end{itemize}
+
+\subsection{Fim de Conexos}
+\begin{theorem*}
+  Seja $G\subseteq{\mathbb{C}}$ um aberto e conexo, ent\~ao existe uma poligonal ligando qualquer z, w em G cujos segmentos
+  sejam paralelos ao eixo real ou imagin\'ario.
+\end{theorem*}
+
+\begin{def*}
+  Um subconjunto de um espa\c co m\'etrico (M, d) \'e uma componente conexa se \'e um conexo maximal
+\end{def*}
+
+\begin{example}
+Coloque $A = \{1, 2, 3\}. \{1\}$ \'e componente conexa de A, mas $\{1, 2\}$ n\~ao \'e. 
+ \end{example}
+
+\begin{theorem*}
+  Seja (M, d) um espa\c co m\'etrico. Ent\~ao,
+ \begin{itemize}
+   \item[1)] Para x em M, existe $C _{x}$ uma componente conexa de M com $x\text{ em }C _{x}; $
+   \item[2)] As componentes s\~ao disjuntas.
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  1) \par Seja x em M e tomemos
+  $$
+  C _{x} = \bigcup _{D\subseteq{M}} \{D: D \text{ conexos com } x\in{D}\}
+  $$
+  Mostremos que $C _{x}$ \'e conexo, pois a maximalidade segue da defini\c c\~ao dada a ele. Note que $C _{x}\neq\emptyset$, visto que
+qualquer conjunto unit\'ario \'e conexo. Seja $A\subseteq{C _{x}}$ aberto, fechado e n\~ao-nulo. Existe $D _{x}\in C _{x}$ tal
+que $D _{x}\cap{A}\neq\emptyset$, o que implica que $D _{x}\subseteq{A}.$
+
+Finalmente, considere $D\in C _{x}$, de modo que $D _{x}\cup{D}$ \'e conexo e $(D _{x}\cup{D})\cap{A}\neq\emptyset$ o que garante
+que $D\subseteq{A}. \text{ Assim, } A = C _{x}.$
+\qedsymbol.
+\end{proof*}
+\begin{exer*}
+ \begin{itemize}
+  \item[1)] Prove a segunda afirma\c c\~ao do teorema;
+  \item[2)] Se D e conexo e $D\subseteq{A}\subseteq{\overline{D}}$, ent\~ao A \'e conexo.
+ \end{itemize}
+\end{exer*}
+
+\begin{theorem*}
+  Seja G um subconjunto aberto de $\mathbb{C}.$ As componentes conexas s\~ao abertas e h\'a no m\'aximo uma quantidade enumer\'avel
+delas.
+\end{theorem*}
+\begin{proof*}
+  Seja D uma componente conexa de G. Tome $x\in{D}$, tal que existe $r > 0 \text{ com } B(x, r)\subseteq{G}$, j\'a que G \'e aberto.
+Suponha que $B(x, r)\not\subseteq{D}.$ Neste caso, $B(x, r)\cup{D}$ seria um conexo contendo D propriamente. Logo, 
+$B(x, r)\subseteq{D}$ e D \'e aberto. 
+
+  Para a segunda afirma\c c\~ao, considere 
+  $$
+  \Omega = \mathbb{Q} + i\mathbb{Q} (\overline{\Omega} = \mathbb{C})
+  $$  
+  Para cada componente conexa C de G, como G \'e aberto, existe $z\in{\Omega\cap{C}}$, o que \'e suficiente para garantir a enumerabilidade
+das componentes de G.
+\qedsymbol.
+\end{proof*}
+
+\subsection{Sequ\^encias e Completude}
+\begin{def*}
+  Seja (M, d) um espa\c co m\'etrico. Uma sequ\^encia $\{x _{n}\}$ de M \'e convergente se existe x em M tal que 
+para todo $\epsilon > 0$, existe $n_{0}$ natural tal que 
+  $$
+  d(x _{n}, x) < \epsilon, \quad n\geq n_{0}.
+  $$
+Escrevemos, neste caso, $x _{n}\to x$. Dizemos que uma sequ\^encia \'e de Cauchy se para todo $\epsilon > 0$, existe
+ $n_{0}$ natural satisfazendo 
+  $$
+  d(x _{n}, x _{m}) < \epsilon, \quad n, m \geq n_{0}.
+  $$
+\end{def*}
+
+ \begin{exer*}
+  \begin{itemize}
+    \item[i)] Se $\{x _{n}\}$ \'e convergente, ent\~ao $\{x_n\}$ \'e de Cauchy, mas a rec\'iproca \'e s\'o v\'alida
+  quando a sequ\^encia possui uma subsequ\^encia convergente.
+    \item[ii)] Se $\{x_{n}\}$ \'e de Cauchy, ent\~ao $x_{n}$ \'e limitada.
+    \item[iii)] $F\subseteq{M}$ \'e fechado se e s\'o se toda $x_{n}$ de F com $x_{n}\to x$ \'e tal que x pertence a F.
+  \end{itemize}
+ \end{exer*}
+
+  Dizemos que um espa\c co m\'etrico \'e completo se toda sequ\^encia de Cauchy for convergente.  
+ \begin{exer*}
+  \begin{itemize}
+    \item[i)] Mostre que $\mathbb{R}, \mathbb{C}$ s\~ao espa\c cos m\'etricos completos;
+    \item[ii)] Se (M,d) \'e um espa\c co m\'etrico e $S\subseteq{M}$, mostre que se (S,d) for completo, ele \'e fechado em M. 
+Mostre e rec\'iproca no caso em que (M, d) \'e completo.
+  \end{itemize}
+ \end{exer*}
+O resultado a seguir \'e conhecido como Teorema de Cantor.
+\begin{theorem*}
+  Um espa\c co m\'etrico \'e completo se e s\'o se toda cadeia descendente de fechado $\{F_{n}\} $ satisfazendo
+  $$
+  diam F_{n}\to{0}, \quad n\to\infty
+  $$
+\'e tal que $\bigcap_{n\in \mathbb{N}}F_{n}$ \'e unit\'ario. Aqui, $diam A:=sup\{d(x, y): x, y\in{A}\}.$
+\end{theorem*}
+\begin{proof*}
+  Suponha que M \'e um espa\c co m\'etrico completo. Se $\bigcap\limits _{n\in \mathbb{N}}F\neq\emptyset,$ ent\~ao ele \'e unit\'ario. 
+De fato, se $x, y\in{\cap_n{F}}$, 
+  $$
+  d(x, y)\leq diam F _{n} (diam F _{n+1}\leq diam F _{n}),
+  $$
+mas $diam F _{n}\to{0}$ e d(x, y) = 0, de modo que x = y.
+
+  Agora, seja $x _{n}\in F _{n}, n\in \mathbb{N}$ e observe que 
+  $$
+  d(x _{n}, x _{n+1})\leq diam F _{n},
+  $$
+pois $F _{n+1}\subseteq{F _{n}}$. Isto garante que $\{x_{n}\}$ \'e de Cauchy e, como M \'e completo, existe x com $x_{n}\to{x}$.
+Neste caso, $x\in{F_{n}}$ para todo n e $\bigcap _{n\in \mathbb{N}}F_{n}=\{x\}.$
+  
+  Reciprocramente, seja $\{a_{n}\}$ de Cauchy em M. Constru\'imos 
+  $$
+  F_{n} = \overline{\{a_{k}: k\geq{n}\}}
+  $$
+que s\~ao fechados satisfazendo $F_{n+1}\subseteq{F_{n}}.$ Assim, $\bigcap\limits _{n\in \mathbb{N}}F_{n} = \{x\}$ para algum
+x de M. Como
+  $$
+  d(x, a_{n})\leq diamF_{n}\to{0},
+  $$
+temos, portanto, $a_{n}\to{x}.$
+\qedsymbol
+\end{proof*}
+Um exerc\'icio que fica \'e mostrar que se $\{a_{n}\}$ \'e de Cauchy, ent\~ao $diamF_{n}\to{0}$
+\subsection{Compactos}
+\begin{def*}
+Seja (M, d) um espa\c co m\'etrico. Um subconjunto $S\subseteq{M}$ \'e compacto se para toda cole\c c\~ao $\mathcal{A}$
+de abertos de M cobrindo S existe $A_1, \cdots, A_{n}\in \mathcal{A}$ tal que 
+  $$
+  S\subseteq\bigcup_{k=1}^{n}A_{k}
+  $$
+\end{def*}
+  Dado um espa\c co m\'etrico (M, d), M \'e dito sequencialmente completo se todas as sequ\^encias de M possuem subse
+qu\^encia convergente. Tamb\'em diremos que ele \'e totalmente limitado se para todo $\epsilon > 0$, existe $n\in \mathbb{N},
+x_{1}, \cdots, x_{n}\in{M}$ com 
+  $$
+  M = \bigcup_{i=1}^{n}B(x_{i}, \epsilon).
+  $$
+Um conjunto A \'e dito limitado se seu diametro \'e finito.
+ \begin{exer*}
+ \begin{itemize}
+   \item[i)] Se A \'e totalmente limitado, ent\~ao A \'e limitado, mas a rec\'iproca n\~ao \'e necessariamente verdade.
+    \item[ii)] Se A \'e compacto, ent\~ao A \'e limitado, mas a rec\'iproca n\~ao \'e necessariamente verdade.
+ \end{itemize} 
+ \end{exer*}
+\begin{prop*}
+  Seja (M, d) um espa\c co m\'etrico e K um subconjutno de M. Ent\~ao, K \'e compacto se es\'o se toda fam\'ilia de fechados com PIF tem 
+interse\c c\~ao n\~ao-vazia.
+\end{prop*}
+A PIF \'e a Propriedade da Intersec\c c\~ao Finita, que afirma que dados conjuntos $F _{1}, \cdots, F_{n}\Rightarrow \bigcap\limits_{k=1}^{n}F_{k}\neq\emptyset$
+\begin{theorem*}
+  Seja (M, d) um espa\c co m\'etrico. As seugintes afirma\c c\~oes s\~ao equivalentes:
+ \begin{itemize}
+   \item[i)]M \'e compacto;
+   \item[ii)] Para todo conjunto ininito S de M, existe x em S tal que para todo $\epsilon > 0, B(x, \epsilon)\cap{S-\{x\}}\neq\emptyset$;
+   \item[iii)] M \'e sequencialmente compacto;
+   \item[iv)] M \'e completo e totalmente limitado.
+ \end{itemize}
+\end{theorem*}
+\begin{theorem*}
+  Um conjunto K de $\mathbb{R}^{n}$ \'e compacto se e s\'o se ele \'e fechado e limitado.
+\end{theorem*}
+Segue um esbo\c co da prova.
+\begin{proof*}
+  Se K \'e compacto, ele \'e completo (logo, fechado) e totalmente limitado (logo, limitado). Por outro lado, se K \'e fechado
+e limitado, ent\~ao K \'e completo porque $\mathbb{R}^{n}$ \'e completo. Al\'em disso, pela propriedade Arquimediana da reta,
+para todo $\epsilon > 0$, existem $x_1, \cdots, n_{n}\in{K}$ com 
+  $$
+  K\subseteq{\bigcup_{i=1}^{n}B(x_{i}, \epsilon)}
+  $$
+\end{proof*}
+
+\subsection{Continuidade}
+\begin{def*}
+  Sejam (X, d), (Y, d') espa\c cos m\'etricos. $f:X\rightarrow Y$ \'e cont\'inua em x de X se para todo $\epsilon > 0$, existir
+  $\delta > 0$ tal que 
+  $$
+  d(x, y) < \delta\Rightarrow d'(f(x), f(y)) < \epsilon 
+  $$
+f \'e dita cont\'inua se isso ocorre para todos os pontos de M.
+\end{def*}
+\begin{exer*}
+  Mostre que equivalem \`a defini\c c\~ao de cont\'inua:
+ \begin{itemize}
+   \item[i)] $f^{-1}(B(x, \epsilon))$ cont\'em uma bola aberta centrada em x, para todo $\epsilon > 0$;
+   \item[ii)] $x_{n}\to{x}$ implica $f(x_{n})\to{f(x)}$
+   \item[iii)] $F ^{-1}(A)$ \'e aberta em $X$ para todo aberto A com $x\in{A}$
+ \end{itemize}
+\end{exer*}
+\begin{prop*}
+  Sejam $f, g:X\rightarrow \mathbb{C}$ fun\c c\~oes cont\'inuas. Ent\~ao,
+ \begin{itemize}
+   \item[1)] $\alpha f + \beta g$ \'e cont\'inua, $\alpha, \beta\in \mathbb{C};$
+   \item[2)] fg \'e con\'inua;
+   \item[3)] Se $x\neq{0},$ ent\~ao f/g \'e cont\'inua em x;
+   \item[4)] Se $h:Y\rightarrow X$ \'e con\'tinua, ent\~ao $f\circ{h}:Y\rightarrow \mathbb{C}$ \'e cont\'inua.
+ \end{itemize}
+\end{prop*}
+\begin{def*}
+  Uma fun\c c\~ao $f:(X, d)\rightarrow (Y, d')$ \'e uniformemente cont\'inua se para todo $\epsilon > 0$, existe $\delta > 0$
+tal que 
+ $$
+ d(x, y) < \delta\Rightarrow d'(f(x), f(y)) < \epsilon.
+ $$
+ Uma fun\c c\~ao $f:(X, d)\rightarrow (Y, d')$ \'e Lipschitz se existe $c > 0$ tal que 
+ $$
+ d'(f(x), f(y)) \leq cd(x, y)
+ $$
+\end{def*} 
+\begin{theorem*}
+  Seja $f:(X, d)\rightarrow (Y, d')$ uma fun\c c\~ao. Ent\~ao, 
+ \begin{itemize}
+   \item[i)] Se X \'e compacto, ent\~ao f(X) \'e compacto;
+     \item[ii)] Se X \'e conexo, ent\~ao f(X) \'e conexo. Adicionalmente, se Y = $\mathbb{R}$, ent\~ao f(X) \'e um intervalo.
+ \end{itemize}
+\end{theorem*}
+\begin{crl*}
+  Se $f:X\rightarrow \mathbb{R}$ \'e cont\'inua, ent\~ao para todo $K \subseteq{X}$ compacto, existem $x _{m}, x _{M}\in{K}$
+tais que 
+  $$
+  f(x _{m}) = \inf _{x\in{K}} \{f(x)\}, \quad f(x _{M}) = \sup _{x\in{K}} \{f(x)\}
+  $$
+\end{crl*}
+\begin{crl*}
+  Nas mesmas condi\c c\~oes, mas f uma fun\c c\~ao complexa, temos 
+  $$
+  |f(x _{m})| = \inf _{x\in{K}} \{|f(x)|\}, \quad |f(x _{M})| = \sup _{x\in{K}} \{|f(x)|\}
+  $$
+\end{crl*}
+\begin{theorem*}
+  Seja $f:X\rightarrow Y$ con\'tinua. Se X \'e compacto, ent\~ao f \'e uniformemente cont\'inua.
+\end{theorem*}
+
+\subsection{Converg\^encia Uniforme}
+\begin{def*}
+  Uma sequ\^encia de fun\c c\~oes $\{f_{n}\}$ de X em Y converge pontualmente para $f:X\rightarrow Y$ se 
+  $$
+  f_{n}(x)\to f(x), \quad n\to\infty, \forall{x\in{X}}
+  $$
+  $\{f_{n}\}$ converge uniformemente para f se para todo $\epsilon > 0$, existe $n_{0}\in \mathbb{N}$ tal que
+  $$
+  \sup _{x\in{X}} \{d'(f_{n}(x), f(x))\} < \epsilon, n\geq{n_{0}}
+  $$  
+\end{def*}
+\begin{theorem*}
+  Se $\{f_{n}\}$ \'e uma sequ\^encia de fun\c c\~oes con\'tinuas e $f_{n}\to{f}$ uniformemente, ent\~ao f \'e cont\'inua.
+\end{theorem*}
+\begin{theorem*}
+  Seja $u_{n}:X\rightarrow \mathbb{C}$ uma sequ\^encia de fun\c c\~oes satisfazendo
+  $$
+  |u_{n}(x)|\leq c_{n}, n\in \mathbb{N}.
+  $$
+  Se $\sum\limits_{n=0}^{\infty}c_{n} < \infty,$ ent\~ao $\sum\limits_{k=1}^{n}u_{k}\to \sum\limits_{n=0}^{\infty}u_{n}$ uniformemente.
+\end{theorem*}
+\end{document}

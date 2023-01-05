@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  1 JAN 2023 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  5 JAN 2023 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**./12132022.tex
-(12132022.tex
+**./Complex.tex
+(Complex.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02>
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -675,6 +675,33 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip62
 \f@nch@O@orf=\skip63
 )
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2022/10/23 3.82 The Babel package
+\babel@savecnt=\count305
+\U@D=\dimen294
+\l@unhyphenated=\language79
+
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read3
+\bbl@dirlevel=\count306
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\portugue
+se.ldf
+Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
+Package babel Info: Making " an active character on input line 143.
+))
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel
+-portuguese.tex
+Package babel Info: Importing font and identification data for portuguese
+(babel)             from babel-pt.ini. Reported on input line 11.
+)
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
@@ -727,11 +754,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count305
+\c@section@level=\count307
 )
-\@linkdim=\dimen294
-\Hy@linkcounter=\count306
-\Hy@pagecounter=\count307
+\@linkdim=\dimen295
+\Hy@linkcounter=\count308
+\Hy@pagecounter=\count309
  (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -742,7 +769,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count308
+\Hy@SavedSpaceFactor=\count310
  (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -755,14 +782,14 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count309
+\c@Hy@tempcnt=\count311
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen295
+\XeTeXLinkMargin=\dimen296
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -772,9 +799,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count310
-\Field@Width=\dimen296
-\Fld@charsize=\dimen297
+\Fld@menulength=\count312
+\Field@Width=\dimen297
+\Fld@charsize=\dimen298
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -787,9 +814,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count311
-\c@Item=\count312
-\c@Hfootnote=\count313
+\Hy@abspage=\count313
+\c@Item=\count314
+\c@Hfootnote=\count315
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -800,8 +827,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count314
-\c@bookmark@seq@number=\count315
+\Fld@listcount=\count316
+\c@bookmark@seq@number=\count317
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -823,74 +850,75 @@ Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count316
-\calc@Bcount=\count317
-\calc@Adimen=\dimen298
-\calc@Bdimen=\dimen299
+\calc@Acount=\count318
+\calc@Bcount=\count319
+\calc@Adimen=\dimen299
+\calc@Bdimen=\dimen300
 \calc@Askip=\skip65
 \calc@Bskip=\skip66
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count318
+\calc@Ccount=\count320
 \calc@Cskip=\skip67
 )
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count319
-\l_MT_multwidth_dim=\dimen300
+\g_MT_multlinerow_int=\count321
+\l_MT_multwidth_dim=\dimen301
 \origjot=\skip68
-\l_MT_shortvdotswithinadjustabove_dim=\dimen301
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen302
-\l_MT_above_intertext_sep=\dimen303
-\l_MT_below_intertext_sep=\dimen304
-\l_MT_above_shortintertext_sep=\dimen305
-\l_MT_below_shortintertext_sep=\dimen306
+\l_MT_shortvdotswithinadjustabove_dim=\dimen302
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen303
+\l_MT_above_intertext_sep=\dimen304
+\l_MT_below_intertext_sep=\dimen305
+\l_MT_above_shortintertext_sep=\dimen306
+\l_MT_below_shortintertext_sep=\dimen307
 \xmathstrut@box=\box67
-\xmathstrut@dim=\dimen307
+\xmathstrut@dim=\dimen308
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 26.
+Package hyperref Info: Option `colorlinks' set `true' on input line 27.
+\c@example=\count322
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count320
+\l__color_backend_stack_int=\count323
 \l__pdf_internal_box=\box68
-) (12132022.aux)
-\openout1 = `12132022.aux'.
+) (Complex.aux)
+\openout1 = `Complex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen308
+\scratchcounter=\count324
+\scratchdimen=\dimen309
 \scratchbox=\box69
-\nofMPsegments=\count322
-\nofMParguments=\count323
+\nofMPsegments=\count325
+\nofMParguments=\count326
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen309
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen310
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
 \everyMPtoPDFconversion=\toks48
 )
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -940,87 +968,95 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 37.
-(12132022.out) (12132022.out)
+Package hyperref Info: Link coloring ON on input line 43.
+(Complex.out) (Complex.out)
 \@outlinefile=\write4
-\openout4 = `12132022.out'.
+\openout4 = `Complex.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(lastpage)             ! on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(12132022.toc)
+[1
+
+{C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(Complex.toc)
 \tf@toc=\write5
-\openout5 = `12132022.toc'.
+\openout5 = `Complex.toc'.
 
- [1
+ [2] [3]
 
-{C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (28.36066pt too wide) in paragraph at lines 134--136
-[]\OT1/cmr/m/n/10 For ex-am-ple, con-sider N = 2, i.e., the topol-ogy on $\OMS/
-cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n
-/10 g$\OT1/cmr/m/n/10 , in which the dis-crete topol-ogy is $\OML/cmm/m/it/10 ^
-^\ \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f;\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 f\O
-T1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g\OML/cmm/m
-/it/10 ; \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 
-; \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 gg$\OT1/cmr/m/n/10 .
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 116.
 
-12132022.tex:153: Undefined control sequence.
-l.153   \Omega _{N}^{R}\fracslash
-                                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-[3] 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 116.
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+47.
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 182.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 182.
+
+[5] [6] [7] [8] [9] 
 AED: lastpage setting LastPage
-[4] (12132022.aux)
-Package rerunfilecheck Info: File `12132022.out' has not changed.
-(rerunfilecheck)             Checksum: 54FC93DE8895DF3435553A131A8C5914;1160.
+[10] (Complex.aux)
+Package rerunfilecheck Info: File `Complex.out' has not changed.
+(rerunfilecheck)             Checksum: D44D5810FE388F5AA06FD1AE17003B22;2475.
  ) 
 Here is how much of TeX's memory you used:
- 32330 strings out of 475284
- 759704 string characters out of 2774105
- 1174114 words of memory out of 3000000
- 53268 multiletter control sequences out of 15000+600000
- 478166 words of font info for 62 fonts, out of 8000000 for 9000
+ 33394 strings out of 475284
+ 778851 string characters out of 2774105
+ 1212778 words of memory out of 3000000
+ 54291 multiletter control sequences out of 15000+600000
+ 478501 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,103p,727b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/renan/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
-/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-5.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/renan/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on 12132022.pdf (4 pages, 206184 bytes).
+ 99i,12n,103p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\renan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1000.pk><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/r
+enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
+/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.
+pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/renan/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/rena
+n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on Complex.pdf (10 pages, 257565 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
