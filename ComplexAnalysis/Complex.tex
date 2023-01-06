@@ -537,4 +537,95 @@ tais que
   $$
   Se $\sum\limits_{n=0}^{\infty}c_{n} < \infty,$ ent\~ao $\sum\limits_{k=1}^{n}u_{k}\to \sum\limits_{n=0}^{\infty}u_{n}$ uniformemente.
 \end{theorem*}
+
+\section{Aula 03 - 06/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item[i)] Introdu\c c\~ao \`as s\'eries de pot\^encia e raio de converg\^encia;
+  \item[ii)] Fun\c c\~oes anal\'iticas e diferenci\'aveis em $\mathbb{C}$;
+  \item[iii)] Defini\c c\~ao da exponencial complexa;
+  \item[iv)] Ramos de fun\c c\~oes inversas.
+\end{itemize}
+\subsection{S\'eries de Pot\^encias}
+\begin{def*}
+  Considere $\{a_{n}\}$ uma sequ\^encia em $\mathbb{C}$. A s\'erie de pot\^encia em $\{a_n\}$, denotada
+por $\sum\limits_{n=0}^{\infty}$, \'e dita convergente se para todo $\epsilon > 0$, existe $n_0\in\mathbb{N}$
+tal que $|\sum\limits_{n=0}^{k} - a|, k\geq{n_0}$, para algum $a\in\mathbb{C}$. Denotamos isso por 
+  $$
+  a = \sum_{n=0}^{\infty} a_n < \infty,
+  $$
+A s\'erie $\sum\limits_{n=0}^{\infty}a_n$ \'e absolutamente convergente se $\sum\limits_{n=0}^{\infty}|a_n|<\infty$.
+\end{def*}
+\begin{exer*}
+  Mostre que se uma soma converge absolutamente, ela tamb\'em converge normalmente.
+\end{exer*}
+\begin{def*}
+  Uma s\'erie de pot\^encias \'e uma s\'erie da forma
+  $$
+  \sum_{n=0}^{\infty}a_n(z-a)^n, \quad z\in\mathbb{C},
+  $$
+em que $\{a_n\}$ \'e uma sequ\^encia de $\mathbb{C}$ e a \'e um n\'umero complexo.
+\end{def*}
+\begin{example}
+  S\'erie geom\'etrica $\sum\limits_{n=0}^{\infty}z^n, z\in\mathbb{C}$.
+\end{example}
+\begin{theorem*}
+  Considere a s\'erie de pot\^encias $\sum\limits_{n=0}^{\infty}(z-a)^n$ e $\frac{1}{R}:=\limsup_{n\to\infty}\{\sqrt[n]{|a_n|}\}$.
+Ent\~ao, 
+\begin{itemize}
+  \item[1)] A s\'erie converge absolutamente em B(a, r)
+  \item[2)] A s\'erie diverge se $|z-a| > R$
+  \item[3)] A s\'erie converge uniformemente em B(a, r) para $0 < r < R.$
+\end{itemize}
+\end{theorem*}
+\begin{exer*}
+  Mostre que o R do teorema acima \'e \'unico.
+\end{exer*}
+\begin{example}
+  $$
+  \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty.\quad e^z:=\sum_{n=0}^{\infty}\frac{z^n}{n!}, z\in\mathbb{C}
+  $$
+\end{example}
+\begin{prop*}
+  Nas nota\c c\~oes da proposi\c c\~ao anterior, se $R < \infty$, ent\~ao
+  $$
+    R = \lim_{n\to\infty}\biggl|\frac{a_n}{a_{n+1}}\biggr|.
+  $$
+\end{prop*}
+
+\subsection{Fun\c c\~oes Anal\'iticas}
+\begin{def*}
+  Seja G um aberto de $\mathbb{C}$ e $f:G\rightarrow\mathbb{C}$ uma fun\c c\~ao. Dizemos que ela \'e diferenci\'avel
+em $z\in{G}$ se
+  $$
+  \lim_{h\to{0}}\frac{f(z+h) - f(z)}{h} = \lim_{w\to{z}}\frac{f(z)-f(w)}{z-w}
+  $$
+existe. Neste caso, o denotamos por f'(z). Diremos que f \'e diferenci\'avel se f'(z) existe para todo z de G.
+\end{def*}
+\begin{def*}
+  Se $f:G\rightarrow\mathbb{C}$ \'e diferenci\'avel e $f':G\rightarrow\mathbb{C}(z\mapsto{f'(z)})$ \'e cont\'inua,
+ent\~ao dizemos que f \'e continuamente diferenci\'avel.
+  
+  Analogamente, se $f':G\rightarrow\mathbb{C}$ \'e diferenci\'avel e $f'':G\rightarrow\mathbb{C}$ (f'' = (f')') \'e
+cont\'inua, ent\~ao f \'e duas vezes continuamente diferenci\'avel. Nesta linha, diremos que uma fun\c c\~ao \'e
+anal\'itica se ela \'e continuamente diferenci\'avel em G.
+\end{def*}
+
+\begin{prop*}
+  Seja G um aberto de $\mathbb{C}$. Ent\~ao, 
+  \begin{itemize}
+    \item[i)] Se $f:G\rightarrow\mathbb{C}$ \'e diferenci\'avel em $a\in{G}$, ent\~ao f \'e cont\'inua em a;
+    \item[ii)] Se f e g s\~ao anal\'iticas em G, ent\~ao f+g e f.g s\~ao anal\'iticas em G. Se $G' = G - \{0\}$, 
+  ent\~ao f/g \'e anal\'itica em G'. Valem as regras cl\'assicas de deriva\c c\~ao.
+    \item[iii)] Sejam f e g anal\'iticos em $G_f, G_g$, respectivamente, com $f(G_f)\subseteq{f(G_g)}$. Ent\~ao, 
+  $g\circ f$ \'e anal\'itica em $G_f$ e 
+    $$
+    (g\circ f)'(z) = g'(f(z))f'(z), \quad z\in{G}.
+    $$
+  \end{itemize}
+\end{prop*}
+\begin{proof*}
+  Exerc\'icio.
+\qedsymbol
+\end{proof*}
 \end{document}
