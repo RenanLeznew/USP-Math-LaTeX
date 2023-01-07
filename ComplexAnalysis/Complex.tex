@@ -567,24 +567,59 @@ A s\'erie $\sum\limits_{n=0}^{\infty}a_n$ \'e absolutamente convergente se $\sum
 em que $\{a_n\}$ \'e uma sequ\^encia de $\mathbb{C}$ e a \'e um n\'umero complexo.
 \end{def*}
 \begin{example}
-  S\'erie geom\'etrica $\sum\limits_{n=0}^{\infty}z^n, z\in\mathbb{C}$.
+  No caso da s\'erie geom\'etrica $\sum\limits_{n=0}^{\infty}z^n, z\in\mathbb{C}$, considere
+a soma parcial $s_n = \sum\limits_{k=0}^{n} = \frac{1 - z^{n+1}}{1-z}, z\neq{1}.$ Se
+$|z| < 1,$ ent\~ao $z^{n+1}\to{0}$ e $\sum\limits_{n=0}^{\infty}z^n = \frac{1}{1-z}, |z| < 1.$
+Caso $|z|\geq{1},$ a s\'erie geom\'etrica diverge.
 \end{example}
+Denotamos por $\limsup_{n\to\infty}\{b_n\}$ a express\~ao $\lim_{n\to\infty}\sup_{k\geq{n}}\{b_k\}$.
 \begin{theorem*}
   Considere a s\'erie de pot\^encias $\sum\limits_{n=0}^{\infty}(z-a)^n$ e $\frac{1}{R}:=\limsup_{n\to\infty}\{\sqrt[n]{|a_n|}\}$.
 Ent\~ao, 
 \begin{itemize}
-  \item[1)] A s\'erie converge absolutamente em B(a, r)
+  \item[1)] A s\'erie converge absolutamente em B(a, R)
   \item[2)] A s\'erie diverge se $|z-a| > R$
   \item[3)] A s\'erie converge uniformemente em B(a, r) para $0 < r < R.$
 \end{itemize}
 \end{theorem*}
+\begin{proof*}
+  Sem perda de generalidade, suponha a = 0.
+  1.) Seja $z\in{B(0, R)}.$ Existe $|z| < r < R$ e $n_0\in\mathbb{N}$ tal que $|a_n^{\frac{1}{n}}| < \frac{1}{r},
+n\geq{n_0}.$ Da\'i, temos 
+  $$
+  \sum_{k=n_0}^{\infty}|a_n||z^n|\leq \sum_{k=n_0}^{\infty}\frac{|z^n|}{r^n} < \infty.
+  $$
+Como essa fra\c c\~ao \'e menor que um, o resultado est\'a provado.
+
+  2.) Seja $|z| > R$ e r tal que $|z|> r > R$. Existe $\{a_{n_k}}\}_k$ tal que $|a_{n_k}|^{\frac{1}{n_k}} > \frac{1}{r},
+k = 0, 1, \cdots.$ Assim, temos
+  $$
+    |a_{n_k}||z|^{n_k} > \biggl(\frac{|z|}{r}\biggr)^{n_k}\to\infty
+  $$
+Conforme k tende a infinito.
+
+  3.) Seja $0 < r < R \text{ e } r < \rho < R.$ Se z pertence a uma bola B(0, r), ent\~ao
+  $$
+    |a_n||z|^n < \biggl(\frac{r}{\rho}\biggr)^n, \quad n\geq{n_0}, n_0\in\mathbb{N}.
+  $$
+Como consequ\^encia do teste M de Weierstrass, j\'a que $\frac{r}{\rho}$ \'e um n\'umero, segue
+o resultado.
+\qedsymbol
+\end{proof*}
 \begin{exer*}
   Mostre que o R do teorema acima \'e \'unico.
 \end{exer*}
 \begin{example}
+  Considere a s\'erie que define a exponencial de z:
   $$
-  \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty.\quad e^z:=\sum_{n=0}^{\infty}\frac{z^n}{n!}, z\in\mathbb{C}
+  \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty.\quad e^z:=\sum_{n=0}^{\infty}\frac{z^n}{n!}, z\in\mathbb{C}.
   $$
+  Este s\'erie \'e convergente pelo teste da raz\~ao. Com efeito, 
+  $$
+  R = \lim_{n\to\infty}\biggl|\frac{a_n}{a_{n+1}}\biggr| = \lim_{n\to\infty}\biggl(\frac{(n+1)!}{n!}\biggr) = \infty.
+  $$
+  Com isso, a s\'erie converge para todos os valores poss\'iveis, pois seu raio de converg\^encia
+\'e infinito.
 \end{example}
 \begin{prop*}
   Nas nota\c c\~oes da proposi\c c\~ao anterior, se $R < \infty$, ent\~ao
@@ -628,4 +663,154 @@ anal\'itica se ela \'e continuamente diferenci\'avel em G.
   Exerc\'icio.
 \qedsymbol
 \end{proof*}
+
+\begin{prop*}
+  Seja $f(z) = \sum\limits_{n=0}^{\infty}a_n(z-a)^n$ com raio de converg\^encia R. Ent\~ao,
+f \'e infinitamente diferenci\'avel em B(a, R). Al\'em disso, a derivada de ordem k \'e
+  $$
+    f^{(k)}(z) = \sum_{n=k}^{\infty}a_n\frac{n!}{(n-k)!}(z-a)^{n-k}, k\in\mathbb{N}
+  $$
+com mesmo raio de converg\^encia de f.
+\end{prop*}
+\begin{proof*}
+  A \'ultima afirma\c c\~ao fica como exerc\'icio. 
+
+  Consideremos 
+\begin{align*} 
+  &s_n(z) = \sum_{k=0}^{n}a_k(z-a)^k, \quad R_n(z)= f(z) - s_n(z), \\
+  &g(z) = \sum_{n=1}^{\infty}a_nn(z-a)^{n-1}, \quad z\in{B(a, R), n\in\mathbb{N}.
+\end{align*} 
+  Seja $\delta > 0$ tal que $B(z, \delta)\subseteq{B(a, r)}$ com $|z| < r < R.$ Assim, para 
+w em $B(z, \delta)$
+  $$
+    \frac{f(z)-f(w)}{z-w} - g(z) = \frac{s_n(z) - s_n(w)}{z-w} + \frac{R_n(z) - R_n(w)}{z-w} - g(z) =
+= \biggl[\frac{s_n(z) - s_n(w)}{z-w} - s_n'(z)\biggr] + \biggl[\frac{R_n(z) - R_n(w)}{z-w}\biggr] - (g(z) - s_n'(z)).
+  $$
+  Note que
+  $$
+    \biggl|\frac{R_n(z) - R_n(w)}{z-w}\biggr| = \biggl|\frac{1}{z-w}\sum_{k=n+1}^{\infty}a_k\frac{[(z-a)^k - (w-a)^k]}{(z-a)-(w-a)}\biggr|
+= \biggl|\sum_{k=n+1}^{\infty}a_k\biggl((z-a)^{k-1} + \cdots + (w-a)^{k-1}\biggr)\biggr|
+\leq \sum_{k=n+1}^{\infty}|a_k|kr^{k-1}\to{0},
+  $$
+pois $g(r) < \infty,$ em que n tende a infinito.
+
+  Como as duas express\~oes em chaves tendem a 0 quando w tende a z, conclu\'imos que
+  $$
+    \lim_{z\to{w}}\frac{f(z)-f(w)}{z-w} = g(z)
+  $$
+e a afirma\c c\~ao segue.
+\qedsymbol
+\end{proof*}
+\begin{crl*}
+  Nas nota\c c\~oes e condi\c c\~oes da proposi\c c\~ao anterior, f \'e anal\'itica em
+B(a, R) e 
+  $$
+    a_n = \frac{f^{(n)}(a)}{n!}, n\in\mathbb{N}
+  $$
+\end{crl*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+\begin{prop*}
+  Seja G aberto e conexo. Se $f:G\rightarrow\mathbb{C}$ \'e tal que $f'(z) = 0, z\in{G},$ 
+ent\~ao f \'e constante.
+\end{prop*}
+\begin{proof*}
+  Seja $z_0\in{G}$ e considere $C = f^{-1}(\{f(z_0)\}),$ tal que C \'e n\~ao-vazio e fechado. 
+Mostremos que C \'e, tamb\'em, aberto.
+
+  Seja z um elemento de C e $r > 0$ tal que $B(z, r)\subseteq{G}$. Para todo $w\in{B(z, w)}$,
+definimos $g:[0, 1]\rightarrow\mathbb{C}$ por g(t) = f(tz + (1-t)w). Neste caso, 
+  $$
+    g'(t) = f'(tz + (1-t)w)(z-w) = 0.
+  $$
+  Como g \'e real, segue que ela \'e constante. Com isso, note que $f(w) = g(0) = g(1) =
+f(z) = f(z_0)$, tal que $w\in{C}$.
+\qedsymbol
+\end{proof*}
+\begin{example}
+  $e^z = \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty$
+\end{example}
+  Coloque $g(z) = e^ze^{z-w}, w\in\mathbb{C}$ fixo. Temos $g'(z) = (e^z)'e^{w-z} + e^z(e^{w-z})' - 0.$
+Assim, g \'e constante e, como $g(0) = e^w$, conclu\'imos que $e^w = e^ze^{w-z}$ para todo
+$z, w\in\mathbb{C}.
+\begin{exer*}
+  Prove que, para $z, w\in\mathbb{C},$:
+  \begin{itemize}
+    \item[1)] $e^{z+w} = e^ze^w;$
+    \item[2)] $e^ze^{-z} = 1;$
+    \item[3)] $e^{\overline{z}} = \overline{(e^z)}$;
+    \item[4)] $|e^z| = e^{Re(z)}.$
+  \end{itemize}
+\end{exer*}
+\begin{example}
+  Defina, para z complexo,
+  \begin{align*}
+    &\cos{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!} \\
+    &\sin{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}.
+  \end{align*}
+\end{example}
+\begin{exer*}
+  Dado z complexo, mostre que
+  \begin{itemize}
+    \item[i)] $(\sin{(z)}' = \cos{(z)}, \quad (\cos{(z)})' = -\sin{(z)};$
+    \item[ii)] $\cos{(z)} = \frac{1}{2}\biggl(e^{iz} + e^{-iz}\biggr), \quad \sin{(z)} = \frac{1}{2}
+  \biggl(e^{iz} - e^{-iz}\biggr)$;
+    \item[iii)] $\cos^2{(z)} + \sin^2{(z)} = 1$;
+    \item[iv)] $e^{iz} = \cos{(z)} + i\sin{(z)}.
+  \end{itemize}
+\end{exer*}
+
+\subsection{Ramos de Inversos}
+  Seja $z\in\mathbb{C}$. Procuramos $w\in\mathbb{C}$ tal que $e^w = z, z\neq{0}$. Logo, w
+deve satisfazer $|e^w| = e^{Re(w)} = |z|\Rightarrow Re(w) = \ln{|z|}$. Se w = z + iy, ent\~ao
+  $$
+    e^w = e^xe^{iy} = e^x\biggl(\cos{(y)} + i\sin{(y)}\biggr) = z = |z|\biggl(\cos{(\theta)} + i\sin{(\theta)}\biggr),
+  $$
+com $\theta = arg z$. Assim, $y = \theta + 2k\pi$ para algum k. Portanto, $w = ln|z| + i(arg z + 2k\pi), k\in\mathbb{z}$. 
+
+\begin{def*}
+ Seja G um aberto conexo de $\mathbb{C}$ e $f:G\rightarrow\mathbb{C}$ cont\'inua. Diremos que f \'e um ramo de
+logar\'itmo em G se $e^{f(z)} = z, z\in{G}$.
+\end{def*}
+
+\begin{prop*}
+  Se G \'e um aberto conexo e f, g s\~ao ramos de logar\'itmos em G, ent\~ao $f(z) = g(z) + 2k\pi i$ para algum $k\in\mathbb{Z}$.
+\end{prop*}
+\begin{proof*}
+  Seja z em G. Mostraremos que 
+  $$
+    \frac{f(z) - g(z)}{2\pi i}\in\mathbb{Z}.
+  $$
+  Observe que $e^{f(z)-g(z)} = \frac{e^{f(z)}}{e^{g(z)}} = \frac{z}{z} = 1.$ Da\'i, $f(z) = g(z) + 2k\pi i$ para algum
+k inteiro, pois
+  $$
+    f(z) - g(z) = ln|1| + i(arg 1 + 2k\pi).
+  $$
+  Definimos $h:G\rightarrow\mathbb{C}$ por
+  $$
+    h(w) = \frac{f(w) - g(w)}{2\pi i}, \quad w\in{G}.
+  $$
+  De forma an\'aloga ao anterior, conclu\'imos $Im(h)\subseteq{\mathbb{Z}}$ deve ser conexo, pois h \'e cont\'inua. Assim, 
+h \'e constante, visto que os \'unicos conexos de $\mathbb{Z}$ s\~ao o vazio e conjuntos unit\'arios, e a prova segue.
+\qedsymbol
+\end{proof*}
+\begin{prop*}
+  Sejam G, $\Omega$ abertos e $f:G\rightarrow\mathbb{C}$ e $g:\Omega\rightarrow\mathbb{C}$ cont\'inuas com $f(G)\subseteq{\Omega}$ e 
+satisfazendo f(g(z)) = z, $z\in{G}$.
+  Se g \'e diferenci\'avel em z e $g'(f(z))\neq{0},$ ent\~ao 
+  $$
+    f'(z) = \frac{1}{g'(f(z))}.
+  $$
+Caso g seja anal\'itica, f tamb\'em o \'e.
+\end{prop*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+  Considere G um aberto conexo e a fun\c c\~ao $f:G\rightarrow\mathbb{C}$ dada por 
+  $$
+    f(z) = ln|z| + i\theta, \quad \theta = arg(z)\in{(-\pi, \pi)}
+  $$
+\'e dita ser o ramo principal do logar\'itmo.
+
 \end{document}
