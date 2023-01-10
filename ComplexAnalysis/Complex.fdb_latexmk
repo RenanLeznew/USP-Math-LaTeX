@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1673311755 "Complex.tex" "Complex.pdf" "Complex" 1673311756
+["pdflatex"] 1673365573 "Complex.tex" "Complex.pdf" "Complex" 1673365575
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1664942109 84470 1b03f303430b1250744b51ca4bdbdd0b ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1664942223 11548 adff9614bf7c9105bdd12cd4057da214 ""
   "C:/Users/renan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1649989908 10246961 2d3488b41b28f504bf24ab210e76c999 ""
@@ -39,6 +39,7 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247596667 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
@@ -226,10 +227,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1623005690 4902 efb3d66683a2da2a232f71e3a571a899 ""
-  "Complex.aux" 1673311756 4378 fff85e04d74a6973dd576a36c1c16271 "pdflatex"
-  "Complex.out" 1673311756 4043 682f0c2f0e4aac487af1cd8814846539 "pdflatex"
-  "Complex.tex" 1673311752 35104 858153f21a97c8181eca814aa8ce6cca ""
-  "Complex.toc" 1673311756 2376 7dea6e9291c538e9b21edc0395cd0a98 "pdflatex"
+  "Complex.aux" 1673365575 4677 5f228b85a90fd59dd17383a0d36c2c47 "pdflatex"
+  "Complex.out" 1673365575 4341 6d696cc649ca83f1017bb4f4670adae6 "pdflatex"
+  "Complex.tex" 1673365572 41784 a999be02a659f98b081bb78bad850764 ""
+  "Complex.toc" 1673365575 2550 fba310d3ea5e91b93421549fe34861b4 "pdflatex"
   (generated)
   "Complex.aux"
   "Complex.log"

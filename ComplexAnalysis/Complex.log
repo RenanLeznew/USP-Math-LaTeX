@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.14)  9 JAN 2023 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.14)  10 JAN 2023 12:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,17 +1012,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 182.
 
-[5] [6] [7] [8] [9] [10] [11] [12] [13] 
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+
 AED: lastpage setting LastPage
-[14] (Complex.aux)
+[16] (Complex.aux)
 Package rerunfilecheck Info: File `Complex.out' has not changed.
-(rerunfilecheck)             Checksum: 682F0C2F0E4AAC487AF1CD8814846539;4043.
+(rerunfilecheck)             Checksum: 6D696CC649CA83F1017BB4F4670ADAE6;4341.
  ) 
 Here is how much of TeX's memory you used:
- 33269 strings out of 478582
- 775215 string characters out of 2844344
- 1157541 words of memory out of 3000000
- 50862 multiletter control sequences out of 15000+600000
+ 33279 strings out of 478582
+ 775319 string characters out of 2844344
+ 1157571 words of memory out of 3000000
+ 50865 multiletter control sequences out of 15000+600000
  478501 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,103p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1041,15 +1042,16 @@ enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
 cm/cmr5.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmr7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/renan/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Us
-ers/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
-m7.pfb>
-Output written on Complex.pdf (14 pages, 300769 bytes).
+/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/renan/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/re
+nan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb>
+Output written on Complex.pdf (16 pages, 325694 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 229 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

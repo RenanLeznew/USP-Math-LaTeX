@@ -733,7 +733,7 @@ ent\~ao u admite harm\^onico conjugado.
   $$
     v(x, y) = \int_{0}^{y}\frac{du}{dx}(x, t)dt + \phi(x)
   $$
-em que $\phi(x) = -\int_{0}^{x}\frac{du}{dy}(t, 0)dt.$
+em que $\phi(x) = -\int\limits_{0}^{x}\frac{du}{dy}(t, 0)dt.$
 
   Portanto, 
   $$
@@ -741,7 +741,7 @@ em que $\phi(x) = -\int_{0}^{x}\frac{du}{dy}(t, 0)dt.$
   $$
 \end{proof*}
 
-\subsection{Transformadas de M\"{o}bius}
+\subsection{Transforma\c c\~oes Conformes}
  \begin{exer*}
    Mostre que $e^{z}$ leva retas ortogonais em curvas ortogonais.
  \end{exer*}
@@ -793,5 +793,164 @@ em qualquer faixa horizontal de largura menor que $2\pi.$
   Se G \'e uma faixa aberta de comprimento $2\pi$, o ramo de log faz o caminho inverso. Adicionalmente,
 $\frac{1}{z}$ \'e a sua derivada.
 
-\subsection{Aula 05 - 10/01/2023}
+\section{Aula 05 - 10/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Transforma\c c\~oes de M\"{o}bius elementares;
+  \item aaaaaaaaa
+\end{itemize}
+\subsection{Transforma\c c\~oes de M\"{o}bius}
+ \begin{def*}
+   Uma fra\c c\~ao linear \'e $\frac{az + b}{cz + d}, z\in \mathbb{C}, a, b, c, d\in \mathbb{C}$ fixos.
+ \end{def*}
+\begin{def*}
+  Uma fra\c c\~ao linear tal que $ad-bc\neq0$ define uma transforma\c c\~ao
+  $$
+  T(z) = \frac{az + b}{cz + d}, \quad z\in \mathbb{C},
+  $$
+chamada tranforma\c c\~ao de M\"{o}bius.
+\end{def*}
+  Consideraremos a tranforma\c c\~ao como sendo $T:\mathbb{C}_{\infty}\rightarrow \mathbb{C}_{infty}$ da seguinte
+maneira:
+\begin{align*}
+  &T(z) = \frac{az + b}{cz + d}, \quad z\neq -\frac{d}{c} \\
+  &T(-\frac{d}{c}) = \infty \quad\text{ e }\quad T(\infty) = \frac{a}{c}.
+\end{align*}
+Neste caso, $T ^{-1}(z) = \frac{dz - b}{-cz + a}, \quad z\in \mathbb{C}_{\infty}.$ Note, tamb\'em, que os coeficientes
+de uma Transforma\c c\~ao de M\"{o}bius s\~ao unicamente determinados, pois 
+  $$
+  \frac{az + b}{cz + d} = \frac{(\lambda a)z + (\lambda b)}{(\lambda c)z + (\lambda d)}, \quad \lambda\neq0.
+  $$
+  Denotaremos por TM a cole\c c\~ao de transforma\c c\~oes de M\"{o}buis.
+ \begin{example}
+  As TM's elementares, dado $a\in \mathbb{C}$, s\~ao
+ \begin{itemize}
+   \item[-] Transla\c c\~ao: $T(z) = z + a, z\in \mathbb{C}_{\infty},$
+   \item[-] Rota\c c\~ao: $R(z) = e^{i \theta}z, \theta\in \mathbb{R},$
+   \item[-] Invers\~ao: $I(z) = \frac{1}{z},$
+   \item[-] Homotetia: $H(z) = az.$
+ \end{itemize}
+ \end{example}
+ \begin{prop*}
+   Toda TM \'e composi\c c\~ao de TM's elementares.
+ \end{prop*}
+ \begin{proof*}
+   Seja $T\in{TM}$ dada por $T(z) = \frac{az + b}{cz + d}.$
+
+   Caso 1) Se c = 0, ent\~ao $T(z) = \frac{az}{d} + \frac{b}{d}.$ Neste caso, $H(z) = \frac{a}{d}z \text{ e } S(z) = z + \frac{b}{d},$
+   tal que $T(z) = S\circ{H(z)}$
+
+  Caso 2) Se $c\neq0$, ent\~ao tome 
+  $$
+   T_1(z) = z + \frac{d}{c}, I(z) = \frac{1}{z}, H(z) = \frac{(bc - ad)z}{c^2}, \text{ e } T_2(z) = z + \frac{a}{c}.
+  $$
+Com isso, temos 
+  $$
+  t_2\circ{H}\circ{I}\circ{T_1} = t. \quad \text{\qedsymbol}
+  $$
+ \end{proof*}
+\begin{exer*}
+ \begin{itemize}
+   \item[1)]Mostre que $(TM, \circ)$ \'e um grupo.
+   \item[2)] Se $T\in{TM}$ \'e tal que $T(z_{i}) = z_{i}, i = 1, 2, 3, z_{i}\neq z_{j}, i\neq{j},$ ent\~ao $T = Id_{\mathbb{C}_{\infty}}.$
+ \end{itemize}
+\end{exer*}
+ \begin{prop*}
+   Sejam $z_1, z_2, z_3\in \mathbb{C}_{\infty}, $ distintos. Existe uma \'unica $T\in{TM}$ tal que
+   $$
+    T(z_1) = 1, T(z_2) = 0, T(z_3) = \infty.
+   $$
+ \end{prop*}
+\begin{proof*}
+  \underline{Unicidade}: 
+
+  Se existem $T, S\in{TM}$ satisfazendo a hip\'otese, ent\~ao $S^{-1}(T(z_i)) = z_{i}, i=1, 2, 3$. Logo, 
+  $S^{-1}\circ{T} = Id_{\mathbb{C}_{\infty}} \text{ e } S = T.$
+
+  \underline{Exist\^encia}: Defina $T:\mathbb{C}_{\infty}\rightarrow \mathbb{C}_{\infty}$ por 
+  $$
+  T(z) = \left\{\begin{array}{ll}
+      \frac{\frac{z-z_2}{z-z_3}}{\frac{z_1-z_2}{z_1-z_3}}, \quad z_{i}\in \mathbb{C}, i=1, 2, 3; \\
+      \frac{z-z_2}{z-z_3}, \quad z_1 = \infty; \\
+      \frac{z_1 - z_3}{z - z_3}, \quad z_2 = \infty; \\
+      \frac{z - z_2}{z_1 - z_2}, \quad z_3 = \infty.
+    \end{array}\right.,
+  $$
+  tal que $T\in{TM}$ satisfazendo a hip\'otese. \qedsymbol
+\end{proof*}
+ \begin{crl*}
+   Dados $z_1, z_2, z_3, w_1, w_2, w_3$ distintos em $\mathbb{C}_{\infty}$, existe uma \'unica $T\in{TM}$ tal que
+  $$
+  T(z_{i}) = w_{i}, \quad i=1, 2, 3.
+  $$
+ \end{crl*}
+\begin{proof*}
+  Exerc\'icio. \qedsymbol
+\end{proof*}
+  Observe que se $z_{i}\in \mathbb{C}_{\infty}, i = 1, 2, 3,$ distintos e $T\in{TM}$ \'e tal que a proposi\c c\~ao
+seja satisfeita, denotaremos T(z) por  $T(z) := [z, z_1, z_2, z_3].$
+\begin{example}
+  Se $[z, 1, 0, \infty] = z, z\in \mathbb{C}_{\infty}, z_1, z_2, z_3\in \mathbb{C}_{\infty}$ distintos, ent\~ao
+  \begin{align*}
+    &[z_1, z_1, z_2, z_3] = 1; \\
+    &[z_2, z_1, z_2, z_3] = 0; \\
+    &[z_3, z_1, z_2, z_3] = \infty.
+  \end{align*}
+\end{example}
+\begin{prop*}
+  Sejam $z_1, z_2, z_3\in \mathbb{C}_{\infty}$ distintos e $S\in{TM}.$ Ent\~ao, 
+  $$
+  [z, z_1, z_2, z_3] = [S(z), S(z_1), S(z_2), S(z_3)], \quad z\in \mathbb{C}_{\infty}.
+  $$
+\end{prop*}
+\begin{proof*}
+  Seja $T(z) = [z, z_1, z_2, z_3]$ e tome $M = T\circ{S^{-1}}.$ Note que 
+ \begin{align*}
+   &M(S(z_1)) = 1, \\
+   &M(S(z_2)) = 0, \\
+   M(S(z_3)) = \infty.
+ \end{align*} 
+ Assim, 
+ $$
+ M(z) = [S(z), S(z_1), S(z_2), S(z_3)]
+ $$
+ e $T(z) = M(S(z)) = [S(z), S(z_1), S(z_2), S(z_3)]$. \qedsymbol
+\end{proof*}
+\begin{prop*}
+  Sejam $z_1, z_2, z_3, z_4\in \mathbb{C}_{\infty}$ distintos. Ent\~ao, $[z_1, z_2, z_3, z_4]\in \mathbb{R}$ se e s\'o se 
+$z_{i}\in{C}$ para algum c\'irculo.
+\end{prop*}
+\begin{proof*}
+  $\Rightarrow)$ Se $z_{i}\in{C}, i=1, 2, 3, 4,$ ent\~ao $z_1\in{D},$ em que D \'e o \'unico c\'irculo determinado por $z_2, z_3, z_4.$
+ \begin{exer*}
+   Mostre que $[z_1, z_2, z_3, z_4]\in \mathbb{R}$
+ \end{exer*}
+
+ $\Leftarrow)$ Definimos $S(z) = [z, z_2, z_3, z_4], z\in \mathbb{C}_{\infty}$. Mostraremos que $S^{-1}(\mathbb{R})\subseteq{\mathbb{R}}$ e $S^{-1}(\mathbb{R}_{\infty})$ \'e um c\'irculo.
+ \underline{Caso 1}: Seja $w\in{S^{-1}(\mathbb{R})}$ e sejam a, b, c, d n\'umeros complexos tais que
+   $$
+   S(z) = \frac{az + b}{cz + d}.
+   $$
+   como S(w) pertence a $\mathbb{R}$, temos $S(w) = \overline{S(w)},$ donde segue que 
+   $$
+   \frac{aw + b}{cw + d} = \frac{\bar{a}\bar{w} + \bar{b}}{\bar{c}\bar{w} + \bar{d}},
+   $$
+   o que implica em $(cw + d)(\bar{a}\bar{w} + \bar{b}) = (aw + b)(\bar{c}\bar{w} + \bar{d}).$ Logo, 
+   \begin{equation}\label{MTSF}
+     (c\bar{a} - a\bar{c})|w|^2 + (c\bar{b} - a\bar{d})w + (d\bar{a} - b\bar{c})\bar{w} + (d\bar{b} - b\bar{d}) = Im(\bar{a}c) + 2i(Im(w(bc - ad)) + Im(d\bar{b})) = 0.
+  \end{equation}
+
+  \underline{Caso 1.1}: $Im(\bar{a}c) = 0$, seja $\alpha = bc - ad.$ Segue de \ref{MTSF} que 
+  $$
+    2i(Im(w \alpha) + Im(d\bar{b})) = 0.
+  $$
+Logo, $Im(\alpha w + \beta) = 0, \beta = Im(d\bar{b})$. Assim, $\alpha w + \beta\in r,$ em que $r: \frac{-\beta zt}{\alpha}, t\in \mathbb{R}.$  
+
+\underline{Caso 1.2}: $\rho = Im(\bar{a}c)\neq{0}$. Seja $\gamma = c\bar{b} - a\bar{d}.$ Ent\~ao, dividindo \ref{MTSF} por $2i\rho$, temos
+ \begin{align*}
+   &|w|^{2} + Im(w \frac{\gamma}{\rho}) + Im(\frac{d\bar{b}}{\rho}) = 0 \\
+   &\biggl(|w + \frac{\gamma}{\rho}|^2 + |\frac{\gamma}{\rho}|^2\biggr) = -Im(\frac{d\bar{b}}{\rho}) \\
+   &|w - (-\frac{\gamma}{\rho})|^2 = -Im(\frac{d\bar{b}}{\rho}) + |\frac{\gamma}{\rho}|^2 > 0 \text{ (Exerc\'icio).}
+ \end{align*}
+\end{proof*}
 \end{document}
