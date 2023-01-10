@@ -116,7 +116,7 @@ e, neste caso, T(z + w) = T(z) + T(w), T(zw) = T(z)T(w) para todos $z, w\in \mat
   \subsection{Representa\c c\~ao Polar de $\mathbb{C}$}
   Dado $z\in \mathbb{C}$, temos 
   $$
-  z = |z|(\cos{\theta} + i\sin{\theta}), \quad \theta = arg z.
+  z = |z|(\cos{\theta} + i\sin{\theta}), \quad \theta = \arg z.
   $$
   Neste caso, temos, para z n\~ao-nulo,
   $$
@@ -126,11 +126,11 @@ e, neste caso, T(z + w) = T(z) + T(w), T(zw) = T(z)T(w) para todos $z, w\in \mat
   $$
   z _{1}\cdot z _{2} = |z _{1}||z _{2}|(\cos(\theta _{1} + \theta _{2}) + i\sin(\theta _{1} + \theta _{2}))
   $$
-com $\theta _{1} = arg z _{1}, \theta _{2} = z _{2}.$ Mais geralmente, 
+com $\theta _{1} = \arg z _{1}, \theta _{2} = z _{2}.$ Mais geralmente, 
   $$
   \prod_{k=1}^{n}z _{k} = \prod_{k=1}^{n} |z _{k}|(\cos(\sum_{k=1}^{n}\theta _{k}) + i\sin(\sum_{k=1}^{n}\theta _{k})),
   $$
-com $\theta _{k} = arg z _{k}$. Em particular, 
+com $\theta _{k} = \arg z _{k}$. Em particular, 
   $$
   z ^{n} = |z|^{n}(\cos(n\theta)+i\sin(n \theta)), \quad n\in \mathbb{N}.
   $$
@@ -659,978 +659,139 @@ anal\'itica se ela \'e continuamente diferenci\'avel em G.
     $$
   \end{itemize}
 \end{prop*}
-\begin{proof*}  \documentclass{article}
-  \usepackage{amsmath}
-  \usepackage{amsthm}
-  \usepackage{amssymb}
-  \usepackage{pgfplots}
-  \usepackage{amsfonts}
-  \usepackage[margin=2.5cm]{geometry}
-  \usepackage{graphicx}
-  \usepackage[export]{adjustbox}
-  \usepackage{fancyhdr}
-  \usepackage[portuguese]{babel}
-  \usepackage{hyperref}
-  \usepackage{lastpage}
-  \usepackage{mathtools}
 
-  \pagestyle{fancy}
-  \fancyhf{}
-
-  \pgfplotsset{compat = 1.18}
-
-  \hypersetup{
-      colorlinks,
-      citecolor=black,
-      filecolor=black,
-      linkcolor=black,
-      urlcolor=black
-  }
-  \newtheorem*{def*}{\underline{Defini\c c\~ao}}
-  \newtheorem*{theorem*}{\underline{Teorema}}
-  \newtheorem{example}{\underline{Exemplo}}[section]
-  \newtheorem*{proof*}{\underline{Prova}}
-  \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
-  \newtheorem*{crl*}{\underline{Corol\'ario}}
-  \newtheorem*{exer*}{\underline{Exerc\'icios}}
-  \renewcommand\qedsymbol{$\blacksquare$}
-
-  \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
-
-  \title{Complex Analysis}
-  \author{Renan Wenzel}
-  \date{\today}
-
-  \begin{document}
-  \maketitle
-  \newpage
-  \tableofcontents
-  \newpage
-
-  \section{Aula 01 - 03/01/2023}
-  \subsection{Motiva\c c\~oes}
-  \begin{itemize}
-   \item Definir o corpos dos complexos
-   \item Definir a topologia no corpo dos complexos
-   \item Esfera de Riemann
-  \end{itemize}
-
-  \subsection{Defini\c c\~oes B\'asicas}
-  \begin{def*}
-    Um corpo f \'e um conjunto n\~ao vazio em que definem-se duas opera\c c\~oes $+:F\times{F}\rightarrow F, \cdot:F\times{F}\rightarrow F$ satisfazendo:
-  \begin{itemize}
-    \item[i)] w + z = z + w
-    \item[ii)] w + (z+ u) = (w + z) + u
-    \item[iii)] Existe 0 em F tal que w + 0 = w
-    \item[iv)] Para cada $w\in F$, existe $-w \in F$ tal que w + (-w) = 0
-    \item[v)] $w\cdot z = z\cdot w$
-    \item[vi)] $w\cdot(z\cdot u) = (w\cdot z)\cdot u$
-    \item[vii)] Existe $e\in \mathbb{F}$ tal que $w\cdot{e} = w$
-    \item[viii)] Para cada $w\in{F-\{0\}}$, existe $w ^{-1}\in{F}$ tal que $w\cdot w ^{-1} = e$
-    \item[ix)] $(w+z)\cdot{u} = w\cdot u + z\cdot u,$
-  \end{itemize}
-  em que w, z, u pertencem a F.
-  \end{def*}
-  Considere F um corpo contendo $\mathbb{R}$ e tal que 
-  $$
-  x ^{2} + 1 = 0
-  $$
-tenha solu\c c\~ao. Seja i esta solu\c c\~ao. Segue que -i \'e solu\c c\~ao dela tamb\'em, -1.z = z e 0.z = 0 para z em F. Definimos
-  $$
-  \mathbb{C}:= \{a + bi: a, b\in \mathbb{R}\,
-  $$
-de maneira que os elementos de $\mathbb{C}$ s\~ao unicmaente determinados, $\mathbb{C}$ \'e subcorpo de F e a estrutura 
-alg\'ebrica de $\mathbb{C}$ n\~ao depende de F. Al\'em disso, este corpo existe.
-
-  Com efeito, 
-  \subsubsection{Unicidade}
-  Sejam a, b, c, d $\in \mathbb{R}$ tais que 
-  $$
-  a + bi = c + di.
-  $$
-  Assim, $a-c = i(d-b)\Rightarrow (a-c)^{2} = (d-b)^{2}$, donde segue a unicidade a = c e d = b
-  \subsubsection{Subcorpo}
-  Exerc\'icio.
-  \subsubsection{Estrutura Alg\'ebrica Independe de F}
-  Seja F\ outro corpo contendo $\mathbb{R}$ em que $x ^{2} + 1 = 0$ possui solu\c c\~ao. Considere $\mathbb{C}' = \mathbb{R} + j \mathbb{R},$
-  em que j \'e a solu\c c\~ao da equa\c c\~ao em F'. Definimos $T:\mathbb{C}\rightarrow \mathbb{C}'$ por 
-  $$
-  T(a + bi) = a + bj
-  $$
-e, neste caso, T(z + w) = T(z) + T(w), T(zw) = T(z)T(w) para todos $z, w\in \mathbb{C}.$ (Exerc\'icio.)
-  \subsubsection{Exist\^encia}
-  Seja $F = \{(a, b):a, b\in \mathbb{R}\}$ munido das opera\c c\~oes $+:F\times{F}\rightarrow F, \cdot:F\times{F}\rightarrow F$ dadas por
- \begin{align*}
-  +((a, b), (c,d)) = (a + c, b + d) \\
-  \cdot((a, b), (c, d)) = (ac - bd, ad + bc).
- \end{align*}
-  Note que $(0, 1)^{2} = (-1, 0)$. Assim, (F, +, .) \'e um corpo contendo $\mathbb{R}.$ (Exerc\'icio).
-
-  Algumas propriedades(Exerc\'icios):
- \begin{itemize}
-   \item[a)] $Re(z)\leq{|z|}$ e $Im(z)\leq{|z|}$
-   \item[b)] $\overline{z+w} = \overline{z}+\overline{w}$ e $\overline{z\cdot w} = \overline{z}\cdot\overline{w}$
-   \item[c)] $\overline{\frac{1}{z}} = \frac{1}{\overline{z}}$
-   \item[d)] $|z| = |\overline{z}|$ e $|z|^{2} = z\cdot\overline{z}$
-   \item[e)] $z + \overline{z} = 2Re(z), z - \overline{z} = 2iIm(z)$ e $\frac{1}{z} = \frac{\overline{z}}{|z|^{2}}$
- \end{itemize}
-  \subsection{Representa\c c\~ao Polar de $\mathbb{C}$}
-  Dado $z\in \mathbb{C}$, temos 
-  $$
-  z = |z|(\cos{\theta} + i\sin{\theta}), \quad \theta = arg z.
-  $$
-  Neste caso, temos, para z n\~ao-nulo,
-  $$
-  z ^{-1} = |z|^{-1}(\cos{-\theta} + i\sin{-\theta}) = |z|^{-1}(\cos{\theta}-i\sin{-\theta})
-  $$
-  Para $z _{1}, z _{2}\in \mathbb{C},$ temos
-  $$
-  z _{1}\cdot z _{2} = |z _{1}||z _{2}|(\cos(\theta _{1} + \theta _{2}) + i\sin(\theta _{1} + \theta _{2}))
-  $$
-com $\theta _{1} = arg z _{1}, \theta _{2} = z _{2}.$ Mais geralmente, 
-  $$
-  \prod_{k=1}^{n}z _{k} = \prod_{k=1}^{n} |z _{k}|(\cos(\sum_{k=1}^{n}\theta _{k}) + i\sin(\sum_{k=1}^{n}\theta _{k})),
-  $$
-com $\theta _{k} = arg z _{k}$. Em particular, 
-  $$
-  z ^{n} = |z|^{n}(\cos(n\theta)+i\sin(n \theta)), \quad n\in \mathbb{N}.
-  $$
-  Buscando w tal que $w ^{n} = z$ para dado z n\~ao-nulo,
-  $$
-  w = |z|^{\frac{1}{2}}(\cos(\frac{\theta + 2k\pi}{n}) + i\sin(\frac{\theta + 2k\pi}{n})), \quad k = 0, 1, \cdots, n.
-  $$
-
-  \subsection{A Esfera de Riemann}
-  Considere $\mathbb{S}^{2}\subset{\mathbb{R}^{3}}$ a esfera 
-  $$
-  \mathbb{S}^{2}:= \{(x, y, z): x ^{2} + y ^{2} + z ^{2}\leq{1}\}.
-  $$
-  Chame N=\{0, 0, 1\} de polo norte. Fazemos uma associa\c c\~ao entre $\mathbb{S}^{2}-\{N\}$ e o plano z=0 de $\mathbb{R}^{3}$,
-chamada de proje\c c\~ao estereogr\'afica. Nessa associa\c c\~ao, o ponto $z(=x + iy)\in\mathbb{C}$ \'e associado a (x, y, 0), e
-definimos uma reta por N e z como r: N + t(x, y, -1), $t\in \mathbb{R}$. Assim,
-  $$
-  r\cap{\mathbb{S}^{2}} \Rightarrow S _{z} = \biggl(\frac{2x}{|z|^{2}+1}, \frac{2y}{|z|^{2}+1}, \frac{|z|^{2}-1}{|z|^{2}+1}\biggr)\in \mathbb{S}^{2}
-  $$
-  Reciprocramente, o ponto (x, y, z) de $\mathbb{S}^{2}$ pode ser associado ao considerar a reta r: N + t(x, y, s-1), em que
-s \'e um n\'umero real. Com isso, a intersec\c c\~ao $r\cap \{(x, y, 0): x, y \in \mathbb{R}\}\Rightarrow t=\frac{1}{1-s}$ mostra que 
-$z = \biggl(\frac{x}{1-s}, \frac{y}{1-s}, 0\biggr)$ corresponde ao ponto z de $\mathbb{C}$.
-  
-  Associando N ao infinito, obtemos o plano estendido $\mathbb{C}_{\infty} = \mathbb{C}\cup \{\infty\}$, chamado de Esfera de Riemann. Se $\phi:\mathbb{C}_{\infty}\rightarrow \mathbb{S}^{2}$
-  \'e dada por $\phi(\infty) = N$ e, para $z\neq{\infty},$
-    $$
-    \phi(z) = (\frac{z + \overline{z}}{|z|^{2} + 1}, \frac{z - \overline{z}}{|z|^{2}+1}, \frac{|z|^{2}-1}{|z|^{2}+1}),
-    $$
-  ent\~ao dados $z, w\in \mathbb{C}_{\infty},$ definimos a m\'etrica
-    $$
-    d(z, w)=\left\{
-      \begin{array}{ll}
-        ||\phi(z) - \phi(w)||, & \quad z, w\neq{\infty} \\
-        0, & \quad z = w = \infty \\
-        \infty, & \quad \text{ caso contr\'ario}
-      \end{array}\right.
-    $$
-   \begin{example}
-     Se $z, w\neq{\infty}$, ent\~ao
-     $$
-     d(z, w) = d(\phi(z), \phi(w)) = \frac{2|z - w|}{[(1+|z|^{2})(1+|w|^{2})]^{\frac{1}{2}}}
-     $$
-    e, se $z\neq\infty$,
-     $$
-     d(z, \infty) = ||\phi(z) - N|| = \frac{2}{(1+|z|^{2})^{\frac{1}{2}}}
-     $$
-   \end{example}
-
-   \subsection{Topologia de $\mathbb{C}$}
-  \begin{def*}
-    Sejam X um conjunto e $d:X\times{X}\rightarrow X$ uma fun\c c\~ao. Dizemos que d \'e uma m\'etrica se
-   \begin{itemize}
-     \item[i)] $d(x, y) \geq{0}, d(x, y) = 0\Longleftrightarrow x=y$
-     \item[ii)] $d(x, y) = d(y, x)$
-     \item[iii)] $d(x, z) \leq d(x, y) + d(y, z)$,
-   \end{itemize}
-   em que x, y, z pertencem a X. Neste caso, chamamos a terna (X, d) de espa\c co m\'etrico.
-  \end{def*}
-   Considere (X, d) um espa\c co m\'etrico. Dado x em X e $r > 0$,
-   $$
-   B(x, r):= \{y\in{X}: d(x, y)< r\}
-   $$
-   \'e a bola aberta, seu fecho \'e
-   $$
-   B_c(x, r):= \{y\in{X}: d(x, y) = r\}
-   $$
-   e a bola fechada \'e a uni\~ao deles, ou seja, 
-   $$
-   \overline{B(x, r)}:= \{y\in{X}: d(x, y) \leq{r}\}
-   $$
-  \begin{example}
-    Considere X n\~ao-nulo e d(x, y) = $\delta _{x,y}.$ (X, d) \'e metrico e 
-    $$
-    B\biggl(x, \frac{1}{2}\biggr) = \{x\} = \overline{B\biggl(x, \frac{1}{2}\biggr)} = B\biggl(x, \frac{1}{333}\biggr), x\in{X}
-    $$
-    $$
-    B(x, 2) = X = B(x, 1001), x\in{X}
-    $$
-  \end{example}
-  Utilizando bolas, definimos que um conjunto $A\subset{X}$ \'e aberto se para todo x em A, existe $r > 0$ tal que 
-B(x, r) est\'a contido em A. Por outro lado, um conjunto \'e fechado se seu complemenetar \'e aberto. A uni\~ao infinita
-de abertos \'e aberta e, pelas Leis de DeMorgan, a intersec\c c\~ao infinita de fechados \'e fechada. Al\'em disso, intersec\c c\~oes
-finitas de abertos \'e aberta e uni\~ao finita de fechados \'e fechado.
-
-  Definimos, tamb\'em, o interior de A como $A^{\circ}:= \cup_{B} \{B\subset{A}: B \text{ aberto}\}$, o fecho de A
-  como $\overline{A} = \cap_{F} \{A\subseteq{F}: F \text{ fechado}\}$ e o bordo de A como $\partial{A} = \overline{A}\cap\overline{A^c}.$
-  Diremos que A \'e denso quando $\overline{A} = X.$
-\begin{prop*}
-  Seja (X, d) um espa\c co m\'etrico e A um subconjunto. Ent\~ao,
- \begin{itemize}
-   \item[i)] A \'e aberto se, e s\'o se, $A = A^{\circ}$
-   \item[ii)] A \'e fechado se, e s\'o se, $A = \overline{A}$
-   \item[iii)] Se x pertence a $A^{\circ}$, ent\~ao existe $\epsilon>0$ tal que $B(x, \epsilon)\subseteq{A}$.
-   \item[iv)] Se x pertence a $\overline{A}$, ent\~ao para todo $\epsilon > 0$ tal que $B(x, \epsilon)\cap{A}\neq\emptyset$.
- \end{itemize}
-\end{prop*}
-
-  Um espa\c co m\'etrico (X, d) \'e conexo se os \'unicos subconjuntos abertos e fechados de X s\~ao X e vazio. Caso contr\'ario,
-X \'e dito ser desconexo, ou seja, existem abertos disjunto n\~ao-vazios cuja uni\~ao d\'a o espa\c co todo. Um exerc\'icio \'e mostrar
-mostrar que um conjunto \'e conexo se, e s\'o se, ele \'e um intervalo.
-
-  Dados z, w em $\mathbb{C}$, o segmento [z, w] \'e o conjunto
-  $$
-  [z, w]:= \{tw + (1-t)z: t\in[0, 1]\}
-  $$
-  Al\'em disso, dados $z _{1}, \cdots, z _{n}$, a poligonal com esses v\'ertices \'e
-  $$
-  [z _{1}, \cdots, z _{n}] = \bigcup _{k=1}^{n-1}[z _{k}, z _{k+1}]
-  $$
- \begin{prop*}
-   Seja G um subconjunto de $\mathbb{C}$ aberto. Ent\~ao, G \'e conexo se, e s\'o se para todo z, w em G, existe uma poligonal
-  $[z, z _{1}, \cdots, z _{n}, w]\subseteq{G}.$
- \end{prop*}
-\begin{proof*}
-  $\Leftarrow)$ Assumindo que G satisfaz a propriedade da poligonal, suponha tamb\'em que G n\~ao \'e conexo. Assim,
-podemos escrever $G = B\cup{C}$ com $B\cap{C}=\emptyset$ e B, C n\~ao-vazios. Pela propriedade de G, existe 
-  $[b, z _{1}, \cdots, z _{n}, c]\subseteq{G}$. Neste caso, existe k tal que $z _{k}\in{B}$ e $z _{k+1}\in{C}.$ Agora,
-  considere os conjuntos 
- \begin{align*}
-   &B' = \{t\in[0, 1]: tz _{k} + (1 - t)z _{k+1}\in{B}\}\\
-   &C' = \{t\in[0, 1]: tz _{k} + (1 - t)z _{k+1}\in{C}\}
- \end{align*}
-e note que $B'\neq{\emptyset}$ pois $z _{k}\in{B}$ e $1\in{B'}$. Analogamente, C' \'e n\~ao-vazio. No entanto, isso \'e um absurdo,
-pois [0, 1] seria conexo e $B'\cup{C'}$ seria uma cis\~ao n\~ao trivial
-
- $\Rightarrow)$ Suponha, agora, que G \'e conexo e seja z um elemento dele. Defina 
- $$
- C = \{w\in{G}: \text{Existe } [z, z _{1}, \cdots, z _{n}, w]\subseteq{G}\}
- $$
- Observe que C \'e n\~ao-vazio, z pertence a G e [z] \'e subconjunto de G. Mostremos que C \'e aberto e fechado (pois implicar\'a em C = G).
-Com efeito, se $w\in{C}\subseteq{G}$, existe $r>0$ tal que B(w, r) est\'a contigo em G, pois G \'e aberto.
- Assim, para todo $s\in B(w, r)$, temos $[s, w]\subseteq{B(w, r)}$ e, com isso, existe uma poligonal ligando s a z com $s\in{C},$ mostrando 
-que C \'e aberto.
-
-  Mostrar que o complementar de C \'e aberto \'e an\'alogo. Com efeito, se $C ^{c} = \emptyset,$ o resultado est\'a provado. Por outro
-lado, se $C ^{c}\neq\emptyset$, seja $w\in{C ^{c}}$ = G - C. Logo, existe $r > 0$ tal que $B(w, r)\subseteq{G}$. Afirmamos
-que $B(w, r)\subseteq{G-C}$. Caso contr\'ario, existe s em B(w, r) contido, tamb\'em, em C. Neste caso, existe uma poligonal
-ligando s a z e s a w, uma contradi\c c\~ao, pois isso conectaria w a z, mesmo com w no complementar de z. Portanto, o complementar
-\'e aberto e C \'e aberto e fechado. \qedsymbol
-\end{proof*}
-
-\section{Aula 02 - 05/01/2023}
+\section{Aula 04 - 09/01/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
-  \item Sequ\^encias e suas converg\^encias;
-  \item Teorema de Cantor para espa\c cos completos;
-  \item Compacidade e Heine-Borel;
-  \item Continuidade e converg\^encia de fun\c c\~oes.
+  \item Equa\c c\~oes de Cauchy-Riemann;
+  \item Fun\c c\~oes Harm\^onicas e suas Rela\c c\~oes com as Anal\'iticas.
+  \item Fun\c c\~oes Conformes e Transforma\c c\~oes de M\"{o}bius
 \end{itemize}
-
-\subsection{Fim de Conexos}
-\begin{theorem*}
-  Seja $G\subseteq{\mathbb{C}}$ um aberto e conexo, ent\~ao existe uma poligonal ligando qualquer z, w em G cujos segmentos
-  sejam paralelos ao eixo real ou imagin\'ario.
-\end{theorem*}
-
+\subsection{Equa\c c\~oes de Cauchy-Riemann}
 \begin{def*}
-  Um subconjunto de um espa\c co m\'etrico (M, d) \'e uma componente conexa se \'e um conexo maximal
+  Uma regi\~ao G do plano complexo \'e um aberto conexo dele.
 \end{def*}
-
-\begin{example}
-Coloque $A = \{1, 2, 3\}. \{1\}$ \'e componente conexa de A, mas $\{1, 2\}$ n\~ao \'e. 
- \end{example}
-
-\begin{theorem*}
-  Seja (M, d) um espa\c co m\'etrico. Ent\~ao,
- \begin{itemize}
-   \item[1)] Para x em M, existe $C _{x}$ uma componente conexa de M com $x\text{ em }C _{x}; $
-   \item[2)] As componentes s\~ao disjuntas.
- \end{itemize}
-\end{theorem*}
-\begin{proof*}
-  1) \par Seja x em M e tomemos
+  Considere uma fun\c c\~ao $f:G\rightarrow \mathbb{C}$ anal\'itica sobre a regi\~ao G e defina
   $$
-  C _{x} = \bigcup _{D\subseteq{M}} \{D: D \text{ conexos com } x\in{D}\}
+  u(x, y) = Re(f(z)), \quad v(x, y) = Im(f(z)), \quad z=x+iy, x, y\in \mathbb{R}
   $$
-  Mostremos que $C _{x}$ \'e conexo, pois a maximalidade segue da defini\c c\~ao dada a ele. Note que $C _{x}\neq\emptyset$, visto que
-qualquer conjunto unit\'ario \'e conexo. Seja $A\subseteq{C _{x}}$ aberto, fechado e n\~ao-nulo. Existe $D _{x}\in C _{x}$ tal
-que $D _{x}\cap{A}\neq\emptyset$, o que implica que $D _{x}\subseteq{A}.$
-
-Finalmente, considere $D\in C _{x}$, de modo que $D _{x}\cup{D}$ \'e conexo e $(D _{x}\cup{D})\cap{A}\neq\emptyset$ o que garante
-que $D\subseteq{A}. \text{ Assim, } A = C _{x}.$
-\qedsymbol.
-\end{proof*}
-\begin{exer*}
- \begin{itemize}
-  \item[1)] Prove a segunda afirma\c c\~ao do teorema;
-  \item[2)] Se D e conexo e $D\subseteq{A}\subseteq{\overline{D}}$, ent\~ao A \'e conexo.
- \end{itemize}
-\end{exer*}
-
-\begin{theorem*}
-  Seja G um subconjunto aberto de $\mathbb{C}.$ As componentes conexas s\~ao abertas e h\'a no m\'aximo uma quantidade enumer\'avel
-delas.
-\end{theorem*}
-\begin{proof*}
-  Seja D uma componente conexa de G. Tome $x\in{D}$, tal que existe $r > 0 \text{ com } B(x, r)\subseteq{G}$, j\'a que G \'e aberto.
-Suponha que $B(x, r)\not\subseteq{D}.$ Neste caso, $B(x, r)\cup{D}$ seria um conexo contendo D propriamente. Logo, 
-$B(x, r)\subseteq{D}$ e D \'e aberto. 
-
-  Para a segunda afirma\c c\~ao, considere 
+Assim, $f(z) = u(x, y) + iv(x, y), z=x+iy\in \mathbb{C}.$ Observe que 
+  \begin{align*} 
+    f'(z) &= \lim _{h\to{0}}\frac{f(z+h) - f(z)}{h} = \lim _{ih\to{0}}\frac{f(z+ih) - f(z)}{ih} \\
+          &= \lim _{h\to{0}}\biggl(\frac{u(x+h, y) - u(x, y)}{h} + i\frac{v(x + h, y) - v(x, y)}{h}\biggr)
+  \end{align*} 
+ \begin{equation}
+   = \frac{du}{dx}(x, y) + i \frac{dv}{dx}(x, y), \quad z = x + iy  
+ \end{equation}
+\begin{align}
+   &= \lim _{ih\to{0}}\biggl(\frac{u(x, y+h) - u(x, y)}{ih} + i\biggl(\frac{v(x, y+h) - v(x, y)}{ih}\biggr)\biggr) \nonumber\\
+   &= \frac{1}{i}\frac{du}{dy}(x, y) + \frac{dv}{dy}(x, y) = \frac{dv}{dy}(x, y) - i \frac{du}{dy}(x, y).
+\end{align}
+  A partir de (1) e (2), derivamos as equa\c c\~oes de Cauchy-Riemann:
   $$
-  \Omega = \mathbb{Q} + i\mathbb{Q} (\overline{\Omega} = \mathbb{C})
-  $$  
-  Para cada componente conexa C de G, como G \'e aberto, existe $z\in{\Omega\cap{C}}$, o que \'e suficiente para garantir a enumerabilidade
-das componentes de G.
-\qedsymbol.
-\end{proof*}
-
-\subsection{Sequ\^encias e Completude}
-\begin{def*}
-  Seja (M, d) um espa\c co m\'etrico. Uma sequ\^encia $\{x _{n}\}$ de M \'e convergente se existe x em M tal que 
-para todo $\epsilon > 0$, existe $n_{0}$ natural tal que 
+  \boxed{\frac{du}{dx}=\frac{dv}{dy} \quad \text{ e } \frac{dv}{dx} = -\frac{du}{dy}}
   $$
-  d(x _{n}, x) < \epsilon, \quad n\geq n_{0}.
+\subsection{Fun\c c\~oes Harm\^onicas}
+  Al\'em disso, se u e v possuem derivadas de segunda ordem, temos
   $$
-Escrevemos, neste caso, $x _{n}\to x$. Dizemos que uma sequ\^encia \'e de Cauchy se para todo $\epsilon > 0$, existe
- $n_{0}$ natural satisfazendo 
+  \frac{d}{dy}\biggl(\frac{du}{dx}\biggr) = \frac{d^2v}{dy^2}, \quad \frac{d}{dy}\biggl(\frac{dv}{dx}\biggr), \quad \frac{d^2v}{dx^2} = -\frac{dy}{dxdy}
   $$
-  d(x _{n}, x _{m}) < \epsilon, \quad n, m \geq n_{0}.
+de onde segue que 
   $$
-\end{def*}
-
- \begin{exer*}
-  \begin{itemize}
-    \item[i)] Se $\{x _{n}\}$ \'e convergente, ent\~ao $\{x_n\}$ \'e de Cauchy, mas a rec\'iproca \'e s\'o v\'alida
-  quando a sequ\^encia possui uma subsequ\^encia convergente.
-    \item[ii)] Se $\{x_{n}\}$ \'e de Cauchy, ent\~ao $x_{n}$ \'e limitada.
-    \item[iii)] $F\subseteq{M}$ \'e fechado se e s\'o se toda $x_{n}$ de F com $x_{n}\to x$ \'e tal que x pertence a F.
-  \end{itemize}
- \end{exer*}
-
-  Dizemos que um espa\c co m\'etrico \'e completo se toda sequ\^encia de Cauchy for convergente.  
- \begin{exer*}
-  \begin{itemize}
-    \item[i)] Mostre que $\mathbb{R}, \mathbb{C}$ s\~ao espa\c cos m\'etricos completos;
-    \item[ii)] Se (M,d) \'e um espa\c co m\'etrico e $S\subseteq{M}$, mostre que se (S,d) for completo, ele \'e fechado em M. 
-Mostre e rec\'iproca no caso em que (M, d) \'e completo.
-  \end{itemize}
- \end{exer*}
-O resultado a seguir \'e conhecido como Teorema de Cantor.
-\begin{theorem*}
-  Um espa\c co m\'etrico \'e completo se e s\'o se toda cadeia descendente de fechado $\{F_{n}\} $ satisfazendo
+  \frac{d^2v}{dx^2} + \frac{d^2v}{dy^2} = 0
   $$
-  diam F_{n}\to{0}, \quad n\to\infty
-  $$
-\'e tal que $\bigcap_{n\in \mathbb{N}}F_{n}$ \'e unit\'ario. Aqui, $diam A:=sup\{d(x, y): x, y\in{A}\}.$
-\end{theorem*}
-\begin{proof*}
-  Suponha que M \'e um espa\c co m\'etrico completo. Se $\bigcap\limits _{n\in \mathbb{N}}F\neq\emptyset,$ ent\~ao ele \'e unit\'ario. 
-De fato, se $x, y\in{\cap_n{F}}$, 
-  $$
-  d(x, y)\leq diam F _{n} (diam F _{n+1}\leq diam F _{n}),
-  $$
-mas $diam F _{n}\to{0}$ e d(x, y) = 0, de modo que x = y.
-
-  Agora, seja $x _{n}\in F _{n}, n\in \mathbb{N}$ e observe que 
-  $$
-  d(x _{n}, x _{n+1})\leq diam F _{n},
-  $$
-pois $F _{n+1}\subseteq{F _{n}}$. Isto garante que $\{x_{n}\}$ \'e de Cauchy e, como M \'e completo, existe x com $x_{n}\to{x}$.
-Neste caso, $x\in{F_{n}}$ para todo n e $\bigcap _{n\in \mathbb{N}}F_{n}=\{x\}.$
+e, de forma an\'aloga, u \'e harm\^onica. Nesta l\'ogica, diremos que f \'e harm\^onica
+se $\Delta f = \frac{d^2f}{dx^2} + \frac{d^2f}{dy^2} = 0.$
   
-  Reciprocramente, seja $\{a_{n}\}$ de Cauchy em M. Constru\'imos 
-  $$
-  F_{n} = \overline{\{a_{k}: k\geq{n}\}}
-  $$
-que s\~ao fechados satisfazendo $F_{n+1}\subseteq{F_{n}}.$ Assim, $\bigcap\limits _{n\in \mathbb{N}}F_{n} = \{x\}$ para algum
-x de M. Como
-  $$
-  d(x, a_{n})\leq diamF_{n}\to{0},
-  $$
-temos, portanto, $a_{n}\to{x}.$
-\qedsymbol
+  Seja $u:G\rightarrow \mathbb{R}$ harm\^onica, a busca por $v:G\rightarrow \mathbb{R}$ harm\^onica 
+satisfazendo Cauchy-Riemman \'e um quest\~ao. Um exerc\'icio \'e mostrar que a exist\^encia de v
+depende de G e que, em geral, n\~ao encontra-se v harm\^onica satisfazendo Cauchy-Riemann. 
+(Por exemplo, $G = G - \{0\}, \quad u(x, y) = \ln{(x ^{2} + y ^{2})}^{\frac{1}{2}}$)
+ \begin{theorem*}
+   Sejam $u, v:G\rightarrow \mathbb{R}$ harm\^onicas de classe $C^1$. Ent\~ao, $f = u + iv$
+\'e anal\'itica se e s\'o se u e v satisfazem Cauchy-Riemann.
+ \end{theorem*}
+\begin{proof*}
+  Exerc\'icio.
 \end{proof*}
-Um exerc\'icio que fica \'e mostrar que se $\{a_{n}\}$ \'e de Cauchy, ent\~ao $diamF_{n}\to{0}$
-\subsection{Compactos}
-\begin{def*}
-Seja (M, d) um espa\c co m\'etrico. Um subconjunto $S\subseteq{M}$ \'e compacto se para toda cole\c c\~ao $\mathcal{A}$
-de abertos de M cobrindo S existe $A_1, \cdots, A_{n}\in \mathcal{A}$ tal que 
+  Dada $u:G\rightarrow \mathbb{R}$ harm\^onica, uma fun\c c\~ao $v:G\rightarrow \mathbb{R}$
+tal que f = u + iv seja anal\'itica \'e dita ser a fun\c c\~ao harm\^onica conjugada de u.
+\begin{exer*}
+\item[1)] Seja $f:G\rightarrow \mathbb{C}$  um ramo e n um natural. Ent\~ao, $z ^{n} = e ^{nf(z)}, z\in{G}.$
+  \item[2)] Mostre que $Re(z ^{\frac{1}{2}}) > 0;$
+  \item[3)] tome $G = \mathbb{C} - \{z: z\leq{0}\}.$ Ache todos as fun\c c\~oes anal\'iticas
+tais que $z = (f(z))^{n}.$
+  \item[4)] Seja $f:G\rightarrow \mathbb{C}$, G conexo e f ana\'itica. Se, para todo
+z de G, f(z) \'e real, ent\~ao f \'e constante.
+\end{exer*}
+\begin{theorem*}
+  Considere $G = \mathbb{C} \text{ ou } G = B(0, r), r > 0.$ Se $u:G\rightarrow \mathbb{R}$, 
+ent\~ao u admite harm\^onico conjugado.
+\end{theorem*}
+\begin{proof*}
+  Buscamos $v:G\rightarrow \mathbb{R}$ satisfazendo Cauchy-Riemann. Coloque 
   $$
-  S\subseteq\bigcup_{k=1}^{n}A_{k}
+    v(x, y) = \int_{0}^{y}\frac{du}{dx}(x, t)dt + \phi(x)
   $$
-\end{def*}
-  Dado um espa\c co m\'etrico (M, d), M \'e dito sequencialmente completo se todas as sequ\^encias de M possuem subse
-qu\^encia convergente. Tamb\'em diremos que ele \'e totalmente limitado se para todo $\epsilon > 0$, existe $n\in \mathbb{N},
-x_{1}, \cdots, x_{n}\in{M}$ com 
+em que $\phi(x) = -\int_{0}^{x}\frac{du}{dy}(t, 0)dt.$
+
+  Portanto, 
   $$
-  M = \bigcup_{i=1}^{n}B(x_{i}, \epsilon).
+  f = u(x, y) + i\biggl(\int_{0}^{y}\frac{du}{dx}(x, t)dt - \int_{0}^{x}\frac{du}{dy}(t, 0)dt.\biggr).\quad\text{\qedsymbol}
   $$
-Um conjunto A \'e dito limitado se seu diametro \'e finito.
+\end{proof*}
+
+\subsection{Transformadas de M\"{o}bius}
  \begin{exer*}
- \begin{itemize}
-   \item[i)] Se A \'e totalmente limitado, ent\~ao A \'e limitado, mas a rec\'iproca n\~ao \'e necessariamente verdade.
-    \item[ii)] Se A \'e compacto, ent\~ao A \'e limitado, mas a rec\'iproca n\~ao \'e necessariamente verdade.
- \end{itemize} 
+   Mostre que $e^{z}$ leva retas ortogonais em curvas ortogonais.
  \end{exer*}
-\begin{prop*}
-  Seja (M, d) um espa\c co m\'etrico e K um subconjutno de M. Ent\~ao, K \'e compacto se es\'o se toda fam\'ilia de fechados com PIF tem 
-interse\c c\~ao n\~ao-vazia.
-\end{prop*}
-A PIF \'e a Propriedade da Intersec\c c\~ao Finita, que afirma que dados conjuntos $F _{1}, \cdots, F_{n}\Rightarrow \bigcap\limits_{k=1}^{n}F_{k}\neq\emptyset$
-\begin{theorem*}
-  Seja (M, d) um espa\c co m\'etrico. As seugintes afirma\c c\~oes s\~ao equivalentes:
- \begin{itemize}
-   \item[i)]M \'e compacto;
-   \item[ii)] Para todo conjunto ininito S de M, existe x em S tal que para todo $\epsilon > 0, B(x, \epsilon)\cap{S-\{x\}}\neq\emptyset$;
-   \item[iii)] M \'e sequencialmente compacto;
-   \item[iv)] M \'e completo e totalmente limitado.
- \end{itemize}
-\end{theorem*}
-\begin{theorem*}
-  Um conjunto K de $\mathbb{R}^{n}$ \'e compacto se e s\'o se ele \'e fechado e limitado.
-\end{theorem*}
-Segue um esbo\c co da prova.
-\begin{proof*}
-  Se K \'e compacto, ele \'e completo (logo, fechado) e totalmente limitado (logo, limitado). Por outro lado, se K \'e fechado
-e limitado, ent\~ao K \'e completo porque $\mathbb{R}^{n}$ \'e completo. Al\'em disso, pela propriedade Arquimediana da reta,
-para todo $\epsilon > 0$, existem $x_1, \cdots, n_{n}\in{K}$ com 
-  $$
-  K\subseteq{\bigcup_{i=1}^{n}B(x_{i}, \epsilon)}
-  $$
-\end{proof*}
-
-\subsection{Continuidade}
 \begin{def*}
-  Sejam (X, d), (Y, d') espa\c cos m\'etricos. $f:X\rightarrow Y$ \'e cont\'inua em x de X se para todo $\epsilon > 0$, existir
-  $\delta > 0$ tal que 
-  $$
-  d(x, y) < \delta\Rightarrow d'(f(x), f(y)) < \epsilon 
-  $$
-f \'e dita cont\'inua se isso ocorre para todos os pontos de M.
+ Uma $\gamma$ \'e uma curva numa regi\~ao G se $\gamma:[a, b]\rightarrow G$ \'e cont\'inua.
 \end{def*}
-\begin{exer*}
-  Mostre que equivalem \`a defini\c c\~ao de cont\'inua:
- \begin{itemize}
-   \item[i)] $f^{-1}(B(x, \epsilon))$ cont\'em uma bola aberta centrada em x, para todo $\epsilon > 0$;
-   \item[ii)] $x_{n}\to{x}$ implica $f(x_{n})\to{f(x)}$
-   \item[iii)] $F ^{-1}(A)$ \'e aberta em $X$ para todo aberto A com $x\in{A}$
- \end{itemize}
-\end{exer*}
-\begin{prop*}
-  Sejam $f, g:X\rightarrow \mathbb{C}$ fun\c c\~oes cont\'inuas. Ent\~ao,
- \begin{itemize}
-   \item[1)] $\alpha f + \beta g$ \'e cont\'inua, $\alpha, \beta\in \mathbb{C};$
-   \item[2)] fg \'e con\'inua;
-   \item[3)] Se $x\neq{0},$ ent\~ao f/g \'e cont\'inua em x;
-   \item[4)] Se $h:Y\rightarrow X$ \'e con\'tinua, ent\~ao $f\circ{h}:Y\rightarrow \mathbb{C}$ \'e cont\'inua.
- \end{itemize}
-\end{prop*}
-\begin{def*}
-  Uma fun\c c\~ao $f:(X, d)\rightarrow (Y, d')$ \'e uniformemente cont\'inua se para todo $\epsilon > 0$, existe $\delta > 0$
-tal que 
- $$
- d(x, y) < \delta\Rightarrow d'(f(x), f(y)) < \epsilon.
- $$
- Uma fun\c c\~ao $f:(X, d)\rightarrow (Y, d')$ \'e Lipschitz se existe $c > 0$ tal que 
- $$
- d'(f(x), f(y)) \leq cd(x, y)
- $$
-\end{def*} 
+Sejam $\gamma _{1}, \gamma_2$ curvas em G tais que $\gamma_1'(t_1)\neq{0}, \gamma_2'(t_2)\neq{0}, \gamma_1(t_1) = \gamma_2(t_2) = z_{0}\in{G}.$
+O \^angulo entre $\gamma _{1}\text{ e }\gamma_2$ em $z_{0}$ \'e dado por
+  $$
+  \arg(\gamma_1'(t_1)) - \arg(\gamma_2'(t_2)).
+  $$
+  Observe que se $\gamma$ \'e uma curva em G e $f:G\rightarrow \mathbb{C}$ \'e anal\'itica,
+$\sigma = f\circ\gamma$ \'e uma curva em $\mathbb{C}.$ Assumimos $\gamma\in{C^1}.$ Neste
+caso, $[a, b] = Dom(\gamma),$ ou seja, temos
+  $$
+  \gamma'(t) = f'(\gamma(t))\gamma'(t), \quad t\in{[a, b]},
+  $$
+donde segue que
+  $$
+  \arg(\gamma'(t)) = \arg(f'(\gamma(t))) + \arg(\gamma'(t))
+  $$
 \begin{theorem*}
-  Seja $f:(X, d)\rightarrow (Y, d')$ uma fun\c c\~ao. Ent\~ao, 
- \begin{itemize}
-   \item[i)] Se X \'e compacto, ent\~ao f(X) \'e compacto;
-     \item[ii)] Se X \'e conexo, ent\~ao f(X) \'e conexo. Adicionalmente, se Y = $\mathbb{R}$, ent\~ao f(X) \'e um intervalo.
- \end{itemize}
+  Seja $f:G\rightarrow \mathbb{C}$ anal\'itica. Ent\~ao, f preserva \^angulos para todo
+z em G tal que $f'(z)\neq{0}$.
 \end{theorem*}
+\begin{proof*}
+  Seja $z_{0}\in{G}$ tal que $f'(z_{0})\neq{0}$. Considere curvas $\gamma_1, \gamma_2$
+tais que $\gamma_1(t_1) = \gamma_2(t_2) = z_{0}.$ Se $\theta$ \'e \^angulo entre $\gamma_1\text{ e }\gamma_2\text{ em }z_{0},$
+ent\~ao
+  $$
+  \theta = \arg(\gamma_1'(t_1)) - \arg(\gamma_2'(t_2))
+  $$
+  Agora, note que o \^angulo entre $\sigma_1 = f\circ{\gamma_1}$ e $\sigma_2 = f\circ{\gamma_2}$ em
+$f(z_{0})$ \'e
+  $$
+  \arg \sigma_1'(t_1) - \arg \sigma_2'(t_2) = \theta.
+  $$
+Portanto, f preserva \^angulos. \qedsymbol.
+\end{proof*}
+  Seja $f:G\rightarrow \mathbb{C}$ que preserva \^angulo e 
+  $$
+  \lim_{w\to{z}} \frac{|f(z) - f(w)|}{|z-w|}
+  $$
+existe. Ent\~ao, f \'e dita aplica\c c\~ao conforme. Por exemplo, $f(z) = e^z$ \'e injetora
+em qualquer faixa horizontal de largura menor que $2\pi.$
 \begin{crl*}
-  Se $f:X\rightarrow \mathbb{R}$ \'e cont\'inua, ent\~ao para todo $K \subseteq{X}$ compacto, existem $x _{m}, x _{M}\in{K}$
-tais que 
-  $$
-  f(x _{m}) = \inf _{x\in{K}} \{f(x)\}, \quad f(x _{M}) = \sup _{x\in{K}} \{f(x)\}
-  $$
+  $e ^{G} = \mathbb{C} - \{z: z\leq{0}\}.$
 \end{crl*}
-\begin{crl*}
-  Nas mesmas condi\c c\~oes, mas f uma fun\c c\~ao complexa, temos 
-  $$
-  |f(x _{m})| = \inf _{x\in{K}} \{|f(x)|\}, \quad |f(x _{M})| = \sup _{x\in{K}} \{|f(x)|\}
-  $$
-\end{crl*}
-\begin{theorem*}
-  Seja $f:X\rightarrow Y$ con\'tinua. Se X \'e compacto, ent\~ao f \'e uniformemente cont\'inua.
-\end{theorem*}
+  Se G \'e uma faixa aberta de comprimento $2\pi$, o ramo de log faz o caminho inverso. Adicionalmente,
+$\frac{1}{z}$ \'e a sua derivada.
 
-\subsection{Converg\^encia Uniforme}
-\begin{def*}
-  Uma sequ\^encia de fun\c c\~oes $\{f_{n}\}$ de X em Y converge pontualmente para $f:X\rightarrow Y$ se 
-  $$
-  f_{n}(x)\to f(x), \quad n\to\infty, \forall{x\in{X}}
-  $$
-  $\{f_{n}\}$ converge uniformemente para f se para todo $\epsilon > 0$, existe $n_{0}\in \mathbb{N}$ tal que
-  $$
-  \sup _{x\in{X}} \{d'(f_{n}(x), f(x))\} < \epsilon, n\geq{n_{0}}
-  $$  
-\end{def*}
-\begin{theorem*}
-  Se $\{f_{n}\}$ \'e uma sequ\^encia de fun\c c\~oes con\'tinuas e $f_{n}\to{f}$ uniformemente, ent\~ao f \'e cont\'inua.
-\end{theorem*}
-\begin{theorem*}
-  Seja $u_{n}:X\rightarrow \mathbb{C}$ uma sequ\^encia de fun\c c\~oes satisfazendo
-  $$
-  |u_{n}(x)|\leq c_{n}, n\in \mathbb{N}.
-  $$
-  Se $\sum\limits_{n=0}^{\infty}c_{n} < \infty,$ ent\~ao $\sum\limits_{k=1}^{n}u_{k}\to \sum\limits_{n=0}^{\infty}u_{n}$ uniformemente.
-\end{theorem*}
-
-\section{Aula 03 - 06/01/2023}
-\subsection{Motiva\c c\~oes}
-\begin{itemize}
-  \item[i)] Introdu\c c\~ao \`as s\'eries de pot\^encia e raio de converg\^encia;
-  \item[ii)] Fun\c c\~oes anal\'iticas e diferenci\'aveis em $\mathbb{C}$;
-  \item[iii)] Defini\c c\~ao da exponencial complexa;
-  \item[iv)] Ramos de fun\c c\~oes inversas.
-\end{itemize}
-\subsection{S\'eries de Pot\^encias}
-\begin{def*}
-  Considere $\{a_{n}\}$ uma sequ\^encia em $\mathbb{C}$. A s\'erie de pot\^encia em $\{a_n\}$, denotada
-por $\sum\limits_{n=0}^{\infty}$, \'e dita convergente se para todo $\epsilon > 0$, existe $n_0\in\mathbb{N}$
-tal que $|\sum\limits_{n=0}^{k} - a|, k\geq{n_0}$, para algum $a\in\mathbb{C}$. Denotamos isso por 
-  $$
-  a = \sum_{n=0}^{\infty} a_n < \infty,
-  $$
-A s\'erie $\sum\limits_{n=0}^{\infty}a_n$ \'e absolutamente convergente se $\sum\limits_{n=0}^{\infty}|a_n|<\infty$.
-\end{def*}
-\begin{exer*}
-  Mostre que se uma soma converge absolutamente, ela tamb\'em converge normalmente.
-\end{exer*}
-\begin{def*}
-  Uma s\'erie de pot\^encias \'e uma s\'erie da forma
-  $$
-  \sum_{n=0}^{\infty}a_n(z-a)^n, \quad z\in\mathbb{C},
-  $$
-em que $\{a_n\}$ \'e uma sequ\^encia de $\mathbb{C}$ e a \'e um n\'umero complexo.
-\end{def*}
-\begin{example}
-  No caso da s\'erie geom\'etrica $\sum\limits_{n=0}^{\infty}z^n, z\in\mathbb{C}$, considere
-a soma parcial $s_n = \sum\limits_{k=0}^{n} = \frac{1 - z^{n+1}}{1-z}, z\neq{1}.$ Se
-$|z| < 1,$ ent\~ao $z^{n+1}\to{0}$ e $\sum\limits_{n=0}^{\infty}z^n = \frac{1}{1-z}, |z| < 1.$
-Caso $|z|\geq{1},$ a s\'erie geom\'etrica diverge.
-\end{example}
-Denotamos por $\limsup_{n\to\infty}\{b_n\}$ a express\~ao $\lim_{n\to\infty}\sup_{k\geq{n}}\{b_k\}$.
-\begin{theorem*}
-  Considere a s\'erie de pot\^encias $\sum\limits_{n=0}^{\infty}(z-a)^n$ e $\frac{1}{R}:=\limsup_{n\to\infty}\{\sqrt[n]{|a_n|}\}$.
-Ent\~ao, 
-\begin{itemize}
-  \item[1)] A s\'erie converge absolutamente em B(a, R)
-  \item[2)] A s\'erie diverge se $|z-a| > R$
-  \item[3)] A s\'erie converge uniformemente em B(a, r) para $0 < r < R.$
-\end{itemize}
-\end{theorem*}
-\begin{proof*}
-  Sem perda de generalidade, suponha a = 0.
-  1.) Seja $z\in{B(0, R)}.$ Existe $|z| < r < R$ e $n_0\in\mathbb{N}$ tal que $|a_n^{\frac{1}{n}}| < \frac{1}{r},
-n\geq{n_0}.$ Da\'i, temos 
-  $$
-  \sum_{k=n_0}^{\infty}|a_n||z^n|\leq \sum_{k=n_0}^{\infty}\frac{|z^n|}{r^n} < \infty.
-  $$
-Como essa fra\c c\~ao \'e menor que um, o resultado est\'a provado.
-
-  2.) Seja $|z| > R$ e r tal que $|z|> r > R$. Existe $\{a_{n_k}\}_k$ tal que $|a_{n_k}|^{\frac{1}{n_k}} > \frac{1}{r},
-k = 0, 1, \cdots.$ Assim, temos
-  $$
-    |a_{n_k}||z|^{n_k} > \biggl(\frac{|z|}{r}\biggr)^{n_k}\to\infty
-  $$
-Conforme k tende a infinito.
-
-  3.) Seja $0 < r < R \text{ e } r < \rho < R.$ Se z pertence a uma bola B(0, r), ent\~ao
-  $$
-    |a_n||z|^n < \biggl(\frac{r}{\rho}\biggr)^n, \quad n\geq{n_0}, n_0\in\mathbb{N}.
-  $$
-Como consequ\^encia do teste M de Weierstrass, j\'a que $\frac{r}{\rho}$ \'e um n\'umero, segue
-o resultado.
-\qedsymbol
-\end{proof*}
-\begin{exer*}
-  Mostre que o R do teorema acima \'e \'unico.
-\end{exer*}
-\begin{example}
-  Considere a s\'erie que define a exponencial de z:
-  $$
-  \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty.\quad e^z:=\sum_{n=0}^{\infty}\frac{z^n}{n!}, z\in\mathbb{C}.
-  $$
-  Este s\'erie \'e convergente pelo teste da raz\~ao. Com efeito, 
-  $$
-  R = \lim_{n\to\infty}\biggl|\frac{a_n}{a_{n+1}}\biggr| = \lim_{n\to\infty}\biggl(\frac{(n+1)!}{n!}\biggr) = \infty.
-  $$
-  Com isso, a s\'erie converge para todos os valores poss\'iveis, pois seu raio de converg\^encia
-\'e infinito.
-\end{example}
-\begin{prop*}
-  Nas nota\c c\~oes da proposi\c c\~ao anterior, se $R < \infty$, ent\~ao
-  $$
-    R = \lim_{n\to\infty}\biggl|\frac{a_n}{a_{n+1}}\biggr|.
-  $$
-\end{prop*}
-
-\subsection{Fun\c c\~oes Anal\'iticas}
-\begin{def*}
-  Seja G um aberto de $\mathbb{C}$ e $f:G\rightarrow\mathbb{C}$ uma fun\c c\~ao. Dizemos que ela \'e diferenci\'avel
-em $z\in{G}$ se
-  $$
-  \lim_{h\to{0}}\frac{f(z+h) - f(z)}{h} = \lim_{w\to{z}}\frac{f(z)-f(w)}{z-w}
-  $$
-existe. Neste caso, o denotamos por f'(z). Diremos que f \'e diferenci\'avel se f'(z) existe para todo z de G.
-\end{def*}
-\begin{def*}
-  Se $f:G\rightarrow\mathbb{C}$ \'e diferenci\'avel e $f':G\rightarrow\mathbb{C}(z\mapsto{f'(z)})$ \'e cont\'inua,
-ent\~ao dizemos que f \'e continuamente diferenci\'avel.
-  
-  Analogamente, se $f':G\rightarrow\mathbb{C}$ \'e diferenci\'avel e $f'':G\rightarrow\mathbb{C}$ (f'' = (f')') \'e
-cont\'inua, ent\~ao f \'e duas vezes continuamente diferenci\'avel. Nesta linha, diremos que uma fun\c c\~ao \'e
-anal\'itica se ela \'e continuamente diferenci\'avel em G.
-\end{def*}
-
-\begin{prop*}
-  Seja G um aberto de $\mathbb{C}$. Ent\~ao, 
-  \begin{itemize}
-    \item[i)] Se $f:G\rightarrow\mathbb{C}$ \'e diferenci\'avel em $a\in{G}$, ent\~ao f \'e cont\'inua em a;
-    \item[ii)] Se f e g s\~ao anal\'iticas em G, ent\~ao f+g e f.g s\~ao anal\'iticas em G. Se $G' = G - \{0\}$, 
-  ent\~ao f/g \'e anal\'itica em G'. Valem as regras cl\'assicas de deriva\c c\~ao.
-    \item[iii)] Sejam f e g anal\'iticos em $G_f, G_g$, respectivamente, com $f(G_f)\subseteq{f(G_g)}$. Ent\~ao, 
-  $g\circ f$ \'e anal\'itica em $G_f$ e 
-    $$
-    (g\circ f)'(z) = g'(f(z))f'(z), \quad z\in{G}.
-    $$
-  \end{itemize}
-\end{prop*}
-\begin{proof*}
-  Exerc\'icio.
-\qedsymbol
-\end{proof*}
-
-\begin{prop*}
-  Seja $f(z) = \sum\limits_{n=0}^{\infty}a_n(z-a)^n$ com raio de converg\^encia R. Ent\~ao,
-f \'e infinitamente diferenci\'avel em B(a, R). Al\'em disso, a derivada de ordem k \'e
-  $$
-    f^{(k)}(z) = \sum_{n=k}^{\infty}a_n\frac{n!}{(n-k)!}(z-a)^{n-k}, k\in\mathbb{N}
-  $$
-com mesmo raio de converg\^encia de f.
-\end{prop*}
-\begin{proof*}
-  A \'ultima afirma\c c\~ao fica como exerc\'icio. 
-
-  Consideremos 
-\begin{align*} 
-  &s_n(z) = \sum_{k=0}^{n}a_k(z-a)^k, \quad R_n(z)= f(z) - s_n(z), \\
-  &g(z) = \sum_{n=1}^{\infty}a_nn(z-a)^{n-1}, \quad z\in{B(a, R), n\in\mathbb{N}}.
-\end{align*} 
-  Seja $\delta > 0$ tal que $B(z, \delta)\subseteq{B(a, r)}$ com $|z| < r < R.$ Assim, para 
-w em $B(z, \delta)$
-  $$
-    \frac{f(z)-f(w)}{z-w} - g(z) = \frac{s_n(z) - s_n(w)}{z-w} + \frac{R_n(z) - R_n(w)}{z-w} - g(z) =
-$$
-$$
-= \biggl[\frac{s_n(z) - s_n(w)}{z-w} - s_n'(z)\biggr] + \biggl[\frac{R_n(z) - R_n(w)}{z-w}\biggr] - (g(z) - s_n'(z)).
-  $$
-  Note que
-  $$
-    \biggl|\frac{R_n(z) - R_n(w)}{z-w}\biggr| = \biggl|\frac{1}{z-w}\sum_{k=n+1}^{\infty}a_k\frac{[(z-a)^k - (w-a)^k]}{(z-a)-(w-a)}\biggr|
-$$
-$$
-= \biggl|\sum_{k=n+1}^{\infty}a_k\biggl((z-a)^{k-1} + \cdots + (w-a)^{k-1}\biggr)\biggr|
-\leq \sum_{k=n+1}^{\infty}|a_k|kr^{k-1}\to{0},
-  $$
-pois $g(r) < \infty,$ em que n tende a infinito.
-
-  Como as duas express\~oes em chaves tendem a 0 quando w tende a z, conclu\'imos que
-  $$
-    \lim_{z\to{w}}\frac{f(z)-f(w)}{z-w} = g(z)
-  $$
-e a afirma\c c\~ao segue.
-\qedsymbol
-\end{proof*}
-\begin{crl*}
-  Nas nota\c c\~oes e condi\c c\~oes da proposi\c c\~ao anterior, f \'e anal\'itica em
-B(a, R) e 
-  $$
-    a_n = \frac{f^{(n)}(a)}{n!}, n\in\mathbb{N}
-  $$
-\end{crl*}
-\begin{proof*}
-  Exerc\'icio.
-\end{proof*}
-\begin{prop*}
-  Seja G aberto e conexo. Se $f:G\rightarrow\mathbb{C}$ \'e tal que $f'(z) = 0, z\in{G},$ 
-ent\~ao f \'e constante.
-\end{prop*}
-\begin{proof*}
-  Seja $z_0\in{G}$ e considere $C = f^{-1}(\{f(z_0)\}),$ tal que C \'e n\~ao-vazio e fechado. 
-Mostremos que C \'e, tamb\'em, aberto.
-
-  Seja z um elemento de C e $r > 0$ tal que $B(z, r)\subseteq{G}$. Para todo $w\in{B(z, w)}$,
-definimos $g:[0, 1]\rightarrow\mathbb{C}$ por g(t) = f(tz + (1-t)w). Neste caso, 
-  $$
-    g'(t) = f'(tz + (1-t)w)(z-w) = 0.
-  $$
-  Como g \'e real, segue que ela \'e constante. Com isso, note que $f(w) = g(0) = g(1) =
-f(z) = f(z_0)$, tal que $w\in{C}$.
-\qedsymbol
-\end{proof*}
-\begin{example}
-  $e^z = \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty$
-\end{example}
-  Coloque $g(z) = e^ze^{z-w}, w\in\mathbb{C}$ fixo. Temos $g'(z) = (e^z)'e^{w-z} + e^z(e^{w-z})' - 0.$
-Assim, g \'e constante e, como $g(0) = e^w$, conclu\'imos que $e^w = e^ze^{w-z}$ para todo
-$z, w\in\mathbb{C}$.
-\begin{exer*}
-  Prove que, para $z, w\in\mathbb{C},$:
-  \begin{itemize}
-    \item[1)] $e^{z+w} = e^ze^w;$
-    \item[2)] $e^ze^{-z} = 1;$
-    \item[3)] $e^{\overline{z}} = \overline{(e^z)}$;
-    \item[4)] $|e^z| = e^{Re(z)}.$
-  \end{itemize}
-\end{exer*}
-\begin{example}
-  Defina, para z complexo,
-  \begin{align*}
-    &\cos{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!} \\
-    &\sin{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}.
-  \end{align*}
-\end{example}
-\begin{exer*}
-  Dado z complexo, mostre que
-  \begin{itemize}
-    \item[i)] $(\sin{(z)}' = \cos{(z)}, \quad (\cos{(z)})' = -\sin{(z)};$
-    \item[ii)] $\cos{(z)} = \frac{1}{2}\biggl(e^{iz} + e^{-iz}\biggr), \quad \sin{(z)} = \frac{1}{2}
-  \biggl(e^{iz} - e^{-iz}\biggr)$;
-    \item[iii)] $\cos^2{(z)} + \sin^2{(z)} = 1$;
-    \item[iv)] $e^{iz} = \cos{(z)} + i\sin{(z)}$.
-  \end{itemize}
-\end{exer*}
-
-\subsection{Ramos de Inversos}
-  Seja $z\in\mathbb{C}$. Procuramos $w\in\mathbb{C}$ tal que $e^w = z, z\neq{0}$. Logo, w
-deve satisfazer $|e^w| = e^{Re(w)} = |z|\Rightarrow Re(w) = \ln{|z|}$. Se w = z + iy, ent\~ao
-  $$
-    e^w = e^xe^{iy} = e^x\biggl(\cos{(y)} + i\sin{(y)}\biggr) = z = |z|\biggl(\cos{(\theta)} + i\sin{(\theta)}\biggr),
-  $$
-com $\theta = arg z$. Assim, $y = \theta + 2k\pi$ para algum k. Portanto, $w = ln|z| + i(arg z + 2k\pi), k\in\mathbb{z}$. 
-
-\begin{def*}
- Seja G um aberto conexo de $\mathbb{C}$ e $f:G\rightarrow\mathbb{C}$ cont\'inua. Diremos que f \'e um ramo de
-logar\'itmo em G se $e^{f(z)} = z, z\in{G}$.
-\end{def*}
-
-\begin{prop*}
-  Se G \'e um aberto conexo e f, g s\~ao ramos de logar\'itmos em G, ent\~ao $f(z) = g(z) + 2k\pi i$ para algum $k\in\mathbb{Z}$.
-\end{prop*}
-\begin{proof*}
-  Seja z em G. Mostraremos que 
-  $$
-    \frac{f(z) - g(z)}{2\pi i}\in\mathbb{Z}.
-  $$
-  Observe que $e^{f(z)-g(z)} = \frac{e^{f(z)}}{e^{g(z)}} = \frac{z}{z} = 1.$ Da\'i, $f(z) = g(z) + 2k\pi i$ para algum
-k inteiro, pois
-  $$
-    f(z) - g(z) = ln|1| + i(arg 1 + 2k\pi).
-  $$
-  Definimos $h:G\rightarrow\mathbb{C}$ por
-  $$
-    h(w) = \frac{f(w) - g(w)}{2\pi i}, \quad w\in{G}.
-  $$
-  De forma an\'aloga ao anterior, conclu\'imos $Im(h)\subseteq{\mathbb{Z}}$ deve ser conexo, pois h \'e cont\'inua. Assim, 
-h \'e constante, visto que os \'unicos conexos de $\mathbb{Z}$ s\~ao o vazio e conjuntos unit\'arios, e a prova segue.
-\qedsymbol
-\end{proof*}
-\begin{prop*}
-  Sejam G, $\Omega$ abertos e $f:G\rightarrow\mathbb{C}$ e $g:\Omega\rightarrow\mathbb{C}$ cont\'inuas com $f(G)\subseteq{\Omega}$ e 
-satisfazendo f(g(z)) = z, $z\in{G}$.
-  Se g \'e diferenci\'avel em z e $g'(f(z))\neq{0},$ ent\~ao 
-  $$
-    f'(z) = \frac{1}{g'(f(z))}.
-  $$
-Caso g seja anal\'itica, f tamb\'em o \'e.
-\end{prop*}
-\begin{proof*}
-  Exerc\'icio.
-\end{proof*}
-  Considere G um aberto conexo e a fun\c c\~ao $f:G\rightarrow\mathbb{C}$ dada por 
-  $$
-    f(z) = ln|z| + i\theta, \quad \theta = arg(z)\in{(-\pi, \pi)}
-  $$
-\'e dita ser o ramo principal do logar\'itmo.
-
-\end{document}
-
-  Exerc\'icio.
-\qedsymbol
-\end{proof*}
-
-\begin{prop*}
-  Seja $f(z) = \sum\limits_{n=0}^{\infty}a_n(z-a)^n$ com raio de converg\^encia R. Ent\~ao,
-f \'e infinitamente diferenci\'avel em B(a, R). Al\'em disso, a derivada de ordem k \'e
-  $$
-    f^{(k)}(z) = \sum_{n=k}^{\infty}a_n\frac{n!}{(n-k)!}(z-a)^{n-k}, k\in\mathbb{N}
-  $$
-com mesmo raio de converg\^encia de f.
-\end{prop*}
-\begin{proof*}
-  A \'ultima afirma\c c\~ao fica como exerc\'icio. 
-
-  Consideremos 
-\begin{align*} 
-  &s_n(z) = \sum_{k=0}^{n}a_k(z-a)^k, \quad R_n(z)= f(z) - s_n(z), \\
-  &g(z) = \sum_{n=1}^{\infty}a_nn(z-a)^{n-1}, \quad z\in{B(a, R), n\in\mathbb{N}}.
-\end{align*} 
-  Seja $\delta > 0$ tal que $B(z, \delta)\subseteq{B(a, r)}$ com $|z| < r < R.$ Assim, para 
-w em $B(z, \delta)$
-  $$
-    \frac{f(z)-f(w)}{z-w} - g(z) = \frac{s_n(z) - s_n(w)}{z-w} + \frac{R_n(z) - R_n(w)}{z-w} - g(z) =
-= \biggl[\frac{s_n(z) - s_n(w)}{z-w} - s_n'(z)\biggr] + \biggl[\frac{R_n(z) - R_n(w)}{z-w}\biggr] - (g(z) - s_n'(z)).
-  $$
-  Note que
-  $$
-    \biggl|\frac{R_n(z) - R_n(w)}{z-w}\biggr| = \biggl|\frac{1}{z-w}\sum_{k=n+1}^{\infty}a_k\frac{[(z-a)^k - (w-a)^k]}{(z-a)-(w-a)}\biggr|
-= \biggl|\sum_{k=n+1}^{\infty}a_k\biggl((z-a)^{k-1} + \cdots + (w-a)^{k-1}\biggr)\biggr|
-\leq \sum_{k=n+1}^{\infty}|a_k|kr^{k-1}\to{0},
-  $$
-pois $g(r) < \infty,$ em que n tende a infinito.
-
-  Como as duas express\~oes em chaves tendem a 0 quando w tende a z, conclu\'imos que
-  $$
-    \lim_{z\to{w}}\frac{f(z)-f(w)}{z-w} = g(z)
-  $$
-e a afirma\c c\~ao segue.
-\qedsymbol
-\end{proof*}
-\begin{crl*}
-  Nas nota\c c\~oes e condi\c c\~oes da proposi\c c\~ao anterior, f \'e anal\'itica em
-B(a, R) e 
-  $$
-    a_n = \frac{f^{(n)}(a)}{n!}, n\in\mathbb{N}
-  $$
-\end{crl*}
-\begin{proof*}
-  Exerc\'icio.
-\end{proof*}
-\begin{prop*}
-  Seja G aberto e conexo. Se $f:G\rightarrow\mathbb{C}$ \'e tal que $f'(z) = 0, z\in{G},$ 
-ent\~ao f \'e constante.
-\end{prop*}
-\begin{proof*}
-  Seja $z_0\in{G}$ e considere $C = f^{-1}(\{f(z_0)\}),$ tal que C \'e n\~ao-vazio e fechado. 
-Mostremos que C \'e, tamb\'em, aberto.
-
-  Seja z um elemento de C e $r > 0$ tal que $B(z, r)\subseteq{G}$. Para todo $w\in{B(z, w)}$,
-definimos $g:[0, 1]\rightarrow\mathbb{C}$ por g(t) = f(tz + (1-t)w). Neste caso, 
-  $$
-    g'(t) = f'(tz + (1-t)w)(z-w) = 0.
-  $$
-  Como g \'e real, segue que ela \'e constante. Com isso, note que $f(w) = g(0) = g(1) =
-f(z) = f(z_0)$, tal que $w\in{C}$.
-\qedsymbol
-\end{proof*}
-\begin{example}
-  $e^z = \sum_{n=0}^{\infty}\frac{z^n}{n!}, R = \infty$
-\end{example}
-  Coloque $g(z) = e^ze^{z-w}, w\in\mathbb{C}$ fixo. Temos $g'(z) = (e^z)'e^{w-z} + e^z(e^{w-z})' - 0.$
-Assim, g \'e constante e, como $g(0) = e^w$, conclu\'imos que $e^w = e^ze^{w-z}$ para todo
-$z, w\in\mathbb{C}$.
-\begin{exer*}
-  Prove que, para $z, w\in\mathbb{C},$:
-  \begin{itemize}
-    \item[1)] $e^{z+w} = e^ze^w;$
-    \item[2)] $e^ze^{-z} = 1;$
-    \item[3)] $e^{\overline{z}} = \overline{(e^z)}$;
-    \item[4)] $|e^z| = e^{Re(z)}.$
-  \end{itemize}
-\end{exer*}
-\begin{example}
-  Defina, para z complexo,
-  \begin{align*}
-    &\cos{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!} \\
-    &\sin{(z)} = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}.
-  \end{align*}
-\end{example}
-\begin{exer*}
-  Dado z complexo, mostre que
-  \begin{itemize}
-    \item[i)] $(\sin{(z)}' = \cos{(z)}, \quad (\cos{(z)})' = -\sin{(z)};$
-    \item[ii)] $\cos{(z)} = \frac{1}{2}\biggl(e^{iz} + e^{-iz}\biggr), \quad \sin{(z)} = \frac{1}{2}
-  \biggl(e^{iz} - e^{-iz}\biggr)$;
-    \item[iii)] $\cos^2{(z)} + \sin^2{(z)} = 1$;
-    \item[iv)] $e^{iz} = \cos{(z)} + i\sin{(z)}$.
-  \end{itemize}
-\end{exer*}
-
-\subsection{Ramos de Inversos}
-  Seja $z\in\mathbb{C}$. Procuramos $w\in\mathbb{C}$ tal que $e^w = z, z\neq{0}$. Logo, w
-deve satisfazer $|e^w| = e^{Re(w)} = |z|\Rightarrow Re(w) = \ln{|z|}$. Se w = z + iy, ent\~ao
-  $$
-    e^w = e^xe^{iy} = e^x\biggl(\cos{(y)} + i\sin{(y)}\biggr) = z = |z|\biggl(\cos{(\theta)} + i\sin{(\theta)}\biggr),
-  $$
-com $\theta = arg z$. Assim, $y = \theta + 2k\pi$ para algum k. Portanto, $w = ln|z| + i(arg z + 2k\pi), k\in\mathbb{z}$. 
-
-\begin{def*}
- Seja G um aberto conexo de $\mathbb{C}$ e $f:G\rightarrow\mathbb{C}$ cont\'inua. Diremos que f \'e um ramo de
-logar\'itmo em G se $e^{f(z)} = z, z\in{G}$.
-\end{def*}
-
-\begin{prop*}
-  Se G \'e um aberto conexo e f, g s\~ao ramos de logar\'itmos em G, ent\~ao $f(z) = g(z) + 2k\pi i$ para algum $k\in\mathbb{Z}$.
-\end{prop*}
-\begin{proof*}
-  Seja z em G. Mostraremos que 
-  $$
-    \frac{f(z) - g(z)}{2\pi i}\in\mathbb{Z}.
-  $$
-  Observe que $e^{f(z)-g(z)} = \frac{e^{f(z)}}{e^{g(z)}} = \frac{z}{z} = 1.$ Da\'i, $f(z) = g(z) + 2k\pi i$ para algum
-k inteiro, pois
-  $$
-    f(z) - g(z) = ln|1| + i(arg 1 + 2k\pi).
-  $$
-  Definimos $h:G\rightarrow\mathbb{C}$ por
-  $$
-    h(w) = \frac{f(w) - g(w)}{2\pi i}, \quad w\in{G}.
-  $$
-  De forma an\'aloga ao anterior, conclu\'imos $Im(h)\subseteq{\mathbb{Z}}$ deve ser conexo, pois h \'e cont\'inua. Assim, 
-h \'e constante, visto que os \'unicos conexos de $\mathbb{Z}$ s\~ao o vazio e conjuntos unit\'arios, e a prova segue.
-\qedsymbol
-\end{proof*}
-\begin{prop*}
-  Sejam G, $\Omega$ abertos e $f:G\rightarrow\mathbb{C}$ e $g:\Omega\rightarrow\mathbb{C}$ cont\'inuas com $f(G)\subseteq{\Omega}$ e 
-satisfazendo f(g(z)) = z, $z\in{G}$.
-  Se g \'e diferenci\'avel em z e $g'(f(z))\neq{0},$ ent\~ao 
-  $$
-    f'(z) = \frac{1}{g'(f(z))}.
-  $$
-Caso g seja anal\'itica, f tamb\'em o \'e.
-\end{prop*}
-\begin{proof*}
-  Exerc\'icio.
-\end{proof*}
-  Considere G um aberto conexo e a fun\c c\~ao $f:G\rightarrow\mathbb{C}$ dada por 
-  $$
-    f(z) = ln|z| + i\theta, \quad \theta = arg(z)\in{(-\pi, \pi)}
-  $$
-\'e dita ser o ramo principal do logar\'itmo.
-
+\subsection{Aula 05 - 10/01/2023}
 \end{document}

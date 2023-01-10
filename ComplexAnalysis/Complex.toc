@@ -16,3 +16,13 @@
 \contentsline {subsection}{\numberline {2.4}Compactos}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Continuidade}{9}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Converg\^encia Uniforme}{10}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Aula 03 - 06/01/2023}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motiva\c c\~oes}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}S\'eries de Pot\^encias}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Fun\c c\~oes Anal\'iticas}{12}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Aula 04 - 09/01/2023}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motiva\c c\~oes}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Equa\c c\~oes de Cauchy-Riemann}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Fun\c c\~oes Harm\^onicas}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Transformadas de M\"{o}bius}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Aula 05 - 10/01/2023}{14}{subsection.4.5}%
