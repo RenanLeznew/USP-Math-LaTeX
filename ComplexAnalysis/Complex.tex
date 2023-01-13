@@ -36,8 +36,19 @@
 
   \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
 
-  \title{Complex Analysis}
-  \author{Renan Wenzel}
+  \title{Fun\c c\~oes de Vari\'aveis Complexas}
+  \vspace{1.5cm}
+  \author{Prof. Tha\'is Jord\~ao\\
+  \vspace{2cm}\\
+  Notas por:\\
+  Jo\~ao Vitor\\
+  Lucas Giraldi Almeida Coimbra\\
+  Renan Wenzel\\
+  \vspace{4cm}\\
+  \href{https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis}{GitHub com o Arquivo das Notas (Link clic\'avel)}\\
+  \url{https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis}\\
+  \vspace{4cm}\\
+}
   \date{\today}
 
   \begin{document}
@@ -271,6 +282,7 @@ que $B(w, r)\subseteq{G-C}$. Caso contr\'ario, existe s em B(w, r) contido, tamb
 ligando s a z e s a w, uma contradi\c c\~ao, pois isso conectaria w a z, mesmo com w no complementar de z. Portanto, o complementar
 \'e aberto e C \'e aberto e fechado. \qedsymbol
 \end{proof*}
+\newpage
 
 \section{Aula 02 - 05/01/2023}
 \subsection{Motiva\c c\~oes}
@@ -537,6 +549,7 @@ tais que
   $$
   Se $\sum\limits_{n=0}^{\infty}c_{n} < \infty,$ ent\~ao $\sum\limits_{k=1}^{n}u_{k}\to \sum\limits_{n=0}^{\infty}u_{n}$ uniformemente.
 \end{theorem*}
+\newpage
 
 \section{Aula 03 - 06/01/2023}
 \subsection{Motiva\c c\~oes}
@@ -807,6 +820,7 @@ Caso g seja anal\'itica, f tamb\'em o \'e.
   f(z) = \ln{|z|} + i \theta, \quad \theta=\arg{(z)}\in{(-\pi, \pi)}
   $$
 de ramo principal do logar\'itmo.
+\newpage
 
 \section{Aula 04 - 09/01/2023}
 \subsection{Motiva\c c\~oes}
@@ -940,12 +954,13 @@ em qualquer faixa horizontal de largura menor que $2\pi.$
 \end{crl*}
   Se G \'e uma faixa aberta de comprimento $2\pi$, o ramo de log faz o caminho inverso. Adicionalmente,
 $\frac{1}{z}$ \'e a sua derivada.
+\newpage
 
 \section{Aula 05 - 10/01/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
   \item Transforma\c c\~oes de M\"{o}bius elementares;
-  \item aaaaaaaaa
+  \item Consequ\^encias Geom\'etricas da Transforma\c c\~ao de M\"{o}bius;
 \end{itemize}
 \subsection{Transforma\c c\~oes de M\"{o}bius}
  \begin{def*}
@@ -958,13 +973,13 @@ $\frac{1}{z}$ \'e a sua derivada.
   $$
 chamada tranforma\c c\~ao de M\"{o}bius.
 \end{def*}
-  Consideraremos a tranforma\c c\~ao como sendo $T:\mathbb{C}_{\infty}\rightarrow \mathbb{C}_{infty}$ da seguinte
+  Consideraremos a tranforma\c c\~ao como sendo $T:\mathbb{C}_{\infty}\rightarrow \mathbb{C}_{\infty}$ da seguinte
 maneira:
 \begin{align*}
   &T(z) = \frac{az + b}{cz + d}, \quad z\neq -\frac{d}{c} \\
-  &T(-\frac{d}{c}) = \infty \quad\text{ e }\quad T(\infty) = \frac{a}{c}.
+  &T\biggl(-\frac{d}{c}\biggr) = \infty \quad\text{ e }\quad T(\infty) = \frac{a}{c}.
 \end{align*}
-Neste caso, $T ^{-1}(z) = \frac{dz - b}{-cz + a}, \quad z\in \mathbb{C}_{\infty}.$ Note, tamb\'em, que os coeficientes
+Neste caso, $T ^{-1}(z) = \displaystyle\frac{dz - b}{-cz + a}, \quad z\in \mathbb{C}_{\infty}.$ Note, tamb\'em, que os coeficientes
 de uma Transforma\c c\~ao de M\"{o}bius s\~ao unicamente determinados, pois 
   $$
   \frac{az + b}{cz + d} = \frac{(\lambda a)z + (\lambda b)}{(\lambda c)z + (\lambda d)}, \quad \lambda\neq0.
@@ -983,7 +998,7 @@ de uma Transforma\c c\~ao de M\"{o}bius s\~ao unicamente determinados, pois
    Toda TM \'e composi\c c\~ao de TM's elementares.
  \end{prop*}
  \begin{proof*}
-   Seja $T\in{TM}$ dada por $T(z) = \frac{az + b}{cz + d}.$
+   Seja $T\in{TM}$ dada por $T(z) = \displaystyle\frac{az + b}{cz + d}.$
 
    Caso 1) Se c = 0, ent\~ao $T(z) = \frac{az}{d} + \frac{b}{d}.$ Neste caso, $H(z) = \frac{a}{d}z \text{ e } S(z) = z + \frac{b}{d},$
    tal que $T(z) = S\circ{H(z)}$
@@ -1002,7 +1017,7 @@ Com isso, temos
    \item[1)]Mostre que $(TM, \circ)$ \'e um grupo.
    \item[2)] Se $T\in{TM}$ \'e tal que $T(z_{i}) = z_{i}, i = 1, 2, 3, z_{i}\neq z_{j}, i\neq{j},$ ent\~ao $T = Id_{\mathbb{C}_{\infty}}.$
  \end{itemize}
-\end{exer*}
+\end{exer*} 
  \begin{prop*}
    Sejam $z_1, z_2, z_3\in \mathbb{C}_{\infty}, $ distintos. Existe uma \'unica $T\in{TM}$ tal que
    $$
@@ -1018,10 +1033,10 @@ Com isso, temos
   \underline{Exist\^encia}: Defina $T:\mathbb{C}_{\infty}\rightarrow \mathbb{C}_{\infty}$ por 
   $$
   T(z) = \left\{\begin{array}{ll}
-      \frac{\frac{z-z_2}{z-z_3}}{\frac{z_1-z_2}{z_1-z_3}}, \quad z_{i}\in \mathbb{C}, i=1, 2, 3; \\
-      \frac{z-z_2}{z-z_3}, \quad z_1 = \infty; \\
-      \frac{z_1 - z_3}{z - z_3}, \quad z_2 = \infty; \\
-      \frac{z - z_2}{z_1 - z_2}, \quad z_3 = \infty.
+      \displaystyle\frac{\frac{z-z_2}{z-z_3}}{\frac{z_1-z_2}{z_1-z_3}}, \quad z_{i}\in \mathbb{C}, i=1, 2, 3; \\\
+      \displaystyle\frac{z-z_2}{z-z_3}, \quad z_1 = \infty; \\\
+      \displaystyle\frac{z_1 - z_3}{z - z_3}, \quad z_2 = \infty; \\\
+      \displaystyle\frac{z - z_2}{z_1 - z_2}, \quad z_3 = \infty.
     \end{array}\right.,
   $$
   tal que $T\in{TM}$ satisfazendo a hip\'otese. \qedsymbol
@@ -1085,20 +1100,308 @@ $z_{i}\in{C}$ para algum c\'irculo.
    $$
    o que implica em $(cw + d)(\bar{a}\bar{w} + \bar{b}) = (aw + b)(\bar{c}\bar{w} + \bar{d}).$ Logo, 
    \begin{equation}\label{MTSF}
-     (c\bar{a} - a\bar{c})|w|^2 + (c\bar{b} - a\bar{d})w + (d\bar{a} - b\bar{c})\bar{w} + (d\bar{b} - b\bar{d}) = 2iIm(\bar{a}c) + 2i(Im(w(bc - ad)) + 2iIm(d\bar{b})) = 0.
+     (c\bar{a} - a\bar{c})|w|^2 + (c\bar{b} - a\bar{d})w + (d\bar{a} - b\bar{c})\bar{w} + (d\bar{b} - b\bar{d}) = 
+     2iIm(a\bar{c}) + 2i(Im(w(-\bar{b}c + a\bar{d})) + 2iIm(b\bar{d})) = 0.
   \end{equation}
 
   \underline{Caso 1.1}: $Im(\bar{a}c) = 0$, seja $\alpha = bc - ad.$ Segue de \ref{MTSF} que 
   $$
     2i(Im(w \alpha) + Im(d\bar{b})) = 0.
   $$
-Logo, $Im(\alpha w + \beta) = 0, \beta = Im(d\bar{b})$. Assim, $\alpha w + \beta\in r,$ em que $r: \frac{-\beta zt}{\alpha}, t\in \mathbb{R}.$  
+Logo, $Im(\alpha w + \beta) = 0, \beta = Im(d\bar{b})$. Assim, $\alpha w + \beta\in r,$ em que $r: \frac{-\beta t}{\alpha}, t\in \mathbb{R}.$  
 
 \underline{Caso 1.2}: $\rho = Im(\bar{a}c)\neq{0}$. Seja $\gamma = c\bar{b} - a\bar{d}.$ Ent\~ao, dividindo \ref{MTSF} por $2i\rho$, temos
  \begin{align*}
-   &|w|^{2} + Im(w \frac{\gamma}{\rho}) + Im(\frac{d\bar{b}}{\rho}) = 0 \\
-   &\biggl(|w + \frac{\gamma}{\rho}|^2 + |\frac{\gamma}{\rho}|^2\biggr) = -Im(\frac{d\bar{b}}{\rho}) \\
-   &|w - (-\frac{\gamma}{\rho})|^2 = -Im(\frac{d\bar{b}}{\rho}) + |\frac{\gamma}{\rho}|^2 > 0 \text{ (Exerc\'icio).}
- \end{align*} 
+   &|w|^{2} + Im(\frac{\gamma}{\rho})w + Im(\frac{d\bar{b}}{\rho}) = 0 \\
+   &|w - \gamma|^2 = (|\gamma|^2 - \beta)^{\frac{1}{2}} = r > 0.
+  \end{align*}
 \end{proof*}
+\newpage
+
+\section{Aula 06 - 12/01/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Transforma\c c\~oes de M\"{o}bius e Harm\^onicos Conjugados;
+   \item Simetrias e Orienta\c c\~ao no Plano $\mathbb{C};$
+   \item Integra\c c\~ao Complexa.
+ \end{itemize}
+\subsection{Exerc\'icios de Hoje }
+\subsubsection{J\'essica}
+\begin{itemize}
+  \item[a)] $(7+i, 1, 0, \infty)$
+  \item[b)] $(2, 1-i, 1, 1+i)$
+  \item[c)] $(0, 1, i, -1)$
+  \item[d)] $(i-1, \infty, 1+i, 0)$
+\end{itemize}
+  Utilizaremos os seguintes casos: Se $z_{2}, z_{3}, z_{4}\in \mathbb{C},$ ent\~ao $S(z) = \displaystyle \frac{\frac{z-z_{3}}{z-z_{4}}}{\frac{z_{2} - z_{3}}{z_{2} - z_{4}}}.$
+Caso $z_{3} = \infty, \displaystyle S(z) = \frac{z - z_{3}}{z - z_{4}}.$ Por fim, se $z_{4} = \infty, S(z) = \displaystyle \frac{z - z_{3}}{z_{2} - z_{3}}.$ 
+  
+  Assim, vamos \`as contas.
+ \begin{itemize}
+   \item[a)] $$S(7 + i) = \frac{7 + i}{1} = 7 + i;$$
+   \item[b)] $$S(2) = \frac{\frac{2 -1}{2 - 1 - i}}{\frac{1 - i - 1}{1 - i - 1 - i}} = \frac{\frac{1}{1-i}}{\frac{i}{2i}} = \frac{2}{1-i}\frac{1+i}{1+i} = \frac{2}{2}(1 + i) = 1 + i$$
+   \item[c)] $$S(0) = \frac{\frac{0-i}{0+1}}{\frac{1-i}{2}} = \frac{-2i}{1-i}\frac{1+i}{1+i} = \frac{-2i}{2}(1+i) = 1-i;$$
+   \item[d)] $$S(1i) = \frac{i-1-1-i}{i-1-0} = \frac{-2}{i-1}\frac{1+i}{1+i} = \frac{-2}{-2}1+i = 1+i.$$
+ \end{itemize}
+
+\subsubsection{Tiago}
+  Vamos mostrar que $T(\mathbb{R}_\infty) = \mathbb{R}_{\infty}\Longleftrightarrow a, b, c, d\in \mathbb{R}$.
+ $\Rightarrow)$ Suponha que $T(\mathbb{R}_\infty) = \mathbb{R}_\infty, T(z_{0}) = 0, z_{0}\in \mathbb{R}_\infty.$ Ent\~ao,
+  $$
+  \frac{az_{0} + b}{cz_{0} + d} = 0\Rightarrow az_{0} + b = 0\Rightarrow z_{0} = \frac{-b}{a}\in \mathbb{R}_\infty. 
+  $$
+  No caso de $z_\infty \in \mathbb{R}_\infty = \infty, $ ent\~ao
+  $$
+  \frac{az_{\infty} + b}{cz_{\infty} + d} = \infty\Rightarrow \frac{cz_{\infty} + d}{az_{\infty} + b} = 0\Rightarrow cz_\infty + d = 0
+\Rightarrow z_\infty = \frac{-d}{c}\in \mathbb{R}_\infty.
+  $$
+  Agora, para $z_{1}\in \mathbb{R}_{\infty}, T(z_{1}) = 1,$ tal que 
+  $$
+    \frac{az_{1} + b}{cz_{1} + d} = 1\Rightarrow az_{1} + b = cz_{1} + d\Rightarrow z_{1}(a - c) = db\Rightarrow az_{1}\biggl(1 - \frac{c}{a}\biggr) = db
+ \Rightarrow z_{1}\biggl(1 - \frac{c}{a}\biggr) = \frac{db}{a}
+  $$
+  $$
+  \Rightarrow \frac{z_{1}}{c} - \frac{z_1}{a} = \frac{\frac{d}{a}}{c} - \frac{\frac{b}{a}}{c}\Rightarrow \frac{z_1}{c} - \frac{z_1}{a} =
+= \frac{r_2}{a} - \frac{r_1}{c}\Rightarrow \frac{z_1 + r_1}{c} = \frac{r_2 + z_1}{a}\Rightarrow \frac{z_1 + r}{z_1 + r_2} = \frac{c}{a}
+  $$
+  $$
+ \Rightarrow \frac{d}{a} = \frac{d}{c}\frac{c}{a}\in \mathbb{R}_{\infty} = r_2r_3
+  $$
+  Logo, colocando $r_{1} = \frac{b}{a}, r_2 = \frac{d}{c}, r_3 = \frac{c}{a},$ encontramos os coeficientes
+  $$
+    Tz = \frac{az + b}{cz + d} = \frac{a}{a}\frac{z + \frac{b}{a}}{z \frac{c}{a} + \frac{d}{a}} = \frac{z + r_1}{r_3z + r_2r_3}.
+  $$
+
+  $\Leftarrow)$ Para provar esse lado, considere $z\in \mathbb{R}_\infty.$ Ent\~ao, $T(z) = \frac{az + b}{cz + d}\in \mathbb{R}_\infty.$ Portanto,
+  $T(\mathbb{R}_\infty) = \mathbb{R}_\infty.$  \qedsymbol
+
+  \subsection{Final de Transforma\c c\~oes de M\"{o}bius.}
+  A continua\c c\~ao da prova da proposi\c c\~ao \'e exerc\'icio.
+ \begin{theorem*}
+   Transforma\c c\~oes de M\"{o}bius levam c\'irculos em c\'irculos.
+ \end{theorem*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+
+  \subsection{Simetria e Orienta\c c\~ao.}
+  Dada uma circunfer\^encia $\Omega\text{ e }z_1, z_2, z_3\in \Omega$ distintos, diremos que z e z* s\~ao sim\'etricos se
+  $[z^*, z_1, z_2, z_3] = \overline{[z, z_1, z_2, z_3]}$ 
+ \begin{example}
+   Um ponto \'e sim\'etrico a si mesmo se $z\in{C}$ com C o c\'irculo determinado por $z_1, z_2, z_3.$
+ \end{example}
+\begin{exer*}
+  Mostre que a defini\c c\~ao de simetria n\~ao depende da escolha dos $z_{i}'s.$
+\end{exer*}
+  A ideia geom\'etrica por tr\'as desse conceito \'e a seguinte: Considere $\gamma$ uma reta e $z_1, z_2\in \mathbb{C}$
+e coloque $z_3 = \infty.$ Dizer que z e z* s\~ao sim\'etricos equivale a
+  $$
+  [z^*, z_1, z_2, \infty] = \overline{[z, z_1, z_2, z_3]}\Longleftrightarrow \frac{z^* - z_2}{z_1 - z_2} = \overline{\biggl(\frac{z - z_2}{z_1 - z_2}\biggr)} =
+  = \biggl(\frac{\overline{z} - \overline{z_2}}{\overline{z_1} - \overline{z_2}}\biggr).
+  $$
+  Assim, obtemos
+  $$
+  \frac{z^* - z_2}{z_1 - z_2} = \frac{\overline{z} - \overline{z_2}}{\overline{z_1} - \overline{z_2}} 
+  $$
+  o que implica
+  $$
+  \frac{z^* - z_2}{|z_1 - z_2|^2} = \overline{z} - \overline{z_2} \quad \text{(Exerc\'icio: } |z^* - z_2| = |z - z_2|)
+  $$
+  para qualquer $z_2$ em r. Logo, d(z*, r) = d(z, r). Al\'em disso, $[z^*, z]\perp{r}.$
+
+  A seguir, vamos lidar com o conceito de simetria com rela\c c\~ao \`a um c\'irculo de $\mathbb{C}.$ De fato, tome
+  \begin{align*}
+  &\Omega = \{z: |z - a| = r\}, \quad r > 0. \\
+  &[z^*, z_1, z_2, z_3] = \overline{[z, z_1, z_2, z_3]} = \quad \text{(Aplicando transla\c c\~ao, invers\~ao, homotetia:)} \\
+  & = [\bar{z}, \bar{z_1}, \bar{z_2}, \bar{z_3}] = \biggl[\frac{r^2}{\bar{z} - \bar{a}}, \frac{r^2}{\bar{z_1} - \bar{a}}, \frac{r^2}{\bar{z_2} - \bar{a}}, \frac{r^2}{\bar{z_3} - \bar{a}}\biggr] \\
+  & = \biggl[\frac{r^2 + a}{\bar{z} - \bar{a}}, z_1 - a, z_2 - a, z_3 - a\biggr].
+  \end{align*}
+  Decorre que 
+  $$
+  z^* = a + \frac{r^2}{\bar{z} - \bar{a}}
+  $$
+ \begin{exer*}
+   $z^*\in{l}:= \{a + t(z-a): 0 < t < \infty\} $
+ \end{exer*}
+ \newpage
+
+ \section{Aula 07 - 13/01/2023}
+ \subsection{Motiva\c c\~oes}
+  \begin{itemize}
+    \item Simetrias e Transforma\c c\~oes d M\"{o}bius;
+    \item Orienta\c c\~ao;
+    \item Fun\c c\~oes de Varia\c c\~ao Limitada.
+  \end{itemize}
+  \subsection{Exerc\'icios de Hoje}
+  \subsubsection{Ana L\'idia}
+  Dado z em C, temos $\bar{z}$ em C tamb\'em, tal que $|z|^2 = z\bar{z} = 1$. Como queremos T(C) = C, $|T(z)| = 1$ e 
+  $T(z)\overline{T(z)} = 1\forall z\in{C}$. Note que 
+ \begin{align*}
+   T(z)\overline{T(z)} &= 1\Longleftrightarrow \frac{az + b}{cz + d}\frac{\overline{az}+\overline{b}}{\overline{cz} + \overline{d}} = 1\Longleftrightarrow \\ 
+                       &0 = z\overline{z}\biggl(a\overline{a} - c\overline{c}\biggr) + \overline{z}\biggl(b\overline{a} - d\overline{c}\biggr) + z(\overline{b}a - \overline{d}c) + b\overline{b} - d\overline{d}.
+ \end{align*}
+ Como $z\bar{z} - 1 = 0$, temos
+ $$
+   \left\{\begin{array}{ll}
+      a\bar{a} - c\bar{c} = 1 \\
+      b\overline{a} - d\overline{c} = 0 \\
+      a\overline{b} - c\overline{d} = 0 \\
+      b\overline{b} - d\overline{d} = -1
+    \end{array}\right.
+ $$
+ Da\'i, 
+\begin{align*}
+  |a|^2 - |c|^2 = 1, |b|^2 - |d|^2 = -1\Rightarrow|a|^2 - |c|^2 = -|b|^2 + |d|^2\Rightarrow |a|^2 + |b|^2 = |c|^2 + |d|^2.
+\end{align*}
+  Assim, as condi\c c\~oes suficientes para o sistema s\~ao
+  $$
+  a\overline{b} - c\overline{d} = 0, \quad \text{ e } |a|^2 + |b|^2 = |c|^2 + |d|^2.
+  $$
+  Para a condi\c c\~ao necess\'aria, suponha $c = \lambda\overline{b}.$ Ent\~ao, 
+  $$
+  a\overline{b} - \lambda\overline{b}\overline{d} = 0\Rightarrow (a - \lambda\overline{d})\overline{b} = 0\Rightarrow a = \lambda\overline{d}\Longleftrightarrow d = \frac{\overline{a}}{\lambda}
+  $$
+  \subsubsection{Jo\~ao Vitor Occhiucci}
+  Do Teorema 3.14, sabemos transformações de M\"{o}bius levam c\'irculos em c\'irculos, portanto
+  $T(\mathbb{R}_\infty) = \mathbb{R}_\infty$ é equivalente a $Tz = (z, z_2, z_3, z_4)$ com $z_2, z_3, z_4 \in \mathbb{R}_\infty$ distintos. Ademais, do
+exercício 3.7, temos
+ \begin{align*}
+  z_2 = \frac{d - b}{a - c}\\
+  z_3 = -\frac{b}{a} \\
+  z_4 = -\frac{d}{c}
+ \end{align*}
+  Portanto, \'e imediato que se existirem a, b, c e d reais para T, então $z_2, z_3, z_4$ estarão em $\mathbb{R}_\infty$ 
+e, consequentemente, $T(\mathbb{R}_\infty) = \mathbb{R}_\infty.$
+Por outro lado, se tivermos uma transformação de M\"{o}bius T, tal que $T(\mathbb{R}_\infty) = \mathbb{R}_\infty$, então
+ $T(z) = (z, z_2, z_3, z_4)$ com $z_2, z_3, z_4 \in \mathbb{R}_\infty$ distintos. Daí, tome
+ $$
+   a = \frac{1}{z_2 - \_3}, b = \frac{z_3}{z_2 - z_3}, c = \frac{1}{z_2 - z_4}\text{ e }d = \frac{z_4}{z_2 - \_4}
+ $$
+  e
+  $$
+  Uz = \frac{az + b}{cz + d}
+  $$
+  Veja que $Uz_2 = 1, Uz_3 = 0 \text{ e } Uz_4 = \infty$, portanto, pela proposição 3.9, U = T, ou seja, podemos
+escolher a, b, c e d reais tais que $Tz =\displaystyle \frac{az + b}{cz + d}$ .
+  \subsection{Continuando Simetrias}
+ \begin{prop*}
+   Transforma\c c\~oes de M\"{o}bius levam pontos sim\'etricos em pontos sim\'etricos.
+ \end{prop*}
+ \begin{proof*}
+  Seja l uma circunfer\^encia e z e z* sim\'etricos com rela\c c\~ao \`a $\Omega.$  Devemos mostrar que T(z), T(z*) s\~ao sim\'etricos
+com rela\c c\~ao a $T(\Omega)$. Em outras palavras, queremos 
+  $$
+  [T(z), T(z_{1}), T(z_2), T(z_3)] = \overline{[T(z^*), T(z_1), T(z_2), T(z_3)]}.
+  $$
+  (Fica como exerc\'icio mostrar que $[T(z), T(z_{1}), T(z_2), T(z_3)] = [\bar{z}, \bar{z_1}, \bar{z_2}, \bar{z_3}]$).
+\end{proof*}
+\begin{def*}
+  Dada uma circunfer\^encia $\Omega$ e uma tripla $z_{i}\in \Omega, i = 1, 2, 3,$ dizemos que esta tripla \'e uma orienta\c c\~ao.
+Definimos o conjunto
+  $$
+    D_{l} = \{z: Im[z, z_1, z_2, z_3] > 0\}
+  $$
+  como o lado direito de l. O lado esquerdo, por outro lado, \'e 
+  $$
+    E_{l} = \{z: Im[z, z_1, z_2, z_3] < 0\}.
+  $$
+\end{def*}
+ \begin{example}
+   Um circuito passando por $\infty < z_1, z_2, z_3\text{ em }\mathbb{R}_\infty.$ Seja $T(z) = [z, z_1, z_2, z_3], z\in \mathbb{R}_\infty$. 
+Neste caso, $T(z) = \frac{az + b}{cz + d}, a, b, c, d\in \mathbb{R}_\infty$. Assim, 
+  $$
+  \frac{az + b}{cz + d}\frac{c\bar{z} + d}{c\bar{z} + d} = \frac{ac|z|^2 + adz + cb\bar{z} + bd}{|cz+d|^2}.
+  $$
+  Logo, $Im(T(z)) > 0\Longleftrightarrow Im\biggl[(ad-bc)z\biggr] > 0.$ Portanto, se $\Omega$ \'e o c\'irculo,
+  $$ 
+  D_{\Omega} = \{z: (ad - bc)Im(z) > 0.\}
+  $$
+ \end{example}
+ \begin{prop*}
+   Sejam $\Omega_1, \Omega_2$ circunfer\^encias em $\mathbb{C}_\infty$ e T uma TM com $T(\Omega_1) = \Omega_2.$ Ent\~ao, T preserva
+  orienta\c c\~ao.
+ \end{prop*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+ \begin{example}
+   Seja $D = \{z: Re z > 0\}, D^U = \{z: |z| < 1\} $. Seja $\Omega_1$ o c\'irculo e $\Omega_2$ dados por 
+  \begin{align*}
+    \Omega_1 = \{z: z = iy, y\in \mathbb{R}\} \\
+    \Omega_2 = \{e^{iy}, y\in \mathbb{R}.\}
+  \end{align*}
+  Assim,
+ \begin{align*}
+   D_{\Omega_1} = \{z: Im[z, -i, 0, i] > 0\} = \{z: Im(iz) > 0\} = \{z: Re(z) > 0\}. \\
+   D_{\Omega_2} = \{z: Im[z, -i, -1, i] > 0\} = \{z: |z| < 1\}.
+ \end{align*}
+ A TM que leva $\Omega_1\text{ em }\Omega_2$ \'e dada por
+ $$
+ T(z) = \frac{z-1}{z+1}, 
+ $$
+ e $M(z) = \frac{e^{z} - 1}{e^{z} + 1}$ \'e tal que $M(D) = D^U.$
+\end{example}
+
+ \subsection{Integra\c c\~ao Complexa}
+ \subsubsection{Fun\c c\~oes de Varia\c c\~ao Limitada (BV - Bounded Variation)}
+\begin{def*}
+ Seja $\gamma:[a, b]\rightarrow \mathbb{C}$ uma fun\c c\~ao. Diremos que $\gamma$ tem varia\c c\~ao limitada se 
+ $$
+ \sum\limits_{k=1}^{n}|\gamma(t_{k}) - \gamma(t_{k+1})| < M, \quad M > 0,
+ $$
+ com $P = \{a=t_{0}, t_1, \cdots, t_n = b\} $ parti\c c\~ao de [a, b]. Se $\gamma$ \'e BV, a quantia
+ $$
+ V(\gamma) = \sup_p v(\gamma, P)
+ $$
+ \'e chamada varia\c c\~ao de $\gamma$.
+\end{def*}
+\begin{exer*}
+  Se $P\subseteq{Q}, $ ent\~ao $V(\gamma, P)\leq{V(\gamma, Q)}$. Se $\gamma_1, \gamma_2$ s\~ao BV, ent\~ao $\alpha \gamma_1 + \beta \gamma_2$
+\'e BV para $\alpha, \beta\in \mathbb{C}.$ Al\'em disso, 
+  $$
+  V(\alpha \gamma_1 + \beta \gamma_2) \leq |\alpha|V(\gamma_1) + |\beta|V(\gamma_2)
+  $$
+\end{exer*}
+\begin{exer*}
+  Se $\gamma$ \'e BV, ent\~ao ela \'e limitada, mas a rec\'iproca n\~ao vale.
+\end{exer*}
+\begin{example}
+  Tome $\gamma:[a, b]\rightarrow \mathbb{C}, Im(\gamma) = 0$ e $\gamma$ crescente. Neste caso, $\gamma$ \'e BV. Com efeito, para
+toda parti\c c\~ao P de [a, b], temos 
+  $$
+  v(\gamma, P) = \sum\limits_{k=1}^{n}|\gamma(t_{k}) - \gamma(t_{k+1})| = \gamma(b) - \gamma(a)
+  $$
+  De fato, dada uma $\gamma$ com as duas caracter\'isticas acima, ela \'e BV se, e s\'o se, $\gamma = \gamma_1 - \gamma_2$, com
+ $\gamma_1, \gamma_2$ mon\'otonas crescentes.
+ \begin{exer*}
+   $$
+   \gamma(t) = \left\{\begin{array}{ll}
+       t\sin{(\frac{1}{t})}, \quad t\in[0, 2\pi] \\
+       0, t= 0
+  \end{array}\right.
+  $$
+  n\~ao \'e bv, apesar de ser con\'tinua.
+
+  \underline{Dica: } Tome $t_{n} =\displaystyle \frac{1}{n\pi + \frac{\pi}{2}}\Rightarrow \gamma(t_{n}) =\displaystyle \frac{(-1)^n}{n\pi + \frac{\pi}{2}}\Rightarrow
+v(\gamma, P) \geq c \sum\limits_{k=1}^{n}\frac{1}{k}.$
+ \end{exer*}
+\end{example}
+Dada $\gamma$ BV em [a, b], considere 
+  $$
+  \gamma_t:[a, t]\rightarrow \mathbb{R}
+  $$
+  a restri\c c\~ao de $\gamma.$ Ent\~ao, considerando a aplica\c c\~ao $v(\gamma_t), t\in[a, b]$, crescente e BV, defina $
+g(t) = \gamma(t) + v(\gamma_t)$, de modo que
+  $$
+  \gamma(t) = -g(t) _ v(\gamma_t).
+  $$
+  \newpage
+
+\section{Aula 08 - 16/01/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Integra\c c\~ao Complexa em Curvas;
+ \end{itemize}
+
+
 \end{document}
