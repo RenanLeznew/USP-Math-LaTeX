@@ -1065,9 +1065,12 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcti1000.tfm
 INPUT Complex.aux
 INPUT .\Complex.out
 INPUT .\Complex.out
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcti1000.pk
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcti1000.pk
 INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
@@ -1076,6 +1079,8 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
@@ -1100,6 +1105,8 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb

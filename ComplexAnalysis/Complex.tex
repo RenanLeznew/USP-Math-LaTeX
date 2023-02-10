@@ -31,6 +31,7 @@
   \newtheorem*{proof*}{\underline{Prova}}
   \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
   \newtheorem*{crl*}{\underline{Corol\'ario}}
+  \newtheorem*{lmm*}{\underline{Lema}}
   \newtheorem*{exer*}{\underline{Exerc\'icios}}
   \renewcommand\qedsymbol{$\blacksquare$}
 
@@ -41,7 +42,6 @@
   \author{Prof. Tha\'is Jord\~ao\\
   \vspace{2cm}\\
   Notas por:\\
-  Jo\~ao Vitor\\
   Lucas Giraldi Almeida Coimbra\\
   Renan Wenzel\\
   \vspace{4cm}\\
@@ -1347,7 +1347,7 @@ Neste caso, $T(z) = \frac{az + b}{cz + d}, a, b, c, d\in \mathbb{R}_\infty$. Ass
 \begin{def*}
  Seja $\gamma:[a, b]\rightarrow \mathbb{C}$ uma fun\c c\~ao. Diremos que $\gamma$ tem varia\c c\~ao limitada se 
  $$
- \sum\limits_{k=1}^{n}|\gamma(t_{k}) - \gamma(t_{k+1})| < M, \quad M > 0,
+  v(\gamma, P) = \sum\limits_{k=1}^{n}|\gamma(t_{k}) - \gamma(t_{k+1})| < M, \quad M > 0,
  $$
  com $P = \{a=t_{0}, t_1, \cdots, t_n = b\} $ parti\c c\~ao de [a, b]. Se $\gamma$ \'e BV, a quantia
  $$
@@ -1401,7 +1401,884 @@ g(t) = \gamma(t) + v(\gamma_t)$, de modo que
 \subsection{Motiva\c c\~oes}
  \begin{itemize}
    \item Integra\c c\~ao Complexa em Curvas;
+   \item Propriedades das Integrais de Linha;
+   \item Primeira F\'ormula Integral de Cauchy.
+ \end{itemize}
+  \subsection{Finalizando Fun\c c\~oes BV's}
+ \begin{prop*}
+   Se $\gamma$ \'e suave, ent\~ao $\gamma$ \'e BV e $V(\gamma) = \int_{a}^{b}|\gamma'(t)|dt.$
+ \end{prop*}
+\begin{proof*}
+  Seja $P=\{t_{0}, \cdots, t_n\} $ parti\c c\~ao de [a, b], 
+  \begin{align*}
+    v(\gamma, P) &= \sum\limits_{k=1}^{n}|\gamma(t_{k}) - \gamma(t_{k-1})|\\
+                 &= \sum\limits_{k=1}^{n}\biggl|\int_{t_{k-1}}^{t_{k}}\gamma'(t)dt\biggr|\\
+                 &\leq \sum\limits_{k=1}^{n}\int_{t_{k-1}}^{t_{k}}|\gamma'(t)|dt = \int_{a}^{b}|\gamma'(t)|dt
+  \end{align*}
+  Agora, dado $\epsilon > 0$, buscamos $\delta > 0$ tal que $|P| < \delta$ resulta em 
+  $$
+  v(\gamma) - \epsilon < v(\gamma, P)
+  $$
+  Seja $\delta > 0$ tal que $|\gamma'(s) - \gamma'(t)| < \epsilon$ para $|s - t| < \delta$. Agora, se $|P| < \delta,$ ent\~ao
+  $$
+  \biggl|\int_{a}^{b}|\gamma'(t)|dt - \sum\limits_{k=1}^{n}|\gamma'(s_{k})||t_{k}-t_{k-1}|\biggr| < \epsilon
+  $$
+  Com isso, o que quer\'iamos est\'a satisfeito e $s_{k}\in{[t_{k}, t_{k-1}]}$, o que implica em 
+    $$
+    0 < \sum\limits_{k=1}^{n}\int_{t_{k-1}}^{t_{k}}|\gamma'(s_{k}) - \gamma'(s_{k-1}) + |\gamma'(t)| dt + \epsilon < (b-a)\epsilon + 
+    \int_{a}^{b}|\gamma'(t)|dt + \epsilon. \text{ \qedsymbol}
+    $$
+\end{proof*}
+\subsection{Integrais de Linha}
+\begin{def*}
+  Seja $\gamma$ BV e $f:[a, b]\rightarrow \mathbb{C}$ limitada. Se existir I complexo tal que para todo $\epsilon > 0$ existe $\delta > 0$
+de forma que $|P| < \delta$ implica
+  $$
+    \biggl|I - \sum\limits_{k=1}^{n}f(s_{k})|\gamma(t_{k}) - \gamma(t_{k-1})\biggr| < \epsilon,
+  $$
+  para qualquer escolha de $s_{k}\in{[t_{k}, t_{k-1}]},$ dizemos que I \'e a integral de f sobre a curva $\gamma$, denotado por
+  $\int_{\gamma}^{}f\text{ ou } \int_{a}^{b}f(t)d\gamma(t)$
+\end{def*}
+ \begin{theorem*}
+   Se $\gamma$ \'e BV e f \'e cont\'inua, ent\~ao f \'e integr\'avel sobre $\gamma.$
+ \end{theorem*}
+\begin{proof*}
+  Usaremos o Teorema de Cantor.
+ \begin{itemize}
+   \item[1)] Dado $\epsilon > 0,$ seja $\delta > 0$ tal que $|s-t| < \delta.$ Ent\~ao, $|f(s) - f(t) < \epsilon$
+   \item[2)] Para cada n natural, seja $\delta_{n} > 0$ tal que $|f(s) - f(t)| < \frac{1}{n}$, em que $\{\delta_{n}\}$ pode ser 
+  considerado decrescente. 
  \end{itemize}
 
+  Definimos 
+    $$
+    \mathcal{F}_{n} = \{s(f, p): |P| < \delta_{n}\}, \quad n\in \mathbb{N}
+    $$
+    Observamos que  $\overline{\mathcal{F}_{n}}\supseteq\overline{\mathcal{F}_{n+1}}$. Se $diam \mathcal{F}_{n}\to{0},$ ent\~ao
+  o Teorema de Cantor garante que $\bigcap_{n=0}^{\infty} = \{I\}.$ Neste caso, $\int_{\gamma}^{}f.$ Fica de exerc\'icio mostrar que
+  $diam \mathcal{F}_{n}\leq \frac{c}{n}.$
+\end{proof*}
+ \begin{prop*}
+   Sejam $f, g:[a, b]\rightarrow \mathbb{C}$ cont\'inuas, $\gamma_{1}, \gamma_2$ BV em [a, b] e $\alpha, \beta\in{\mathbb{C}}.$
+Temos: 
+ \begin{itemize}
+   \item[i)] $\int_{}^{}\alpha f + \beta g d;g = \alpha \int_{}^{}fd \gamma + \beta \int_{}^{}gd \gamma$;
+   \item[ii)] $\int_{}^{}f d(\alpha \gamma_1 + \beta \gamma_2) = \alpha\int_{}^{}f d \gamma_1 + \beta \int_{}^{}f d \gamma_2;$
+   \item[iii)] $\int_{a}^{b}f(t)d \gamma(t) - \int_{a}^{c}f(t)d \gamma(t) + \int_{c}^{b}f(t) d \gamma(t), \quad c\in{[a, b]}.$
+ \end{itemize}
+ \end{prop*}
+\begin{theorem*}
+  Seja $\gamma$ suave (ou suave por partes) e f con\t'inua. Ent\~ao, 
+  $$
+  \int_{}^{}f d \gamma = \int_{a}^{b}f(t)\gamma'(t)dt.
+  $$
+\end{theorem*}
+$\gamma$ ser suave por partes significa que existe $P =\{a=t_{0}, t_1, \cdots, t_{n} = b\} $ tal que 
+  $$
+  \int_{a}^{b}f(t)d\gamma(t) = \sum\limits_{k=1}^{n}\int_{t_{k-1}}^{t_{k}}f(t)d\gamma(t)
+  $$
+ \begin{exer*}
+   Mostre que para a f\'ormula acima, tamb\'em vale a igualdade com $\int_{t_{k-1}}^{t_{k}}f(t)\gamma'(t)dt.$
+ \end{exer*}
+ \begin{def*}
+   Seja $\gamma$ uma curva em [a, b]. Escreveremos $\{\gamma\} $ para o tra\c co de $\gamma$ dado por 
+   $$
+   \{\gamma\}:= \{\gamma(t): t\in{[a, b]}\}.
+   $$
+   Note que $\{\gamma\} $ \'e conexo e compacto. Chamaremos de comprimento de $\gamma$ o valor $v(\gamma)$ caso $\gamma$ seja BV.
+Tamb\'em chamaremos $\gamma$ de retific\'avel se $\gamma$ \'e curva BV.
+ \end{def*}
+\begin{def*}
+  Seja $f:G\rightarrow \mathbb{C}$, $\gamma:[a, b]\rightarrow \mathbb{C}$ retific\'avel e $\{\gamma\}\subseteq{G}.$ A integral de 
+linha de f ao longo de $\gamma$ \'e 
+  $$
+  \int_{\gamma}^{}f := \int_{a}^{b}f(\gamma(t))d\gamma(t).
+  $$
+\end{def*}
+\begin{example}
+ \begin{itemize}
+   \item[i)] Seja $f(z) = z^n, \quad n\in{\mathbb{N}}$, sejam $\alpha, \beta\in \mathbb{C}$ e $\gamma:[0, 1]\rightarrow \mathbb{C}$
+  dada por $\gamma(t) = t \beta + (1-t)\alpha.$
+    $$
+    \int_{\gamma}^{}=\int_{0}^{1}(t\beta + (1-t)\alpha)^n(\beta - \alpha)dt = \frac{(t\beta + (1-t)\alpha)^{n+1}}{n+1}\biggl|_0^1\biggr.
+    $$
+  \item[ii)] Tome $f(z) = z^{-n}, \quad n\neq1, \quad \gamma(t) = e^{-it}, t\in[-\pi, \pi].$ Ent\~ao,
+    $$
+    \int_{\gamma}^{}f = \int_{-\pi}^{\pi}e^{nit}(-i)e^{-it}dt = -i \int_{-\pi}^{\pi}e^{ti(n-1)}dt = 0.
+    $$
+  \item[iii)] Considere $f(z) = \frac{1}{z}, \quad \gamma(t) = e^{-it}, t\in[-\pi, \pi].$ Assim, 
+    $$
+    \int_{\gamma}^{}f = \int_{-\pi}^{\pi}e^{it}(-i)e^{-it} = -2\pi i.
+    $$
+ \end{itemize}
+\end{example}
+\begin{prop*}
+  Seja $\gamma:[a, b]\rightarrow \mathbb{C}$ retific\'avel e $\phi:[c, d]\rightarrow [a, b]$crescente \'e cont\'inua. Se $f:G\rightarrow \mathbb{C}$
+  \'e cont\'inua em $\{\gamma\} $, ent\~ao 
+  $$
+  \int_{\gamma}^{}f = \int_{\gamma\circ{\phi}}^{}f
+  $$
+\end{prop*}
+\begin{proof*}
+ \begin{exer*}
+   Note que $\gamma\circ{\phi}$ \'e BV, $\{\gamma\}=\{\phi\} $ e $v(\gamma\circ{\phi}) = v(\gamma).$
+ \end{exer*}
+\end{proof*}
+  Se dadas $\gamma, \sigma$, existir $\phi:[c, d]\rightarrow [a, b]$ com $\gamma:[a, b]\rightarrow \mathbb{C}\text{ e }\sigma:[c, d]\rightarrow \mathbb{C}, 
+\sigma = \gamma\circ{\phi}, \phi$ con\'inua estritamente crescente, dizemos que $\gamma $ \'e equivalente \`a $\sigma$, denotado por $\gamma~\sigma.$
+Segue da proposi\c c\~ao que $\gamma~\gamma$ implica 
+  $$
+  \int_{\gamma}^{}f = \int_{\sigma}^{}f.
+  $$
+ \begin{exer*}
+   \'E verdade que $\{\gamma\}=\{\sigma\}\Rightarrow \int_{\gamma}^{}f = \int_{\sigma}^{}f?$
+ \end{exer*}
+   Seja $\gamma:[a, b]\rightarrow \mathbb{C}$ retific\'avel. Para cada $t\in{[a, b]},$ considere $\gamma_t:=\gamma|_[a, t]$ e 
+note que $t\mapsto{v(\gamma_t)}$ \'e crescente e, portatno, BV. Para f cont\'inua sobre $\{\gamma\},$ definimos
+  $$
+  \int_{\gamma}^{}f|dz|:= \int_{a}^{b}f(\gamma(t))d|\gamma|(t)
+  $$
+  com $|\gamma|:[a, b]\rightarrow \mathbb{R}$ dada por $|\gamma|(t) = v(\gamma_t)$. Fixemos a nota\c c\~ao $\gamma_{-}:[-b, -a]\rightarrow \mathbb{C}$
+  para $\gamma_{-}(t) = \gamma(-t)$ e $\gamma+c:[a, b]\rightarrow \mathbb{C}$ para $(\gamma + c)(t) = \gamma(t) + c, c\in \mathbb{C}.$
+\begin{prop*}
+  Se $\gamma$ \'e reific\'avel com $\{\gamma\}\subseteq{A}\subseteq{\mathbb{C}} $ e $f:A\rightarrow \mathbb{C}$ \'e cont\'inua sobre
+  $\{\gamma\} $, ent\~ao, 
+ \begin{itemize}
+   \item[i)] $\int_{\gamma_{-}}^{}f = - \int_{\gamma}^{}f$
+   \item[ii)] $\int_{\gamma+c}^{}f(z-c)dz = \int_{\gamma}^{}f$
+   \item[iii)] $\biggl|\int_{\gamma}^{}f\biggr|\leq \int_{\gamma}^{}|f||dz|\leq v(\gamma)\max_{z\in \{\gamma\} }|f(z)|$
+ \end{itemize}
+\end{prop*}
+\begin{lmm*}
+  Seja $A\subseteq{\mathbb{C}}$ aberto e $\gamma:[a, b]\rightarrow A$ retific\'avel com $\{\gamma\}\subseteq{A}$. Para todo $\epsilon > 0,$
+existe $\Gamma$ poligonal em A tal que 
+  $$
+  \biggl|\int_{\gamma}^{}f - \int_{\Gamma}^{}f\biggr| < \epsilon.
+  $$
+\end{lmm*}
+A seguir, vemos o Teorema Fundamental das Fun\c c\~oes de Vari\'avel Complexa.
+\begin{theorem*}
+  Seja $A\subseteq{\mathbb{C}}$ aberto, $\gamma$ retific\'avel, $\{\gamma\}\subseteq{A}\text{ e }f:A\rightarrow \mathbb{C} $ com f 
+con\t'inua em $\{\gamma\} $. Se existe $F:A\rightarrow \mathbb{C}$ tal que $F' = f,$ ent\~ao
+  $$
+    \int_{\gamma}^{}f = F(\gamma(b)) - F(\gamma(a)).
+  $$
+\end{theorem*}
+\begin{proof*}
+ \begin{itemize}
+   \item[i)] Vamos assumir $\gamma$ suave por partes. Sem perda de generalidade, podemos assumir suave. Neste caso,
+   $$
+     \int_{\gamma}^{}f = \int_{a}^{b} f(\gamma(t))\gamma'(t)dt = (F\circ{\gamma})(t)\biggl|_a^b\biggr. = F(\gamma(b)) - F(\gamma(a)).
+   $$
+   \item[ii)] No caso geral, considere $\epsilon > 0$ e $\Gamma$ a plligonal dada pelo Lema. Temos
+   $$
+     \biggl|\int_{\gamma}^{}f - \int_{\Gamma}^{}f\biggr| < \epsilon, \quad\text{ \qedsymbol}
+   $$
+ \end{itemize}
+\end{proof*}
+\begin{exer*}
+  Mostre que $f(z) = |z|^2$ \'e cont\'inua, mas n\~ao possui primitiva.
+\end{exer*}
+\begin{crl*}
+  Nas condi\c c\~oes e nota\c c\~oes de TFVC, se $\gamma$ \'e fechada, ent\~ao $\int\limits_{\gamma}f = 0.$
+\end{crl*}
 
+\subsection{Vers\~ao Introdut\'oria da F\'ormula Integral de Cauchy}
+  Um resultado que ser\'a usado de forma recorrente \'e o Lema de Leibniz, como enunciado a seguir
+ \begin{lmm*}
+   Seja $\phi:[a, b]x[c, d]\rightarrow \mathbb{C}$ cont\'inua e 
+   $$
+     g(t):= \int_{a}^{b}\phi(s, t)ds.
+   $$
+   Ent\~ao, g \'e cont\'inua. Adicionalmente, se $\frac{\partial{\phi}}{\partial{t}}$ \'e cont\'inua, ent\~ao g \'e suave e temos
+   $$
+    g'(t) = \int_{a}^{b}\frac{\partial{\phi}}{\partial{t}}(s, t)ds.
+   $$
+ \end{lmm*}
+\begin{example}
+  Se $|z| < 1,$
+  $$
+    I:= \int_{0}^{2\pi}\frac{e^{is}}{e^{is}-z}ds = 2\pi.
+  $$
+  Definimos $\phi:[0, 2\pi]x[0, 1]\rightarrow \mathbb{C}$ por 
+  $$
+    \phi(s, t) = \frac{e^{is}}{e^{is} - tz}, \quad t\in[0, 1], \quad s\in[0, 2\pi].
+  $$
+  Considere g como no lema e observe que $g(1) = I, g(0) = 2\pi.$ Al\'em disso,
+  $$
+    g'(t) = \int_{0}^{2\pi}\frac{e^{is}}{(e^{is} - tz)^{2}}ds = \frac{1}{i}\biggl(\frac{1}{e^{is}-tz}\biggr)\biggl|_0^{2\pi}\biggr. = 0
+  $$
+\end{example}
+\newpage
+
+\section{Aula 09 - 17/01/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item F\'ormula Integral de Cauchy para c\'irculos;
+   \item Toda fun\c c\~ao anal\'itica pode ser representada em s\'erie de pot\^encia;
+   \item Zeros de fun\c c\~oes
+ \end{itemize}
+ \subsection{Exerc\'icio de Hoje}
+ \subsubsection{Edson}
+ Tome $\gamma = [1, i], \sigma = [1, 1+i, i], f(z) = |z|^2$ como as poligonais. Al\'em disso, coloque 
+ $\gamma(t) = (1-t) + it, \gamma'(t) = -1 + i, t\in[0,1]$ e 
+ $$
+ \sigma(t) = \left\{\begin{array}{ll}
+     it + 1, \quad t\in[0, 1] \\
+     2 + i - t, \quad t\in[1, 2]
+   \end{array}\right., \quad 
+   \sigma'(t) = \left\{\begin{array}{ll}
+       i, \quad t\in(0, 1) \\
+       -1, \quad t\in(1, 2).
+     \end{array}\right.
+ $$
+  Assim,
+  $$
+  \int_{\gamma}^{}f = \int_{0}^{1}f(\gamma(t))\gamma'(t)dt = \int_{0}^{1}|it + (1-t)|^2(i-1)dt =
+  =(i-1)\int_{0}^{1}(2t^2 - 2t + 1)dt = \frac{2}{3}(i-1)
+  $$
+  Al\'em disso,
+  $$
+    \int_{\sigma}^{}f = \int_{0}^{2}f(\sigma(t))\sigma'(t)dt = i \int_{0}^{1}|it + 1|^2 dt - \int_{1}^{2}|2 + i - t|^2dt =
+    =i \int_{0}^{1}(t^2 + 1) - \int_{1}^{2}((2-t)^2 + 1)dt = 1 - \frac{7}{3} + i \frac{4}{3}.
+  $$
+
+ \subsection{F\'ormula Integral de Cauchy - Vers\~ao Introdut\'oria}
+\begin{prop*}
+  Seja $f:G\rightarrow \mathbb{C}$ e $\overline{B(a, r)}\subseteq{G}.$ Se $\gamma(t) = a + r e^{it}, t\in[0, \pi],$ ent\~ao
+  $$
+    f(z) = \frac{1}{2i\pi}\int_{\gamma}^{}\frac{f(w)}{w-z}dw, \quad |z-a| < r.
+  $$
+\end{prop*}
+ \begin{proof*}
+   Suponha $\sigma(t) = e^{it}, t\in[0, 2\pi],$ ent\~ao $\gamma = a + r\sigma.$ Note que a f\'ormula buscada equivale a 
+   $$
+    \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f(w)}{w-z}dw - f(z) = 0,
+   $$
+   ou seja,
+   $$
+    \frac{1}{2\pi}\int_{0}^{2\pi}\frac{e^{it}f(e^{it})}{e^{it}-z} - f(z) dt = 0.
+   $$
+   Considere $\phi(s, t) = \frac{e^{is}f(e^{is}+t(e^{is}-z))}{e^{is}-z} - f(z), t\in[0, 1], s\in[0, 2\pi]$. Tome, tamb\'em,
+   $g(t) = \int\limits_{0}^{2\pi}\phi(s, t)dt$. Com isso, observe que 
+  \begin{align*}
+    &g(1) = \frac{1}{2\pi}\int_{0}^{2\pi}\frac{e^{it}f(e^{it})}{e^{it}-z} - f(z)dz \\
+    &g(0) = \int_{0}^{2\pi}\frac{e^{is}f(z)}{e^{is}-z} - f(z) ds = f(z)\int_{0}^{2\pi}\frac{e^{is}}{e^{is}-z} - 1ds = 0.
+  \end{align*}
+  Temos 
+  $$
+    g'(t) = \int_{0}^{2\pi}\frac{e^{is}}{e^{is}-z}f'(z + t(e^{is}-z))ds = \int_{0}^{2\pi}e^{is}f'(z + t(e^{is}-z)) = 
+    \frac{1}{it}f(z + t(e^{is}-z)) \biggl|_{0}^{2\pi}\biggr. = 0.
+  $$
+  Portanto, g \'e constante, garantindo a proposi\c c\~ao. \qedsymbol
+ \end{proof*}
+ \begin{lmm*}
+   Seja $\gamma$ retific\'avel em $\mathbb{C},\{f_{n}\} $ sequ\^encia cont\'inua sobre $\{\gamma\} $ e f cont\'inua sobre
+ $\{\gamma\}$. Se $f_{n}\to{f}$ em $\{\gamma\}$, ent\~ao
+  $$
+  \int_{\gamma}^{}f = \lim_{n\to\infty}\int_{\gamma}^{}f_{n}.
+  $$
+ \end{lmm*} 
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+\begin{theorem*}
+  Seja f anal\'itica em B(a, r). Ent\~ao, 
+  $$
+  f(z) = \sum\limits_{n=0}^{\infty}a_{n}(z-a)^{n}, \quad |z-a| < r,
+  $$
+  em que $a_{n} = \frac{f^{(n)}(a)}{n!}, n = 0, 1, \cdots.$ Al\'em disso, f tem raio de converg\^encia $R\geq{r}.$
+\end{theorem*}
+\begin{proof*}
+  Considere $0<\rho<r$ e suponha f anal\'itica em $\overline{B(a, \rho)}$. Pela proposi\c c\~ao, $f(z) =\displaystyle \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f(w)}{w-z}dw,
+\gamma_{\rho} = a + r e^{it}.$ Vamos mostrar que 
+  $$  
+  f(z) = \sum\limits_{n=0}^{\infty}(z-a)^n\biggl(\frac{1}{2i \pi}\int_{\gamma_{\rho}}^{}\frac{f(w)}{(w-a)^{n+1}}dw.\biggr)
+  $$ 
+  Com efeito, considere
+  $$
+  g_{n}(z) = \sum\limits_{k=0}^{n}\underbrace{\frac{f(w)(z-a)^{k}}{(w-a)^{k+1}}}_{f_{n}(z)}
+  $$
+  Mostremos, agora, que $\sum\limits_{k=0}^{n}f_{n}(z)$ converge uniformemente. Para $w\in{\{\gamma_{\rho}\}},$
+  $$
+  |f_{k}(w)| = \frac{|f(w)||(z-a)^{k}|}{|w-a|^{k+1}} < |f(w)|\frac{|z-a|^{k}}{\rho^{k+1}}\leq \max_{w\in \{\gamma\}}|f(w)|\frac{1}{\rho}\biggl(\frac{|z-a|^k}{\rho^k}\biggr)^{k}.
+  $$
+  Pelo working finee M de Weierstras, 
+  $$
+  g(z):=\sum\limits_{n=0}^{\infty}\frac{f(w)(z-a)^{n}}{(w-a)^{n+1}}
+  $$
+  \'e cont\'inua. Assim,
+  $$
+  g(z) = \frac{f(w)}{w - a}\sum\limits_{n=0}^{\infty}\biggl(\frac{z-a}{w-a}\biggr)^{n} = \frac{f(w)}{w-a}\frac{1}{1-\frac{z-a}{w-a}} = \frac{f(w)}{w-z}
+  $$
+  Como consequ\^encia, conseguimos calcular a integral de g na curva:
+ \begin{align*}
+   \frac{1}{2i \pi}\int_{\gamma_{\rho}}^{}g(w)dw &= \frac{1}{2i \pi}\int_{\gamma_{\rho}}^{}\frac{f(w)}{w-z}dw = \frac{1}{2i \pi}\lim_{n\to\infty}\int_{\gamma_{\rho}}\frac{f(w)(z-a)^{n}}{(w-a)^{n+1}}dw\\
+                                                 &= \frac{1}{2\pi}\sum\limits_{n=0}^{\infty}(z-a)^{n}\underbrace{\int_{\gamma_{\rho}}^{}\frac{f(w)}{(w-a)^{n+1}}dw}_{b_{n}}
+ \end{align*}
+\end{proof*}
+\begin{crl*}
+  Se f \'e anal\'itica em B(a, R) e $\gamma$ \'e retific\'avel, $\{\gamma\}\subseteq{B(a, R)}$ e fechada, ent\~ao
+  $$
+    \int_{\gamma}^{}f = 0.
+  $$
+\end{crl*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+
+\subsection{Zeros de Fun\c c\~oes Anal\'iticas}
+\begin{def*}
+  Diremos que f \'e inteira se f \'e anal\'itica em $\mathbb{C}$.
+\end{def*}
+\begin{example}
+  Polin\^omios s\~ao fun\c c\~oes inteiras.
+\end{example}
+\begin{def*}
+  Se $f:G\rightarrow \mathbb{C}$ \'e uma fun\c c\~ao anal\'itica com f(a) = 0 e que existe $m\in \mathbb{N}$ tal que 
+  $$
+    f(z) = (z-a)^{m}g(z),
+  $$
+  com g anal\'itica e n\~ao-nula em a, diremos que a \'e um zero de multiplicidade m de f.
+\end{def*}
+  Um teorema muito relevante em FVC \'e o Teorema de Liouville:
+ \begin{theorem*}
+   Se f \'e inteira e limitada, ent\~ao f \'e constante.
+ \end{theorem*}
+\begin{proof*}
+  Seja $0 < \rho < r$ e sendo f anal\'itica em $B(a, r)$. Ent\~ao, 
+  $$
+    |f^{(n)}(a)| = \frac{n!}{2 \pi}\biggl|\int_{\gamma_{\rho}}^{}\frac{f(w)}{(w-a)^{n+1}}dw\biggr|
+\leq \frac{n!}{2\pi}\int_{\gamma_{\rho}}^{}\frac{|f(w)|}{\rho^{n+1}}|dw| \leq \frac{n!}{2\pi}\frac{Mv(\gamma_{\rho})}{\rho^{n+1}} = \frac{n!M}{\rho^{n+1}}.
+  $$
+  Fazendo $\rho$ tender a infinito, conclu\'imos que $|f^{(n)}(a)|\leq0,$ ou seja, $f^{(n)}(a) = 0.$
+\end{proof*}
+  Uma consequ\^encia simples e trivial dessa discuss\~ao toda \'e o Teorema Fundamental da \'Algebra.
+\begin{theorem*}
+  Todo polin\^omio complexo de grau maior que 1 possui ra\'iz complexa. 
+\end{theorem*}
+\begin{proof*}
+  Se p n\~ao possui zeros, $\frac{1}{p}$ \'e inteira e limitada, visto que $\lim_{z\to\infty}p(z) = \infty$ e $\lim_{z\to\infty}\frac{1}{p(z)} = 0$, 
+o que implica na limita\c c\~ao e, por Liouville, $\frac{1}{p}$ \'e constante, fazendo com que p seja constante, uma contradi\c c\~ao.
+Portanto, p possui ao menos uma ra\'iz. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Se p \'e um polin\^omio n\~ao identicamente nulo com zeros $a_1, \cdots, a_{n}$ de multiplicidade $m_1, \cdots, m_{n}$ respectivamente. Ent\~ao,
+existe uma constante tal que 
+  $$
+    p(z) = (z-a_1)^{m_1}\cdots(z-a_{n})^{m_{n}}c
+  $$
+  e que o grau de p \'e $\sum\limits_{i=1}^{n}m_{i}$.
+\end{crl*}
+\newpage
+
+\section{Aula 10 - 19/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Teorema do M\'aximo M\'odulo;
+  \item \'Indice de Curvas Fechadas e Dando Voltas em C\'irculos;
+\end{itemize}
+
+\subsection{Continua\c c\~ao de Zeros de Fun\c c\~oes Anal\'iticas}
+\begin{prop*}
+  Suponha $f:G\rightarrow \mathbb{C}$ anal\'itica na regi\~ao G. S\~ao equivalentes:
+ \begin{itemize}
+   \item[i)] $f\equiv0$;
+   \item[ii)] Existe um a de G tal que $f^{(n)}(a) = 0, n = 0, 1, \cdots;$
+   \item[iii)] O conjunto $\{z\in{G}: f(z) = 0\} = F_{0} $ possui ponto de acumula\c c\~ao.
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+ $iii)\Rightarrow ii)$ Seja a ponto de acumula\c c\~ao de $F_{0}$. Considere $\{a_{n}\} $ em $F_{0}$ tal que $a_{n}\to{a}$, f cont\'inua em a.
+
+  Afirmamos que $f^{(n)}(a) = 0.$  Seja m tal que $f^{(m)}(a)\neq 0 $ e $f^{(n)}(a) = 0, n = 0, 1, \cdots, m-1 $. Seja r positivo
+e, para z em B(a, r), temos 
+  $$
+  f(z) = \sum\limits_{n=m}^{\infty}a_{n}(z-a)^{n} = (z-a)^{m}\underbrace{\sum\limits_{n=m}^{\infty}a_{n}(z-a)^{n-m}}_{g(z)\text{ anal\'itica.}}.
+  $$
+  Temos g anal\'itica e g(a) n\~ao-nulo. Logo, existe $0 < \delta < r$ tal que g(z) \'e n\~ao-nulo para z em $B(a, \delta)$. Portanto,
+  $f(z)\neq0$ para z em $B(a, r) - \{a\} $, uma contradi\c c\~ao, donde segue que a terceira afirma\c c\~ao deve implicar na segunda. \qedsymbol
+
+  $ii)\Rightarrow i)$ Considere a tal que $f^{(n)}(a) = 0, n = 0, 1, \cdots$. Seja $A=\{z\in{G}: f^{(n)}(z) = 0, n=0, 1, \cdots\} $. Note que
+a pertence a A e, al\'em disso, 
+  $$
+  A = \bigcap_{n=0}^{\infty}\{z\in{G}: f^{(n)}(z) = 0\}
+  $$
+\'e fechado. Mostremos que A \'e aberto. Tome b em A e r positivo, tal que $B(b, r)\subseteq{G}.$ Observe que 
+ $$
+ f(z) = \sum\limits_{n=0}^{\infty}b_{n}(z-b)^{n}, \quad z\in{B(b, r)}.
+ $$
+ Portanto, A = G e segue a prova. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Com as hip\'oteses do Teorema, se f(a) = 0, ent\~o existe $n_a\in \mathbb{Z}_{+}$ tal que $f(z) = (z-a)^{n_a}g(z), z\in{G},$
+ com g anal\'itica em g e $g(a)\neq0$ Em particular, os zeros de f s\~ao isolados.
+\end{crl*}
+\begin{theorem*}
+  Seja f anal\'itica numa regi\~ao G. Se existe a em G tal que 
+  $$
+    |f(z)|\leq|f(a)|, \quad z\in{G},
+  $$
+ent\~ao f \'e constante.
+\end{theorem*} 
+\begin{proof*}
+  Seja $r > 0$ tal que $B(a, r)\subseteq{G}.$ Mostraremos que $|f|:B(a, r)\rightarrow \mathbb{R}$ \'e constante na bola, mas $|f|\equiv|f(a)|\neq0.$
+Mostrado isso, se $f = u + iv$, ent\~ao, para z em B(a, r), vale 
+  $$
+    f(a) = \frac{1}{2\pi i}\int_{\gamma_{v}}^{}\frac{f(w)}{w-a}dw,
+  $$
+  $\gamma_{v}(t) = a + re^{it}, t\in[0, 2\pi].$
+  $$
+    |f(a)|\leq \frac{1}{2\pi}\biggl|\int_{0}^{2\pi}\frac{f(a + re^{it})}{re^{it}}rie^{it}dt\biggr|\leq \frac{1}{2\pi}\int_{0}^{2\pi}|f(a + re^{it})|dt
+  \leq |f(a)|.
+  $$
+  Assim, $|f(a+re^{it})| = |f(a)|.$ Como r \'e qualquer tal que $B(a, r)\subseteq{G},$ a afirma\c c\~ao segue.
+
+  Agora, se f = u + iv, z em B(a, r),
+    $$
+      |f(z)| = u^{2} + v^{2} = |f(a)|\neq 0.
+    $$
+   \begin{exer*}
+     Mostre que 
+     $$
+      \frac{\partial{u}}{\partial{x}} = \frac{\partial{v}}{\partial{y}} = 0,
+     $$
+     o que implicar\'a f'(z) = 0. \qedsymbol.
+   \end{exer*}
+\end{proof*}
+\subsection{\'Indice de Curvas Fechadas}
+\begin{example}
+  Tome $\gamma(t) = a + re^{nit}, t\in[0, 2\pi], n=1, 2, \cdots$. Ent\~ao,
+  $$
+    \frac{1}{2\pi i}\int_{\gamma_{n}}^{}\frac{1}{w-a}dw = \frac{1}{2\pi  i}\int_{0}^{2\pi}\frac{1}{re^{nit}}rine^{rint}dt = \frac{1}{2\pi i}\int_{0}^{2\pi} indt = n.
+  $$
+\end{example}
+\begin{prop*}
+  Considere $\gamma$ retific\'avel e fechada. Ent\~ao, 
+  $$
+  \frac{1}{2\pi i}\int_{\gamma}^{}\frac{1}{w-a}dw\in \mathbb{Z}, \quad a\not\in \{\gamma\}.
+  $$
+\end{prop*}
+\begin{proof*}
+  Seja $\gamma$ curva $C^{1}$ por partes definida em [0, 1]. Considere $g(t) = \int_{0}^{t}\frac{\gamma'(s)}{\gamma(s) - a}ds, t\in[0, 1].$
+Note que g(0) = 0 e $g(1) = \int_{\gamma}^{}\frac{1}{w-a}dw.$ Defina $h(t) = e^{-g(t)}(\gamma(t) - a), t\in[0, 1]$ e observe que
+$h(0) = (\gamma(0) - a)\neq0.$ Derivando h:
+  $$
+  h'(t) = -g'(t)e^{-g(t)}(\gamma(t) - a) + e^{-g(t)}\gamma'(t) = 0, t\in[0, 1]. 
+  $$
+  Assim, $h\equiv{(\gamma(0) - a)}$. Neste caso, $h(1) = e^{-g(1)}(\gamma(0)-a) = \gamma(0) - a.$ Com isso, $e^{-g(1)} = 1.$ Portanto,
+ $g(1) = 2\pi ki,$ para algum $k\in \mathbb{Z}.$ Portanto, a f\'ormula est\'a provada. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula Gravada(ft. AraMat) - 23/01/2023}
+\subsection{\'Indice de Curva Fechada - Continuando}
+\begin{def*}
+  Escrevemos, para o \'indice de uma curva $\gamma$ fechada e retific\'avel em a, 
+  $$
+  n(\gamma, a):= \frac{1}{2\pi}\int_{\gamma}^{}\frac{1}{z-a}dz, \quad a\not\in \{\gamma\}.
+  $$
+\end{def*}
+\begin{prop*}
+  Dadas curvas $\gamma, \sigma$ tais que 
+  $$
+    \sigma + \gamma(t)  = \left\{\begin{array}{ll}
+        \gamma(2t), \quad t\in[0, \frac{1}{2}] \\
+        \gamma(2t-1), \quad t\in[\frac{1}{2}, 1],
+      \end{array}\right.
+  $$
+  segue que o \'indice das curvas satisfaz as seguintes propriedades
+ \begin{itemize}
+   \item[i)] $n(\gamma, a) = -n(\gamma_{-}, a)$
+   \item[ii)] $n(\sigma+\gamma, a) = n(\sigma, a) + n(\gamma, a), a\not\in \{\gamma\}\cup \{\sigma\}$
+ \end{itemize}
+\end{prop*}
+\begin{prop*}
+  Seja $\gamma$ retific\'avel e fechada. Ent\~ao, $n(\gamma, \cdot):\mathbb{C}-\{\gamma\} \rightarrow \mathbb{Z}$ \'e cont\'inua.
+\end{prop*}
+\begin{proof*}
+  Tome a fora de $\mathbb{C}-\{\gamma\}$ e $r > 0\text{ tal que } B(a, r)\subseteq{\mathbb{C}-\{\gamma\}}$. Ent\~ao, 
+  \begin{align*}
+    &n(\gamma, a) - n(\gamma, b) = \frac{1}{2\pi i}\int_{\gamma}^{}\frac{a - b}{(z-a)(z-b)}dz\\
+    &\Rightarrow|n(\gamma, a) - n(\gamma, b)| = \frac{1}{2\pi}\biggl|\int_{\gamma}^{}\frac{a-b}{(z-a)(z-b)}dz\biggr|\leq \frac{1}{2\pi}\int_{\gamma}^{}\frac{|a-b|}{|z-a||z-b|}|dz|\\
+    &\leq\frac{1}{2\pi}\sup_{\{\gamma\} }\frac{|a-b|}{|z-a||z-b|}v(\gamma)\overbrace{\to}^{b-a}0
+  \end{align*}
+\end{proof*}
+\begin{theorem*}
+  Seja $\gamma$ retific\'avel e fechada. A fun\c c\~ao \'indice \'e constante em cada componente conexa de $\mathbb{C}-\{\gamma\}.$
+  Em particular, anula na componente conexa ilimitada de $\mathbb{C}-\{\gamma\} $.
+\end{theorem*}
+\begin{proof*}
+  Seja $r > 0$ tal que $\{\gamma\}\subseteq{B(0, \frac{r}{2})}.$ Se $|a| > r,$
+  $$
+  |n(\gamma, a)|\leq \frac{1}{2\pi}\max_{\{\gamma\}}|z-a|^{-1}v(\gamma)\overbrace{\to}^{r\to\infty}0. \quad\text{\qedsymbol}
+  $$
+\end{proof*}
+
+\subsection{Teorema e F\'ormulas Integrais de Cauchy}
+\begin{lmm*}
+  Seja $\gamma$ retific\'avel, $\phi$ cont\'inua em $\{\gamma\} $ e 
+  $$
+  F_{m}(z):= \int_{\gamma}^{}\frac{\phi(w)}{(w-z)^{m}}dw, \quad z\in \mathbb{C}-\{\gamma\}, m=1, 2, \cdots
+  $$
+  Ent\~ao, $F_{m}$ \'e anal\'itica com $F_{m} = mF_{m+1}, m = 1, 2, \cdots$.
+\end{lmm*}
+\begin{proof*}
+  Note que 
+  \begin{align*}
+    F_{m}(a) - F_{m}(b) &= \int_{\gamma}^{}\frac{\phi(w)}{(w-a)^{m}} - \frac{\phi(w)}{(w-b)^{m}}dw \\
+                        &= \int_{\gamma}^{}\phi(w)\underbrace{\biggl[\frac{1}{(w-a)^{m}} - \frac{1}{(w-b)^{m}}\biggr]}_{\sum\limits_{n=1}^{m}(w-a)^{-n}(w-b)^{-m-1+n}}dw.
+  \end{align*}
+  Assim,
+  $$
+  F_{m}'(a) = \lim_{b\to{a}}\sum\limits_{n=1}^{m}\int_{\gamma}^{}\frac{\phi(w)}{(w-a)^{n}(w-b)^{m+1-n}}dw = mF_{m+1}(a).
+  $$
+\end{proof*}
+\begin{theorem*}
+  Seja $f:G\rightarrow \mathbb{C}$ anal\'itica, $\gamma$ retific\'avel e fechada tal que $n(\gamma, a) = 0$ para todo $a\in \mathbb{C}-G.$
+Ent\~ao, 
+  $$
+    f(b)n(\gamma, b) = \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f(w)}{w-b}dw, \quad b\in{G-\{\gamma\}}.
+  $$
+\end{theorem*}
+\begin{proof*}
+  Considere $\phi:GxG\rightarrow \mathbb{C}$ dada por 
+  $$
+    \phi(z, w) = \left\{\begin{array}{ll}
+        \frac{f(w)-f(z)}{w-z}, \quad z\neq{w} \\
+        f'(z), \quad \ = w.
+      \end{array}\right.
+  $$
+  Observe que $\phi(\cdot, w):G\rightarrow \mathbb{C}$ \'e anal\'itica (Exerc\'icio.). Al\'em disso, defina
+$H:=\{w\in{\mathbb{C}-\{\gamma\}}: n(\gamma, w) = 0\}$. Assim, $\mathbb{C}-G\subseteq{H}\text{ e } \mathbb{C} = G\cup{H}$.
+Coloque $g:\mathbb{C}\rightarrow \mathbb{C}$ da forma 
+  $$
+    g(z) = \left\{\begin{array}{ll}
+        \int_{\gamma}^{}\phi(z, w)dw, \quad z\in{G} \\
+        \int_{\gamma}^{}\frac{f(w)}{w-z}dw, \quad z\in{H}.
+      \end{array}\right.
+  $$
+  Vamos mostrar que essa g est\'a bem-definida, tomando z em $H\cap{G}.$ Ent\~ao,
+  $$
+    \int_{\gamma}^{}\phi(z, w)dw = \int_{\gamma}^{}\frac{f(w)-f(z)}{w-z}dw = \int_{\gamma}^{}\frac{f(w)}{w-z}dw - f(z)n(\gamma, z)
+  $$
+  Um exerc\'icio \'e mostrar que o lema garante que g \'e anal\'itica e, logo, inteira. Al\'em disso, mostre que g \'e limitada em
+bolas de $\mathbb{C}-G$ como $B(a, r)\subseteq{G}\Rightarrow |g(z)|\leq \int\limits_{\gamma}|\phi(z, w)||dw|\leq \sup\limits_{B(a, r)x \{\gamma\} }|\phi|v(\gamma)$.
+Portanto, g \'e limitada. Como consequ\^encia de Liouville, g \'e constante. Mostre, por fim, que g \'e identicamente nula tal que, dado b em
+ $G-\{\gamma\}$,
+ $$
+  g(b) = 0 = \int_{\gamma}^{}\frac{f(w) - f(b)}{w-b} = \int_{\gamma}^{}\frac{f(w)}{w-b}dw - f(b) \int_{\gamma}^{}\frac{1}{w-b}dw
+ $$
+ Portanto,
+ $$
+ 2\pi if(b)n(\gamma, b) = \int_{\gamma}^{}\frac{f(w)}{w-b}dw. \quad\text{\qedsymbol}
+ $$
+\end{proof*}
+\newpage
+
+\section{Aula 11 - 24/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Consequ\^encias da F\'ormula Integral de Cauchy;
+  \item Teorema de Morera (mais uma vers\~ao do Teorema de Cauchy);
+  \item Teorema de Goursat.
+\end{itemize}
+ \subsection{Exerc\'icios de Hoje}
+ \subsubsection{Jo\~ao}
+\begin{align*}
+  f(a)\sum\limits_{k=1}^{n}n(\gamma_{k}, a) &= \sum\limits_{k=1}^{n}f(a)n(\gamma_{k}, a) \\
+                                            &= \sum\limits_{k=1}^{n}\frac{1}{2\pi i}\int_{\gamma_{k}}^{}\frac{f(z)}{z-a}dz \\
+                                            &= \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f(z)}{z-a}dz.
+\end{align*}
+
+\subsection{Consequ\^encias da F\'ormula Integral de Cauchy}
+  Come\c camos esta aula com os respectivos Teorema de Morera e Teorema de Goursat.
+\begin{theorem*}
+  Seja $f:G\rightarrow \mathbb{C}$, G aberto. Se $\int_{\Delta}^{}f = 0$ para $\Delta = [a, b, c, a]\subseteq{G},$ ent\~ao
+f \'e anal\'itica.
+\end{theorem*}
+\begin{proof*}
+  Sejam z um elemento de G e $r > 0$ tal que $B(a, r)\subseteq{G}.$ Defina
+  $F_{z}:B(z, r)\rightarrow \mathbb{C}$ por $F_{z}(u) = \int_{[z, u]}^{}f dw.$
+Temos,
+  $$
+  \frac{F_{z}(a) - F_{z}(b)}{a - b} - f(a) = \frac{1}{a-b}\biggl(\int_{[z, a]}^{}fdw + \int_{[z, b]}^{}fdw\biggr) - f(a),
+  $$
+de onde segue 
+ \begin{align*}
+   \biggl|\frac{F_{z}(a) - F_{z}(b)}{a-b} - f(a)\biggr| &= \frac{1}{|a-b|}\biggl|\int_{[b, a]}f(w) - f(a)\biggr| \\
+                                                        &\leq \frac{1}{|a-b|}\int_{[b, a]}^{}|f(w) - f(a)||dw| \\
+                                                        &\leq \frac{1}{|a-b|}\sup_{w\in[b, a]}|f(w) - f(a)|v([b, a)]) = \sup_{w\in[b, a]}|f(w)-f(a)|.
+ \end{align*}
+ Como $\sup\limits_{w\in[b, a]}|f(w) - f(a)|\to0, b\to{a},$ segue a prova. \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja $f:G\rightarrow \mathbb{C}$ aberto. Se f \'e diferenci\'avel, ent\~ao f \'e anal\'itica.
+\end{theorem*}
+\begin{proof*}
+  Verificamos que f satisfaz as hip\'oteses do Teorema de Morera. 
+Sem perda de generalidade, suponha que G = B(w, r) e seja $\Delta=[a, b, c, a].$
+Queremos verificar que $\int_{\Delta}^{}f = 0.$
+  
+  Com efeito, considere $\epsilon > 0$ e mostraremos que $|\int_{\Delta}^{}f| < \epsilon.$ Se 
+  $m_{ab}, m_{ba}, m_{ca}$ s\~ao os pontos m\'edios de [a, b], [b, c], [c, a], respectivamente, 
+ent\~ao
+  $$
+    \int_{\Delta}^{}f = \sum\limits_{j=1}^{a}\int_{\Delta_{j}}^{}f.
+  $$
+  Al\'em disso, assumiremos que $|\int_{\Delta_j}^{}f|$ \'e o m\'aximo de 
+ $|\int_{\Delta_{j}}^{}f|, j = 1, \cdots, 4$. Assim, segue que 
+  $$
+  \biggl|\int_{\Delta}^{}f\biggr|\leq4 \biggl|\int_{\Delta_{1}}^{}f.\biggr|
+  $$
+  Seja $l(\Delta)$ o per\'imetro de $\Delta$ e $diam \Delta$. Note que 
+  $$
+  l(\Delta_{1}) = \frac{1}{2}l(\Delta)\quad\text{ e } diam \Delta_{1} = \frac{1}{2}diam \Delta.
+  $$
+  Indutivamente, consideramos $\Delta_{n}, n = 1, 2, \cdots$ tais que
+  \begin{itemize}
+    \item[1)] $l(\Delta_{n}) = \frac{1}{2^n}l(\Delta)\to0, n\to\infty;$
+    \item[2)] $diam(\Delta_{n}) = \frac{1}{2^n}diam \Delta;$
+    \item[3)] $\biggl|\int_{\Delta}^{}f\biggr|\leq 4^n\biggl|\int_{\Delta_{n}}^{}f\biggr|.$
+  \end{itemize}
+  Considere, agora, $F_{n}$ sendo o fecho do tri\^angulo fechado. Temos 
+  $F_{n+1}\subseteq{F_{n}}, n=1, 2, \cdots.$ Logo, pelo Teorema de Cantor, $\bigcap_{n=1}^{\infty}F_{n}=\{u\}. $
+  Dado $\epsilon > 0,$ seja $\delta > 0$ tais que 
+  $$
+    |f(w) - f(u) - f'(u)(w-u)| < \epsilon|w-u|.
+  $$
+  Se n \'e tal que $diam \Delta_{n} < \delta,$ ent\~ao
+  $$
+    \int_{\Delta_{n}}^{}f = \int_{\Delta_{n}}^{}(f(z) - f(u)) - f'(u)(z-u)dz.
+  $$
+  Assim, $|\int_{\Delta_{n}}^{}f|\leq \int_{\Delta_{n}}^{}\epsilon|z-u|dz\leq \epsilon\sup_{z\in{\Delta_{n}}}|z-u|l(\Delta_{n}).$
+  Portanto, $|\int_{\Delta}^{}f \leq \epsilon l(\Delta) diam(\Delta).|$ \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 12 - 26/01/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Homotopia e curvas;
+  \item Vers\~ao Homot\'opica do Teorema de Cauchy;
+  \item Exist\^encia de Primitivas para Fun\c c\~oes Anal\'iticas 
+\end{itemize}
+
+\subsection{Exerc\'icios do Dia}
+\subsubsection{Francisco Jonat\~a}
+Seja P(z) de grau n e considere $\{z:|z|\geq R\}, \gamma(t) = Re^{it}.$ Ent\~ao, P(z) pode ser escrito como 
+  $$
+    P(z) = c(z-r_{1})(z-r_2)\cdots(z-r_{n}),\quad P'(z) = c(z-r_2)\cdots(z-r_{n}) + c(z-r_{1})\cdots(z-r_{n}) + \cdots + c(z-r_1)\cdots(z-r_{n-1})
+  $$
+  Assim,
+  $$
+  \int_{\gamma}^{}\frac{P'(z)}{P(z)}dz = \int_{\gamma}^{}\sum\limits_{k=1}^{n}\frac{1}{z-r_{k}}dz = \sum\limits_{k=1}^{n}\int_{\gamma}^{}\frac{1}{z-r_{k}}dz = \sum\limits_{k=1}^{n}n(\gamma, r_{k})2\pi i = n2\pi i.\quad\text{ \qedsymbol}
+  $$
+
+ \subsubsection{Gabriel Passareli}
+ Seja $\gamma:[0, 1]\rightarrow \mathbb{C}, \gamma(0) = 1, \gamma(1) = w.$ Existe um k inteiro tal que $\int_{\gamma}^{}\frac{1}{z}dz = \ln{(r)} + i\theta + 2k\pi i, w=re^{i\theta}.$
+Considere 
+  $$
+  \{\tilde\gamma\} = \{\gamma\}\cup{[w, 1]}.
+  $$
+Da defini\c c\~ao, 
+  $$
+  2\pi i = n(\tilde \gamma, 0) = \int_{\gamma}^{}\frac{1}{z}dz = \int_{\gamma}^{}\frac{1}{z}dz + \int_{[w, 1]}^{}\frac{1}{z}dz.
+  $$
+  Tome
+  $$
+    G = \{z\in \mathbb{C}: d(z, [w, 1]) < \epsilon\}.
+  $$
+  Sobre G, tome tamb\'em
+  $$
+  \ln{(re^{i \theta})} = \ln{(r)} + i \theta, \quad -\pi < \theta < \pi.
+  $$
+  Ent\~ao, pelo TFVC,
+  $$
+  \int_{\gamma}^{}\frac{1}{z}dz = -k\pi i + \int_{[w, 1]}^{}\frac{1}{z}dz. \quad\text{ \qedsymbol}
+  $$
+
+  \subsection{Vers\~ao Homot\'opica do Teorema de Cauchy}
+  Escreveremos I = [0, 1] para o intervalo mencionado. Seja G uma regi\~ao e $\gamma_{1}, \gamma_{2}$ curvas tais que existe
+ $\Gamma:I^{2}\rightarrow G$ cont\'inuo tal que 
+  $$
+    \left\{\begin{array}{ll}
+        \Gamma(s, 0) = \gamma_{1}(s)\\
+        \Gamma(s, 1) = \gamma_{2}(s)\\
+        \Gamma(0, t) = \gamma_{1}(0) = \gamma_{2}(0)\\
+        \Gamma(1, t) = \gamma_{1}(1) = \gamma_{2}(1).
+      \end{array}\right.
+  $$
+  Ent\~ao, diremos que $\gamma_{1}$ \'e homot\'opica \`a $\gamma_{2}$ e escreveremos $\gamma_{1}\sim\gamma_{2}.$ Fica de exerc\'icio
+mostrar que $\sim$ \'e uma rela\c c\~ao de equival\^encia.
+ \begin{theorem*}
+   Sejam $\gamma_{1}, \gamma_{2}$ retific\'aveis na regi\~ao G. Se $\gamma_{1}\sim \gamma_{2},$ ent\~ao
+   $$
+    \int_{\gamma_{1}}f = \int_{\gamma_{2}}f
+   $$
+  para toda f anal\'itica em G. 
+ \end{theorem*}
+\begin{proof*}
+  O caso em que as duas curvas s\~ao n\~ao fechadas fica como exerc\'icio. Destarte, suponha $\gamma_{1}, \gamma_{2}$ fechadas. 
+Supondo que $\Gamma\in{C^{2}}$, temos
+  $$
+    \int_{\gamma_{1}}^{}f = \int_{0}^{1}f(\Gamma(s, 0))\frac{\partial{\Gamma}}{\partial{s}}(s, 0)dS
+  $$
+  e
+  $$
+    \int_{\gamma_{t}}^{}f = g(t), t\in[0, 1], \quad \gamma_{t}(s) = \Gamma(s, t).
+  $$
+  Temos
+  $$
+    g'(t) = \frac{\partial{}}{\partial{t}}\biggl(\int_{0}^{1}f(\Gamma(s, t))\frac{\partial{\Gamma}}{\partial{s}}(s, t)ds\biggr) = \biggl(f(\Gamma(s,t ))\frac{\partial{\Gamma}}{\partial{t}}(s, t)\biggr)\biggl|_0^1\biggr. = 0.
+  $$
+  Agora, no caso geral, suponha $\Gamma(I^2)$ completo, $\Gamma$ \'e uniformemente cont\'inua. Coloque $\gamma_{t}(s):= \Gamma(s, t), s\in{I}.$
+ \begin{itemize}
+ \item[1)] Existe $\epsilon > 0$ tal que $B(z, 13 \epsilon)\subseteq{G},\forall z\in{\Gamma(I^2)};$
+ \item[2)] Existe $\gamma > 0$ tal que $|s_1 - s_2| < \delta\Rightarrow |\Gamma(s_1, t) - \Gamma(s_2, t)| < 2 \epsilon.$ 
+ \end{itemize}
+ Mostremos que $\int\limits_{\Gamma(\cdot, s_1)}^{}f = \int_{\Gamma(\cdot, s_2)}^{}f.$ Fica como exerc\'icio, tamb\'em, particionar
+ I como $P=\{s_{0}, \cdots, s_{n}\}.$ de forma que $|P| < \delta.$ Com efeito, considere $z_{0}, \cdots, z_{n}, w_{1}, \cdots, w_{n}$ e bolas
+ $B_{i}, i = 1, 2, \cdots, n$ centradas em $\Gamma(I^2)$ de raio $\epsilon$ com $z_{i}, w_{i}, z_{i+1}, w_{i+1}\in{B_{i}}, i = 1, \cdots, n-1.$
+ Temos 
+ $$
+    g'(t) = \frac{\partial{}}{\partial{t}}\biggl(\int_{0}^{1}f(\Gamma(s, t))\frac{\partial{}}{\partial{t}}(s, t)ds\biggr) = \biggl(f(\Gamma(s, t))\frac{\partial{\Gamma}}{\partial{t}}(s, t)\biggr)\biggl|_0^1\biggr. = 0.
+ $$
+ Para cada i, f \'e primitiv\'avel em $B_{i}.$ Neste caso, se $F_{i}$ \'e a primitiva de f em $B_{i}$, ent\~ao
+ $$
+    F_{i} - F_{i+1} = c \in B_{i}\cap{B_{i+1}}, \quad c\in \mathbb{C}, i=1, \cdots, n=1.
+ $$
+ Logo,
+ $$
+    F_{i}(z_{i+1}) - F_{i+1}(z_{i+1}) = F_{i}(w_{i+1}) - F_{i+1}(w_{i+1}).
+ $$
+ Consequentemente, 
+ $$
+  F_{i}(z_{i+1}) - F_{i}(w_{i+1}) = F_{i+1}(z_{i}) - F_{i+1}(w_{i+1}).
+ $$
+ Finalmente, 
+\begin{itemize}
+  \item[I)] $\int\limits_{\Gamma(\cdot, s_{1})}^{}f = \sum\limits_{i=1}^{n-1}F_{i}(z)\biggl|_{z_{i}}^{z_{i+1}}\biggr.$
+  \item[II)] $\int\limits_{\Gamma(\cdot, s_2)}^{}f = \sum\limits_{i=1}^{n-1}F_{i}(z)\biggl|_{w_{i}}^{w_{i+1}}\biggr.$
+\end{itemize}
+Subtraindo, obtemos
+  $$
+  \sum\limits_{i=1}^{n-1}\biggl[F_{i}(z_{i+1}) - F_{i}(z_{i}) - \biggl(F_{i}(w_{i+1}) - F_{i}(w_{i})\biggr)\biggr] = 0.\quad\text{ \qedsymbol}
+  $$
+\end{proof*}
+\begin{exer*}
+  Sejam $\gamma_{1}(t) = e^{2\pi it}, \gamma_{2}(t) = e^{-2\pi it}, t\in[0, 1]$. Mostre que $\gamma_{1}\sim \gamma_{2}.$
+\end{exer*}
+  Escrevemos $\gamma\sim0$ se $\gamma$ \'e homot\'opica a uma curva constante. Al\'em disso, dada uma regi\~ao G, diremos que
+ G \'e simplesmente conexa se $\gamma\sim0$ para toda curva em G.
+\begin{exer*}
+  A regi\~ao G = B(a, r) \'e simplesmente conexa.
+\end{exer*}
+\begin{theorem*}
+  Toda fun\c c\~ao anal\'itica em uma regi\~ao simplesmente conexa possui uma primitiva.
+\end{theorem*}
+\begin{proof*}
+  Seja $a\in{G}$ e, para cada z em G, seja $\gamma_{z}$ retific\'avel tal que $\gamma_{z}(0) = a, \gamma_{z}(1) = z.$ Defina 
+ $F:G\rightarrow \mathbb{C}$ por 
+ $$
+  F(z) = \int_{\gamma_{z}}^{}fdw.
+ $$
+ Note que se $\sigma_{2}$ \'e outra curva tal que $\sigma_{z}(0) = a$ e $\sigma_{z}(1) = z$, ent\~ao $\sigma_{z} - \gamma_{z}$
+\'e fechada, fazendo com que sejam homot\'opicas a 0 e 
+ $$
+  \int_{\sigma_{z}-\gamma_{z}}^{}f = 0\Rightarrow \int_{\gamma_{z}}^{}f = \int_{\sigma_{z}}^{}f.
+ $$
+ Observe que 
+ $$
+ \frac{F(z+h) - F(z)}{h} = \frac{1}{h}\int_{\gamma_{z+h}}^{}f - \int_{\gamma_{z}}^{}f = \frac{1}{h}\int_{[z, z+h]}^{}f = \frac{1}{h}\int_{0}^{1}f(zt + (1-t)(z+h))-hdt
+ $$
+\end{proof*}
+\newpage
+
+\section{Aula 13 - 27/01/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+  \item Vers\~ao de M\'ultiplos Zeros da Integral de Cauchy;
+  \item Teorema da Aplica\c c\~ao Aberta.
+ \end{itemize}
+ 
+ \subsection{Teorema Integral de Cauchy com V\'arios Zeros}
+\begin{theorem*}
+  Seja f anal\'itica na regi\~ao G com zeros $a_{1}, \cdots, a_{m}.$ Se $\gamma$ \'e retific\'avel e fechada \'e tal que $\gamma\sim0$
+  e $a_{i}\not\in \{\gamma\}, i = 1, \cdots, m, $ ent\~ao
+  $$
+    \sum\limits_{k=1}^{m}n(\gamma, a_{k}) = \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f'(z)}{f(z)}dz
+  $$
+\end{theorem*}
+\begin{proof*}
+  Podemos escrever 
+  $$
+    f(z) = (z-a_{1})\cdots(z-a_{m})g(z),
+  $$
+para alguma g anal\'itica tal que $g(z)\neq0$ para qualquer z em G. Com isso, $\displaystyle \frac{g'(z)}{g(z)}$ anal\'itica em G;
+ja que $\gamma\approx0$, o Teorema de Cauchy faz com que 
+  $$
+    \int_{\gamma}^{}\frac{g'(z)}{g(z)}dz = 0.
+  $$
+  Assim, segue de 
+  $$
+    \frac{f'(z)}{f(z)} = \frac{1}{z-a_{1}} + \frac{1}{z-a_{2}} + \cdots + \frac{1}{z-a_{m}} + \frac{g'(z)}{g(z)},\quad z\neq a_{1}, \cdots, a_{m},
+  $$
+  que 
+  $$
+  \int_{\gamma}^{}\frac{g'(z)}{g(z)}dz = \int_{\gamma}^{}\frac{1}{z-a_{1}} + \int_{\gamma}^{}\frac{1}{z-a_{2}} + \cdots + \int_{\gamma}^{}\frac{1}{z-a_{m}} - \int_{\gamma}^{}\frac{f'(z)}{f(z)}.
+  $$
+  Portanto, 
+  $$
+  \frac{1}{2\pi i}\int_{\gamma}^{}\frac{f'(z)}{f(z)} = \int_{\gamma}^{}\frac{1}{z-a_{1}} + \int_{\gamma}^{}\frac{1}{z-a_{2}} + \cdots + \int_{\gamma}^{}\frac{1}{z-a_{m}} = \sum\limits_{k=1}^{m}n(\gamma, a_{k}).\text{\qedsymbol}
+  $$
+\end{proof*}
+\begin{prop*}
+  Seja f anal\'itica na regi\~ao G, $\gamma$ retific\'avel e fechado em G com $n(\gamma, z)\in \{0, 1\}, z\in{G}.$ Se $n(\gamma, a) = 1$
+e $\alpha:= f(a)\not\in \{\sigma:= f\circ{\gamma}\} $, ent\~ao $f-\beta$ possui pelo menos uma ra\'iz para todo $\beta$ na mesma componente
+de $\alpha$ em $f(G)\cap{\mathbb{C}-\{\sigma\}}$.
+\end{prop*}
+\begin{proof*}
+  Seja $\beta$ como na proposi\c c\~ao. Ent\~ao,
+  $$
+    n(\sigma, \alpha) = n(\sigma, \beta).
+  $$
+  Vamos assumir que $\gamma\in{C^{1}}$. Neste caso, temos duas igualdades relevantes:
+  \begin{align*}
+    &n(\sigma, \alpha) = \frac{1}{2\pi i}\int_{\sigma=f\circ{\gamma}}^{}\frac{1}{w-\alpha}dw = \frac{1}{2\pi i}\int_{0}^{1}\frac{1}{f(\gamma(t))-\alpha}f'(\gamma(t))d\gamma(t) = \sum\limits_{k=1}^{m}n(\gamma, a_{k}(\alpha)). \\
+    &n(\sigma, \alpha) = n(\sigma, \beta) = \sum\limits_{k=1}^{m}n(\sigma, a_{k}(\beta)),
+  \end{align*}
+  em que $a_{k}(\alpha)$ \'e zero de $f-\alpha.$ \qedsymbol
+\end{proof*}
+\subsection{Teorema da Aplica\c c\~ao Aberta}
+  \begin{theorem*}
+    Seja G regi\~ao e f anal\'itica em G. Ent\~ao, f \'e aberat, ou seja, f(A) \'e aberto para todo aberto em G. 
+  \end{theorem*}
+ \begin{proof*}
+   Seja $A\subseteq{G}, \alpha:=f(a)\in{f(A)}.$ Afirmamos que se $f:B(a, r)\rightarrow \mathbb{C}$ e $\alpha:=f(a)$ \'e zero de 
+multiplicidade m de f-a, ent\~ao existem $\epsilon, \delta > 0$ tais que 
+  $$
+  \beta\in{B(\alpha, \delta)- \{\alpha\} }\Rightarrow f-\beta\text{ possui m zeros simples em }B(a, \epsilon).
+  $$
+  Com esta afirma\c c\~ao, tome $\epsilon > 0$ tal que $B(a, \epsilon)\subseteq{A}$ e seja $\delta > 0$ como na afirma\c c\~ao.
+Note que
+  $$
+    B(\alpha, \delta)\subseteq{f(B(a, \epsilon))}\subseteq{f(A)}.
+  $$
+  Para provar a afirma\c c\~ao, suponha que existe $\epsilon > 0$ tal que $f - \alpha$ n\~ao possua zeros em $B(a, \epsilon)$. Considere
+  $\gamma(t) = a + \epsilon e^{2\pi it}, t\in[0, 1].$ Al\'em disso, existe $\gamma > 0$ tal que $B(\alpha, \delta)\cap \{\sigma:=f\circ{\gamma}\}=\emptyset$.
+  Dado $\beta\in{B(a, \delta)}$ pela proposi\c c\~ao anterior
+  $$
+  n(\gamma, \beta) = n(\gamma, \alpha) = \sum\limits_{k=1}^{m}n(\gamma, a_{k}(\alpha)) = m.\quad\text{ \qedsymbol}
+  $$
+ \end{proof*}
+\newpage
+\section{COMENT\'ARIO \`A PARTE}
+
+\paragraph{}  A partir desse momento, as aulas s\~ao dadas pelos alunos atrav\'es da forma de Semin\'arios. Neste prisma, o cr\'edito ser\'a
+devidamente dado a cada grupo e, caso n\~ao ocorra isso, por favor, me contate para que possa ser corrigido. Ademais, os cr\'editos
+tamb\'em devem ser dados \`a professora Tha\'is pela organiza\c c\~ao e orienta\c c\~ao.
+
+\section{Aula 14 - 30/01/2023 - Pedro Rangel, Renan Wenzel, Roberta Agnes Mendes Melo.}
 \end{document}
+
