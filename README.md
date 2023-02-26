@@ -12,3 +12,4 @@ If everything goes accordingly, this repository will be updated (at least) month
 If you want to contact me to ask questions about the PDFs, inform me of a mistake or just talk about life, I usually check my email daily, so here it is:
 
 *E-mail*: renan.wenzel.rw@gmail.com.
+*E-mails Alternativos*: renan.wenzel.rw@protonmail.com, renanw.science@gmail.com, 11169472@usp.br.
