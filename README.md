@@ -10,8 +10,11 @@ If everything goes accordingly, this repository will be updated (at least) month
 ## Items Included Here (By year)
 ### First Year
 -[Calculus 1](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Calculus1);
+
 -[Calculus 2](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Calculus2);
+
 -[Linear Algebra](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Linear%20Algebra);
+
 -[Pre-Calculus](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/PreCalculus);
 ### Second Year
 
