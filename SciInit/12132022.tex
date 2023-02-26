@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{tikz}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{pgfplots}
@@ -27,6 +28,7 @@
 
 \rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
 
+\newcommand\SLash{\char`\\}
 \newtheorem*{def*}{Definition}
 \newtheorem*{theo*}{Theorem}
 
@@ -148,25 +150,101 @@ take $x\in{C _{\alpha _{1}, \cdots, \alpha _{k}}^{n _{1}, \cdots, n _{k}}}$. Hen
   x\in C _{\alpha _{1}}^{n _{1}}\cap C _{\alpha _{2}}^{n _{2}} \cap \cdots \cap C _{\alpha _{k}}^{n _{k}}
   $$
 so that it satisfies the theorem characterizing a basis, i.e., $\mathcal{C}$ is a basis of cylinders. Moreover,
-notice that giben a cylinder, 
+notice that given a cylinder, 
   $$
-  \Omega _{N}^{R}\fracslash
+  \Omega _{N}^{R}\SLash\{C_{\alpha_{1}, \cdots, \alpha_{k}}^{n_{1}, \cdots, n_{k}}\} = \{\omega\in \Omega_{N}^{R}: \omega_{n_{i}}\neq \alpha_{i}, i = 1, \cdots, k\} = C^{n_{1}, \cdots, n_{k}}_{\sigma(\alpha_{1}), \cdots, \sigma(\alpha_{k}),}
   $$
+where $\sigma$ is a permutation that excludes the j-th term $(\sigma(\alpha_{i})\neq \alpha_{k}\forall i=1, \cdots, k).$ As a consequence,
+we see that every cylinder is both open and closed in $\Omega_{N}^{R}.$
 
+  Our next step will be defining a metric for our space and prove some of its properties.
+\newpage
+
+\section{Day 05/12/2022}
+\subsection{Motivations}
+\begin{itemize}
+  \item Cylinders are clopen sets;
+  \item Sequence space metric;
+  \item Cylinders are open balls in that metric;
+  \item $\Omega_{N}$ is a perfect set (First part of showing the homeomorphism with a Cantor Set).
+\end{itemize}
+\subsection{Reviewing}
+  Topics from last class:
+ \begin{itemize}
+   \item Introduced the main space we're working on;
+   \item Defined the bases for the topology on $\Omega_{N}^{R}$;
+   \item We showed that each cylinder set form open sets.
+ \end{itemize}
+ \subsection{$\Omega_{N}^{R}$ as a Metric Space}
+  Our goal with this is to define a metric such that the space is perfect and can be related to the cylinder topology.
+For a fixed $\lambda > 1,$ define $d:\Omega_{N}^{R}\times{\Omega_{N}^{R}}\rightarrow \mathbb{R}$ by
+  $$
+    d_{\lambda}(\omega, \omega') = \sum\limits_{n=-\infty}^{\infty} \frac{|\omega_{n} - \omega_{n}'|}{\lambda^{|n|}}.
+  $$
+  Checking the metric axioms is not the point of this seminar, thus it's left undone on the notes. However, it hurts no one to 
+comment that it all follows from the properties granted from the usual metric of $\mathbb{R}^{n}$ (i.e. the absolute value).
+
+\subsection{Open Balls in $\Omega_{N}^{R}$}
+  Using the definition of open balls (c.f. Section 1)k, let's analyze the case of an open ball centered at 0 with raidus r
+with the metric we just defined. For the sake of simplicity, take N to be 2, so that for large $\lambda$, specifically $\lambda=10N=20$, fix
+the zero sequence $\omega' = (\cdots, 0, 0, 0, \cdots)$. We want to find $r > 0$ such that $B_{r}(\omega') = C_{0}^{0} = \{\nu = (\nu_{n})_{n\in\mathbb{Z}}: \nu_{0} = 0\}.$
+Equivalently, we're going to prove that
+  $$
+  \{\omega\in  \Omega_{2}: d_{\lambda}(\omega, \omega') < r\} = \{\omega\in \Omega_{2}: \omega_{0} = 0\}.
+  $$
+  Analyzing the terms of the series under these condition, one gets 
+  $$
+  d_{\lambda}(\omega, \omega') = \sum\limits_{n=-\infty}^{\infty} \frac{|\omega_{n} - \omega_{n}'|}{\lambda^{|n|}} = \sum\limits_{n=-\infty}^{\infty} \frac{|\omega_{n}|}{20^{|n|}}
+  $$
+It helps to visualize a few cases of n to understand the behavior of the series. In fact, it follows that
+  \begin{align*}
+  &n=0 \rightarrow \frac{|\omega_{0} - \omega_{0}'|}{20^{n}} = \left\{\begin{array}{ll}
+      0, \quad \text{if } \omega_{0} = \omega_{0}' = 0 \\
+      \frac{1}{1} = 1, \quad \text{if } \omega_{0}\neq \omega_{0}'
+    \end{array}\right.\\
+  &n=1 \rightarrow \frac{|\omega_{1} - \omega_{1}'|}{20} = \left\{\begin{array}{ll}
+        0, \quad \text{if } \omega_{1} = \omega_{1}' = 0 \\
+        \frac{1}{20}, \quad \text{if } \omega_{1}\neq \omega_{1}'
+      \end{array}\right.\\
+  &  \vdots\\
+  &n=k \rightarrow \frac{|\omega_{\pm k} - \omega_{\pm k}'|}{20^{|k|}} = \left\{\begin{array}{ll}
+      0, \quad \text{if } \omega_{\pm k} = \omega_{\pm k}' \\
+      \frac{1}{20^{|k|}}, \quad \text{if } \omega_{\pm k}\neq \omega_{\pm k}
+    \end{array}\right.
+  \end{align*}
+  In other words, we are looking for an r such that
+  $$
+    d_{\lambda}(\omega, \omega') = \left\{\begin{array}{ll}
+        \sum\limits_{n=-\infty}^{\infty}\frac{1}{20^{|n|}}, \quad \omega_{n}\neq \omega_{n} \\
+        0, \quad \omega_{n} = \omega_{n}'
+      \end{array}\right.
+  $$
+  Because $\displaystyle \frac{1}{20} < 1,$ this series converges, so that it works for any $r\in\biggl(\sum\limits_{|n|\geq{1}}^{}20^{-n}, 1\biggr]$ works.
+In fact, the cases in which $\omega_{n} = \omega_{n}'$ for some $n\in \mathbb{Z}$ yield
+  $$
+    d(\omega, \omega')\leq \sum\limits_{|n|\geq{1}}^{}20^{-n} < r
+  $$
+Notice that the case r = 1 must be included if $\omega_{0}\neq \omega_{0}'$ but $\omega_{n} = \omega_{n}'$ for $n\in \mathbb{Z}\SLash \{ 0\} $. 
+Moreover, notice that $20^{-n}$ is just $\lambda^{-n}$, such that we can calculate the radius of the ball for a given large $\lambda.$
+
+  One final comment should be added. On any metric space, a topology given by the metric itself can be created by setting
+the basis to be open balls and open sets being their union. That way, the topology induced by the metric just studied, in which
+open balls have been shown to be cylinders, is one generated by them (cylinders). Hence, it is equivalent to the first topology we
+defined on $\Omega_{N}^{R}!.$
+\newpage
 
 \section{Day 12/12/2022}
 \subsection{Reviewing}
 Topics from last class:
-Showed that cylinders form open sets and are equivalent to open balls with the metric:
+  \begin{itemize}
+    \item Showed that cylinders form open sets and are equivalent to open balls with the metric:
   $$
-  d_{\lambda}(\omega, \omega') = \sum_{n=-\infty}^{\infty}\frac{|\omega _{n} - \omega' _{n}|}{\lambda ^{|n|}}
+  d_{\lambda}(\omega, \omega') = \sum_{n=-\infty}^{\infty}\frac{|\omega _{n} - \omega' _{n}|}{\lambda ^{|n|}};
   $$
-
-Found a connection between product topology and metric topology
-
-Showed that cylinders are clopen sets
-
-Showed that the metric above has less contributions from higher order terms.
+  \item Found a connection between product topology and metric topology;
+  \item Showed that cylinders are clopen sets;
+  \item Showed that the metric above has less contributions from higher order terms.
+  \end{itemize}
 \subsection{Connectedness}
 On today's seminar, we are going to see a few topological concepts needed to better grasp the ideas behind
 the relationship between Cantor Sets and Sequence Spaces. Starting with the notion of connectedness of a space,

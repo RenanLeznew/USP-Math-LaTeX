@@ -1,0 +1,53 @@
+   \documentclass{article}
+ \usepackage{amsmath}
+ \usepackage{amsthm}
+ \usepackage{amssymb}
+ \usepackage{pgfplots}
+ \usepackage{amsfonts}
+ \usepackage[margin=2.5cm]{geometry}
+ \usepackage{graphicx}
+ \usepackage[export]{adjustbox}
+ \usepackage{fancyhdr}
+ \usepackage[portuguese]{babel}
+ \usepackage{hyperref}
+ \usepackage{lastpage}
+ \usepackage{mathtools}
+
+ \pagestyle{fancy}
+ \fancyhf{}
+
+ \pgfplotsset{compat = 1.18}
+
+ \hypersetup{
+     colorlinks,
+     citecolor=black,
+     filecolor=black,
+     linkcolor=black,
+     urlcolor=black
+ }
+ \newtheorem*{def*}{\underline{Definition}}
+ \newtheorem*{theorem*}{\underline{Theorem:}}
+ \newtheorem{example}{\underline{Example:}}[section]
+ \newtheorem*{proof*}{\underline{Proof:}}
+ \renewcommand\qedsymbol{$\blacksquare$}
+ \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+ \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+ \title{Explanations}
+ \author{Renan Wenzel}
+ \date{\today}
+
+ \begin{document}
+ \maketitle
+    Mostre que $\lim\limits_{x\to0}x^2 = 0.$ Dado $\epsilon > 0$, queremos encontrar um $\delta > 0$ satisfazendo 
+  ``$0 < |x-0| < \delta$, ent\~ao $|x^2 - 0| < \epsilon$".  Observe que
+ $$
+   |x^{2} - 0| < \epsilon\Longleftrightarrow |x - 0| < \sqrt{\epsilon}
+ $$
+ Com isso, colocando $\delta = \sqrt{\epsilon}$, segue que, se $0 < |x - 0| < \delta$, ent\~ao
+ $$
+  |x - 0| < \delta\Rightarrow |x - 0| < \sqrt{\epsilon}\Rightarrow |x^2 - 0| < \epsilon
+ $$
+ Portanto, pela defini\c c\~ao de limite, $\lim\limits_{x\to0}x^{2}=0.$ \qedsymbol
+ \end{document}
