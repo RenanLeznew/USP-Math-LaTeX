@@ -13,4 +13,4 @@ If you want to contact me to ask questions about the PDFs, inform me of a mistak
 
 *E-mail*: renan.wenzel.rw@gmail.com.
 
-*E-mails Alternativos*: renan.wenzel.rw@protonmail.com, renanw.science@gmail.com, 11169472@usp.br.
+*Other E-mails*: renan.wenzel.rw@protonmail.com, renanw.science@gmail.com, 11169472@usp.br.
