@@ -1,0 +1,5 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {1}Aula 01 - 13/03/2023}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motiva\c c\~ao}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Os N\'umeros Naturais}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}N\'umeros Inteiros e Racionais}{4}{subsection.1.3}%

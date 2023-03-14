@@ -1,0 +1,218 @@
+   \documentclass{article}
+ \usepackage{amsmath}
+ \usepackage{amsthm}
+ \usepackage{amssymb}
+ \usepackage{pgfplots}
+ \usepackage{amsfonts}
+ \usepackage[margin=2.5cm]{geometry}
+ \usepackage{graphicx}
+ \usepackage[export]{adjustbox}
+ \usepackage{fancyhdr}
+ \usepackage[portuguese]{babel}
+ \usepackage{hyperref}
+ \usepackage{lastpage}
+ \usepackage{mathtools}
+
+ \pagestyle{fancy}
+ \fancyhf{}
+
+ \pgfplotsset{compat = 1.18}
+
+ \hypersetup{
+     colorlinks,
+     citecolor=black,
+     filecolor=black,
+     linkcolor=black,
+     urlcolor=black
+ }
+ \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+ \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
+ \newtheorem*{theorem*}{\underline{Teorema}}
+ \newtheorem{example*}{\underline{Exemplo}}
+ \newtheorem*{proof*}{\underline{Prova}}
+ \newtheorem*{lemma*}{\underline{Lema}}
+ \renewcommand\qedsymbol{$\blacksquare$}
+ \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+ \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+ \title{Notas de }
+ \author{Renan Wenzel}
+ \date{\today}
+
+ \begin{document}
+ \begin{figure}[ht]
+	\minipage{0.76\textwidth}
+		\includegraphics[width=4cm]{../icmc.png}
+		\hspace{7cm}
+		\includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+	\endminipage	
+\end{figure}
+
+\begin{center}
+	\vspace{1cm}
+	\LARGE
+	UNIVERSIDADE DE S\~AO PAULO
+
+	\vspace{1.3cm}
+	\LARGE
+	INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+	\vspace{1.7cm}
+	\Large
+	\textbf{Notas de Aula de \'Algebra}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Renan Wenzel - 11169472}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Roberto Carlos - alvarago@icmc.usp.br}
+
+	\vspace{1.3cm}
+	\today
+\end{center}
+
+ \newpage
+
+ \tableofcontents
+
+ \newpage
+
+\section{Aula 01 - 14/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Compreender o que ser\'a estudado ao longo do curso;
+\end{itemize}
+\subsection{Introdu\c c\~ao ao Curso}
+  Este curso \'e sobre teoria de grupos, a qual possui origem no estudo de simetrias, sejam elas de figuras ou de objetos alg\'ebricos.
+Um exemplo de grupo seria o seguinte: 
+
+  Considere um tri\^angulo equil\'atero. Existem algumas formas de olharmos para as simetrias
+do tri\^angulo, como rotacionando-o, refletindo-o com rela\c c\~ao a um ponto m\'edio e um v\'ertice fixo. Contabilizando todas as poss\'iveis
+formas delas acontecerem, h\'a seis simetrias deste ret\^angulo. Ademais, compondo simetrias resulta em outra, i.e., rotacionar e refletir
+um certo v\'ertice continuar\'a sendo uma simetria do tri\^angulo. Al\'em disto, \'e um fato (futuramente visto) que essas seis simetrias 
+totalizam todas as poss\'iveis simetrias de um tri\^angulo equil\'atero. De fato, dado um pol\'igono regular de n lados, ele possui
+n! simetrias.
+
+\subsection{Grupos e Opera\c c\~oes}
+ \begin{def*}
+   Seja S um conjunto n\~ao-vazio. Uma opera\c c\~ao em S \'e um mapa
+   \begin{align*}
+     \mu:&S \times S\rightarrow S\\
+         &(a, b)\mapsto{\mu(a, b)}
+   \end{align*}
+ \end{def*}
+\begin{example*}
+  A opera\c c\~ao soma em $\mathbb{Z}, +:\mathbb{Z}\times{\mathbb{Z}}\rightarrow \mathbb{Z}, (a, b)\mapsto a + b$ \'e uma opera\c c\~ao.
+\end{example*}
+\begin{example*}
+  Uma opera\c c\~ao em $\mathbb{R}$ \'e a multiplica\c c\~ao $.:\mathbb{R}\times{\mathbb{R}}\rightarrow \mathbb{R}, (a, b)\mapsto ab.$
+\end{example*}
+\begin{example*}
+  Um exemplo do que n\~ao \'e opera\c c\~ao seria a subtra\c c\~ao dos naturais, $-:\mathbb{N}\times{\mathbb{N}}\rightarrow \mathbb{N}, (a, b)\mapsto a - b.$ (Consegue responder por que n\~ao \'e?)
+\end{example*}
+\begin{example*}
+  Se S \'e o conjunto de simetrias de um tri\^angulo equil\'atero, ent\~ao a composi\c c\~ao
+  \begin{align*}
+    \circ: &S\times{S}\rightarrow S \\
+           &(\sigma, \tau)\mapsto \sigma\circ \tau
+  \end{align*}
+  \'e uma opera\c c\~ao bin\'aria.
+\end{example*}
+  Faremos a conven\c c\~ao de denotar $\mu(a, b)$ por $a.b$ ou $a + b$, com base no contexto.
+ \begin{def*}
+   Uma opera\c c\~ao $\mu$ em S n\~ao-vazio, denotada pelo produto, \'e dita associativa se, para todos a, b, c em S,
+   $$
+      (a.b).c = a.(b.c), \quad \biggl(\mu(a, \mu(b, c)) = \mu(\mu(a, b), c)\biggr).
+   $$
+   Por outro lado, ser\'a dita comutativa se 
+   $$
+      a.b = b.a, \quad \biggl(\mu(a, b) = \mu(b, a)\biggr).
+   $$
+   Diremos, tamb\'em, que ela tem elemento neutro (ou identidade) se existe um elemento e em S tal que 
+   $$
+    a.e = e.a = a,\forall a\in{S}.
+   $$
+   Neste caso, diremos que e \'e o elemento neutro, ou a identidade, para $\mu$.
+ \end{def*}
+  Utilizaremos a nota\c c\~ao 1 para a identidade no caso em que $\mu$ \'e denotada por um produto e 0 pro caso em que \'e denotada por adi\c c\~ao.
+
+ \begin{example*}
+   A multiplica\c c\~ao de matrizes \'e associativa, n\~ao \'e comutativa e possui identidade.
+ \end{example*}
+\begin{example*}
+  A soma de n\'umeros inteiros \'e associativa, comutativa e possui identidade.
+\end{example*}
+\begin{example*}
+  A pot\^encia nos n\'umeros reais \'e n\~ao associativa, nem comutativa, mas possui identidade: $a^{(b^{c})} \neq (a^{b})^{c} = a^{bc}$
+\end{example*}
+
+\begin{prop*}
+  Seja S um conjunto n\~ao-vazio e $\mu$ uma opera\c c\~ao em S denotada pelo produto. Ent\~ao, existe um \'unico jeito de definir o
+produto (denotado temporariamente por $[a_{1}, \cdots, a_{n}]$) de n elementos em S tal que 
+\begin{align*}
+  &(i)\quad [a_{1}] = a_{1}; \\
+  &(ii)\quad [a_{1}, a_{2}] = \mu(a_{1}, a_{2}) = a_{1}a_{2}; \\
+  &(iii)\quad\forall 1\leq{i}<n, [a_{1}, \cdots, a_{n}] = [a_{1}, \cdots, a_{i}][a_{i+1}, \cdots, a_{n}].
+\end{align*}
+\end{prop*}
+\begin{proof*}
+  (iii)$\Rightarrow$ Para o caso $n\leq{2}$ \'e ok. Agora, suponha o produto bem-definido de r elementos em S, $r\leq{n=1}$. Ent\~ao,
+defina $[a_{1}, \cdots, a_{n}]:= [a_{1}, \cdots, a_{n-1}][a_{n}]. $ Como a defini\c c\~ao acima satisfaz a condi\c c\~ao (iii) para
+i=n-1, se ela estiver bem-definida, ela ser\'a \'unica. Com efeito, seja $1\leq{i}<n-1$, tal que 
+  \begin{align*}
+    [a_{1}, \cdots, a_{n}] &= [a_{1}, \cdots, a_{n-1}][a_{n}] = [a_{1}, \cdots, a_{i}][a_{i+1}, \cdots, a_{n-1}][a_{n}]\\
+                           &= \biggl([a_{1}, \cdots, a_{i}]\biggr)\biggl([a_{i+1}, \cdots, a_{n-1}][a_{n}]\biggr) \\
+                           &= [a_{1}, \cdots, a_{i}][a_{i+1}, \cdots, a_{n}].\text{ \qedsymbol}
+  \end{align*}
+\end{proof*}
+\begin{def*}
+  Seja S n\~ao-vazio e $\mu$ uma opera\c c\~ao em S com identidade 1. Um elemento a de S \'e dito invers\'ivel se existe b em S tal que
+ $ab = ba = 1.$ Neste caso, b \'e o inverso de a, denotado por $b:=a^{-1}$.
+\end{def*}
+  Note que tanto o elemento inverso quanto o elemento neutro, se existirem, s\~ao \'unicos (c.f. Lema abaixo). Al\'em disso, o inverso da adi\c c\~ao \'e
+denotad por -a.
+\begin{lemma*}
+  Seja S n\~ao-vazio, $\mu$ uma opera\c c\~ao associativa denotada pelo produto. Ent\~ao, 
+ \begin{itemize}
+   \item[i)] Existe no m\'aximo um elemento neutro para S e $\mu$;
+   \item[ii)] Se o elemento neutro existe, ent\~ao para cada elemento de S, existe no m\'aximo um inverso;
+   \item[iii)] Se um elemento a de S tem inverso \`a esquerda l e \`a direita r, i.e. $l.a = 1 \text{ e } a.r = 1$, ent\~ao
+a \'e invers\'ivel com inverso l = r.
+   \item[iv)] Se a, b em S s\~ao invers\'iveis, ent\~ao o produto ab \'e invers\'ivel, com inverso $b^{-1}a^{-1}.$
+ \end{itemize}
+\end{lemma*}
+  Antes de provar, observe que a exist\^encia de um elemento inverso \`a esquerda ou \`a direita n\~ao garante que um elemento
+seja invers\'ivel (exerc\'icio), eles devem coincidir.
+\begin{proof*}
+ $(i)\Rightarrow)$ Suponha que existem 1, 1' em S como seus elementos neutros. Basta mostramos que eles coincidem. Com efeito,
+ $$
+    1 = 1.1' = 1'.1 = 1'.
+ $$
+ Portanto, o elemento neutro \'e \'unico.
+ $(ii)\Rightarrow)$ Assuma a exist\^encia de dois elementos inversos em S para um elemento a, denotados por b, b'. Ent\~ao, como
+ab = ba = 1, temos
+  $$
+    b = b1 = b(ab') = (ba)b' = 1b' = b'.
+  $$
+  Portanto, o elemento inverso \'e \'unico. Os itens (iii) e (iv) s\~ao exerc\'icios. \qedsymbol
+\end{proof*}
+  
+ \begin{def*}
+   Um monoide \'e um par (G, $\mu$), em que G \'e um conjunto n\~ao-vazio e $\mu$ uma opera\c c\~ao associativa e com elemento neutro em G.
+  Se, ainda por cima, $\mu$ for associativa, (G, $\mu$) \' e um monoide abeliano (ou comutativo).
+ \end{def*}
+ \begin{def*}
+   Um grupo \'e um par (G, $\mu$) \'e um monoide (G, $\mu$) com a condi\c c\~ao extra que todo elemento de G possui inverso. Caso
+ $\mu$ seja comutativa, chamamos G de grupo abeliano.
+ \end{def*}
+\begin{example*}
+  Os inteiros com a soma, $(\mathbb{Z}, +)$, \'e um grupo comutativo, enquanto $(\mathbb{Z}, .)$ n\~ao \'e um grupo, mas sim um monoide.
+\end{example*}
+\begin{example*}
+  O grupo das matrizes com entradas reais e sua multiplica\c c\~ao, $(\mathbb{M}_{n}(\mathbb{R}, .)$, \'e um grupo n\~ao-abeliano.
+\end{example*}
+ 
+\end{document}

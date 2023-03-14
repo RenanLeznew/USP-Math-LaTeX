@@ -1,0 +1,159 @@
+   \documentclass{article}
+ \usepackage{amsmath}
+ \usepackage{amsthm}
+ \usepackage{amssymb}
+ \usepackage{pgfplots}
+ \usepackage{amsfonts}
+ \usepackage[margin=2.5cm]{geometry}
+ \usepackage{graphicx}
+ \usepackage[export]{adjustbox}
+ \usepackage{fancyhdr}
+ \usepackage[portuguese]{babel}
+ \usepackage{hyperref}
+ \usepackage{lastpage}
+ \usepackage{mathtools}
+
+ \pagestyle{fancy}
+ \fancyhf{}
+
+ \pgfplotsset{compat = 1.18}
+
+ \hypersetup{
+     colorlinks,
+     citecolor=black,
+     filecolor=black,
+     linkcolor=black,
+     urlcolor=black
+ }
+ \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+ \newtheorem*{theorem*}{\underline{Teorema}}
+ \newtheorem*{lemma*}{\underline{Lema}}
+ \newtheorem{example}{\underline{Exemplo}}
+ \newtheorem*{proof*}{\underline{Prova}}
+ \renewcommand\qedsymbol{$\blacksquare$}
+ \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+ \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+ \title{Notas de An\'alise}
+ \author{Renan Wenzel}
+ \date{\today}
+
+ \begin{document}
+ \begin{figure}[ht]
+	\minipage{0.76\textwidth}
+		\includegraphics[width=4cm]{../icmc.png}
+		\hspace{7cm}
+		\includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+	\endminipage	
+\end{figure}
+
+\begin{center}
+	\vspace{1cm}
+	\LARGE
+	UNIVERSIDADE DE S\~AO PAULO
+
+	\vspace{1.3cm}
+	\LARGE
+	INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+	\vspace{1.7cm}
+	\Large
+	\textbf{Notas de Aula de An\'alise}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Renan Wenzel - 11169472}
+
+	\vspace{1.3cm}
+	\large
+	\textbf{Alexandre Nolasco de Carvalho - andcarva@icmc.usp.br}
+
+	\vspace{1.3cm}
+	\today
+\end{center}
+
+ \newpage
+
+ \tableofcontents
+
+ \newpage
+
+\section{Aula 01 - 13/03/2023}
+\subsection{Motiva\c c\~ao}
+\begin{itemize}
+  \item Relembrar sistemas b\'asicos da matem\'atica;
+  \item Relembrar propriedades b\'asicas das principais estruturas.
+\end{itemize}
+
+\subsection{Os N\'umeros Naturais}
+  Os n\'umeros naturais s\~ao os que utilizamos para contar objetos, e s\~ao caracterizados pelos Axiomas de Peano:
+ \begin{itemize}
+   \item[1)] Todo n\'umero natural tem um \'unico sucessor; 
+   \item[2)] N\'umeros naturais diferentes t\^em sucessores diferentes;
+   \item[3)] Existe um \'unico n\'umero natural, zero (0), que n\~ao \'e sucessor de nenhum n\'umero natural.
+   \item[4)] Seja $X \subseteq{\mathbb{N}}$ tal que $0\in{X}$ e, se n pertence a X, seu sucessor n+1 tamb\'em pertence 
+a X. Ent\~ao, X = $\mathbb{N}.$ (Propriedade de Indu\c c\~ao).
+ \end{itemize}
+
+\begin{def*}
+  Definimos a adi\c c\~ao por: $n + 0 = n, n\in \mathbb{N},\text{ e }n+(p+1) = (n+p)+1, p\in{\mathbb{N}}$. Al\'em disso,
+a multiplica\c c\~ao \'e dada por: $n.0 = 0, n.(p+1) = n.p + n, n, p\in\mathbb{N}.$ Ou seja, sabendo somar ou multiplicar um n\'umero,
+sabemos somar e multiplicar seu sucessor.
+\end{def*}
+  Com rela\c c\~ao ao quarto axioma, ele leva este nome porque um dos m\'etodos de demonstra\c c\~ao, conhecido como
+prova por indu\c c\~ao. Nele, mostramos um caso base, o caso 0, e utilizamos a segunda parte para provar que, se um
+resultado vale para o caso n, ele vale para n+1, portanto sendo verdadeiro para todos os naturais.
+
+\begin{lemma*}
+  Para todo n natural, 1 + n = n + 1.
+\end{lemma*}
+\begin{proof*}
+  Note que o resultado \'e verdadeiro para n = 0. Suponha que o resultado seja v\'alido para n = k e mostremos que 
+vale tamb\'em para n = k+1. Com efeito, segue pela propriedade de indu\c c\~ao e pela defini\c c\~ao de soma que
+ $$
+    1 + (k + 1) = (1 + k) + 1 =  (k + 1) + 1. 
+ $$
+ Segue que o resultado vale para todo n natural. \qedsymbol
+\end{proof*}
+  A seguir, mostramos a associatividade e a comutatividade, respectivamente, das opera\c c\~oes nos naturais.
+\begin{lemma*}
+  Para todo n, p, r naturais, (n + p) + r = n + (p + r).
+\end{lemma*}
+\begin{proof*}
+  Note que o resultado \'e v\'alido trivialmente para r = 0 e r = 1. Suponha que o resultado seja v\'alido para
+r = k e mostremos que vale tamb\'em para r = k + 1. Com efeito, pela hip\'otese de indu\c c\~ao e defini\c c\~ao de adi\c c\~ao,
+  $$
+    n + (p + (k + 1)) = n + ((p + k) + 1) = (n + (p + k)) + 1 = ((n + p) + k) + 1 = (n + p) + (k + 1).
+  $$
+  Segue o resultado por indu\c c\~ao. \qedsymbol
+\end{proof*}
+\begin{lemma*}
+  Para todo n, p naturais, n + p = p + n. 
+\end{lemma*}
+\begin{proof*}
+  Observe que j\'a mostramos o caso em que p = 1. Suponha que o resultado vale para p = k e vamos mostrar o caso
+p = k + 1. De fato, pela hip\'otese de indu\c c\~ao e defini\c c\~ao de adi\c c\~ao, junto do lema de associatividade,
+temos  
+  $$
+    n + (k + 1) = (n + k) + 1 = (k + n) + 1 = 1 + (k + n) = (1 + k) + n = (k + 1) + n.
+  $$
+  Por indu\c c\~ao, segue que isso vale para todo natural n. \qedsymbol
+\end{proof*}
+
+\begin{def*}
+  Definimos uma ordem em $\mathbb{N}$ colocando que $m\leq{n}$ se existe p natural tal que n = m + p.
+\end{def*}
+  A rela\c c\~ao de ordem possui as seguintes propriedades:
+ \begin{itemize}
+   \item[i)] Reflexiva: Para todo n natural, $n\leq{n};$
+   \item[ii)] Antissim\'etrica: Se $m\leq n$ e $n\leq m,$ ent\~ao $m = n;$
+   \item[iii)] Transitiva: Se $m \leq n$ e $n \leq p$, ent\~ao $m\leq p;$
+   \item[iv)] Dados m, n naturais, temos ou $m \leq n$, ou $n \leq m;$
+   \item[v)] Se $m \leq n$ e p \'e um natural, ent\~ao $m + p\leq n\text{ e } mp\leq np$
+ \end{itemize}
+
+ \subsection{N\'umeros Inteiros e Racionais}
+  Usualmente, construimos os inteiros a partir dos naturais tomando os pares ordenados de n\'umeros naturais
+  com a seguinte identifica\c c\~ao (a, b) $\mathtt{\sim}$ (c, d) se a + d = b + c.
+ \end{document}
