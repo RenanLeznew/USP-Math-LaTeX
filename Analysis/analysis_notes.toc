@@ -3,3 +3,8 @@
 \contentsline {subsection}{\numberline {1.1}Motiva\c c\~ao}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Os N\'umeros Naturais}{3}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}N\'umeros Inteiros e Racionais}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Aula 02 - 15/03/2023}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motiva\c c\~oes}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Propriedades de $\mathbb {Q}$ e sua Ordem}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Incompletude de $\mathbb {Q}$}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Os N\'umeros Reais ($\mathbb {R}$)}{7}{subsection.2.4}%

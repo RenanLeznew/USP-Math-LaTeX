@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  14 MAR 2023 15:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  15 MAR 2023 16:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,24 +887,24 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 ) (analysis_notes.aux)
 \openout1 = `analysis_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -968,35 +968,35 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 42.
+Package hyperref Info: Link coloring ON on input line 43.
 (analysis_notes.out) (analysis_notes.out)
 \@outlinefile=\write4
 \openout4 = `analysis_notes.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 42.
-<../icmc.png, id=22, 376.40625pt x 188.20313pt>
+(lastpage)             ! on input line 43.
+<../icmc.png, id=42, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
-Package pdftex.def Info: ../icmc.png  used on input line 45.
+Package pdftex.def Info: ../icmc.png  used on input line 46.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=24, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=44, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
-Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 47.
+Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 48.
 (pdftex.def)             Requested size: 113.80931pt x 139.4159pt.
 
-Overfull \hbox (72.4929pt too wide) in paragraph at lines 45--48
+Overfull \hbox (72.4929pt too wide) in paragraph at lines 46--49
 [][]   [] 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1011,35 +1011,65 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [2] [3]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 194.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 194.
+
+[4] [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 289.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 289.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 334.
+
+
 AED: lastpage setting LastPage
-[4] (analysis_notes.aux)
+[7] (analysis_notes.aux)
 Package rerunfilecheck Info: File `analysis_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 0550F6358985E39383157AC6EED14862;630.
+(rerunfilecheck)             Checksum: 1AD506E712BAD53776AC319047A6B3FF;1435.
  ) 
 Here is how much of TeX's memory you used:
- 33332 strings out of 475284
- 778148 string characters out of 2774105
- 1206712 words of memory out of 3000000
- 54255 multiletter control sequences out of 15000+600000
- 474658 words of font info for 49 fonts, out of 8000000 for 9000
+ 33387 strings out of 475284
+ 778761 string characters out of 2774105
+ 1212741 words of memory out of 3000000
+ 54291 multiletter control sequences out of 15000+600000
+ 479510 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,103p,734b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,14n,103p,734b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\renan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/renan/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/renan/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/r
-enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
-:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
-/msam10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on analysis_notes.pdf (4 pages, 1793550 bytes).
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/r
+enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
+/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.
+pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/renan/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on analysis_notes.pdf (7 pages, 1864076 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 55 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 179 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

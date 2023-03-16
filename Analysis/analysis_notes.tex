@@ -1,4 +1,4 @@
-   \documentclass{article}
+ \documentclass{article}
  \usepackage{amsmath}
  \usepackage{amsthm}
  \usepackage{amssymb}
@@ -28,6 +28,7 @@
  \newtheorem*{def*}{\underline{Defini\c c\~ao}}
  \newtheorem*{theorem*}{\underline{Teorema}}
  \newtheorem*{lemma*}{\underline{Lema}}
+ \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
  \newtheorem{example}{\underline{Exemplo}}
  \newtheorem*{proof*}{\underline{Prova}}
  \renewcommand\qedsymbol{$\blacksquare$}
@@ -83,7 +84,7 @@
 \subsection{Motiva\c c\~ao}
 \begin{itemize}
   \item Relembrar sistemas b\'asicos da matem\'atica;
-  \item Relembrar propriedades b\'asicas das principais estruturas.
+  \item Relembrar propriedades b\'asicas das principais estruturas ($\mathbb{N}, \mathbb{Z}, \mathbb{Q}$).
 \end{itemize}
 
 \subsection{Os N\'umeros Naturais}
@@ -142,7 +143,7 @@ temos
 \end{proof*}
 
 \begin{def*}
-  Definimos uma ordem em $\mathbb{N}$ colocando que $m\leq{n}$ se existe p natural tal que n = m + p.
+  Definimos uma ordem em $\mathbb{N}$ colocando que $m\leq{n}$ se existe p natural tal que $n = m + p. \square$
 \end{def*}
   A rela\c c\~ao de ordem possui as seguintes propriedades:
  \begin{itemize}
@@ -155,5 +156,213 @@ temos
 
  \subsection{N\'umeros Inteiros e Racionais}
   Usualmente, construimos os inteiros a partir dos naturais tomando os pares ordenados de n\'umeros naturais
-  com a seguinte identifica\c c\~ao (a, b) $\mathtt{\sim}$ (c, d) se a + d = b + c.
- \end{document}
+com a seguinte identifica\c c\~ao (a, b) $\mathtt{\sim}$ (c, d) se a + d = b + c. Assim, podemos representar
+  $$
+  \mathbb{N} = \{(0, 0), (1, 0), (2, 0), (3, 0), \cdots\}, \quad -\mathbb{N}^* = \{\cdots, (0, 3), (0, 2), (0, 1)\}.
+  $$
+  Tomar o sucessor ser\'a somar 1 \`a primeira coordenada e, para os inteiros negativos, voltar a identificar (1, n) com (0, n-1).
+
+  Os n\'umeros racionais s\~ao constru\'idos tomando o conjunto $\mathbb{Z}\times{\mathbb{Z}^*}$ e identificando os pares $(a, b)\mathtt{\sim}(c, d)$
+para os quais ad = bc. Representamos um par (a, b) neste conjunto por $\displaystyle \frac{a}{b}.$ A soma e o produto em $\mathbb{Q}$
+s\~ao dados, respectivamente, por: 
+ \begin{align*}
+   &\frac{a}{b} + \frac{c}{d} \coloneqq \frac{ad + bc}{bd} \\
+   &\frac{a}{b}\cdot\frac{c}{d} \coloneqq \frac{ac}{bd}.
+ \end{align*}
+ Chamamos a adi\c c\~ao a opera\c c\~ao que a cada par $(x, y)\in \mathbb{Q}\times{\mathbb{Q}}$ associa sua soma $x+y\in \mathbb{Q}$
+e chamamos multiplica\c c\~ao a opera\c c\~ao que a cada par $(x, y)\in \mathbb{Q}\times \mathbb{Q}$ associa seu produto $x.y\in \mathbb{Q}.$
+A terna $(\mathbb{Q}, +, .)$ satisfaz as propriedades de um corpo, i.e., 
+ \begin{align*}
+   &(A1) (x + y) + z = x + (y + z), \quad\forall x, y, z\in \mathbb{Q}\\
+   &(A2) x + y = y + x, \quad\forall x, y\in \mathbb{Q}\\
+   &(A3) \exists 0\in \mathbb{Q}: x + 0 = x, \quad\forall x\in \mathbb{Q}\\
+   &(A4) \forall x\in \mathbb{Q}, \exists y\in \mathbb{Q} (y = -x): x + y = 0\\
+   &(M1) (xy)z = x(yz), \quad\forall x, y, z\in \mathbb{Q}\\
+   &(M2) xy = yx, \quad x, y\in \mathbb{Q}\\
+   &(M3) \exists 1\in \mathbb{Q}: 1.x = x.1 = x, \quad\forall x\in \mathbb{Q}\\
+   &(M4) \forall x\in \mathbb{Q}, \exists y = \frac{1}{x}\in \mathbb{Q}: x.y = 1\\
+   &(D) x(y+z) = xy + xz,\quad\forall x, y, z\in \mathbb{Q}.
+ \end{align*}
+
+\section{Aula 02 - 15/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Propriedades b\'asicas dos racionais;
+  \item Constru\c c\~ao do corpo dos reais a partir dos racionais;
+  \item Cortes de Dedekind.
+\end{itemize}
+\subsection{Propriedades de $\mathbb{Q}$ e sua Ordem}
+  Com as 9 propriedades de corpo, conseguimos obter novas regras nos racionais, como a famosa lei do cancelamento:
+ \begin{prop*}
+   Em $\mathbb{Q},$ vale
+   $$
+    x + z = y + z \Rightarrow x = y
+   $$
+   e, se $z\neq{0}$,
+   $$
+    xz = yz \Rightarrow x = y 
+   $$
+ \end{prop*}
+ \begin{proof*}
+   \begin{align*}
+   &x = x + 0 = x + (z + (-z)) = (x+z) + (-z) = (y + z) + (-z) = y + (z + (-z)) = y +0 = y\\
+   &x = x.1 = x(z.\frac{1}{z}) = (xz)\frac{1}{z} = (yz)\frac{1}{z} = y (z \frac{1}{z}) = y.1 = y. \text{ \qedsymbol}
+ \end{align*}
+ \end{proof*}
+ \begin{prop*}
+  Os elementos neutros da adi\c c\~ao e multiplica\c c\~ao s\~ao \'unicos. Os elementos oposto e inverso tamb\'em o s\~ao.
+ \end{prop*}
+ \begin{prop*}
+   Para todo x racional, x.0 = 0.
+ \end{prop*}
+ \begin{prop*}
+   Para todo x racional, -x = (-1)x.
+ \end{prop*}
+ A maioria desses resultados acima seguem diretamente da lei do cancelamento. Suas demonstra\c c\~oes ficam como exerc\'icio.
+\begin{def*}
+  Diremos que 
+  $$
+    \frac{a}{b}\in \mathbb{Q} = \left\{\begin{array}{ll}
+        \text{ n\~ao-negativo, } \quad ab\in \mathbb{N}\\
+        \text{ positivo, } \quad ab\in \mathbb{N}, a\neq 0
+      \end{array}\right.
+  $$
+  e diremos que 
+  $$
+    \frac{a}{b}\in \mathbb{Q} = \left\{\begin{array}{ll}
+        \text{ n\~ao-positivo, } \quad \frac{a}{b} \text{ n\~ao for postivo}\\
+        \text{ negativo, } \quad \frac{a}{b} \text{ n\~ao for n\~ao-negativo.}
+      \end{array}\right.\square
+  $$
+\end{def*}
+\begin{def*}
+  Sejam x, y racionais. Diremos que x \'e menor e que y e escrevemos ``$x < y$'' se existir t racional positivo tal que 
+  $$
+    y = x + t.
+  $$
+  Neste mesmo caso, podemos dizer que y \'e maior que x, escrevendo ``$x > y$''. Em particular, temos $x > 0$ se x for positivo e 
+$x < 0$ se x for negativo. 
+
+  Ademais, se $x < y$ ou x = y, escrevemos ``$x \leq{y}$'' se existir racional t n\~ao-negativo tal que 
+  $$
+    y = x + t
+  $$
+  e, se $x > y$ ou x = y, escrevemos ``$x \geq{y}$'' caso exista racional t n\~ao-positivo com
+  $$
+    y = x + t. \square
+  $$
+\end{def*}
+  A qu\'adrupla ($\mathbb{Q}, +, ., \leq{}$) satisfaz as propriedades de um corpo ordenado, i.e., 
+ \begin{align*}
+   &(O1) x \leq{x}\forall x\in \mathbb{Q};\\
+   &(O2) x\leq{y} \text{ e } y \leq{x}\Rightarrow x = y \forall x, y\in \mathbb{Q};\\
+   &(O3) x \leq{y}, y \leq{z}\Rightarrow x \leq{z}\forall x, y, z\in \mathbb{Q};\\
+   &(O4)\forall x, y \in \mathbb{Q}, x \leq{y} \text{ ou } y \leq{x};\\
+   &(OA) x \leq{y}\Rightarrow x + z \leq{y + z};\\
+   &(OM) x \leq{y} \text{ e } z \geq{0}\Rightarrow xz \leq{yz}. 
+ \end{align*}
+ \begin{prop*}
+  Para quaisquer x, y, z, w no corpo ordenado dos racionais, valem 
+ \begin{align*}
+   &i.) x < y\Longleftrightarrow x + z < y + z \\
+   &ii.) z > 0\Longleftrightarrow \frac{1}{z} > 0 \\
+   &iii.) z > 0\Longleftrightarrow -z < 0 \\
+   &iv.) z > 0\Rightarrow x < y\Longleftrightarrow xz < yz \\
+   &v.) z < 0\Rightarrow x < y\Longleftrightarrow xz > yz \\
+   &vi.) xz < yw\Longleftrightarrow \left\{\begin{array}{ll}
+       0 \leq{x} < y \\
+       0 \leq{z} < w
+     \end{array}\right. \\
+   &vii.) 0 < x < y\Longleftrightarrow 0 < \frac{1}{y} < \frac{1}{x}\\
+   &viii.) x < y \text{ ou } x =y \text{ ou } x > y \\
+   &ix.) xy = 0\Longleftrightarrow x = 0\text{ ou }y = 0. \\
+   &x.) \left.\begin{array}{ll}
+       x \leq{y} \\
+       z \leq{w}
+     \end{array}\right\}\Rightarrow x + z \leq{y + w}\\
+   &xi.) \left.\begin{array}{ll}
+       0 \leq{x} \leq{y}\\
+       0 \leq{z} \leq{w}
+   \end{array}\right\}\Rightarrow xz \leq{yw}.
+ \end{align*}
+ \end{prop*}
+ \subsection{Incompletude de $\mathbb{Q}$}
+  Os n\'umeros racionais podem ser representados por pontos em uma reta horizontal ordenada, chamada reta real. Se P for a representa\c c\~ao
+de um n\'umero racional x, diremos que x \'e a abscissa de P. Note que nem todo ponto da reta real \'e racional. Para isso, considere
+um quadrado de lado 1 e diagonal d. Pelo Teorema de Pit\'agoras, $d^{2} = 1^2 + 1^2 = 2.$ Agora, seja P a intersec\c c\~ao do eixo
+x com a circunfer\^encia de centro em 0 e raio d. Mostremos que P \'e um ponto da reta com abscissa $x\not\in \mathbb{Q}.$
+\begin{prop*}
+  Seja a um inteiro. Ent\~ao, se a for \'impar, seu quadrado tamb\'em ser\'a. Al\'em disso, se a for par, seu quadrado tamb\'em \'e par.
+\end{prop*}
+\begin{prop*}
+  A equa\c c\~ao $x^2 = 2$ n\~ao admite solu\c c\~ao racional.
+\end{prop*}
+  A ideia da prova \'e escrever um x na forma de fra\c c\~ao e chegar na contradi\c c\~ao de que tanto o numerador quanto o denominador
+ser\~ao n\'umeros pares. Com isso, conclui-se que n\~ao existe racional irredut\'ivel com quadrado igual a 2, portanto n\~ao existe racional
+satisfazendo a equa\c c\~ao. 
+
+  Essa discuss\~ao mostra que existem v\~aos na ``reta'' dos racionais, requerindo a ado\c c\~ao de um novo corpo. Essa \'e a principal
+motiva\c c\~ao por tr\'as dos n\'umeros reais, "preencher" os buracos deixados pelos racionais.
+\begin{prop*}
+  (Exerc\'icio.) Sejam $p_{1}, \cdots, p_{n}$ n\'umeros primos distintos. Ent\~ao, a equa\c c\~ao $x^{2} = p_{1}p_2\cdots p_{n}$ n\~ao
+tem solu\c c\~ao racional.
+\end{prop*}
+  Vimos que os n\'umeros racionais com a sua adi\c c\~ao, multiplica\c c\~ao e rela\c c\~ao de ordem \'e um corpo ordenado. Nos interessamos,
+tamb\'em, pelo corpo dos reais e dos racionais ($\mathbb{R}, \mathbb{C}$). De forma abstrata, um corpo \'e um conjunto n\~ao-vazio
+ $\mathbb{F}$ em que est\~ao definidas duas opera\c c\~oes bin\'arias
+ $$
+    +:\mathbb{F}\times \mathbb{F}\rightarrow \mathbb{F}, \quad (x, y)\mapsto x + y
+ $$
+ e 
+ $$
+    .: \mathbb{F}\times \mathbb{F}\rightarrow \mathbb{F}, \quad (x, y)\mapsto xy
+ $$
+ em que valem as oito propriedades vistas previamente para a defini\c c\~ao das opera\c c\~oes em $\mathbb{Q}$
+ Se, ainda por cima, no corpo $\mathbb{F}$ est\'a definida uma ordem com propriedades an\'alogas \`as vistas para a qu\'adrupla
+($\mathbb{Q}, +, ., \leq{}$), diremos que ($\mathbb{F}, +, ., \leq{}$) \'e um corpo ordenado.
+\begin{def*}
+  Diremos que um subconjunto A de um corpo $\mathbb{F}$ ordenado \'e limitado superiormente se existe um L neste corpo tal que $a \leq{L}$ para todo
+a de A. 
+
+  Definimos para um subconjunto limitado superiormente um n\'umero $\sup(A)\in \mathbb{F}$ como o menor limitante superior de
+A, i.e., se $a \leq{\sup(A)}$ para todo a de A e se existe $f\in \mathbb{F}$ com $f < \sup(A),$ ent\~ao existe um a em A com $ f < a.$
+
+  Por fim, diremos que um corpo ordenado \'e completo se todo subconjunto limitado superiormente possui supremo. $\square$
+\end{def*}
+  Nem todo subconjunto limitado superiormente de $\mathbb{Q}$ tem supremo, ou seja, $\mathbb{Q}$ n\~ao \'e completo.
+
+\subsection{Os N\'umeros Reais ($\mathbb{R}$)}
+  A ideia que iremos usar para construir o conjunto dos reais \'e que o conjunto dos n\'umeros reais preenche toda a reta real. Os Elementos
+de $\mathbb{R}$ ser\~ao os subconjuntos de $\mathbb{Q}$ \`a esquerda de um ponto da reta real e ser\~ao chamados de cortes.
+ \begin{def*}
+   Um corte \'e um subconjunto $\alpha\subsetneq \mathbb{Q}$ com as seguintes propriedades:
+  \begin{itemize}
+    \item[i)] $\alpha\neq \emptyset$ e $\alpha \neq \mathbb{Q};$
+    \item[ii)] Se $p\in \alpha$ e q \'e um racional com $q < p$, ent\~ao $q\in \alpha$ (todos os racionais \`a esquerda de um elemento
+      de $\alpha$ est\~ao em $\alpha$);
+    \item[iii)] Se $p\in \alpha$, existe um $r\in \alpha$ com $p < r$ ($\alpha$ n\~ao tem um maior elemento). $\square$
+  \end{itemize}
+ \end{def*}
+  Essa ideia foi proposta inicialmente por Julius Wilhelm Richard Dedekind, um matem\'atico alem\~ao, em 1872, com o objetivo de encontrar uma explica\c c\~ao
+e constru\c c\~ao elementar para os n\'umeros reais.
+\begin{example}
+  Se q \'e um racional, definimos $q^{*} = \{r\in \mathbb{Q}: r < q\}$.Ent\~ao, $q^{*}$ \'e um corte que chamamos de racional. Os 
+cortes que n\~ao s\~ao desse tipo se chamam cortes irracionais.
+\end{example}
+\begin{example}
+  $\sqrt{2} = \{q\in \mathbb{Q}: q^{2} < 2\}\cup \{q\in \mathbb{Q}: q < 0\}$ \'e um corte irracional.
+\end{example}
+  Observe que se $\alpha$ \'e um corte, p \'e um ponto dele e q n\~ao \'e, ent\~ao $p < q$. Al\'em disso, se r pertence a $\alpha$
+e $r < s,$ ent\~ao s n\~ao pertence ao corte.
+\begin{def*}
+  Diremos que $\alpha < \beta$, em que $\alpha$ e $\beta$ s\~ao cortes, se $\alpha\subsetneq \beta.$
+\end{def*}
+\begin{prop*}
+  Se $\alpha, \beta, \gamma$ s\~ao cortes,
+ \begin{itemize}
+   \item[i)] $\alpha < \beta$ e $\beta < \gamma$ implica que $\alpha < \gamma$;
+   \item[ii)] Exatamente uma das seguintes rela\c c\~oes \'e v\'alida: $\alpha < \beta$ ou $\alpha = \beta$ ou $\beta < \alpha$
+   \item[iii)] Todo subconjunto n\~ao-vazio e limitado superiormente de $\mathbb{R}$ tem supremo.
+ \end{itemize}
+\end{prop*}
+\end{document}

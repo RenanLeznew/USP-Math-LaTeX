@@ -160,7 +160,7 @@ produto (denotado temporariamente por $[a_{1}, \cdots, a_{n}]$) de n elementos e
 \end{prop*}
 \begin{proof*}
   (iii)$\Rightarrow$ Para o caso $n\leq{2}$ \'e ok. Agora, suponha o produto bem-definido de r elementos em S, $r\leq{n=1}$. Ent\~ao,
-defina $[a_{1}, \cdots, a_{n}]:= [a_{1}, \cdots, a_{n-1}][a_{n}]. $ Como a defini\c c\~ao acima satisfaz a condi\c c\~ao (iii) para
+defina $[a_{1}, \cdots, a_{n}]coloneqq [a_{1}, \cdots, a_{n-1}][a_{n}]. $ Como a defini\c c\~ao acima satisfaz a condi\c c\~ao (iii) para
 i=n-1, se ela estiver bem-definida, ela ser\'a \'unica. Com efeito, seja $1\leq{i}<n-1$, tal que 
   \begin{align*}
     [a_{1}, \cdots, a_{n}] &= [a_{1}, \cdots, a_{n-1}][a_{n}] = [a_{1}, \cdots, a_{i}][a_{i+1}, \cdots, a_{n-1}][a_{n}]\\
@@ -170,7 +170,7 @@ i=n-1, se ela estiver bem-definida, ela ser\'a \'unica. Com efeito, seja $1\leq{
 \end{proof*}
 \begin{def*}
   Seja S n\~ao-vazio e $\mu$ uma opera\c c\~ao em S com identidade 1. Um elemento a de S \'e dito invers\'ivel se existe b em S tal que
- $ab = ba = 1.$ Neste caso, b \'e o inverso de a, denotado por $b:=a^{-1}$.
+ $ab = ba = 1.$ Neste caso, b \'e o inverso de a, denotado por $bcoloneqqa^{-1}$.
 \end{def*}
   Note que tanto o elemento inverso quanto o elemento neutro, se existirem, s\~ao \'unicos (c.f. Lema abaixo). Al\'em disso, o inverso da adi\c c\~ao \'e
 denotad por -a.
@@ -202,7 +202,7 @@ ab = ba = 1, temos
   
  \begin{def*}
    Um monoide \'e um par (G, $\mu$), em que G \'e um conjunto n\~ao-vazio e $\mu$ uma opera\c c\~ao associativa e com elemento neutro em G.
-  Se, ainda por cima, $\mu$ for associativa, (G, $\mu$) \' e um monoide abeliano (ou comutativo).
+  Se, ainda por cima, $\mu$ for comutativa, (G, $\mu$) \' e um monoide abeliano (ou comutativo).
  \end{def*}
  \begin{def*}
    Um grupo \'e um par (G, $\mu$) \'e um monoide (G, $\mu$) com a condi\c c\~ao extra que todo elemento de G possui inverso. Caso
@@ -212,7 +212,10 @@ ab = ba = 1, temos
   Os inteiros com a soma, $(\mathbb{Z}, +)$, \'e um grupo comutativo, enquanto $(\mathbb{Z}, .)$ n\~ao \'e um grupo, mas sim um monoide.
 \end{example*}
 \begin{example*}
-  O grupo das matrizes com entradas reais e sua multiplica\c c\~ao, $(\mathbb{M}_{n}(\mathbb{R}, .)$, \'e um grupo n\~ao-abeliano.
+  O grupo das matrizes com entradas reais e sua multiplica\c c\~ao, $(\mathbb{M}_{n}(\mathbb{R}), .)$, \'e um grupo n\~ao-abeliano.
 \end{example*}
+
+\section{Aula 02 - 16/03/2023}
+\subsection{Motiva\c c\~oes}
  
 \end{document}
