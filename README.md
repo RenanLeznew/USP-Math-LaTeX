@@ -17,9 +17,9 @@ If everything goes accordingly, this repository will be updated (at least) month
 
 - [Pre-Calculus](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/PreCalculus)
 ### Second Year
-- [Analysis] (https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Analysis)
+- [Analysis](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Analysis)
 
-- [Algebra] (https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Algebra)
+- [Algebra](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Algebra)
 ### Summer Course
 - [Complex Analysis](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis)
 

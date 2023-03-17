@@ -8,3 +8,5 @@
 \contentsline {subsection}{\numberline {2.2}Propriedades de $\mathbb {Q}$ e sua Ordem}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Incompletude de $\mathbb {Q}$}{6}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Os N\'umeros Reais ($\mathbb {R}$)}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Aula 03 - 17/03/2023}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motiva\c c\~oes}{7}{subsection.3.1}%

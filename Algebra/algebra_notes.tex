@@ -28,6 +28,7 @@
  \newtheorem*{def*}{\underline{Defini\c c\~ao}}
  \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
  \newtheorem*{theorem*}{\underline{Teorema}}
+ \newtheorem*{crl*}{\underline{Corol\'ario}}
  \newtheorem{example*}{\underline{Exemplo}}
  \newtheorem*{proof*}{\underline{Prova}}
  \newtheorem*{lemma*}{\underline{Lema}}
@@ -217,5 +218,164 @@ ab = ba = 1, temos
 
 \section{Aula 02 - 16/03/2023}
 \subsection{Motiva\c c\~oes}
- 
+\begin{itemize}
+  \item Outras estruturas alg\'ebricas e exemplos;
+  \item Tamanho de um grupo;
+  \item Subgrupos
+\end{itemize}
+\subsection{Usos de Grupos}
+  Podemos usar grupos para definir outras constru\c c\~oes alg\'ebricas, como segue.
+ \begin{def*}
+   Um anel \'e uma terna $(A, \mu, \phi)$, em que $(A, \mu)$ \'e um grupo abeliano e $(A, \phi)$ \'e um monoide. Al\'em disso,
+vale a distributiva.
+   $$
+    \phi(a, \mu(c, d)) = \phi(\mu(a, c), \mu(a, d)), \quad (a(b + c) = ab + ac).
+   $$
+   Usualmente, escrevemos $(A, \mu, \phi) = (A, +, .).\square$
+ \end{def*}
+\begin{def*}
+  Um corpo \'e um anel (A, +, .) tal que $(A-\{0\}, .)$ \'e um grupo abeliano. $\square$
+\end{def*}
+  Deste ponto em diante, abandonaremos as letras gregas para usar apenas os s\'imbolos ``+'' ou ``.'' para um grupo com adi\c c\~ao
+ou com multiplica\c c\~ao. Vejamos alguns exemplos.
+\begin{example*}
+  \begin{center}
+  \begin{tabular}{||c c c c c||}
+  \hline
+  Conjunto & Monoide & Monoide Comutativo & Grupo & Grupo Comutativo \\ [1ex] 
+ \hline\hline
+ $(GL_{n}, .)$ & Sim & Sim & Sim & N\~ao \\ 
+ \hline
+ $(SL_{n}, .)$ & Sim & N\~ao & Sim & N\~ao \\
+ \hline
+ $(\mathbb{Z}, +)$ & Sim & Sim & Sim & Sim \\
+ \hline
+ $(\mathbb{Z}, .)$ & Sim & Sim & N\~ao & N\~ao \\
+ \hline
+ $(\mathbb{Q}, +)$ & Sim & Sim & Sim & Sim \\ [1ex] 
+ \hline 
+ $(\mathbb{Q}, .)$ & Sim & Sim & N\~ao & N\~ao \\ [1ex] 
+ \hline 
+ $(S = \{z\in \mathbb{C}: |z| = 1\}, .)$ & Sim & Sim & Sim & Sim \\ [1ex] 
+ \hline 
+ $(\mathbb{M}_{n}(\mathbb{R}), +)$ & Sim & Sim & Sim & Sim \\ [1ex] 
+ \hline 
+ $(\mathbb{M}_{n}(\mathbb{R}), .)$ & Sim & N\~ao & N\~ao & N\~ao \\ [1ex] 
+ \end{tabular}
+\end{center}
+\qedsymbol
+\end{example*}
+\begin{example*}
+  Seja T um conjunto qualquer e 
+  $$
+    G = \{f:T\rightarrow T: f \text{ bijetora.}\}
+  $$
+  Ent\~ao, $(G, \circ)$ \'e um grupo, chamado grupo das permuta\c c\~oes ou simetrias de T. Se T \'e um conjunto finito, e.g.
+  $T = \{1, \cdots, n\}, $ ent\~ao denotamos $(G, \circ)$ por $(S_{n}, \circ).$ \qedsymbol
+\end{example*}
+\begin{def*}
+  A ordem de um grupo $(G, \cdot)$ \'e a cardinalidade de G: $|G|$. Caso $|G| < \infty,$ dizemos que $(G, +)$ \'e um grupo finito. $\square$
+\end{def*}
+\begin{example*}
+  A ordem de $|\mathbb{Z}| = \infty$ e $|S_{n}| = n!$ \qedsymbol
+\end{example*}
+\begin{prop*}
+  Se $(G, \cdot)$ \'e um grupo e a, b, c s\~ao elementos de G tais que ab = ac ou ba = ca, ent\~ao b = c. Al\'em disso, se ab = a ou
+ba = a, ent\~ao b = 1.
+\end{prop*}
+\begin{proof*}
+  Seja $a^{-1}$ o inverso de a, ent\~ao $a^{-1}(ab) = a^{-1}(ac).$ Mais ainda, se ab = a, ent\~ao $b = (a^{-1}a)b = a^{-1}(ab) = a^{-1}a = 1.$
+\end{proof*}
+  Fica de exerc\'icio mostrar que s\'o existe um grupo de ordem 2 e que $S_{3}$ \'e um grupo n\~ao-comutativo.
+\subsection{Subgrupos}
+ \begin{def*}
+   Um subgrupo H de um grupo $(G, \cdot)$ \'e um subconjunto H de contido em G tal que
+  \begin{align*}
+    &1) 1\in H; \\
+    &2) a, b\in H\Rightarrow ab \in H; \\
+    &3) a\in H\Rightarrow a^{-1}\in H.
+  \end{align*}
+  Denotaremos subrupos por $H \leq{G}$ ou $(H, \cdot) \leq{(G, \cdot)}. \square$
+ \end{def*}
+\begin{prop*}
+ Com opera\c c\~ao induzida pela multiplica\c c\~ao de G restrita a H, $(H, \cdot)$ \'e um grupo. 
+\end{prop*}
+\begin{proof*}
+  Como H est\'a contido em G, podemos restringir o produto de G a H para 
+  $$
+    ._H:H \times H\rightarrow H.
+  $$
+  Afirmamos que $(H, \cdot)$ \'e um grupo. Com efeito, a restri\c c\~ao de . a H est\'a bem-definida pelo segundo item da defini\c c\~ao
+de subgrupo. Mais ainda, ela \'e associativa em H por ser em G e todo elemento em H tem inverso pela condi\c c\~ao 3. Por fim,
+ela tem elemento neutro pela primeira requisi\c c\~ao ao definir subgrupo. Portanto, $(H, \cdot)$ \'e um grupo.
+\end{proof*}
+Observe que todo grupo tem ao menos dois subgrupos, chamados triviais, sendo eles $\{1\}$ e ele mesmo. Qualquer outro leva o nome de
+subgrupo pr\'oprio.
+\begin{example*}
+  $(SL_{n}, \cdot) \leq{(GL_{n}, \cdot)}$ e $(\mathbb{Z}, +) \leq{(\mathbb{Q}, +)}.$ \qedsymbol
+\end{example*}
+\begin{example*}
+  Seja n um inteiro, ent\~ao $n\mathbb{Z}\coloneqq \{nk: k\in \mathbb{Z}\}$ \'e um subgrupo dos inteiros. De fato, 0 = n0 pertence
+  a $n\mathbb{Z}.$ Al\'em disso, se nk e nk' pertencem a $n\mathbb{Z},$ ent\~ao
+  $$
+    nk + nk' = n(k + k')\in n \mathbb{Z}.
+  $$
+  Por fim, se nk pertence a $ n\mathbb{Z}$, ent\~ao n(-k) tamb\'em pertence a $n \mathbb{Z}$ e nk + n(-k) = 0. \qedsymbol
+\end{example*}
+\begin{prop*}
+  Todo subgrupo de $(\mathbb{Z}, +)$ \'e da forma $n \mathbb{Z}$ para algum n inteiro.
+\end{prop*}
+\begin{proof*}
+  Caso n seja 1, $n \mathbb{Z} = \mathbb{Z}$ e, se n = 0, ent\~ao $n \mathbb{Z} = \{0\}. $ Agora, seja H um subgrupo pr\'oprio dos
+inteiros e n o menor inteiro positivo em H. Afirmamos que $n \mathbb{Z} = H$. 
+
+  De fato, $n \mathbb{Z} \leq{H}$, pois n \'e um elemento de H, ent\~ao $nk = \underbrace{n + \ldots + n}_{\text{k-vezes}} \in H$. Al\'em disso, $-n\in H,$ de forma
+que $-nk = \underbrace{(-n) + \ldots + (-n)}_{\text{k-vezes}}\in H.$ Portanto, $n \mathbb{Z}\in H.$
+
+  Por outro lado, seja m um inteiro de H e considere $m = nq + r, 0 \leq{r} < n, q\in \mathbb{Z}.$ Pelo algoritmo de divis\~ao de Euclides,
+  $$
+  m - nq = r \Rightarrow r\in H\Rightarrow r = 0.
+  $$
+  e, assim, m = nq pertence a $n\mathbb{Z}$. Portanto, $H = n \mathbb{Z}$. \qedsymbol
+\end{proof*}
+\begin{prop*}
+ \begin{itemize}
+   \item[1)] $n \mathbb{Z} + m \mathbb{Z}$ \'e subgrupo de $\mathbb{Z};$
+   \item[2)] $n \mathbb{Z} + m \mathbb{Z} = d \mathbb{Z}$, em que d \'e tal que 
+    \item[2.1)] $d | n$ e $d | m$;
+      \item[2.2)] Se $l | n$ e $l | m$, ent\~ao $l | d;$
+        \item[2.3)] Existem r, s inteiros tais que $rn + sm = d.$
+ \end{itemize}
+ Definimos $d = \gcd{(n, m)}$ como o m\'aximo divisor comum de m e n.
+\end{prop*}
+\begin{proof*}
+  A prova do item 1 fica como exerc\'icio. 
+
+  $2.1)\Rightarrow n \mathbb{Z} + m \mathbb{Z} = d \mathbb{Z}.$ Em particular, se n, m pertencem a $d \mathbb{Z}$, ent\~ao
+$d | n \text{ e } d | m.$
+
+  $2.2)\Rightarrow$ Suponha que $n = lq_{1}, m = lq_{2} $. Se x pertence a $n \mathbb{Z} + m \mathbb{Z},$ ent\~ao
+  \begin{align*}
+    &x = nk_{1} + mk_{2} = lq_{1}k_{1} + lk_{2}q_{2} \in l \mathbb{Z} \\
+    &\Rightarrow n \mathbb{Z} + m \mathbb{Z} \subseteq{l \mathbb{Z}} \Rightarrow l | d.
+  \end{align*}
+  tamb\'em \'e poss\'ivel mostrar isso usando o item 3 da proposi\c c\~ao.
+
+  $2.3)\Rightarrow$ imediato. \qedsymbol
+\end{proof*}
+\begin{prop*}
+ \begin{itemize}
+   \item[1)] $m \mathbb{Z}\cap n \mathbb{Z}$ \'e subgrupo dos inteiros;
+   \item[2)] $m \mathbb{Z}\cap n \mathbb{Z} = l \mathbb{Z}$, em que l \'e tal que 
+     \item[2.1)] $m | l, n | l;$
+       \item[2.2)] Se $m | l'$ e $n | l'$, ent\~ao $l | l'.$
+ \end{itemize}
+ Definimos $l = mmc(m, n)$ o m\'inimo m\'ultiplo comum de m e n.
+\end{prop*}
+\begin{proof*}
+  Fica como exerc\'icio.
+\end{proof*}
+\begin{crl*}
+  Se m, n s\~ao inteiros, ent\~ao $mn = mmc(m, n)\gcd{(m, n)}$.
+\end{crl*}
 \end{document}

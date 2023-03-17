@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1678906805 "analysis_notes.tex" "analysis_notes.pdf" "analysis_notes" 1678906807 0
+["pdflatex"] 1679067460 "analysis_notes.tex" "analysis_notes.pdf" "analysis_notes" 1679067462 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677507467 84470 1b03f303430b1250744b51ca4bdbdd0b ""
@@ -230,10 +230,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "analysis_notes.aux" 1678906807 1959 d9928021105df8f452157fefbce3fed9 "pdflatex"
-  "analysis_notes.out" 1678906807 1435 1ad506e712bad53776ac319047a6b3ff "pdflatex"
-  "analysis_notes.tex" 1678906804 16793 d563f6dd5f64ce4d47383899fc6b67c3 ""
-  "analysis_notes.toc" 1678906807 831 a9e1f968d5bbd3e12f5d0ae3f54819f5 "pdflatex"
+  "analysis_notes.aux" 1679067462 2198 c79970254929cd33c1fa0399aa93ecb1 "pdflatex"
+  "analysis_notes.out" 1679067462 1702 0524ac47e7341147ebdea92ef39ea7ed "pdflatex"
+  "analysis_notes.tex" 1679067454 16899 9d80d99fbb9186d8251a0d2566cd0b88 ""
+  "analysis_notes.toc" 1679067462 988 920b7f65c3a75c031739abd7e1880194 "pdflatex"
   (generated)
   "analysis_notes.aux"
   "analysis_notes.log"

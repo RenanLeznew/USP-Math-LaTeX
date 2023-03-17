@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1678891365 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1678891369 0
+["pdflatex"] 1678999506 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1678999510 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677507467 84470 1b03f303430b1250744b51ca4bdbdd0b ""
@@ -32,6 +32,7 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1247596667 36607 d654cb3f2bc54f57509240071db3bffa ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -218,10 +219,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "algebra_notes.aux" 1678891368 1289 75b3b651dd7e537993f4d6d3ecf393b5 "pdflatex"
-  "algebra_notes.out" 1678891368 588 f72f4bfcc1efd1b776b599784f2f3f7b "pdflatex"
-  "algebra_notes.tex" 1678891363 9034 5aa2d2c3eede123ba482f40633c61ab2 ""
-  "algebra_notes.toc" 1678891368 369 64748e5ea054b6e730bcaaa86c56c5f2 "pdflatex"
+  "algebra_notes.aux" 1678999509 1765 1cbc84e1f483aba7e35f4c12f39aaa43 "pdflatex"
+  "algebra_notes.out" 1678999509 1088 e655c1ecbb1b37642d9a67a5e92a4ed8 "pdflatex"
+  "algebra_notes.tex" 1678999505 16241 90de2bc92a102168ffb730dc40e8059f ""
+  "algebra_notes.toc" 1678999509 681 b8f2b66be60bf16dc030f54dfc0b0b86 "pdflatex"
   (generated)
   "algebra_notes.aux"
   "algebra_notes.log"
