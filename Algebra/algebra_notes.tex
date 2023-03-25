@@ -1,4 +1,4 @@
-   \documentclass{article}
+ \documentclass{article}
  \usepackage{amsmath}
  \usepackage{amsthm}
  \usepackage{amssymb}
@@ -161,7 +161,7 @@ produto (denotado temporariamente por $[a_{1}, \cdots, a_{n}]$) de n elementos e
 \end{prop*}
 \begin{proof*}
   (iii)$\Rightarrow$ Para o caso $n\leq{2}$ \'e ok. Agora, suponha o produto bem-definido de r elementos em S, $r\leq{n=1}$. Ent\~ao,
-defina $[a_{1}, \cdots, a_{n}]coloneqq [a_{1}, \cdots, a_{n-1}][a_{n}]. $ Como a defini\c c\~ao acima satisfaz a condi\c c\~ao (iii) para
+  defina $[a_{1}, \cdots, a_{n}]\coloneqq [a_{1}, \cdots, a_{n-1}][a_{n}]. $ Como a defini\c c\~ao acima satisfaz a condi\c c\~ao (iii) para
 i=n-1, se ela estiver bem-definida, ela ser\'a \'unica. Com efeito, seja $1\leq{i}<n-1$, tal que 
   \begin{align*}
     [a_{1}, \cdots, a_{n}] &= [a_{1}, \cdots, a_{n-1}][a_{n}] = [a_{1}, \cdots, a_{i}][a_{i+1}, \cdots, a_{n-1}][a_{n}]\\
@@ -171,7 +171,7 @@ i=n-1, se ela estiver bem-definida, ela ser\'a \'unica. Com efeito, seja $1\leq{
 \end{proof*}
 \begin{def*}
   Seja S n\~ao-vazio e $\mu$ uma opera\c c\~ao em S com identidade 1. Um elemento a de S \'e dito invers\'ivel se existe b em S tal que
- $ab = ba = 1.$ Neste caso, b \'e o inverso de a, denotado por $bcoloneqqa^{-1}$.
+ $ab = ba = 1.$ Neste caso, b \'e o inverso de a, denotado por $b\coloneqq a^{-1}$.
 \end{def*}
   Note que tanto o elemento inverso quanto o elemento neutro, se existirem, s\~ao \'unicos (c.f. Lema abaixo). Al\'em disso, o inverso da adi\c c\~ao \'e
 denotad por -a.
@@ -193,6 +193,7 @@ seja invers\'ivel (exerc\'icio), eles devem coincidir.
     1 = 1.1' = 1'.1 = 1'.
  $$
  Portanto, o elemento neutro \'e \'unico.
+
  $(ii)\Rightarrow)$ Assuma a exist\^encia de dois elementos inversos em S para um elemento a, denotados por b, b'. Ent\~ao, como
 ab = ba = 1, temos
   $$
@@ -231,10 +232,10 @@ vale a distributiva.
    $$
     \phi(a, \mu(c, d)) = \phi(\mu(a, c), \mu(a, d)), \quad (a(b + c) = ab + ac).
    $$
-   Usualmente, escrevemos $(A, \mu, \phi) = (A, +, .).\square$
+   Usualmente, escrevemos $(A, \mu, \phi) = (A, +, \cdot).\square$
  \end{def*}
 \begin{def*}
-  Um corpo \'e um anel (A, +, .) tal que $(A-\{0\}, .)$ \'e um grupo abeliano. $\square$
+  Um corpo \'e um anel $(A, +, \cdot)$ tal que $(A-\{0\}, .)$ \'e um grupo abeliano. $\square$
 \end{def*}
   Deste ponto em diante, abandonaremos as letras gregas para usar apenas os s\'imbolos ``+'' ou ``.'' para um grupo com adi\c c\~ao
 ou com multiplica\c c\~ao. Vejamos alguns exemplos.
@@ -244,26 +245,26 @@ ou com multiplica\c c\~ao. Vejamos alguns exemplos.
   \hline
   Conjunto & Monoide & Monoide Comutativo & Grupo & Grupo Comutativo \\ [1ex] 
  \hline\hline
- $(GL_{n}, .)$ & Sim & Sim & Sim & N\~ao \\ 
+ $(GL_{n}, \cdot)$ & Sim & N\~ao & Sim & N\~ao \\ 
  \hline
- $(SL_{n}, .)$ & Sim & N\~ao & Sim & N\~ao \\
+ $(SL_{n}, \cdot)$ & Sim & N\~ao & Sim & N\~ao \\
  \hline
  $(\mathbb{Z}, +)$ & Sim & Sim & Sim & Sim \\
  \hline
- $(\mathbb{Z}, .)$ & Sim & Sim & N\~ao & N\~ao \\
+ $(\mathbb{Z}, \cdot)$ & Sim & Sim & N\~ao & N\~ao \\
  \hline
  $(\mathbb{Q}, +)$ & Sim & Sim & Sim & Sim \\ [1ex] 
  \hline 
- $(\mathbb{Q}, .)$ & Sim & Sim & N\~ao & N\~ao \\ [1ex] 
+ $(\mathbb{Q}, \cdot)$ & Sim & Sim & N\~ao & N\~ao \\ [1ex] 
  \hline 
- $(S = \{z\in \mathbb{C}: |z| = 1\}, .)$ & Sim & Sim & Sim & Sim \\ [1ex] 
+ $(S = \{z\in \mathbb{C}: |z| = 1\}, \cdot)$ & Sim & Sim & Sim & Sim \\ [1ex] 
  \hline 
  $(\mathbb{M}_{n}(\mathbb{R}), +)$ & Sim & Sim & Sim & Sim \\ [1ex] 
  \hline 
  $(\mathbb{M}_{n}(\mathbb{R}), .)$ & Sim & N\~ao & N\~ao & N\~ao \\ [1ex] 
  \end{tabular}
-\end{center}
 \qedsymbol
+\end{center}
 \end{example*}
 \begin{example*}
   Seja T um conjunto qualquer e 
@@ -378,4 +379,352 @@ $d | n \text{ e } d | m.$
 \begin{crl*}
   Se m, n s\~ao inteiros, ent\~ao $mn = mmc(m, n)\gcd{(m, n)}$.
 \end{crl*}
+\newpage
+
+\section{Aula 03 - 21/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Outros exemplos de subgrupos;
+  \item Subgrupos gerado por subconjuntos;
+  \item Grupo c\'iclico e ordem de elementos.
+\end{itemize}
+\subsection{Subgrupos - Outras Propriedades}
+  Quando o conjunto candidato a subgrupo \'e n\~ao-vazio, n\~ao \'e necessario exigir que a identidade seja parte dele. De fato,
+\begin{prop*}
+  Se G \'e um grupo e $H\subseteq{G}, H \neq\emptyset$, ent\~ao $H\leq{G}$ se, e somente se,
+ \begin{align*}
+   &1) ab\in H, \quad a, b\in H\\
+   &2) a^{-1}\in H, \quad a\in H.
+ \end{align*}
+\end{prop*}
+\begin{proof*}
+  $\Rightarrow$ Segue da defini\c c\~ao de subgrupo (ab e $a^{-1}$ pertencem a H por defini\c c\~ao);
+
+  $\Leftarrow$ Sendo H n\~ao-vazio, existe $a\in H$. Atrav\'es de (2), $a^{-1}\in H$ e, por (1), $aa^{-1} = 1\in H.$ Portanto,
+H \'e subgrupo de G. \qedsymbol
+\end{proof*}
+  Outra formula\c c\~ao de subgrupo requer apenas uma condi\c c\~ao:
+ \begin{prop*}
+   Se G \'e um grupo e $H\subseteq{G}, H \neq\emptyset$, ent\~ao $H\leq{G}$ se, e s\'o se, $ab^{-1}\in H$ para todos $a, b\in H.$
+ \end{prop*}
+\begin{proof*}
+  $\Rightarrow$ Suponha que H \'e um subgrupo de G e sejam $a, b\in H$. Ent\~ao, por defini\c c\~ao, $a^{-1}, b^{-1}\in H$. Assim,
+segue da defini\c c\~ao de subgrupo que $ab^{-1}\in H$.
+
+  $\Leftarrow$ Se $H \neq\emptyset$, existe ao menos um a em H. Por hip\'otese, $1 = aa^{-1}\in H$. Assim, $a^{-1} = 1a^{-1}\in H$.
+Por fim, se a, b s\~ao membros de H, ent\~ao $b^{-1}\in H$, tal que $ab = a(b^{-1})^{-1}\in H$. Portanto, H \'e subgrupo de G. \qedsymbol
+\end{proof*}
+
+ \begin{def*}
+   Se G \'e um grupo, ent\~ao $Z(G) = \{g\in G: ga = ag\forall a\in{G}\} $ \'e um subgrupo de G chamado centro de G.
+ \end{def*}
+  Provemos que Z(G) \'e de fato um subgrupo. De fato, $1\in Z(G)$ pela defini\c c\~ao de elemento neutro. Al\'em disso, se $g, h\in Z(G),$
+ent\~ao gha = gah = agh, tal que $gh\in Z(G).$ Al\'em disso, $g^{-1}\in Z(G),$ pois $g^{-1}a = (a^{-1}g)^{-1} = (ga^{-1})^{-1} = ag^{-1}.$
+  Uma propriedade interessante \'e que G ser\'a um grupo abeliano se, e somente se, $Z(G) = G.$ 
+ \begin{example*}
+ Exerc\'icio: Dados $G_{1}, G_{2}$ grupo, defina o grupo produto como $G_{1}\times G_{2} = \{(g_{1}, g_{2}): g_{i}\in G_{i}\}$. Encontre
+uma opera\c c\~ao que torne este conjunto um grupo de fato.
+ \end{example*}
+ \begin{example*}
+  \begin{itemize}
+    \item[1)]  Se V \'e um subespa\c co vetorial de um corpo qualquer $\mathbb{K}$, ent\~ao $V<\leq{\mathbb{K}}$.  
+    \item[2)] O conjunto 
+      $$
+      SU_{2}(\mathbb{C}) = \biggl\{ \begin{bmatrix}
+          \alpha & -\overline{\beta} \\
+          \beta & \overline{\alpha}
+    \end{bmatrix}: \alpha, \beta \in \mathbb{C}, |\alpha|^{2} + |\beta|^{2} = 1\biggr\} 
+    $$
+    \'e um subgrupo de $GL_{2}(\mathbb{C})$.
+    \item[3)] O conjunto
+      $$
+      SO_{2}(\mathbb{R}) = \biggl\{\begin{bmatrix}
+          \cos{(\theta)} & \sin{(\theta)}\\
+          \sin{(\theta)} & \cos{(\theta)}
+      \end{bmatrix}: \theta\in \mathbb{R}\biggr\} \leq{GL_{2}(\mathbb{R})}
+      $$
+  \end{itemize}
+ \end{example*}
+\begin{prop*}
+  Se G \'e um grupo abeliano, ent\~ao todo subgrupo de G \'e tamb\'em abeliano
+\end{prop*}
+\begin{proof*}
+  Se $H\leq{G}, a, b\in H$, em particular a, b tamb\'em pertencem a G, tal que $ab = ba.$ \qedsymbol
+\end{proof*}
+  Observe que a rec\'iproca e falsa. Com efeito, o subgrupo 
+  $$
+  \biggl\{\begin{bmatrix}
+      1 & a \\
+      0 & 1
+    \end{bmatrix}\in GL_{2}(\mathbb{R}): a\in \mathbb{R}\biggr\}
+  $$
+  \'e subgrupo abeliano de $GL_{2}(\mathbb{R}).$ Al\'em disso, a rec\'iproca n\~ao vale nem mesmo se todo subgrupo pr\'oprio de um
+grupo for abeliano, visto que todo subgrupo de $S_{3}$ \'e abeliano, mas o pr\'oprio $S_{3}$ n\~ao \'e.
+
+ \begin{def*}
+   Seja G um grupo e $S\subseteq{G}$ um subconjunto n\~ao-vazio. Definimos o conjunto gerado por S como 
+   $$
+   <S>\coloneqq \biggl\{a_{1}\cdots a_{n}: a_{i}\in S\text{ ou }a_{i}^{-1}\in{S}\biggr\}, \quad n\in \mathbb{N}\square.
+   $$
+ \end{def*}
+\begin{prop*}
+  $<S>$ \'e um subgrupo de G.
+\end{prop*}
+\begin{proof*}
+  \'E claro que $<S> \neq\emptyset$. Agora, se $a_{1}\cdots a_{n} (= x), b_{1}\cdots b_{m}(= y)\in <S>$, ent\~ao
+  $$
+  xy^{-1} = a_{1} \cdots a_{n}(b_{1}\cdots b_{m})^{-1} = a_{1}\cdots a_{n}b_{m}^{-1}\cdots b_{1}^{-1}\in <S>.
+  $$
+  Portanto, pela segunda defini\c c\~ao equivalente de subgrupo, $<S>\leq{G}.$ \qedsymbol
+\end{proof*}
+\begin{def*}
+  Nas condi\c c\~oes da propsi\c c\~ao, $<S>$ \'e o subgrupo gerado por S. Caso S seja finito, digamos $S=\{g_{1},\cdots, g_{n}\}$, denotamos
+  $<S>$ por $<g_{1}, \cdots, g_{n}>.\square$
+\end{def*}
+\begin{def*}
+  Sejam G um grupo e g um elemento seu. Se $G=<g>$, diremos que G \'e um grupo c\'iclico. $\square$
+\end{def*}
+\begin{def*}
+  Se G \'e um grupo e g seu elemento, definimos a ordem de g (nota\c c\~ao: $|g|$ ou ord(g)) como a ordem de $<g>$.
+\end{def*}
+\begin{example*}
+  $\mathbb{Z} = (1)$ \'e um grupo c\'iclico infinito, $S_{2}$ \'e um grupo c\'iclico finito e $S_{3}$ n\~ao \'e c\'iclico. \qedsymbol
+\end{example*}
+Atente-se ao fato de que $<g>\coloneqq\{\cdots, g^{-2}, g^{-1}, g^{0}=1, g, g^{2}, \cdots\} = \{g^{\mathbb{Z}}\} $
+\begin{example*}
+  Exerc\'icio: Calcule as ordens dos elementos de $S_{2}, S_{3}.$
+\end{example*}
+  Note que todo subgrupo de $\mathbb{Z}$ \'e c\'iclico. Al\'em disso, se $|G|<\infty,$ segue que $|g|<\infty$. Em particular,
+$|g|\leq{|G|}$. Vale mencionar tamb\'em que mesmo se o grupo tem ordem infinita, o grupo c\'iclico pode ter ordem finita. De fato,
+se $(G, \cdot) = (\mathbb{R}^{\times}, \cdot)$, tome g = 1. Ent\~ao, $<g> = \{-1, 1\}$, que \'e finito de ordem 2.
+ \begin{prop*}
+   Sejam G um grupo e g um elemento seu. Denotemos por S o conjunto dos inteiros n tais que $g^{n} = 1.$ Ent\~ao,
+  \begin{itemize}
+    \item[i)]$S\leq{\mathbb{Z}}$;
+    \item[ii)]As pot\^encias $g^{m}, g^{n}, m\geq{n}$ s\~ao iguais se, e somente se, $g^{m-n} = 1(i.e. m-n\in S);$
+    \item[iii)] Se $S\neq0 \mathbb{Z},$ ent\~ao $S=n\mathbb{Z}$ e as pot\^encias $1, g, g^{2}, \cdots, g^{n-1}$ s\~ao distintas e 
+  s\~ao todos os elementos em $<g>.$ Em particular, $|g|=n.$
+  \end{itemize}
+ \end{prop*}
+\begin{proof*}
+  $(i)\Rightarrow$ Se m, n pertence a S, ent\~ao $g^{m-n} = g^{m}(g^{n})^{-1} = 1$, logo m-n pertence a S. \'E claro que S \'e n\~ao-vazio, pois 0 sempre \'e um elemento seu.
+
+  $(ii)\Rightarrow$ \'E a lei do cancelamento.
+
+  $(iii)\Rightarrow$ Se $S = \{0\}$, \'e autom\'atico. Como $S\leq{\mathbb{Z}}$, pela classifica\c c\~ao dos subgrupos de $\mathbb{Z},$
+existe n em $\mathbb{Z}$ tal que $S = n \mathbb{Z}$. Agora, seja k um inteiro qualquer. Segue da divis\~ao Euclidiana que
+$k = nq + r, 0\leq{r}<n$. Assim, $g^{k} = g^{nq}g^{r} = 1g^{r},$ tal que $<g> \subseteq{\{g^{0}=1, \cdots, g^{n-1}\}}$. Finalmente, pelo
+item (ii) e da minimalidade de n. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  $<g> = \{1, g, g^{2}, \cdots, g^{n-1}\} $ 
+\end{crl*}
+\begin{crl*}
+  Se a ordem de g \'e diferente de zero, ent\~ao ela \'e o menor inteiro positivo n tal que $g^{n} = 1$.
+\end{crl*}
+\begin{crl*}
+  Se a ordem de g \'e $n>{0}$, ent\~ao $g^{k} = 1,$ se, e somente se, $n|k.$
+\end{crl*}
+\begin{crl*}
+  Se a ordem de g \'e $n>0, k\in \mathbb{Z}$, ent\~ao $|g^{k}|=\displaystyle \frac{n}{mdc(n, k)}$.
+\end{crl*}
+\newpage
+
+\section{Aula 04 - 23/03/2023}
+\begin{itemize}
+  \item Ciclos e Grupo de Permuta\c c\~oes
+  \item Morfismo de Grupos
+  \item Classes laterais
+\end{itemize}
+\subsection{Ciclos e Grupos de Permuta\c c\~ao}
+Introduzimos a seguir o grupo das permuta\c c\~oes, denotado $S_{n}.$
+\begin{def*}
+  Uma permuta\c c\~ao $\sigma\in S_{n}$ \'e um r-ciclo se existem $a_{1},\cdots, a_{r}\in\{1,\cdots, n\}$ tais que $\sigma(a_{1})=a_{2},
+  \sigma(a_{2})=a_{3}, \cdots, \sigma(a_{r-1})=a_{r}, \sigma(a_{r}) = a_{1}$ e, al\'em disso, $\sigma(j) = j$ para todo j em $\{1,\cdots, n\}/\{a_{1},\cdots,a_{r}\}$. 
+  Dizemos que r \'e o comprimento de r, e denotamos $\sigma$ por $\sigma=(a_{1}\cdots a_{r}).\square$
+\end{def*}
+\begin{def*}
+  Um 2-ciclo \'e chamado transposi\c c\~ao. $\square$
+\end{def*}
+ \begin{example*}
+   Seja $\sigma\in S_{5}.$ Um 5-ciclo \'e , por exemplo, $\sigma(1)=2, \sigma(2)=3, \sigma(3)=4, \sigma(4)=5, \sigma(5)=1,$ ou $\sigma=(12345)=(34512).$
+Um 3-ciclo seria $\sigma(1)=4, \sigma(2)=2, \sigma(3)=1, \sigma(4)=3, \sigma(5)=5$ e uma transposi\c c\~ao seria $\sigma(1)=2, \sigma(2)=1, \sigma(3)=3, \sigma(4)=4, \sigma(5)=5.$
+ \end{example*}
+\begin{def*}
+  Duas permuta\c c\~oes $\sigma, \tau\in S_{n}$ s\~ao disjuntas se para todo $j\in\{1, \cdots, n\}, \sigma(j) = j$ ou, exclusivamente, $\tau(j) = j.$
+\end{def*}
+\begin{example*}
+  $\tau\in S_{5}, \tau=(34), \sigma(12) \Rightarrow \tau, \sigma$ s\~ao disjuntas.
+\end{example*}
+  Observe que nem toda permuta\c c\~ao \'e um r-ciclo. De fato, $\sigma\in S_{5}$ dada por $\sigma(1)=3, \sigma(2) = 4, \sigma(3) = 5, \sigma(4) = 2$
+e $\sigma(5)=1$ n\~ao \'e um r-ciclo. O fato \'e que toda permuta\c c\~ao \'e o produto de ciclos disjuntos de comprimento maior ou igual a 2.
+Assim, $\sigma = (135)(24)$ descreve a permuta\c c\~ao enviando 1 pra 3, 2 pra 4, 3 pra 5, 4 pra 2 e 5 pra 1. 
+\begin{example*}
+  Seja $\sigma\in S_{5}, \sigma=(12)(13)(15) = (1532)$. Note que l\^e-se o produto de permuta\c c\~oes como a composi\c c\~ao de fun\c c\~oes, isto \'e,
+come\c ca-se pela direita e termina na esquerda (afinal, \'e a composi\c c\~ao de permuta\c c\~oes, que s\~ao, particularmente, fun\c c\~oes!). Deste produt\'orio, vimos que o n\'umero 1 \'e o \'unico que ser\'a alterado, i.e., uma permuta\c c\~ao ap\'os o 1 demarca o fim da a\c c\~ao. Assim, este
+exemplo indica que 1 se torna 5 e permanece assim (a primeira a\c c\~ao torna 1 no elemento 5). 5 se torna 1, depois 3 e permanece assim ($1->5->3->3$), 2 se torna 1
+no final ($2->2->2->1$), 3 se torna eventualmente 2 ($3->2->1->2$) e 4 permanece constante. (P.S. Se essa parte ficar confusa, me chamem no celular pra eu explicar melhor).
+\end{example*}
+\begin{prop*}
+  Toda permuta\c c\~ao em $S_{n}$ \'e um produto de transposi\c c\~oes (2-ciclos). Isto \'e, $S_{n}=\langle\text{transposi\c c\~oes}\rangle$. 
+Al\'em disso, se $\sigma\in S_{n}, \sigma=\tau_{1}\cdots\tau_{r} = \rho_{1}\cdots\rho_{s}$ fatora\c c\~oes em transposi\c c\~oes, ent\~ao $2|r-s.$
+\end{prop*}
+\begin{proof*}
+  Observe que $Id = (12)(21)\in\langle\text{ transposi\c c\~oes }\rangle$. Se $\sigma\in S_{n}$ \'e uma permuta\c c\~ao qualquer, ent\~ao $\sigma$ \'e 
+o produto de ciclos. Logo, basta verificar a proposi\c c\~ao para um r-ciclo $\sigma.$ Suponha, assim, que $\sigma = (a_{1}\cdots a_{r}$ \'e um r-ciclo.
+Com isso, $r=(a_{1}a_{2})(a_{1}a_{3})\cdots(a_{1}a_{r}).$ \qedsymbol
+\end{proof*}
+\begin{prop*}
+  Exerc\'icio: Mostre que qualquer fatora\c c\~ao de um r-ciclo em transposi\c c\~oes tem mesma paridade.
+\end{prop*}
+\begin{def*}
+  Seja $\sigma\in S_{n}$. Ent\~ao, a matriz de permuta\c c\~ao $\sigma$ \'e
+  $$
+    U(\sigma)\coloneqq \begin{pmatrix}
+      e_{\sigma(1)}\\
+      \vdots\\
+      e_{\sigma(n)}
+    \end{pmatrix}
+  $$
+  em que $e_{i}$ \'e o i-\'esimo vetor can\^onico de $\mathbb{R}^{n}.\square$
+\end{def*}
+\begin{example*}
+  Seja $\sigma = (135)(24)\in S_{5}.$ Para esta permuta\c c\~ao, a matriz \'e
+  $$
+    U(\sigma) =
+    \begin{pmatrix}
+      e_{3}\\
+      e_{4}\\
+      e_{5}\\
+      e_{2}\\
+      e_{1}
+    \end{pmatrix} =
+    \begin{pmatrix}
+      0 & 0 & 1 & 0 & 0\\
+      0 & 0 & 0 & 1 & 0\\
+      0 & 0 & 0 & 0 & 1\\
+      0 & 1 & 0 & 0 & 0\\
+      1 & 0 & 0 & 0 & 0
+    \end{pmatrix}
+  $$
+  Note que 
+  $$
+    U(\sigma) = \begin{pmatrix}
+      1\\
+      2\\
+      3\\
+      4\\
+      5
+    \end{pmatrix} =
+    \begin{pmatrix}
+      5\\
+      4\\
+      3\\
+      2\\
+      1
+    \end{pmatrix}
+  $$
+\end{example*}
+ \begin{prop*}
+   Sejam $\sigma, \tau\in S_{n}$ e $U(\sigma), U(\tau)$ as matrizes associadas respectivas. Ent\~ao,
+  \begin{itemize}
+    \item[1)] $U(\sigma)(12 \cdots n)^{T} = a_{1}e_{1} + \cdots + a_{n}e_{n} \Longleftrightarrow \sigma(j) = a_{j},\quad j = 1, \cdots, n.$
+    \item[2)] $U(\sigma)$ sempre tem um \'unico 1 em cada linha e em cada coluna. Reciprocamente, toda matriz desse tipo
+    \'e uma matriz de alguma permuta\c c\~ao.
+    \item[3)] $\det{U(\sigma)}\in\{-1, 1\}.$
+    \item[4)] A matriz de permuta\c c\~ao de $\tau\sigma$ \'e $U(\tau)\cdot U(\sigma)$.
+  \end{itemize}
+ \end{prop*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+\begin{def*}
+  Se $\sigma\in S_{n}$ e $U(\sigma)$ \'e a matriz associada, definimos o sinal de $\sigma (sgn(\sigma))$ como sendo o 
+$\det{(U(\sigma)}.$Al\'em disso, diremos que $\sigma$ \'e uma permuta\c c\~ao par quando $sgn(\sigma) = 1$ e \'impar quando
+ $sgn(\sigma) = -1.\quad\square$ 
+\end{def*}
+  Observe que \'e poss\'ivel demonstrar que $sgn(\sigma) = (-1)^{r},$ em que r \'e o n\'umero de transposi\c c\~oes que aparecem
+na decomposi\c c\~ao de $\sigma.$
+
+\subsection{Morfismos de Grupos}
+  Morfismos de grupos funcionam como fun\c c\~oes entre conjuntos, mas que levam em conta a opera\c c\~ao existente nos grupos.
+ \begin{def*}
+   Sejam G, G' dois grupos. Um morfismo de grupos \'e um mapa $\phi:G\rightarrow G'$ tal que $\phi(gh)=\phi(g)\phi(h)$ para todo
+  g, h em G. $\quad\square$
+ \end{def*}
+ \begin{example*}
+   S\~ao morfismos:
+  \begin{align*}
+    &1) sgn:S_{n}\rightarrow \{+1, -1\}, \sigma\mapsto sgn(\sigma),&&sgn(\sigma\tau) = \det(U(\sigma)U(\tau)) = \det(U(\sigma))\det(U(\tau)) = sgn(\sigma)sgn(\tau)\\
+    &2) \det:GL_{n}\rightarrow \mathbb{R}^{\times}, A\mapsto\det(A)\\
+    &3) \exp:(\mathbb{R}, +)\rightarrow (\mathbb{R}, \cdot), x\mapsto e^{x}\\
+    &3) \phi:G\rightarrow G', g\mapsto 1', &&\text{ em que }1'\text{ \'e o elemento neutro de G'.}\\
+    &3) \text{ Se }H\leq{G}, \text{ ent\~ao a inclus\~ao} i:H\rightarrow G, h\mapsto h\text{ \'e um morfismo.}\\
+    &&3.1) \text{ Em particular, } U:S_{n}\rightarrow GL_{n}, \sigma\mapsto U(\sigma)\\
+    &3) \mathbb{Z}\rightarrow G, n\mapsto g^{n}, g\in G\text{ fixo.}
+  \end{align*}
+ \end{example*}
+ \begin{prop*}
+   Seja $\phi:G\rightarrow G'$ um morfismo. Ent\~ao,
+  \begin{align*}
+    &1)g_{1}\cdots g_{n}\in G, \phi(g_{1}\cdots g_{n}) = \phi(g_{1})\cdots\phi(g_{n}).\\
+    &2)\text{ Se 1 \'e o elemento neutro de G e 1' o elemento neutro de G', } \phi(1)=1'.\\
+    &3)\phi(g^{-1}) = \phi(g)^{-1}.
+  \end{align*}
+ \end{prop*}
+\begin{proof*}
+  1.) Os casos 1 e 2 s\~ao ok. Assim, vamos mostrar por indu\c c\~ao. Suponha que vale para
+n-1. Ent\~ao, 
+  $$
+  \phi(g_{1}\cdots\phi_{n})=\phi((g_{1}\cdots g_{n-1})g_{n}) = \phi(g_{1}\cdots g_{n-1})\phi(g_{n}) = \phi(g_{1})\cdots\phi(g_{n-1})\phi(g_{n}).
+  $$
+
+  2.) $\phi(1) = \phi(1.1)\coloneqq \phi(1)\phi(1) \Rightarrow 1' = \phi(1)\phi(1)^{-1} = \phi(1)$
+
+  3.) $1' = \phi(1) = \phi(gg^{-1}) = \phi(g)\phi(g^{-1}) \Rightarrow \phi(g)^{-1} = \phi(g^{-1}).$ \qedsymbol
+\end{proof*}
+\begin{def*}
+  Se $\phi:G\rightarrow G'$ \'e um morfismo, defina a imagem de $\phi$ por $Im \phi\coloneqq\{u\in G': \exists x\in G, \phi(x)=y\}$ 
+  e o n\'ucleo (ou kernel) de $\phi$ por $\ker{(\phi)}\coloneqq\{x\in G: \phi(x) = 1'\} $, em que 1' \'e o elemento neutro de G'.  
+\end{def*}
+\begin{prop*}
+  A imagem de um morfismo $\phi:G\rightarrow G'$ \'e um subgrupo de G' e o kernel de $\phi$ \'e um de G.
+\end{prop*}
+\begin{proof*}
+  Se y, y' pertencem a $Im\phi$, ent\~ao existem x, x' em G tais que $\phi(x) = y, \phi(x')=y'.$ Assim, 
+  $$
+    yy' = \phi(x)\phi(x') = \phi(xx') \Rightarrow yy'\in Im\phi.
+  $$
+  Al\'em disso, \'e claro que $\phi(1) = 1'\in Im\phi.$ Finalmente, se y pertence a $Im \phi,$ ent\~ao
+ $\phi(x^{-1}) = \phi(x)^{-1} = y^{-1} \Rightarrow y^{-1}\in Im \phi.$ A prova de que $\ker\phi\leq{G}$ fica como
+ exerc\'icio. \qedsymbol
+\end{proof*}
+\begin{def*}
+  Seja $sgn:S_{n}\rightarrow \{+1, -1\}$. Definimos $A_{n} = \ker{(sgn)}$ como o grupo alternado. $\quad\square$
+\end{def*}
+\begin{def*}
+  Se H \'e um subgrupo de G e g um elemento de G, defina a classe lateral \`a esquerda de G em H como
+  $$
+    gH\coloneqq \{gh: h\in H\}.\quad\square
+  $$
+\end{def*}
+\begin{prop*}
+  Seja $\phi:G\rightarrow G'$ um morfismo e K $= \ker{(\phi)}.$ Se a, b s\~ao elementos de G, s\~ao equivalentes:
+ \begin{align*}
+   &1) \phi(a) = \phi(b)\\
+   &2) a^{-1}b\in K\\
+   &3) b\in aH\\
+   &4) aK = bK.
+ \end{align*}
+\end{prop*}
+\begin{proof*}
+  \begin{align*}
+  &1)\Rightarrow2): \phi(a) = \phi(b) \Rightarrow \phi(a^{-1}b) = 1' \Rightarrow a^{-1}b\in K;\\ 
+  &2)\Rightarrow1): a^{-1}b\in K \Rightarrow \phi(a^{-1}b) = 1' \Rightarrow \phi(a)=\phi(b);\\
+  &1)\Rightarrow3): a^{-1}b\in K \text{ se } \exists h\in K \text{ tais que } a^{-1}h = bh \Rightarrow b\in aK;\\
+  &3)\Rightarrow1): \text{ Suponha que }b\in aH, b = ah \Rightarrow \phi(b) = \phi(a)\phi(h) = \phi(a);\\
+  &(1)\Longleftrightarrow(4): \text{Exerc\'icio. \qedsymbol}
+  \end{align*}
+\end{proof*}
 \end{document}
+

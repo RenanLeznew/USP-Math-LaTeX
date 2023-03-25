@@ -31,6 +31,7 @@
  \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
  \newtheorem{example}{\underline{Exemplo}}
  \newtheorem*{proof*}{\underline{Prova}}
+ \newtheorem*{crl*}{\underline{Corol\'ario}}
  \renewcommand\qedsymbol{$\blacksquare$}
  \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
 
@@ -158,7 +159,7 @@ temos
   Usualmente, construimos os inteiros a partir dos naturais tomando os pares ordenados de n\'umeros naturais
 com a seguinte identifica\c c\~ao (a, b) $\mathtt{\sim}$ (c, d) se a + d = b + c. Assim, podemos representar
   $$
-  \mathbb{N} = \{(0, 0), (1, 0), (2, 0), (3, 0), \cdots\}, \quad -\mathbb{N}^* = \{\cdots, (0, 3), (0, 2), (0, 1)\}.
+  \mathbb{N} = \{(0, 0), (1, 0), (2, 0), (3, 0), \ldots\}, \quad -\mathbb{N}^* = \{\cdots, (0, 3), (0, 2), (0, 1)\}.
   $$
   Tomar o sucessor ser\'a somar 1 \`a primeira coordenada e, para os inteiros negativos, voltar a identificar (1, n) com (0, n-1).
 
@@ -171,7 +172,7 @@ s\~ao dados, respectivamente, por:
  \end{align*}
  Chamamos a adi\c c\~ao a opera\c c\~ao que a cada par $(x, y)\in \mathbb{Q}\times{\mathbb{Q}}$ associa sua soma $x+y\in \mathbb{Q}$
 e chamamos multiplica\c c\~ao a opera\c c\~ao que a cada par $(x, y)\in \mathbb{Q}\times \mathbb{Q}$ associa seu produto $x.y\in \mathbb{Q}.$
-A terna $(\mathbb{Q}, +, .)$ satisfaz as propriedades de um corpo, i.e., 
+A terna $(\mathbb{Q}, +, \cdot)$ satisfaz as propriedades de um corpo, i.e., 
  \begin{align*}
    &(A1) (x + y) + z = x + (y + z), \quad\forall x, y, z\in \mathbb{Q}\\
    &(A2) x + y = y + x, \quad\forall x, y\in \mathbb{Q}\\
@@ -183,6 +184,7 @@ A terna $(\mathbb{Q}, +, .)$ satisfaz as propriedades de um corpo, i.e.,
    &(M4) \forall x\in \mathbb{Q}^*, \exists y = \frac{1}{x}\in \mathbb{Q}: x.y = 1\\
    &(D) x(y+z) = xy + xz,\quad\forall x, y, z\in \mathbb{Q}.
  \end{align*}
+ \newpage
 
 \section{Aula 02 - 15/03/2023}
 \subsection{Motiva\c c\~oes}
@@ -252,7 +254,7 @@ $x < 0$ se x for negativo.
     y = x + t. \square
   $$
 \end{def*}
-  A qu\'adrupla ($\mathbb{Q}, +, ., \leq{}$) satisfaz as propriedades de um corpo ordenado, i.e., 
+  A qu\'adrupla ($\mathbb{Q}, +, \cdot, \leq{}$) satisfaz as propriedades de um corpo ordenado, i.e., 
  \begin{align*}
    &(O1) x \leq{x}\forall x\in \mathbb{Q};\\
    &(O2) x\leq{y} \text{ e } y \leq{x}\Rightarrow x = y \forall x, y\in \mathbb{Q};\\
@@ -304,7 +306,7 @@ satisfazendo a equa\c c\~ao.
   Essa discuss\~ao mostra que existem v\~aos na ``reta'' dos racionais, requerindo a ado\c c\~ao de um novo corpo. Essa \'e a principal
 motiva\c c\~ao por tr\'as dos n\'umeros reais, "preencher" os buracos deixados pelos racionais.
 \begin{prop*}
-  (Exerc\'icio.) Sejam $p_{1}, \cdots, p_{n}$ n\'umeros primos distintos. Ent\~ao, a equa\c c\~ao $x^{2} = p_{1}p_2\cdots p_{n}$ n\~ao
+  (Exerc\'icio.) Sejam $p_{1}, \ldots, p_{n}$ n\'umeros primos distintos. Ent\~ao, a equa\c c\~ao $x^{2} = p_{1}p_2\cdots p_{n}$ n\~ao
 tem solu\c c\~ao racional.
 \end{prop*}
   Vimos que os n\'umeros racionais com a sua adi\c c\~ao, multiplica\c c\~ao e rela\c c\~ao de ordem \'e um corpo ordenado. Nos interessamos,
@@ -315,11 +317,11 @@ tamb\'em, pelo corpo dos reais e dos racionais ($\mathbb{R}, \mathbb{C}$). De fo
  $$
  e 
  $$
-    .: \mathbb{F}\times \mathbb{F}\rightarrow \mathbb{F}, \quad (x, y)\mapsto xy
+    \cdot: \mathbb{F}\times \mathbb{F}\rightarrow \mathbb{F}, \quad (x, y)\mapsto xy
  $$
  em que valem as oito propriedades vistas previamente para a defini\c c\~ao das opera\c c\~oes em $\mathbb{Q}$
  Se, ainda por cima, no corpo $\mathbb{F}$ est\'a definida uma ordem com propriedades an\'alogas \`as vistas para a qu\'adrupla
-($\mathbb{Q}, +, ., \leq{}$), diremos que ($\mathbb{F}, +, ., \leq{}$) \'e um corpo ordenado.
+($\mathbb{Q}, +, \cdot, \leq{}$), diremos que ($\mathbb{F}, +, \cdot, \leq{}$) \'e um corpo ordenado.
 \begin{def*}
   Diremos que um subconjunto A de um corpo $\mathbb{F}$ ordenado \'e limitado superiormente se existe um L neste corpo tal que $a \leq{L}$ para todo
 a de A. 
@@ -355,7 +357,7 @@ cortes que n\~ao s\~ao desse tipo se chamam cortes irracionais.
   Observe que se $\alpha$ \'e um corte, p \'e um ponto dele e q n\~ao \'e, ent\~ao $p < q$. Al\'em disso, se r pertence a $\alpha$
 e $r < s,$ ent\~ao s n\~ao pertence ao corte.
 \begin{def*}
-  Diremos que $\alpha < \beta$, em que $\alpha$ e $\beta$ s\~ao cortes, se $\alpha\subsetneq \beta.$
+  Diremos que $\alpha < \beta$, em que $\alpha$ e $\beta$ s\~ao cortes, se $\alpha\subsetneq \beta.\square$
 \end{def*}
 \begin{prop*}
   Se $\alpha, \beta, \gamma$ s\~ao cortes,
@@ -365,10 +367,615 @@ e $r < s,$ ent\~ao s n\~ao pertence ao corte.
    \item[iii)] Todo subconjunto n\~ao-vazio e limitado superiormente de $\mathbb{R}$ tem supremo.
  \end{itemize}
 \end{prop*}
+\newpage
 
 \section{Aula 03 - 17/03/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
-  \item a
+  \item Finalizar a constru\c c\~ao de $\mathbb{R}$ por cortes;
+  \item Definir um corpo ordenado com base nos cortes;
 \end{itemize}
+\subsection{Cortes - Soma e Ordem}
+  Coloquemos, para fins de conveni\^encia, $\mathbb{R}$ como a uni\~ao de todos os cortes.
+
+  Vamos mostrar que os cortes racionais s\~ao, de fato, cortes. Considere, dado um racional q, $q^{*} = \{p\in \mathbb{Q}: p < q\}.$
+Ele n\~ao pode completar todos os racionais, pois q + 1 n\~ao pertence a $q^{*}$. Al\'em disso, ele \'e n\~ao vazio, visto que
+q-1 pertence a ele, mostrando a primeira propriedade dos cortes. 
+
+  Ademais, se r pertence a $q^{*}$ e p \'e um racional menor que r, segue da transitividade da ordem que p \'e menor que
+q, j\'a que r tamb\'em \'e. Assim, p pertence a $q^{*}$, mostrando a segunda propriedade dos cortes. 
+
+  Por fim, dado um r em $q^{*},$ seja $s = \displaystyle \frac{r + q}{2}$. Ent\~ao, 
+  $$
+    r - \frac{r+q}{2} = \frac{r - q}{2} < 0,
+  $$
+tal que s \'e menor que r e, logo, pertence a $q^{*}$. Portanto, $q^{*}$ forma um corte.
+
+  Daremos continuidade \`as atividades da aula anterior demonstrando a \'ultima proposi\c c\~ao vista.
+\begin{prop*}
+  Se $\alpha, \beta, \gamma$ s\~ao cortes,
+ \begin{itemize}
+   \item[i)] $\alpha < \beta$ e $\beta < \gamma$ implica que $\alpha < \gamma$;
+   \item[ii)] Exatamente uma das seguintes rela\c c\~oes \'e v\'alida: $\alpha < \beta$ ou $\alpha = \beta$ ou $\beta < \alpha$
+   \item[iii)] Todo subconjunto n\~ao-vazio e limitado superiormente de $\mathbb{R}$ tem supremo.
+ \end{itemize}
+\end{prop*}
+  
+ \begin{proof*}
+   As duas primeiras partes seguem automaticamente da forma que definimos a ordem $\leq{}$ para os cortes. Resta mostrar a \'ultima.
+
+   Vamos exibir o supremo explicitamente. Com efeito, seja $\mathcal{A}\subseteq{\mathbb{R}}$ um cole\c c\~ao de cortes
+ limitada superiormente, i.e., existe um l em $\mathbb{R}$ tal que $\alpha \leq{l}$ para todo $\alpha$ em $\mathcal{A}.$
+ Defina $\mathcal{S} = \bigcup_{\alpha\in \mathcal{A}}\alpha$. Mostremos que $\mathcal{S}$ \'e um corte. Com efeito,
+ que $\mathcal{S}$ \'e n\~ao-vazio e diferente de $\mathbb{Q}$ \'e autom\'atico. Al\'em disso, dado q em $\mathcal{S}$ e $r < q,$
+segue que $r\in \alpha_{0}$ para algum $\alpha_{0}$ em $\mathcal{A}.$
+
+  Para ver que $\mathcal{S}$ \'e o supremo, suponha que $\mathcal{S}' < \mathcal{S}.$ Ent\~ao, existe r em $\mathcal{S}/\mathcal{S}'$.
+Como r pertence a $\mathcal{S}$, r pertence a $\alpha_{0}$ para algum $\alpha_{0}\in \mathcal{A}.$ Logo, $\alpha_{0} > \mathcal{S}'.$ Portanto,
+ $\mathcal{S}$ \'e o menor limitante superior de $\mathcal{A},$ ou seja, seu supremo. \qedsymbol
+ \end{proof*}
+ \begin{def*}
+   Se $\alpha, \beta$ s\~ao cortes, definimos $\alpha + \beta$ como o conjunto de todos os racionais da forma $r + s$, com r em $\alpha$
+ e s em $\beta$. Ademais, tome $0^* = \{s\in \mathbb{Q}: s < 0\}.\square$
+ \end{def*}
+  Vamos conferir a defini\c c\~ao, i.e., que $\alpha + \beta$ \'e um corte. Com efeito, $\alpha + \beta\neq\emptyset$, pois $\alpha\neq\emptyset$
+e $\beta\neq\emptyset$. Al\'em disso, se p n\~ao pertence a $\alpha$ e q n\~ao pertence a $\beta$, mas r pertence a $\alpha$ e s a $\beta$,
+ent\~ao $r + s < p + q$, tal que $p + q$ n\~ao pertence a $\alpha + \beta.$
+
+  Al\'em disso, tome $r + s$ em $\alpha + \beta$ e $p < r + s$. Escreva $p = r' + s' = \underbrace{p - r}_{\in \beta} + \underbrace{r}_{\in \alpha}.$ Assim,
+p pertence a $\alpha + \beta.$
+
+  Por fim, tome $r + s$ em $\alpha + \beta$ e seja $r' > r$ (ambos em $\alpha$). Logo, $\underbrace{r' + s}_{\in \alpha + \beta} > r + s$. Portanto, 
+$\alpha + \beta$ \'e um corte. 
+
+  Fica de exerc\'icio mostrar que $0^*$ \'e um corte. Agora, mostremos os axiomas de corpo.
+
+  A comutatividade e associatividade da adi\c c\~ao s\~ao triviais. Al\'em disso, dado r em $\alpha$ e s em $0^*,$
+  $$
+    r + s < r + 0 = r\Rightarrow r + s \in \alpha.
+  $$
+  Logo, $\alpha + 0^* \subseteq{\alpha}$. Por outro lado, dado r em $\alpha,$ existe $r'\text{ em } \alpha$ tal que $r' > r.$
+  Assim, $r = \underbrace{r'}_{\alpha} + \underbrace{(r - r')}_{\in 0^*}$, pois $r - r' < 0.$ Portanto, $\alpha \subseteq{\alpha + 0^*}$ e
+ $\alpha = \alpha + 0^*.$
+ \begin{prop*}
+   Dado um corte $\alpha$, existe um \'unico corte $\beta$ tal que $\alpha + \beta = 0^*$, em que 
+   $$
+    \beta = \{-p\in \mathbb{Q}: p - r\not\in \alpha \text{ para algum } r\in \mathbb{Q}, r > 0\}
+   $$
+   e \'e denotado por $-\alpha$. 
+ \end{prop*}
+\begin{proof*}
+  Come\c camos mostrando que $\beta$ \'e um corte. Feito isso, vamos mostrar que $\beta + \alpha = 0^*.$
+
+  Com efeito, dado -p em $\beta,$ segue que p n\~ao pertence a $\beta$. Caso $s = p + r$, -s pertence a $\beta$, tal que 
+ $\beta$ \'e n\~ao-vazio. Ademais, se $p\in \alpha, -p\not\in \beta$, tal que $\beta$ \'e diferente de $\mathbb{Q}.$
+
+  Al\'em disso, se $-q < -p$ e $-p\in \beta$, ent\~ao $-q \in \beta$. Por fim, se -p pertencer a $\beta$, $\displaystyle -p + \frac{r}{2}\in \beta$.
+Portanto, $\beta$ \'e um corte. 
+
+  Agora, vamos conferir o outro item. De fato, se r pertence a $\alpha$ e s a $-\alpha,$ ent\~ao $-s\not\in \alpha$ e $r < -s$, i.e.,
+ $r + s < 0.$ Segue que $\alpha + (-\alpha) \subseteq{0^*}.$ Por outro lado, se $-2r\in 0^*$ com $r > 0,$ existe um inteiro n tal que
+  $nr\in \alpha$ e $(n+1)r\not\in \alpha$. Escolha $p = -(n+2)r\in -\alpha$ e escreva $-2r = nr + p.$ Portanto, $0^*\subseteq{\alpha + (-\alpha)}$ e os
+  conjuntos s\~ao iguais. \qedsymbol
+\end{proof*}
+
+\section{Aula 04 - 20/02/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Definir multiplica\c c\~ao de cortes;
+  \item Definir conceito de dist\^ancia entre n\'umeros de $\mathbb{R}$ 
+\end{itemize}
+\subsection{Cortes - Multiplica\c c\~ao}
+\begin{def*}
+  Se $\alpha, \beta$ s\~ao cortes,
+  $$
+    \alpha\beta = \left\{\begin{array}{ll}
+      \alpha0^*, \quad\forall \alpha\in \mathbb{R}\\
+      \{p\in\mathbb{Q}: \exists0 < r\in\alpha \text{ e }0 < s\in\alpha: p \leq rs\},\quad \alpha, \beta > 0^*\\
+      (-\alpha)(-\beta), \quad \alpha, \beta < 0^*\\
+      -[(-\alpha)\beta], \quad \alpha < 0^* e \beta > 0^*\\
+      -[\alpha(-\beta)], \quad \alpha > 0^* e \beta < 0^*
+      \end{array}\right.
+  $$
+  Definimos, tamb\'em, $1^*\{s\in\mathbb{Q}: s < 1\}$.
+\end{def*}
+\newpage
+
+\subsection{$\mathbb{R}$ Como Corpo Ordenado Completo}
+  Temos $\mathbb{Q}\subseteq{\mathbb{R}}$ e diremos que todo n\'umero que n\~ao \'e real \'e irracional. 
+ \begin{theorem*}
+   A qu\'adrupla $(\mathbb{R}, +, \cdot, \leq)$ satisfaz as condi\c c\~oes de corpo ordenado, de corpo e \'e completo.
+ \end{theorem*}
+\begin{def*}
+  Seja $x\in \mathbb{R}.$ O m\'odulo, ou valor absoluto de x, \'e dado por
+  $$
+    |x| = \left\{\begin{array}{ll}
+        x, \quad x \geq 0\\
+        -x, x < 0
+      \end{array}\right.
+  $$
+  Disto segue que $|x|\geq 0$ e $-|x|\leq x\leq |x|$ para todo x real.
+\end{def*}
+\begin{example}
+  Mostre que $|x|^2 = x^2$, ou seja, o quadrado de um n\'umero real n\~ao muda quando se troca seu sinal.
+\end{example}
+\begin{example}
+  A equa\c c\~ao $|x| = r$, com r maior que 0, tem como solu\c c\~oes apenas r e -r.
+\end{example}
+  Sejam P e Q dois pontos da reta real de abscissas x e y. Ent\~ao, a dist\^ancia de P a Q \'e definida por $|x-y|$. Assim,
+ $|x-y|$ \'e a medida do segmento PQ. Em particular, como $|x|=|x-0|, |x|$ \'e a dist\^ancia de x a 0.
+\begin{example}
+  Seja r maior que 0. Ent\~ao, $|x| < r$ se, e somente se, $-r < x < r.$ Logo, o intervalo (-r, r) \'e o conjunto dos pontos reais
+cuja dis\^ancia de 0 \'e menor que r.
+\end{example}
+\begin{example}
+  Para quaisquer x, y reais, vale
+  $$
+    |xy| = |x||y|.
+  $$
+\end{example}
+\begin{example}
+  Para quaisquer x, y reais, temos
+  $$
+    |x+y| \leq |x| + |y|.
+  $$
+  Com efeito, somando $-|x|\leq{x}\leq{|x|}$ e $-|y|\leq{y}\leq{|y|},$ obtemos $-|x|-|y|\leq{x + y}\leq{|x|+|y|.}$\qedsymbol
+\end{example}
+\begin{def*}
+  Um intervalo em $\mathbb{R}$ \'e um subconjunto de $\mathbb{R}$ que tem uma das seguintes formas:
+ \begin{align*}
+   &[a, b] = \{x\in \mathbb{R}: a\leq{x}\leq{b}\},\quad \text{ (Intervalo fechado.) }\\
+   &(a, b) = \{x\in \mathbb{R}: a < x < b\},\quad \text{ (Intervalo aberto.) }\\
+   &[a, b) = \{x\in \mathbb{R}: a \leq{x} < b\}\\
+   &(a, b] = \{x\in \mathbb{R}: a < x \leq{b}\}\\
+   &(-\infty, b] = \{x\in \mathbb{R}: x\leq{b}\}\\
+   &(-\infty, b) = \{x\in \mathbb{R}: x > b\}\\
+   &[a, +\infty) = \{x\in \mathbb{R}: x\geq{a}\}\\
+   &(a, +\infty) = \{x\in \mathbb{R}: a < x\}\\
+   &(-\infty, +\infty) = \mathbb{R}.
+ \end{align*}
+\end{def*}
+\begin{def*}
+  Um conjunto A de $\mathbb{R}$ \'e dito limitado se existir L positivo tal que $|x| \leq L$ para todo x em A.
+\end{def*}
+\begin{prop*}
+  Um conjunto A de $\mathbb{R}$ \'e limitado se, e s\'o se, existir L positivo, tal que A est\'a contido em $[-L, L]$
+\end{prop*}
+\begin{example}
+ \begin{itemize}
+   \item[a)] $A = [0, 1]$ \'e limitado;
+   \item[b)] $\mathbb{N}$ n\~ao \'e limitado;
+   \item[c)] $B = \biggl\{\displaystyle \frac{2^n-1}{2^n}: n\in \mathbb{N}\biggr\}$ \'e limitado; 
+   \item[d)] $C = \biggl\{\displaystyle \frac{2^n-1}{2^n}: n\in \mathbb{N}^{*}\biggr\}$ \'e limitado. 
+ \end{itemize}
+\end{example}
+\begin{def*}
+  Seja $A\subseteq{\mathbb{R}}$.
+ \begin{itemize}
+   \item A ser\'a dito limitado superiormente se existir um L real tal que $x\leq L$ para todo x de A. Diremos que L \'e o limitante superior de A.;
+   \item A ser\'a dito limitado inferiormente se existir um L real tal que $x\geq L$ para todo x de A. Diremos que L \'e o limitante inferior de A.;
+ \end{itemize}
+ Caso ambos ocorram, diremos que A \'e limitado.
+\end{def*}
+\begin{def*}
+  Seja A um subconjunto dos reais limitado superiormente e n\~ao-vazio. Diremos que $\overline{L}$ \'e o supremo de A se for um limitante superior
+  e para qualquer outro limitante superior L de A, tivermos $\overline{L}\leq L$. Quando o supremo pertencer ao conjunto, chamaremos ele de m\'aximo.
+\end{def*}
+  Vimos que todo subconjunto n\~ao-vazio e limitado superiormente de $\mathbb{R}$ tem supremo.
+\begin{def*}
+  Seja A um subconjunto dos reais limitado inferiormente e n\~ao-vazio. Diremos que $\overline{l}$ \'e o \'infimo de A se for um limitante inferior
+  e para qualquer outro limitante inferior l de A, tivermos $\overline{l}\geq l$. Quando o \'infimo pertencer ao conjunto, chamaremos ele de m\'inimo.
+\end{def*}
+\begin{prop*}
+  Dado um subconjunto A dos reais n\~ao-vazio e limitado superiormente, $L = \sup{A}$ se, e somente se, 
+ \begin{itemize}
+   \item[a)] L for limitante superior de A;
+   \item[b)] para todo $\epsilon > 0$, existe $a\in A$ tal que $a > L - \epsilon.$ 
+ \end{itemize}
+\end{prop*}
+\begin{theorem*}
+  O conjunto $A=\{nx: n\in\mathbb{N}\}$ ser\'a ilimitado para todo x n\~ao-nulo.
+\end{theorem*}
+\begin{proof*}
+  Se $x > 0$, suponhamos, por absurdo, que A seja limitado e seja L seu supremo. Como $x > 0$, deve existir um natural m tal que
+  $$
+    L - x < mx \quad\text{ e } L = \sup{A} < (m+1)x.
+  $$
+  Mas isso \'e uma contradi\c c\~ao. 
+
+  A prova para $x < 0$ \'e an\'aloga e ser\'a deixada como exerc\'icio. \qedsymbol 
+\end{proof*}
+ \begin{example}
+  \begin{itemize}
+    \item[a)] Considere $A = [0, 1).$ Ent\~ao, -2 e 0 s\~ao limitantes inferiores de A enquanto $1, \pi, 101$ s\~ao limitantes
+  superiores de A.
+    \item[b)] $\mathbb{N}$ n\~ao \'e limitado, mas \'e limitado inferiormente por 0, visto que $0\leq{x}$ para todo x natural.
+    \item[c)] $B=\{x\in \mathbb{Q}: x\leq{\sqrt{2}}\}$ n\~ao \'e limitado, mas \'e limitado superiormente por L, em que $L\geq{2}.$ \qedsymbol
+  \end{itemize}
+ \end{example}
+\begin{crl*}
+  Para todo $\epsilon > 0$, existe um n natural tal que 
+  $$
+  \frac{1}{n} < \epsilon, \quad \frac{1}{n\sqrt{2}}<\epsilon, \quad 2^{-n} < \epsilon.
+  $$
+\end{crl*}
+  J\'a sabemos, por constru\c c\~ao, que entre dois n\'umeros reais distintos existe um n\'umero racional. O mesmo vale para irracionais.
+De fato, sejam a e b n\'umeros reais distintos. Se $a < b$ e $\epsilon = b - a > 0$, do corol\'ario, tome um natural n tal que
+$\displaystyle \frac{1}{n\sqrt{2}} < \frac{1}{n} < \epsilon.$ Se a \'e racional, $r = \displaystyle a + \frac{1}{n\sqrt{2}}$ \'e irracional e
+ $a < r < b.$ Por outro lado, se a \'e irracional, $r =\displaystyle a + \frac{1}{n}$ tamb\'em \'e, tal que $a < r < b.$ Portanto,
+ dados dois n\'umeros reais quaisquer, existe um n\'umero irracional.
+\begin{crl*}
+  Qualquer intervalo aberto e n\~ao-vazio cont\'em infinitos n\'umeros racionais e infinitos irracionais.
+\end{crl*}
+\begin{crl*}
+  Se $A = \biggr\{\displaystyle \frac{1}{n}: n\in \mathbb{N}^*\biggl\}$, ent\~ao $\inf A = 0.$
+\end{crl*}
+\begin{example}
+ \begin{align*}
+   &(a) \text{ Seja }A = (0, 1]. \text{ Ent\~ao, } \inf{A} = 0, \max{A} = 1; \\
+   &(b) \sqrt{2} = \{r\in\mathbb{Q}: r \leq 0\}\cup \{r\in\mathbb{Q}: r^2 < 2\}\text{ \'e um corte.} 
+   &(c) C = \{x\in\mathbb{Q}: x^2 < 2\} \Rightarrow \sqrt{2}=\sup{C}\text{ e }\inf{C} = -\sqrt{2}.
+ \end{align*}
+ Vamos analisar mais cautelosamente o item b e prov\'a-lo. De fato, se $0 < r\in \mathbb{Q}$ e $r^2 < 2,$ existe n natural tal que 
+ $[2r + 1]\frac{1}{n} < 2 - r^2$ e $(r + \frac{1}{n})^2 < 2.$ As outras propriedades de cortes s\~ao triviais. 
+
+ Olhando tamb\'em para o item C, como todos seus elementos s\~ao racionais saitsfazendo $x^2 < 2, \sqrt{2}$\'e um limitante superior de C.
+ Agora, se $0 < L < \sqrt{2}$, existe um racional $r\in(L, \sqrt{2})$ e $L^2 < r^2 < 2.$ Logo, r pertence a C e L n\~ao \'e limitante superior para C,
+ provando o resultado.
+\end{example}
+\begin{prop*}
+  Se A \'e um subconjunto n\~ao-vazio e limitado inferiormente, ent\~ao $-A = \{-x: x\in A\}$ ser\'a limitado superiormente e 
+  $\inf{A} = -\sup{(-A)}$. Analogamente, se for limitado superiormente, o conjunto -A ser\'a limitado inferiormente, e $\sup{A}=-\inf{(-A)}$
+\end{prop*}
+\begin{proof*}
+  Se A for limitado inferiormente, $\inf{(A)} \leq{x}$ para todo x de A e, dado $\epsilon > 0$, deve existir a em A tal que
+  $a < \inf{(A)} + \epsilon$, ou, trocando o sinal, $-\inf{(A)} \geq{-x}$ para todo -x de -A e, dado $\epsilon > 0,$ deve existir
+  $b = -a$ em -A tal que $-a > -\inf{(A)} - \epsilon.$
+
+  Com isso, segue que -A ser\'a limitado superiormente, e $\sup{(-A)} = -\inf{(A)}.$ A outra prova fica como exerc\'icio. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Todo conjunto A n\~ao-vazio e limitado inferiormente de $\mathbb{R}$ tem \'infimo.
+\end{crl*}
+\begin{crl*}
+  Todo conjunto A n\~ao-vazio e limitado de $\mathbb{R}$ tem \'infimo e supremo.
+\end{crl*}
+\begin{def*}
+  Uma vizinhan\c ca de um n\'umero real a \'e qualquer intervalo aberto da reta contendo a.
+\end{def*}
+\begin{example}
+  Se $\delta > 0, V_{\delta}(a)\coloneqq(a - \delta, a + \delta)$ \'e uma vizinhan\c ca de a que ser\'a chamada de $\delta-$vizinhan\c ca de a. 
+\end{example}
+\begin{def*}
+  Sejam A um subconjunto de $\mathbb{R}$ e b um n\'umero real. Se, para todo $\delta > 0$, existir $a\in V_{\delta}(b)\cap{A}, a\neq b,$ 
+ent\~ao b ser\'a dito um ponto de acumula\c c\~ao de A.
+\end{def*}
+\begin{example}
+ \begin{itemize}
+   \item[a)]O conjunto dos pontos de acumula\c c\~ao de (a, b) \'e [a, b];
+    \item[b)]Seja $B = \mathbb{Z}.$ Ent\~ao, B n\~ao tem pontos de acumula\c c\~ao; 
+      \item[c)] Subconjuntos finitos de $\mathbb{R}$ n\~ao t\^em pontos de acumula\c c\~ao;
+        \item[d)] O conjunto dos pontos de acumula\c c\~ao de $\mathbb{Q}$ \'e $\mathbb{R}$.
+ \end{itemize}
+\end{example}
+\begin{def*}
+  Seja $B\subseteq{\mathbb{R}}$. Um ponto b de B ser\'a dito um ponto isolado de B, se existir $\delta > 0$ tal que $V_{\delta}(b)$
+n\~ao cont\'em pontos de B distintos de b. $\square$
+\end{def*}
+\begin{example}
+  Seja $B=\{1, \frac{1}{2}, \frac{1}{3}, \cdots\}$. Ent\~ao, o conjunto dos pontos de acumula\c c\~ao de B \'e $\{0\}$ e o conjunto dos pontos
+isolados de B \'e o pr\'oprio conjunto B.
+\end{example}
+  Observe que existem conjuntos infinitos sem pontos de acumula\c c\~ao, tal como $\mathbb{Z}.$ Por outro lado, todo conjunto infinito e limitado possui
+pelo menos um ponto de acumula\c c\~ao.
+\begin{theorem*}
+  Se A \'e um subconjunto infinito e limitado de $\mathbb{R},$ ent\~ao A possui pelo menos um ponto de acumula\c c\~ao.
+\end{theorem*}
+\begin{proof*}
+  Se $A\subseteq{[-L, L]}$ e $[a_{n}, b_{n}], n\in \mathbb{N}$ s\~ao escolhidos tais que $[a_{n+1}, b_{n+1}]\subseteq{[a_{n}, b_{n}]}, b_{0} = -a_{0} = L,
+  b_{n} - a_{n} = \frac{2L}{2^{n}}, n\in \mathbb{N}^*$ e $[a_{n}, b_{n}]$ cont\'em infinitos elementos de A. Seja $a = \sup{\{a_{n}: n\in \mathbb{N}\}}$.
+
+  Note que $[a_{n}, b_{n}]\subseteq{a_{j}, b_{j}}, j\leq{n}$ e $[a_{j}, b_{j}]\subseteq{[a_{n}, b_{n}]}, j>n.$ Em qualquer um dos casos, $a_{n}\leq{b_{j}}$
+para todo $j\in \mathbb{N}$. Logo, $a \leq{b_{j}}, j\in \mathbb{N}.$ Segue que $a_{n}\leq{a=\sup \{s_{n}: n\in \mathbb{N}\}}\leq{b_{n}}$ para todo
+$n\in \mathbb{N}$ e $a\in\displaystyle\bigcap_{n\geq{1}}[a_{n}, b_{n}]$. Dado $\delta > 0,$ escolha $n\in \mathbb{N}$ tal que $\frac{2L}{2^{n}}<\delta.$ Segue
+que $a\in[a_{n}, b_{n}]\subseteq{(a-\delta, a+\delta) = V_{\delta}(a)}$ e a \'e ponto de acumula\c c\~ao de A. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 05 - 22/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Sequ\^encias de N\'umeros Reais;
+  \item Converg\^encia de Sequ\^encias;
+\end{itemize}
+\subsection{Sequ\^encias de N\'umeros Reais}
+\begin{def*}
+  Uma sequ\^encia \'e uma fun\c c\~ao definida no conjunto dos n\'umeros reais que, para cada n natural, associa um n\'umero real $a_{n}$.
+  \begin{align*}
+    \mathbb{N}&=\{0, 1, 2, \cdots\}\\
+              &f:\mathbb{N}\rightarrow \mathbb{R}\\
+              &n\mapsto a_{n}.
+  \end{align*}
+  Denotamos a fun\c c\~ao por $\{a_{n}\}\square$
+\end{def*}
+ \begin{example}
+   Sendo $a_{n}=\frac{f1}{n+1}$ para todo n natural, temos a sequ\^encia $\{1, \frac{1}{2}, \frac{1}{3}, \cdots\}$. 
+ \end{example}
+\begin{example}
+  Sendo $a_{n} = 6$ para todo n natural, temos a sequ\^encia constante 
+  $$
+    \{6, 6, 6,\cdots\}.
+  $$
+\end{example}
+\begin{example}
+  Coloque $a_{2n+1} = 7, a_{2n}=4$ para todo n natural. Temos 
+  $$
+    \{4, 7, 4, 7, \cdots\}
+  $$
+\end{example}
+  Consideremos as sequ\^encias
+  $$
+    \alpha_{n} = n, \quad \beta_{n} = (-1)^{n},\quad \text{ e } \gamma_{n} = \frac{1}{n}.
+  $$
+  Como fun\c c\~oes, elas podem ter os gr\'aficos tra\c cados, mas n\~ao s\~ao muito significativos, visto que consistem em
+colet\^aneas de pontos discretos. Ademais, note que a sequ\^encia $(\alpha_{n})$ ``diverge'' para infinito, a sequ\^encia
+$(\beta_{n})$ ``oscila'' e a sequ\^encia $(\gamma_{n})$ ``converge para 0''. Precisamente, 
+ \begin{def*}
+   A sequ\^encia $\{a_{n}\}$ \'e dita convergente com limite l se, para todo $\epsilon > 0$, existe um natural
+N dependendo de $\epsilon (N = N(\epsilon)\in \mathbb{N})$ tal que $n > N$ implica em $|a_{n} - l|< \epsilon.$
+  Ou seja, a partir de um certo N, os $a_{n}$ est\~ao no intervalo $(l-\epsilon, l+\epsilon)$ e, como $\epsilon$
+\'e arbitr\'ario, os $a_{n}$ se juntam em torno de l. Disto, segue que a condi\c c\~ao exigida equivale a
+  $$
+  l - \epsilon < a_{n} < l + \epsilon, \quad n\geq{N}.
+  $$
+Denotamos esse fen\^omeno por $\displaystyle\lim_{n\to\infty}a_{n} = l$, ou $a_{n}\rightarrow l$, ou $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}a.\square$.
+\end{def*}
+\begin{example}
+  $\circ{}\frac{1}{n}\rightarrow0, n\rightarrow\infty$. De fato, dado $\epsilon > 0$, da propriedade arquimediana, segue que 
+existe um N natural tal que $N\epsilon > 1.$ Logo, para todo $n\geq{N},$ temos 
+  $$
+  0 - \epsilon < \frac{1}{n}\leq{\frac{1}{N}} < 0 + \epsilon.
+  $$
+
+  $\circ \frac{n}{n+1}\rightarrow 1, n\rightarrow\infty$. Com efeito, dado $\epsilon > 0,$ queremos encontrar N natural n\~ao-nulo tal que
+se n \'e maior que N, temos 
+  $$
+    \biggl|\frac{n}{n+1} - 1\biggr| < \epsilon.
+  $$
+  No entanto, $|\frac{n}{n+1}-1| = \frac{1}{n+1}$ e, da propriedade Archimediana, existe N em $\mathbb{N}^{\times}$ tal que
+  $(N+1)\epsilon > 1$. Logo, se $n\geq{N},$
+  $$
+    1 - \epsilon < \frac{n}{n+1} < 1 + \epsilon.
+  $$
+\end{example}
+\begin{def*}
+  Uma sequ\^encia $\{a_{n}\}$ ser\'a divergente quando ela n\~ao for convergente.
+ \begin{itemize}
+    \item[I)] Sequ\^encia divergente para $+\infty:$ Este caso ocorre se dado $K > 0$, existe N natural tal que se $n > N,
+a_{n} > K.$
+    \item[II)] Sequ\^encia divergente para $-\infty:$ Acontece quando dado $K > 0$, existe N natural tal que se $n > N, 
+a_{n} < -K.$
+    \item[III)]Sequ\^encia oscilante: Por fim, ocorre quando a sequ\^encia diverge, mas nem para $+\infty$ e nem para $-\infty.\square$
+ \end{itemize}
+\end{def*}
+  Note que, como sequ\^encias s\~ao fun\c c\~oes, podemos multiplic\'a-las por constante, somar, dividir e multiplicar por outras sequ\^encia. De fato,
+ \begin{def*}
+   Dadas sequ\^encias $\{a_{n}\}, \{b_{n}\}$ e um n\'umero real c, deifnimos 
+  \begin{align*}
+    &i) \{a_{n}\} + \{b_{n}\} = \{a_{n} + b_{n}\}\\
+    &ii) c\{a_{n}\} = \{c \cdot a_{n}\}\\
+    &iii) \{a_{n}\}\{b_{n}\} = \{a_{n}b_{n}\}\\
+    &iv) \text{ Se }b_{n}\neq0\forall n\in \mathbb{N}, \frac{\{a_{n}\}}{\{b_{n}\}} = \biggl\{\frac{a_{n}}{b_{n}}\biggr\}\square
+  \end{align*}
+ \end{def*}
+\begin{def*}
+  Seja $\{a_{n}\}$ uma sequ\^encia de n\'umero reais. Diremos que $\{a_{n}\}$ \'e limitada se sua imagem for um subconjunto
+limitado de $\mathbb{R}.\square$
+\end{def*}
+\begin{theorem*}
+  Seja $\{a_{n}\}$ uma sequ\^encia de n\'umeros reais.
+ \begin{itemize}
+   \item[a)] $a_{n}\overbracket[0pt]{\longrightarrow}^{n\rightarrow\infty}a$ se, e somente, toda vizinhan\c ca de a cont\'em todo, exceto uma poss\'ivel quantidade
+  finita de $a_{n}$'s.
+   \item[b)] O limite \'e \'unico.
+   \item[c)] Se $\{a_{n}\}$ \'e convergente, ent\~ao $\{a_{n}\}$ \'e limitada
+   \item[d)] Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\rightarrow\infty}a$, exite N natural tal que $a_{n} > 0$ para todo $n\geq{N}.$
+   \item[e)] Se $A\subseteq{\mathbb{R}}$ e a \'e um ponto de acumula\c c\~ao de A, ent\~ao existe uma sequ\^encia $\{a_{n}\}$ de elementos
+    de A que converge para a.
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  O item a \'e trivial. Mostremos a unicidade do limite: Suponha que $a_{n}$ converge para a e para b, com a diferente de b. Ent\~ao,
+dado $\epsilon > 0$, existem naturais $N_{1}, N_{2}$ tais que se $n\geq{N_{1}}, |a_{n}-a|<\epsilon$ e se $n\geq{N_{2}}, |a_{n} - b| < \epsilon.$
+Tome $N = \min{N_{1}, N_{2}}$ e suponha que $n \geq{N}.$ Ent\~ao, temos 
+ $$
+  |b - a| \leq{|b - a_{n}| + |a_{n} - a|} = |b - a_{n}| + |a - a_{n}| < 2\epsilon.
+ $$
+ (\textit{P.S.}: pode ser boa pr\'atica tomar $\frac{\epsilon}{2}$ ao inv\'es de $\epsilon$, pois assim obtemos $|b-a|<\frac{2\epsilon}{2}=\epsilon.$)
+
+ Como $\epsilon$ \'e abritr\'ario, podemos selecionar $\epsilon$ infinitamente pr\'oximo de 0. Portanto, b = a.
+
+ Para o item c, suponha que $a_{n}$ converge para a, isto \'e, dado $\epsilon > 0, \epsilon = 1$ em particular, existe 
+ $N\in \mathbb{N}$ tal que se $n \geq{N}, |a_{n} - a| < 1$. Logo, $a_{n}\in(a - 1, a + 1)$ para n maior que N suficientemente grande.
+ Restam os N-1 primeiros elementos da sequ\^encia. Assim, tome $R = \max{\biggl\{|a_{1}|, \cdots, |a_{N-1}|, |a + 1|, |a - 1|\biggr\}}$. Deste modo,
+ $a_{n}\in[-R, R]$ para todo n natural. 
+
+ Com rela\c c\~ao ao item d, basta tomar $\epsilon = \frac{a}{2} > 0.$ 
+
+ Por fim, quanto ao item e, suponha o que \'e dito no enunciado. Como a \'e ponto de acumula\c c\~ao, dado $\epsilon > 0,$ existe
+ $a'\in{A}, a'\neq a$ tal que 
+ $$
+  a'\in V_{\epsilon}(a) = (a - \epsilon, a + \epsilon).
+ $$
+ Logo, tomadno $\epsilon = \frac{1}{n},$ podemos encontrar $a_{n}\in A, a_{n}\neq a$ tal que $a_{n}\in\biggl(a-\frac{1}{n}, a + \frac{1}{n}\biggr)$. A sequ\^encia
+ $\{a_{n}\}$ converge para a. De fato, dado $\epsilon > 0$, tome N natural tal que $N\epsilon > 1.$ Assim, se $n\geq{N}, a_{n}\in(a-\frac{1}{n}, a+\frac{1}{n})\subseteq{a-\epsilon}, a+\epsilon)$.
+ Portanto, $a_{n}\rightarrow a.$ \qedsymbol
+\end{proof*}
+ \begin{theorem*}
+   Seja $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to\infty}a, b_{n}\overbracket[0pt]{\rightarrow}^{n\to\infty}b$ e c um n\'umero real. Ent\~ao,
+  \begin{align*}
+    &a) a_{n} + b_{n}\overbracket[0pt]{\longrightarrow}^{n\to\infty} a + b.\\
+    &b) ca_{n}\overbracket[0pt]{\longrightarrow}^{n\to\infty} ca\\
+    &c) a_{n}b_{n}\overbracket[0pt]{\longrightarrow}^{n\to\infty} ab\\
+    &d)\text{Se} b\neq0, b_{n}\neq0\forall n\in \mathbb{N}, \frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to\infty}\frac{a}{b}.
+  \end{align*}
+ \end{theorem*}
+\begin{proof*}
+  Item c). Suponha $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}a, b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}b$. Note que 
+  $$
+    |a_{n}b_{n} - ab| = a_{n}b_{n} - a_{n}b + a_{n}b - ab \leq{|a_{n}||b_{n}-b| + |b||a_{n}-a|}
+  $$
+  Como $\{a_{n}\}$ \'e convergente, ela \'e limitada pelo teorema anterior. Assim, existe $M > 0$ tal que $|a_{n}|\leq{M}$ para todo n natural, tal que
+  Assim, 
+  $$
+    |a_{n}b_{n} - ab| \leq{|a_{n}||b_{n} - b| + |b||a_{n} - a|} \leq{M|b_{n} - b| + (|b| + 1)|a_{n} - a|}.
+  $$
+  Agora, dado $\epsilon > 0,$ existem naturais $N_{1}, N_{2}$ tais que 
+ \begin{align*}
+   &|a_{n}-a| < \frac{\epsilon}{2(|b|+1)},\quad\forall n\geq{N_{1}}\\
+   &|b_{n}-b| < \frac{\epsilon}{2M},\quad\forall n\geq{N_{2}}.
+ \end{align*}
+ Logo, tomando $N = \max\{N_{1}, N_{2}\},$ se $n\geq{N},$
+ $$
+  |a_{n}b_{n}-ab| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+ $$
+ Portanto, $a_{n}b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}ab.$ \qedsymbol
+\end{proof*}
+\begin{def*}
+   Seja $\{a_{n}\}$ uma sequ\^encia. Diremos que $\{b_{n}\}$ \'e uma subsequ\^encia de $\{a_{n}\}$ se existir uma fun\c c\~ao
+estritamente crescente $s:\mathbb{N}\rightarrow \mathbb{N}$ tal que $b_{k} = a_{s(k)}$ para todo k natural. $\square$
+\end{def*}
+\begin{def*}
+  Seja $\{a_{n}\}$ uma sequ\^encia. Diremos que $\{a_{n}\}$ \'e de Cauchy se, dado $\epsilon > 0$, existe um natural
+  $N = N(\epsilon)$ tal que $|a_{n}-a_{m}| < \epsilon$ para todo $n, m\geq{N}.\square$
+\end{def*}
+\begin{theorem*}
+ \begin{itemize}
+   \item[a)]Uma sequ\^encia \'e convergente se, e somente se, toda subsequ\^encia dela converge para o mesmo limite.
+   \item[b)] Toda sequ\^encia convergente \'e de Cauchy;
+   \item[c)] Toda sequ\^encia limitada tem subsequ\^encia convergente;
+   \item[d)] Toda sequ\^encia de Cauchy \'e limitada;
+   \item[e)] Toda sequ\^encia de Cauchy que tem subsequ\^encia convergente \'e convergente.
+   \item[f)] Toda sequ\^encia de Cauchy \'e convergente;
+   \item[g)] Toda sequ\^encia crescente e limitada \'e convergente;
+   \item[h)] Toda sequ\^encia decrescente e limitada \'e convergente.
+ \end{itemize}  
+\end{theorem*}
+\newpage
+
+\section{Aula 06 - 24/03/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Provar o teorema da aula anterior;
+   \item Exemplos.
+ \end{itemize}
+\subsection{Propriedades de Sequ\^encias}
+  Recapitulemos o teorema da aula anterior:
+\begin{theorem*}
+ \begin{itemize}
+   \item[a)]Uma sequ\^encia \'e convergente se, e somente se, toda subsequ\^encia dela converge para o mesmo limite.
+   \item[b)] Toda sequ\^encia convergente \'e de Cauchy;
+   \item[c)] Toda sequ\^encia limitada tem subsequ\^encia convergente;
+   \item[d)] Toda sequ\^encia de Cauchy \'e limitada;
+   \item[e)] Toda sequ\^encia de Cauchy que tem subsequ\^encia convergente \'e convergente.
+   \item[f)] Toda sequ\^encia de Cauchy \'e convergente;
+   \item[g)] Toda sequ\^encia crescente e limitada \'e convergente;
+   \item[h)] Toda sequ\^encia decrescente e limitada \'e convergente.
+   \end{itemize}
+ \end{theorem*}
+ \begin{proof*}
+a.) $\Leftarrow)$ Se toda subsequ\^encia de $\{a_{n}\}$ converge, ent\~ao $\{a_{n}\}$ converge, pois ela \'e uma subsequ\^encia de si mesma (basta tomar $s:\mathbb{N}\rightarrow \mathbb{N}, s(n) = n.$)'
+
+$\Rightarrow)$ Suponha que $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}l$ e $\{b_{n}\}$ \'e uma subsequ\^encia de $\{a_{n}\}$, existe 
+$s:\mathbb{N}\rightarrow \mathbb{N}$ estritamente crescente tal que $b_{k} = a_{s(k)}.$ Dado $\epsilon > 0$, seja N o natural tal que
+ $|a_{n} - l| < \epsilon$ para todo $n\geq{N}.$ Note que $s(n)\geq{n},$ tal que se $n\geq{N},$ ent\~ao $s(n)\geq{N},$ de forma que 
+ $|a_{s(n)} - l| < \epsilon$. Portanto, qualquer subsequ\^encia de $\{a_{n}\}$ \'e convergente.
+
+ b.) Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}l,$ ent\~ao dado $\epsilon > 0$, existe N natural tal que 
+ $$
+  |a_{n}-l|<\frac{\epsilon}{2},\quad\forall n\geq{N}.
+ $$
+ Logo, $|a_{n}-a_{m}| = |a_{n}-l + l-a_{m}| \leq{|a_{n}-l| + |l-a_{m}|} < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$ para todo $n, m \geq{N}.$
+
+ c.) Suponha que $\{a_{n}\}$ \'e uma sequ\^encia limitada. Recorde que, do teorema de Bolzano-Weierstrass, todo conjunto inifinito e limitado
+possui um ponto de acumula\c c\~ao. Segue que a imagem I da sequ\^encia \'e finita ou infinita.
+
+No primeiro caso, se I \'e finito, um dos valores pertencentes a I \'e tal que $a_{n} = a$ para infinitos \'indices. 
+Construiremos a sequ\^encia como segue - Coloque s(0) como o menor elemento do conjunto dos n's para os quais 
+$a_{n} = a, i.e.,\{n\in \mathbb{N}: a_{n} = a\} = A. $ Al\'em disso, tome s(1) como  o menor elemento de A, com  exce\c c\~ao do
+s(0). Repetindo esse processo, obtemos uma subsequ\^encia constante at\'e que se obtenha s(n) = a, ou seja, ela ser\'a convergente.
+
+Agora, se I \'e infinito, segue de Bolzano-Weierstrass que I tem um ponto de acumula\c c\~ao, nomeie-o de a. Dado $\epsilon > 0, (a-\epsilon, a+\epsilon)$ 
+tem infinitos elementos do conjunto I. Analogamente ao anterior, coloque N = s(0) como o menor elemento de $\{n\in \mathbb{N}: a_{n}\neq a, a_{n}\in(a-\epsilon, a+\epsilon)\}$ e coloque, tamb\'em,
+$\epsilon_{1} = |a-a_{s(0)}|$. Em seguida, tome $s(1) = \{n\in \mathbb{N}: a_{n}\neq a, a_{n}\in(a-\frac{\epsilon}{2}, a+\frac{\epsilon}{2})\}$. Indutivamente,
+$b = a_{s(n)}$ \'e convergente para a.
+
+d.) Dado $\epsilon = 1,$ seja N um n\'umero natural tal que 
+  $$
+    |a_{n}-a_{m}| < 1,\quad\forall n\geq{N}.
+  $$
+  Considere $M = \{|a_{0}|, |a_{1}|, \cdots, |a_{N-1}|, |a_{N}+1|, |a_{N}-1|\}.$ Assim, $a_{n}\in[-M, M]$ para todo n natural.
+
+e.) Seja $\{a_{n}\}$ de Cauchy e $\{a_{s(n)}\}$ convergente para l. Dado $\epsilon > 0$, existe um natural $N_{1}$ tal que 
+  $$
+    |a_{n}-a_{m}| < \frac{\epsilon}{2},\quad\forall n\geq{N_{1}}.
+  $$
+  Al\'em disso, existe $N_{2}$ natural tal que 
+  $$
+    |a_{s(n)} - l| < \frac{\epsilon}{2},\quad\forall s(n)\geq{N_{2}}.
+  $$
+  Seja $N=\max\{s(N_{2}), N_{1}\}$ e tome $n\geq{N}.$
+  $$
+    |a_{n}-l| = |a_{n} - a_{s(N_{2})} + a_{s(N_{2})} - l| \leq{|a_{n}-a_{s(N_{2})}| + |a_{s(N_{2})} - l|} < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+  $$
+
+f.) Segue os itens (e), (d) e (c), visto que toda subsequ\^encia de Cauchy ter\'a subsequ\^encia convergente pelos itens (d) e (c).
+
+g.) Seja $\{a_{n}\}$ limitada e crescente, $l = \sup\{a_{n}:n\in \mathbb{N}\}.$ Ent\~ao, para todo $n \geq{N}$, em que N \'e tal que $a_{N}\in(l-\epsilon, l)$
+ $$
+  l-\epsilon < a_{N}\leq{a_{n}} \leq{l}.
+ $$
+
+h.) An\'aloga ao g.
+\end{proof*}
+ \begin{example}
+   Mostre que 
+ \begin{itemize}
+   \item[i)] $\{a, a, a, \cdots\},a\in \mathbb{R}$ \'e convergente;
+   \item[ii)] $\{0, 1, 0, 1\}$ n\~ao \'e convergente;
+   \item[iii)] $\{n\}$ n\~ao \'e convergente.
+ \end{itemize}
+ \end{example}
+\begin{example}
+  Se a \'e um n\'umero real mais ou igual a zero, ent\~ao a sequ\^encia $\{a^{n}\}$ \'e convergente se $0\leq{a}\leq{1}$ e divergente
+  se $a > 1$. Com efeito, se $a > 1, a = 1 + h, h > 0$. Ent\~ao, 
+  $$
+    a^{n} = (1+h)^{n} = \sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}h^{k} = 1 + nh + \cdots > 1 + nh.
+  $$
+  Mas, segue da Archimediana que $1 + nh$ sempre forma um conjunto ilimitado para n natural, ou seja, $a_{n}$ \'e ilimitada. Logo, a sequ\^encia
+diverge.
+
+  Por outro lado, suponha que a pertence a (0, 1). Ent\~ao, $a^{n+1} = a a^{n} < a^{n}$, ou seja, \'e uma sequ\^encia decrescente e limitada inferiormente.
+Portanto $\{a_{n}\}$ \'e convergente.
+\end{example}
+\begin{example}
+  Mostre que, se a \'e diferente de 1, 
+  $$
+    \sum\limits_{i=0}^{n}a^{i} = \frac{1-a^{n+1}}{1-a}
+  $$
+  e que a sequ\^encia $\biggl\{\frac{1-a^{n+1}}{1-a}\biggr\}$ \'e convergente se $0\leq{a}<1$ e divergente se $a > 1$.
+\end{example}
+\begin{example}
+  Mostre que a sequ\^encia $\{a_{n}\}$, com $a_{n} = \displaystyle \sum\limits_{i=0}^{n}\frac{1}{i!}$ \'e convergente para todo n natural. (Crescente e limitada por 3.)
+\end{example}
+\begin{example}
+  Mostre que as sequ\^encias $\biggl\{(a+\frac{1}{n}^{n})\biggr\}, \{n^{\frac{1}{n}}\}$ e $\{a^{\frac{1}{n}}\}$ com $a >0,$ s\~ao
+convergentes.
+ \begin{align*}
+   &\circ (1+\frac{1}{n})^{n} = 1 + 1 + \frac{1}{2!}(1-\frac{1}{n}) + \cdots + \frac{1}{n!}(1-\frac{1}{n})(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{n-1}{n})\\
+   &\circ n^{\frac{1}{n}} > (n+1)^{\frac{1}{n+1}}\Longleftrightarrow n^{n+1} > (n+1)^{n}\Longleftrightarrow n>(1+\frac{1}{n})^{n}\\
+   &\circ x = a^{n} < 1\Rightarrow x < 1, x^{n} = a, x^{n+1} = a^{\frac{n+1}{n}},\text{ e } y^{n+1} = a \Rightarrow \biggl(\frac{x}{y}\biggr)^{n+1} = a^{\frac{1}{n}}.
+ \end{align*}
+\end{example}
 \end{document}
+
