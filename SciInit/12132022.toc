@@ -12,3 +12,7 @@
 \contentsline {subsection}{\numberline {4.1}Reviewing}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Connectedness}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Perfect Set}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Seminar Day 30/03/2023}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motivations}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Motivation Problem}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The Meaning of ``Almost Every'', The Topology of Cylinder Spaces}{7}{subsection.5.3}%

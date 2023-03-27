@@ -969,7 +969,7 @@ Portanto $\{a_{n}\}$ \'e convergente.
   Mostre que a sequ\^encia $\{a_{n}\}$, com $a_{n} = \displaystyle \sum\limits_{i=0}^{n}\frac{1}{i!}$ \'e convergente para todo n natural. (Crescente e limitada por 3.)
 \end{example}
 \begin{example}
-  Mostre que as sequ\^encias $\biggl\{(a+\frac{1}{n}^{n})\biggr\}, \{n^{\frac{1}{n}}\}$ e $\{a^{\frac{1}{n}}\}$ com $a >0,$ s\~ao
+  Mostre que as sequ\^encias $\biggl\{(1+\frac{1}{n}^{n})\biggr\}, \{n^{\frac{1}{n}}\}$ e $\{a^{\frac{1}{n}}\}$ com $a >0,$ s\~ao
 convergentes.
  \begin{align*}
    &\circ (1+\frac{1}{n})^{n} = 1 + 1 + \frac{1}{2!}(1-\frac{1}{n}) + \cdots + \frac{1}{n!}(1-\frac{1}{n})(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{n-1}{n})\\
@@ -977,5 +977,170 @@ convergentes.
    &\circ x = a^{n} < 1\Rightarrow x < 1, x^{n} = a, x^{n+1} = a^{\frac{n+1}{n}},\text{ e } y^{n+1} = a \Rightarrow \biggl(\frac{x}{y}\biggr)^{n+1} = a^{\frac{1}{n}}.
  \end{align*}
 \end{example}
+\newpage
+
+\section{Aula 07 - 27/03/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Exemplos de Sequ\^encias;
+   \item Teorema da Compara\c c\~ao e do Sandu\'iche;
+   \item Limites superior e inferior.
+ \end{itemize}
+\subsection{Exemplos de Sequ\^encias}
+  Revisemos os exemplos da \'ultima aula, com um extra ao final.
+  \begin{example}
+   Mostre que 
+ \begin{itemize}
+   \item[i)] $\{a, a, a, \cdots\},a\in \mathbb{R}$ \'e convergente;
+   \item[ii)] $\{0, 1, 0, 1\}$ n\~ao \'e convergente;
+   \item[iii)] $\{n\}$ n\~ao \'e convergente.
+ \end{itemize}
+ \end{example}
+\begin{example}
+  Se a \'e um n\'umero real mais ou igual a zero, ent\~ao a sequ\^encia $\{a^{n}\}$ \'e convergente se $0\leq{a}\leq{1}$ e divergente
+  se $a > 1$. Com efeito, se $a > 1, a = 1 + h, h > 0$. Ent\~ao, 
+  $$
+    a^{n} = (1+h)^{n} = \sum\limits_{k=0}^{n}\binom{n}{k}1^{n-k}h^{k} = 1 + nh + \cdots > 1 + nh.
+  $$
+  Mas, segue da Archimediana que $1 + nh$ sempre forma um conjunto ilimitado para n natural, ou seja, $a_{n}$ \'e ilimitada. Logo, a sequ\^encia
+diverge.
+
+  Por outro lado, suponha que a pertence a (0, 1). Ent\~ao, $a^{n+1} = a a^{n} < a^{n}$, ou seja, \'e uma sequ\^encia decrescente e limitada inferiormente.
+Portanto $\{a_{n}\}$ \'e convergente.
+\end{example}
+\begin{example}
+  Mostre que, se a \'e diferente de 1, 
+  $$
+    \sum\limits_{i=0}^{n}a^{i} = \frac{1-a^{n+1}}{1-a}
+  $$
+  e que a sequ\^encia $\biggl\{\frac{1-a^{n+1}}{1-a}\biggr\}$ \'e convergente se $0\leq{a}<1$ e divergente se $a > 1$.
+\end{example}
+\begin{example}
+  Mostre que a sequ\^encia $\{a_{n}\}$, com $a_{n} = \displaystyle \sum\limits_{i=0}^{n}\frac{1}{i!}$ \'e convergente para todo n natural. (Crescente e limitada por 3.) 
+
+  De fato, \'e claro que $\{a_{n}\} $ \'e crescente e que $\frac{1}{n!}\leq{\frac{1}{2^{n-1}}},$ para $n\geq{2}.$ Logo, 
+  $$
+  a_{n}\leq{1+\sum\limits_{k=0}^{n}\frac{1}{2^{k}}} = 
+  1 + \frac{1-\frac{1}{2^{n+1}}}{1-\frac{1}{2}} < 3.
+  $$
+  Portanto, $\{a_{n}\}$ \'e convergente, e denotamos seu limite por e.
+\end{example}
+\begin{example}
+  Mostre que as sequ\^encias $\biggl\{(1+\frac{1}{n}^{n})\biggr\}, \{n^{\frac{1}{n}}\}$ e $\{a^{\frac{1}{n}}\}$ com $a >0,$ s\~ao
+convergentes.
+ \begin{align*}
+   &\circ (1+\frac{1}{n})^{n} = 1 + 1 + \frac{1}{2!}(1-\frac{1}{n}) + \cdots + \frac{1}{n!}(1-\frac{1}{n})(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{n-1}{n})\\
+   &\circ n^{\frac{1}{n}} > (n+1)^{\frac{1}{n+1}}\Longleftrightarrow n^{n+1} > (n+1)^{n}\Longleftrightarrow n>(1+\frac{1}{n})^{n}\\
+   &\circ x = a^{n} < 1\Rightarrow x < 1, x^{n} = a, x^{n+1} = a^{\frac{n+1}{n}},\text{ e } y^{n+1} = a \Rightarrow \biggl(\frac{x}{y}\biggr)^{n+1} = a^{\frac{1}{n}}.
+ \end{align*}
+   Ainda mais, uma delas t\^em como limite o n\'umero e definido no exemplo anterior. Para observar isso, considere o primeiro exemplo. Note que
+  \begin{align*}
+    b_{n} &= 1 + \binom{n}{1}n^{-1} + \binom{n}{2}n^{-2} + \cdots + \binom{n}{n-1}n^{-n+1} + \binom{n}{n}n^{-n} \\ 
+          &= 1 + 1 + \frac{1}{2!}(1-\frac{1}{n}) + \cdots + \frac{1}{n!}(1-\frac{1}{n})(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{n-1}{n})\\
+          &\leq{1 + 1 + \frac{1}{2!} + \cdots + \frac{1}{n!} = a_{n} < e}
+ \end{align*}
+ Como cada termo da soma que define $b_{n}$ \'e crescente, obtemos que $b_{n}$ \'e crescente, tal que ela converge com limite $l = \sup{\{b_{n}:n\in \mathbb{N}\}}$.
+  
+   Com rela\c c\~ao ao \'ultimo item, resta elaborar como ele converge para 1. Lembre-se que $a^{\frac{1}{n}}$ \'e o \'unico n\'umero real positivo
+  x tal que $x^{n} = a.$ Logo, se $x = a^{n} $ e $y = a^{\frac{1}{n+1}}$, temos $x^{n+1} = y^{n+1}x$ e, deste modo,
+  \begin{align*}
+  & (a) 0 < a < 1 \Rightarrow x < 1 \text{ e } \biggl(\frac{x}{y}\biggr)^{n+1} = x < 1\text{ e, assim, } x < y.\\
+  & (b) a > 1 \Rightarrow x > 1\text{ e }\biggl(\frac{x}{y}\biggr)^{n+1} = x > 1\text{ tal que } x > y.
+  \end{align*}
+  Logo, se $a < 1,\{a^{\frac{1}{n}}\} $ \'e crescente e limitada superiormente por 1, mostrando que ela \'e convergente. Al\'em disto,
+se $a > 1,\{a^{\frac{1}{n}}\} $ \'e descrescente e limitada inferiormente por 1, tamb\'em sendo convergente. Por fim, segue de
+$a^{\frac{1}{n(n+1)}} = \frac{a^{\frac{1}{n}}}{a^{\frac{1}{n+1}}}$. Portanto, do item (a) do teorema junto com a regra para quociente de
+sequ\^encias, segue que l = 1 \'e o limite dela.
+\end{example}\begin{example}
+   Mostre que a sequ\^encia $\{c_{n}\}, c_{0} = 1, c_{n} = n^{\frac{1}{n}}, n\geq{1}$, \'e convergente. Com efeito, lembre-se que,
+para $n\geq{3}, n > b_{n} = (1+\frac{1}{n})^{n}.$ Logo, para $n\geq{3}, n^{n+1}>(n+1)^{n}$ e, consequentemente, $n^{\frac{1}{n}} > (n+1)^{\frac{1}{n+1}}.$\
+Disto segue de $\{n^{\frac{1}{n}}\} $ \'e limitada e, por (h), que $\{c_{n}\} $ \'e convergente com limite $l\geq{1}.$ Ainda mais,
+ $(2n)^{\frac{1}{2n}}(2n)^{\frac{1}{2n}} = (2n)^{\frac{1}{n}} = 2^{\frac{1}{n}}n^{\frac{1}{n}}$ e, portanto, usamos (a) e o exemplo da \'ultima aula para
+mostrar que $l^{2} = l = 1.$\qedsymbol
+ \end{example}
+
+\subsection{Teoremas da Compara\c c\~ao e do Sandu\'iche}
+  Nota\c c\~ao: Se uma sequ\^encia tem limite 0, ela \'e chamada infinit\'esima.
+\begin{theorem*}
+  Se $\{a_{n}\}$ \'e limitada e $\{b_{n}\}$ \'e infinit\'esima, ent\~ao $\{a_{n}\cdot b_{n}\} $ \'e infinit\'esima.
+\end{theorem*}
+\begin{proof*}
+  Como $\{a_{n}\}$ \'e limitada, seja $M > 0$ tal que $|a_{n}|\leq{M}$ para todo n natural. Como $\{b_{n}\} $ \'e infinit\'esima, dado $\epsilon > 0$,
+seja N outro natural tal que $|b_{n}|<\frac{\epsilon}{M}$ para todo $n\geq{N}.$ Segue que
+  $$
+    |a_{n}b_{n}| \leq{M|b_{n}|} < M \frac{\epsilon}{M} = \epsilon,\quad \forall n\geq{N}.
+  $$
+  Portanto, $\{a_{n}b_{n}\}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$.\qedsymbol
+\end{proof*}
+ \begin{example}
+   Mostre que $\biggl\{\frac{n+\cos{(n)}}{n+1}\biggr\}$ converge.
+ \end{example}
+ Os resultados a seguir s\~ao os dois mencionados previamente, o teorema da compara\c c\~ao e o do sandu\'iche, respectivamente.
+\begin{theorem*}
+  Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}a, b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}b$ e existe N natural tal que, 
+para todo $n\geq{N}, a_{n}\leq{b_{n}}$, ent\~ao $a\leq{b}.$
+\end{theorem*}
+ \begin{proof*}
+   Dado $\epsilon > 0$, existe $N_{1}\leq{N}$ tal que, para todo $n\geq{N_{1}}$,
+   $$
+    a - \epsilon < a_{n} < a + \epsilon\quad\text{ e }\quad b-\epsilon < b_{n} < b + \epsilon.
+   $$
+   Logo, para todo $n\geq{N},$
+   $$
+    a-\epsilon < a_{n} \leq{b_{n}} < b + \epsilon.
+   $$
+   Desta forma, $a-b < \epsilon$ para todo $\epsilon > 0$ e, portanto, $a - b\leq{0}.$\qedsymbol
+ \end{proof*}
+
+\begin{theorem*}
+  Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}l, c_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}l$ e existe um
+N natural tal que, para todo $n\geq{N}, a_{n}\leq{b_{n}}\leq{c_{n}}$, ent\~ao $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}l.$
+\end{theorem*}
+\begin{proof*}
+  Dado $\epsilon>0$, existe $N_{1}\geq{N}$ tal que, para todo $n\geq{N_{1}},$
+  $$
+    l - \epsilon < a_{n} < l + \epsilon\quad\text{ e }\quad l-\epsilon < c_{n} < l+\epsilon.
+  $$
+  Logo, para todo $n\geq{N_{1}},$
+  $$
+    l - \epsilon < a_{n}\leq{b_{n}}\leq{c_{n}}<l + \epsilon.
+  $$
+  Disto segue que $|b_{n} - l|< \epsilon$ para todo $n\geq{N_{1}}$ e que, portanto, $\{b_{n}\} $ \'e convergente para l. \qedsymbol
+\end{proof*}
+\begin{example}
+  Vamos mostrar que 
+  $$
+   e = \lim_{n\to\infty}\overbrace{(1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!})}^{a_{n}} = \lim_{n\to\infty}\overbrace{\biggl(1 + \frac{1}{n}\biggr)^{n}}^{b_{n}} = l.
+  $$  
+  De fato, como $a_{n} \geq{b_{n}}$ para todo n natural, segue do Teorema da Compara\c c\~ao que $e\geq{l}.$ Por outro lado, se 
+ $n\geq{p}\geq{2},$
+ $$
+  b_{n} > 1 + 1 + \frac{1}{2!}(1-\frac{1}{n})+\cdots+\frac{1}{p!}(1-\frac{1}{n})(1-\frac{2}{n})\cdots(1-\frac{p-1}{n}).
+ $$
+ Agora, novamente pelo Teorema da Compara\c c\~ao, $l = \displaystyle \lim_{n\to\infty}b_{n}\geq{a_{p}}$ para todo natural p.
+ Portanto, $l = \displaystyle \lim_{n\to\infty}b_{n}\geq{\sup\{a_{n}:n\in \mathbb{N}\}} = \lim_{n\to\infty}a_{n} = e.$ \qedsymbol
+\end{example}
+\begin{def*}
+   Seja $\{a_{n}\} $ uma sequ\^encia. Um n\'umero real a \'e um valor de ader\^encia de $\{a_{n}\} $ se a sequ\^encia $\{a_{n}\}$ possui
+uma subsequ\^encia convergente para a.$\quad\square$
+\end{def*}
+\begin{def*}
+  Seja $\{a_{n}\} $  uma sequ\^encia limitada. Definimos o limite superior $\displaystyle\limsup_{n\to\infty}a_{n}(\text{ inferior}\liminf_{n\to\infty}a_{n})$ da 
+sequ\^encia $\{a_{n}\} $ por 
+  \begin{align*}
+    &\limsup_{n\to\infty}a_{n} = \lim_{n\to\infty}\sup_{k\geq{n}}a_{k}\\
+    &\liminf_{n\to\infty}a_{n} = \lim_{n\to\infty}\inf_{k\geq{n}}a_{k}\quad\square
+  \end{align*}
+\end{def*}
+  Uma consequ\^encia direta do Teorema do Confronto que utiliza os conceitos acima nos permite dizer se uma sequ\^encia converge apenas
+utilizando as ideias de limite superior e inferior:
+ \begin{theorem*}
+   Se a \'e um valor de ader\^encia da sequ\^encia $\{a_{n}\} $, ent\~ao
+   $$
+   \liminf_{n\to\infty}a_{n}\leq{a}\leq{\limsup_{n\to\infty}a_{n}}.
+   $$
+   Al\'em disso, uma sequ\^encia \'e convergente se, e somente se, $\liminf_{n\to\infty}a_{n} = \limsup_{n\to\infty}a_{n}.$
+ \end{theorem*}
+
 \end{document}
 

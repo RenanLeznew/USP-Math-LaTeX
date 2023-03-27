@@ -76,7 +76,158 @@ INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
 
 \newpage
 
-\section{Aula 01 - 23/03/2023}
-  \subsection{Motiva\c c\~oes}
+\section{Aula 00 - 23/03/2023}
+  (Revis\~ao Unidades de Medidas)
 
+\section{Aula 01 - 27/03/2023}
+\begin{itemize}
+  \item Revisar propriedades de derivadas;
+  \item Aplicar derivadas em movimento 1D. 
+\end{itemize}
+\subsection{Movimentos 1D}
+  Dada uma part\'icula com posi\c c\~ao descrita por $x = x(t)$, em que t \'e a vari\'avel de tempo, denotamos seu deslocamento
+por $\Delta x = x_{2} - x_{1} = x(t_{2}) - x(t_{1}).$ Analogamente, o intervalo de tmepo \'e definido por $\Delta t = t_{2} - t_{1}$.
+Com essas ferramentas, j\'a podemos definir a velocidade m\'edia de um objeto em uma dimens\~ao como $\vec{v} = \frac{\Delta x}{\Delta t}.$
+Observe que, quanto menor o intervalo de tempo, mais moment\^aneo se torna essa defini\c c\~ao, de modo que a velocidade instant\^anea
+pode ser encontrada como 
+  $$
+    \lim_{\Delta t\to0}\frac{x(t + \Delta t) - x(t)}{\Delta t} = \vec{v}(t).
+  $$
+Regras de derivadas:
+\begin{align*}
+  &f(t) = c \Rightarrow \frac{df}{dt} = 0 \text{ Derivada de uma constante \'e sempre nula;}\\
+  &f(t) = x^{n} \Rightarrow \frac{df}{dt} = nx^{n-1} \text{ Regra do tombo;}\\
+  &f(t) = A\sin{(t)} \Rightarrow \frac{df}{dt} = A\cos{(t)};\\
+  &f(t) = B\cos{(t)} \Rightarrow \frac{df}{dt} = -B\sin{(t)};\\
+  &f(t) = C e^{t} \Rightarrow \frac{df}{dt} = C e^{t}.
+\end{align*}
+\begin{example}
+ \begin{align*}
+   &i)f(t) = 3t^{4} + t^{2} \Rightarrow \frac{df}{dt} = 12t^{3} + 2t\\
+   &ii) f(t) = 5\sin{(t)} + 3(t^{2}+1) = 5\sin{(t)} + 3t^{2} + 3 \Rightarrow \frac{df}{dt} = 5\cos{(t)} + 6t 
+ \end{align*} 
+\end{example}
+
+  A partir deste ponto, tome t como tempo, x(t) como posi\c c\~ao e v(t) a velocidade instant\^anea.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(x(t)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:20, 
+    samples=100, 
+    color=red,
+]
+{3*x - 20};
+\addlegendentry{\(x(t) = 3t - 20\)}
+%Here the blue parabola is defined
+\addplot [
+    domain=20:40, 
+    samples=100, 
+    color=blue,
+    ]
+    {-3*x + 100};
+\addlegendentry{\(x(t) = -3t + 100\)}
+\end{axis}
+\end{tikzpicture}
+
+  Esse movimento em que a velocidade \'e descrita por uma linha reta \'e conhecido como movimento retil\'ineo uniforme, pois 
+a velocidade $v(t)$ muda de forma linear, i.e., $\frac{dx}{dt} = c$, em que c \'e uma constante.
+
+  Por outro lado, h\'a outro tipo de movimento, o movimento retil\'ineo uniformemente variado, em que a velocidade n\~ao \'e constante.
+A a\c c\~ao respons\'avel por mudar a velocidade \'e conhecida como acelera\c c\~ao, e os gr\'aficos tendem a assumir o seguinte formato
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(x(t)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:20, 
+    samples=100, 
+    color=red,
+]
+{-x^2 + 10*x};
+\addlegendentry{\(x(t) = -x^2+10x\)}
+%Here the blue parabola is defined
+\end{axis}
+\end{tikzpicture}
+
+Ou, caso a velocidade cres\c ca com o tempo,
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(x(t)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:20, 
+    samples=100, 
+    color=red,
+]
+{x^2};
+\addlegendentry{\(x(t) = x^2\)}
+%Here the blue parabola is defined
+\end{axis}
+\end{tikzpicture}
+
+H\'a ainda o caso em que a velocidade cresce por um tempo e diminui depois, com gr\'aficos como o que segue
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(x(t)\)},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:20, 
+    samples=100, 
+    color=red,
+]
+{x^2 - 20*x};
+\addlegendentry{\(x(t) = x^2 - 20x\)}
+%Here the blue parabola is defined
+\end{axis}
+\end{tikzpicture}
+
+Nestes casos, para calcular o deslocamento da particula, precisamos somar muito mais intervalos de tempo. Para isso, observe que
+cada instante, a posi\c c\~ao da part\'icula pode ser encontrada multiplicando-se o intervalo de tempo pela velocidade instan\^anea, i.e., 
+ $\Delta x_{i}' = v_{i}'\Delta t_{i}'$. Quebrando os intervalos desta forma, o deslocamento de um ponto a outro \'e denotado por
+ $$
+   \Delta x_{1, 2} = x(t_{2}) - x(t_{1})\approx \sum\limits_{k=1}^{N}\Delta x_{i}' = \sum\limits_{k=1}^{N}v_{i}'\Delta t_{i}'
+ $$
+ Assim como para a velocidade instant\^anea, quanto menor tomarmos o intervalo de tempo, mais preciso \'e o valor encontrado para $\Delta x_{1, 2}$,
+o que indica uma boa oportunidade para o uso do limite novamente. Com isso, definimos
+ $$
+  x(t_{2}) - x(t_{1}) = \lim_{\Delta t'\to0} \sum\limits_{i=1}^{N}v(t_{i}')\Delta t_{i}' = \int_{t_{1}}^{t_{2}}v(t)dt
+ $$
+ Este \'ultimo s\'imbolo, chamado integral, descreve a \'area ``embaixo'' da curva da fun\c c\~ao f(t) dentro do intervalo $[t_{1}, t_{2}].$
+Supondo que c e k s\~ao constantes quaisquer, seguem abaixo algumas das regras de integra\c c\~ao: 
+\begin{align*}
+  &i)f(t) = ct^{n} \Rightarrow \frac{df}{dt} = nct^{n-1} \Rightarrow F(t) = \frac{ct^{n+1}}{n+1}\text{ (Primitiva de f)}\\
+  &ii) \int_{t_{1}}^{t_{2}}f(t)dt = F(t_{2}) - F(t_{1}) = \frac{c}{n+1}t_{2}^{n+1} - \frac{c}{n+1}t_{1}^{n+1}\text{ (Integral definida de f)}\\
+  &iii) \int_{}^{}f(t)dt = \frac{c}{n+1}t^{n+1} + k\text{ (Integral indefinida de f)}
+\end{align*}
+  Para conferir se a integral est\'a correta, \'e preciso derivar a fun\c c\~ao F e, se obter como resultado a fun\c c\~ao f, significa que est\'a correto.
+Com este conhecimento em mente, segue que 
+  $$
+  \boxed{ x(t) = \int_{}^{}v_{0}dt = v_{0}t + x_{0}}
+  $$
+  Algumas outras regras importantes:
+ \begin{align*}
+   &iv) \frac{d\sin{(t)}}{dt} = \cos{(t)} \Rightarrow \int_{}^{}\cos{(t)}dt = \sin{(t)} + c\\
+   &v) \frac{d\cos{(t)}}{dt} = -\sin{(t)} \Rightarrow \int_{}^{}\sin{(t)}dt = \cos{(t)} + c\\
+   &vi) \frac{d e^{t}}{dt} = e^{t} \Rightarrow \int_{}^{} e^{t}dt = e^{t} + c
+ \end{align*}
+  Ou seja, em certo sentido, a integral e a derivada s\~ao dois lados da mesma moeda, assim como mulitplica\c c\~ao e divis\~ao ou adi\c c\~ao e subtra\c c\~ao.
+ 
 \end{document}

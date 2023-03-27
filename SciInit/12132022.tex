@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{tikz}
-\usepackage{minted}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{pgfplots}
@@ -285,11 +284,58 @@ $\omega$ contains other points different from it. Thus, since our point was arbi
 of $\Omega _{2}^{R}$, showing that any point is a limit point. We conclude from this that our space is perfect.
 \newpage
 
-\section{Simulations}
-\begin{minted}{python}
-  int x = 0
+\section{Seminar Day 30/03/2023}
+\subsection{Motivations}
+\begin{itemize}
+  \item Review Topology;
+  \item Construct the $\sigma$-algebra that will be used;
+  \item Construct the Middle-Third Cantor set via sequences of functions randomly picked.
+\end{itemize}
+\subsection{The Motivation Problem}
+  As Kevin talked about last week, we can construct the Cantor Middle-Third set through a function known as the Hutchinson Attractor, denoted by B, ranging
+from the set $\mathcal{H}(M)$ of nonempty compact subsets of a metric space M to $\mathcal{H}(M)$ itself and given by the union of the images of 
+contractions in M. The way we construct it is, for instance, by applying B to a singleton set A = $\{x\}$ and using de previously defined metric $d_{H}$ to translate
+the result to the Cantor Set. For each n iterations, we get an ammount of parts of the CMT set equal to $2^{n}.$ 
+Now consider two functions $f_{i}:[0,1]\rightarrow [0, 1]$
+  $$
+    f_{i} = \left\{\begin{array}{ll}
+        \frac{x}{3}, \quad i=0\\
+        \frac{x}{3}+\frac{2}{3}, \quad i=1\\
+      \end{array}\right.
+  $$
+  The infinite application of these functions yield the Cantor set, which shall be denoted by $\mathcal{C}$ to make things easier. In other words,
+Consider now a representation of infinitely many combinations of 0's and 1's in any order, i.e., $\omega = (0, 1, 0, 0, 1, \cdots)$ and
+let $f_{\omega}^{n}$ be the repeated use of $f_{i}$ as defined before using the indices from $\omega$, so that
+  $$
+  f_{\omega}^{n}(x) = f_{\omega_{n-1}}\circ{\cdots}\circ{f_{\omega_{1}}}\circ{f_{\omega_{0}}}(x)
+  $$
+  indicates that we start using the n-th coordinate of $\omega$ on each f. Using the example of $\omega$ from before, $f_{\omega}^{n}$
+  would be
+  $$
+    f_{\omega}^{n}(x) = f_{\omega_{n-1}}\circ{\cdots}\circ{f_{0}}\circ{f_{1}}\circ{f_{0}}(x).
+  $$
+  Using that notation, the thesis given at the start that the infinite use of $f_{i}$ eventually covers all of $\mathcal{C}$ is the same as
+  $$
+  \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}} = \mathcal{C}
+  $$
+  That begs the question: Will EVERY sequence of digits $\omega\in\{0, 1\}^{\mathbb{N}}$, when combined with $f_{i}$, give 
+as its image the Cantor set?
   
-\end{minted}
+On that note, consider a sequence of a single digit, i.e., $\omega =\{0, 0, 0, \cdots\} $. Then, when we apply this to $f_{i}$, we get
+  \begin{align*}
+    f_{\omega}^{n}(x) &= f_{0}\circ{\cdots}f_{0}\circ{f_{0}}\circ{f_{0}}(x)\\
+                      &= f_{0}\circ{\cdots}f_{0}(\frac{x}{3}) \\
+                      &= f_{0}\circ{\cdots}f_{0}(\frac{x}{9}) \\
+                      &\vdots\\
+                      &= \frac{x}{3^{n}}.
+  \end{align*}
+  Because of this, as n goes to infinity, $f_{\omega}^{n}$ tends to 0, which is not the Cantor set. In other words,
+  $$
+    \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}}\neq \mathcal{C}.
+  $$
+  a new problem arises, that is, will the number of $\omega$'s for which the initial thesis hold be way too small to be relevant? The answer is going to need
+quite a bit of measure theory, for the answer is, in fact, that the result holds for almost every $\omega$.
 
+\subsection{The Meaning of ``Almost Every'', The Topology of Cylinder Spaces}
 \end{document}
 

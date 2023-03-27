@@ -21,3 +21,7 @@
 \contentsline {section}{\numberline {6}Aula 06 - 24/03/2023}{16}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Motiva\c c\~oes}{16}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Propriedades de Sequ\^encias}{16}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Aula 07 - 27/03/2023}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Exemplos de Sequ\^encias}{18}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Teoremas da Compara\c c\~ao e do Sandu\'iche}{19}{subsection.7.3}%
