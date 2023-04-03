@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  27 MAR 2023 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  30 MAR 2023 11:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -976,12 +976,12 @@ Package hyperref Info: Link coloring ON on input line 39.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 39.
-<../icmc.png, id=18, 376.40625pt x 188.20313pt>
+<../icmc.png, id=66, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 42.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=20, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=68, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 44.
@@ -1009,40 +1009,55 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `physics_notes.toc'.
 
- [2] [3] [4]
+ [2] [3] [4] [5]
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+[6] [7] [8]
+Overfull \hbox (6.24487pt too wide) in paragraph at lines 437--439
+[]\OT1/cmr/m/n/10 Primeiramente, pre-ci-sa-mos con-ver-ter as uni-da-des para m
+e-di-das iguais. Com isso, note que $[] = 48\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3
+\OML/cmm/m/it/10 km=h \OT1/cmr/m/n/10 =
+ []
 
+[9] [10] 
 AED: lastpage setting LastPage
-[5] (physics_notes.aux)
+[11] (physics_notes.aux)
 Package rerunfilecheck Info: File `physics_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 069EC75D41F77E697329693C98951427;429.
+(rerunfilecheck)             Checksum: F2FF112B32ED56656BB59FB9338FACBE;2439.
  ) 
 Here is how much of TeX's memory you used:
- 33871 strings out of 475284
- 792895 string characters out of 2774105
- 1255982 words of memory out of 3000000
- 54796 multiletter control sequences out of 15000+600000
- 473456 words of font info for 44 fonts, out of 8000000 for 9000
+ 34009 strings out of 475284
+ 795257 string characters out of 2774105
+ 1283970 words of memory out of 3000000
+ 54913 multiletter control sequences out of 15000+600000
+ 474513 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,103p,732b,2122s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,18n,103p,732b,2165s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\renan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/renan/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/renan/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/renan/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/r
-enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:
-/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.
-pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on physics_notes.pdf (5 pages, 1829760 bytes).
+ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/renan/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/renan/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/renan/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/r
+enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:
+/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7
+.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr17.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/renan/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/renan/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/renan/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/r
+enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
+:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
+/msam10.pfb>
+Output written on physics_notes.pdf (11 pages, 1946092 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 47 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 

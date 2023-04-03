@@ -316,12 +316,19 @@ let $f_{\omega}^{n}$ be the repeated use of $f_{i}$ as defined before using the 
   $$
   Using that notation, the thesis given at the start that the infinite use of $f_{i}$ eventually covers all of $\mathcal{C}$ is the same as
   $$
-  \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}} = \mathcal{C}
+  \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}} = B
   $$
   That begs the question: Will EVERY sequence of digits $\omega\in\{0, 1\}^{\mathbb{N}}$, when combined with $f_{i}$, give 
-as its image the Cantor set?
-  
-On that note, consider a sequence of a single digit, i.e., $\omega =\{0, 0, 0, \cdots\} $. Then, when we apply this to $f_{i}$, we get
+as its image the Cantor set? In fact, the answer is no, as the theorem is stated
+ \begin{theo*}
+   Let $\phi$ be an independent and identically distributed random product of contractions $f_{1},\cdots, f_{k}:M\rightarrow M$ and
+  K be the corresponding Hutchinson Attractor. Given $p\in M$, we have
+    $$
+    \lim_{l\to\infty}\overline{\{f_{\omega}^{n}:n\geq{l}\}} = K
+    $$
+    for $\mathbb{P}-$almost all $\omega.$
+ \end{theo*}
+On that note, to grasp what we mean by almost all sequences work, consider a sequence of a single digit, i.e., $\omega =\{0, 0, 0, \cdots\} $. Then, when we apply this to $f_{i}$, we get
   \begin{align*}
     f_{\omega}^{n}(x) &= f_{0}\circ{\cdots}f_{0}\circ{f_{0}}\circ{f_{0}}(x)\\
                       &= f_{0}\circ{\cdots}f_{0}(\frac{x}{3}) \\
@@ -331,11 +338,108 @@ On that note, consider a sequence of a single digit, i.e., $\omega =\{0, 0, 0, \
   \end{align*}
   Because of this, as n goes to infinity, $f_{\omega}^{n}$ tends to 0, which is not the Cantor set. In other words,
   $$
-    \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}}\neq \mathcal{C}.
+    \lim_{l\to\infty}\overline{\{f_{\omega}^{n}(x):n\geq{l}\}}\neq B.
   $$
   a new problem arises, that is, will the number of $\omega$'s for which the initial thesis hold be way too small to be relevant? The answer is going to need
 quite a bit of measure theory, for the answer is, in fact, that the result holds for almost every $\omega$.
 
-\subsection{The Meaning of ``Almost Every'', The Topology of Cylinder Spaces}
+\subsection{The Meaning of ``Almost Every''}
+  Now that the goal has been set, we can start to develop the theory needed to fully grasp it. Starting with a review of $\sigma-$algebra,
+they are the sets in which we define measures. They are sets that have closure under countable unions and complements. Formally speaking,
+ \begin{def*}
+   Given a set $\Omega$, a $\sigma-$algebra $\mathcal{F}$ is a nonempty collection of subsets of $\Omega$ that satisfy
+  \begin{align*}
+    &(i) \text{ If }A\in \mathcal{F} \Rightarrow A^{c}\in \mathcal{F};\\
+    &(ii) \text{ If } A_{i} \text{ is a countable sequence of sets, then } \bigcup_{i}A_{i}\in \mathcal{F};\\
+    &(iii) \Omega\in \mathcal{F}.\square
+  \end{align*}
+ \end{def*}
+ They are the defining ground that allow us to define measures and thus, find the meaning of ``Almost Every''. Without further ado,
+we define a measure.
+ \begin{def*}
+   A measure is a nonnegative countably additive set function, i.e., a function $\mu:\mathcal{F}\rightarrow \mathbb{R}$ which satisfies
+  \begin{itemize}
+    \item[i)] $\mu(A)\geq{\mu(\emptyset)}=0$ for all $A\in \mathcal{F};$ 
+    \item[ii)] If $A_{i}\in \mathcal{F}$ is a countable sequence of disjoint sets, then
+      $$
+        \mu(\bigcup_{i}A_{i}) = \sum\limits_{i}^{}\mu(A_{i}).\square
+      $$
+  \end{itemize}
+ \end{def*}
+ Now, we can formalize the meaning of almost every point satisfying something. The idea is that some property is going to hold true
+for every point of a set except for an ammount inside a set whose significance is nought. In other words, a set with a measure of zero, so that
+the set for which the property holds takes up nearly every single possibility. 
+ \begin{def*}
+   Given a measure space $(\Omega, \mathcal{F}, \mu)$, in which $\Omega$ is a set, $\mathcal{F}$ is a $\sigma-$algebra, and $\mu$ is a measure, 
+ a property P is said to hold almost everywhere if there exists a set $N\in\Sigma$ with $\mu(N) = 0,$ and all $x\in\Omega/N$ satisfy that property.
+ \end{def*}
+  It's also important to understand what it means for a variable to be independent and identically distributed, since it allows
+for simplifications of results and ideas. Essentially, it means that the an element in the sequence of variables 
+does not depend on the ones that came before it, and the value does not change with each subsequent application of it.
+The easiest example of such kinds of elements come up in the toss of coins, since the result of ``head'' or ``tail''
+has no impact on the next tossing of coin, and neither does the probability change from 0.5 each time you flip it,
+meaning it is identically distributed. However, we need a mathematical definition to work better with it.
+\begin{def*}
+  Suppose random variables X and Y are defined to assume values in $I\subseteq{\mathbb{R}}$. Let $F_{X}(x) = P(X\leq{x}), 
+F_{Y}(y) = P(Y\leq{y})$ denote the cumulative distribution function of X and Y. Furthermore, denote their joint cumulative
+distributive function by
+  $$
+    F_{X, Y}(x, y) = P(X\leq{x}\wedge Y\leq{y}).
+  $$
+\end{def*}
+ \begin{def*}
+   Two random variables X and Y are independent if and only if
+   $$
+    F_{X}(x) = F_{Y}(x)\quad \forall x\in I\subseteq{\mathbb{R}}.
+   $$
+   Moreover, they are said to be identically distributed if and only if 
+   $$
+    F_{X, Y}(x, y)=F_{X}(x)F_{Y}(y)\quad \forall x, y\in I\subseteq{\mathbb{R}}.
+   $$
+   When both happen, we say that they are i.i.d.
+ \end{def*}
+  The thing is that we don't work with only two variables (usually). Thankfully, we do have a definition for multiple variables
+ \begin{def*}
+   We say that n random variables $X_{1},\cdots,X_{n}$ are independent if and only if 
+   $$
+   F_{X_{1}}(x) = F_{X_{k}}(x)\quad \forall k\in\{1,\cdots,n\}\text{ and }\forall x\in I
+   $$
+   On the other hand, they are identically distributed if and only if 
+   $$
+    F_{X_{1},\cdots,X_{n}}(x) = F_{X_{1}}(x_{1})\cdots F_{X_{n}}(x_{n})\quad \forall x_{1},\cdots,x_{n}\in I
+   $$
+ where $F_{X_{1},\cdots,X_{n}}(x_{1},\cdots,x_{n})=P(X_{1}\leq{x_{1}}\wedge\cdots\wedge X_{n}\leq{x_{n}})$ denotes the joint 
+  cumulative distribution function of $X_{1},\cdots,X_{n}.\square$
+ \end{def*}
+
+
+\subsection{The Topology of Cylinder Sets and Sequence Spaces}
+ Regarding the topology of cylinder sets, 
+ \begin{def*}
+  Fix integers $n _{1} < \cdots < n _{k}$ and $\alpha _{1}, \cdots, \alpha _{k}\in \{0, 1, \cdots, N-1\} $. Then, the cylinder of rank k is the set
+  $$
+  C _{\alpha _{1}, \cdots, \alpha _{k}}^{n _{1}, \cdots, n _{k}}:= \{\omega\in \Omega _{N}^{R}: \omega _{n_i} = \alpha _{i}\}
+  $$
+where i varies from 1 to k. Another notation that may be used is 
+  $$
+    [\alpha_{0}, \cdots, \alpha_{k}] = C_{\alpha_{1},\cdots,\alpha_{k}}^{n_{1},\cdots,n_{k}}.
+  $$
+ \end{def*}
+ The elements of cylinders are exactly the k first coordinates of an element $\omega\in \{0, 1\}^{\mathbb{N}},$ and it should
+be noted that we may not know the other coordinates other than those k first ones. Cylinders are both open and closed 
+sets simultaneously, as can be shown. The elements we are going to use as part of the definition of f will be members of
+the cylinders.
+  
+  Furthermore, we endow the space $\{0, 1\}^{\mathbb{N}}$ with the smallest topology that makes projections continuous functions, the product topology,
+which has a subbasis formed exactly by the preimage of projections and a basis of cylinders. 
+\begin{def*}
+  Let X = $\prod\limits _{\alpha\in{J}} X _{\alpha}$, where each $X _{\alpha}$ is a topological space. We define the product
+topology on X as the one given by the basis $\mathcal{B}$ such that each basis element is defined as
+  $$
+  B = \prod _{\alpha\in{J}} U _{\alpha}, \quad U _{\alpha}\neq{X _{\alpha}} \text{ for all but finitely many }\alpha
+  $$
+\end{def*}
+  The product topology in question has as reference the discrete topology on $\{0, 1\}$
+ 
 \end{document}
 

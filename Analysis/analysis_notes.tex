@@ -1141,6 +1141,265 @@ utilizando as ideias de limite superior e inferior:
    $$
    Al\'em disso, uma sequ\^encia \'e convergente se, e somente se, $\liminf_{n\to\infty}a_{n} = \limsup_{n\to\infty}a_{n}.$
  \end{theorem*}
+\newpage
 
+\section{Aula 08 - 29/03/2023}
+\begin{itemize}
+  \item Rela\c c\~ao entre limite superior (e inferior), limites normais e valores de ader\^encia;
+  \item Aproxima\c c\~oes sucessivas de valores.
+\end{itemize}
+\subsection{Limite Superior e Inferior}
+\begin{def*}
+   Seja $\{a_{n}\} $ uma sequ\^encia. Um n\'umero real a \'e um valor de ader\^encia de $\{a_{n}\} $ se a sequ\^encia $\{a_{n}\}$ possui
+uma subsequ\^encia convergente para a.$\quad\square$
+\end{def*}
+\begin{def*}
+  Seja $\{a_{n}\} $  uma sequ\^encia limitada. Definimos o limite superior $\displaystyle\limsup_{n\to\infty}a_{n}(\text{ inferior }\liminf_{n\to\infty}a_{n})$ da 
+sequ\^encia $\{a_{n}\} $ por 
+  \begin{align*}
+    &\limsup_{n\to\infty}a_{n} = \lim_{n\to\infty}\sup_{k\geq{n}}a_{k} = \inf_{n\in \mathbb{N}}\sup_{k\geq{n}}a_{k}\\
+    &\liminf_{n\to\infty}a_{n} = \lim_{n\to\infty}\inf_{k\geq{n}}a_{k} = \sup_{n\in \mathbb{N}}\inf_{k\geq{n}}a_{k}\quad\square
+  \end{align*}
+\end{def*}
+  Uma consequ\^encia direta do Teorema do Confronto que utiliza os conceitos acima nos permite dizer se uma sequ\^encia converge apenas
+utilizando as ideias de limite superior e inferior:
+ \begin{theorem*}
+   Se $\{a_{n}\} $ \'e uma sequ\^encia limitada, ent\~ao $a = \liminf_{n\to\infty}a_{n}$ e $b = \limsup_{n\to\infty}a_{n}$
+   s\~ao valores de ader\^encia de $\{a_{n}\} $
+ \end{theorem*}
+\begin{proof*}
+  A prova se baseia em verificar que, dada uma vizinhan\c ca $V_{a}$ de a, temos $a_{n}\in V_{a}$ para infinitos \'indices n. 
+Dado $\epsilon > 0$, existe N natural tal que, colocando $a =\displaystyle \liminf_{n\to\infty} = \lim_{n\to\infty}\inf_{k\geq{n}}a_{k} = \lim_{n\to\infty}i_{n},$
+  $$
+    a - \epsilon < i_{n} < a + \epsilon \quad \forall n \geq{N}.
+  $$
+  Assim, existe um $a_{\overline{k}}, \overline{k}\geq{N}$ em $(a-\epsilon, a+\epsilon).$ Assim, existe $\overline{n} > \overline{k}$ tal que 
+    $$
+      a - \epsilon < i_{\overline{n}} < a + \epsilon.
+    $$
+    Repetindo o racioc\'icio, existe $a_{\overline{\overline{k}}}, \overline{\overline{k}} \geq{\overline{n}} > k$ em $(a - \epsilon, a + \epsilon).$
+  Dando continuidade a este racioc\'inio ad infinitum, o teorema est\'a provado. \qedsymbol
+\end{proof*}
+ \begin{theorem*}
+   Se a \'e um valor de ader\^encia da sequ\^encia $\{a_{n}\} $, ent\~ao
+   $$
+     \liminf_{n\to\infty}a_{n}\leq{a}\leq{\limsup_{n\to\infty}a_{n}}.
+   $$
+   Al\'em disso, uma sequ\^encia \'e convergente se, e somente se, $\liminf_{n\to\infty}a_{n} = \limsup_{n\to\infty}a_{n}.$
+ \end{theorem*}
+\begin{proof*}
+  Defina $i_{n} = \inf_{k\geq{n}}a_{k}$. Segue que $i_{s(n)}\leq{a_{s(n)}}\overbracket[0pt]{\longrightarrow}^{\to }a$, pois o conjunto
+  $\{a_{k}: k\geq{s(n)}\}$ cont\'em $a_{s(n)}$. Logo, como $i_{s(n)}$ converge para $\liminf_{n\to\infty}a_{n}$, segue do Teorema da compara\c c\~ao que 
+    $$
+      \liminf_{n\to\infty}a_{n} \leq{\lim_{n\to\infty}a_{s(n)} = a}.
+    $$
+    Analogamente, como $a_{s(n)}\leq{\sup_{k\geq{s(n)}}{(a_{k})}} = s_{s(n)}$ e $\sup_{k\geq{s(n)}}{(a_{k})}\overbracket[0pt]{\longrightarrow}^{n\to\infty}a_{n}$, 
+  pelo teorema da compara\c c\~ao, chegamos novamente em 
+    $$
+      \lim_{n\to\infty}a_{s(n)} = a \leq{\limsup_{n\to\infty}a_{n}}.
+    $$
+    Portanto, juntando ambos, segue o resultado. \qedsymbol
+\end{proof*}
+  A seguir, mostraremos um m\'etodo para aproximar n\'umeros por meio de sequ\^encias de Cauchy.
+\begin{theorem*}
+  Se $\kappa\in{[0, 1)},\{a_{n}\} $ \'e uma sequ\^encia tal que, para todo $n\in \mathbb{N}, |a_{n+2}-a_{n+1}|\leq{\lambda|a_{n+1}-a_{n}|}$, 
+  ent\~ao $\{a_{n}\} $ \'e de Cauchy.
+\end{theorem*}
+\begin{proof*}
+  Se $m > n$ s\~ao naturais, m = n + p para algum natural n\~ao-nulo p. Assim, como 
+    $$
+      |a_{n+p} - a_{n}| = |a_{n+p} - a_{n+p-1} + a_{n+p-1}+\cdots + a_{n+1} - a_{n}|,
+    $$
+  segue da desigualdade triangular que
+ \begin{align*}
+   |a_{n+p}-a_{n}| &\leq{\kappa|a_{n+p-1}-a_{n+p-2}|+\kappa|a_{n+p-2}-a_{n+p-3}|+\cdots+\kappa|a_{n}-a_{n-1}|}\\ 
+                   &\leq{\kappa^{n+p-1}|a_{n+p} - a_{n+p-1}|}+\cdots+{\kappa^{n}|a_{p}-a_{p-1}|}\\
+                   &={\kappa^{n}\biggl[\kappa^{p-1}+\cdots+1\biggr]}|a_{1}-a_{0}| < \frac{\kappa^{n}}{1-\kappa}|a_{1}-a_{0}|.
+ \end{align*}
+ Dado $\epsilon > 0,$ escolha N natural tal que $\displaystyle \frac{\kappa^{n}}{1-\kappa}|a_{1}-a_{0}| < \epsilon.$ Assim, segue que,
+ se $m, n\geq{N}, |a_{m}-a_{n}|<\epsilon$ e $\{a_{n}\} $ \'e de Cauchy. \qedsymbol
+\end{proof*}
+ \begin{example}
+   Seja $a > 0$ e $\{a_{n}\}$ a sequ\^encia definida por $a_{0} = c > 0$ e $a_{n+1}=\displaystyle \frac{1}{2}\biggl(a_{n} + \frac{a}{a_{n}}\biggr)$. Mostre que 
+   $\{a_{n}\}$ \'e convergente com limite $\sqrt{a}$. 
+
+   Com efeito, observe que 
+     $$
+       a_{n+2} - a_{n+1} = \frac{1}{2}(a_{n+1}-a_{n}) + \frac{a}{2}\biggl(\frac{1}{a_{n+1}}-\frac{1}{a_{n}}\biggr) = \biggl(\frac{1}{2} - \frac{a}{2a_{n}a_{n+1}}\biggr)(a_{n+1}-a_{n})
+     $$
+     e note que, para todo $t > 0, \frac{1}{2}(t + \frac{a}{t}) > \sqrt{\frac{a}{2}}.$ Logo, $a_{n} > \sqrt{\frac{a}{2}}$ para todo n maior ou igual que 1.
+Disto segue que $2a_{n}a_{n+1} > a$ e que 
+  $$
+    \biggl|\frac{1}{2} - \frac{a}{2a_{n}a_{n+1}}\biggr| < \frac{1}{2}.
+  $$
+  Portanto, segue do m\'etodo das aproxima\c c\~oes sucessivas que $\{a_{n}\}$ \'e convergente e seu limite l deve satisfazer 
+ $l = \frac{1}{2}(l + \frac{a}{l})$, ou seja, $l^{2} = a.$ \qedsymbol
+ \end{example}
+\newpage
+
+\section{Aula 09 - 31/03/2023}
+\subsection{Motiva\c c\~oes}
+  \begin{itemize}
+    \item Limites Infinitos;
+    \item Sequ\^encias divergentes.
+  \end{itemize}
+
+\subsection{Pontos de Ader\^encia e Limites Superiores/Inferiores.}
+\begin{def*}
+   Seja $\{a_{n}\} $ uma sequ\^encia. Um n\'umero real a \'e um valor de ader\^encia de $\{a_{n}\} $ se a sequ\^encia $\{a_{n}\}$ possui
+uma subsequ\^encia convergente para a.$\quad\square$
+\end{def*}
+\begin{def*}
+  Seja $\{a_{n}\} $  uma sequ\^encia limitada. Definimos o limite superior $\displaystyle\limsup_{n\to\infty}a_{n}(\text{ inferior }\liminf_{n\to\infty}a_{n})$ da 
+sequ\^encia $\{a_{n}\} $ por 
+  \begin{align*}
+    &\limsup_{n\to\infty}a_{n} = \lim_{n\to\infty}\sup_{k\geq{n}}a_{k} = \inf_{n\in \mathbb{N}}\sup_{k\geq{n}}a_{k}\\
+    &\liminf_{n\to\infty}a_{n} = \lim_{n\to\infty}\inf_{k\geq{n}}a_{k} = \sup_{n\in \mathbb{N}}\inf_{k\geq{n}}a_{k}\quad\square
+  \end{align*}
+\end{def*}
+  Uma consequ\^encia direta do Teorema do Confronto que utiliza os conceitos acima nos permite dizer se uma sequ\^encia converge apenas
+utilizando as ideias de limite superior e inferior:
+ \begin{theorem*}
+   Se $\{a_{n}\} $ \'e uma sequ\^encia limitada, ent\~ao $a = \liminf_{n\to\infty}a_{n}$ e $b = \limsup_{n\to\infty}a_{n}$
+   s\~ao valores de ader\^encia de $\{a_{n}\} $
+ \end{theorem*}
+\begin{proof*}
+  A prova se baseia em verificar que, dada uma vizinhan\c ca $V_{a}$ de a, temos $a_{n}\in V_{a}$ para infinitos \'indices n. 
+Dado $\epsilon > 0$, existe N natural tal que, colocando $a =\displaystyle \liminf_{n\to\infty} = \lim_{n\to\infty}\inf_{k\geq{n}}a_{k} = \lim_{n\to\infty}i_{n},$
+  $$
+    a - \epsilon < i_{n} < a + \epsilon \quad \forall n \geq{N}.
+  $$
+  Assim, existe um $a_{\overline{k}}, \overline{k}\geq{N}$ em $(a-\epsilon, a+\epsilon).$ Assim, existe $\overline{n} > \overline{k}$ tal que 
+    $$
+      a - \epsilon < i_{\overline{n}} < a + \epsilon.
+    $$
+    Repetindo o racioc\'icio, existe $a_{\overline{\overline{k}}}, \overline{\overline{k}} \geq{\overline{n}} > k$ em $(a - \epsilon, a + \epsilon).$
+  Dando continuidade a este racioc\'inio ad infinitum, segue que $V_{a}$ cont\'em $a_{n}$ para infinitos ind\'ices n, tal que o teorema est\'a provado. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  (Exerc\'icio) Nas condi\c c\~oes do teorema, a \'e um valor de ader\^encia de $\{a_{n}\}$ e $b = \limsup_{n\to\infty}a_{n}$ tamb\'em \'e um valor de
+  ader\^encia de $\{a_{n}\}$
+\end{crl*}
+ \begin{theorem*}
+   Se a \'e um valor de ader\^encia da sequ\^encia $\{a_{n}\} $, ent\~ao
+   $$
+     \liminf_{n\to\infty}a_{n}\leq{a}\leq{\limsup_{n\to\infty}a_{n}}.
+   $$
+   Al\'em disso, uma sequ\^encia \'e convergente se, e somente se, $\liminf_{n\to\infty}a_{n} = \limsup_{n\to\infty}a_{n}.$
+ \end{theorem*}
+\begin{proof*}
+  Defina $i_{n} = \inf_{k\geq{n}}a_{k}$. Segue que $i_{s(n)}\leq{a_{s(n)}}\overbracket[0pt]{\longrightarrow}^{\to }a$, pois o conjunto
+  $\{a_{k}: k\geq{s(n)}\}$ cont\'em $a_{s(n)}$. Logo, como $i_{s(n)}$ converge para $\liminf_{n\to\infty}a_{n}$, segue do Teorema da compara\c c\~ao que 
+    $$
+      \liminf_{n\to\infty}a_{n} \leq{\lim_{n\to\infty}a_{s(n)} = a}.
+    $$
+    Analogamente, como $a_{s(n)}\leq{\sup_{k\geq{s(n)}}{(a_{k})}} = s_{s(n)}$ e $\sup_{k\geq{s(n)}}{(a_{k})}\overbracket[0pt]{\longrightarrow}^{n\to\infty}a_{n}$, 
+  pelo teorema da compara\c c\~ao, chegamos novamente em 
+    $$
+      \lim_{n\to\infty}a_{s(n)} = a \leq{\limsup_{n\to\infty}a_{n}}.
+    $$
+    Portanto, juntando ambos, segue o resultado. \qedsymbol
+\end{proof*}
+
+\subsection{Sequ\^encias Divergente para $\pm\infty$.}
+ Recorde-se que 
+\begin{def*}
+  Diremos que uma sequ\^encia $\{a_{n}\}$ diverge para $+\infty(-\infty)$ se, dado $M >0,$ existe um natural N tal que $a_{n}\geq{M}(a_{n}\leq{-M})$
+para todo $n\geq{N}.$ Escreveremos $\lim_{n\to\infty}a_{n} = +\infty(-\infty),$ ou $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}+\infty(-\infty)\square.$
+\end{def*}
+ \begin{def*}
+   Diremos que a sequ\^encia $\{a_{n}\}$ \'e eventualmente positiva (negativa) se existe um natural N tal que $a_{n} > 0 (a_{n} < 0)$
+para todo $n\geq{N}.\square$
+ \end{def*}
+  Vejamos a seguir algumas das propriedades dessas sequ\^encias.
+ \begin{theorem*}
+  \begin{itemize}
+    \item[a)] Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$ e $\{b_{n}\}$ \'e limitada inferiormente, ent\~ao
+  $a_{n}+b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty.$
+    \item[b)] Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$ e $\liminf_{n\to\infty}b_{n} > 0,$ ent\~ao
+  $\lim_{n\to\infty}a_{n}b_{m} = +\infty$
+  \item[c)] Seja $\{a_{n}\}$ uma sequ\^encia com $a_{n}\neq0$ para todo n natural. $\{a_{n}\}$ \'e eventualmente negativa e
+  $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$ se, e somente se, $\displaystyle \frac{1}{a_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty.$
+  \item[d)] Sejam $\{a_{n}\},\{b_{n}\} $ sequ\^encias eventualmente positivas, $b_{n}\neq 0$ para todo n natural.
+    \item[d.1)]Se $\liminf_{n\to\infty}a_{n} > 0$ e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$, ent\~ao $\displaystyle\lim_{n\to\infty}\frac{a_{n}}{b_{n}} = +\infty.$
+    \item[d.2)] Se $\{a_{n}\}$ \'e limitada e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$, ent\~ao $\displaystyle \frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0.$
+  \end{itemize}
+ \end{theorem*}
+\begin{proof*}
+  (a) $\Rightarrow)$ Como $\{b_{n}\}$ \'e limitada inferiormente, existe um n\'umero real $l > 0$ tal que $b_{n} \geq{ -l}$ para todo 
+n natural. Como $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty,$ dado M positivo, existe N natural tal que 
+ $a_{n}\geq{M}+l$ para todo $n\geq{N}.$ Logo, 
+   $$
+     a_{n} + b_{n}\geq{M+l-l} = M,\quad \forall n\geq{N}.
+   $$
+   Portanto, $a_{n} + b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty.$
+
+  (b) $\Rightarrow)$ Como $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$ e $\liminf_{n\to\infty}b_{n} = r > 0,$
+  existe $N_{1}$ natural tal que $\liminf_{k\geq{n}}a_{n} \geq{\frac{r}{2}}$ para todo $n\geq{N_{1}.}$ Como $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty,$
+  dado M positivo, existe $N_{2}$ natural tal que $a_{n} > \frac{2M}{r}$ para todo $n\geq{N_{2}}.$ Disto segue que, para $n\geq{N = \max\{N_{1}, N_{2}\}}$, 
+    $$
+      a_{n}b_{n}\geq{\frac{2M}{r}\frac{r}{2}} = M,\quad \forall n\geq{N}.
+    $$
+  donde segue o que quer\'iamos.
+
+  (c) $\Rightarrow)$ Se $\{a_{n}\}$ \'e infint\'esima e eventualmente positiva, dado M positivo, seja N natural tal que 
+ $0 < a_{n} < \frac{1}{M}$ para quaisquer $n\geq{N}.$ Logo, $\frac{1}{a_{n}} > M$ para todos os $n\geq{N},$ mostrando que 
+ $\frac{1}{a_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty.$
+
+ Reciprocamente, se $\frac{1}{a_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty,$ dado $\epsilon > 0,$ seja N natural tal que
+ $\frac{1}{a_{n}} > \frac{1}{\epsilon}$ para todo $n\geq{N}.$ Desta forma, $0 < a_{n} < \epsilon $ para todo $n\geq{N},$ provando o 
+ resultado.
+
+ (d.1) $\Rightarrow)$ De fato, se $\liminf_{n\to\infty}a_{n} = r > 0,$ existe $N_{1}$ natural tal que $a_{n}\geq{\frac{r}{2}}$ para todo $n\geq{N_{1}.}$
+Dado M positivo, seja $N_{2}$ outro natural tal que $0 < a_{n} < \frac{r}{2M}$ para todo $n\geq{N_{2}}.$ Logo, $\frac{a_{n}}{b_{n}}>\frac{r}{2}\frac{2M}{r} = M$
+para todo $n\geq{N} = \max\{N_{1}, N_{2}\}$, tal que $\frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$.
+
+  (d.2) $\Rightarrow)$ Seja $L > 0 $ tal que $|a_{n}|\leq{L}$ para todo n natural. Como $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty,$
+  dado $\epsilon > 0,$ existe N natural tal que $b_{n} > \frac{L}{\epsilon}(\frac{1}{b_{n}} < \frac{\epsilon}{L})$ para todo $n\geq{N}.$ Logo,
+  $$
+    \biggl|\frac{a_{n}}{b_{n}} - 0\biggr| < L \cdot \frac{\epsilon}{L} = \epsilon,\quad \forall n\geq{N},
+  $$
+  mostrando que $\frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0.$\qedsymbol
+\end{proof*}
+  \'E importante notar que, se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$ e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$, nada
+  podemos afirmar de $\lim_{n\to\infty}(a_{n}+b_{n}).$ Neste caso, tudo pode ocorrer! $\{a_{n} + b_{n}\} $ pode convergir para qualquer n\'umero real,
+  divergir para $+\infty, -\infty$ ou pode oscilar. Vamos ilustrar a situa\c c\~ao.
+ \begin{example}
+   Se $a_{n} = \sqrt{n+1}, b_{n} = -\sqrt{n},$ para todo n natural, \'e f\'acil de ver que $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty$ e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$.
+   Para ver o que ocorre com a sequ\^encia $\{a_{n}+b_{n}\} $, observe que 
+     $$
+     \sqrt{n+1} - \sqrt{n} = \frac{(\sqrt{n+1}-\sqrt{n})(\sqrt{n+1}+\sqrt{n})}{\sqrt{n+1}+\sqrt{n}} = \frac{1}{\sqrt{n+1}+\sqrt{n}}.
+     $$ 
+     Segue de (d.2) que $\{a_{n}+b_{n}\} $ \'e infinit\'esima.
+ \end{example}
+\begin{example}
+  Se $a > 1,$ ent\~ao a sequ\^encia $\{a_{n}\}$ dada por $a_{n} = \frac{a^{n}}{n}$ diverge para $+\infty.$ De fato, basta ver que
+a = 1 + h, com h positivo, e escrever 
+  $$
+    \frac{a^{n}}{n} = \frac{(1+h)^{n}}{n} = \frac{1}{n} + h + (n-1)\frac{h^{2}}{2!} + s_{n}.
+  $$
+  O resultado segue aplicando (a).
+\end{example}
+ \begin{example}
+   Se $a > 1$, ent\~ao a sequ\^encia $\{a_{n}\}$ com $a_{n} = \frac{n!}{a^{n}}$ diverge para $+\infty.$ Com efeito, basta escolher
+ $n_{0}$ tal que $\frac{n_{0}}{a} > 2$ e escrever, para $n\geq{n_{0}}, a_{n} = \frac{n_{0}!}{a^{n_{0}}}\frac{n!}{n_{0}!}\frac{1}{a^{n-n_{0}}}.$
+ Se $r = \frac{n_{0}!}{a^{n_{0}}}\frac{n!}{n_{0}!},$ temos 
+   $$
+   a_{n} = r \frac{n(n-1)\cdots(n_{0}+1)}{a^{n-n_{0}}} = r2^{n-n_{0}} + s_{n} = r(n+1 - n_{0}) + \tilde{s}_{n}
+   $$
+   Novamente, o resultado segue aplicando (a).
+ \end{example}
+  Por fim, algumas outras propriedades que n\~ao foram inclusas no teorema s\~ao deixadas como exerc\'icio ao leitor.
+ \begin{itemize}
+  \item[a)] Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$ e $\{b_{n}\}$ \'e limitada superiormente, ent\~ao
+  $a_{n}+b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty.$
+  \item[b)] Se $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$ e $\liminf_{n\to\infty}b_{n} > 0,$ ent\~ao $\lim_{n\to\infty}a_{n}b_{m} = -\infty.$
+  \item[c)] Seja $\{a_{n}\}$ uma sequ\^encia com $a_{n}\neq 0$ para todo n natural. $\{a_{n}\}$ \'e eventualmente negativa e $a_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$
+    se, e somente se, $\frac{1}{a_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty.$
+  \item[d)] Sejam $\{a_{n}\},\{b_{n}\}$ duas sequ\^encias eventualmente negativas com $b_{n}\neq0$ para todo n natural.
+    \item[d.1)] Se $\liminf_{n\to\infty}a_{n} < 0$ e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$, ent\~ao $\lim_{n\to\infty}\frac{a_{n}}{b_{n}} = +\infty.$
+    \item[d.2)] Se $\{a_{n}\}$ \'e limitada e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$, ent\~ao $\frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0.$
+    \item[e)] No item (d), analise a situa\c c\~ao em que $\{a_{n}\}$ \'e eventualmente positiva e $\{b_{n}\}$ \'e eventualmente negativa.
+ \end{itemize}
 \end{document}
 

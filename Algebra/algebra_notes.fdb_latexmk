@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1679717499 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1679717502 0
+["pdflatex"] 1680549068 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1680549070 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677507467 84470 1b03f303430b1250744b51ca4bdbdd0b ""
@@ -28,8 +28,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247596667 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb" 1247596667 36607 d654cb3f2bc54f57509240071db3bffa ""
@@ -220,10 +222,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "algebra_notes.aux" 1679717501 2534 7c56c7f38607a65bc54b79311db4e9b5 "pdflatex"
-  "algebra_notes.out" 1679717501 2109 357593aacc6ad808a31531fe8886bc09 "pdflatex"
-  "algebra_notes.tex" 1679717497 33404 aa603c76a5bc70c4e83d4daf087c7ca9 ""
-  "algebra_notes.toc" 1679717501 1199 15cabcde60e801e7bb08012504a6d433 "pdflatex"
+  "algebra_notes.aux" 1680549070 2900 5d19ee33f4452cd183ed41d4aa4e872b "pdflatex"
+  "algebra_notes.out" 1680549070 2522 ae92fb4172ca4b3a4c3a042d941150bf "pdflatex"
+  "algebra_notes.tex" 1680549068 42776 6939e025bb1fd2df04ad977dae43f295 ""
+  "algebra_notes.toc" 1680549070 1442 17be13a888a6fa345cac5d91c56ea381 "pdflatex"
   (generated)
   "algebra_notes.aux"
   "algebra_notes.log"

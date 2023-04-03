@@ -229,5 +229,345 @@ Com este conhecimento em mente, segue que
    &vi) \frac{d e^{t}}{dt} = e^{t} \Rightarrow \int_{}^{} e^{t}dt = e^{t} + c
  \end{align*}
   Ou seja, em certo sentido, a integral e a derivada s\~ao dois lados da mesma moeda, assim como mulitplica\c c\~ao e divis\~ao ou adi\c c\~ao e subtra\c c\~ao.
- 
+  \newpage
+
+\section{Aula 02 - 29/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Estudar a acelera\c c\~ao;
+  \item Entender o Movimento Retil\'ineo Uniformemente Variado.
+\end{itemize}
+\subsection{Acelera\c c\~ao}
+  Definimos previamente a velocidade m\'edia como sendo a varia\c c\~ao de tempo dividindo o deslocamento, sendo, portanto,
+uma quantidade representando a taxa de varia\c c\~ao da posi\c c\~ao em um intervalo de tempo. De forma an\'aloga,
+definimos a acelera\c c\~ao como a taxa de varia\c c\~ao da velocidade em um intervalo de tempo, ou seja, 
+  $$
+    \vec{a_{m}} = \frac{\Delta \vec{v}}{\Delta t}.
+  $$
+  Ainda mais, se ela for positiva, a velocidade aumenta. Caso contr\'ario, ela diminui. Ainda repetindo o processo feito
+para o caso da velocidade, podemos encontrar uma acelera\c c\~ao instan\^anea como 
+    $$
+      a(t) = \lim_{\Delta t\to0}\biggl[\frac{v(t + \Delta t) - v(t)}{\Delta t}\biggr] = \frac{dv(t)}{dt}
+    $$
+  Observe tamb\'em que 
+    $$
+      a(t) = \frac{d}{dt}\biggl(\frac{dx(t)}{dt}\biggr) = \frac{d^{2}x}{dt^{2}}.
+    $$
+  Utilizando a an\'alise dimensional, \'e poss\'ivel encontrar a dimens\~ao da acelera\c c\~ao como $[a]=\frac{[v]}{[t]} = \frac{\frac{[L]}{[t]}}{[t]} = \frac{[L]}{[t]^{2}}.$ Assim,
+se o sistema de medida for o Sistema Internacional, $[a] = \frac{m}{s^{2}}$.
+
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = \(t\),
+        ylabel = {\(x(t)\)},
+    ]
+    \addplot [
+        domain=0:10,
+        samples=100, 
+        color=red,
+    ]
+    {-x^2 + 10*x};
+    \addlegendentry{\(x(t) = -x^{2}+10x\)}
+    \addplot[
+      domain=0:10,
+      samples=100,
+      color=blue,
+    ]
+    {-2*x + 10};
+    \addlegendentry{\(v(t) = -2x + 10\)},
+      \addplot[
+        domain=0:10,
+        samples=100,
+        color=green,
+      ]
+      {2};
+    \addlegendentry{\(a(t) = 2\)},
+    \end{axis}
+  \end{tikzpicture}
+
+\subsection{Movimento Retil\'ineo Uniformemente Variado.}
+  Sabendo que $a =\displaystyle \frac{d^{2}x(t)}{dt^{2}}$, podemos fazer o caminho oposto para encontrar uma f\'ormula para
+  a posi\c c\~ao sabendo a acelera\c c\~ao. De fato, dado um intervalo de tempo $[t_{0}, t],$
+  $$
+    v(t) = \int_{t_{0}}^{t}a(t)dt = at \biggl|_{t_{0}}^{t}\biggr. = at - at_{0}
+  $$
+  Sabemos, tamb\'em, que $v(t) - v(t_{0}) = \Delta v$, tal que 
+    $$
+      v(t) = v(t_{0}) + a(t-t_{0}) = v_{0} + a(t-t_{0})
+    $$
+  Al\'em disso, vimos que 
+    $$
+      \Delta x = x(t) - x(t_{0}) = \int_{t_{0}}^{t}v(t) dt.
+    $$
+  Juntando tudo, segue a f\'ormula dita: 
+  \begin{align*}
+    x(t) - x(t_{0}) &= \overbrace{\int_{t_{0}}^{t}[v_{0} + a(t-t_{0})]dt}^{\int_{}^{}f(t) + g(t)dt = \int_{}^{}f(t)dt + \int_{}^{}g(t)dt}= \overbrace{\int_{t_{0}}^{t}v_{0}dt}^{\int_{}^{}c dt = ct} + \overbrace{\int_{t_{0}}^{t}atdt}^{\int_{}^{}t^{n}dt = \frac{t^{n+1}}{n+1}} - \int_{t_{0}}^{t}at_{0}dt\\
+                    & \Rightarrow x(t) - x(t_{0})  =  v_{0}t \biggl|_{t_{0}}^{t}\biggr. + a\frac{t^{2}}{2} \biggl|_{t_{0}}^{t}\biggr. - at_{0}t \biggl|_{t_{0}}^{t}\biggr. \\
+                    &= v_{0}(t-t_{0}) + a \frac{(t^{2} - t_{0}^{2})}{2} - at_{0}(t-t_{0}) \\
+                    &= v_{0}(t-t_{0}) + a \frac{t^{2}-t_{0}^{2}}{2} - at_{0}t + at_{0}^{2} = v_{0}t - v_{0}t_{0} + \frac{a}{2}(t^{2}-2t_{0}t + 2t_{0}^{2})\\
+                    &= v_{0}(t-t_{0}) + \frac{a}{2}(t-t_{0})^{2}\\
+                    & \Rightarrow x(t) = x(t_{0}) + v_{0}(t-t_{0}) + \frac{1}{2}a(t-t_{0})^{2}.
+  \end{align*}
+  Com isso, no caso em que $t_{0} = 0$, segue que 
+   $$
+    \boxed{x(t) = x_{0} + v_{0}t + \frac{at^{2}}{2}}     
+   $$
+  Uma coisa not\'avel \'e que todas essas f\'ormulas est\~ao dependentes de tempo. No entanto, ser\'a que \'e poss\'ivel
+se livrar dessa vari\'avel e relacionar, por exemplo, velocidade e posi\c c\~ao? A resposta \'e sim! E vamos mostrar como a seguir,
+na equa\c c\~ao conhecida como Equa\c c\~ao de Torricelli. Com efeito,
+ \begin{align*}
+   &(I)\quad (t-t_{0}) = \frac{v(t)-v_{0}}{a} = \frac{v-v_{0}}{a}\\
+   &(II)\quad x(t) = x_{0} + v_{0}(t-t_{0}) + \frac{1}{2}a(t-t_{0})^{2}\\
+   &(I\text{ com }II)\quad x = x_{0} + v_{0}\frac{v-v_{0}}{a} + \frac{1}{2}a \frac{v-v_{0}}{a} \\
+   & \Rightarrow x = x_{0} + \frac{1}{a}\biggl\{v_{0}v - v_{0}^{2} + \frac{1}{2}(v^{2}-2vv_{0}+v_{0}^{2})\biggr\}\\
+   & = x_{0} + \frac{1}{a}\biggl\{-v_{0}^{2} + \frac{v^{2}}{2} + \frac{v_{0}^{2}}{2}\biggr\}\\
+   & \Rightarrow x - x_{0} = \frac{1}{2a}\biggl[v^{2}-v_{0}^{2}\biggr] \Longleftrightarrow [v^{2} - v_{0}^{2}] = 2a(x-x_{0}).
+ \end{align*}
+ Portanto, chegamos na Equa\c c\~ao de Torricelli
+  $$
+  \boxed{v^{2} = v_{0}^{2} + 2a(x-x_{0})}
+  $$
+  Para refor\c car o que foi visto at\'e agora, vejamos um exemplo.
+ \begin{example}
+   Suponha que um carro freia uniformemente, passando de 60km/h para 30km/h em 5 segundos. Qual \'e a dist\^ancia
+que o carro percorrer\'a at\'e parar? Em quanto tempo?
+
+  \textbf{Solu\c c\~ao}: Sabemos que $x(t) = x_{0} + v_{0}(t-t_{0}) + \frac{1}{2}a(t-t_{0})^{2}, v(t) = v_{0} + a(t-t_{0}),
+\text{ e }v^{2} = v_{0}^{2} + 2a(x-x_{0}).$ Al\'em disso, como \'e at\'e o carro parar, a velocidade final \'e 0km/h, a varia\c c\~ao
+de tempo at\'e o momento em que a velocidade atinge 30km/h (=8.333m/s) \'e dada como $\Delta t = 5 - 0 = 5$s , sendo a velocidade inicial 60km/h (=16,666m/s). 
+Pela equa\c c\~ao dois, 
+  $$
+    a = \frac{v(t_{1}) - v_{0}}{t_{1}-t_{0}} = \frac{8.33 - 16.66}{5} = -1.66\frac{m}{s^{2}}
+  $$
+  Agora, para obter a dist\^ancia, sendo $v_{2} = 0km/h$ o valor da acelera\c c\~ao no tempo em que o carro para (o segundo percurso),
+utilizamos Torricelli para obter o deslocamento no peda\c co final do percurso
+  $$
+    v_{2}^{2} = v_{1}^{2} + 2a(x_{2}-x_{1}) \Rightarrow 0 = 8.33^{2} + 2(-1.66)\Delta x_{2}
+  $$
+  Assim, isolando o $\Delta x_{2},$  
+    $$
+    \Delta x_{2} = \frac{8.33^{2}}{3.32} = \text{ Professora vai passar na pr\'oxima aula.}
+    $$
+  Ademais, para encontrar todo o caminho que o carro andou, temos 
+    $$
+      0 = v_{0}^{2} + 2a(x_{2} - x_{0}) = 16.66^{2} + 2(-1.66)\Delta x \Rightarrow \Delta x = \frac{16.66^{2}}{3.32}
+    $$
+  Finalmente, o instante de tempo pode ser encontrado fazendo 
+    $$
+    v_{2}(t) = v_{1} + a(t_{2}-t_{0}) \Rightarrow 0 = 8.33 - 1.66\Delta t_{2} \Rightarrow \Delta t_{2} = 5s.\text{ \qedsymbol}
+    $$
+ \end{example}
+
+\section{ Aula 03 - 30/03/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Resolu\c c\~ao de Exerc\'icios.
+ \end{itemize}
+ \subsection{Exerc\'icio 29 - Tipler}
+ ``Considere a trajet\'oria de dois carros, o Carro A e o Carro B. (a) Existe algum instante para o qual os carros est\~ao lado-a-lado? (b) Eles viajam sempre no mesmo sentido? (c) Eles viajam com a mesma velocidade em algum instante t? (d) Para que t os carros est\~ao mais distantes entre si? (e) Esboce os gr\'aficos de $v\times t$'
+ \begin{center}
+   \begin{tikzpicture}
+   \begin{axis}[
+       axis lines = left,
+       xlabel = \(t\),
+       ylabel = {\(x(t)\)},
+   ]
+   \addplot [
+       domain=0:10, 
+       samples=100, 
+       color=red,
+   ]
+   {7*x/2 + 9/3};
+ \addlegendentry{\(\text{Carro B}\)}
+   %Here the blue parabola is defined
+     \addplot[
+       domain=0:10,
+       samples=100,
+       color=blue,
+     ]
+     {-x^2 + 13*x};
+   \addlegendentry{\(\text{Carro A}\)}
+     %Here the blue parabola is defined
+   \end{axis}
+ \end{tikzpicture}
+\end{center}
+  Os carros se encontram lado-a-lado quando os gr\'aficos se cruzam, ou seja, em t = 1s e t = 9s (Tipler mais acurado que meu gr\'afico.). \'E not\'avel
+quer eles n\~ao est\~ao sempre no mesmo sentido, visto que, a partir de 6s, o gr\'afico do carro B passa a mudar o sentido. Em aproximadamente 5s,
+ambos est\~ao com a reta tangente iguais, ou seja, est\~ao com a mesma velocidade, e dist\^ancia entre eles est\'a maior exatamente no ponto em que as 
+velocidades est\~ao iguais. Finalmente, seguem os gr\'aficos:
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = \(t\),
+        ylabel = {\(v(t)\)},
+    ]
+    \addplot [
+        domain=0:6, 
+        samples=100, 
+        color=red,
+    ]
+    {-3*x + 18};
+  \addlegendentry{\(\text{Carro A}\)}
+    %Here the blue parabola is defined
+    \addplot[
+      domain=0:6,
+      samples=100,
+      color=red,
+    ]
+    {5};
+  \addlegendentry{\(\text{Carro B}\)}
+    %Here the blue parabola is defined
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+\subsection{Exerc\'icio 44 - Tipler}
+``Um carro viaja em linha reta com $\vec{v} = 80\text{km/h} $ durante $\Delta t_{1}=2.5$h. Depois, $\vec{v_{2}} = 40$km/h, $\Delta t_{2} = 1.5$h. Qual
+\'e o deslocamento total? E qual \'e a velocidade $\vec{v}$ total?''
+\begin{align*}
+  &(a)\quad \Delta x = \Delta x_{1} + \Delta x_{2} = \vec{v_{1}}\Delta t_{1} + \vec{v_{2}}\Delta t_{2}  \Rightarrow \Delta x = 260\text{km.}\\
+  &(b)\quad \vec{v} = \frac{\Delta x}{\Delta t} = \frac{260}{4} = 65\text{km/h}.
+\end{align*}
+
+\subsection{Exerc\'icio 58 - Tipler}
+  ``Um carro acelera de 48.3km/h para 80.5km/h em 3.70s. Qual a acelera\c c\~ao m\'edia?''
+
+Primeiramente, precisamos converter as unidades para medidas iguais. Com isso, note que $\vec{v_1} = 48.3km/h = 13.52m/s, \vec{v_{2}} = 80.5km/h = 22.54m/s$. Assim,
+chegamos em 
+  $$
+  \vec{a} = \frac{\Delta v}{\Delta t} = \frac{v_{2} - v_{1}}{\Delta t}\approx 2.4\text{m/s}.
+  $$
+
+\subsection{Exerc\'icio 67 - Tipler}
+``Um corpo est\'a em uma posi\c c\~ao inicial $x_{1}$ com velocidade inicial $\vec{v_{1}}$. Passado um tempo, ele se encontra na posi\c c\~ao $x_{2}$ com velocidade $\vec{v_{2}}$. Qual \'e a acelera\c c\~ao deste corpo?''
+
+Utilizaremos Torricelli. sabemos que 
+ \begin{align*}
+   &(1):\quad x_{1} = 6m, \vec{v_{1}} = 10m/s\\
+   &(2):\quad x_{2} = 10m, \vec{v_{2}} = 15m/s.
+ \end{align*}
+ Deste modo, $v^{2} = v_{0}^{2} + 2a\Delta x \Rightarrow v_{2}^{2} = v_{1}^{2} + 2a(x_{2} - x_{1}) \Rightarrow a \approx 16m/s^{2}$
+
+\subsection{Exerc\'icio 72 - Tipler}
+  ``Um parafuso se desprende de um elevador subindo a $v_{0} = 6m/s$. O parafuso atinge o fundo do po\c co em 3s. (a) Qual era a altura do elevador? (b) Qual \'e a velocidade do parafuso no ch\~ao? Tome g = 9.8 $m/s^{2}$''
+
+Sabemos que $t_{0} = 0s, y(t_{0}) = h, v(t_{0}) = v_{0}.$ Com isso, podemos descrever $y(t) = h + v_{0}t + \frac{1}{2}gt^{2}$. Vamos responder, agora, o item a, isto \'e, qual \'e o valor
+da altura h? Segue que, em $t=3s, y(t) = 0$. Utilizando a f\'ormula, 
+  $$
+    h = -v_{0}t + \frac{1}{2}gt^{2} = -6 \cdot3 + \frac{1}{2}9.8 \cdot 3^{2} = 26.1m
+  $$
+  Com rela\c c\~ao ao item (b), vimos que $v(t) = v_{0} + at.$ Deste modo, 
+    $$
+      v(3s) = 6 - 9.8 \cdot 3 = -23.4m/s
+    $$
+  Indo um pouco al\'em do que foi pedido, analisemos o movimento do parafuso. \'E poss\'ivel concluir que o parafuso atingir\'a a altura 
+m\'axima no instante em que $t^{*} = \frac{v_{0}}{g} = 0.6s,$ visto que este momento ocorre quando $v(t) = v_{0} - gt = 0$. Com isso,
+conclui-se que a altura m\'axima \'e $y(t^{*}) = h + v_{0}t^{*} - \frac{1}{2}gt^{*^{2}} \approx 27.5m.$ No gr\'afico,
+  \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = \(t\),
+        ylabel = {\(y(t)\)},
+    ]
+    \addplot [
+      domain = 0:4,
+      color = black,
+      ]
+    {0};
+    \addplot [
+        domain=0:3, 
+        samples=100, 
+        color=red,
+    ]
+    {-9.8*x^2/2 + 6*x + 26.1};
+    \addlegendentry{\(y(t)\)}
+    %Here the blue parabola is defined
+      \addplot[
+        domain=0:3,
+        samples=100,
+        color=blue,
+      ]
+      {27.955};
+    \addlegendentry{\(h_{\text{max}} = \frac{dy}{dt} = 0\)}
+      %Here the blue parabola is defined
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+\subsection{Exemplo - Aula 06 Vanderlei}
+  ``Suponha que h\'a um trem parado no instante t=0 com acelera\c c\~ao a. Passados 6s, um passageiro chega ao local e observa o trem na posi\c c\~ao $x_{trem_{1}}$.
+  Este passageiro sai correndo com velocidade $v_{0}$ para tentar alcan\c car o trem. Qual \'e a velocidade m\'inima que o passageiro precisa atingir
+  para alcan\c c\'a-lo?''
+    
+  Com rela\c c\~ao ao trem, suas condi\c c\~oes iniciais s\~ao $t_{0} = 0, x_{trem} = 0, v_{trem} = 0,$ tal que $x_{trem}(t) = \frac{1}{2}at^{2}$. 
+Por outro lado, quanto ao passageiro, quando $t=6s, x_{p} = 0$, de modo que $x_{p}(t) = x_{p_0} + v_{0}t$. Como temos a informa\c c\~ao da posi\c c\~ao
+do passageiro aos 6s, 
+  $$
+    x_{p}(6) = x_{p_{0}} + v_{0} \cdot6 = 0 \Rightarrow x_{p_{0}} = -6v_{0} \Rightarrow x_{p}(t) = v_{0}(t-6).
+  $$
+  No momento em que o passageiro alcan\c ca o trem, eles possuem posi\c c\~oes iguais, isto \'e, $x_{p}(t) = x_{trem}(t)$. Graficamente,
+ \begin{center}
+     \begin{tikzpicture}
+     \begin{axis}[
+         axis lines = left,
+         xlabel = \(t\),
+         ylabel = {\(x(t)\)},
+     ]
+     \addplot [
+         domain=0:12, 
+         samples=100, 
+         color=red,
+     ]
+     {x^2};
+   \addlegendentry{\(\text{Trem}\)}
+       \addplot[
+         domain=0:6,
+         samples=100,
+         color=blue,
+       ]
+       {0};
+     \addlegendentry{\(\text{Passageiro}\)}
+       \addplot[
+         domain=6:12,
+         samples=100,
+         color=green,
+       ]
+       {25*x-150};
+       \addlegendentry{\(\frac{dx_{trem}}{dt} = \frac{dx_{p}}{dt}\)}
+     \end{axis}
+   \end{tikzpicture}
+ \end{center}
+  Ou seja, buscamos $t^{*}$ tal que $x_{p}(t^{*}) = x_{trem}(t^{*}), v_{p}(t^{*}) = v_{trem}(t^{*})$. Com efeito,
+ \begin{align*}
+   v_{0}(t^{*} - 6) &= \frac{at^{*^{2}}}{2} \Rightarrow v_{0} = at^{*} \Rightarrow t^{*} = \frac{v_{0}}{a}\\
+                    &v_{0} = \frac{a}{2}\frac{(\frac{v_{0}}{a})^{2}}{\frac{v_{0}}{a}-6} \Rightarrow \frac{v_{0}^{2}}{2a} = 6v_{0} \Rightarrow v_{0} = 12a.
+ \end{align*}
+ Outra forma de resolver \'e utilizando o fato de que quando $\frac{dv}{dt} = 0$, a fun\c c\~ao est\'a num m\'inimo. Ou seja, basta encontrar
+o valor m\'inimo de $v_{0}$ que satisfa\c ca o que buscamos. Temos 
+  $$
+    v_{0}(t-6) = \frac{at^{2}}{2} \Rightarrow v_{0}(t) = \frac{at^{2}}{2}\frac{1}{(t-6)}.
+  $$ 
+  Agora, derivando essa equa\c c\~ao para $v_{0},$ 
+    $$
+      \frac{dv_{0}}{dt} = \frac{d}{dt}\biggl(\frac{at^{2}}{2}\frac{1}{t-6}\biggr) = \frac{d}{dt}(f(t)g(t)),
+    $$
+    em que $f(t) = \frac{at^{2}}{2}, g(t) = (t-6)^{-1}$. Fazemos isso porque h\'a uma regra para derivar o produto de fun\c c\~oes,
+  a Regra do Produto 
+    $$
+      \boxed{\frac{df(t)g(t)}{dt}= g(t)\frac{df(t)}{dt} + f(t)\frac{dg(t)}{dt}}
+    $$
+    Derivando individualmente f e g, 
+      $$
+        \frac{df(t)}{dt} = at, \quad \frac{dg(t)}{dt} = -(t-6)^{-2} = -\frac{1}{(t-6)^{2}}.
+      $$
+    Agora, vamos juntar tudo para obter a derivada de $v_{0}$: 
+    \begin{align*}
+      \frac{dv_{0}}{dt} &= \frac{df(t)}{dt}g(t) + \frac{dg(t)}{dt}f(t) = \frac{at}{t-6} - \frac{1}{2(t-6)^{2}}at^{2}\\
+                        &= at\biggl(\frac{1}{t-6} - \frac{t}{2(t-6)^{2}}\biggr) = 0 \\
+                        & \Rightarrow \frac{1}{t-6} = \frac{t}{2(t-6)} \Rightarrow 1 = \frac{t}{2(t-6)}\\
+                        & \Rightarrow 2(t-6) = t \Rightarrow 2t - t = 12 \Rightarrow t = 12s.
+    \end{align*}
 \end{document}

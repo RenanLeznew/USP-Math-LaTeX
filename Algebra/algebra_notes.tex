@@ -551,7 +551,7 @@ Introduzimos a seguir o grupo das permuta\c c\~oes, denotado $S_{n}.$
 Um 3-ciclo seria $\sigma(1)=4, \sigma(2)=2, \sigma(3)=1, \sigma(4)=3, \sigma(5)=5$ e uma transposi\c c\~ao seria $\sigma(1)=2, \sigma(2)=1, \sigma(3)=3, \sigma(4)=4, \sigma(5)=5.$
  \end{example*}
 \begin{def*}
-  Duas permuta\c c\~oes $\sigma, \tau\in S_{n}$ s\~ao disjuntas se para todo $j\in\{1, \cdots, n\}, \sigma(j) = j$ ou, exclusivamente, $\tau(j) = j.$
+  Duas permuta\c c\~oes $\sigma, \tau\in S_{n}$ s\~ao disjuntas se para todo $j\in\{1, \cdots, n\}, \sigma(j) = j$ ou $\tau(j) = j.$
 \end{def*}
 \begin{example*}
   $\tau\in S_{5}, \tau=(34), \sigma(12) \Rightarrow \tau, \sigma$ s\~ao disjuntas.
@@ -726,5 +726,190 @@ n-1. Ent\~ao,
   &(1)\Longleftrightarrow(4): \text{Exerc\'icio. \qedsymbol}
   \end{align*}
 \end{proof*}
+\newpage
+
+\section{Aula 05 - 30/03/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Subgrupos Normais;
+   \item Isomorfismos e Automorfismos;
+   \item Parti\c c\~oes e rela\c c\~oes de equival\^encia.
+ \end{itemize}
+\subsection*{Errata \'Ultima Aula}
+Seja $P_{ij}\in \mathbb{M}_{n}(\mathbb{R})$ tal que se $P_{ij}=(a_{kl})$, ent\~ao $a_{kl} = 1$ se k = i, l = j e 0 caso contr\'ario.
+Assim, se $\sigma\in S_{n},$ 
+  $$
+    U(\sigma) = (e_{\sigma(1)}\cdots e_{\sigma(n)}) = \sum\limits_{}^{}P_{\sigma(i), i}, 
+  $$
+  em que $e_{j}$ \'e o vetor em $\mathbb{R}^{n}$ com 1 na j-\'esima entrada e zero nos demais. De fato, $U(\sigma)$ \'e a matriz
+da tansforma\c c\~ao linear $\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}, e_{j}\mapsto e_{\sigma(j)}.$
+\subsection{Subgrupos Normais}
+  Come\c camos com um corol\'ario \`a \'ultima aula:
+ \begin{crl*}
+   Uma $\phi$ \'e injetora se, e somente se, $\ker{(\phi)} =\{0\}.$
+ \end{crl*}
+\begin{proof*}
+  $ \Rightarrow)$ Seja a um elemento do kernel de $\phi$. Ent\~ao, 
+    $$
+      \phi(a) = 1' = \phi(1).
+    $$
+    Mas, como $\phi$ \'e injetora, segue que a = 1 \'e o \'unico elemento no kernel.
+
+  $ \Leftarrow)$ Suponha que $\phi$ tem kernel trivial, i.e., $\ker{(\phi)} =\{0\}.$ Ent\~ao,
+    $$
+    \phi(a)\phi(b)^{-1} = 1' \Rightarrow 1 = \phi(a)\phi(b^{-1}) = \phi(ab^{-1}) \Rightarrow ab^{-1}\in\ker{\phi} = {1}.
+    $$
+    Portanto, $ab^{-1} = 1$ e, assim, $a = b.$ \qedsymbol
+\end{proof*}
+ \begin{def*}
+   Se G \'e um gurpo e a, g seus elementos, dizemos que $gag^{-1}\in G$ \'e um conjugado de a com respeito a g. Dois elementos a, b
+  de G s\~ao conjugados se existe um g no grupo tal que $a = g b g^{-1}.\square$
+ \end{def*}
+ \begin{def*}
+   Sejam G um grupo e $H\leq{G}$. Dizemos que H \'e um subgrupo normal a G ($H\trianglelefteq G$) se para todos $h\in H$ e $g\in G$,
+  $ghg^{-1}\in H$, i.e., H absorve os conjugados de seus elementos. $\square$
+ \end{def*}
+  Em outras palavras, um subgroup \'e normal se ele \'e fechado pela conjuga\c c\~ao, o que pode ser denotado por $gHg^{-1}\subseteq{H},$ para todo
+g de G.
+ \begin{prop*}
+   Se $H\leq{g},$ s\~ao equivalente
+  \begin{align*}
+    &i)\quad H\trianglelefteq{G} \\
+    &ii)\quad gHg^{-1} = H\\
+    &iii)\quad gH = Hg.
+  \end{align*}
+ \end{prop*}
+\begin{proof*}
+  (1) $ \Rightarrow$ (2): Obviamente, $gHg^{-1}\leq{H}$ por defini\c c\~ao. Sejam h em H e g em G. Ent\~ao, $ghg^{-1}\in gHg^{-1}\subseteq{H},$
+  tal que existe x em H que satisfaz $ghg^{-1} = x \Rightarrow h = \underbrace{(g^{-1})x(g^{-1})^{-1}}_{\in gHg^{-1}}$
+
+  (2) $ \Rightarrow$ (1): Ok.
+
+  (1) $ \Rightarrow$ (3): Se x pertence a gH, x = gh para algum h de H. Por hip\'otese, $gHg^{-1}\subseteq{H}$, de maneira que
+ $ghg^{-1} = y\in H$, ou seja, $gh = yg.$ Como x = gh, $x = yg\in Hg$. Portanto, $gH\subseteq{Hg}.$ O outro lado da inclus\~ao fica como exerc\'icio.
+
+  (3) $\Rightarrow$ (1): Se $x\in gHg^{-1}, x = ghg^{-1}, h\in H$, segue da hip\'otese que $gh = h'g$ para algum h' em H. Assim,
+  $x = h'\in H.$ \qedsymbol
+\end{proof*}
+\begin{example*}
+ \begin{itemize}
+   \item[1)] Se G \'e um grupo, s\~ao subgrupos normais: G, $\{e\}$, Z(g).
+   \item[2)] Se G \'e um grupo abeliano, todo subgrupo \'e normal, mas n\~ao vale a volta.
+ \end{itemize}
+\end{example*}
+ \begin{example*}
+   Exerc\'icio: Seja $Q = \{\pm1, \pm i, \pm j, \pm k: -1^{2} = 1, i^{2} = j^{2} = k^{2} = -1\}.$ Mostre que Q \'e um grupo
+n\~ao abeliano, mas que todo subgrupo \'e normal.
+ \end{example*}
+\begin{example*}
+  $<(12)> = <id, (12)>\not\trianglelefteq{S_{3}}$, visto que 
+  $$
+    (123)(12)(123)^{-1} = (32)\not\in <(12)>\\
+  $$
+  Portanto, $<(12)>$ n\~ao \'e um subgrupo normal de $S_{3}.$
+\end{example*}
+ \begin{prop*}
+   Se $\phi:G\rightarrow G'$ \'e um morfismo, ent\~ao $\ker{\phi}\trianglelefteq{G}.$
+ \end{prop*}
+\begin{proof*}
+  Sejam g um elemento de G e h um elemento de $\ker{\phi}$. Ent\~ao, 
+    $$
+      \phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g^{-1}) = \phi(g)1'\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = 1'.
+    $$
+    Portanto, $ghg^{-1}\in\ker{\phi}$ e, portanto, $\ker{\phi}\trianglelefteq{G}.$ \qedsymbol
+\end{proof*}
+ \begin{example*}
+  \begin{itemize}
+    \item[1)] $SL_{n}\trianglelefteq{GL_{n}}, \quad SL_{n} = \ker{det}.$
+    \item[2)] $A_{n} = \ker{sgn}\trianglelefteq{S_{n}}, \quad sgn:S_{n}\rightarrow\{\pm 1\}, \sigma\mapsto \det{U(\sigma)}.$
+  \end{itemize}
+ \end{example*}
+ Lembre-se que, dado $\sigma\in S_{n}, \sigma = \tau_{1}\cdots\tau_{r}$ s\~ao 2-ciclos, ent\~ao $sgn(\sigma) = (-1)^{r}.$
+\begin{def*}
+  Sejam G, G' grupos. Um isomorfismo $\phi$ \'e um morfismo $\sigma:G\rightarrow G'$ bijetor. Se G = G', $\phi$ \'e chamado automorfismo.
+Por fim, se existe um isomorfismo entre dois grupos, dizemos que eles s\~ao isomorfos, escrevendo $G\cong G'$
+\end{def*}
+\textbf{(Nota ao leitor)} Mas o que h\'a de \'util em isomorfismo? Por que nos importamos? 
+
+  Em \'Algebra linear, estudamos os isomorfismos entre espa\c cos vetoriais, e como eles preservavam algumas propriedades. Essencialmente,
+o mesmo ocorrer\'a aqui, ou seja, se h\'a um isomorfismo entre dois grupos, essencialmente estamos estudando o mesmo grupo, mas sob uma \'otica diferente.
+Os elementos de um grupo podem ser escritos utilizando os do outro, eles ter\~ao os mesmos tamanhos, a propriedade abeliana ser\'a preservada, etc.
+Com isso, caso encontre um grupo aparentemente muito dif\'icil de trabalhar, \'e poss\'ivel simplificar o problema encontrando um outro grupo
+isomorfo e que facilitar\'a seu servi\c co. Veremos exemplos a seguir.
+ \begin{example*}
+  \begin{itemize}
+    \item[1)] Todo subgrupo de ordem 2 \'e isomorfo a $S_{2}$.
+    \item[2)] H\'a um isomorfismo entre o grupo aditivo dos reais e o multiplicativo positivo dado por $exp:(\mathbb{R}, +)\rightarrow (\mathbb{R}_{>0}, \cdot), x\mapsto e^{x}.$'
+    \item[3)] Se g \'e um elemento de G de ordem infinita, ent\~ao $\mathbb{Z}\rightarrow <g>\leq{G}, n\mapsto g^{n}$ \'e um isomorfismo.
+    \item[4)] Seja $P\leq{GL_{n}}$ o conjunto das matrizes com somente um 1 em cada linha e cada coluna, tendo entrada 0 nos demais. Ent\~ao,
+  $P\leq{GL_{n}}$ e $S_{n}\rightarrow P, \sigma\mapsto U(\sigma)$ \'e isomorfismo.
+    \item[5)] $id:G\rightarrow G'$ \'e um isomorfismo.
+    \item[6)] Se g pertence a G, $\phi_{g}:G\rightarrow G, x\mapsto gxg^{-1}$ \'e isomorfismo.
+  \end{itemize}
+ \end{example*}
+ \begin{prop*}
+   Se $\phi$ \'e isomorfismo, ent\~ao $|g| = |\phi(g)|$. Em part\'icular, $|g| = |aga^{-1}|$ para todo a de G.
+ \end{prop*}
+\begin{proof*}
+    No caso em que $|g| = \infty,$ se $|\phi(g)| = g < \infty$. Assim, 
+      $$
+      1' = \phi(g)^{m} = \phi(g^{m}) \Rightarrow g^{m}\in\ker{\phi} = \{1\} \Rightarrow g^{m} = 1.
+      $$
+
+    Agora, se $|g| = n <\infty$. Seja $m = |\phi(g)|$, ent\~ao 
+      $$
+        1' = \phi(g)^{m} = \phi(g^{m}) \Rightarrow g^{m} = 1 \Rightarrow n|m.
+      $$ 
+    Por outro lado, como $g^{n} = 1,$ 
+      $$
+        1' = \phi(g^{n}) = \phi(g)^{n} \Rightarrow m|n.
+      $$
+    Portanto, m = n. \qedsymbol
+\end{proof*}
+\begin{lemma*}
+  Se $\phi:G\rightarrow G'$ \'e um isomorfismo, ent\~ao $\phi^{-1}:G'\rightarrow G$ tamb\'em \'e isomorfismo. 
+\end{lemma*}
+\begin{proof*}
+  Segue que $\phi^{-1}$ est\'a bem-definida e \'e uma bije\c c\~ao pois $\phi$ \'e bije\c c\~ao. Sejam x, y elementos de G'.
+Sendo $\phi$ uma bije\c c\~ao, existem a, b em G tais que 
+  $$
+  x = \phi(a)\quad\text{e}\quad y = \phi(b).
+  $$
+  Desta forma, $\phi^{-1}(xy) = \phi^{-1}(\phi(a)\phi(b)) = \phi^{-1}(\phi(ab)) = ab = \phi^{-1}(x)\phi^{-1}(y).$ \qedsymbol
+\end{proof*}
+ \begin{def*}
+   Dado S um conjunto, uma parti\c c\~ao para S \'e uma cobertura por subconjuntos n\~ao-vazios e disjuntos. Em outras palavras,
+existe $U_{j}\subseteq{S}, U_{j}\neq\emptyset$ e $U_{j}\cap U_{i} = \emptyset$ se $i\neq j$ tal que 
+  $$
+    S = \bigsqcup_{j\in I}U_{j}.
+  $$
+ \end{def*}
+\begin{def*}
+  Uma rela\c c\~ao de equival\^encia em um conjunto S \'e um subconjunto R de $S\times S$ tal que 
+ \begin{itemize}
+   \item[-]$\overbrace{(a, a)}^{a~a}\in R, \forall a\in S$ (Reflexiva);
+   \item[-]$(a, b)\in R \Rightarrow (b, a)\in R (a~b \Rightarrow b~a)$ (Sim\'etrica);
+   \item[-]$(a, b)(b, c)\in R \Rightarrow (a, c)\in R (a~b, b~c \Rightarrow a~c)$ (Transitiva).
+ \end{itemize}
+ Denotamos $(a, b)\in R$ por $a~b$, e l\^e-se ``a est\'a relacionado com b''. $\square$
+\end{def*}
+ \begin{def*}
+   Se R \'e uma rela\c c\~ao de equival\^encia em S, denotamos por $[a], a\in S$ o conjunto dos elementos de S que se relacionam com a. Em outras palavras, 
+     $$
+     [a]\coloneqq\{b\in S: a~b\} = \{b\in S: (a, b)\in R\}
+     $$
+     e chamamos $[a]$ de classe de equival\^encia de a. $\square$
+ \end{def*}
+\begin{example*}
+ \begin{itemize}
+   \item[1)] A ordem em um grupo define uma rela\c c\~ao de equival\^encia;
+   \item[2)] A conjuga\c c\~ao define uma rela\c c\~ao de equival\^encia em um grupo G. $(a~b \Longleftrightarrow \exists g\in G: a = gbg^{-1})$
+     Neste caso, denotamos $[a] = Cl(a)$ como a classe de conjuga\c c\~ao de a.
+ \end{itemize}
+\end{example*}
+\begin{theorem*}
+  Uma parti\c c\~ao em um conjunto S define uma rela\c c\~ao de equival\^encia em S. Reciprocamente, uma rela\c c\~ao de 
+equival\^encia define uma parti\c c\~ao em S.
+\end{theorem*}
 \end{document}
 

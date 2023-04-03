@@ -25,3 +25,9 @@
 \contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{18}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Exemplos de Sequ\^encias}{18}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Teoremas da Compara\c c\~ao e do Sandu\'iche}{19}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Aula 08 - 29/03/2023}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Limite Superior e Inferior}{21}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Aula 09 - 31/03/2023}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Motiva\c c\~oes}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Pontos de Ader\^encia e Limites Superiores/Inferiores.}{23}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Sequ\^encias Divergente para $\pm \infty $.}{24}{subsection.9.3}%

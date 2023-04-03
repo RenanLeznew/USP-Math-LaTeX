@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  27 MAR 2023 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  3 APR 2023 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -976,12 +976,12 @@ Package hyperref Info: Link coloring ON on input line 44.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 44.
-<../icmc.png, id=110, 376.40625pt x 188.20313pt>
+<../icmc.png, id=134, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 47.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=112, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=136, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 49.
@@ -1050,17 +1050,34 @@ Overfull \hbox (23.10606pt too wide) detected at line 618
 []
  []
 
-[11] [12] [13] [14] [15] [16] [17] [18] [19] 
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1304.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pm' on input line 1304.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 1304.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1304.
+
+[23] [24] 
 AED: lastpage setting LastPage
-[20] (analysis_notes.aux)
+[25] (analysis_notes.aux)
 Package rerunfilecheck Info: File `analysis_notes.out' has not changed.
-(rerunfilecheck)             Checksum: DAFB4E2C284FECEA9EB28F3199BA8607;4194.
+(rerunfilecheck)             Checksum: 6CE988EF9FEB1DEAE4F94E66902A69AB;5357.
  ) 
 Here is how much of TeX's memory you used:
- 33464 strings out of 475284
- 779593 string characters out of 2774105
- 1217785 words of memory out of 3000000
- 54313 multiletter control sequences out of 15000+600000
+ 33486 strings out of 475284
+ 779836 string characters out of 2774105
+ 1221791 words of memory out of 3000000
+ 54320 multiletter control sequences out of 15000+600000
  479510 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,103p,734b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1084,10 +1101,11 @@ eX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/re
 nan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on analysis_notes.pdf (20 pages, 1988623 bytes).
+b><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb>
+Output written on analysis_notes.pdf (25 pages, 2022658 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

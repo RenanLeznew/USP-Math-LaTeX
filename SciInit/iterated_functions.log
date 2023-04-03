@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  26 MAR 2023 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  29 MAR 2023 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**./12132022.tex
-(12132022.tex
+**./iterated_functions.tex
+(iterated_functions.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02>
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -856,8 +856,8 @@ tex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count320
 \l__pdf_internal_box=\box68
-) (12132022.aux)
-\openout1 = `12132022.aux'.
+) (iterated_functions.aux)
+\openout1 = `iterated_functions.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
@@ -941,9 +941,9 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 39.
-(12132022.out) (12132022.out)
+(iterated_functions.out) (iterated_functions.out)
 \@outlinefile=\write4
-\openout4 = `12132022.out'.
+\openout4 = `iterated_functions.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
@@ -960,9 +960,9 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(12132022.toc)
+(iterated_functions.toc)
 \tf@toc=\write5
-\openout5 = `12132022.toc'.
+\openout5 = `iterated_functions.toc'.
 
  [1
 
@@ -1018,20 +1018,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 187.
 
-[4] [5] [6] 
+[4] [5] [6] [7] [8] 
 AED: lastpage setting LastPage
-[7] (12132022.aux)
-Package rerunfilecheck Info: File `12132022.out' has not changed.
-(rerunfilecheck)             Checksum: 5DA9ADC3630EDC0C62881B882CF8785D;2661.
+[9] (iterated_functions.aux)
+Package rerunfilecheck Info: File `iterated_functions.out' has not changed.
+(rerunfilecheck)             Checksum: D64D37B1FD77ACF22A295164F9C51471;2805.
  ) 
 Here is how much of TeX's memory you used:
- 32355 strings out of 475284
- 760013 string characters out of 2774105
- 1176123 words of memory out of 3000000
- 53280 multiletter control sequences out of 15000+600000
+ 32359 strings out of 475284
+ 760275 string characters out of 2774105
+ 1176173 words of memory out of 3000000
+ 53281 multiletter control sequences out of 15000+600000
  478501 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,16n,104p,727b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 100i,16n,104p,737b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\renan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1051,12 +1051,13 @@ type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/renan/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/renan/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/renan/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/renan/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
 Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
-sbm7.pfb>
-Output written on 12132022.pdf (7 pages, 254997 bytes).
+sbm10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm7.pfb>
+Output written on iterated_functions.pdf (9 pages, 280271 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
