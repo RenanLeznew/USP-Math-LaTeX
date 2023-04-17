@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  29 MAR 2023 13:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  4 APR 2023 22:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1018,17 +1018,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 187.
 
-[4] [5] [6] [7] [8] 
+[4] [5] [6]
+Overfull \hbox (5.84055pt too wide) in paragraph at lines 321--325
+\OT1/cmr/m/n/10 the sec-ond co-or-di-nate, leav-ing only those that as-sume the
+ form $0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 00\OML/cmm/m/it/10 aaaaa []  ; \OT1/c
+mr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 02\OML/cmm/m/it/10 aaaaa []  ; []\
+OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 22\OML/cmm/m/it/10 aaaaa [] $
+\OT1/cmr/m/n/10 .
+ []
+
+[7] [8] [9] [10] 
 AED: lastpage setting LastPage
-[9] (iterated_functions.aux)
+[11] (iterated_functions.aux)
 Package rerunfilecheck Info: File `iterated_functions.out' has not changed.
-(rerunfilecheck)             Checksum: D64D37B1FD77ACF22A295164F9C51471;2805.
+(rerunfilecheck)             Checksum: 453CA8339F3BE5584DA9B3B0D665CACB;4188.
  ) 
 Here is how much of TeX's memory you used:
- 32359 strings out of 475284
- 760275 string characters out of 2774105
- 1176173 words of memory out of 3000000
- 53281 multiletter control sequences out of 15000+600000
+ 32383 strings out of 475284
+ 760679 string characters out of 2774105
+ 1179196 words of memory out of 3000000
+ 53290 multiletter control sequences out of 15000+600000
  478501 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,16n,104p,737b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1055,9 +1064,9 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
 Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm7.pfb>
-Output written on iterated_functions.pdf (9 pages, 280271 bytes).
+Output written on iterated_functions.pdf (11 pages, 300418 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 

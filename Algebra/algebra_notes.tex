@@ -1,5 +1,6 @@
  \documentclass{article}
  \usepackage{amsmath}
+ \usepackage{ stmaryrd }
  \usepackage{amsthm}
  \usepackage{amssymb}
  \usepackage{pgfplots}
@@ -227,12 +228,12 @@ ab = ba = 1, temos
 \subsection{Usos de Grupos}
   Podemos usar grupos para definir outras constru\c c\~oes alg\'ebricas, como segue.
  \begin{def*}
-   Um anel \'e uma terna $(A, \mu, \phi)$, em que $(A, \mu)$ \'e um grupo abeliano e $(A, \phi)$ \'e um monoide. Al\'em disso,
+   Um anel \'e uma terna $(A, \mu, \varphi)$, em que $(A, \mu)$ \'e um grupo abeliano e $(A, \varphi)$ \'e um monoide. Al\'em disso,
 vale a distributiva.
    $$
-    \phi(a, \mu(c, d)) = \phi(\mu(a, c), \mu(a, d)), \quad (a(b + c) = ab + ac).
+    \varphi(a, \mu(c, d)) = \varphi(\mu(a, c), \mu(a, d)), \quad (a(b + c) = ab + ac).
    $$
-   Usualmente, escrevemos $(A, \mu, \phi) = (A, +, \cdot).\square$
+   Usualmente, escrevemos $(A, \mu, \varphi) = (A, +, \cdot).\square$
  \end{def*}
 \begin{def*}
   Um corpo \'e um anel $(A, +, \cdot)$ tal que $(A-\{0\}, .)$ \'e um grupo abeliano. $\square$
@@ -275,7 +276,7 @@ ou com multiplica\c c\~ao. Vejamos alguns exemplos.
   $T = \{1, \cdots, n\}, $ ent\~ao denotamos $(G, \circ)$ por $(S_{n}, \circ).$ \qedsymbol
 \end{example*}
 \begin{def*}
-  A ordem de um grupo $(G, \cdot)$ \'e a cardinalidade de G: $|G|$. Caso $|G| < \infty,$ dizemos que $(G, +)$ \'e um grupo finito. $\square$
+  A ordem de um grupo $(G, \cdot)$ \'e a cardinalidade de G: $|G|$. Caso $|G| < \infty,$ dizemos que $(G, \cdot)$ \'e um grupo finito. $\square$
 \end{def*}
 \begin{example*}
   A ordem de $|\mathbb{Z}| = \infty$ e $|S_{n}| = n!$ \qedsymbol
@@ -649,7 +650,7 @@ na decomposi\c c\~ao de $\sigma.$
 \subsection{Morfismos de Grupos}
   Morfismos de grupos funcionam como fun\c c\~oes entre conjuntos, mas que levam em conta a opera\c c\~ao existente nos grupos.
  \begin{def*}
-   Sejam G, G' dois grupos. Um morfismo de grupos \'e um mapa $\phi:G\rightarrow G'$ tal que $\phi(gh)=\phi(g)\phi(h)$ para todo
+   Sejam G, G' dois grupos. Um morfismo de grupos \'e um mapa $\varphi:G\rightarrow G'$ tal que $\varphi(gh)=\varphi(g)\varphi(h)$ para todo
   g, h em G. $\quad\square$
  \end{def*}
  \begin{example*}
@@ -658,45 +659,45 @@ na decomposi\c c\~ao de $\sigma.$
     &1) sgn:S_{n}\rightarrow \{+1, -1\}, \sigma\mapsto sgn(\sigma),&&sgn(\sigma\tau) = \det(U(\sigma)U(\tau)) = \det(U(\sigma))\det(U(\tau)) = sgn(\sigma)sgn(\tau)\\
     &2) \det:GL_{n}\rightarrow \mathbb{R}^{\times}, A\mapsto\det(A)\\
     &3) \exp:(\mathbb{R}, +)\rightarrow (\mathbb{R}, \cdot), x\mapsto e^{x}\\
-    &3) \phi:G\rightarrow G', g\mapsto 1', &&\text{ em que }1'\text{ \'e o elemento neutro de G'.}\\
+    &3) \varphi:G\rightarrow G', g\mapsto 1', &&\text{ em que }1'\text{ \'e o elemento neutro de G'.}\\
     &3) \text{ Se }H\leq{G}, \text{ ent\~ao a inclus\~ao} i:H\rightarrow G, h\mapsto h\text{ \'e um morfismo.}\\
     &&3.1) \text{ Em particular, } U:S_{n}\rightarrow GL_{n}, \sigma\mapsto U(\sigma)\\
     &3) \mathbb{Z}\rightarrow G, n\mapsto g^{n}, g\in G\text{ fixo.}
   \end{align*}
  \end{example*}
  \begin{prop*}
-   Seja $\phi:G\rightarrow G'$ um morfismo. Ent\~ao,
+   Seja $\varphi:G\rightarrow G'$ um morfismo. Ent\~ao,
   \begin{align*}
-    &1)g_{1}\cdots g_{n}\in G, \phi(g_{1}\cdots g_{n}) = \phi(g_{1})\cdots\phi(g_{n}).\\
-    &2)\text{ Se 1 \'e o elemento neutro de G e 1' o elemento neutro de G', } \phi(1)=1'.\\
-    &3)\phi(g^{-1}) = \phi(g)^{-1}.
+    &1)g_{1}\cdots g_{n}\in G, \varphi(g_{1}\cdots g_{n}) = \varphi(g_{1})\cdots\varphi(g_{n}).\\
+    &2)\text{ Se 1 \'e o elemento neutro de G e 1' o elemento neutro de G', } \varphi(1)=1'.\\
+    &3)\varphi(g^{-1}) = \varphi(g)^{-1}.
   \end{align*}
  \end{prop*}
 \begin{proof*}
   1.) Os casos 1 e 2 s\~ao ok. Assim, vamos mostrar por indu\c c\~ao. Suponha que vale para
 n-1. Ent\~ao, 
   $$
-  \phi(g_{1}\cdots\phi_{n})=\phi((g_{1}\cdots g_{n-1})g_{n}) = \phi(g_{1}\cdots g_{n-1})\phi(g_{n}) = \phi(g_{1})\cdots\phi(g_{n-1})\phi(g_{n}).
+  \varphi(g_{1}\cdots\varphi_{n})=\varphi((g_{1}\cdots g_{n-1})g_{n}) = \varphi(g_{1}\cdots g_{n-1})\varphi(g_{n}) = \varphi(g_{1})\cdots\varphi(g_{n-1})\varphi(g_{n}).
   $$
 
-  2.) $\phi(1) = \phi(1.1)\coloneqq \phi(1)\phi(1) \Rightarrow 1' = \phi(1)\phi(1)^{-1} = \phi(1)$
+  2.) $\varphi(1) = \varphi(1.1)\coloneqq \varphi(1)\varphi(1) \Rightarrow 1' = \varphi(1)\varphi(1)^{-1} = \varphi(1)$
 
-  3.) $1' = \phi(1) = \phi(gg^{-1}) = \phi(g)\phi(g^{-1}) \Rightarrow \phi(g)^{-1} = \phi(g^{-1}).$ \qedsymbol
+  3.) $1' = \varphi(1) = \varphi(gg^{-1}) = \varphi(g)\varphi(g^{-1}) \Rightarrow \varphi(g)^{-1} = \varphi(g^{-1}).$ \qedsymbol
 \end{proof*}
 \begin{def*}
-  Se $\phi:G\rightarrow G'$ \'e um morfismo, defina a imagem de $\phi$ por $Im \phi\coloneqq\{u\in G': \exists x\in G, \phi(x)=y\}$ 
-  e o n\'ucleo (ou kernel) de $\phi$ por $\ker{(\phi)}\coloneqq\{x\in G: \phi(x) = 1'\} $, em que 1' \'e o elemento neutro de G'.  
+  Se $\varphi:G\rightarrow G'$ \'e um morfismo, defina a imagem de $\varphi$ por $Im \varphi\coloneqq\{u\in G': \exists x\in G, \varphi(x)=y\}$ 
+  e o n\'ucleo (ou kernel) de $\varphi$ por $\ker{(\varphi)}\coloneqq\{x\in G: \varphi(x) = 1'\} $, em que 1' \'e o elemento neutro de G'.  
 \end{def*}
 \begin{prop*}
-  A imagem de um morfismo $\phi:G\rightarrow G'$ \'e um subgrupo de G' e o kernel de $\phi$ \'e um de G.
+  A imagem de um morfismo $\varphi:G\rightarrow G'$ \'e um subgrupo de G' e o kernel de $\varphi$ \'e um de G.
 \end{prop*}
 \begin{proof*}
-  Se y, y' pertencem a $Im\phi$, ent\~ao existem x, x' em G tais que $\phi(x) = y, \phi(x')=y'.$ Assim, 
+  Se y, y' pertencem a $Im\varphi$, ent\~ao existem x, x' em G tais que $\varphi(x) = y, \varphi(x')=y'.$ Assim, 
   $$
-    yy' = \phi(x)\phi(x') = \phi(xx') \Rightarrow yy'\in Im\phi.
+    yy' = \varphi(x)\varphi(x') = \varphi(xx') \Rightarrow yy'\in Im\varphi.
   $$
-  Al\'em disso, \'e claro que $\phi(1) = 1'\in Im\phi.$ Finalmente, se y pertence a $Im \phi,$ ent\~ao
- $\phi(x^{-1}) = \phi(x)^{-1} = y^{-1} \Rightarrow y^{-1}\in Im \phi.$ A prova de que $\ker\phi\leq{G}$ fica como
+  Al\'em disso, \'e claro que $\varphi(1) = 1'\in Im\varphi.$ Finalmente, se y pertence a $Im \varphi,$ ent\~ao
+ $\varphi(x^{-1}) = \varphi(x)^{-1} = y^{-1} \Rightarrow y^{-1}\in Im \varphi.$ A prova de que $\ker\varphi\leq{G}$ fica como
  exerc\'icio. \qedsymbol
 \end{proof*}
 \begin{def*}
@@ -709,9 +710,9 @@ n-1. Ent\~ao,
   $$
 \end{def*}
 \begin{prop*}
-  Seja $\phi:G\rightarrow G'$ um morfismo e K $= \ker{(\phi)}.$ Se a, b s\~ao elementos de G, s\~ao equivalentes:
+  Seja $\varphi:G\rightarrow G'$ um morfismo e K $= \ker{(\varphi)}.$ Se a, b s\~ao elementos de G, s\~ao equivalentes:
  \begin{align*}
-   &1) \phi(a) = \phi(b)\\
+   &1) \varphi(a) = \varphi(b)\\
    &2) a^{-1}b\in K\\
    &3) b\in aH\\
    &4) aK = bK.
@@ -719,10 +720,10 @@ n-1. Ent\~ao,
 \end{prop*}
 \begin{proof*}
   \begin{align*}
-  &1)\Rightarrow2): \phi(a) = \phi(b) \Rightarrow \phi(a^{-1}b) = 1' \Rightarrow a^{-1}b\in K;\\ 
-  &2)\Rightarrow1): a^{-1}b\in K \Rightarrow \phi(a^{-1}b) = 1' \Rightarrow \phi(a)=\phi(b);\\
+  &1)\Rightarrow2): \varphi(a) = \varphi(b) \Rightarrow \varphi(a^{-1}b) = 1' \Rightarrow a^{-1}b\in K;\\ 
+  &2)\Rightarrow1): a^{-1}b\in K \Rightarrow \varphi(a^{-1}b) = 1' \Rightarrow \varphi(a)=\varphi(b);\\
   &1)\Rightarrow3): a^{-1}b\in K \text{ se } \exists h\in K \text{ tais que } a^{-1}h = bh \Rightarrow b\in aK;\\
-  &3)\Rightarrow1): \text{ Suponha que }b\in aH, b = ah \Rightarrow \phi(b) = \phi(a)\phi(h) = \phi(a);\\
+  &3)\Rightarrow1): \text{ Suponha que }b\in aH, b = ah \Rightarrow \varphi(b) = \varphi(a)\varphi(h) = \varphi(a);\\
   &(1)\Longleftrightarrow(4): \text{Exerc\'icio. \qedsymbol}
   \end{align*}
 \end{proof*}
@@ -746,18 +747,18 @@ da tansforma\c c\~ao linear $\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}, e_{j}\map
 \subsection{Subgrupos Normais}
   Come\c camos com um corol\'ario \`a \'ultima aula:
  \begin{crl*}
-   Uma $\phi$ \'e injetora se, e somente se, $\ker{(\phi)} =\{0\}.$
+   Uma $\varphi$ \'e injetora se, e somente se, $\ker{(\varphi)} =\{0\}.$
  \end{crl*}
 \begin{proof*}
-  $ \Rightarrow)$ Seja a um elemento do kernel de $\phi$. Ent\~ao, 
+  $ \Rightarrow)$ Seja a um elemento do kernel de $\varphi$. Ent\~ao, 
     $$
-      \phi(a) = 1' = \phi(1).
+      \varphi(a) = 1' = \varphi(1).
     $$
-    Mas, como $\phi$ \'e injetora, segue que a = 1 \'e o \'unico elemento no kernel.
+    Mas, como $\varphi$ \'e injetora, segue que a = 1 \'e o \'unico elemento no kernel.
 
-  $ \Leftarrow)$ Suponha que $\phi$ tem kernel trivial, i.e., $\ker{(\phi)} =\{0\}.$ Ent\~ao,
+  $ \Leftarrow)$ Suponha que $\varphi$ tem kernel trivial, i.e., $\ker{(\varphi)} =\{0\}.$ Ent\~ao,
     $$
-    \phi(a)\phi(b)^{-1} = 1' \Rightarrow 1 = \phi(a)\phi(b^{-1}) = \phi(ab^{-1}) \Rightarrow ab^{-1}\in\ker{\phi} = {1}.
+    \varphi(a)\varphi(b)^{-1} = 1' \Rightarrow 1 = \varphi(a)\varphi(b^{-1}) = \varphi(ab^{-1}) \Rightarrow ab^{-1}\in\ker{\varphi} = {1}.
     $$
     Portanto, $ab^{-1} = 1$ e, assim, $a = b.$ \qedsymbol
 \end{proof*}
@@ -809,14 +810,14 @@ n\~ao abeliano, mas que todo subgrupo \'e normal.
   Portanto, $<(12)>$ n\~ao \'e um subgrupo normal de $S_{3}.$
 \end{example*}
  \begin{prop*}
-   Se $\phi:G\rightarrow G'$ \'e um morfismo, ent\~ao $\ker{\phi}\trianglelefteq{G}.$
+   Se $\varphi:G\rightarrow G'$ \'e um morfismo, ent\~ao $\ker{\varphi}\trianglelefteq{G}.$
  \end{prop*}
 \begin{proof*}
-  Sejam g um elemento de G e h um elemento de $\ker{\phi}$. Ent\~ao, 
+  Sejam g um elemento de G e h um elemento de $\ker{\varphi}$. Ent\~ao, 
     $$
-      \phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g^{-1}) = \phi(g)1'\phi(g)^{-1} = \phi(g)\phi(g)^{-1} = 1'.
+      \varphi(ghg^{-1}) = \varphi(g)\varphi(h)\varphi(g^{-1}) = \varphi(g)1'\varphi(g)^{-1} = \varphi(g)\varphi(g)^{-1} = 1'.
     $$
-    Portanto, $ghg^{-1}\in\ker{\phi}$ e, portanto, $\ker{\phi}\trianglelefteq{G}.$ \qedsymbol
+    Portanto, $ghg^{-1}\in\ker{\varphi}$ e, portanto, $\ker{\varphi}\trianglelefteq{G}.$ \qedsymbol
 \end{proof*}
  \begin{example*}
   \begin{itemize}
@@ -826,7 +827,7 @@ n\~ao abeliano, mas que todo subgrupo \'e normal.
  \end{example*}
  Lembre-se que, dado $\sigma\in S_{n}, \sigma = \tau_{1}\cdots\tau_{r}$ s\~ao 2-ciclos, ent\~ao $sgn(\sigma) = (-1)^{r}.$
 \begin{def*}
-  Sejam G, G' grupos. Um isomorfismo $\phi$ \'e um morfismo $\sigma:G\rightarrow G'$ bijetor. Se G = G', $\phi$ \'e chamado automorfismo.
+  Sejam G, G' grupos. Um isomorfismo $\varphi$ \'e um morfismo $\sigma:G\rightarrow G'$ bijetor. Se G = G', $\varphi$ \'e chamado automorfismo.
 Por fim, se existe um isomorfismo entre dois grupos, dizemos que eles s\~ao isomorfos, escrevendo $G\cong G'$
 \end{def*}
 \textbf{(Nota ao leitor)} Mas o que h\'a de \'util em isomorfismo? Por que nos importamos? 
@@ -844,38 +845,38 @@ isomorfo e que facilitar\'a seu servi\c co. Veremos exemplos a seguir.
     \item[4)] Seja $P\leq{GL_{n}}$ o conjunto das matrizes com somente um 1 em cada linha e cada coluna, tendo entrada 0 nos demais. Ent\~ao,
   $P\leq{GL_{n}}$ e $S_{n}\rightarrow P, \sigma\mapsto U(\sigma)$ \'e isomorfismo.
     \item[5)] $id:G\rightarrow G'$ \'e um isomorfismo.
-    \item[6)] Se g pertence a G, $\phi_{g}:G\rightarrow G, x\mapsto gxg^{-1}$ \'e isomorfismo.
+    \item[6)] Se g pertence a G, $\varphi_{g}:G\rightarrow G, x\mapsto gxg^{-1}$ \'e isomorfismo.
   \end{itemize}
  \end{example*}
  \begin{prop*}
-   Se $\phi$ \'e isomorfismo, ent\~ao $|g| = |\phi(g)|$. Em part\'icular, $|g| = |aga^{-1}|$ para todo a de G.
+   Se $\varphi$ \'e isomorfismo, ent\~ao $|g| = |\varphi(g)|$. Em part\'icular, $|g| = |aga^{-1}|$ para todo a de G.
  \end{prop*}
 \begin{proof*}
-    No caso em que $|g| = \infty,$ se $|\phi(g)| = g < \infty$. Assim, 
+    No caso em que $|g| = \infty,$ se $|\varphi(g)| = g < \infty$. Assim, 
       $$
-      1' = \phi(g)^{m} = \phi(g^{m}) \Rightarrow g^{m}\in\ker{\phi} = \{1\} \Rightarrow g^{m} = 1.
+      1' = \varphi(g)^{m} = \varphi(g^{m}) \Rightarrow g^{m}\in\ker{\varphi} = \{1\} \Rightarrow g^{m} = 1.
       $$
 
-    Agora, se $|g| = n <\infty$. Seja $m = |\phi(g)|$, ent\~ao 
+    Agora, se $|g| = n <\infty$. Seja $m = |\varphi(g)|$, ent\~ao 
       $$
-        1' = \phi(g)^{m} = \phi(g^{m}) \Rightarrow g^{m} = 1 \Rightarrow n|m.
+        1' = \varphi(g)^{m} = \varphi(g^{m}) \Rightarrow g^{m} = 1 \Rightarrow n|m.
       $$ 
     Por outro lado, como $g^{n} = 1,$ 
       $$
-        1' = \phi(g^{n}) = \phi(g)^{n} \Rightarrow m|n.
+        1' = \varphi(g^{n}) = \varphi(g)^{n} \Rightarrow m|n.
       $$
     Portanto, m = n. \qedsymbol
 \end{proof*}
 \begin{lemma*}
-  Se $\phi:G\rightarrow G'$ \'e um isomorfismo, ent\~ao $\phi^{-1}:G'\rightarrow G$ tamb\'em \'e isomorfismo. 
+  Se $\varphi:G\rightarrow G'$ \'e um isomorfismo, ent\~ao $\varphi^{-1}:G'\rightarrow G$ tamb\'em \'e isomorfismo. 
 \end{lemma*}
 \begin{proof*}
-  Segue que $\phi^{-1}$ est\'a bem-definida e \'e uma bije\c c\~ao pois $\phi$ \'e bije\c c\~ao. Sejam x, y elementos de G'.
-Sendo $\phi$ uma bije\c c\~ao, existem a, b em G tais que 
+  Segue que $\varphi^{-1}$ est\'a bem-definida e \'e uma bije\c c\~ao pois $\varphi$ \'e bije\c c\~ao. Sejam x, y elementos de G'.
+Sendo $\varphi$ uma bije\c c\~ao, existem a, b em G tais que 
   $$
-  x = \phi(a)\quad\text{e}\quad y = \phi(b).
+  x = \varphi(a)\quad\text{e}\quad y = \varphi(b).
   $$
-  Desta forma, $\phi^{-1}(xy) = \phi^{-1}(\phi(a)\phi(b)) = \phi^{-1}(\phi(ab)) = ab = \phi^{-1}(x)\phi^{-1}(y).$ \qedsymbol
+  Desta forma, $\varphi^{-1}(xy) = \varphi^{-1}(\varphi(a)\varphi(b)) = \varphi^{-1}(\varphi(ab)) = ab = \varphi^{-1}(x)\varphi^{-1}(y).$ \qedsymbol
 \end{proof*}
  \begin{def*}
    Dado S um conjunto, uma parti\c c\~ao para S \'e uma cobertura por subconjuntos n\~ao-vazios e disjuntos. Em outras palavras,
@@ -887,9 +888,9 @@ existe $U_{j}\subseteq{S}, U_{j}\neq\emptyset$ e $U_{j}\cap U_{i} = \emptyset$ s
 \begin{def*}
   Uma rela\c c\~ao de equival\^encia em um conjunto S \'e um subconjunto R de $S\times S$ tal que 
  \begin{itemize}
-   \item[-]$\overbrace{(a, a)}^{a~a}\in R, \forall a\in S$ (Reflexiva);
-   \item[-]$(a, b)\in R \Rightarrow (b, a)\in R (a~b \Rightarrow b~a)$ (Sim\'etrica);
-   \item[-]$(a, b)(b, c)\in R \Rightarrow (a, c)\in R (a~b, b~c \Rightarrow a~c)$ (Transitiva).
+   \item[-]$\overbrace{(a, a)}^{a\sim a}\in R, \forall a\in S$ (Reflexiva);
+   \item[-]$(a, b)\in R \Rightarrow (b, a)\in R (a\sim b \Rightarrow b\sim a)$ (Sim\'etrica);
+   \item[-]$(a, b)(b, c)\in R \Rightarrow (a, c)\in R (a\sim b, b\sim c \Rightarrow a\sim c)$ (Transitiva).
  \end{itemize}
  Denotamos $(a, b)\in R$ por $a~b$, e l\^e-se ``a est\'a relacionado com b''. $\square$
 \end{def*}
@@ -911,5 +912,336 @@ existe $U_{j}\subseteq{S}, U_{j}\neq\emptyset$ e $U_{j}\cap U_{i} = \emptyset$ s
   Uma parti\c c\~ao em um conjunto S define uma rela\c c\~ao de equival\^encia em S. Reciprocamente, uma rela\c c\~ao de 
 equival\^encia define uma parti\c c\~ao em S.
 \end{theorem*}
+\newpage
+
+\section{Aula 06 - 11/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Classes de equival\^encia;
+  \item \'Indice de um grupo;
+  \item Teorema de Lagrange.
+\end{itemize}
+
+\subsection{Classe de Equival\^encia de Parti\c c\~oes}
+\begin{theorem*}
+  Uma parti\c c\~ao em um conjunto S define uma rela\c c\~ao de equival\^encia em S. Reciprocamente, uma rela\c c\~ao de 
+equival\^encia define uma parti\c c\~ao em S.
+\end{theorem*}
+\begin{proof*}
+  Seja $S = \bigsqcup_{i\in I}S$ uma parti\c c\~ao, tal que
+    $$
+    R = \{(a,b)\in S\times S: \exists i\in I, a ,b\in S_{i}\}
+    $$
+  \'e uma defini\c c\~ao de equival\^encia em S.
+
+  Reciprocamente, dada uma rela\c c\~ao de equival\^encia em S, temos $[a]$ como a classe de equival\^encia de um elemento a de S.
+  Por reflexividade, $a\in[a],$ ou seja, $[a]$ \'e n\~ao-vazio e 
+    $$
+    S = \bigcup_{a\in S}[a].
+    $$
+    \textbf{Afirma\c c\~ao:} Se $[a]\cap[b]\neq\emptyset,$ ent\~ao $[a]=[b].$
+    Com efeito, seja c um elemento na intersec\c c\~ao das classes [a] e [b]. Segue que $a\sim c$ e $b\sim c$. Por simetria,
+    $c\sim b$, logo, por transitividade, $a\sim c\sim b$, ou seja, $c\sim b$. Tome x em [b], ou seja, $b\sim x.$ Novamente,
+    por transitividade, $a\sim x,$ isto \'e, $x\in[a].$ Provamos, ent\~ao, que $[a]\subseteq{[b]}$ e $[b]\subseteq{[a]}$, ou seja,
+    $[a]=[b].$ \qedsymbol
+\end{proof*}
+\begin{example*}
+  A ordem de um elemento define uma rela\c c\~ao de equival\^encia em um grupo. Particularmente, no caso de $S_{3},$ as classes
+de equival\^encia s\~ao 
+ \begin{align*}
+  &(i)\quad [(12)]  = \{(12), (13), (23)\}\\
+  &(ii)\quad [(123)] = \{(123), (132)\}\\
+  &(iii)\quad [id] = \{id\}.
+ \end{align*} 
+ Assim, $S_{3}=[(12)]\bigsqcup{}[(123)]\bigcup{[id]}.$ \qedsymbol
+\end{example*}
+\begin{def*}
+  Se $S = \bigsqcup{S_{i}}_{i\in I}$ \'e uma parti\c c\~ao, denotamos $\overline{S}\coloneqq\{[S_{i}]\} $ o conjunto das classes
+de equival\^encia dadas por $S_{i}.$
+\end{def*}
+\begin{example*}
+Se $\mathbb{Z}=\{\text{n\'umeros pares}\}\bigsqcup{\{\text{n\'umeros \'impares}\}}$, ent\~ao $\overline{\mathbb{Z}} =\{[\text{pares}], [\text{\'impares}]\} 
+ \{\overline{0}, \overline{1}\}.$
+\end{example*}
+  Observe que, se S tem uma rela\c c\~ao de equival\^encia, \'e poss\'ivel ``projetarmos'' um elemento de S em sua classe de equival\^encia atrav\'es de 
+    $$
+    \pi:S\rightarrow \overline{S},\quad a\mapsto[a]=\overline{a}.
+    $$
+ \begin{example*}
+   Fixe um inteiro n. Dados a, b tamb\'em inteiros, dizemos que $a\sim b$ m\'odulo n (ou $a\equiv b\mod n$) se $n|a-b.$ Mostre que
+   a congru\^encia mod n \'e de fato uma rela\c c\~ao de equival\^encia em $\mathbb{Z}.$ Al\'em disso, $\overline{\mathbb{Z}}^{n} = \mathbb{Z}/n\mathbb{Z} = \{\overline{0}, \cdots, \overline{n-1}\}.$
+ \end{example*}
+\begin{def*}
+  Se $\varphi:S\rightarrow T$ \'e um mapa entre conjuntos, ent\~ao $\varphi$ define uma rela\c c\~ao de equival\^encia em S dada por 
+    $$
+      a\sim b\quad \Longleftrightarrow \varphi(a) = \varphi(b).
+    $$
+    Al\'em disso, [a] \'e definida como a fibra por $\varphi$ de $\varphi(a) = t,$ ou seja, 
+      $$
+      \varphi^{-1}(t) = \{s\in S: \varphi(s) = t\}.
+      $$
+      Em outras palavras, se $\varphi(a) = t$, ent\~ao $\overline{a} = [a] = \varphi^{-1}(t).$ Em part\'icular, 
+        $$
+          S = \bigsqcup_{t\in Im\varphi}{\varphi^{-1}(t)}.
+        $$
+\end{def*}
+
+\subsection{Classes Laterias e \'Indices.}
+\begin{prop*}
+  Sejam $\varphi:G\rightarrow G'$ morfismos de grupos e K = $\ker{\varphi}$. Ent\~ao, a fibr de $\varphi$ que cont\'em o elemento a
+a de G \'e a classe lateral $aK$. Al\'em disso, essas classes particionam G e correspondem aos elementos da imagem de $\varphi.$
+\end{prop*}
+\begin{proof*}
+  Segue que, dado b em aK, $\varphi(a) = \varphi(b) = t$. Disto segue que a, b pertencem \`a pr\'e-imagem de $\varphi, \varphi^{-1}(t).$
+\end{proof*}
+\begin{prop*}
+  As classes laterais \`a esquerda de H em G s\~ao as classes de equival\^encia da seguinte rela\c c\~ao 
+    $$
+      a\cong{b} \Longleftrightarrow b = ah, \quad h\in H.
+    $$
+  Denotamos $a\cong{b}$ por $a\equiv b.$
+\end{prop*}
+\begin{proof*}
+  Observe que a = 1a, $1\in H.$ Logo, $a\cong{a}.$ Se $a\cong{b},$ existe h em H tal que b = ah, ou seja, $a = bh^{-1}, h^{-1}\in H$ 
+de modo que $b\cong{a}.$ 
+
+  Se $a\cong{b}, b\cong{c},$ existem $h_{1}, h_{2}\in H$ tais que $b = ah_{1}, c = bh_{2},$ de forma que $c = ah_{1}h_{2},$ i.e.,
+ $a\cong{c}.$ 
+
+  Por fim, 
+  \begin{align*}
+    [a] &= \{b\in G: a\cong{b}\}\\
+        &= \{b\in G: \exists h\in H\text{ tal que }b = ah\}\\
+        &= \{ah: h \in H\} = aH.\text{ \qedsymbol}
+  \end{align*}
+\end{proof*}
+\begin{crl*}
+  G = $\bigsqcup_{a\in G\text{distintos}}^{}{aH}.$
+\end{crl*}
+\begin{example*}
+  Em $S_{3} = <(12), (123)>$, seja $H = <(12)>.$ Temos 
+ \begin{align*}
+   &(i)id H = H = \{id, (12)\} = (12)H\\
+   &(ii)(123)H = \{(123), (123)(12)\} = (123)(12)H\\
+   &(iii)(123)^{2}H = \{(123)^{2}, (123)^{2}(12)\} = (123)^{2}(12)H.
+ \end{align*}
+ De fato, $S_{3} = H\bigsqcup_{}^{}{(123)H}\bigsqcup_{}^{}{(123)^{2}H}$ \qedsymbol
+\end{example*}
+\begin{def*}
+  O n\'umero de classes laterais (\`a esquerda) de H em G \'e chamado o \'indice de H em G, denotado por $[G:H].\square$
+\end{def*}
+\begin{example*}
+  No exemplo anterior, $[S_{3} : H]=3, |H| = 2.$
+\end{example*}
+\begin{lemma*}
+  Todas as classes laterais aH de H em G t\^em mesma ordem.
+\end{lemma*}
+\begin{proof*}
+  O mapa $m_{a}:H\rightarrow H_{a}, h\mapsto ah$ \'e um mapa bijetor com inversa $m_{a^{-1}}.$ \qedsymbol
+\end{proof*}
+  Este lema ser\'a usado para demonstrar um resultado extremamente importante em Teoria de Grupos. Essencialmente falando,
+ele afirma que a ordem de um grupo \'e um m\'ultiplo da ordem dos seus subgrupos. Mas por que isso importa? Al\'em de ser um
+resultado intrigante por si s\'o, ele pode ser usado para mostrar que grupos n\~ao s\~ao isom\'orficos, quantidade de elementos de 
+uma dada ordem dentro de um grupo, entre outras coisas. Segue seu enunciado.
+\begin{theorem*}
+  Se G \'e um grupo finito e H um subgrupo de G, ent\~ao 
+    $$
+      |G| = |H|[G:H].
+    $$ 
+  Em particular, $|H|$ divide $|G|.$
+\end{theorem*}
+\begin{proof*}
+  Da proposi\c c\~ao anterior, sabemos que $G = \bigsqcup_{a\in{G}\text{diferentes}}^{}{aH}.$ Portanto,
+    $$
+    |G| = \sum\limits_{a\in{G}\text{diferentes}}^{}|aH| = |H|[G:H]\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{crl*}
+  Se a pertence a G, ent\~ao $|a|\biggl|\biggr.|G|$
+\end{crl*}
+\begin{proof*}
+  Segue do Teorema de Lagrange que  
+    $$
+    |a|=|<a>|\biggl|_{}^{}\biggr.|G|\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{crl*}
+  Se $|G|=p$ n\'umero primo e a \'e um elemento de G diferente do elemento neutro, ent\~ao 
+    $$
+      G = <a>.
+    $$
+\end{crl*}
+\begin{proof*}
+  Se |a| divide p, ent\~ao $|a|=1$ ou p, mas, como $a\neq 1, |a| = p,$ segue que
+    $$
+    G = <a>\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{crl*}
+  Se $\varphi:G\rightarrow G'$ \'e um morfismo de grupos finitos, segue que 
+ \begin{align*}
+   &1)\quad |G| = |\ker{\varphi}||im\varphi|\\
+   &2)\quad |\ker{\varphi}| \biggl|_{}^{}\biggr. |G|\\
+   &3)\quad |im\varphi|\text{ divide } |G|\text{ e }|G'|.
+ \end{align*}
+\end{crl*}
+\begin{proof*}
+  $1\Rightarrow)$ Temos 
+ \begin{align*}
+   G &= \bigsqcup_{}^{}{a\ker{\varphi}}\\
+     & \Rightarrow |G| = |im\varphi||\ker{\varphi}|\\
+     & \Rightarrow |G| = |\ker\varphi|[G:\ker{\varphi}] = |\ker{\varphi}||im\varphi|.
+ \end{align*}
+  Os outros itens ficam como exerc\'icio para os estudantes. \qedsymbol
+\end{proof*}
+\begin{example*}
+  Considere $sgn:S_{n}\rightarrow \{\pm 1\}.$ Temos 
+    $$
+      |im(sgn)| = 2,
+    $$
+    de modo que 
+    $$
+    |A_{n}| = |\ker{sgn}| = \frac{|S_{n}|}{2} = \frac{n!}{2}.
+    $$
+\end{example*}
+\begin{prop*}
+  Se $K\leq{H}\leq{G},$ ent\~ao 
+    $$
+    [G:K] = [G:H][H:K] 
+    $$ 
+\end{prop*}
+\begin{proof*}
+  Suponha que $[G:H] = n$ e $[H:K]=m$. Ent\~ao, 
+    $$
+    G = g_{1}H\bigsqcup_{}^{}{\cdots}\bigsqcup_{}^{}{g_{n}H} = \bigsqcup_{i=1}^{n}{g_{i}H}\quad\text{e}\quad H = \bigsqcup_{j=1}^{m}{h_{j}K}.
+    $$
+  A multliplica\c c\~ao por $g_{i}$ \'e uma bije\c c\~ao 
+    $$
+      m_{g_{i}}:h_{j}K\rightarrow g_{i}h_{j}K,\quad x\mapsto g_{i}x.
+    $$
+  Assim, $g_{i}H = \bigsqcup_{j=1}^{m}{g_{i}h_{j}K}.$ Portanto, 
+    $$
+    G = \bigsqcup_{i=1}^{n}{\biggl[\bigsqcup_{j=1}^{m}{g_{i}g_{j}K}\biggr]},
+    $$
+    de onde conclu\'i-se que $[G:K]=mn.$ \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 07 - 13/04/2023}
+\begin{itemize}
+  \item Relacionando morfismos com as estruturas de subgrupos;
+  \item Teorema da Correspond\^encia.
+\end{itemize}
+
+\subsection{Mais Sobre Morfismos}
+\begin{prop*}
+  Se $\varphi:G\rightarrow G'$ \'e um morfismo de grupos finitos e $H\leq{G}$ \'e tal que  $\gcd{(|H|, |G'|)} = 1$, ent\~ao $\ker{\varphi}\supseteq{H}.$
+\end{prop*}
+\begin{proof*}
+  Tome $\varphi_{H}:H\rightarrow G'$. Pela propriedade da aula passada, 
+    $$
+    |im{\varphi_{H}}|\biggl|_{}^{}\biggr. |H|\text{ e } |G'|.
+    $$
+    Por hip\'otese, $|im(\varphi_{H})|=1$, i.e., $im \varphi_{H} = \{1'\}$. Assim, $\varphi(H)\subseteq{\{1'\}}.$
+    Portanto, $H\subseteq{\ker{\varphi}}.$ \qedsymbol
+\end{proof*}
+\begin{example*}
+  Se $H\leq{S_{n}}, |H| = 2k+1,$ ent\~ao $H\subseteq{A_{n}}.$ Considere $sgn:S_{n}\rightarrow \{\pm1\}$. Pela proposi\c c\~ao,
+  $H\subseteq{\ker{sgn}}=A_{n}.$
+\end{example*}
+\begin{prop*}
+  Seja $\varphi:G\rightarrow G'$ um morfismo de grupos, $K=\ker{\varphi}, H'\leq{G'}$ e $H = \varphi^{-1}(H').$ Ent\~ao, 
+ $H\leq{G}$ e $K\leq{H}.$ Al\'em disso, se $H'\trianglelefteq{G'}$, ent\~ao $H\trianglelefteq{G}$. Por fim, se $\varphi$ for
+ sobrejetora e $H\trianglelefteq{G}$, temos $\varphi(H) = H'\trianglelefteq{G'}.$
+\end{prop*}
+\begin{proof*}
+  Vamos come\c car mostrando que H \'e um subgrupo de G. Com efeito, como H' \'e subgrupo de G', ent\~ao 1' \'e um de seus elementos.
+Assim, $\varphi^{-1}(1')\subseteq{H}$ e, em particular, 1 pertence a H e $K\leq{H}.$ Agora, sejam x, y elementos de H. Ent\~ao,
+ $\varphi(x), \varphi(y)\in H'$, ou seja, $\varphi(x)\varphi(y)^{-1}\in H'$. Assim, $\varphi(xy^{-1})\in H'$ e $xy^{-1}\in H.$
+Portanto, H \'e subgrupo de G.
+
+  Daremos continuidade provando a segunda parte do resultado. Suponha que $H'\trianglelefteq{G'}$ e sejam $x\in gHg^{-1}, x = ghg^{-1}$ 
+para algum h em H. 
+  $$
+    \varphi(x) = \varphi(ghg^{-1}) = \varphi(g)\varphi(h)\varphi(g)^{-1}\in H' \Rightarrow ghg^{-1}\in H.
+  $$
+Portanto, $H\trianglelefteq{G}.$
+
+  Finalmente, mostremos que $\varphi(H)\trianglelefteq{G'}.$ Tome g' em G e $y\in\gamma(H).$ Como $\varphi$ \'e sobrejetora, existe
+x em H e g em G tal que $\varphi(g)=g', \varphi(x) = y.$ Portanto,
+  $$
+  g'y(g')^{-1} = \varphi(g)\varphi(x)\varphi(g)^{-1} = \varphi(gxg^{-1})\in \varphi(H).\text{ \qedsymbol}
+  $$
+\end{proof*}
+\begin{example*}
+  Segue que $GL_{n}(\mathbb{R})^{+}\trianglelefteq{GL_{n}(\mathbb{R})}$. De fato, note que, se definirmos
+    $$
+      \det:GL_{n}(\mathbb{R})\rightarrow \mathbb{R}^{\times},
+    $$
+    ent\~ao $GL_{n}(\mathbb{R})^{+} = \det^{-1}(\mathbb{R}_{>0})\trianglelefteq{GL_{n}(\mathbb{R})}$. \qedsymbol
+\end{example*}
+  O resultado a seguir \'e conhecido como Teorema da Correspond\^encia.
+\begin{theorem*}
+  Seja $\varphi:G\rightarrow G'$ sobrejetora e $K=\ker{\varphi}.$ Ent\~ao,  
+  \begin{align*}
+    &\{H\leq{G}: K \subseteq{H}\} \longleftrightarrow \{N: N\leq{G'}\}\\
+    &\quad\quad\quad\quad H\mapsto \varphi(H)\\
+    &\quad\quad\quad\quad \varphi^{-1}(N)\mapsfrom N.
+  \end{align*}
+  Al\'em diso, se $H\leftrightarrow N$', ent\~ao $H\trianglelefteq{G} \Longleftrightarrow N\trianglelefteq{G'}$ e
+  $|H| = |N|\cdot|K|.$
+\end{theorem*}
+\begin{proof*}
+  Vamos mostrar as seguintes coisas - $H = \varphi^{-1}\varphi(H) N = \varphi \varphi^{-1}(N), |H|=|N||K|.$ 
+
+  Nesta ordem, come\c camos observando que $H\leq{\varphi^{-1}\varphi(H)}$ \'e sempre verdadeira. Seja x em $\varphi^{-1}\varphi(H).$
+  Ent\~ao, $\varphi(x)\in\varphi(H),$ isto \'e, existe h em H tal que $\varphi(x) = \varphi(h)$. Disto, temos 
+    $$
+      \varphi(xh^{-1}) = 1' \Longleftrightarrow xh^{-1}\in K\subseteq{H} \Rightarrow x\in H,
+    $$
+  concluindo o que desej\'avamos mostrar.
+
+  Para a segunda parte, fica como exerc\'icio.
+
+  Por fim, considere $\varphi_{|_{H}}:H\rightarrow \gamma(H) = N$. Pela aula anterior, portanto,
+    $$
+    |H| = |\ker{\varphi_{|_{H}}}||Im(\varphi_{|_{H}})| = |K||N|.\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{def*}
+  Dados G e G' grupos, defina o quociente de G por G' como 
+    $$
+    G\times{G'} = \{(g, g'): g\in G, g'\in G'\}\quad\square
+    $$
+\end{def*}
+  Afirmamos que $G\times{G'}$ com a opera\c c\~ao $(g_{1}, g_{1}')(g_{2}, g_{2}') = (g_{1}g_{1}', g_{2}g_{2}')$ \'e um grupo.
+Al\'em disso, temos os seguintes morfismos:
+ \begin{align*}
+   & \pi:G\times{G'}\rightarrow G,\quad \pi':G\times{G'}\rightarrow G'\\
+   &  i:G\rightarrow G\times{G'},\quad i':G'\rightarrow G\times{G'},
+ \end{align*}
+ Sendo eles chamados, respectivamente, de proje\c c\~oes e inje\c c\~oes. Ademais, $(1, 1')$ \'e o elemento neutro de $G\times{G'}.$
+ \begin{prop*}
+   Se $\gcd{(r, s)} = 1$, ent\~ao o grupo c\'iclico de ordem rs \'e o produto $C_{r}\times{C_{s}}$, sendo $C_{r}$ o grupo
+ c\'iclico de ordem r (E $C_{s}$ o c\'iclico de ordem s).
+ \end{prop*}
+\begin{proof*}
+  Seja $C_{rs}$ o grupo c\'iclico de ordem rs. Se $C_{r}=<x>, C_{s} = <y>.$ Ent\~ao, $C_{r}\times{C_{s}} = <(x, y)>.$ De fato, 
+    $$
+    (x, y)^{rs} = (x^{rs}, y^{rs}) = ((x^{r})^{s}, (y^{s})^{r}) = (1, 1'),
+    $$
+  tal que $k = ord(xy)\biggl|_{}^{}\biggr.rs.$ Como $(r, s) = 1,$ existem $a, b\in \mathbb{Z}$ tais que 
+   \begin{align*}
+     &1 = ar + bs\\
+     &k = ark + bsk.
+   \end{align*}
+  Observe que $(x, y)^{k} = (x^{k}, y^{k}) = (1, 1')$, o que implica que $r \biggl|_{}^{}\biggr.k$ e $s \biggl|_{}^{}\biggr.k$, ou seja,
+  $k = rr'$ e $k = ss'.$ Substituindo isso na segunda f\'ormula, temos $k = rsar' + rsbs' = rs(\text{outros termos})$. Portanto,
+  $rs \biggl|_{}^{}\biggr.k.$ \qedsymbol
+\end{proof*}
 \end{document}
+
+
+
+
 

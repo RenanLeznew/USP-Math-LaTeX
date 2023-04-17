@@ -76,6 +76,17 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\stmaryrd.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
@@ -1028,6 +1039,13 @@ INPUT ..\brasao_usp_cor.jpg
 INPUT ..\brasao_usp_cor.jpg
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary7.tfm
+INPUT C:\Users\renan\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary5.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
@@ -1057,6 +1075,7 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm100
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT algebra_notes.aux
 INPUT .\algebra_notes.out
 INPUT .\algebra_notes.out
@@ -1066,6 +1085,8 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
@@ -1100,3 +1121,5 @@ INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\s
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
 INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\hoekwater\stmary10.pfb
+INPUT C:\Users\renan\AppData\Local\Programs\MiKTeX\fonts\type1\public\hoekwater\stmary10.pfb

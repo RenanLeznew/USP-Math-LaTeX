@@ -291,7 +291,67 @@ of $\Omega _{2}^{R}$, showing that any point is a limit point. We conclude from 
   \item Construct the $\sigma$-algebra that will be used;
   \item Construct the Middle-Third Cantor set via sequences of functions randomly picked.
 \end{itemize}
+
+\subsection{The Usual Construction of the Cantor Set}
+\subsubsection{Goal of the Part}
+ \paragraph{} Construction of the Cantor Set via nested intervals, analytical properties of the set, its topological properties and construction
+via functions.
+\subsubsection{Main Text}
+  Before getting on the construction forementioned, it's important to know how it's usually done, even if just a bit. 
+For that, we consider the interval $[0, 1].$ From it, we will delete the open middle third interval, i.e., $\biggl(\frac{1}{3}, \frac{2}{3}\biggr)$
+which will leave us with two line segments, namely $\biggl[0, \frac{1}{3}\biggr]\cup\biggl[\frac{2}{3}, 1\biggr] = C_{1}.$ Now,
+repeat that for eacho one of these intervals and remove their open middle-third intervals, yielding 
+\begin{align*}
+  &\biggl[0, \frac{1}{9}\biggr],\quad\biggl[\frac{2}{9}, \frac{1}{3}\biggr]\\
+  &\biggl[\frac{2}{3}, \frac{7}{9}\biggr],\quad \biggl[\frac{8}{9}, 1\biggr].
+\end{align*}
+  Then, we call their union $C_{2} = \biggl[0, \frac{1}{9}\biggr]\cup\biggl[\frac{2}{9}, \frac{1}{3}\biggr]\cup\biggl[\frac{2}{3}, \frac{7}{9}\biggr]\cup\biggl[\frac{8}{9}, 1\biggr].$
+We thus define inductively $C_{n}\coloneqq\displaystyle \frac{C_{n-1}}{3}\cup\biggl(\frac{2}{3}+\frac{C_{n-1}}{3}\biggr)$, and 
+define the middle-third Cantor set by 
+  $$
+  \boxed{\mathcal{C}\coloneqq \lim_{n\to\infty}C_{n} = \bigcap_{n=0}^{\infty}C_{n}}
+  $$
+
+  Briefly speaking about this set's properties, it has the same cardinality as the real line. To prove it, we use Bernstein-Schr\oe der
+theorem and compare the cardinality of $\mathcal{C}$ with that of $[0, 1].$ Thus, $\aleph_{1}\geq{|\mathcal{C}|}$ since $\mathcal{C}\subsetneq{[0, 1]}$.
+On the other hand, to show the other side of the inequality, one constructs a surjection going from $\mathcal{C}$ to $[0, 1]$.
+Jumping right to the definition, it is motivated by writing the points of the interval $[0, 1]$ in terms of base 3, and then removing
+on each n step, the numbers that have 1 as their nth digit in the ternary representation.
+
+  On the first step, digits of the form $0.1aaaaaaaaaa\cdots$, where $aaaaaaaaa \cdots$ is between $00000\cdots_{3}$, and $22222 \cdots_{3}.$
+leaving only the numbers whose first digit is either 0 or 2. The next step removes numbers with 1 on the second coordinate, leaving only those
+that assume the form $0.00aaaaa \cdots,0.02aaaaa \cdots, \text{ or } 0.22aaaaa\cdots$. We repeat it ad infinitum, and the numbers
+remaining on the Cantor set haver representations consisting entirely of 0's and 2's.
+
+Hence, the function from $\mathcal{C}$ to $[0, 1]$ takes the ternary numerals constructed above and replaces every 2's by 1's, in a way
+that we interpret the sequence obtained as a binary form of a real number in $[0, 1]$, and reciprocally, any of them have a binary 
+representation that can be translated to a ternary representation of a number in the Cantor set by replacing 1's by 2's: 
+  $$
+  f\biggl(\sum\limits_{k\in \mathbb{N}}^{}a_{k}3^{-k}\biggr) = \sum\limits_{k\in \mathbb{N}}^{}\frac{a_{k}}{2}2^{-k},\quad \forall k\in \mathbb{N}: a_{k}\in \{0, 2\}
+  $$
+  Therefore, f is surjective, so that $\aleph_{1} \leq{|\mathcal{C}|} \leq{\aleph_{1}.}$
+
+  Some other interesting properties is that it is a set of measure 0, i.e., it is infinitesimally small, even though it has uncountably many
+elements. It is self-similar, a sort of primitive fractals, because it is equal to two copies of itself when translated and dilated by some factor. 
+More specifically, dilating each copy by a factor of $\frac{1}{3}$ and translating it, and as a consequence, when you zoom in into a 
+part of the set, it looks identical to the whole. This can be seen from the equation given before, i.e., 
+  $$
+    C_{n}\coloneqq\displaystyle \frac{C_{n-1}}{3}\cup\biggl(\frac{2}{3}+\frac{C_{n-1}}{3}\biggr),
+  $$
+  and from here, the self-similarity follow by showing that $C\displaystyle \frac{C}{3}\cup\biggl(\frac{2}{3}+\frac{C}{3}\biggr)$.
+The Cantor set is also perfect, meaning that any point in the Cantor Set has an infinite sequence of points also in the set converging to that point.
+The proof of this statement relies on taking an element x in $\mathcal{C}$, and arbitrary $\epsilon > 0$, an $N(\epsilon)\in \mathbb{N}$ and finding a good enough M 
+so that $x\in[M, M+1]\subseteq{(x-\epsilon, x+\epsilon)}$. Then, we apply the process used on the construction of $\mathcal{C}$ to
+the interval $[M, M+1]$, removing the interval $(\frac{3M+1}{3}, \frac{3M+2}{3})$ from it, to see that if were to belong to the removed 
+interval or not, it'd be a limit point in both cases. From arbitrariness of the choices, it follow that $\mathcal{C}$ is indeed a perfect set.
+
+  Topologically speaking, the Cantor set has nice properties too. It's totally disconnected, compact, perfect, nonempty, and metrizable.
+Furthermore, any set with those properties are the Cantor Set up to homeomorphism.
 \subsection{The Motivation Problem}
+\subsubsection{Goal of the Part}
+ \paragraph{} Review the Hutchinson Attractor, give the motivation problem behind construction the Cantor Set as a random application of functions
+that converge to the Attractor, set up the main problems to be studied.
+\subsubsection{Main Text}
   As Kevin talked about last week, we can construct the Cantor Middle-Third set through a function known as the Hutchinson Attractor, denoted by B, ranging
 from the set $\mathcal{H}(M)$ of nonempty compact subsets of a metric space M to $\mathcal{H}(M)$ itself and given by the union of the images of 
 contractions in M. The way we construct it is, for instance, by applying B to a singleton set A = $\{x\}$ and using de previously defined metric $d_{H}$ to translate
@@ -344,8 +404,13 @@ On that note, to grasp what we mean by almost all sequences work, consider a seq
 quite a bit of measure theory, for the answer is, in fact, that the result holds for almost every $\omega$.
 
 \subsection{The Meaning of ``Almost Every''}
+  \subsubsection{Goals of this Part}
+  \paragraph{} We want to define $\sigma-algebras$, the foundation of what is a measure. Then, define measures properly speaking, what is a property that
+happens almost everywhere, and some probabilistc concepts, such as independence and identical distributions.
+  \subsubsection{Main Text}
   Now that the goal has been set, we can start to develop the theory needed to fully grasp it. Starting with a review of $\sigma-$algebra,
-they are the sets in which we define measures. They are sets that have closure under countable unions and complements. Formally speaking,
+they are the sets in which we define measures. They are sets that have closure under countable unions and complements. Formally speaking, 
+  
  \begin{def*}
    Given a set $\Omega$, a $\sigma-$algebra $\mathcal{F}$ is a nonempty collection of subsets of $\Omega$ that satisfy
   \begin{align*}
@@ -412,9 +477,12 @@ distributive function by
   cumulative distribution function of $X_{1},\cdots,X_{n}.\square$
  \end{def*}
 
-
 \subsection{The Topology of Cylinder Sets and Sequence Spaces}
  Regarding the topology of cylinder sets, 
+ \subsubsection{Goals of the Part}
+ \paragraph{} Here, we shall define cylinders, working with coordinates of their elemenents, define a topology for the sequence space, and define
+bases for it.
+\subsubsection{Main Text}
  \begin{def*}
   Fix integers $n _{1} < \cdots < n _{k}$ and $\alpha _{1}, \cdots, \alpha _{k}\in \{0, 1, \cdots, N-1\} $. Then, the cylinder of rank k is the set
   $$

@@ -14,6 +14,19 @@
 \contentsline {subsection}{\numberline {4.3}Perfect Set}{6}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Seminar Day 30/03/2023}{7}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Motivations}{7}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The Motivation Problem}{7}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}The Meaning of ``Almost Every''}{8}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}The Topology of Cylinder Sets and Sequence Spaces}{9}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.2}The Usual Construction of the Cantor Set}{7}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Goal of the Part}{7}{subsubsection.5.2.1}%
+\contentsline {paragraph}{}{7}{section*.3}%
+\contentsline {subsubsection}{\numberline {5.2.2}Main Text}{7}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}The Motivation Problem}{8}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Goal of the Part}{8}{subsubsection.5.3.1}%
+\contentsline {paragraph}{}{8}{section*.4}%
+\contentsline {subsubsection}{\numberline {5.3.2}Main Text}{8}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}The Meaning of ``Almost Every''}{9}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Goals of this Part}{9}{subsubsection.5.4.1}%
+\contentsline {paragraph}{}{9}{section*.5}%
+\contentsline {subsubsection}{\numberline {5.4.2}Main Text}{9}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}The Topology of Cylinder Sets and Sequence Spaces}{10}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Goals of the Part}{10}{subsubsection.5.5.1}%
+\contentsline {paragraph}{}{10}{section*.6}%
+\contentsline {subsubsection}{\numberline {5.5.2}Main Text}{11}{subsubsection.5.5.2}%

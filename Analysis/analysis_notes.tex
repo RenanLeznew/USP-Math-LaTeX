@@ -1401,5 +1401,928 @@ a = 1 + h, com h positivo, e escrever
     \item[d.2)] Se $\{a_{n}\}$ \'e limitada e $b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}-\infty$, ent\~ao $\frac{a_{n}}{b_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0.$
     \item[e)] No item (d), analise a situa\c c\~ao em que $\{a_{n}\}$ \'e eventualmente positiva e $\{b_{n}\}$ \'e eventualmente negativa.
  \end{itemize}
-\end{document}
+\newpage
 
+\section{Aula 10 - 10/04/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+ \item S\'eries;
+ \item S\'eries de n\'umeros positivos;
+ \item Testes da ra\'iz e da raz\~ao.
+ \end{itemize}
+
+\subsection{S\'eries de N\'umeros Reais}
+  S\'eries s\~ao tipos particulares de sequ\^encias que possuem suas pr\'oprias propriedades extras. Vamos come\c car com um exemplo, chamado s\'erie harm\^onica (nome derivado da m\'edia harm\^onica).
+ \begin{example}
+   Considere $s_{n} = 1 + \frac{1}{2} + \cdots + \frac{1}{n}.$ Provemos que $\{s_{n}\}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\infty.$
+   Com efeito, como $\{s_{n}\} $ \'e crescente, basta mostrar que ela \'e ilimitada: 
+  \begin{align*}
+    &s_{1} = 1\\
+    &s_{2} = 1 + \frac{1}{2} = 3\frac{1}{2}\\
+    &s_{3} = 1 + \frac{1}{2} + \frac{1}{3}\\
+    &s_{4} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} > 1 + \frac{1}{2} + \frac{1}{2} = 4\frac{1}{2}\\
+    &s_{8} = 1 + \frac{1}{2} + \underbrace{\frac{1}{3} + \frac{1}{4}}_{> \frac{1}{2}} + \underbrace{\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}}_{4\frac{1}{8}} > 1 + \frac{1}{2} + \frac{1}{2} + \frac{1}{2} = 5\frac{1}{2}\\
+    &s_{16} = s_{8} + \frac{1}{9} +\cdots + \frac{1}{16} > 5\frac{1}{2} + \frac{1}{2} = 6\frac{1}{2}.\\
+    \vdots
+  \end{align*}
+  Analisando o padr\~ao de repeti\c c\~ao desta s\'erie, chegamos em 
+    $$
+      s_{2^{n}} > (n+2)\frac{1}{2} \Rightarrow s_{2^{n+1}} > s_{2^n} + \frac{1}{2^{n}+1} + \cdots + \frac{1}{2^{n}+ 2^{n}} > (n+2)\frac{1}{2} + \frac{2^{n}}{2^{n+1}} = ((n+1)+2)\frac{1}{2}.
+    $$
+    Logo, por indu\c c\~ao, $s_{2^{k}} > (k+2)\frac{1}{2}$ para todo k natural, mostrando que $\{s_{n}\} $ n\~ao \'e limitada superiormente.
+  Portanto, $\lim_{n\to\infty}s_{n} = \infty.$ \qedsymbol
+ \end{example}
+ Consideremos a sequ\^encia $\{a_{n}\}$. A partir da sequ\^encia $\{a_{n}\} $, vamos construir a sequ\^encia das somas parciais da seguinte forma: 
+\begin{align*}
+  &s_{1} = a_{1}\\
+  &s_{2} = a_{1} + a_{2}\\
+  &s_{3} = a_{1} + a_{2} + a_{3}\\
+  &\vdots\\
+  &s_{n} = a_{1} + a_{2} + a_{3} + \cdots + a_{n}\\
+  &\cdots.
+\end{align*}
+ \begin{def*}
+  A sequ\^encia $\{s_{n}\}$ das somas paricais \'e chamada s\'erie associada a $\{a_{n}\}.$ Cada $s_{n}$ \'e chamado soma parcial da s\'erie, e cada
+ $a_{n}$ leva o nome de termo da s\'erie. As nota\c c\~oes s\~ao: 
+   $$
+   \sum\limits_{n\geq{1}}^{}a_{n},\quad \sum\limits_{}^{}a_{n},\quad \sum\limits_{n=1}^{\infty}a_{n},\quad\text{ ou } a_{1}+a_{2}+\cdots+a_{n}+\cdots.
+   $$
+ \end{def*}
+ Observe que, \`as vezes, consideraremos s\'eries que comecem em algum termo $n_{0}$ ao inv\'es do termo 1. Neste caso, escreveremos 
+ $\sum\limits_{n=n_{0}}^{\infty}a_{n}.$
+\begin{example}
+ \begin{align*}
+   &\{a_{n}\} = \{(-1)^{n+1}\}.\text{ A sequ\^encia das somas parciais ser\'a:}\\
+   &s_{1} = a_{1} = 1\\
+   &s_{2} = a_{1} + a_{2} = 1 - 1 = 0\\
+   &\vdots\\
+   &s_{n} = 0\text{ ou } 1.
+ \end{align*} 
+\end{example}
+\begin{example}
+  Construimos a s\'erie $\{a_{n}\} = \biggl\{\frac{1}{n}\biggr\}$ no exemplo anterior.
+\end{example}
+\begin{example}
+  $\{a_{n}\} = \biggl\{\frac{6}{10^{n}}\biggr\}$ \'e uma s\'erie que, quando constru\'ida, converge para $\frac{2}{3}.$
+\end{example}
+\begin{def*}
+  Diremos que uma s\'erie \'e convergente se a sequ\^encia das somas parciais \'e convergente. Caso contr\'ario, ser\'a dita divergente.
+  Se a sequ\^encia $\{s_{n}\} $ \'e convergente para S, dizemos que a s\'erie $\sum\limits_{1}^{\infty}a_{n}$ \'e convergente com soma S. $\square$
+\end{def*}
+  A soma, multiplica\c c\~ao, etc. De s\'eries \'e definida como no caso das sequ\^encias. Denotaremos s\'eries convergentes por 
+    $$
+      \sum\limits_{n=1}^{\infty}a_{n} = S = \lim_{n\to\infty}s_{n} = \lim_{n\to\infty}\biggl(\sum\limits_{k=1}^{n}a_{k}\biggr)
+    $$
+   \begin{example}
+     A s\'erie telesc\'opica \'e dada por 
+       $$
+         \sum\limits_{n=1}^{\infty}\frac{1}{n(n+1)} = 1.
+       $$
+     Observe que 
+     \begin{align*}
+       s_{n} &= \frac{1}{1.2} + \frac{1}{2.3} + \cdots + \frac{1}{n(n+1)}\\
+             &= (1-\frac{1}{2}) + (\frac{1}{2}-\frac{1}{3}) + \cdots + (\frac{1}{n} - \frac{1}{n+1})\\
+             &= 1 - \frac{1}{n+1}.
+      \end{align*}
+    Portanto, $\lim_{n\to\infty}s_{n} = \lim_{n\to\infty}(1 - \frac{1}{n+1}) = 1 - 0 = 1.$ \qedsymbol
+   \end{example}
+  \begin{example}
+   \begin{itemize}
+     \item[i)]$\sum\limits_{1}^{\infty}(-1)^{n}$ \'e divergente, visto que, para termos \'impares da soma parcial, ela vale 0, mas para termos pares,
+    ela vale 1.
+     \item[ii)]$\sum\limits_{1}^{\infty}2^{n}$ diverge, pois a soma parcial dos termos dela n\~ao \'e limitada.
+     \item[iii)]$\sum\limits_{n=1}^{\infty}\frac{1}{n}$ diverge, e recebe o nome de s\'erie harm\^onica. Aqui, $s_{n} = 1 + \frac{1}{2}+\cdots+\frac{1}{n}.$
+   \end{itemize}
+  \end{example}
+  Algumas s\'eries s\~ao importantes, pois podem ser utilizadas para obter informa\c c\~oes sobre outras atrav\'es da compara\c c\~ao, tais como a 
+  s\'erie telesc\'opica e a harm\^onica. Outra importante \'e a s\'erie geom\'etrica:
+ \begin{example}
+   Definimos ela como $\sum\limits_{n\geq{1}}^{}ar^{n-1} = a + ar + ar^{2} + \cdots$. Afirmamos que ela \'e convergente se, e s\'o se,
+  $|r| < 1$, convergindo para $\frac{a}{1-r}$. Assim, 
+    $$
+      a + ar + ar^{2} + \cdots + ar^{n} + \cdots = \frac{a}{1-r}, \quad |r| < 1.
+    $$
+    Com efeito, se r = 1, ent\~ao $s_{n} = a + a + a + \cdots + a = na,$ que tende a infinito ou menos infinito, dependendo do sinal de a, mostrando sua diverg\^encia.
+Agora, se r for diferente de 1, temos: 
+  $$
+    s_{n} = a + ar + ar^{2} + \cdots + ar^{n-1},\quad rs_{n} = ar + ar^{2} + ar^{3} + \cdots ar^{n}.
+  $$
+  Subtraindo membro a membro, obtemos 
+    $$
+      s_{n}(1-r) = a - ar^{n} = a(1-r^{n}).
+    $$
+    Portanto, $s_{n} = a \frac{1-r^{n}}{1-r} = \frac{a}{1-r} - \frac{a}{1-r}r^{n}.$ Se $|r|<1$, j\'a vimos anteriormente que
+  $r^{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0,$ tal que 
+    $$
+      \lim_{n\to\infty}s_{n} = \lim_{n\to\infty}\biggl(\frac{a}{1-r} - \frac{a}{1-r}r^{n}\biggr) = \frac{a}{1-r}.
+    $$
+    Caso $|r| > 1,$ ou r = -1, vimos anteriormente que $r^{n}$ \'e divergente, provando o que quer\'iamos. \qedsymbol
+ \end{example}
+\begin{theorem*}
+  Se $\sum\limits_{}^{}a_{n}$ \'e uma s\'erie convergente, ent\~ao $\lim_{n\to\infty}a_{n} = 0.$ A rec\'iproca \'e falsa.
+\end{theorem*}
+\begin{proof*}
+  Note que, se $\{s_{n}\}$ a sequ\^encia das somas parciais dos an's \'e convergente, temos 
+    $$
+      a_{n} = s_{n} - s_{n-1}\overbracket[0pt]{\longrightarrow}^{n\to \infty} s-s= 0,
+    $$
+    provando o resultado. Um contraexemplo da volta \'e a s\'erie harm\^onica. \qedsymbol
+\end{proof*}
+ \begin{example}
+   Exerc\'icio: $\sum\limits_{n=1}^{\infty}a_{n}$ \'e uma s\'erie convergente se, e somente se, $\sum\limits_{n=n_{0}}^{\infty}a_{n}$ \'e convergente.
+ \end{example}
+\begin{theorem*}
+  Se $a_{n}\geq{0}$ para todo n natural, $\sum\limits_{}^{}a_{n}$ \'e uma s\'erie convergente se, e somente se, a sequ\^encia das somas paricais \'e limitada.
+\end{theorem*}
+\begin{theorem*}
+  Sejam $\sum\limits_{}^{}a_{n}, \sum\limits_{}^{}b_{n}$ s\'eries de termos positivos. Se existem c positivo e $n_{0}$ natural tais que
+ $a_{n} \leq{cb_{n}}$ para todo $n\geq{n_{0}},$ ent\~ao 
+\begin{itemize}
+  \item[i)] Se $\sum\limits_{}^{}b_{n}$ \'e convergente, ent\~ao $\sum\limits_{}^{}a_{n}$ \'e convergente.
+    \item[ii)] Se $\sum\limits_{}^{}a_{n}$ \'e divergente, ent\~ao $\sum\limits_{}^{}b_{n}$ \'e divergente. 
+\end{itemize}
+\end{theorem*}
+\begin{example}
+  Se $r > 1, \sum\limits_{}^{}\frac{1}{n^{r}}$ \'e convergente. De fato, note que 
+  \begin{align*}
+    s_{2^{n}-1} &< 1 + \biggl(\frac{1}{2^{r}}+\frac{1}{3^{r}}\biggr) + \biggl(\frac{1}{4^{r}} + \frac{1}{5^{r}} + \frac{1}{6^{r}}+\frac{1}{7^{r}}\biggr) + \cdots\\
+                &+\Biggl(\frac{1}{2^{n}-2^{n-1}}+\cdots+\frac{1}{(2^{n}-2)^{r}} + \frac{1}{(2^{n}-1)^{r}}\Biggr) \\
+                &< 1 + \frac{2}{2^{r}} + \frac{4}{4^{r}} + \cdots + \frac{2^{n-1}}{2^{(n-1)r}} \\
+                &= 1 + \frac{1}{2^{r-1}} + \frac{1}{4^{r-1}} + \cdots + \frac{1}{2^{(n-1)(r-1)}}\leq{\frac{1}{1-2^{-r+1}}}.
+  \end{align*}
+\end{example}
+Como uma sequ\^encia convergente \'e equivalente a uma de Cauchy, vale o seguinte resultado:
+\begin{theorem*}
+  A s\'erie $\sum\limits_{}^{}a_{n}$ \'e convergente se, e somente se, dado $\epsilon > 0$, existe um natural N tal que 
+    $$
+      |s_{n+p} - s_{n}| = |a_{n} + \cdots + a_{n+p}| < \epsilon
+    $$
+    para todo $n\geq{N}$ e todo natural p.
+\end{theorem*}
+ \begin{def*}
+   Uma s\'erie $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente quando $\sum\limits_{}^{}|a_{n}|$ \'e convergente.$\quad\square.$
+ \end{def*}
+ Segue do crit\'erio de Cauchy que 
+\begin{theorem*}
+  Se $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente, ent\~ao $\sum\limits_{}^{}a_{n}$ \'e convergente. A volta n\~ao vale.
+\end{theorem*}
+  Com rela\c c\~ao a volta, considere a s\'erie $\sum\limits_{}^{}\frac{(-1)^{n+1}}{n}$ n\~ao \'e absolutamente convergente, mas converge. 
+  De fato, note que 
+    $$
+      s_{2} = 1 - \frac{1}{2}, s_{4} = (1-\frac{1}{2}) + (\frac{1}{3}-\frac{1}{4}), s_{6} = (1-\frac{1}{2}) + (\frac{1}{3}-\frac{1}{4}) + (\frac{1}{5}-\frac{1}{6}), \cdots
+    $$
+    Assim, $s_{2}<s_{4}<\cdots<s_{2n}<\cdots$ e $\{s_{2n}\}$ \'e crescente e limitada por 1, tal que ela converge. Por outro lado, 
+      $$
+        s_{1} = 1, s_{3} = 1 + (-\frac{1}{2} + \frac{1}{3}), s_{5} = 1 + (-\frac{1}{2}+\frac{1}{3}) + (-\frac{1}{4}+\frac{1}{5}), \cdots
+      $$ 
+      Deste forma, $s_{1} > s_{3} > s_{5} > \cdots > s_{2(n-1)} > \cdots$, ou seja, $\{s_{2(n-1)}\}$ \'e decrescente limitada, portanto convergente.
+
+      Por outro lado, $s_{2n+1}-s_{n} = \frac{1}{2n+1}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0,$ mostrando a converg\^encia da s\'erie.
+ \begin{example}
+   Exerc\'icio: Seja $\{a_{n}\}$ uma sequ\^encia infinit\'esima de termos n\~ao negativos que \'e decrescente. Mostre que $\sum\limits_{}^{}(-1)^{n}a_{n}$
+  \'e convergente.
+ \end{example}
+\begin{example}
+  Exerc\'icios: Seja $\sum\limits_{}^{}b_{n}$ uma s\'erie convergente de termos n\~ao-negativos. Se existem k positivo e $n_{0}$
+natural tais que $|a_{n}|\leq{kb_{n}}$ para todo $n\geq{n_{0}},$ ent\~ao a s\'erie $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente.
+
+  Se existem $c\in(0, 1), k > 0$ e $n_{0}$ natural tais que $|a_{n}|\leq{kc^{n}}$ para todo $n\geq{n_{0}},$ ent\~ao a s\'erie 
+ $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente.
+\end{example}
+
+\subsection{Testes da Raz\~ao e da Ra\'iz}
+ \begin{theorem*}
+   Se $\{a_{n}\}$ \'e uma sequ\^encia limitada e $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}} = c < 1$, ent\~ao $\sum\limits_{}^{}a_{n}$
+  \'e absolutamente convergente.
+ \end{theorem*}
+\begin{proof*}
+  Existe N natural tal que $\sup_{k\geq{n}}|a_{k}|^{\frac{1}{k}} < r = \frac{c+1}{2} < 1$ para todo natural n. Logo, $|a_{n}|<r^{n}$ para
+todo $n\geq{N}.$ Segue do Teorema da Compara\c c\~ao que $\sum\limits_{}^{}|a_{n}|$ \'e convergente, ou seja, $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente. \qedsymbol
+\end{proof*}
+\begin{example}
+  Se p \'e natural, ent\~ao $\sum\limits_{}^{}n^{p}a^{n}$ \'e convergente para $|a|< 1$ e divergente para $|a_{n}| \geq{1}.$ De fato,
+basta ver que $\limsup_{n\to\infty}|n^{p}a^{n}|^{\frac{1}{n}} = |a| < 1$ e aplicar o teste da ra\'iz. Para ver que a s\'erie \'e divergente 
+quando o m\'odulo de a \'e maior ou igual a 1, basta notar que a sequ\^encia dos termos da s\'erie n\~ao converge para zero neste caso. \qedsymbol
+\end{example}
+\newpage
+
+\section{Aula 11 - 12/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Teste da Raz\~ao;
+  \item Teoremas de Dirichlet, Abel e Leibniz;
+  \item S\'eries Rearranjadas.
+\end{itemize}
+\subsection{Teste da Ra\'iz e da Raz\~ao.}
+  Comecemos revisitando o Teste da Ra\'iz.
+\begin{theorem*}
+   Se $\{a_{n}\}$ \'e uma sequ\^encia limitada e $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}} = c < 1$, ent\~ao $\sum\limits_{}^{}a_{n}$
+  \'e absolutamente convergente.
+ \end{theorem*}
+\begin{proof*}
+  Existe N natural tal que $\sup_{k\geq{n}}|a_{k}|^{\frac{1}{k}} < r = \frac{c+1}{2} < 1$ para todo natural n. Logo, $|a_{n}|<r^{n}$ para
+todo $n\geq{N}.$ Segue do Teorema da Compara\c c\~ao que $\sum\limits_{}^{}|a_{n}|$ \'e convergente, ou seja, $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente. \qedsymbol
+\end{proof*}
+\begin{example}
+  Se p \'e natural, ent\~ao $\sum\limits_{}^{}n^{p}a^{n}$ \'e convergente para $|a|< 1$ e divergente para $|a_{n}| \geq{1}.$ De fato,
+basta ver que $\limsup_{n\to\infty}|n^{p}a^{n}|^{\frac{1}{n}} = |a| < 1$ e aplicar o teste da ra\'iz. Para ver que a s\'erie \'e divergente 
+quando o m\'odulo de a \'e maior ou igual a 1, basta notar que a sequ\^encia dos termos da s\'erie n\~ao converge para zero neste caso. \qedsymbol
+\end{example}
+  Como esperado, o resultado seguinte \'e o que conhecemos como Teste da Raz\~ao, e costuma ser mais simples de aplicar na maioria dos casos.
+\begin{theorem*}
+  Se $\sum\limits_{}^{}b_{n}$ \'e uma s\'erie convergente de termos positivos e $\sum\limits_{}^{}a_{n}$ \'e uma s\'erie de termos
+n\~ao-nulos tais que existe $n_{0}\in \mathbb{N}$ satisfazendo 
+  $$
+    \frac{|a_{n+1}|}{|a_{n}|} \leq{\frac{b_{n+1}}{b_{n}}},\quad \forall n\geq{n_{0}},
+  $$
+  ent\~ao $\sum\limits_{}^{}a_{n}$ converge absolutamente. Em particular, se $\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|} = c < 1,$
+tamb\'em vale que $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente.
+\end{theorem*}
+\begin{proof*}
+  De fato, segue que 
+    $$
+      \frac{|a_{n_{0}+1}|}{|a_{n_{0}}|} \leq{\frac{b_{n_{0}+1}}{b_{n_{0}}}}, \frac{|a_{n_{0}+2}|}{|a_{n_{0}+1}|} \leq{ \frac{b_{n_{0}+2}}{b_{n_{0}+1}}}, \cdots
+    $$
+    Logo, $\frac{|a_{n_{0}+p}|}{|a_{n_{0}}|}\leq{\frac{b_{n_{0}+p}}{b_{n_{0}}}}$ e o resultado segue usando o Teorema da Compara\c c\~ao. Por
+    fim, o caso particular segue tomando $b_{n} = c^{n}$. \qedsymbol
+\end{proof*}
+\begin{example}
+  Provemos que $\sum\limits_{}^{}\frac{n!}{n^{n}}a^{n}$ \'e convergente para $|a|<e.$ Com efeito, note que, para a n\~ao-nulo, 
+    $$
+      \frac{\biggl|\frac{(n+1)!}{(n+1)^{(n+1)}}a^{(n+1)}\biggr|}{|\frac{n!}{n^{n}}a^{n}|} = \frac{1}{(1+\frac{1}{n})^{n}}|a|\overbracket[0pt]{\longrightarrow}^{n\to \infty}\frac{|a|}{e}.
+    $$ 
+    O resultado agora segue do Teste da Raz\~ao.
+\end{example}
+\begin{example}
+  Considere a s\'erie $\sum\limits_{}^{}a_{n}$ com $a_{2n}=2a^{n-1}, a_{2n-1} = a^{2(n-1)}.$ Vamos aplicar o crit\'erio da ra\'iz
+e o crit\'erio da raz\~ao para esta s\'erie. Caso n = 2k, temos 
+  $$
+    \frac{|a_{2k+1}|}{|a_{2k}|} = \frac{|a^{2k}|}{2|a^{2k-1}|} = \frac{|a|}{2}.
+  $$
+  Agora, se n = 2k-1, 
+    $$
+      \frac{|a_{2k}|}{|a_{2k-1}|} = \frac{2|a^{2k-1}|}{|a^{2(k-1)}|} = 2|a|.
+    $$
+    Segue que $\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|} = 2|a|.$ Por outro lado, $\sqrt[n]{a_{n}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}|a|.$
+Desta forma, o teste da ra\'iz nos d\'a converg\^encia para $|a|<1$, enquanto que o teste da raz\~ao nos d\'a converg\^encia apenas
+para $|a|<\frac{1}{2}.$
+\end{example}
+O exemplo anterior indica uma diferen\c ca no n\'ivel de efic\'acia dos testes. De fato, o Teste da Ra\'iz \'e mais eficiente do que 
+o teste da raz\~ao, como segue 
+\begin{theorem*}
+  Seja $\{a_{n}\}$ uma sequ\^encia limitada de n\'umeros reais n\~ao-nulos. Ent\~ao, 
+    $$
+      \liminf_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}\leq{\liminf_{n\to\infty}}|a_{n}|^{\frac{1}{n}}\leq{\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}}}\leq{\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}}.
+    $$
+\end{theorem*}
+\begin{proof*}
+  Mostremos primeiramente que $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}}\leq{\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}}.$
+Se n\~ao, seja $c>0$ com $\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}<c<\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}}.$ Logo,
+existe um natural N tal que 
+  $$
+    \frac{|a_{n+1}|}{|a_{n}|}<c,\quad \forall n\geq{N}.
+  $$
+  Disto segue que $|a_{N+p}|<|a_{N}|c^{-N}c^{N+p}$ para todo p natural n\~ao-nulo. Sendo assim, $c < \limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}}\leq{c}$,
+uma contradi\c c\~ao. 
+
+  Para ver que $\liminf_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}\leq{\liminf_{n\to\infty}|a_{n}|^{\frac{1}{n}}},$ procedemos de modo similar.
+Comece supondo que existe um $c > 0$ tal que $\liminf_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|}> c > \liminf_{n\to\infty}|a_{n}|^{\frac{1}{n}}.$
+Logo, existe N natural tal que $\frac{|a_{n+1}|}{|a_{n}|}>c$ para todo $n\geq{N},$ e $|a_{N+p}|>|a_{N}|c^{-N}c^{N+p}$ para todo
+ $p\in \mathbb{N}^{*}.$ Portanto, temos uma contradi\c c\~ao, pois $c > \liminf_{n\to\infty}|a_{n}|^{\frac{1}{n}} \geq{c}.$ \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Seja $\{a_{n}\}$ uma sequ\^encia limitada de n\'umeros reais n\~ao-nulos. Se existe o limite $\lim_{\to}\frac{|a_{n+1}|}{|a_{n}|}$,
+ent\~ao o limite $\lim_{\to}|a_{n}|^{\frac{1}{n}}$ tamb\'em existe e ambos t\^em o mesmo valor.
+\end{crl*}
+\begin{example}
+  Vamos mostrar que 
+    $$
+      \lim_{\to}\frac{n}{(n!)^{\frac{1}{n}}}=e.
+    $$
+  De fato, seja $a_{n}=\frac{n^{n}}{n!}$ e note que $(a_{n})^{\frac{1}{n}} = \frac{n}{(n!)^{\frac{1}{n}}}.$ Note tamb\'em que 
+    $$
+      \frac{a_{n+1}}{a_{n}} = \frac{\frac{(n+1)^{n+1}}{(n+1)!}}{\frac{n^{n}}{n!}} = \frac{(n+1)^{n}}{n^{n}} = (1+\frac{1}{n})^{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}e.
+    $$
+\end{example}
+  A seguir, apresentaremos tr\^es resultados, o Teorema de Dirichlet sobre o produto de s\'eries, o de Abel sobre o produto de
+uma s\'erie por uma sequ\^encia n\~ao-crescente, e o de Leibniz.
+\begin{theorem*}
+  Seja $\sum\limits_{}^{}a_{n}$ uma s\'erie e $s_{n} = a_{1} + \cdots + a_{n},$ sendo n um natural, as suas somas parciais.
+  Se $\{s_{n}\}$ \'e limitada e $\{b_{n}\}$ \'e uma sequ\^encia de n\'umeros reais positivos que \'e n\~ao-crescente e infinit\'esima,
+ent\~ao $\sum\limits_{}^{}a_{n}b_{n}$ \'e convergente.
+\end{theorem*}
+\begin{proof*}
+  Segue por indu\c c\~ao que, se $s_{n} = a_{1}+\cdots+a_{n},$
+  \begin{align*}
+    \sum\limits_{k=1}^{n}a_{k}b_{k} &= a_{1}b_{1} + a_{2}b_{2}+\cdots + a_{n}b_{n}\\
+                                    &= s_{1}(b_{1}-b_{2})+s_{2}(b_{2}-b_{3})+\cdots+s_{n-1}(b_{n-1}-b_{n})+s_{n}b_{n}\\
+                                    &=\sum\limits_{k=1}^{n-1}s_{k}(b_{k}-b_{k+1}) + s_{n}b_{n}.
+  \end{align*}
+  Seja $M=\sup{\{|s_{n}|:n\in \mathbb{N}\}}.$ Como $\sum\limits_{}^{}(b_{n}-b_{n+1})$ \'e uma s\'erie convergente de n\'umero reais n\~ao-negativos
+e $s_{n}b_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0,$ temos 
+  $$
+    |s_{k}(b_{k}-b_{k+1})| \leq{M(b_{k}-b_{k+1})},
+  $$
+  segue que $\sum\limits_{n=1}^{\infty}s_{n}(b_{n}-b_{n+1})$ \'e convergente e que $\sum\limits_{}^{}a_{n}b_{n}$ \'e convergente. \qedsymbol
+\end{proof*}
+\begin{example}
+  Para cada n\'umero real x que n\~ao \'e m\'ultiplo inteiro de $2\pi$, as s\'eries $\sum\limits_{}^{}\frac{\cos{(nx)}}{n}$ e $\sum\limits_{}^{}\frac{\sin{(nx)}}{n}$
+  s\~ao convergentes. De fato, vamos utilizar um resultado dos n\'umeros complexos, que afirma que 
+    $$
+    e^{i\theta} = \cos{(\theta)} + i\sin{(\theta)},\quad i\text{ \'e tal que} i^{2} = -1.
+    $$
+    Sendo assim, para ver que $\{\sum\limits_{k=1}^{n}\cos{(nx)}\}(\text{ ou }\{\sum\limits_{k=1}^{n}\sin{(nx)}\}$ \'e limitada
+  utilizamos que 
+    $$
+      1 + e^{ix} + e^{i2x} + \cdots + e^{inx} = \frac{1 - e^{i(n+1)x}}{1-e^{ix}},
+    $$
+    e tomamos parte real e a parte imagin\'aria. O resultado agora segue do Teorema de Dirichlet. \qedsymbol
+\end{example}
+\begin{theorem*}
+  Seja $\sum\limits_{}^{}a_{n}$ uma s\'erie convergente e $\{b_{n}\}$ uma sequ\^encia n\~ao crescente de n\'umeros positivos
+(n\~ao necessariamente infinit\'esima). Ent\~ao, a s\'erie $\sum\limits_{}^{}a_{n}b_{n}$ \'e convergente.
+\end{theorem*}
+\begin{proof*}
+  Seja $c = \lim_{n\to\infty}b_{n} = \inf_{n\in \mathbb{N}}b_{n}$ e $s_{n} = a_{1} + \cdots + a_{n}.$ Note que 
+    $$
+      \sum\limits_{k=1}^{n}a_{k}b_{k} = \sum\limits_{k=1}^{n}a_{k}(b_{k}-c) + c \sum\limits_{k=1}^{n}a_{k}.
+    $$
+  Agora, pelo Teorema de Dirichlet, $\sum\limits_{n=1}^{\infty}a_{n}(b_{n}-c)$ \'e convergente com soma s. Portanto, 
+    $$
+    \sum\limits_{}^{}a_{n}b_{n} = s + c \sum\limits_{}^{}a_{n}.\quad\text{\qedsymbol}
+    $$
+\end{proof*}
+\begin{theorem*}
+  Seja $\{b_{n}\}$ uma sequ\^encia n\~ao crescente e infinit\'esima. Ent\~ao, a s\'erie $\sum\limits_{}^{}(-1)^{n}b_{n}$ \'e convergente.
+\end{theorem*}
+\begin{proof*}
+  Observe que, no caso em que $a_{n} = (-1)^{n}$ e $s_{n} = a_{1} + \cdots + a_{n},$ ent\~ao $\{s_{n}\}$ \'e limitada. Com isso,
+  utilizando o Teorema de Dirichlet, $\sum\limits_{}^{}(-1)^{n}b_{n}$ \'e, portanto, convergente. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 12 - 14/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Entender s\'eries de pot\^encias;
+  \item Estudar s\'eries rearranjadas.
+\end{itemize}
+
+\subsection{Testes da Raz\~ao e Ra\'iz Modificados.}
+  Come\c camos, antes, com outros exemplos com rela\c c\~ao \`a \'ultima aula. O primeiro \'e 
+ \begin{theorem*}
+   Seja $\{a_{n}\}$ uma sequ\^encia n\~ao-crescente de n\'umeros reais n\~ao-negativos. A S\'erie $\sum\limits_{}^{}a_{n}$ converge se, e somente se,
+  a s\'erie $\sum\limits_{}^{}2^{k}a_{2^{k}}$ \'e convergente.
+ \end{theorem*}
+ \begin{proof*}
+   Sejam $\{s_{n}\}, \{s_{n}^{*}\}$ as sequ\^encias das somas parciais de $\sum\limits_{}^{}a_{n}$ e $\sum\limits_{}^{}2^{k}a_{2^{k}}.$
+   Ent\~ao, para todo n natural, 
+   \begin{align*}
+     s_{n} = a_{1} + a_{2} + \cdots + a_{n} \leq{}s_{2^{n}-1} &= a_{1} + (a_2 + a_{3}) + (a_{4}+a_{5}+a_{6}+a_{7})+\cdots+(a_{2^{n-1}}+\cdots+a_{2^{n}-1})
+                                                              &\leq{s_{n-1}^{*}}\leq{s_{n}^{*}.}
+   \end{align*}
+   Logo, se $\{s_{n}^{*}\}$ \'e limitada, segue que $\{s_{n}\}$ \'e limitada.
+
+   Agora, note que, para todo n natural, 
+  \begin{align*}
+    s_{2^{n}}=a_{1} + a_{2} + \cdots + a_{2^{n}} &\geq{} \frac{a_{1}}{2} + a_{2} + (a_{3}+a_{4}) + (a_{5}+a_{6}+a_{7}+a_{8})+\cdots+(a_{2^{n-1}+1}+\cdots+a_{2^{n}})\\
+                                                 &\geq{}\frac{a_{1}}{2}+a_{2}+2a_{4} + 4a_{8}+\cdots+2^{n-1}a_{2^{n}}=\frac{1}{2}s_{n}^{*}.
+  \end{align*}
+  Portanto, se $\{s_{n}\}$ \'e limitada, segue que $\{s_{n}^{*}\}$ \'e limitada. \qedsymbol
+ \end{proof*}
+ \begin{example}
+   Do resultado anterior, a s\'erie $\sum\limits_{}^{}\frac{1}{n^{p}}$ \'e convergente se, e s\'o se, a s\'erie $\sum\limits_{}^{}\frac{2^{n}}{2^{np}} = \sum\limits_{}^{}2^{(1-p)n}$ \'e
+se, somente se, $p>1.$
+ \end{example}
+ \begin{example}
+   A s\'erie $\sum\limits_{n=2}^{\infty}\frac{1}{n(\log{(n)})}^{p}$ \'e convergente se, e somente se, $p>1.$ Com efeito, segue do resultado anterior que 
+     $$
+     \sum\limits_{n=1}^{\infty}\frac{2^{n}}{2^{n}(\log{(2^{n})})^{p}} = \sum\limits_{n=1}^{\infty}\frac{1}{\log{2}n^{p}}
+     $$
+     \'e convergente se, e somente se, $p>1$.
+ \end{example}
+ \begin{example}
+   Vamos provar que e n\~ao \'e racional. De fato, seja $s_{n} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{n!}.$ Assim, 
+  \begin{align*}
+    0 < e - s_{n} &= \frac{1}{(n+1)!}+\frac{1}{(n+2)!} + \frac{1}{(n+3)!} + \cdots \\
+                  &< \frac{1}{(n+1)!}[1+\frac{1}{n+1}+\frac{1}{(n+1)^{2}}+ \frac{1}{(n+1)^{3}}+\cdots]
+                  &= \frac{1}{(n+1)!}\frac{1}{1-\frac{1}{n+1}} = \frac{1}{nn!}.
+  \end{align*}
+  Agora, suponha que existem inteiros postivios p e q tais que $e = \frac{p}{q}$. Temos 
+    $$
+      0 < q!(e-s_{q})<\frac{1}{q}\leq{1}.
+    $$
+  Por hip\'otese, $q!e$ \'e um inteiro e, como $q!s_{q}$ tamb\'em \'e inteiro, segue que $q!(e-s_{q})$ \'e inteiro em $(0,1)$ e temos
+uma contradi\c c\~ao.
+ \end{example}
+ O exemplo a seguir ilustra um caso em que o teste da raz\~ao n\~ao se aplica, mas o teste da ra\'iz indica converg\^encia.
+ \begin{example}
+   Considere a s\'erie $\{a_{n}\}$ com $a_{2n} = \frac{1}{2^{n}}$ e $a_{2n-1}= \frac{1}{3^{n}}.$ Note que 
+     $$
+     \frac{a_{2n}}{a_{2n-1}} = \biggl(\frac{3}{2}\biggr)^{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}+\infty\quad\text{e}\quad \frac{a_{2n+1}}{a_{2n}} = \frac{1}{3}\biggl(\frac{2}{3}\biggr)^{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0.
+     $$
+  No entanto, fazendo o teste da ra\'iz, 
+    $$
+    \sqrt[2n]{a_{2n}} = \frac{1}{\sqrt{2}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\frac{1}{\sqrt[]{2}}\quad\text{e}\quad \sqrt[2n-1]{a_{2n-1}}=\biggl(\frac{1}{3}\biggr)^{\frac{n}{2n-1}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\frac{1}{\sqrt[]{3}}.
+    $$
+  Portanto, $\limsup_{n\to\infty}\frac{a_{n+1}}{a_{n}} = +\infty$ e $\limsup_{n\to\infty}\sqrt[n]{a_{n}} = \frac{1}{\sqrt[]{2}}$. Em outras palavras,
+o teste da ra\'iz se indica converg\^encia, mas o teste da raz\~ao \'e inconclusivo. \qedsymbol
+ \end{example}
+  Agora, vamos tornar o teste da ra\'iz mais completo.
+  \begin{theorem*}
+   Se $\{a_{n}\}$ \'e uma sequ\^encia limitada e $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}} = c < 1$, ent\~ao $\sum\limits_{}^{}a_{n}$
+  \'e absolutamente convergente. Se $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}} = c > 1$, ent\~ao $\sum\limits_{}^{}a_{n}$ \'e divergente. 
+  Se c = 1, nada podemos concluir.
+ \end{theorem*}
+\begin{proof*}
+  Existe N natural tal que $\sup_{k\geq{n}}|a_{k}|^{\frac{1}{k}} < r = \frac{c+1}{2} < 1$ para todo natural n. Logo, $|a_{n}|<r^{n}$ para
+todo $n\geq{N}.$ Segue do Teorema da Compara\c c\~ao que $\sum\limits_{}^{}|a_{n}|$ \'e convergente, ou seja, $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente. \qedsymbol
+  
+  Para mostrar que, se $\limsup_{n\to\infty}|a_{n}|^{\frac{1}{n}} = c > 1$, a s\'erie diverge, considere a fun\c c\~ao $\varphi:\mathbb{N}\rightarrow \mathbb{N}$
+  estritamente crescente tal que $\{|a_{\varphi(n)}|^{\frac{1}{\varphi(n)}}\}$ converge para $c>1,$ tal que $\{|a_{\varphi(n)}|\}$
+  n\~ao converge para zero. Para ver que nada pode ser dito quando c = 1, tome as s\'eries $\sum\limits_{}^{}\frac{1}{n}, \sum\limits_{}^{}\frac{1}{n^{2}}.$
+\end{proof*}
+\begin{theorem*}
+  Se $\sum\limits_{}^{}a_{n}$ \'e uma s\'erie de termos n\~ao-nulos e $\limsup_{n\to\infty}\frac{|a_{n+1}|}{|a_{n}|} = c < 1,$ ent\~ao
+ $\sum\limits_{}^{}a_{n}$ \'e absolutamente convergente. Por\'em, se $\frac{|a_{n+1}|}{|a_{n}|}\geq{1}$ para todo $n\geq{n_{0}}, n_{0}$ algum natural,
+ ent\~ao a s\'erie diverge.
+\end{theorem*}
+
+\subsection{S\'eries de Pot\^encias.}
+\begin{def*}
+  Dada uma sequ\^encia $\{a_{n}\}$ de n\'umeros reais, a s\'erie 
+    $$
+      \sum\limits_{n=0}^{\infty}a_{n}x^{n}
+    $$
+  \'e chamada de S\'erie de Pot\^encia. Os n\'umeros $a_{n}$ s\~ao chamados de coeficientes da s\'eries e x \'e um n\'umero real.
+\end{def*}
+  Dependendo da escolha de x, a s\'erie pode convergir ou divergir, como indica o reusltado a seguir.
+ \begin{theorem*}
+   Ddada a s\'erie de pot\^encias $\sum\limits_{n=0}^{\infty}a_{n}x^{n},$ seja $\alpha = \limsup_{n\to\infty}\sqrt[n]{|a_{n}|}$ e defina 
+  \begin{align*}
+    & R = \frac{1}{\alpha}\text{ se } 0 < \alpha < \infty\\
+    & R = 0 \text{ se } \alpha = \infty\\
+    & R = \infty \text{ se } \alpha = 0.
+  \end{align*}
+ \end{theorem*}
+ Ent\~ao, $\sum\limits_{n-0}^{\infty}a_{n}x^{n}$ converge se $|x|<R$, diverge se $|x|>R$ e nada podemos afirmar de $|x|=R.$
+\begin{proof*}
+  Basta notar que $\limsup_{n\to\infty}\sqrt[n]{|a_{n}x^{n}|} = |x|\limsup_{n\to\infty}\sqrt[n]{|a_{n}|} = |x|\alpha$ e aplicar
+o teste da ra\'iz. \qedsymbol
+\end{proof*}
+ Vamos analisar a converg\^encia das s\'eries de pot\^encias.
+\begin{example}
+ \begin{itemize}
+   \item $\sum\limits_{}^{}n^{n}x^{n}, R = 0. $
+   \item $\sum\limits_{}^{}\frac{n^{n}}{n!}x^{n}, R = e^{-1}.$ Com efeito, segue de 
+     $$
+        \sqrt[n]{\frac{n^{n}}{n!}} = \frac{n}{\sqrt[]{n!}}\overbracket[0pt]{\longrightarrow}^{n\to \infty}e.
+     $$
+    \item $\sum\limits_{}^{}\frac{x^{n}}{n!}, R = \infty.$
+    \item $\sum\limits_{}^{}x^{n}, R=1.$
+    \item $\sum\limits_{}^{}\frac{x^{n}}{n^{p}}, p > 0, R = 1.$
+ \end{itemize}
+\end{example}
+
+\subsection{S\'eries Rearranjadas}
+  Seja $\sum\limits_{}^{}a_{n}$ uma s\'erie. Defina as sequ\^encias 
+ \begin{itemize}
+   \item[+)] $\{a_{n}^{+}\}$ com $a_{n}^{+} = a_{n}$ se $a_{n} > 0$ e $a_{n}^{+}=0$ se $a_{n}\leq{0}.$
+   \item[-)] $\{a_{n}^{-}\}$ com $a_{n}^{-} = -a_{n}$ se $a_{n} < 0$ e $a_{n}^{-}=0$ se $a_{n}\geq{0}.$
+ \end{itemize}
+ As sequ\^encias $\{a_{n}^{+}\}$ e $\{a_{n}^{-}\}$ ser\~ao chamadas de parte positiva e parte negativa de $\{a_{n}\}$. Sendo assim,
+ $|a_{n}|=a_{n}^{+}+a_{n}^{-}, a_{n} = a_{n}^{+}-a_{n}^{-}$ e $|a_{n}| = a_{n} + 2a_{n}^{-}.$
+
+ Note que, se $\sum\limits_{}^{}a_{n}$ converge absolutamente, ent\~ao $\sum\limits_{}^{}a_{n}^{+}$ e $\sum\limits_{}^{}a_{n}^{-}$
+ s\~ao convergentes. A rec\'iproca tamb\'em vale.
+
+ Al\'em disso, se $\sum\limits_{}^{}a_{n}$ \'e convergente, mas n\~ao absolutamente, segue que ambas $\sum\limits_{}^{}a_{n}^{+}$ e $\sum\limits_{}^{}a_{n}^{-}$ divergem.
+\begin{def*}
+  Seja $\{a_{n}\}$ a sequ\^encia dos termos da s\'erie $\sum\limits_{}^{}a_{n}, \xi:\mathbb{N}\rightarrow \mathbb{N}$
+uma bije\c c\~ao e $b_{n} = a_{\xi(n)}.$ A s\'erie $\sum\limits_{}^{}b_{n}$ \'e chamada uma s\'erie rearranjada de $\sum\limits_{}^{}a_{n}.$
+\end{def*}
+\begin{example}
+  Considere a s\'erie $\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}$. Mostraremos que esta s\'erie converge. Se s \'e a sua soma, temos 
+ \begin{align*}
+   &s = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \frac{1}{7} -\cdots\\
+   &\frac{1}{2}s = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{2n} = 0 + \frac{1}{2} + 0 - \frac{1}{4} + 0 + \frac{1}{6} + 0 - \frac{1}{8} + 0 + \cdots\\
+   &\frac{3}{2}s = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n} = 1 + 0 + \frac{1}{3} - \frac{1}{2} + \frac{1}{5} + 0 + \frac{1}{7}-\frac{1}{4}+\frac{1}{9}+0+\cdots
+ \end{align*}
+ Logo, uma s\'erie rearranjada pode ter soma distinta da s\'erie original. 
+\end{example}
+\begin{theorem*}
+  Toda s\'erie rearranjada de uma s\'erie absolutamente convergente \'e convergente com mesma soma.
+\end{theorem*}
+\begin{proof*}
+  Se $a_{n}\geq{}0$, ent\~ao para todo n natural, $\xi:\mathbb{N}\rightarrow \mathbb{N}$ \'e uma bije\c c\~ao e $b_{n} = a_{\xi(n)}$.
+  Dado n natural, seja $m_{n} = \max{\{\xi(1), \cdots, \xi(n)\}}$, ent\~ao 
+    $$
+      \sum\limits_{k=1}^{n}b_{k} \leq{\sum\limits_{k=1}^{m_{n}}a_{k}\leq{\sum\limits_{n=1}^{\infty}a_{n}}}
+    $$
+  e $\sum\limits_{}^{}b_{n}$ \'e convergente com $\sum\limits_{n=1}^{\infty}b_{n}\leq{\sum\limits_{n=1}^{\infty}a_{n}}$. Por outro lado,
+  dado um natural m, seja $n_{m}=\max{\{\xi^{-1}(1), \cdots, \xi^{-1}(m)\}}$. Sendo assim, 
+    $$
+      \sum\limits_{k=1}^{m}a_{k}\leq{\sum\limits_{k=1}^{n_{m}}b_{k}\leq{\sum\limits_{n=1}^{\infty}b_{k}}}
+    $$
+  e $\sum\limits_{n=1}^{\infty}a_{n}\leq{\sum\limits_{n=1}^{\infty}b_{n}.}$ Para o caso geral, note que 
+    $$
+      \sum\limits_{n=1}^{\infty}a_{n} = \sum\limits_{n=1}^{\infty}a_{n}^{+} - \sum\limits_{n=1}^{\infty}a_{n}^{-}
+    $$
+  de forma que 
+    $$
+      \sum\limits_{n=1}^{\infty}a_{n} = \sum\limits_{n=1}^{\infty}a_{n}^{+} - \sum\limits_{n=1}^{\infty}a_{n}^{-} = \sum\limits_{n=1}^{\infty}b_{n}^{+}-\sum\limits_{n=1}^{\infty}b_{n}^{-} = \sum\limits_{n=1}^{\infty}b_{n}.
+    $$
+  Portanto, a s\'erie rearranjada converge para a soma da s\'erie original. \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se $\sum\limits_{}^{}a_{n}$ \'e convergente e n\~ao \'e absolutamente convergente, ent\~ao  
+ \begin{itemize}
+   \item[i)] Dado c real, existe bije\c c\~ao $\xi^{c}:\mathbb{N}\rightarrow \mathbb{N}$ tal que $\sum\limits_{n=1}^{\infty}a_{\xi^{c}(n)} = c$
+     \item[ii)] Existem bije\c c\~oes $\xi_{+}$ e $\xi_{-}$ tais que $\sum_{n=1}^{\infty}a_{\xi_{+}(n)}$ diverge para $+\infty$
+  e $\sum\limits_{n=1}^{\infty}a_{\xi_{-}(n)}$ diverge para $-\infty.$
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  Seja $\{p_{n}\}$ a sequ\^encia dos termos positivos de $\{a_{n}\}$ na ordem em que eles aparecem e $\{q_{n}\}$ a sequ\^encia dos termos 
+  n\~ao positivos de $\{a_{n}\}$ na ordem em que eles aparecem. Sabemos que $\sum\limits_{}^{}p_{n}$ e $\sum\limits_{}^{}q_{n}$ divergem.
+Dado c real, seja $n_{1}$ o primeiro inteiro tal que 
+  $$
+    \sum\limits_{n=1}^{n_{1}}p_{n} > c.
+  $$
+  Em seguida escolha $n_{2}$ o menor inteiro tal que 
+    $$
+      \sum\limits_{n=1}^{n_{1}}p_{n} + \sum\limits_{n=1}^{n_{2}}q_{n} < c
+    $$
+  e prossiga com este processo. Desta forma, para todo $k > 1,$ 
+    $$
+      0 < \sum\limits_{n=1}^{n_{1}}p_{n} - \sum\limits_{n=1}^{n_{2}}q_{n} + \cdots - \sum\limits_{n=1}^{n_{2k-2}}q_{n} + \sum\limits_{n=1}^{n_{2k-1}}p_{n} - c \leq{p_{n_{2k-1}}}
+    $$
+    e 
+      $$
+        q_{n_{2k}}\leq{\sum\limits_{n-1}^{n_{1}}pn} - \sum\limits_{n=1}^{n_{2}}q_{n} + \cdots + \sum\limits_{n=1}^{n_{2k-1}}p_{n} - \sum\limits_{n=1}^{n_{2k}}q_{n} - c < 0.
+      $$
+    Agora, como $q_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0$ e $p_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}0,$ o resultado segue.
+    Por fim, um processo an\'alogo prova a segunta parte do resultado. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 13 - 17/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Limites e Continuidade de Fun\c c\~oes;
+  \item Limites laterais.
+\end{itemize}
+\subsection{Intui\c c\~ao e Exemplos Iniciais}
+Entender continuidade e limites é fundamental no cálculo. Aqui estão alguns exemplos que podem ajudar a esclarecer esses conceitos:
+
+\begin{enumerate}
+    \item Continuidade: \\
+    Uma função é contínua em um ponto se o seu valor nesse ponto é igual ao limite da função quando se aproxima desse ponto. Em outras palavras, não há quebras ou saltos no gráfico da função. Um exemplo clássico de uma função contínua é a função quadrática:
+    
+    \begin{equation*}
+        f(x) = x^2
+    \end{equation*}
+    
+    Essa função é contínua para todos os números reais, pois não há quebras ou saltos no gráfico.
+
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$x$},
+        ylabel={$f(x)=x^2$},
+        domain=-3:3,
+        samples=100,
+        axis lines=middle
+    ]
+    \addplot[blue, thick] {x^2};
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \item Limites: \\
+    Um limite é o valor que uma função se aproxima quando a entrada (valor x) se aproxima de um determinado valor. O conceito de limites nos ajuda a entender o comportamento das funções próximas aos pontos onde elas não são definidas ou não são contínuas.
+    
+    Exemplo 1: Limite simples \\
+    Considere a função:
+    
+    \begin{equation*}
+        g(x) = 3x + 2
+    \end{equation*}
+    
+    Encontre o limite quando x se aproxima de 1:
+    
+    \begin{equation*}
+        \lim_{x \to 1} (3x + 2)
+    \end{equation*}
+    
+    Como essa é uma função linear e contínua em todos os lugares, o limite é o mesmo que o valor da função no ponto:
+    
+    \begin{align*}
+        g(1) &= 3(1) + 2 \\
+        &= 5
+    \end{align*}
+    
+    Portanto, $\lim_{x \to 1} (3x + 2) = 5$.
+
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$x$},
+        ylabel={$g(x)=3x+2$},
+        domain=-2:3,
+        samples=100,
+        axis lines=middle
+    ]
+    \addplot[red, thick] {3*x+2};
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+    
+    Exemplo 2: Limite de uma função com descontinuidade \\
+    Considere a função:
+    
+    \begin{equation*}
+        h(x) = \frac{x^2 - 1}{x - 1}
+    \end{equation*}
+    
+    Essa função não é definida para x = 1, mas ainda podemos encontrar o limite quando x se aproxima de 1:
+    
+    \begin{equation*}
+        \lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+    \end{equation*}
+    
+    Observe que $(x^2 - 1)$ pode ser fatorado como $(x + 1)(x - 1)$. Então, obtemos:
+    
+    \begin{equation*}
+        \lim_{x \to 1} \frac{(x + 1)(x - 1)}{x - 1}
+    \end{equation*}
+    
+    Agora, podemos cancelar os termos $(x - 1)$:
+    
+    \begin{equation*}
+        \lim_{x \to 1} (x + 1)
+    \end{equation*}
+    
+    Neste ponto, podemos substituir x = 1:
+
+    \begin{align*}
+        1 + 1 &= 2
+    \end{align*}
+    
+    Portanto, $\lim_{x \to 1} (h(x)) = 2$, embora a função em si não seja definida para x = 1.
+
+    \begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$x$},
+        ylabel={$h(x)=\frac{x^2 - 1}{x - 1}$},
+        domain=-3:3,
+        ymin=-5, ymax=5,
+        samples=100,
+        axis lines=middle,
+        restrict y to domain=-5:5
+    ]
+    \addplot[green, thick] {((x^2 - 1)/(x - 1))};
+    \addplot[only marks, mark=o, mark options={scale=1.5}] coordinates {(1,2)};
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+Esses exemplos demonstram como a continuidade e os limites nos ajudam a analisar e entender o comportamento das funções, mesmo em pontos onde elas podem não ser definidas. 
+A seguir, formalizaremos essas ideias e provaremos algumas propriedades.
+
+\subsection{Limites de Fun\c c\~oes}
+ \begin{def*}
+   Seja D um subconjunto de $\mathbb{R}, f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de acumula\c c\~ao de D. Diremos que
+  o limite de f(x) quando x tende a p \'e L se, dado $\varepsilon > 0,$ existe um $\delta > 0$ tal que 
+    $$
+    x\in D\text{ e } 0 < |x-p| < \delta, \Rightarrow |f(x) - L | < \varepsilon.
+    $$
+    Em outras palavras, dado $\varepsilon > 0$, existe $\delta = \delta(\varepsilon, p) > 0$ tal que 
+      $$
+        f(D\cap(p-\delta, p+\delta)/a)\subseteq{(L-\varepsilon, L+\varepsilon).} \square
+      $$
+ \end{def*}
+ Note que, se n\~ao existe um n\'umero real L tal que $\lim_{x\to p}= L,$ ent\~ao diremos que o limite n\~oa existe. Al\'em disso,
+o ponto p n\~ao precisa ser um ponto do dom\'inio D e, mesmo que perten\c ca, o valor de f em p n\~ao \'e importante para a defini\c c\~ao.
+Apenas os valores de f em pontos arbitrariamente pr\'oximos a p s\~ao importantes para a defini\c c\~ao.
+\begin{theorem*}
+  Seja $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de acumula\c c\~ao de D. O limite de f(x) quando x tende a p,
+  caso existe, \'e \'unico, e ser\'a dneotado por 
+    $$
+    \lim_{x\to p}f(x) = L.
+    $$
+\end{theorem*}
+\begin{proof*}
+  De fato, se L e L' s\~ao limites de f(x) quando x tende a p, dado $\varepsilon > 0$, existe $\delta > 0$ tal que 
+    $$
+      x\in D, 0 < |x-p| < \delta \Rightarrow |f(x)- L| < \varepsilon, |f(x) - L'|< \varepsilon.
+    $$
+    Logo, dado $\varepsilon > 0$, com a escolha de $\delta$ acima e x em D satisfazendo $0 <|x-p|<\delta$, temos 
+      $$
+        |L - L'| = |L -f(x) + f(x) - L'| \leq{} |L - f(x)| + |f(x) - L'| < 2\varepsilon.
+      $$
+    Portanto, como $\varepsilon$ \'e arbitr\'ario, L = L'. \qedsymbol
+\end{proof*}
+  Quando nos referimos a uma fun\c c\~ao, fica impl\'icito que ela tem um dom\'inio especificado. Dada a fun\c c\~ao
+  $f:D\rightarrow \mathbb{R}$ e $D'\subseteq{D},$ denotaremos por $f_{|_{D'}}:D'\rightarrow \mathbb{R}$ a fun\c c\~ao
+  definida por $f_{|_{D'}}(x) = f(x)$ para x em D'. Segue dessa defini\c c\~ao que 
+ \begin{theorem*}
+   Seja D um subconjunto dos reais, $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao, D' um subconjunto de D e p um ponto de aucmula\c c\~ao de D'.
+  Se $\lim_{x\to p}f(x) = L,$ ent\~ao $\lim_{x\to p}f_{|_{D'}}(x) = L.$
+ \end{theorem*}
+\begin{theorem*}
+  Seja $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao, D' e D'' subconjuntos de D e p um n\'umero real que \'e ponto de acumula\c c\~ao
+de D' e de D''. 
+ \begin{itemize}
+   \item[i)] Se um dos limites $\lim_{x\to p}f_{|_{D'}}(x)$ ou $\lim_{x\to p}f_{|_{D''}}(x)$ n\~ao existe, ou ambos existem,
+     mas s\~ao diferentes, ent\~ao o limite $\lim_{x\to p}f(x)$ n\~ao existe.
+   \item[ii)] Se $(D'\cup D'')/\{p\} = D/\{p\}$, o limite $\lim_{x\to p}f(x)$ existe se, e somente se, $\lim_{x\to p}f_{|_{D'}}(x)$ e
+$\lim_{x\to p}f_{|_{D''}}(x)$ existem e t\^em o mesmo valor.
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  A prova da primeira parte segue direto. Para a segunda, existe $\lim_{x\to p }f(x) = L$ se, e somente se, dado $\varepsilon > 0$,
+existe $\delta > 0$ tal que 
+  $$
+    x\in D, 0 < |x-p| < \delta \Rightarrow |f(x)-L| < \varepsilon,
+  $$
+  o que equivale a dizer que, dado $\varepsilon > 0$, existe $\delta > 0$ tal que 
+    $$
+      x\in D', 0 < |x-p| < \delta \Rightarrow |f(x) - L|< \varepsilon \Rightarrow |f(x)_{|_{D'}}|<\varepsilon
+    $$
+  e
+  $$
+      x\in D'', 0 < |x-p| < \delta \Rightarrow |f(x) - L|< \varepsilon \Rightarrow |f(x)_{|_{D''}}|<\varepsilon
+  $$
+  Portanto, $\lim_{x\to p}f_{|_{D''}}(x) = \lim_{x\to p}f_{|_{D'}}(x)$. \qedsymbol
+\end{proof*}
+\begin{def*}
+  Se D \'e um subconjunto de $\mathbb{R}$, diremos que p real \'e um ponto de acumula\c c\~ao \`a direita de D se \'e um ponto
+  de acumula\c c\~ao de $D_{p}^{+} = D\cap{(p, \infty)}$. Seja $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de
+  acumula\c c\~ao \`a direita de D. O limite de f(x) quando x tende a p pela direita \'e 
+    $$
+      \lim_{x\to p^{+}}f(x)\coloneqq \lim_{x\to p}f_{|_{D_{p}^{+}}}(x).
+    $$
+  Define-se analogamente limite de f(x) quando x tende a pela esquerda e ponto de acumula\c c\~ao \`a esquerda.
+\end{def*}
+\begin{crl*}
+  Seja $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de acumula\c c\~ao \`a direita e \`a esquerda de D. Ent\~ao, 
+    $$
+      \lim_{x\to p}f(x)
+    $$
+    existe se, e somente se, os limites laterais existem e s\~ao iguais.
+\end{crl*}
+\begin{theorem*}
+  Seja D subconjunto real e $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao. Tome p como um ponto de acumula\c c\~ao de D. Se
+  existe $\lim_{x\to p}f(x) - L$, ent\~ao f \'e limitada em uma vizinha\c ca de p, i.e., existem $M>0$ e $\delta > 0$ tais que 
+  se x pertence a D e $0 <|x-p| < \delta,$ ent\~ao $|f(x)|< M$
+\end{theorem*}
+\begin{proof*}
+  Existem $\delta > 0$ tal que se x pertence a D e $0<|x-p|<\delta,$ ent\~ao $|f(x)-L|<1.$ Logo, 
+    $$
+      |f(x)| \leq{|f(x)-L| + |L|} \leq{1 + |L| = M},
+    $$
+\end{proof*}
+\begin{theorem*}
+  Seja $D\subseteq{\mathbb{R}}, f, g, h:D\rightarrow \mathbb{R}$ fun\c c\~oes e p um ponto de acumula\c c\~ao de D. Se
+  para todo x em D diferente de p, $f(x)\leq{g(x)}\leq{h(x)}$ e $\lim_{x\to p}f(x) = \lim_{x\to p }h(x) = L,$ ent\~ao $\lim_{x\to p}g(x) = L.$
+\end{theorem*}
+\begin{proof*}
+  Com efeito, dado $\varepsilon > 0$, existe $\delta > 0$ tal que se x pertence a D e $0 < |x-p| < \delta,$ ent\~ao
+  $|f(x)-L|<\varepsilon, |h(x)-L|<\varepsilon.$ Logo, 
+    $$
+      L - \varepsilon < f(x) \leq{g(x)} \leq{h(x)} < L +\varepsilon, \quad \forall x\in D, 0<|x-p|<\delta.
+    $$
+  Segue que $L-\varepsilon < g(x) < L+\varepsilon,$ para todo x em D que satisfa\c ca a condi\c c\~ao. Em outras palavras, 
+    $$
+    |g(x)-L| < \varepsilon, \quad \forall x\in D, 0<|x-p|<\delta.\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{theorem*}
+  Seja D subconjunto de $\mathbb{R}, f:D\rightarrow \mathbb{R}$ e p um ponto de acumula\c c\~ao de D. Se $\lim_{x\to p}f(x) = L > 0,$
+  ent\~ao existe $\delta > 0$ tal que $f(x) > 0$ para todo x em D com $0<|x-p|<\delta.$
+\end{theorem*}
+\begin{proof*}
+  Dado $\varepsilon = \frac{L}{2}$ tal que 
+  $$
+    -\frac{L}{2} < f(x) - L < \frac{L}{2}
+  $$
+  para todo x em D, $0 < |x-p|<\delta.$ Logo, $0 <\frac{L}{2}<f(x)$ para todo x em D com $0 <|x-p|<\delta.$ \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja $D\subseteq{\mathbb{R}}, f, g:D\rightarrow \mathbb{R}<$ uma fun\c c\~ao e p um ponto de acumula\c c\~ao de D. Se existe $\delta > 0$
+  tal que $f(x)\leq{g(x)}$ para todo x em D com $0 <|x-p|<\delta$ e existe $\lim_{x\to p}f(x) = L_{g}$, ent\~ao $L_{f}\leq{L_{g}}.$
+\end{theorem*}
+\begin{proof*}
+  De fato, dado $\varepsilon > 0$, existe $\delta > 0$ tal que x pertence a D e satisfaz a propriedade, ent\~ao 
+    $$
+      L_{f} - \frac{\varepsilon}{2} \leq{f(x)}\leq{g(x)}\leq{L_{g}+\frac{\varepsilon}{2}.}
+    $$
+    Portanto, $L_{f}-L_{g}\leq{\varepsilon}$ e, como $\varepsilon > 0$ \'e abritr\'ario, o resultado segue. \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja D subconjunto real, $f:D\rightarrow \mathbb{R}$ e p ponto de acumula\c c\~ao. O limite $\lim_{x\to p}f(x)=L$ se, e s\'o se,
+  $\lim_{n\to\infty}f(x_{n})$ existe para toda sequ\^encia $\{x_{n}\}$ em $D/\{p\}$ que converge para p.
+\end{theorem*}
+\begin{proof*}
+  Se $\lim_{x\to p }f(x) = L$ e $\{x_{n}\}$ \'e uma sequ\^encia em $D/\{p\}$ com $x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}p$, dado
+  $\varepsilon > 0$, podemos encontrar $\delta > 0$ tal que $|f(x)-L|<\varepsilon$ para quaisquer $x\in D, 0<|x-p|<\delta.$
+
+  Seja N natural tal que $|x_{n}-p|<\delta$ para todo $n\geq{N}.$ Logo, $|f(x_{n})-L| < \varepsilon$ para todo $n\geq{N}.$
+  Portanto, $\lim_{n\to\infty}f(x_{n})=L.$ 
+
+  Por outro lado, note que, se $\lim_{n\to\infty}f(x_{n})$ existe para toda sequ\^encia $\{x_{n}\}$ em $D/\{p\}$ que converge
+  para p, todas as sequ\^encias $\{f(x_{n})\}$ t\^em o mesmo limite, visto que se elas n\~ao tivessem, construir\'iamos uma sequ\^encia
+  $\{x_{n}'\}$ em $D/\{p\}$ que converge para p, mas $\{f(x_{n}')\}$ n\~ao convergiria.
+
+  Agora, se $\lim_{x\to p}f(x)$ n\~ao \'e L, existe $\varepsilon > 0$ tal que para todo n natural n\~ao nulo, $x_{n}\in D, 0 <|x_{n}-p|<\frac{1}{n}$ tal 
+  que $|f(x_{n})-L|\geq{\varepsilon}$. Logo, $\lim_{n\to\infty}f(x_{n})$ n\~ao \'e L.\qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja $D\subseteq{\mathbb{R}}, f, g:D\rightarrow \mathbb{R}$ fun\c c\~oes e p um ponto de acumula\c c\~ao de D e $\lambda\in \mathbb{R}.$
+ \begin{itemize}
+   \item[i)] Se existem M e $\delta$ positivos tais que $|f(x)|\leq{M}$ para todo x em D, $0 <|x-p|<\delta$ e $\lim_{x\to p}g(x)=0,$
+     ent\~ao $\lim_{x\to p}(f \cdot g)(x) = 0.$
+     \item[ii)] Se $\lim_{x\to p}f(x) = L_{f}$ e $\lim_{x\to p}g(x) = L_{g},$ ent\~ao $\lim_{x\to p}(f + \lambda g)(x) = L_{f} + \lambda L_{g}.$
+     e $\lim_{x\to p}(f \cdot g)(x) = L_{f}L_{g},$. Al\'em disso, se $L_{g}\neq0,$ ent\~ao $\lim_{x\to p}\frac{f}{g}(x) = \frac{L_{f}}{L_{g}}.$
+ \end{itemize}
+\end{theorem*}
+\begin{theorem*}
+  Seja $D\subseteq{\mathbb{R}}, f, g:D\rightarrow \mathbb{R}$ fun\c c\~oes e p um ponto de acumula\c c\~ao de D. O limite
+  $\lim_{x\to p}f(x)$ existe se, e somente se, f \'e de Cauchy em p, i.e., dado $\varepsilon > 0$, existe $\delta > 0$ tal que
+  para x, y em D, $0<|x-p|<\delta$ e $0<|y-p|<\delta$ implica em $|f(x)-f(y)|<\varepsilon.$
+\end{theorem*}
+\begin{proof*}
+  \'E claro que se $\lim_{x\to p}f(x) = L$, ent\~ao f \'e de Cauchy em p. De fato, dado $\varepsilon > 0$, existe $\delta > 0$ 
+  tal que se x \'e um elemento de D para o qual $0<|x-p|<\delta,$ ent\~ao $|f(x)-L|<\frac{\varepsilon}{2}.$ Assim, dados
+  x, y em D satisfazendo $0<|x-p|<\delta, 0<|y-p|<\delta,$ ent\~ao 
+    $$
+      |f(x)-f(y)| = |f(x)-L+L-f(y)|\leq{|f(x)-L| + |f(y)-L|}< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
+    $$
+
+  Reciprocamente, se f \'e de Cauchy em p e $\{x_{n}\}$ \'e uma sequ\^encia em $D/\{p\}$ que converge para p, 
+  $\{f(x_{n})\}$ \'e de Cauchy e portanto convergente. Detalhando, dado $\varepsilon > 0$, existe $\delta > 0$ tal que 
+  se x, y s\~ao elementos de D, $0 < |x-p| <\delta$ e $0 < |x-p| <\delta$ implicar em $|f(x)-f(y)|<\varepsilon$,
+seja $\{x_{n}\}$ uma sequ\^encia em $D/\{p\}, x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}p$. Dado $\varepsilon > 0$
+tome $\delta$ da defini\c c\~ao de ``f \'e de Cauchy em p'' e N tal que $0<|x_{n}-p|<\delta$ para todo $n\geq{N}.$ Ent\~ao, 
+  $$
+  |f(x_{n})-f(x_{m})| < \varepsilon\quad \forall n, m\geq{N}.
+  $$
+  Portanto, $\{f(x_{n})\}$ converge. \qedsymbol
+\end{proof*}
+\begin{def*}
+  Seja D um subconjunto ilimitado superiormente de $\mathbb{R}$ e $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao. Diremos que 
+  o limite de f(x) quando x tende para infinito \'e L em $\mathbb{R}$ se, dado $\varepsilon > 0$, existe $M = M(\varepsilon) > 0$
+  tal que 
+    $$
+      x\in D, x > M \Rightarrow |f(x)-L|<\varepsilon.
+    $$
+  Escreveremos 
+    $$
+      \lim_{x\to\infty}f(x) = L.
+    $$
+  Analogamente, quando D \'e ilimitado inferiormente, definimos 
+    $$
+      \lim_{x\to-\infty}f(x) = L.\square
+    $$
+\end{def*}
+  O limite da sequ\^encia \'e um caso particular de limite infinito, especificamente o caso $D = \mathbb{N}.$
+ \begin{def*}
+   Seja D um subconjunto de $\mathbb{R}$ e $f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao. Se p \'e um ponto de acumula\c c\~ao de D,
+   diremos que f diverge para $+\infty$ quando x tende para p se, dado M positivo, existe $\varepsilon = \varepsilon(M) > 0$
+   tal que 
+     $$
+       x\in D, 0<|x-p|<\varepsilon \Rightarrow f(x) > M.
+     $$
+     Escreveremos $\lim_{x\to p}f(x) = +\infty$. Analogamente, define-se $\lim_{x\to p}f(x) =-\infty$. 
+
+     Se D \'e ilimitado superiormente(inferiormente), definimos tamb\'em 
+       $$
+         \lim_{x\to+\infty}f(x) = \pm\infty\quad(\lim_{x\to-\infty}f(x)=\pm\infty.). \square
+       $$
+ \end{def*}
+\begin{def*}
+  Seja D um subconjunto real e $f:D\rightarrow \mathbb{R}$. Se p \'e um ponto de acumula\c c\~ao de D, suponha que existe $\delta_{0} > 0$
+  tal que 
+    $$
+    \sup{\{f(x):x\in D, 0<|x-p|<\delta_{0}\}} < \infty.
+    $$
+    Ent\~ao, existe (ou diverge para $-\infty$) o limite 
+      $$
+      \limsup_{x\to p}f(x)\coloneqq \limsup_{\delta\to0}\{f(x):x\in D, 0<|x-p|<\delta\}.
+      $$
+      Escrevemos $\limsup_{x\to p}f(x) = +\infty$ quando f n\~ao \'e limitada superiormente em nenhuma vizinhan\c ca de p.
+
+      De maneira an\'aloga, se 
+        $$
+        \inf{\{f(x):x\in D, 0<|x-p|<\delta\}} > -\infty,
+        $$
+      definimos (podendo ser $+\infty$) 
+        $$
+        \liminf_{x\to p}f(x)\coloneqq \liminf_{\delta\to0}\{f(x):x\in D, 0<|x-p|<\delta\}.
+        $$
+      Escrevemos $\liminf_{x\to p}f(x) = -\infty$ quando f n\~ao for limitada inferiormente em uma vizinhan\c ca de p. $\square$
+\end{def*}
+\end{document}

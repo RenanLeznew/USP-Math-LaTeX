@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1680106678 "iterated_functions.tex" "iterated_functions.pdf" "iterated_functions" 1680106680 0
+["pdflatex"] 1680658235 "iterated_functions.tex" "iterated_functions.pdf" "iterated_functions" 1680658237 0
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677507467 84470 1b03f303430b1250744b51ca4bdbdd0b ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1655166133 11548 2f99fce5cae9ccd9882913d55e2ae310 ""
   "C:/Users/renan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1669959708 10804632 69bb159aecd433ed655feba531b189ca ""
@@ -224,10 +224,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "iterated_functions.aux" 1680106680 3024 f41fbcf5c3fdaa26b56dfff5285ab42e "pdflatex"
-  "iterated_functions.out" 1680106680 2805 d64d37b1fd77acf22a295164f9c51471 "pdflatex"
-  "iterated_functions.tex" 1680106662 24573 7bb53b2f41113eb932336ad7c56bfc5d ""
-  "iterated_functions.toc" 1680106680 1559 33b770bb579f059116a7ad25c242030f "pdflatex"
+  "iterated_functions.aux" 1680658237 4559 7f4b387567fd849adcf1500cb98234c3 "pdflatex"
+  "iterated_functions.out" 1680658237 4188 453ca8339f3be5584da9b3b0d665cacb "pdflatex"
+  "iterated_functions.tex" 1680658235 30387 e29f89ba8ad3bd6d7636b9241830068c ""
+  "iterated_functions.toc" 1680658237 2556 43863152dd97492049ffacfda595ba75 "pdflatex"
   (generated)
   "iterated_functions.aux"
   "iterated_functions.log"

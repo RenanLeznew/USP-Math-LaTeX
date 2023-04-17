@@ -6,11 +6,23 @@
 \contentsline {subsection}{\numberline {3.1}Motiva\c c\~oes}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Acelera\c c\~ao}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Movimento Retil\'ineo Uniformemente Variado.}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4} Aula 03 - 30/03/2023}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Motiva\c c\~oes}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Exerc\'icio 29 - Tipler}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Exerc\'icio 44 - Tipler}{9}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Exerc\'icio 58 - Tipler}{9}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Exerc\'icio 67 - Tipler}{9}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Exerc\'icio 72 - Tipler}{9}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Exemplo - Aula 06 Vanderlei}{10}{subsection.4.7}%
+\contentsline {section}{\numberline {4} Aula 03 - 30/03/2023}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motiva\c c\~oes}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Exerc\'icio 29 - Tipler}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Exerc\'icio 44 - Tipler}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Exerc\'icio 58 - Tipler}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Exerc\'icio 67 - Tipler}{10}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Exerc\'icio 72 - Tipler}{10}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Exemplo - Aula 06 Vanderlei}{11}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Aula 04 - 10/04/2023}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motiva\c c\~oes}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Vetores}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Movimento Uniforme Bidimensional}{15}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Aula 06 - 13/04/2023}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Motiva\c c\~oes}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Movimento Relativo}{16}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Aula x - 17/03/2023}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Movimento Circular}{18}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Acelera\c c\~oes no Movimento Circular.}{19}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Movimento Circular Uniforme}{20}{subsection.7.4}%

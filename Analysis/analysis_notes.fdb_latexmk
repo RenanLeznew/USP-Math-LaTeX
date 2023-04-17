@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1680558832 "analysis_notes.tex" "analysis_notes.pdf" "analysis_notes" 1680558834 0
+["pdflatex"] 1681757776 "analysis_notes.tex" "analysis_notes.pdf" "analysis_notes" 1681757779 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
-  "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677507467 84470 1b03f303430b1250744b51ca4bdbdd0b ""
+  "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1681742047 84647 7e5abdd0624797a4563ca4ce8a66548c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1655166133 11548 2f99fce5cae9ccd9882913d55e2ae310 ""
   "C:/Users/renan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1669959708 10804632 69bb159aecd433ed655feba531b189ca ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
@@ -234,10 +234,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "analysis_notes.aux" 1680558834 4943 cb2a2fe762a2aa2fd9454a4e4678ba19 "pdflatex"
-  "analysis_notes.out" 1680558834 5357 6ce988ef9feb1deae4f94e66902a69ab "pdflatex"
-  "analysis_notes.tex" 1680558830 76980 43b3facc51fb700c4ad7e028b87d350a ""
-  "analysis_notes.toc" 1680558834 2866 5b27b88ee0c3fe81a91710fdce2d5fb1 "pdflatex"
+  "analysis_notes.aux" 1681757778 7031 bf42638c051b0050901080b2fcd50fd7 "pdflatex"
+  "analysis_notes.out" 1681757778 8005 da77ae1a970d5f258f73d17cc7556bba "pdflatex"
+  "analysis_notes.tex" 1681757774 127624 908c420d872e3d891ef292b89c7f96a2 ""
+  "analysis_notes.toc" 1681757778 4298 ccbc2f01f4f0432a811566084b4c3ab0 "pdflatex"
   (generated)
   "analysis_notes.aux"
   "analysis_notes.log"

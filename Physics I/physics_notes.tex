@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{multirow}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{pgfplots}
@@ -12,6 +13,9 @@
 \usepackage{hyperref}
 \usepackage{lastpage}
 \usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles,quotes}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -358,6 +362,7 @@ utilizamos Torricelli para obter o deslocamento no peda\c co final do percurso
     v_{2}(t) = v_{1} + a(t_{2}-t_{0}) \Rightarrow 0 = 8.33 - 1.66\Delta t_{2} \Rightarrow \Delta t_{2} = 5s.\text{ \qedsymbol}
     $$
  \end{example}
+ \newpage
 
 \section{ Aula 03 - 30/03/2023}
 \subsection{Motiva\c c\~oes}
@@ -570,4 +575,447 @@ o valor m\'inimo de $v_{0}$ que satisfa\c ca o que buscamos. Temos
                         & \Rightarrow \frac{1}{t-6} = \frac{t}{2(t-6)} \Rightarrow 1 = \frac{t}{2(t-6)}\\
                         & \Rightarrow 2(t-6) = t \Rightarrow 2t - t = 12 \Rightarrow t = 12s.
     \end{align*}
-\end{document}
+\newpage
+
+\section{Aula 04 - 10/04/2023}
+\subsection{Motiva\c c\~oes}
+ \begin{itemize}
+   \item Iniciar os estudos de movimentos em um plano todo (duas dimens\~oes);
+   \item Revisar vetores e sua manipula\c c\~ao.
+ \end{itemize}
+
+\subsection{Vetores}
+  Come\c camos com um estudo das propriedades de veotres. Dados vetores $\vec{r_{1}}, \vec{r_{2}}$ e um n\'umero real $\lambda$, definimos:
+ \begin{itemize}
+  \item[i)] A soma dos vetores:
+  \begin{center}
+    \begin{tikzpicture}
+      \coordinate (O) at (0,0); % origin
+      \draw [->,red] (O) -- (2,1) node [right] {$\vec{r}_1$}; % vector r_1
+      \draw [->,blue] (2,1) -- (3,3) node [right] {$\vec{r}_1$}; % vector r_1
+      \draw [->,blue] (O) -- (1,2) node [above] {$\vec{r}_2$}; % vector r_2
+      \draw [->,red] (1,2) -- (3,3) node [above] {$\vec{r}_1$}; % vector r_2
+      \draw [->,black] (O) -- (3,3) node [above right] {$\vec{r}_1+\vec{r}_2$}; % sum of vectors
+    \end{tikzpicture}
+  \end{center}
+  \item[ii)] A multiplica\c c\~ao por escalar: $\lambda(r_{1}+r_{2})$ (Essencialmente, o resultado \'e aumentar ou diminuir o tamanho da seta.)
+    \begin{center}
+      \begin{tikzpicture}
+        \coordinate (O) at (0,0); % origin
+        \draw [->,red] (O) -- (2,1) node [right] {$\vec{v}$}; % vector v
+        \draw [->,blue] (O) -- (4,2) node [right] {$\lambda\vec{v}$}; % scaled vector
+        \draw [dashed] (2,1) -- (4,2); % dotted line to show scaling
+      \end{tikzpicture}
+    \end{center}
+ \end{itemize}
+ A t\'itulo de curiosidade, a soma de vetores em tr\^es dimens\~oes seria desta forma: 
+ \begin{center}
+   \tdplotsetmaincoords{70}{135} %set the viewing angle
+\begin{tikzpicture}[scale=2, tdplot_main_coords]
+    \coordinate (O) at (0,0,0);
+    \draw[thick,->] (O) -- (2,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (O) -- (0,2,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (O) -- (0,0,2) node[anchor=south]{$z$};
+
+    \draw[->,red] (O) -- (1.5,0.5,1.5) node[midway, below right] {$\vec{u}$};
+    \draw[->,blue] (1.5,0.5,1.5) -- (2,2,2) node[midway, above left] {$\vec{v}$};
+    \draw[->,blue] (O) -- (0.5,1.5,0.5) node[midway, above] {$\vec{v}$};
+    \draw[->,red] (0.5,1.5,0.5) -- (2,2,2) node[midway, below] {$\vec{u}$};
+    \draw[->,black] (O) -- (2,2,2) node[midway, above right] {$\vec{u}+\vec{v}$};
+\end{tikzpicture}
+\end{center}
+ Por\'em, n\~ao basta utilizar apenas representa\c c\~oes gr\'aficas para vetores. Desta forma, \'e comum definirmos um sistema de coordenadas
+cartesiano para suas componentes. Assim, um vetor $\vec{u}$ pode ser decomposto em uma coordenada x e outra coordenada y: 
+  $$
+  \vec{u} = u_{x}\hat{i} + u_{y}\hat{j} (+u_{z}\hat{k})
+  $$
+  chamamos os valores $u_{x}, u_{y}, u_{z}$ de proje\c c\~oes, sendo a \'ultima um objeto presente apenas no caso de tr\^es coordenadas.
+Com isso, definimos o m\'odulo do vetor, ou seja, seu tamanho, pela f\'ormula 
+  $$
+    |\vec{u}| = \sqrt{u_{x}^{2}+u_{y}^{2}},
+  $$
+  e, de brinde, ganhamos f\'ormulas para as proje\c c\~oes em cada coordenada:
+ \begin{align*}
+   &u_{x} = |u|\cos{\theta} \Rightarrow \cos{\theta} = \frac{u_{x}}{|\vec{u}|}\\
+   &u_{y} = |u|\sin{\theta} \Rightarrow \sin{\theta} = \frac{u_{y}}{|\vec{u}|}\\
+   &\tan{\theta} = \frac{u_{y}}{u_{x}}.
+ \end{align*}
+ \'E importante, tam\'em, darmos uma forma de obter um betor de m\'odulo 1, i.e., um vetor unit\'ario, visto que ele pode nos fornecer a informa\c c\~ao do
+valor do \^angulo $\theta$, a dire\c c\~ao, etc. Ele \'e obtido reduzindo um vetor u pelo seu m\'odulo, 
+  $$
+  \hat{u} = \frac{\vec{u}}{|\vec{u}|}.
+  $$
+  Uma utilidade imediata da defini\c c\~ao em coordenadas \'e que agora temos um modo de tratar a soma de vetores algebricamente 
+    \begin{align*}
+     &\text{Soma: } \vec{u}+\vec{v} = (u_{x}\hat{i} + u_{y}\hat{j}) + (v_{x}\hat{i} + v_{y}\hat{j}) = (u_{x}+v_{x})\hat{i} + (u_{y}+v_{y})\hat{j}\\
+     &\text{Multiplica\c c\~ao por Escalar: } \lambda \vec{u} = \lambda(u_{x}\hat{i} + u_{y}\hat{j}) = \lambda u_{x}\hat{i} + \lambda u_{y}\hat{j}\\
+     &\theta = ctg{\biggl(\frac{\lambda u_{y}}{\lambda u_{x}}\biggr) = ctg{\biggl(\frac{u_{y}}{u_{x}}\biggr)}}.
+    \end{align*}
+    Agora podemos ir \`a aplica\c c\~ao f\'isica dessa discuss\~ao, o deslocamento de uma part\'icula no plano. Nesta configura\c c\~ao, normalmente
+  ter\'a-se uma part\'icula com posi\c c\~ao $\vec{x}(t) = x(t)\hat{i} + y(t)\hat{j}\quad (+z(t)\hat{k}).$ Para realizar o estudo desses casos,
+  vamos decompor o movimento dela em cada eixo, ou seja, quebramos o movimento no plano em dois movimentos independentes, um em cada eixo
+  x ou y. Nestas condi\c c\~oes, o deslocamento de uma part\'icula de uma posi\c c\~ao 1 at\'e uma posi\c c\~ao 2 ser\'a 
+    $$
+    \vec{x_{2}} - \vec{x_{1}} = (x_{2}\hat{i} + y_{2}\hat{j}) - (x_{1}\hat{i}+y_{1}\hat{j}) = (x_{2}-x_{1})\hat{i} + (y_{2}-y_{1})\hat{j}.
+    $$
+    Com isso, podemos escrever que o deslocamento $\Delta \vec{r}$ \'e 
+      $$
+      \Delta \vec{r} = \Delta x\hat{i} + \Delta y\hat{j}.
+      $$
+    Ainda mais, se conhecemos o valor do \^angulo entre as posi\c c\~oes 1 e 2 e o m\'odulo dos vetores representando-as, 
+      $$
+        |\Delta r|^{2} = x_{1}^{2} + x_{2}^{2} - 2x_{1}x_{2}\cos{\theta}.
+      $$
+    Tendo o b\'asico do deslocamento, podemos repetir o racioc\'inio pr\'evio para trabalhar com acelera\c c\~ao e velocidade. De fato, 
+      $$
+        \vec{v_{m}} = \frac{\Delta \vec{r}}{\Delta t}, \quad \vec{a_{m}} = \frac{\Delta \vec{v_{m}}}{\Delta t}
+      $$
+      e os valores instant\^aneos ser\~ao dados por 
+      \begin{align*}
+        &\vec{v}(t) = \frac{d \vec{r}(t)}{dt} = \frac{d x(t)}{dt}\hat{i} + \frac{d y(t)}{dt}\hat{j} = v_{x}\hat{i} + v_{y}\hat{j}.\\
+        &\vec{a}(t) = \frac{d \vec{v}(t)}{dt} = \frac{d v_{x}(t)}{dt}\hat{i} + \frac{d v_{y}(t)}{dt}\hat{j} = a_{x}\hat{i} + a_{y}\hat{j}.
+      \end{align*}
+      Al\'em disso, o m\'odulo e orienta\c c\~ao desses valores ser\~ao dados por 
+     \begin{align*}
+       &|\vec{v}| = \sqrt{v_{x}^{2}+v_{y}^{2}},\quad \theta_{v} = ctg\biggl(\frac{v_{y}}{v_{x}}\biggr)\\
+       &|\vec{a}| = \sqrt{a_{x}^{2}+a_{y}^{2}},\quad \theta_{a} = ctg\biggl(\frac{a_{y}}{a_{x}}\biggr).
+     \end{align*}
+     Note que a acelera\c c\~ao n\~ao aponta na dire\c c\~ao da velocidade em si, mas sim na dire\c c\~ao da \textbf{varia\c c\~ao} da velocidade.
+
+\subsection{Movimento Uniforme Bidimensional}
+    Considere uma part\'icula com posi\c c\~ao $\vec{r}(t)$ e uma orienta\c c\~ao, tal que forma um \^angulo $\theta$ com o plano. Como
+  estaremos considerando o movimento do tipo uniforme, a acelera\c c\~ao \'e nula e a velocidade $\vec{v}(t) = v_{0}$ \'e constante,
+  tendo m\'odulo $v_{0}$ e orienta\c c\~ao $\theta$. Em outras palavras, as componentes desse vetor ser\~ao, tamb\'em, constantes, isto \'e, 
+    $$
+    \text{constantes}\left\{\begin{array}{ll}
+          v_{x}(t) = v_{x_{0}}\\
+          v_{y}(t) = v_{y_{0}}.
+        \end{array}\right.
+    $$
+    Desta forma, a decomposi\c c\~ao da velocidade em coordenadas \'e tal que 
+   \begin{align*}
+     &\text{Eixo x: }v_{x}(t) = v_{x_{0}} \Rightarrow x(t) = x_{0} + v_{x_{0}}(t-t_{0}),\quad x_{0} = x(t_{0})\\
+     &\text{Eixo y: }v_{y}(t) = v_{y_{0}} \Rightarrow y(t) = y_{0} + v_{y_{0}}(t-t_{0}),\quad y_{0} = y(t_{0}).
+   \end{align*}
+   Logo, a posi\c c\~ao da part\'icula no plano ser\'a dada por 
+     $$
+     \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} = (x_{0} + v_{x_{0}}(t-t_{0})\hat{i}) + (y_{0} + v_{y_{0}}\hat{j}).
+     $$
+  Note que, quando falamos de trajet\'oria de uma part\'icula ou objeto, buscamos uma rela\c c\~ao entre as componentes x(t) e y(t) que
+independe do tempo, isto \'e, a rela\c c\~ao temporal \'e dada de forma implicita. Uma forma de fazer isso \'e a atrav\'es da tangente, pois 
+  $$
+  \frac{y(t) - t_{0}}{x(t) - x_{0}} = \frac{v_{y_{0}}(t-t_{0})}{v_{x_{0}}(t-t_{0})} = \frac{v_{y_{0}}}{v_{x_{0}}} = \tan{\theta_{0}}.
+  $$
+  Com isso, 
+    $$
+    y(t) - y_{0} = \tan{\theta_{0}}(x(t)-x_{0}) \Rightarrow y = \tan{(\theta_{0})}x - \tan{(\theta_{0})}x_{0} + y_{0},
+    $$
+    ou seja, y tem a forma de um equa\c c\~ao da reta com inclina\c c\~ao constante e igual a $\tan{\theta_{0}}.$
+\newpage
+
+\section{Aula 06 - 13/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+\item Revisar movimento relativo;
+\end{itemize}
+
+\subsection{Movimento Relativo}
+  Fixada uma origem O, a soma dos vetores representando os corpos A e B
+    $$
+      \vec{r}_{AO} + \vec{r}_{BA} = \vec{r}_{BO}
+    $$
+  nos fornece a dire\c c\~ao relativa do corpo B com rela\c c\~ao a A. Se A e B est\~ao se movendo, ou seja, os vetores deles 
+possuem depend\^encia no tmepo ($\vec{r}_{AO} = \vec{r}_{AO}(t), \vec{r}_{BO} = \vec{r}_{BO}(t)$), ent\~ao 
+  $$
+    \vec{r}_{BA}(t) = \vec{r}_{BO}(t) + \vec{r}_{AO}(t),
+  $$
+  ou seja, a posi\c c\~ao relativa de B com rela\c c\~ao a A tamb\'em depender\'a do tempo. Al\'em de posi\c c\~ao relativa,
+podemos definir outros conceitos, tais como a velocidade relativa: 
+  $$
+    \vec{v}_{BA}(t) = \frac{d \vec{r}_{BA}(t)}{dt} = \frac{d \vec{r}_{BO}}{dt} + \frac{d \vec{r}_{AO}}{dt} \Rightarrow \vec{v}_{BA}(t) = \vec{v}_{BO}(t)  + \vec{v}_{AO}(t)
+  $$
+  e acelera\c c\~ao relativa de modo an\'alogo, i.e., $\vec{a}_{BA}(t) = \vec{a}_{BO}(t) + \vec{a}_{AO}(t).$ Vejamos alguns exemplos
+ \begin{example}
+   Considere um sistema em que um carrinho viaja com velocidade $\vec{v}_{r}$ e tem um passageiro $\vec{v}_{p}$ com ele. 
+Ambos se movem para a direita. 
+  Neste caso, h\'a o sistema referencial de in\'erca da pessoa dentro do trem. Buscamos descobrir a velocidade da pessoa com rela\c c\~ao ao trem. 
+De fato, segue que 
+  $$
+    \vec{v}_{p} = \vec{v}_{PT} + \vec{v}_{T}.
+  $$
+ \end{example}
+ \begin{example}
+  Considere um sistema an\'alogo ao anterior, mas, embaixo, h\'a uma plataforma se movendo para a esquerda com velocidade igual \`a do trem.
+  Neste caso, h\'a o sistema referencial de in\'erca da pessoa dentro do trem. Buscamos descobrir a velocidade da pessoa com rela\c c\~ao
+\`a plataforma. Obtemos
+  $$
+  \vec{v}_{PT} = \vec{v}_{PT}^{x}\hat{i} + \vec{v}_{PT}^{y}\hat{j}. \Rightarrow \vec{v}_{p} = (\vec{v}_{PT}^{x} + \vec{v}_{T})\hat{i} + \vec{v}_{P}^{y}\hat{j}
+  $$
+ \end{example}
+\begin{example}
+  (Exemplo 32 do Tipler): Considere um sistema de avi\~ao e vento, no qual o m\'odulo da velocidade do avi\~ao \'e de 200km/h e,
+ o da velocidade do vento, \'e 90km/h. O vento \'e dado por um vetor apontando para a direito, enquanto o avi\~ao \'e um vetor apontando para cima. 
+Pergunta-se: (a) Qual \'e a orienta\c c\~ao que o avi\~ao deve voar? (Ambos est\~ao sendo vistos do solo.) (b) Qual \'e o m\'odulo da
+velocidade do avi\~ao visto do solo?
+  (a) Segue que 
+    $$
+      \vec{v}_{AO} = \vec{v}_{A} - \vec{v}_{v} \Rightarrow \sin{\theta} = \frac{|\vec{v}_{v}|}{|\vec{v}_{av}|} = \frac{90}{200} = \frac{9}{20}\approx 27\deg
+    $$
+
+    (b) Sabemos, por pit\'agora, que 
+      $$
+      |\vec{v}_{AT}|^{2} = |\vec{v}_{v}|^{2} + |\vec{v}_{a}|^{2} \Rightarrow |\vec{v}_{a}| = \sqrt{|\vec{v}_{av}|^{2} - |\vec{v}_{v}|^{2}} = \sqrt{51900}\approx 178km/h
+      $$
+\end{example}
+  Com rela\c c\~ao a este \'ultimo exemplo, por que a velocidade $\vec{v}_{a}$ tem valor 178km/h e n\~ao 200 - 90 = 110km/h?
+A resposta est\'a na decomposi\c c\~ao de $\vec{v}_{av}$, pois 
+\begin{align*}
+  &v_{av}^{x} = |\vec{v}_{av}|\sin{\theta} = -200 \cdot 0.454\approx -90km/h\\
+  &v_{av}^{y} = |\vec{v}_{av}|\cos{\theta} = 200 \cdot 0.891\approx 178km/h.
+\end{align*}
+ \begin{example}
+   Suponha que, num instante $t_{0}$, dois trens est\~ao andando em dire\c c\~ao a uma plataforma. O trem um chegou nela, vindo do Norte, enquanto o trem dois,
+   vindo pelo Leste, ainda se move, ambos com velocidade 
+     $$
+       |\vec{v}_{1}| = |\vec{v}_{2}| = 60km/h.
+     $$
+     Passados dois minutos, o trem 2 alcan\c ca a plataforma e continua andando na dire\c c\~ao Oeste com velocidade $\vec{v}_{2}$ e o trem
+    um continuou sua viagem ao Sul com velocidade $\vec{v}_{1}$. Pede-se: (a) Determine o vetor $\vec{v}_{21}$ da velocidade relativa dos trens. (b) Encontre, para este vetor do item (a), 
+    seu m\'odulo (c) Quando a dist\^ancia entre os vetores \'e m\'inima?
+
+    Faremos o diagrama de velocidades. Nele, $|v_{1}| = |v_{2}|$. 
+\begin{center}
+  \begin{tikzpicture}[scale=2]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (-1.5,0);
+    \coordinate (C) at (0, -1.5);
+    \draw[-latex] (A) -- node[below] {$\vec{v}_1$} (B);
+    \draw[-latex] (A) -- node[left] {$\vec{v}_2$} (C);
+    \draw (B) -- node[above right] {$\vec{v}_{12}$} (C);
+  \end{tikzpicture}
+\end{center}
+  Al\'em disso, pelo desenho, 
+    $$
+    \sin{\theta} = \frac{|\vec{v}_{2}|}{|\vec{v}_{21}|},\quad \cos{\theta} = \frac{|\vec{v}_{1}|}{|\vec{v}_{21}|} = \frac{|\vec{v}_{2}|}{|\vec{v}_{21}|} = \sin{\theta}.
+    $$
+    A igualdade entre seno e cosseno ocorre quando o \^angulo vale 45 graus, ou seja, $\theta = 45\deg.$ Assim,
+     $$
+     \vec{v}_{21} = \vec{v}_{2} - \vec{v}_{1} = -|\vec{v}_{2}|\hat{i} - (-|\vec{v}_{1}|\hat{j}) \Rightarrow \vec{v}_{21} = -|\vec{v}_{2}|\hat{i} + |\vec{v}_{1}|\hat{j}.
+     $$
+     Logo, 
+       $$
+       |\vec{v}_{21}| = \sqrt{|\vec{v}_{1}|^{2} + |\vec{v}_{2}|^{2}}\approx 85km/h
+       $$
+
+    Para resolver, agora, o item b, a comecemos pela posi\c c\~ao relativa 2 nos instantes t=0, t=2min e t=4min. Quanto ao trem 2, as
+  informa\c c\~oes que temos indicam que ele se move no eixo x ($y_{2}(t) = 0$), em t=2min, ele est\'a na origem ($x_{2}(2min) = 0$) e, deste modo,
+    $$
+      \vec{r}_{2}(t) = x_{2}(t)\hat{i} + y_{2}(t)\hat{j} = x_{2}(t)\hat{i} \Rightarrow x_{2}(t) = x_{2O} + |\vec{v}_{2}|t
+    $$
+    Utilizando o valor que sabemos, i.e., x(2min), segue que, convertendo 2 minutos para horas ($2min\approx 0.03h$) ,
+      $$
+      x(0.03) = 0 = x_{2O} - 60 \cdot 0.03 \Rightarrow x_{2O} = 60 \cdot 0.03 = 2km.
+      $$
+
+      Agora, sobre o trem 1, sabe-se que ele se move no eixo y, ou seja, $x_{1}(t) - 0$, tal que 
+        $$
+          y_{1}(t) = -|\vec{v}_{1}|t = -60t
+        $$
+      
+    Com essas informa\c c\~es, encontramos os valores 
+   \begin{align*}
+     &t = 0min:\quad x_{1}(0) = 0, y_{1}(0) = 0,\quad x_{2}(0) = 2km, y_{2}(0) = 0km\\
+     &t = 2min:\quad x_{1}(2) = 0, y_{1}(2) = -2km,\quad x_{2}(2) = 0km, y_{2}(2) = 0km\\
+     &t = 4min:\quad x_{1}(4) = 0, y_{1}(4) = -4km,\quad x_{2}(4) = -2, y_{2}(4) = 0km.
+   \end{align*}
+   Desta forma, 
+     $$
+     \vec{r}_{21}(t) = \vec{r}_{2}(t) - \vec{r}_{1}(t) \Rightarrow \vec{r}_{21}(t) = x_{2}(t)\hat{i} - y_{1}(t)\hat{j}.
+     $$
+
+    Finalmente, para o item c, calculamos a dis\^encia como 
+      $$
+      L_{21}(t) = \sqrt{x_{1}^{2} + (-y_{1})^{2}} = \sqrt{(x_{20}-|\vec{v}_{2}(t)|)^{2} + (|\vec{v}_{1}|)^{2}} = \sqrt{7200t^{2} - 240t + 4}.
+      $$
+    Para encontrar a dist\^ancia \textbf{m\'inima}, \'e preciso derivar esta f\'ormula, igualar a 0 e resolver para tempo. Coloque $l = 7200t^{2}-240t+4$,
+  tal que 
+    $$
+      \frac{dl}{dt} = 2 \cdot 7200t - 240 + 0 = 0
+    $$
+    Resolvendo isso, encontramos o tempo em que a dist\^ancia \'e m\'inima, valendo $t^{*}\approx 0.017h\approx 1min$, tal que a dist\^ancia m\'inima \'e 
+      $$
+        L_{21}(t^{*})\approx 1.4.
+      $$
+ \end{example}
+
+\section{Aula x - 17/03/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Come\c car a estudar o movimento circular;
+  \item 
+\end{itemize}
+
+\subsection{Movimento Circular}
+  Quando temos uma particular fazendo movimento circular em um c\'irculo de raio R num eixo x, y, diremos que ela, sua posi\c c\~ao em qualquer instante
+ser\'a dada por um vetor r(t), sendo sua trajet\'oria limitada a este c\'irculo. Assim, obtemos o sistema $R = |\vec{r}(t)|$, sendo 
+$\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j}$ e 
+  $$
+     \left\{\begin{array}{ll}
+         x(t) = R\cos{\theta(t)}\\
+         y(t) = R\sin{\theta(t)}.
+      \end{array}\right.
+  $$
+  \begin{center}
+\begin{tikzpicture}[>=latex]
+    \draw[->] (-1.2,0) -- (1.2,0) node[right] {$x$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above] {$y$};
+    \draw (0,0) circle [radius=1];
+    \draw[->] (0, 0) -- ({-cos(45)}, {sin(45)}) node[above] {$R$};
+    \draw[->] (0,0) -- ({cos(45)},{sin(45)}) node[above right] {$r(t)$};
+\end{tikzpicture}
+  \end{center}
+  Utilizando o sistema e o desenho, obtemos 
+    $$
+    \vec{r}(t) = R\cos{\theta(t)}\hat{i} + R\sin{\theta(t)}\hat{j},
+    $$
+    donde segue o valor do m\'odulo do vetor $\vec{r}(t)$:
+   \begin{align*}
+     |\vec{r}(t)|^{2} = x^{2}(t) + y^{2}(t) &= (R\cos{\theta(t)})^{2} + (R\sin{\theta(t)})^{2} \\
+                                            &= R^{2}(\cos{\theta(t)}^{2} + \sin{\theta(t)}^{2}) \\
+                                            &= R^{2} \Rightarrow |\vec{r}(t)| = R.
+   \end{align*}
+   Conclu\'imos, assim, que todo o movimento da part\'icula \'e dado em termos do \^angulo $\theta(t).$ Al\'em disso, o deslocamento
+  da part\'icula \'e feita em arcos de c\'irculo $s(t) = R\theta(t)$. Chamamos esta posi\c c\~ao de ``posi\c c\~ao escalar do corpo sobre o c\'irculo''.
+  No entanto, no movimento circular, h\'a outra posi\c c\~ao, chamada ``posi\c c\~ao angular do corpo'', que \'e dada por $\theta(t) = \frac{s(t)}{R}.$
+  
+  Utilizando estes dois, podemos encontrar uma equa\c c\~ao para $\vec{r}(t)$: 
+    $$
+    \vec{r}(t) = R\cos{\theta(t)}\hat{i} + R\sin{\theta(t)}\hat{j} = R\underbrace{[\cos{\theta(t)}\hat{i} + \sin{\theta(t)}\hat{j}]}_{\hat{r}(t)}
+= R\hat{r}(t),
+    $$
+    em que $\hat{r}(t)$ \'e um versor na dire\c c\~ao de $\vec{r}(t)$, isto \'e, um vetor com m\'odulo um. De fato, vamos verificar isto: 
+    $$
+    |\hat{r}(t)| = \sqrt[]{\cos^{2}(\theta(t)) + \sin^{2}(\theta(t))} = 1
+    $$
+    A seguir, vamos estudar como este versor $\hat{r}(t)$ varia, ou seja, vamos derivar este vetor com respeito ao tempo. Para isso,
+  introduizremos outra regra de deriva\c c\~ao, a ``Regra da Cadeia''. Dada uma fun\c c\~ao $f(t) = u(v(t))$, ou seja, uma fun\c c\~ao
+  definida como uma fun\c c\~ao composta, sua deriva\c c\~ao \'e feita de denro pra fora: Derivamos v(t) com respeito a t, depois derivamos
+  u com rela\c c\~ao a v e multiplicamos, ou seja, 
+    $$
+    \boxed{\frac{df}{dt} = \frac{du}{dv}\frac{dv}{dt}}.
+    $$
+    Assim, no caso do versor $\hat{r}(t),$ 
+    \begin{align*}
+      \frac{d\hat{r}(t)}{dt} &= \frac{d}{dt}[\cos{\theta(t)}\hat{i} + \sin{\theta(t)}\hat{j}]\\
+                             &= \frac{d}{dt}[\cos{\theta(t)}]\hat{i} + \frac{d}{dt}[\sin{\theta(t)}]\hat{j}\\
+                             &= \frac{d\cos{\theta(t)}}{d\theta}\frac{d\theta(t)}{dt}\hat{i} + \frac{d\sin{\theta(t)}}{d\theta}\frac{d\theta(t)}{dt}\hat{j}\\
+                             &= -\sin{\theta(t)}\frac{d\theta(t)}{dt}\hat{i} + \cos{\theta(t)}\frac{d\theta(t)}{dt}\hat{j}.
+    \end{align*}
+    Como $\theta(t)$ \'e a posi\c c\~ao angular, chamamos a sua derivada com respeito a tempo de velocidade \^angular 
+      $$
+      \boxed{\omega(t) = \frac{d\theta(t)}{dt}.}
+      $$
+    De brinde, conseguimos definir a velocidade escalar da part\'icula como 
+   \begin{align*}
+      \frac{ds(t)}{dt} &= \frac{dR\theta(t)}{dt} = R \frac{d\theta(t)}{dt} = R\omega(t).\\
+      &\Rightarrow \boxed{v(t) = R\omega(t).}
+   \end{align*}
+   Vamos estudar a dimens\~ao dessa quantidade. Temos 
+     $$
+     [\omega] = \frac{[\theta]}{[t]} = \frac{1}{T} \quad \text{(Exemplo: rad/s (radianos por segundo.))}
+     $$ 
+    como unidades de velocidade angular e 
+      $$
+        [v] = [R][\omega] = LT^{-1} \quad \text{(Exemplo: m/s (metros por segundo))}
+      $$
+    como dimens\~ao da velocidade escalar. Com rela\c c\~ao ao versor definido, sua derivada \'e 
+      $$
+      \frac{d\hat{r}(t)}{dt} = \omega(t)\underbrace{[-\sin{\theta(t)}\hat{i}+\cos{\theta(t)}\hat{j}]}_{\hat{\theta(t)}},
+      $$
+      em que $\hat{\theta(t)}$ \'e um versor apontando na dire\c c\~ao do \^angulo. Com isso, definimos a velocidade vetorial por 
+        $$
+        \vec{v}(t) = \frac{d \vec{r}(t)}{dt} = R \frac{d\hat{r}(t)}{dt} \Rightarrow \vec{v}(t) = R\omega(t)\hat{\theta(t)}.
+        $$
+      Algo interessante de notar \'e que a velocidade escalar consiste do m\'odulo da velocidade vetorial, i.e., $v(t) = |\vec{v}(t)|.$
+      Tamb\'em podemos representar a velocidade por meio das componentes em cada eixo: 
+        $$
+        \vec{v}(t) = \underbrace{-R\omega(t)\sin{\theta(t)}}_{v_{x}(t)}\hat{i} + \underbrace{R\omega(t)\cos{\theta(t)}}_{v_{y}(t)}\hat{j}.
+        $$
+  \subsection{Acelera\c c\~oes no Movimento Circular.}
+      Agora que estamos mais familiariizados com a velocidade e posi\c c\~ao angular, podemos estudar a acelera\c c\~ao no movimento circular.
+      Assim como antes, come\c camos definindo a acelera\c c\~ao angular: 
+      $$
+        \alpha(t) = \frac{d\omega(t)}{dt} = \frac{d^{2}\theta(t)}{dt^{2}},
+      $$
+      que possui dimens\~ao $[\alpha] = \frac{[\omega]}{[t]} = \frac{T^{-1}}{T} = T^{-2}$, sendo um exemplo a unidade $rad/s^{2}$, i.e.,
+      radiano por segundo quadrado. Analogamente, definimos a acelera\c c\~ao vetorial por 
+        $$
+        \vec{a}(t) = \frac{d \vec{v}(t)}{dt} = \frac{d}{dt}[R\omega(t)\hat{\theta}(t)].
+        $$
+        Pela regra do produto, 
+        $$
+        \vec{a}(t) = R[\frac{d\omega(t)}{dt}\hat{\theta(t)} + \omega(t) \frac{d\hat{\theta(t)}}{dt}].
+        $$
+      Analisando termo a termo, a primeira derivada acontece no m\'odulo da velocidade, i.e., $R \frac{d\omega(t)}{dt}$, ou seja,
+      representa a varia\c c\~ao no m\'odulo da velocdade. Por outro lado, o segundo termo representa a varia\c c\~ao da dire\c c\~ao 
+      da velocidade. Como j\'a encontramos alguns desses termos antes, segue que 
+        $$
+        \vec{a}(t) = R[\alpha(t)\hat{\theta(t)} + v(t)\frac{d\hat{\theta}(t)}{dt}].
+        $$
+        Mas o que \'e este termo $\frac{d\hat{\theta}}{dt}$? Olhando pra ele com cuidado, vemos que 
+       \begin{align*}
+         \frac{d\hat{\theta}}{dt} &= \frac{d}{dt}[-\sin{\theta(t)}\hat{i} + \cos{\theta(t)}\hat{j}] \\
+                                  &= -\frac{d}{dt}[\sin{\theta(t)}]\hat{i} + \frac{d}{dt}[\cos{\theta(t)}]\hat{j}\\
+                                  &= -\cos{\theta(t)}\frac{d\theta(t)}{dt}\hat{i} -\sin{\theta(t)}\frac{d\theta(t)}{dt}\hat{j}\\
+                                  &\Rightarrow \frac{d\hat{\theta(t)}}{dt} = \omega(t)[-\cos{\theta(t)}\hat{i} - \sin{\theta(t)}\hat{j}] = \omega(t)(-\hat{r}(t)).
+       \end{align*}
+     Portanto, 
+       $$
+         \vec{a}(t) = R[\alpha(t)\hat{\theta(t)} + \omega^{2}(t)(-\hat{r}(t))] = \underbrace{R\alpha(t)\hat{\theta(t)}}_{\text{acelera\c c\~ao tangencial }\vec{a}_{t}(t)} - \underbrace{R\omega^{2}(t)\hat{r}(t)}_{\text{acelera\c c\~ao centr\'ipeta }\vec{a}_{cp}(t)}
+       $$
+      Obtivemos disso tudo duas acelera\c c\~oes novas e que precisam ser mais compreendidas. Vamos come\c car pela tangencial.
+
+      Com rela\c c\~ao ao m\'odulo da acelera\c c\~ao tangencial, note que $|\vec{a}_{t}(t)| = R\alpha(t) = \frac{dv(t)}{dt}$. Agora,
+      quanto \`a acelera\c c\~ao centr\'ipeta, seu m\'odulo \'e dado por $|\vec{a}_{cp}(t)| = R\omega^{2}(t) \Rightarrow|\vec{a}_{cp}(t)| = \frac{v^{2}}{R}.$ 
+
+  \subsection{Movimento Circular Uniforme}
+      Resumindo o que temos at\'e o momento em forma de tabela, segue que 
+
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & \textbf{Variáveis angulares} & \textbf{Variáveis escalares} \\
+        \hline
+        \textbf{Posição} & $\theta(t)$ & $s(t) = R\theta(t)$ \\
+        \hline
+        \textbf{Velocidade} & $\omega(t) = \frac{d \theta(t)}{dt}$ & $v(t) = \frac{d s(t)}{dt} = R\omega(t)$ \\
+        \hline
+        \textbf{Aceleração} & $\alpha(t) = \frac{d\omega(t)}{dt} = \frac{d^2\theta(t)}{dt^2}$ & $|\vec{a}(t)| = \frac{dv(t)}{dt} = R\alpha(t),\quad |\vec{a}_{cp}| = \frac{v^2}{R}$ \\
+        \hline
+    \end{tabular}
+    \caption{Resumo movimento circular.}
+    \label{tab:my_label}
+  \end{table}
+  No movimento circular uniforme, estudamos arcos iguais em tempos iguais, ou seja, 
+    $$
+      \Delta s_{1} = \Delta s_{2},\quad \Delta t_{1} = \Delta t_{2},
+    $$
+    tal que $\Delta \theta_{1} = \Delta \theta_{2}$. Al\'em disos, $\omega(t)\equiv \omega$ constante. Assim, 
+      $$
+      |\vec{v}(t)| = v(t) = R\omega(t)\equiv v,\text{ constante} \Rightarrow a_{t} = R\alpha(t) = 0.
+      $$
+    Com isso, as posi\c c\~oes s\~ao descritas por 
+   \begin{align*}
+     &\omega(t) = \omega \Rightarrow \theta(t) = \theta_{0} + \omega(t-t_{0})\\
+     &v(t) = v \Rightarrow s(t) = s_{0} + v(t-t_{0})
+   \end{align*}
+   Neste caso, o movimento \'e peri\'odico, ou seja, ele volta a ter as mesmas propriedades ap\'os um per\'iodo T. Em forma matem\'atica, isso quer dizer que 
+     $$
+       \left\{\begin{array}{ll}
+           \vec{r}(t + T) = \vec{r}(t)\\
+           \vec{v}(t + T) = \vec{v}(t).
+         \end{array}\right.
+     $$ 
+    Tendo isso em mente, definimos tamb\'em a frequ\^encia como o n\'umero de ocorr\^encias. Ele vale o inverso do per\'iodo T, i.e., $f = \frac{1}{T}$.
+  \end{document}
