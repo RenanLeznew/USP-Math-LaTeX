@@ -21,8 +21,15 @@
 \contentsline {section}{\numberline {6}Aula 06 - 13/04/2023}{16}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Motiva\c c\~oes}{16}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Movimento Relativo}{16}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Aula x - 17/03/2023}{18}{section.7}%
+\contentsline {section}{\numberline {7}Aula 7 - 17/03/2023}{18}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{18}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Movimento Circular}{18}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Acelera\c c\~oes no Movimento Circular.}{19}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Movimento Circular Uniforme}{20}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Aula 8 - 19/04/2023}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Motiva\c c\~oes}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Exemplo de MCU - 67 Tiples}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Din\^amica e Leis de Newton}{22}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}O que esperar}{22}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Leis de Newton}{23}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Exemplo 4.2 - Tipler}{24}{subsubsection.8.3.3}%

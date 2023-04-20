@@ -2325,4 +2325,215 @@ tome $\delta$ da defini\c c\~ao de ``f \'e de Cauchy em p'' e N tal que $0<|x_{n
         $$
       Escrevemos $\liminf_{x\to p}f(x) = -\infty$ quando f n\~ao for limitada inferiormente em uma vizinhan\c ca de p. $\square$
 \end{def*}
+\newpage
+
+\section{Aula 14 - 19/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Valor de ader\^encia - valores para os quais alguma sequ\^encia converge sob a imagem de uma fun\c c\~ao
+  \item Continuidade;
+  \item Resultados sobre Continuidade.
+\end{itemize}
+\subsection{Limites Superior e Inferior}
+\begin{def*}
+  Dizemos que um n\'umero real y \'e um valor de ader\^encia de f no ponto p se existe uma sequ\^encia $\{x_{n}\}$
+em $D/\{p\}, x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}p$ e $\lim_{n\to\infty}f(x_{n}) = y.\square$
+\end{def*}
+\begin{theorem*}
+  Seja $D\subseteq{\mathbb{R}}, f:D\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de acumula\c c\~ao de D.
+ \begin{itemize}
+   \item[1)] Se l \'e um valor de ader\^encia de f em p, ent\~ao $\liminf_{x\to p}f(x) \leq{l}\leq{\limsup_{x\to p}f(x)}$
+    \item[2)] Se f \'e limitada em uma em uma vizinhan\c ca de p, ent\~ao $\limsup_{x\to p}f(x)$ e
+    $\liminf_{x\to p}f(x)$ s\~ao valores de ader\^encia de f.
+    \item[3)] $\lim_{x\to p}f(x)$ existe se, e somente se, f \'e limitada em uma vizinhan\c ca de p e o conjunto dos
+    valores de ader\^encia de f em p \'e unit\'ario.
+    \item[4)] Se f \'e limitada em uma vizinhan\c ca de p, dado $\varepsilon > 0$, existe $\delta > 0$ tal que 
+      $\liminf_{x\to p}f(x) - \varepsilon < f(x) < \limsup_{x\to p} + \varepsilon$ para todo x em D com $0<|x-p|<\delta.$ 
+ \end{itemize}
+\end{theorem*}
+Antes de prov\'a-lo, observe que, se $L_{\delta} = \sup\{f(x):x\in D, 0 < |x-p| < \delta\},$ ent\~ao 
+ $$
+    L = \limsup_{x\to p}f(x) = \lim_{\delta\to 0^{+}}L_{\delta}.
+ $$
+ Assim, dado $\varepsilon > 0$, existe $\delta_{\varepsilon}>0$ tal que $0 < \delta < \delta_{\varepsilon}$ implica 
+   $$
+     |L_{\delta}-L|< \varepsilon.
+   $$
+  Isso funciona para provar que um valor \'e o lim sup de uma fun\c c\~ao.
+\begin{proof*}
+  Prova de 1): Se $\liminf_{x\to p}f(x) = l$ e $\limsup_{x\to p}f(x) = L,$ dado $\varepsilon > 0,$ existe $\delta_{\varepsilon}>0$
+  tal que 
+    $$
+    l - \varepsilon < \inf{\{f(x):x\in D, 0<|x-p|<\delta\}} < l + \varepsilon
+    $$
+  e 
+    $$
+      L - \varepsilon < \sup{\{f(x):x\in D, 0<|x-p|<\delta\}} < L + \varepsilon.
+    $$
+  Para todo $0<\delta<\delta_{\varepsilon}.$ Escolha $\delta_{0} < \delta_{\varepsilon}$. Se r \'e um valor de ader\^encia
+  de f em p, existe $x_{n}\in D/\{p\}, x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}p,$ com $f(x_{n})\overbracket[0pt]{\longrightarrow}^{n\to \infty}l$
+  Seja N natural tal que $|x_{n}-p| < \delta_{0}$ para todo $n\geq{N}.$ Logo, para todo $n\geq{N},$
+ \begin{align*}
+   l - \varepsilon &< \inf\{f(x):x\in D, 0 < |x-p| < \delta_{0}\}\\
+   &\leq{}f(x_{n})\leq{}\sup\{f(x):x\in D, 0 <|x-p|<\delta_{0}\} < \varepsilon
+ \end{align*}
+ Segue que $l-\varepsilon\leq{r}\leq{L+\varepsilon}$ para todo $\varepsilon > 0$. Portanto, $l\leq{r}\leq{L}.$
+
+ Prova de 2): Note que, para algum $\delta_{0} > 0$, temos 
+   $$
+   -\infty < \inf{\{f(x):x\in D, 0 < |x-p|< \delta_{0}\}}\leq{}\sup\{f(x):x\in D, 0 < |x-p| <\delta_{0}\} < \infty.
+   $$
+   Como 
+  \begin{itemize}
+    \item $(0, \delta_{0})\ni\delta\mapsto\inf\{f(x):x\in D, 0<|x-p|<\delta\}$ \'e n\~ao-decrescente e 
+    \item $(0, \delta_{0})\ni\delta\mapsto\sup\{f(x):x\in D, 0<|x-p|<\delta\}$ \'e n\~ao-crescente,
+  \end{itemize}
+  existem os limites 
+    $$
+    \lim_{\delta\to 0^{+}}\inf\{f(x):x\in D, 0 < |x-p| < \delta\} = l, \quad\lim_{\delta\to 0^{+}}\sup\{f(x):x\in D, 0 < |x-p| < \delta\} = L
+    $$
+    Como p \'e um ponto de acumula\c c\~ao de D, seja $\{x_{n}'\}$ e $\{x_{n}^{L}\}$ sequ\^encias em D tais que $0<\max\{|x_{n}'-p|, |x_{n}^{L}-p|\}<\frac{\delta_{0}}{n}$
+    e 
+      $$
+      \inf{\{f(x):x\in D, 0 < |x-p| < \frac{\delta_{0}}{n}\}}\leq{f(x_{n}')}\leq{}\inf{\{f(x):x \in D, 0 <|x-p|<\frac{\delta_{0}}{n}\}} + \frac{1}{n}
+      $$
+    e
+    $$
+      \sup{\{f(x):x\in D, 0 < |x-p| < \frac{\delta_{0}}{n}\}}-\frac{\delta_{0}}{n}\leq{f(x_{n}^{L})}\leq{}\sup{\{f(x):x \in D, 0 <|x-p|<\frac{\delta_{0}}{n}\}} + \frac{1}{n}.
+    $$
+    O resultado agora segue tomando o limite nas express\~oes acima. 
+
+  Prova de 3): Se o limite existe, f \'e limitada em uma vizinhan\c ca de p e todos os valores de ader\^encia coincidem e,
+em particular, o $\limsup_{x\to p}f(x) = \liminf_{x\to p}f(x).$ Por outro lado, se f \'e limitada em uma vizinhan\c ca de um ponto p,
+e o conjunto dos valores de ader\^encia \'e unit\'ario, $\liminf_{x\to p}f(x)=\limsup_{x\to p}f(x)$ e todos os valores de ader\^encia
+coincidem. Portanto, o limite existe 
+  
+  Prova de 4): Se $\liminf_{x\to p}f(x) = l$ e $\limsup_{x\to p}f(x) = L,$ dado $\varepsilon > 0,$ existe $\delta_{\varepsilon}>0$
+  tal que 
+    $$
+    l - \varepsilon < \inf{\{f(x):x\in D, 0<|x-p|<\delta\}} < l + \varepsilon
+    $$
+  e 
+    $$
+      L - \varepsilon < \sup{\{f(x):x\in D, 0<|x-p|<\delta\}} < L + \varepsilon.
+    $$
+  Para todo $0<\delta<\delta_{\varepsilon}.$  Logo, para todo $\delta<\delta_{\varepsilon}$ e x em D,$0<|x-p|<\delta$
+ \begin{align*}
+   l - \varepsilon &< \inf\{f(x):x\in D, 0 < |x-p| < \delta_{0}\}\\
+   &\leq{}f(x_{n})\leq{}\sup\{f(x):x\in D, 0 <|x-p|<\delta_{0}\} < \varepsilon
+ \end{align*}
+ Segue que $l-\varepsilon\leq{r}\leq{L+\varepsilon}$ para todo $\varepsilon > 0$. Portanto, $l\leq{r}\leq{L}.$
+\end{proof*}
+
+\subsection{Fun\c c\~oes Cont\'inuas}
+ \begin{def*}
+   Seja $f:D_{f}\rightarrow \mathbb{R}$ uma fun\c c\~ao e p um ponto de $D_{f}.$ Diremos que $f(x)$ \'e cont\'inua em p
+   se, dado $\varepsilon > 0$, existe um $\delta > 0$ tal que 
+     $$
+       x\in D_{f}, |x-p|<\delta \Rightarrow |f(x)-f(p)|<\varepsilon. 
+     $$
+    Se isto ocorre para todos os pontos p em $D_{f},$ diremos apenas que f \'e cont\'inua. $\square$
+ \end{def*}
+ Note que, se p \'e um ponto de $D_{f}$ que \'e de acumula\c c\~ao, ent\~ao f \'e cont\'inua em p se, e somente se,
+ $\lim_{x\to p}f(x)=f(p)$ e, se p \'e um ponto isolado de $D_{f},$ ent\~ao f \'e cont\'inua em p.
+ \begin{example}
+   As seguintes fun\c c\~oes s\~ao cont\'inuas em x=p para todo p real:
+  \begin{itemize}
+    \item[i)]$f(x) = k$
+    \item[ii)]$f(x) = x$
+    \item[iii)]$f(x) = x + 1$
+    \item[iv)]$f(x) = x^{2}$
+  \end{itemize}
+ \end{example}
+ No entanto, a fun\c c\~ao
+ $$
+ f(x) = \left\{\begin{array}{ll}
+                \frac{x^{2}-1}{x-1},\quad x\neq 1\\
+                0,\quad x=1
+              \end{array}\right.
+ $$
+ n\~ao \'e cont\'inua em x=1, pois $\lim_{x\to 1}f(x) = 2\neq 0 = f(1).$
+ As fun\c c\~oes cont\'inuas t\^em a seguinte propriedade:
+\begin{theorem*}
+  Sejam $f_{i}:d_{i}\rightarrow \mathbb{R},i=1,2$ fun\c c\~oes. Suponha que p seja um ponto de acumula\c c\~ao de 
+  $D_{f_{1}}\cap{D_{f_{2}}}$ e que $\lim_{x\to p}f_{i}(x) = f_{i}(p), i=1, 2.$ Ent\~ao,
+\begin{align*}
+ &1) \lim_{x\to p}(f_{1}+f_{2})(x) = \lim_{x\to p}f_{1}(x) + \lim_{x\to p}f_{2}(x) = f_{1}(p)+f_{2}(p)\\
+ &2) \lim_{x\to p}kf_{1}(x) = kf_{1}(p)\\
+ &3) \lim_{x\to p}f_{1}(x)f_{2}(x) = \lim_{x\to p}f_{1}(x)\lim_{x\to p}f_{2}(x) = f_{1}(p)f_{2}(p)\\
+ &4) \text{Se } f_{2}(x)\neq0, \lim_{x\to p}\frac{f_{1}(x)}{f_{2}(x)} = \frac{f_{1}(p)}{f_{2}(p)}.
+\end{align*}
+\end{theorem*}
+\begin{theorem*}
+  Se p \'e um ponto de $D_{f}\cap D_{g}$ e $f(x)\leq{g(x)}$ sempre que $x\in{(D_{f}\cap D_{g})}$ e os limites de f e
+  quando x tendem a p existem, ent\~ao 
+    $$
+      \lim_{x\to p}f(x) = f(p)\leq{g(p)} = \lim_{x\to p}g(x).
+    $$
+\end{theorem*}
+Vale tamb\'em a an\'aloga do Teorema do Confronto, mas para fun\c c\~oes cont\'inuas. O resultado a seguir precisava
+de continuidade para ser provado:
+\begin{theorem*}
+  Sejam $f:D_{f}\rightarrow \mathbb{R}, g:D_{g}\rightarrow \mathbb{R}$ fun\c c\~oes tais que a imagem de g est\'a contida
+  no dom\'inio de f e $L\in D_{f}.$ Se p \'e um ponto de acumula\c c\~ao de $D_{g}, \lim_{x\to p}g(x) = L$ e f \'e cont\'inua
+  em L, ent\~ao 
+    $$
+      \lim_{x\to p}f(g(x)) = f\biggl(\lim_{x\to p}g(x)\biggr) = f(L).
+    $$
+\end{theorem*}
+\begin{proof*}
+  Como f \'e cont\'inua em L, dado $\varepsilon > 0$, exsite $\delta_{f}>0$ tal que 
+    $$
+      y\in D_{f},\quad |y-L|<\delta_{f} \Rightarrow |f(y)-f(L)|<\varepsilon.
+    $$
+    Como $\lim_{x\to p}g(x) = L,$ dado $\delta_{f}>0$, existe $\delta_{g}>0$ tal que 
+      $$
+        x\in D_{g},\quad 0 <|x-p|<\delta_{g} \Rightarrow |g(x)-L|<\delta_{f}.
+      $$
+    Deta forma, como $Im(g)\subseteq{D_{f}}, D_{f\circ{g}}=D_{g}$ e 
+      $$
+        x\in D_{g}=D_{f\circ{g}}, \quad 0<|x-p|<\delta_{g}\Rightarrow|g(x)-L|<\delta_{f}\Rightarrow|f(g(x))-L|<\varepsilon.
+      $$
+      Portanto, $\lim_{x\to p}f(g(x))=f(L).$ \qedsymbol
+\end{proof*}
+  Em suma, a soma, a multiplica\c c\~ao, a divis\~ao e a composta de fun\c c\~oes cont\'inuas \'e uma fun\c c\~ao cont\'inua. Fun\c c\~oes
+  racionais e trigonom\'etricas s\~ao cont\'inuas.
+  
+\subsection{Resultados Avan\c cados de Continuidade - Parte 1.}
+Come\c camos apresentando o resultado conhecido como Teorema da Conserva\c c\~ao do Sinal
+ \begin{theorem*}
+   Seja $f:D_{f}\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e $\overline{x}\in D_{f}$ tal que $f(\overline{x})>0.$ 
+   Ent\~ao, existe $\delta>0$ tal que $f(x)>0$ para todo $x\in D_{f}$ e $x\in(\overline{x}-\delta, \overline{x}+\delta).$
+ \end{theorem*}
+ \begin{proof*}
+   Como f \'e cont\'inua em $\overline{x},$ dado $\varepsilon = f(\overline{x}) >0$, exsite $\delta > 0$ tal que 
+     $$
+       x\in D_{f}, x\in(\overline{x}-\delta, \overline{x}+\delta) \Rightarrow f(x)\in (f(\overline{x})-\varepsilon, f(\overline{x})+\varepsilon)) =
+  (0, 2f(\overline{x})).
+     $$
+     Isto prova o resultado. \qedsymbol
+ \end{proof*}
+ O pr\'oximo \'e o Teorema do Anulamento.
+ \begin{theorem*}
+   Se $f:[a,b]\rightarrow \mathbb{R}$ \'e cont\'inua e $f(a)<0<f(b),$ ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x}) =0.$
+ \end{theorem*}
+\begin{proof*}
+  Faremos apenas o caso $f(a)<0<g(b).$ Seja 
+    $$
+    A = \{x\in[a,b]:f(s)>0 \forall s\in[x, b].\}
+    $$
+    Note que $A\neq\emptyset$ e $A\subseteq{[a, b]}.$ Seja $z =\inf{A}$. Pelo Teorema da Conserva\c c\~ao de Sinal,
+    $z\in(a, b)$ e $z\not\in A.$ Destarte, $f(z)\leq{0}.$ Por outro lado, do Teorema da Compara\c c\~ao, $f(z)=
+    \lim_{x\to z^{+}}f(x)\geq{0}$, pois como $x > z,$ x \'e um elemento de A, o que torna $f(x)>0$. Portanto, f(z)=0.
+\end{proof*}
+ A seguir, veremos o Teorema do Valor Intermedi\'ario.
+\begin{theorem*}
+  Seja $f:[a, b]\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e tal que  $f(a)<f(b)$. Se $f(a)<k<f(b),$
+  ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x})=k.$
+\end{theorem*}
+\begin{proof*}
+  Considere a fun\c c\~ao $g(x)=f(x)-k.$ Ent\~ao, $g:[a, b]\rightarrow \mathbb{R}$ \'e cont\'inua, $g(a)<0, g(b)>0$
+  e do Teorema do Anulamento, existe $\overline{x}\in[a, b]$ tal que $g(\overline{x})=0.$ Portanto, $f(\overline{x})=k.$\qedsymbol
+\end{proof*}
+Todos eles possuem vers\~oes para trocas de sinais.
 \end{document}

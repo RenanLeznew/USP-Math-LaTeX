@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  17 APR 2023 02:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  20 APR 2023 19:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -984,12 +984,12 @@ Package hyperref Info: Link coloring ON on input line 45.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 45.
-<../icmc.png, id=98, 376.40625pt x 188.20313pt>
+<../icmc.png, id=110, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 48.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=100, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=112, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 50.
@@ -1037,17 +1037,18 @@ Overfull \hbox (307.8995pt too wide) detected at line 666
 []
  []
 
-[11] [12] [13] [14] [15] [16] [17] [18] [19] 
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+
 AED: lastpage setting LastPage
-[20] (algebra_notes.aux)
+[22] (algebra_notes.aux)
 Package rerunfilecheck Info: File `algebra_notes.out' has not changed.
-(rerunfilecheck)             Checksum: CE02C57CF63766C5D30DA6EBA1582C14;3565.
+(rerunfilecheck)             Checksum: DF2A5E3F102F7A75B6D7D0C8B45436A6;4029.
  ) 
 Here is how much of TeX's memory you used:
- 33697 strings out of 475284
- 782645 string characters out of 2774105
- 1218006 words of memory out of 3000000
- 54544 multiletter control sequences out of 15000+600000
+ 33706 strings out of 475284
+ 782750 string characters out of 2774105
+ 1218002 words of memory out of 3000000
+ 54547 multiletter control sequences out of 15000+600000
  475125 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,103p,733b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1076,9 +1077,9 @@ rs/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam
 s/symbols/msbm10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/symbols/msbm7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on algebra_notes.pdf (20 pages, 2017931 bytes).
+Output written on algebra_notes.pdf (22 pages, 2026059 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

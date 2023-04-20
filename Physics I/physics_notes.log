@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  17 APR 2023 11:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  19 APR 2023 11:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,12 +1012,12 @@ Package hyperref Info: Link coloring ON on input line 43.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 43.
-<../icmc.png, id=114, 376.40625pt x 188.20313pt>
+<../icmc.png, id=142, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 46.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=116, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=144, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 48.
@@ -1055,18 +1055,18 @@ e-di-das iguais. Com isso, note que $[] = 48\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3
 \OML/cmm/m/it/10 km=h \OT1/cmr/m/n/10 =
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]
 
 AED: lastpage setting LastPage
-[20] [21] (physics_notes.aux)
+[24] (physics_notes.aux)
 Package rerunfilecheck Info: File `physics_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 049BB1F4A9A8135C7E3E249B2960E781;4296.
+(rerunfilecheck)             Checksum: E97602E5C2E116263C4F301AB076BDB1;5419.
  ) 
 Here is how much of TeX's memory you used:
- 35185 strings out of 475284
- 822997 string characters out of 2774105
- 1304553 words of memory out of 3000000
- 56033 multiletter control sequences out of 15000+600000
+ 35272 strings out of 475284
+ 824969 string characters out of 2774105
+ 1304559 words of memory out of 3000000
+ 56110 multiletter control sequences out of 15000+600000
  474513 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,18n,103p,732b,2273s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1092,9 +1092,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/r
 enan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
 :/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
 /msam10.pfb>
-Output written on physics_notes.pdf (21 pages, 2007693 bytes).
+Output written on physics_notes.pdf (24 pages, 2030644 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 430 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

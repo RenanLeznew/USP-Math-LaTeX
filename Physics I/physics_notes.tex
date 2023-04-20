@@ -847,8 +847,9 @@ A resposta est\'a na decomposi\c c\~ao de $\vec{v}_{av}$, pois
         L_{21}(t^{*})\approx 1.4.
       $$
  \end{example}
+\newpage
 
-\section{Aula x - 17/03/2023}
+\section{Aula 7 - 17/03/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
   \item Come\c car a estudar o movimento circular;
@@ -1018,4 +1019,132 @@ $\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j}$ e
          \end{array}\right.
      $$ 
     Tendo isso em mente, definimos tamb\'em a frequ\^encia como o n\'umero de ocorr\^encias. Ele vale o inverso do per\'iodo T, i.e., $f = \frac{1}{T}$.
-  \end{document}
+\newpage
+\section{Aula 8 - 19/04/2023}
+\subsection{Motiva\c c\~oes}
+\begin{itemize}
+  \item Come\c car os estudos de din\^amica
+\end{itemize}
+
+\subsection{Exemplo de MCU - 67 Tiples}
+Suponha que a Terra tem velocidade angular $\omega$ constante, velocidade e acelera\c c\~ao angulares $\vec{v}_{\theta}(t), \vec{a}_{\theta}(t)$
+e velocidade e acera\c c\~ao escalares $\vec{v}_{e}(t), \vec{a}_{e}(t)$.
+\begin{center}
+\begin{tikzpicture}[scale=3]
+  \shade[ball color=blue!10!white,opacity=0.7] (0,0) circle (1cm);
+  \shade[ball color=yellow!10!white,opacity=0.7] (0,0) circle (0.5cm);
+  \draw[->,thick,red] (0,0) -- (1,0) arc (0:45:1) node[midway,above right]{$\theta$};
+  \draw[dashed] (0,0) -- (-1,0);
+  \draw[dashed] (0,0) -- (0,-1);
+  \draw[dashed] (0,0) -- (0,1);
+\draw[->, black](0,0) -- ({cos(45)}, {sin(45)}) ;
+  \draw (0,0) -- (1,0) node[midway,above]{$r$};
+  \draw (0.2,0) arc (0:45:0.2) node[midway,right]{$\phi$};
+\end{tikzpicture}
+\end{center}
+
+ No equador, $R_{E}=R_{T}, \omega_{E}=\omega$, tal que 
+   $$
+      \left\{\begin{array}{ll}
+         v_{E}=\omega_{E}R_{E} = \omega R_{T}\\
+         a_{E_{cp}} = \frac{v_{E}^{2}}{R_{E}} = \frac{(\omega R_{T})^{2}}{R_{T}} = \omega^{2}R_{T}.
+       \end{array}\right.
+   $$
+   Na latitude $\theta,$ $R_{\theta} = R_{T}\cos{\theta}, \omega_{\theta} = \omega$, de modo que 
+     $$
+        \left\{\begin{array}{ll}
+           v_{\theta} = \omega R_{T}\cos{\theta}\\
+           a_{\theta_{cp}} = \omega^{2}R_{T}\cos{\theta}
+         \end{array}\right.
+     $$
+  Para a Terra dar uma volta em torno de si de novo, ela demora aproximadamente 24h. Assim, $T = 24h$ \'e o per\'iodo da Terra,
+donde conclu\'imos que a frequ\^encia ser\'a $f = \frac{1}{T} = \frac{1}{86400}s^{-1}.$ Como $\omega = 2\pi f,$ segue que 
+  $$
+    \omega = \frac{2\pi}{86400} = 7.27 \cdot 10^{-5}rad/s.
+  $$
+  Pede-se: a) Quais s\~ao os valores de $v_{e}, a_{e}?$ b e d) Quais s\~ao as orienta\c c\~oes das acelera\c c\~oes? c) Quanto valem $v_{\theta}, a_{\theta}?$
+
+  a.) Vemos que $v_{E} = 463.1m/s, a_{E} = 0.0337m/s^{2}, g = 9.8m/s^{2}$. Em particular, $a_{E} = 0.0034g.$
+  
+  b. e d.) O diagrama de v indica que o vetor acelera\c c\~ao aponta na vertical pra esquerda e levemente pra cima.
+
+  c.) Temos $v_{\theta} = 379.4m/s, a_{\theta}=0.0276m/s^{2}.$
+
+\subsection{Din\^amica e Leis de Newton}
+\subsubsection{O que esperar}
+ Quando estudamos os movimentos anteriores, est\'avamos vendo cinem\'atica, a descri\c c\~ao matem\'atica do movimento. No entanto,
+nunca nos questionamos o que causa o movimento. Como ele surge, o que influencia-o, etc. Essa pergunta \'e respondida pela din\^amica,
+q formula\c c\~ao matem\'atica que explic\'ita as causas do movimento. Ela nos fornece uma rela\c c\~ao entre as intera\c c\~oes, chamadas for\c cas,
+que o corpo sofre e o seu movimento. A primeira formula\c c\~ao da din\^amica foi feita por Isaac Newton, sendo suas Leis nosso Ponto de partida.
+
+\subsubsection{Leis de Newton}
+  A primeira Lei de Newton, tamb\'em chamada de Lei da In\'ercia, afirma que 
+  \begin{quote}
+    ``Um corpo em repouso, ou em movimento retil\'ineo uniforme, permenecer\'a em seu estado de movimento a n\~ao ser que uma
+    for\c ca externa atue sobre ele. ''
+  \end{quote}
+  Observe que velocidade constante significa que tanto seu m\'odulo ser\'a constante quanto a dire\c c\~ao o movimento precisa ser em linha reta.
+  Uma consequ\^encia dessa Lei \'e que n\~ao tem distin\c c\~ao entre um corpo em repouso e um corpo se movendo com velocidade constante.
+  Com isso, um sistema de referencial inercial ser\'a definido como um eixo de coordenadas que est\'a em repouso ou se movendo com
+  velocidade constante.
+
+  A segunda Lei de Newton surge para explicar como aparecem as for\c cas dentro do contexto da din\^amica, dizendo que 
+ \begin{quote}
+    ``A for\c ca resultante atuando em um corpo \'e igual \`a massa dele multiplicada pela acelera\c c\~ao''
+ \end{quote}
+  Matematicamente, isto significa que 
+    $$
+    \boxed{\vec{F}_{r} = m \cdot \vec{a} = m \cdot \frac{d \vec{v}}{dt}}
+    $$
+  O termo novo m \'e chamado de massa inercial, sendo interpretada como a grandeza f\'isica que expressa a resist\^encia do corpo
+ao movimento. Quanto maior for a massa, maior vai ser a resist\^encia a se mover. De fato, se temos dois blocos de massas $m_{1}>m_{2},$ ent\~ao 
+  $$
+    \vec{a}_{1} = \frac{\vec{F}}{m_{1}},\quad \vec{a}_{2} = \frac{\vec{F}}{m_{2}} \Rightarrow a_{1} < a_{2}.
+  $$
+  A dimens\~ao dessa grandeza \'e $[m] = M$. No Sistema Internacional, a unidade de massa \'e o kilograma.
+
+  Note que a for\c ca \'e uma grandeza vetorial que soma-se, ou seja, se h\'a v\'arias for\c cas agindo sobre um corpo, a resultante ser\'a
+  a soma delas. Se temos for\c cas $\vec{F}_{21}, \vec{F}_{31}$ agindo sobre um corpo, ent\~ao a resultante ser\'a $\vec{F}_{R} = \vec{F}_{21} + \vec{F}_{31}.$
+  Al\'em disso, suas coordenadas ser\~ao 
+ \begin{align*}
+   &x: F_{res}^{x} = -F_{21}\sin{\alpha} + F_{31}\sin{\beta}\\
+   &y: F_{res}^{y} = -F_{21}\cos{\alpha} - F_{31}\cos{\beta}.
+ \end{align*}
+
+ \begin{center}
+   \begin{tikzpicture}[scale=2]
+    \draw[->,>=stealth, dashed] (-1.5,0) -- (1.5,0) node[right]{$x$}; % Draw the x-axis
+    \draw[->,>=stealth, dashed] (0,-1.5) -- (0,1.5) node[above]{$y$}; % Draw the y-axis
+    
+    \draw (-0.75,-0.75) -- (0.75,-0.75) -- (0.75,0.75) -- (-0.75,0.75) -- cycle; % Draw the cube
+    \draw[->,>=stealth] (0,0) -- (-1,-1) node[midway, below left]{$F_{21}$}; % Draw the F21 arrow
+    \draw[->,>=stealth] (0,0) -- (0,-1) node[midway, right]{$mg$}; % Draw the gravity arrow
+    \draw[->,>=stealth] (0,0) -- (1,-1) node[midway, below right]{$F_{31}$}; % Draw the F31 arrow
+    
+    \draw (0,-0.2) arc (-90:-45:0.2) node[midway, below]{$\beta$}; % Draw the angle beta
+    
+    \draw[dashed] (0,-0.75) -- (0,-1.5); % Draw the vertical dashed line for reference
+    \end{tikzpicture}
+  \end{center}
+ A unidade da for\c ca \'e dada por $[F] = [ma] = MLT^{-2}$. No SI, sua unidade \'e $1kgms^{-2} = 1N$ o Newton.
+ Um corpo ser\'a dito em equil\'ibrio quando a for\c ca resultante agindo sobre ele \'e nula, pois, neste caso, 
+   $$
+     \vec{F}_{res} = \sum\limits_{n}^{}\vec{F}_{n} = 0 \Rightarrow F_{res} = ma = 0 \Rightarrow a = 0.
+   $$
+
+  A terceira e \'ultima Lei de Newton \'e conhecida como Lei da A\c c\~ao e Rea\c c\~ao. Segue seu enunciado
+ \begin{quote}
+   ``Se um corpo faz uma for\c ca em outro, ent\~ao este segundo tamb\'em realizar\'a uma for\c ca no primeiro, sendo esta de
+   mesmo m\'odulo, mas com dire\c c\~ao oposta. ''
+ \end{quote}
+  Em outras palavras, se um corpo 2 age sobre um corpo 1 com for\c ca $\vec{F}_{21},$ ent\~ao o corpo 1 far\'a uma for\c ca sobre
+  o corpo 2 $\vec{F}_{12}$ tal que $\vec{F}_{21} = -\vec{F}_{12}, |\vec{F}_{21}| = |\vec{F}_{12}|$.
+
+  \subsubsection{Exemplo 4.2 - Tipler}
+  Os dados que temos \'e que h\'a uma pessoa que se moveu 2.25m em 3s e cuja massa \'e 68kg. Pede-se para encontrar o m\'odulo da for\c ca
+agindo sobre ela. Segue que 
+  $$
+    x(t) = x_{0} + v_{0}t + \frac{1}{2}at^{2} \Rightarrow \Delta x = x(3) - x(0) = \frac{1}{2}a3^{2} = \frac{9}{2}a = 2.25m
+  $$
+  Isolando a equa\c c\~ao, encontra-se que $a = 0.5m/s^{2}.$ Com isso, como $|\vec{F}| = |m \vec{a}| = 68 \cdot 0.5 = 34N$. \qedsymbol
+\end{document}

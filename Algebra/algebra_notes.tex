@@ -70,7 +70,7 @@
 
 	\vspace{1.3cm}
 	\large
-	\textbf{Roberto Carlos - alvarago@icmc.usp.br}
+	\textbf{Roberto Carlos - alvarenga@icmc.usp.br}
 
 	\vspace{1.3cm}
 	\today
@@ -1128,6 +1128,7 @@ uma dada ordem dentro de um grupo, entre outras coisas. Segue seu enunciado.
 \newpage
 
 \section{Aula 07 - 13/04/2023}
+\subsection{Motiva\c c\~oes}
 \begin{itemize}
   \item Relacionando morfismos com as estruturas de subgrupos;
   \item Teorema da Correspond\^encia.
@@ -1180,6 +1181,7 @@ x em H e g em G tal que $\varphi(g)=g', \varphi(x) = y.$ Portanto,
     $$
     ent\~ao $GL_{n}(\mathbb{R})^{+} = \det^{-1}(\mathbb{R}_{>0})\trianglelefteq{GL_{n}(\mathbb{R})}$. \qedsymbol
 \end{example*}
+\subsection{Teorema da Correspond\^encia}
   O resultado a seguir \'e conhecido como Teorema da Correspond\^encia.
 \begin{theorem*}
   Seja $\varphi:G\rightarrow G'$ sobrejetora e $K=\ker{\varphi}.$ Ent\~ao,  
@@ -1239,6 +1241,74 @@ Al\'em disso, temos os seguintes morfismos:
   $k = rr'$ e $k = ss'.$ Substituindo isso na segunda f\'ormula, temos $k = rsar' + rsbs' = rs(\text{outros termos})$. Portanto,
   $rs \biggl|_{}^{}\biggr.k.$ \qedsymbol
 \end{proof*}
+\begin{example*}
+  Segue que $C_{2}\times C_{2}\neq C_{4}$ (Verifique!).
+\end{example*}
+\begin{prop*}
+  Sejam $H, K \subseteq{G}$ e $f:H\times{K}\rightarrow G, (h,k)\mapsto hk$ com $im F = HK\coloneqq\{hk: h\in H, k\in K\}.$ Ent\~ao,
+ \begin{itemize}
+   \item[a)] f \'e injetora se, e somente se, $H\cap{K} = \{1\};$
+   \item[b)] f \'e morfismo se, e somente se, $hk=kh$ para todo $h\in H, k\in K;$
+   \item[c)] Se $H\trianglelefteq{G},$ ent\~ao $HK\leq{G};$
+   \item[d)] f \'e isomorfismo se, e somente se, $H\cap{K}=\{1\}, HK = G\text{ e }H, K\trianglelefteq{G}.$
+\end{itemize}
+\end{prop*}
+\begin{proof*}
+  a) $(\Rightarrow)$ Se $H\cap{K}\neq\{1\}$, ent\~ao existe x em $H\cap{K}, x\neq 1$, ou seja, 
+    $$
+      f(xx^{-1}) = xx^{-1} = 1 f(1.1),
+    $$
+    o que implica que f n\~ao \'e injetora, uma contradi\c c\~ao.
+
+    $(\Leftarrow)$ Se $f(h_{1},k_{1})=h_{1}k_{1}=h_{2}k_{2} = f(h_{2}k_{2}) \Longleftrightarrow h_{2}^{-1}h_{1} = k_{2}k_{1}^{-1}\in H\cap K$. Logo,
+    $h_{2}^{-1}h_{1} = 1$ e $k_{2}k_{1}^{-1} = 1,$ ou seja, f \'e injetora.
+
+  b) $(\Leftarrow)$ Segue que $f((h_{1},k_{1})(h_{2},k_{2})) = f(h_{1}h_{2}, k_{1}k_{2}) = h_{1}h_{2}k_{1}k_{2} = h_{1}k_{1}h_{2}k_{2} =
+f(h_{1}, k_{1})f(h_{2},k_{2}).$
+
+    $(\Rightarrow)$ Se f \'e um morfismo, ent\~ao $h_{1}h_{2}k_{1}k_{2} = h_{1}k_{1}h_{2}k_{2}$ para todos $h_{1},h_{2}\in H, k_{1},k_{2}\in K.$
+  Em part\'icular, para $h_{1}=k_{2}=1,$ temos $h_{2}k_{1} = k_{1}h_{2}$ para todos $h_{1}\in H, k_{2}\in K.$
+
+  c) Sejam $h_{1}, h_{2}\in H$ e $k_{1}, k_{2}\in K$. Ent\~ao, 
+    $$
+    (h_{1}k_{1})(h_{2}k_{2})^{-1} = h_{1}k_{1}k_{2}^{-1}h_{2}^{-1} = h_{1}h_{2}'h_{1}k_{1}^{-1}\in HK
+    $$
+
+    d) $(\Leftarrow)$ Por $H\cap K = \{1\}$ e $HK = G,$ f \'e bijetora. Assim, basta mostrar que f \'e morfismo. 
+    Sejam $h_{2}, h_{1}\in H$ e $k_{1}, k_{2}\in K$. Segue que 
+      $$
+        f((h_{1},k_{1})(h_{2}, k_{2})) = f((h_{1}h_{2}, k_{1}k_{2})) = h_{1}h_{2}k_{1}k_{2}k = h_{1}k_{1}h_{2}k_{2} = f(h_{1}, k_{1})f(h_{2}, k_{2}).
+      $$
+      Sejam, tamb\'em, $h\in H, k\in K$ 
+        $$
+          hkh^{-1}k^{-1} = hk(kh)^{-1}.
+        $$
+        Como $H\trianglelefteq{G},$ segue que 
+          $$
+            hh'kk^{-1} = hh'\in H
+          $$
+        Como $K\trianglelefteq{G},$ temos tamb\'em 
+          $$
+            hkh^{-1}k^{-1} = hh^{-1}k'k^{-1}\in K.
+          $$
+          Portanto, $hkh^{-1}k^{-1}\in H\cap K=\{1\}$ \qedsymbol
+\end{proof*}
+\begin{prop*}
+  Os grupos de ordem 4 s\~ao $C_{4}$ ou $C_{2}\times C_{2}.$
+\end{prop*}
+\begin{proof*}
+  Seja G um grupo de ordem 4 dado por $G=\{1, g_{1}, g_{2}, g_{3}\}$. Pelo teorema de Lagrange, $ord(g_{i})\biggl|_{}^{}\biggr.4$,
+ou seja, $ord g_{i} = 2$ ou 4. Se existe $g_{i}\in G$ tal que $ord(g_{i}) = 4,$ ent\~ao $G\approx C_{4}.$
+
+Caso contr\'ario, todo $g_{i}$ \'e tal que $|g_{i}|=2.$ Assim, defina 
+  $$
+    f:<g_{1}>\times<g_{2}>\rightarrow G,\quad (x,y)\mapsto xy.
+  $$
+  Pelo item d da proposi\c c\~ao anterior, f \'e isomorfismo. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 08 - 18/04/2023}
 \end{document}
 
 

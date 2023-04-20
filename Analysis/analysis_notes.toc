@@ -47,3 +47,8 @@
 \contentsline {subsection}{\numberline {13.1}Motiva\c c\~oes}{38}{subsection.13.1}%
 \contentsline {subsection}{\numberline {13.2}Intui\c c\~ao e Exemplos Iniciais}{38}{subsection.13.2}%
 \contentsline {subsection}{\numberline {13.3}Limites de Fun\c c\~oes}{40}{subsection.13.3}%
+\contentsline {section}{\numberline {14}Aula 14 - 19/04/2023}{44}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Motiva\c c\~oes}{44}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Limites Superior e Inferior}{44}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Fun\c c\~oes Cont\'inuas}{45}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Resultados Avan\c cados de Continuidade - Parte 1.}{46}{subsection.14.4}%

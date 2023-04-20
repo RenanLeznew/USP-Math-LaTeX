@@ -21,4 +21,7 @@
 \contentsline {subsection}{\numberline {6.2}Classe de Equival\^encia de Parti\c c\~oes}{16}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Classes Laterias e \'Indices.}{17}{subsection.6.3}%
 \contentsline {section}{\numberline {7}Aula 07 - 13/04/2023}{19}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Mais Sobre Morfismos}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Mais Sobre Morfismos}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Teorema da Correspond\^encia}{19}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Aula 08 - 18/04/2023}{22}{section.8}%
