@@ -576,7 +576,7 @@ Al\'em disso, se $\sigma\in S_{n}, \sigma=\tau_{1}\cdots\tau_{r} = \rho_{1}\cdot
 \begin{proof*}
   Observe que $Id = (12)(21)\in\langle\text{ transposi\c c\~oes }\rangle$. Se $\sigma\in S_{n}$ \'e uma permuta\c c\~ao qualquer, ent\~ao $\sigma$ \'e 
 o produto de ciclos. Logo, basta verificar a proposi\c c\~ao para um r-ciclo $\sigma.$ Suponha, assim, que $\sigma = (a_{1}\cdots a_{r}$ \'e um r-ciclo.
-Com isso, $r=(a_{1}a_{2})(a_{1}a_{3})\cdots(a_{1}a_{r}).$ \qedsymbol
+Com isso, $r=(a_{1}a_{r})(a_{1}a_{r-1})\cdots(a_{1}a_{2}).$ \qedsymbol
 \end{proof*}
 \begin{prop*}
   Exerc\'icio: Mostre que qualquer fatora\c c\~ao de um r-ciclo em transposi\c c\~oes tem mesma paridade.
@@ -659,12 +659,12 @@ na decomposi\c c\~ao de $\sigma.$
  \begin{example*}
    S\~ao morfismos:
   \begin{align*}
-    &1) sgn:S_{n}\rightarrow \{+1, -1\}, \sigma\mapsto sgn(\sigma),&&sgn(\sigma\tau) = \det(U(\sigma)U(\tau)) = \det(U(\sigma))\det(U(\tau)) = sgn(\sigma)sgn(\tau)\\
+    &1) sgn:S_{n}\rightarrow \{+1, -1\}, \sigma\mapsto sgn(\sigma),\quad sgn(\sigma\tau) = \det(U(\sigma)U(\tau)) = \det(U(\sigma))\det(U(\tau)) = sgn(\sigma)sgn(\tau)\\
     &2) \det:GL_{n}\rightarrow \mathbb{R}^{\times}, A\mapsto\det(A)\\
     &3) \exp:(\mathbb{R}, +)\rightarrow (\mathbb{R}, \cdot), x\mapsto e^{x}\\
-    &3) \varphi:G\rightarrow G', g\mapsto 1', &&\text{ em que }1'\text{ \'e o elemento neutro de G'.}\\
+    &3) \varphi:G\rightarrow G', g\mapsto 1', \quad\text{ em que }1'\text{ \'e o elemento neutro de G'.}\\
     &3) \text{ Se }H\leq{G}, \text{ ent\~ao a inclus\~ao} i:H\rightarrow G, h\mapsto h\text{ \'e um morfismo.}\\
-    &&3.1) \text{ Em particular, } U:S_{n}\rightarrow GL_{n}, \sigma\mapsto U(\sigma)\\
+    &\quad3.1) \text{ Em particular, } U:S_{n}\rightarrow GL_{n}, \sigma\mapsto U(\sigma)\\
     &3) \mathbb{Z}\rightarrow G, n\mapsto g^{n}, g\in G\text{ fixo.}
   \end{align*}
  \end{example*}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1682038398 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1682038401 0
+["pdflatex"] 1682038687 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1682038690 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1682036850 84647 7e5abdd0624797a4563ca4ce8a66548c ""
@@ -236,10 +236,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "algebra_notes.aux" 1682038400 4569 e0e419ef2e20610761e2aa216d9ee9f4 "pdflatex"
-  "algebra_notes.out" 1682038400 4699 4a751d96a8f5d43257606804de8e3707 "pdflatex"
-  "algebra_notes.tex" 1682038396 67528 09bbb2d492375646c10a1c10a647a53b ""
-  "algebra_notes.toc" 1682038400 2578 0843a4a0ed251acb248e85ccbc2db9ad "pdflatex"
+  "algebra_notes.aux" 1682038689 4569 e0e419ef2e20610761e2aa216d9ee9f4 "pdflatex"
+  "algebra_notes.out" 1682038689 4699 4a751d96a8f5d43257606804de8e3707 "pdflatex"
+  "algebra_notes.tex" 1682038686 67542 c17645c279af4ad79a4028a02a73bd5d ""
+  "algebra_notes.toc" 1682038689 2578 0843a4a0ed251acb248e85ccbc2db9ad "pdflatex"
   (generated)
   "algebra_notes.aux"
   "algebra_notes.log"
