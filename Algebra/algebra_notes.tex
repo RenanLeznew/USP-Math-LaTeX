@@ -13,6 +13,9 @@
  \usepackage{hyperref}
  \usepackage{lastpage}
  \usepackage{mathtools}
+ \usepackage{tikz-cd}
+
+ \usetikzlibrary{babel}
 
  \pagestyle{fancy}
  \fancyhf{}
@@ -1298,7 +1301,7 @@ f(h_{1}, k_{1})f(h_{2},k_{2}).$
 \end{prop*}
 \begin{proof*}
   Seja G um grupo de ordem 4 dado por $G=\{1, g_{1}, g_{2}, g_{3}\}$. Pelo teorema de Lagrange, $ord(g_{i})\biggl|_{}^{}\biggr.4$,
-ou seja, $ord g_{i} = 2$ ou 4. Se existe $g_{i}\in G$ tal que $ord(g_{i}) = 4,$ ent\~ao $G\approx C_{4}.$
+ou seja, $ord g_{i} = 2$ ou 4. Se existe $g_{i}\in G$ tal que $ord(g_{i}) = 4,$ ent\~ao $G\cong C_{4}.$
 
 Caso contr\'ario, todo $g_{i}$ \'e tal que $|g_{i}|=2.$ Assim, defina 
   $$
@@ -1309,9 +1312,132 @@ Caso contr\'ario, todo $g_{i}$ \'e tal que $|g_{i}|=2.$ Assim, defina
 \newpage
 
 \section{Aula 08 - 18/04/2023}
+\subsection{O Que Esperar}
+\begin{itemize}
+  \item Grupos quocientes;
+  \item Primeiro Teorema do Isomorfismo;
+  \item Teorema de Classifica\c c\~ao de Grupos Abelianos Finitamente Gerados.
+\end{itemize}
+
+\subsection{Motiva\c c\~ao para a Aula}
+\begin{center}
+  (Se\c c\~ao teste. Se gostarem, me avisem pra fazer nas outras).
+\end{center}
+
+Os grupos quociente, o primeiro teorema do isomorfismo para grupos e o teorema de classifica\c{c}\~{a}o dos grupos abelianos
+finitamente gerados s\~{a}o conceitos fundamentais na teoria dos grupos, um ramo importante da matem\'{a}tica que estuda a 
+estrutura e propriedades dos grupos. Esses conceitos e teoremas nos ajudam a entender melhor as rela\c{c}\~{o}es entre 
+diferentes grupos e suas subestruturas.
+
+A motiva\c{c}\~{a}o por tr\'{a}s desses conceitos e teoremas \'{e} simplificar e classificar grupos em categorias mais f\'{a}ceis
+de entender e manipular. Ao estudar grupos quociente, podemos analisar propriedades de grupos maiores e mais complexos por meio
+de seus subgrupos normais. O primeiro teorema do isomorfismo nos permite estabelecer conex\~{o}es entre diferentes grupos e 
+suas subestruturas, enquanto o teorema de classifica\c{c}\~{a}o dos grupos abelianos finitamente gerados nos fornece uma 
+maneira sistem\'{a}tica de descrever e classificar esse tipo espec\'{i}fico de grupo.
+
+Uma analogia que pode ser usada imagine que voc\^{e} tem um grupo de amigos e quer dividi-los em equipes para um jogo. Os grupos
+quociente s\~{a}o como as equipes formadas, o primeiro teorema do isomorfismo mostra como as habilidades dos jogadores se
+relacionam entre as equipes, e o teorema de classifica\c{c}\~{a}o dos grupos abelianos finitamente gerados ajuda a entender os
+diferentes tipos de amigos que voc\^{e} tem. Isso torna mais f\'{a}cil entender como seus amigos se organizam e trabalham juntos.
+
+Resumindo, os grupos quociente s\~{a}o uma maneira de "reduzir" um grupo dividindo-o por um subgrupo normal. O primeiro teorema
+do isomorfismo relaciona a estrutura de um grupo e seus subgrupos normais aos grupos quocientes, mostrando que certas 
+propriedades s\~{a}o preservadas no processo. O teorema de classifica\c{c}\~{a}o dos grupos abelianos finitamente gerados
+fornece uma descri\c{c}\~{a}o \'{u}nica para cada grupo abeliano finitamente gerado, permitindo-nos classific\'{a}-los de 
+maneira eficiente.
+
+\subsection{Grupos Quociente}
+\begin{def*}
+  Se $N\leq{G},$ ent\~ao $G/N\coloneqq\{aN: a\in G\}=\{\overline{a}: a\in G\}$ \'e o Grupo Quociente de G por N. $\square$
+\end{def*}
+\begin{def*}
+  Se A, B s\~ao subconjuntos de um grupo G, ent\~ao $AB\coloneqq\{x\in G: x=ab, a\in A, b\in B\}.\square$
+\end{def*}
+\begin{lemma*}
+  Se N \'e um subgrupo normal de G, ent\~ao aNbN = abN para todos a, b elementos de G.
+\end{lemma*}
+\begin{proof*}
+  Como $N\leq{G}, N \cdot N = N.$ Al\'em disso, j\'a que $N\trianglelefteq{G}, bN = Nb.$ Portanto, 
+    $$
+    aNbN = a(Nb)N = abNN = abN. \text{\qedsymbol}
+    $$ 
+\end{proof*}
+\begin{lemma*}
+  Seja G grupo e $\mathcal{L}$ um conjunto com uma opera\c c\~ao. Se $\varphi:G\rightarrow \mathcal{L}$ \'e uma fun\c c\~ao
+  sobrejetora tal que $\varphi(ab)=\varphi(a)\varphi(b)$ para todo a, b em G. Ent\~ao, $\mathcal{L}$ \'e um grupo e $\varphi$ \'e
+  um morfismo.
+\end{lemma*}
+\begin{proof*}
+  Dados x, y em $\mathcal{L}$, existem a, b em G tais que $\varphi(a)=x, \varphi(b)=y$ e $xy = \varphi(a)\varphi(b)=\varphi(ab).$
+  Seja $1_{\mathcal{L}}=\varphi(1),$ ent\~ao $1_{\mathcal{L}}\cdot x=\varphi(1)\cdot \varphi(a) = \varphi(1 \cdot a) = \varphi(a)=x.$
+  Vamos provar a associatividade a seguir.
+
+  Se $z\in \mathcal{L}, z=\varphi(c),$ ent\~ao 
+    $$
+      x(yz)=\varphi(a)(\varphi(b)\varphi(c)) = \varphi(abc)=\varphi(ab)\varphi(c)=(\varphi(a)\varphi(b))\varphi(c) = (xy)z.
+    $$
+  A demonstra\c c\~ao da exist\^encia de inverso fica como exerc\'icio. \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se $N\trianglelefteq{G},$ ent\~ao $G/N$ \'e um grupo e $\pi:G\rightarrow G/N$ (O morfismo proje\c c\~ao can\^onica) \'e um morfismo
+  sobrejetor com $\ker{\pi}=N.$
+\end{theorem*}
+\begin{proof*}
+  Segue que 
+    $$
+      G/N\times G/N\rightarrow G/N,\quad (\overline{a}, \overline{b})\mapsto \overline{ab}
+    $$
+  est\'a bem-definido. Ademais, 
+    $$
+      \pi:G\rightarrow G/N
+    $$
+    satisfaz $\pi(a)\pi(b) = \overline{a}\cdot \overline{b}=\overline{ab}=\pi(ab).$ Pelo segundo lema, $G/N$ \'e um grupo
+    e $\pi$ um morfimso sobrejetor. Al\'em disso, se $\pi(a) = \overline{a} = \overline{1} - N$ se, e somente se, a pertence a N.
+    Portanto, $\ker{\pi} = N.$ \qedsymbol
+\end{proof*}
+\subsection{Primeiro Teorema do Isomorfismo}
+\begin{theorem*}
+  Se $\varphi:G\rightarrow H$ \'e um morfismo sobrejetor de grupos, ent\~ao $G/\ker{\varphi}\cong H.$ Mais precisamente, se 
+  $\pi:G\rightarrow G/\ker{\varphi}$ \'e o mapa can\^onico, ent\~ao 
+    $$
+    \overline{\varphi}:G/\ker{\varphi}\rightarrow H,\quad \overline{a}\mapsto \varphi(a)
+    $$
+    e est\'a bem-definido um isomorfismo tal que 
+
+  \begin{center}
+    \begin{tikzcd}
+      G \arrow[rd, "\pi"] \arrow[r, "\varphi"] & H \\
+      & G/\ker{\varphi} \arrow[u, "\overline{\varphi}"]
+  \end{tikzcd}
+  \end{center}
+  comuta.
+\end{theorem*}
+\begin{proof*}
+  Come\c camos mostrando que $\overline{\varphi}$ est\'a bem-definida. Se $\overline{a}=\overline{b}, ab^{-1}\in\ker{\varphi}$, tal que
+  existe g em $\ker{\varphi}$ para o qual $ab^{-1}=g.$ Assim, $\varphi(ab^{-1})=\varphi(g)=1,$ logo $\varphi(a)=\varphi(b).$
+
+  A seguir, mostremos que $\overline{\varphi}$ \'e morfismo. De fato, $\overline{\varphi}(\overline{a})\overline{\varphi}(\overline{b}) 
+  = \varphi(a)\cdot \varphi(b) = \varphi(ab)=\overline{\varphi}(\overline{ab}).$
+
+  Observe que $\overline{\varphi}$ \'e sobrejetora porque $\varphi$ o \'e. Finalmente, a injetividade de $\overline{\varphi}$ segue de 
+  $$
+    \varphi(\overline{a})=1 \Longleftrightarrow \varphi(a)=1 \Longleftrightarrow a\in\ker{\varphi} \Longleftrightarrow \overline{a}=\ker{\varphi} = 1.
+  $$
+  
+  Portanto, $\overline{\varphi}$ \'e isomorfismo. \qedsymbol
+\end{proof*}
+
+\begin{crl*}
+  Se $\varphi:G\rightarrow H$ \'e um morfismo, ent\~ao $G/\ker{\varphi}\cong im\varphi.$
+\end{crl*}
+
+  O resultado a seguir mostra que todo grupo abeliano pode ser escrito apenas com n\'umeros inteiros que satisfazem certa propriedade.
+ \begin{theorem*}
+   Seja G um grupo abeliano finitamente gerado. Ent\~ao, 
+     $$
+       G\cong{} \mathbb{Z}\times \cdots\times \mathbb{Z}\times \frac{\mathbb{Z}}{d_{1}\mathbb{Z}}\times \cdots\times \frac{\mathbb{Z}}{d_{r} \mathbb{Z}}.
+     $$
+     com $d_{i} > 1$ e $d_{i}\bigl|\bigr. d_{i+1}, i=1,\cdots,r-1.$ 
+ \end{theorem*}
 \end{document}
-
-
-
-
 

@@ -25,3 +25,7 @@
 \contentsline {subsection}{\numberline {7.2}Mais Sobre Morfismos}{19}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Teorema da Correspond\^encia}{19}{subsection.7.3}%
 \contentsline {section}{\numberline {8}Aula 08 - 18/04/2023}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}O Que Esperar}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Motiva\c c\~ao para a Aula}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Grupos Quociente}{22}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Primeiro Teorema do Isomorfismo}{23}{subsection.8.4}%

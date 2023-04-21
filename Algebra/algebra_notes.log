@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  20 APR 2023 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  20 APR 2023 21:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -883,8 +883,32 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen307
 \xmathstrut@box=\box67
 \xmathstrut@dim=\dimen308
+) (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikzlibrarycd.c
+ode.tex
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 28.
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen309
+\pgfarrowlength=\dimen310
+\pgfarrowwidth=\dimen311
+\pgfarrowlinewidth=\dimen312
+)))
+(C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarybabel.code.tex
+File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 31.
 \c@example*=\count322
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
@@ -895,36 +919,36 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 ) (algebra_notes.aux)
 \openout1 = `algebra_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
-\scratchdimen=\dimen309
+\scratchdimen=\dimen313
 \scratchbox=\box69
 \nofMPsegments=\count325
 \nofMParguments=\count326
 \everyMPshowfont=\toks47
 \MPscratchCnt=\count327
-\MPscratchDim=\dimen310
+\MPscratchDim=\dimen314
 \MPnumerator=\count328
 \makeMPintoPDFobject=\count329
 \everyMPtoPDFconversion=\toks48
@@ -976,39 +1000,39 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 45.
+Package hyperref Info: Link coloring ON on input line 48.
 (algebra_notes.out) (algebra_notes.out)
 \@outlinefile=\write4
 \openout4 = `algebra_notes.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 45.
-<../icmc.png, id=110, 376.40625pt x 188.20313pt>
+(lastpage)             ! on input line 48.
+<../icmc.png, id=126, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
-Package pdftex.def Info: ../icmc.png  used on input line 48.
+Package pdftex.def Info: ../icmc.png  used on input line 51.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=112, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=128, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
-Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 50.
+Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 53.
 (pdftex.def)             Requested size: 113.80931pt x 139.4159pt.
 
-Overfull \hbox (72.4929pt too wide) in paragraph at lines 48--51
+Overfull \hbox (72.4929pt too wide) in paragraph at lines 51--54
 [][]   [] 
  []
 
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 5
-1.
+4.
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 
 
 (C:\Users\renan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1023,7 +1047,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [2] [3] [4] [5] [6] [7]
 [8] [9] [10]
-Overfull \hbox (9.70146pt too wide) in paragraph at lines 643--646
+Overfull \hbox (9.70146pt too wide) in paragraph at lines 646--649
 []$[]$\OT1/cmr/bx/n/10 . []\OT1/cmr/m/it/10 Se $\OML/cmm/m/it/10 ^^[ \OMS/cmsy/
 m/n/10 2 \OML/cmm/m/it/10 S[]$ \OT1/cmr/m/it/10 e $\OML/cmm/m/it/10 U\OT1/cmr/m
 /n/10 (\OML/cmm/m/it/10 ^^[\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 ^^Se a ma-triz a
@@ -1033,25 +1057,25 @@ cmr/m/it/10 como sendo o $[] []\OML/cmm/m/it/10 :$\OT1/cmr/m/it/10 Al^^Sem
  []
 
 
-Overfull \hbox (307.8995pt too wide) detected at line 666
+Overfull \hbox (307.8995pt too wide) detected at line 669
 []
  []
 
-[11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
 
 AED: lastpage setting LastPage
-[22] (algebra_notes.aux)
+[23] (algebra_notes.aux)
 Package rerunfilecheck Info: File `algebra_notes.out' has not changed.
-(rerunfilecheck)             Checksum: DF2A5E3F102F7A75B6D7D0C8B45436A6;4029.
+(rerunfilecheck)             Checksum: 4A751D96A8F5D43257606804DE8E3707;4699.
  ) 
 Here is how much of TeX's memory you used:
- 33706 strings out of 475284
- 782750 string characters out of 2774105
- 1218002 words of memory out of 3000000
- 54547 multiletter control sequences out of 15000+600000
+ 34747 strings out of 475284
+ 815732 string characters out of 2774105
+ 1245911 words of memory out of 3000000
+ 55563 multiletter control sequences out of 15000+600000
  475125 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,103p,733b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,14n,103p,733b,1094s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\renan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1000.pk><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1077,9 +1101,9 @@ rs/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam
 s/symbols/msbm10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/symbols/msbm7.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on algebra_notes.pdf (22 pages, 2026059 bytes).
+Output written on algebra_notes.pdf (23 pages, 2037820 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
