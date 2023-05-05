@@ -1147,4 +1147,542 @@ agindo sobre ela. Segue que
     x(t) = x_{0} + v_{0}t + \frac{1}{2}at^{2} \Rightarrow \Delta x = x(3) - x(0) = \frac{1}{2}a3^{2} = \frac{9}{2}a = 2.25m
   $$
   Isolando a equa\c c\~ao, encontra-se que $a = 0.5m/s^{2}.$ Com isso, como $|\vec{F}| = |m \vec{a}| = 68 \cdot 0.5 = 34N$. \qedsymbol
+\newpage
+
+\section{Aula 09 - 20/04/2023}
+
+\newpage
+
+\section{Aula 10 - 24/04/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Continua\c c\~ao de Din\^amica;
+  \item Tipos de for\c cas.
+\end{itemize}
+\subsection{Motiva\c c\~ao}
+Neste resumo, discutiremos diferentes tipos de forças em física, suas fórmulas e algumas propriedades. Elas ser\~ao abordadas ao longo
+das pr\'oximas aulas, n\~ao apenas nesta primeira. \textbf{Nota ao Leitor: as f\'ormulas aqui apresentadas s\~ao apenas
+para o m\'odulo das for\c cas, mas esta palavra foi omitida para n\~ao ficar muito repetitivo. As for\c cas s\~ao estudadas vetorialmente,
+n\~ao esque\c ca-se disto.}
+
+A força gravitacional é a atração entre dois objetos devido à sua massa. A fórmula da força gravitacional é:
+
+\begin{equation}
+F_g = G \frac{m_1 m_2}{r^2}
+\end{equation}
+
+onde $F_g$ é a força gravitacional, $G$ é a constante gravitacional, $m_1$ e $m_2$ são as massas dos dois objetos e $r$ é a distância entre seus centros de massa.
+\begin{center}
+\begin{tikzpicture}
+    \node[draw, circle] (m1) at (0,0) {$m_1$};
+    \node[draw, circle] (m2) at (4,0) {$m_2$};
+    \draw[->, >=stealth, thick] (m1) -- node[above] {$\vec{F}_{g_{1,2}}$} (m2);
+    \draw[->, >=stealth, thick] (m2) -- node[below] {$\vec{F}_{g_{2,1}}$} (m1);
+\end{tikzpicture}
+\end{center}
+
+A força normal é a força que um objeto exerce perpendicularmente à sua superfície de contato com outro objeto. Esta força é responsável por impedir que os objetos atravessem uns aos outros. A força normal tem m\'odulo igual à componente do peso do objeto perpendicular à superfície.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (3,0) -- (3,2) -- cycle;
+    \draw[->, >=stealth, thick] (1.5, 1) -- node[right] {$\vec{F}_N$} (1.5, 2);
+    \draw[->, >=stealth, thick] (1.5, 1) -- node[below] {$\vec{F}_g$} (1.5, 0);
+    \node at (1.5, 1) [circle, fill, inner sep=1pt] {};
+\end{tikzpicture}
+\end{center}
+
+A força de atrito é a força que age oposta ao movimento relativo entre duas superfícies em contato. Existem dois tipos de força de atrito: estático e cinético.
+A força de atrito estático age entre duas superfícies em repouso relativo e é responsável por impedir que objetos comecem a se mover. A força de atrito estático pode variar de zero até o valor máximo dado por:
+
+\begin{equation}
+F_{s_{max}} = \mu_s F_N
+\end{equation}
+
+onde $F_{s_{max}}$ é a força de atrito estático máxima, $\mu_s$ é o coeficiente de atrito estático e $F_N$ é a força normal.
+A força de atrito cinético age entre duas superfícies em movimento relativo e é responsável por reduzir a velocidade dos objetos. A força de atrito cinético é dada por:
+
+\begin{equation}
+F_k = \mu_k F_N
+\end{equation}
+
+onde $F_k$ é a força de atrito cinético, $\mu_k$ é o coeficiente de atrito cinético e $F_N$ é a força normal.
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) -- (4,0);
+\node[draw, rectangle] (box) at (2,0.5) {Caixa};
+\draw[->, >=stealth, thick] (box.north) -- ++(0,1.5) node[above] {$\vec{F}_N$};
+\draw[->, >=stealth, thick] (box.south) -- ++(0,-1.5) node[below] {$\vec{F}g$};
+\draw[->, >=stealth, thick] (box.west) -- ++(-1.5,0) node[left] {$\vec{F}{k}$};
+\end{tikzpicture}
+\end{center}
+
+  Estas duas \'ultimas for\c cas, ou seja, for\c cas normal e atrito, encaixam-se na classe de for\c cas de contato.
+
+  A força tensional é a força que atua ao longo de um cabo, corda ou fio quando esticado por forças opostas aplicadas em suas extremidades. A força tensional é transmitida ao longo do comprimento do cabo, corda ou fio.
+  \begin{center}
+    \begin{tikzpicture}
+    \node[draw, circle] (mass) at (0,-1) {$m$};
+    \draw[->, >=stealth, thick] (mass) -- ++(0,1.5) node[above] {$\vec{T}$};
+    \draw (0,0) -- (0,1);
+    \end{tikzpicture}
+  \end{center}
+
+A força elástica é a força de restitui\c c\~ao que atua quando um objeto é deformado, como uma mola esticada ou comprimida. A força elástica segue a Lei de Hooke:
+
+\begin{equation}
+F_e = -k \Delta x
+\end{equation}
+
+onde $F_e$ é a força elástica, $k$ é a constante elástica e $\Delta x$ é o deslocamento da posição de equilíbrio da mola.
+\begin{center}
+\begin{tikzpicture}
+\node[draw, rectangle] (block) at (0,0) {Bloco};
+\draw[->, >=stealth, thick] (block.east) -- ++(1.5,0) node[right] {$\vec{F}_e$};
+\draw[decoration={coil, segment length=3mm, aspect=0.5, amplitude=3mm}, decorate] (block.west) -- ++(-2,0);
+\end{tikzpicture}
+\end{center}
+
+A força de arrasto é a força de resistência que um objeto experimenta ao se mover através de um fluido (líquido ou gás). A força de arrasto é proporcional ao quadrado da velocidade do objeto em relação ao fluido e é dada por:
+
+\begin{equation}
+F_D = \frac{1}{2} \rho v^2 C_D A
+\end{equation}
+
+onde $F_D$ é a força de arrasto, $\rho$ é a densidade do fluido, $v$ é a velocidade do objeto, $C_D$ é o coeficiente de arrasto e $A$ é a área da seção transversal do objeto.
+
+\begin{center}
+\begin{tikzpicture}
+\node[draw, circle] (sphere) at (0,0) {Esfera};
+\draw[->, >=stealth, thick] (sphere.east) -- ++(-1.5,0) node[left] {$\vec{F}_D$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Tipos de For\c ca}
+\subsubsection{As Quatro For\c cas Fundamentais de Forma Breve}
+O primeiro tipo de for\c ca que veremos \'e a Intera\c c\~ao gravitacional. Ela ocorre na forma da intera\c c\~ao de corpos massivos,
+sendo representada pela for\c ca peso. Al\'em disso, ela \'e uma for\c ca atrativa e de longo alcance. Em particular, o m\'odulo da 
+for\c ca gravitacoinal \'e 
+  $$
+    |\vec{F}_{21}| = |\vec{F}_{12}| = \frac{Gm_{1}m_{2}}{r^{2}}.
+  $$
+  Aqui, G \'e a constante de gravitacional, cujo valor \'e $G=6.67 \cdot 10^{-11}Nkg^{-2}m^{2}.$
+
+  A segunda forma de intera\c c\~ao \'e a eletromagn\'etica, estando presente no contexto de part\'iculas carregadas. Ela ser\'a 
+  atrativa dado que as duas cargas $q_{1}, q_{2}$ possuam sinais opostos ($q_{1}\cdot q_{2}<0$) e repulsivas caso possuam sinais
+  iguais ($q_{1}\cdot q_{2}>0$). Seu m\'odulo \'e dado por 
+    $$
+      |\vec{F}_{12}|=|\vec{F}_{21}|=k\frac{q_{1}q_{2}}{r^{2}}.
+    $$
+
+  Outra for\c ca que existe \'e a intera\c c\~ao forte, que age em curto alcance, aproximadamente do tamanho do n\'ucleo at\^omico.
+  Ela \'e respons\'avel por manter os pr\'otons e neutron no n\'ucleo.
+
+  A \'ultima for\c ca fundamental \'e a intera\c c\~ao fraca, sendo uma que ocorre em curt\'issimo alcance e presente em alguns
+  decaimento radioativos.
+
+  Em din\^amica, estudaremos principalmente intera\c c\~oes gravitacionais na forma da For\c ca Peso e intera\c c\~oes eletromagn\'eticas,
+  que se manifrestar\~ao nas formas da for\c ca normal, for\c ca de tra\c c\~ao, for\c ca de atrito, entre outras.
+
+  \subsubsection{For\c ca Peso}
+    A for\c ca peso \'e descrita como a atra\c c\~ao de um corpo por um objeto celeste quando o corpo est\'a em sua superf\'icie.
+    Como vimos previamente, ela \'e dada, na Terra, por 
+      $$
+        F_{g} = \frac{GMm}{R_{T}^{2}} = mg.
+      $$
+    Isso ajuda-nos a descobrir, em particular, como obter o valor da acelera\c c\~ao na superf\'icie. Considerando a massa
+    de humanos como desprez\'ivel em compara\c c\~ao \`a da Terra, obtemos 
+      $$
+        g = \frac{GM_{T}}{R_{T}^{2}}\approx 9.81m/s^{2}.
+      $$
+      A for\c ca peso que iremos considerar \'e definida como $\vec{P} = m \vec{g}$. Consideremos um exemplo.
+
+ \begin{example}
+   Considere uma pessoa pulando. A Terra exerce uma for\c ca atrativa nela de volta para a superf\'icie, a for\c ca Peso, tal que
+   a for\c ca resultante nela \'e dada por 
+     $$
+       \vec{F}_r = \vec{P} = m \vec{g} - m \vec{a}.
+     $$
+     Caso a pessoa esteja na superf\'icie, ela estar\'a em equil\'ibrio, ou seja, $\vec{F}_{r} = 0.$ Com isso, segue que 
+       $$
+       \vec{F}_{r} = \vec{P} + \vec{N} = 0.
+       $$
+    Essa for\c ca oposta \`a Peso, que denotamos por N, ser\'a estudada a seguir.
+   \end{example}
+  
+  \subsubsection{For\c ca Normal}
+    A for\c ca normal \'e a resultante do contato dos corpos, com dire\c c\~ao perpendicular \`as superf\'icies de contato. Ela n\~ao
+    possui uma f\'ormula exata, pois \'e uma intera\c c\~ao muito complexa relacionada a mol\'eculas e for\c cas eletromagn\'eticas.
+   \begin{example}
+     Considere uma escada encostada a uma parede. Ent\~ao, haver\'a uma for\c ca normal conseguinte do contato entre a escada
+     e a parede perpendicular \`a parede.
+     \begin{center}
+     \begin{tikzpicture}
+        \draw (0,0) -- (0,4);
+        \draw[->, >=stealth, thick](0, 2)-- node[right] {$\vec{N}$} (2, 2);
+        \draw (3,0) -- (0.1,0) -- (0.1,2) -- cycle;
+        \node at (1.5, 1) [circle, fill, inner sep=1pt] {};
+    \end{tikzpicture}
+    \end{center}
+   \end{example}
+  \begin{example}
+    Considere um bloco no elevador. Qual \'e a for\c ca normal? Na situa\c c\~ao (a), considere-o [o elevador] parado. Na
+    situa\c c\~ao (b), ele possui velocidade constante. No caso (c), o elevador est\'a acelerando para cima. Finalmente,
+    no item (d), o elevador acelera para baixo.
+
+    Estando ele parado, a acelera\c c\~ao e a velocidade s\~ao nulos. Com isso, sabe-se o valor da resultante: 
+      $$
+        \vec{F}_{r} = m \vec{a} = \vec{0}.
+      $$
+    Observando a esquem\'atica do problema, nota-se que nada ocorre no eixo x, al\'em de que $\vec{a}_{x} = F_{r}^{x} = 0.$
+    No entanto, com rela\c c\~ao ao eixo y, observamos que, apesar de $\vec{a}_{y} = F_{r}^{y} = 0,$ existem for\c cas atuando
+    sobre o bloco. Assim, 
+      $$
+        0 = F_{r}^{y} = -P + N = -mg + N = 0 \Rightarrow N = mg = P.
+      $$
+
+    Quanto \`a situa\c c\~ao (b), note que, novamente, a for\c ca resultante ser\'a 0, pois a velocidade \'e constante.
+    analisando as for\c cas em y, assim, obtemos o mesmo resultado que no item (a): 
+      $$
+        0 = F_{r}^{y} = -P + N \Rightarrow N = P = mg.
+      $$
+
+    No item (c), como o elevador est\'a acelerado, existe uma acelera\c c\~ao para o bloquinho, tal que 
+      $$
+        \vec{F}_{r} = m \cdot \vec{a} \neq 0.
+      $$
+    No eixo y, as duas for\c cas continuam as mesmas, ou seja, 
+      $$
+        F_{r}^{y} = -P + N = m \cdot a\neq 0.
+      $$
+    Assim, a for\c ca normal ser\'a dada por 
+      $$
+        N = m(a + g).
+      $$
+
+    Por fim, no caso (d), novamente, h\'a uma acelera\c c\~ao, ent\~ao a resultante \'e n\~ao-nula. No entanto, como a acelera\c c\~ao \'e para baixo, 
+      $$
+        \vec{F}_{r} = m \cdot \vec{(-a)}\neq 0.
+      $$
+      Com isso, 
+        $$
+          F_{r}^{y} = -P + N = m \cdot \vec{(-a)} \Rightarrow N = m(g - a).
+        $$
+  \end{example}
+  \begin{example}
+    Considere o um plano inclinado e um bloco deslizando nele. Qual \'e a acelera\c c\~ao $\vec{a}?$
+   \begin{center}
+    \begin{tikzpicture}
+        \draw (0,2) -- (3,0) -- (0,0) -- cycle;
+        \node[rectangle, draw] at (1.5,1.5){}; 
+        \draw[thick] (0, 0) -- (4, 0);
+    \end{tikzpicture}
+    \end{center}
+    Temos $\vec{N} = |\vec{N}|\hat{j}, |\vec{P}|=mg.$ Lembre-se que 
+      $$
+        \left\{\begin{array}{ll}
+            P_{x}' = |\vec{P}|\sin{\theta}\\
+            P_{y}' = |\vec{P}|\cos{\theta}
+          \end{array}\right.
+      $$
+      Com isso, as componentes de for\c ca s\~ao  
+     \begin{align*}
+       &x') \Rightarrow F_{r}^{x'} = P_{x'} = |\vec{P}|\sin{\theta} = ma_{x'}\\
+       &y') \Rightarrow F_{r}^{y'} = -P_{y'} + N = -|\vec{P}|\cos{\theta} + N = 0.
+     \end{align*}
+     Desta \'ultima equa\c c\~ao, tiramos que a for\c ca normal \'e $N = |\vec{P}|\cos{\theta} = mg\cos{\theta}.$ Al\'em disso,
+     da primeira equa\c c\~ao, temos 
+       $$
+         a_{x}' = \frac{mg\sin{\theta}}{m} = g\sin{\theta}.
+       $$
+       Portanto, $\vec{a} = a_{x'}\hat{i} = g\sin{\theta}\hat{i}.$
+  \end{example}
+  \begin{example}
+    Exemplo 4.7 do Tipler: Temos $v_{y}\leq 2.5m/s$ e uma altura de 1m. Pergunta-se: Qual \'e o maior \^angulo poss\'ivel?
+
+    Ap\'os deslocar-se em $\Delta x$, o pacote tem $v_{x'}$ dado por 
+      $$
+      v_{x'}^{2} = v_{0_{x'}}^{2} + 2 a_{x'}\Delta x' = 2a_{x'}\Delta x' \Rightarrow v_{x'}^{2} = \frac{2g\sin{\theta}h}{\sin{\theta}} = 2gh.
+      $$
+      Logo, $v_{x'} = \sqrt[]{2gh}$. Assim, 
+        $$
+          \left\{\begin{array}{ll}
+              v_{x} = v_{x}'\cos{\theta}\\
+              v_{y} = v_{x'}\sin{\theta}\leq 2.50m/s.
+            \end{array}\right.
+        $$
+        Disso segue que 
+          $$
+          \sqrt[]{2gh}\sin{\theta}\leq 2.5m/s \Rightarrow \sqrt[]{2gh}\sin{\theta_{max}} = 2.5m/s
+          $$
+        Portanto, $\theta_{max} = 34.4^{\circ}.$
+  \end{example}
+\newpage
+
+\section{Aula 11 - 25/04/2023 (INCOMPLETO!!!)}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item For\c ca de Tens\~ao;
+  \item Roldanas e Polias.
+\end{itemize}
+
+\subsection{For\c ca de Tens\~ao}
+  A for\c ca de tens\~ao \'e a for\c ca sofirda por cordas e roldanas. Assume-se que a corda \'e inextens\'ivel e possui massa 
+  desprez\'ivel. Um exemplo em que ela aparece bastante \'e quando h\'a roldanas/polias, ou seja, mecanismos que mudam a dire\c c\~ao
+  da for\c ca. Vejamos exemplos
+ \begin{example}
+   Suponha que h\'a um bloco suspenso ao teto por uma corda com massa m e em equil\'ibrio. Qual \'e a for\c ca de tra\c c\~ao?
+
+   Como o bloco est\'a em repouso, sabemos que a resultante vale 0. Note que as for\c cas que agem sobre o bloco s\~ao a tra\c c\~ao
+   da corda e a fo\c ca peso. Logo, 
+     $$
+       0 = \vec{F}_{r} = T - P \Rightarrow T = P = mg.
+     $$
+ \end{example}
+\begin{example}
+    Agora, imagine que h\'a um bloco suspenso por duas cordas pr\'oximo \`a quinta de um teto. As duas cordas encontram-se num
+  ponto p em que h\'a um n\'o. A primeira delas sai horizontalmente da parede, fazendo um \^angulo reto com a mesma. A segunda
+  surge pelo teto com um \^angulo $\theta .$ Qual \'e a for\c ca de tra\c c\~ao que age sobre a corda que sai do ponto de n\'o
+  delas e prende-se ao bloco? E nas cordas 1 e 2?
+
+  Quanto ao primeiro item, note que o bloco est\'a em equil\'ibrio, logo a for\c ca resultante em p e no bloco deve ser 0.
+  Assim, 
+    $$
+      T_{3}-P = 0 \Rightarrow  T_{3} = m \cdot g.
+    $$
+
+  Para o segundo, decomp\~oe-se a tra\c c\~ao nas suas componentes x e y:
+\end{example}
+
+\newpage
+
+\section{Aula 12 - 27/04/2023}
+\subsection{O que esperar?} 
+\begin{itemize}
+  \item For\c ca de Tens\~ao;
+  \item For\c ca de mola/For\c ca El\'astica.
+\end{itemize}
+\subsection{For\c ca de Mola}
+  Sendo $x_{0}$ a posi\c c\~ao da equa\c c\~ao da mola, ao aplicarmos uma for\c ca na mola e deformamos, a rea\c c\~ao
+  \'e uma for\c ca chamada restauradora, pois ela \'e respons\'avel por recuperar o estado de equil\'ibrio da mola. Sua f\'ormula \'e 
+    $$
+      \vec{F} = -k\Delta \vec{x},
+    $$
+    em que k \'e a constante el\'astica da mola. Podemos elaborar nessa f\'ormula um pouco mais utilizando a segunda lei de Newton, pois
+    $F = -kx = ma = m \frac{dv}{dt}.$ Assim, $-kx = m \frac{d^{2}x}{dt^{2}}$, de onde encontramos uma f\'ormula para a posi\c c\~ao em fun\c c\~ao de tempo 
+      $$
+      \frac{d^{2}x}{dt^{2}} = -\frac{k}{m}x = -\omega^{2}x \Rightarrow \boxed{x(t) = \frac{d^{2}x}{dt^{2}} = A\sin{\omega t}}
+      $$
+      Se derivarmos essa fun\c c\~ao, a velocidade do movimento ser\'a 
+        $$
+        \frac{d}{dt}\sin{\omega t} = \frac{d\sin{u}}{du}\frac{du}{dt} = \cos{u}\omega = \omega \cos{\omega t}
+        $$
+      e a acelera\c c\~ao 
+      $$
+      \frac{d}{dt}\cos{u} \omega = \frac{d}{du}\cos{u}\omega \frac{du}{dt} = \omega^{2}\sin{\omega t}.
+      $$
+      Vejamos um exemplo
+     \begin{example}
+        Considere um objeto em repouso preso a uma mola com posi\c c\~ao de equil\'ibrio $x_{0}$. Ocorre um
+        deslocamento da mola em $\Delta y$, aplicando uma for\c ca $\vec{F}_{el}$ ao bloquinho. Qual \'e a for\c ca normal?
+
+        Note que todas as for\c cas est\~ao atuando no eixo y. Como o corpo est\'a parado, a resultante no eixo y \'e nula, tal que
+      $F_{r}^{y} = |F_{el}| + N - P$. Com isso, $N = P - |F_{d}| = mg - k|\Delta y|.$
+     \end{example}
+ \subsection{For\c ca de Tra\c c\~ao}
+   \begin{example}
+    Considere um elevador manual segurado por uma roldana com uma pessoa dentro dela. Essa pessoa est\'a puxando a corda, exercendo
+    uma for\c ca $\vec{F}$ para baixo. O sistema pessoa-elevador tem uma massa de $m=95kg$. Utilize $g=9.81m/s^{2}$.
+   \begin{itemize}
+     \item[a)] Qual \'e o m\'odulo de $\vec{F}$ para subir com velocidade constante?
+       \item[b)] Qual \'e a for\c ca resultante para uma acelera\c c\~ao $a_{y}=1.3m/s^{2}?$
+   \end{itemize}
+
+   (a) Observe que, ao puxar a corda, a rea\c c\~ao gerada \`a for\c ca do pux\~ao \'e a for\c ca de tra\c c\~ao. Al\'em disso,
+   a resultante no ponto em que a pessoa puxa a corda \'e igual \`a tra\c c\~ao. Assim, como h\'a a tra\c c\~ao no elevador tamb\'em, 
+     $$
+   \vec{F}_{R}^{y}= -P + T + T = -P + 2T 
+     $$
+     Como \'e pedido que o elevador suba com velocidade constante, $\vec{F}_{R}^{y} = 0$, donde segue que 
+       $$
+         T = \frac{P}{2} = \frac{95 \cdot 9.8}{2} = 466N.
+       $$
+
+  (b) Como encontramos a forma da resultante no \'ultimo item, temos 
+    $$
+      \vec{F}_{R}^{y} = - P + 2T = ma_{y} \Rightarrow T = F = \frac{ma_{y}+P}{2}.
+    $$
+    Assim, $F = \frac{m}{2}(a_{y}+g)^{2} = 528N.$
+   \end{example} 
+
+  \begin{example}
+    Dado um bloco e multiplas polias, sendo o bloco com um peso de $2670N.$ Suponha que o sistema est\'a em equil\'ibrio.
+   \begin{itemize}
+     \item[a)] Quanto vale a tra\c c\~ao no sistema da primeira roldana?
+     \item[b)] Agora, quanto vale a tra\c c\~ao considerando tamb\'em a segunda roldana no sistema como separada?
+     \item[c)] Suponha que a polia passa por uma nova polia ligada ao teto antes de chegar ao bloco. Qual \'e a tra\c c\~ao nesse caso?
+   \end{itemize}
+
+   (a) Como a polia redireciona a dire\c c\~ao da tra\c c\~ao uma vez, $F_{r}^{y} = 2T - P = 0,$ segue que $T = \frac{P}{2} = 1385N.$
+
+   (b) Apesar de ter adicionado uma nova polia, ainda assim, como s\'o h\'a dois pontos de sustenta\c c\~ao, $F_{r}^{y} = 2T - P \Rightarrow T = \frac{P}{2}.$
+
+   (c) Diferente do item (b), como ela passa por mais uma polia, h\'a um novo ponto de sustenta\c c\~ao al\'em do segundo, sendo eles
+   o teto, a polia presa ao teto e a polia preso ao bloco. Logo, $F_{r}^{y} = 3T - P = 0$, ou seja, $T = \frac{P}{3} = 890N.$
+  \end{example}
+
+\section{Aula 13 - 03/05/2023}
+\subsection{O que Esperar?}
+\begin{itemize}
+  \item Revis\~ao Pr\'e-Prova
+\end{itemize}
+\subsection{Cinem\'atica}
+\subsubsection{Movimento Unidimensional}
+  As equa\c c\~oes do movimento unidimensional s\~ao 
+ \begin{align*}
+   &\vec{r}(t)\Rightarrow \vec{v}(t)=\frac{d \vec{r}(t)}{dt} \Rightarrow \vec{a}(t) = \frac{d \vec{v}(t)}{dt} \\
+   &\vec{v}(t)-\vec{v}(t_{0}) = \int_{t_{0}}^{t} \vec{a}(t)dt \Rightarrow \vec{r}(t) - \vec{r}(t_{0}) = \int_{t_{0}}^{t} \vec{v}(t)dt
+ \end{align*}
+ \subsubsection{Movimento Bidimensional}
+  Em duas dimens\~oes ou mais, 
+    $$
+      \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k} (\text{ O mesmo para v(t) e a(t)}).
+    $$
+    Neste caso, decompomos o movimento em cada eixo e tratamos como movimento unidimensional. No caso do movimento bidimensional uniforme,
+    as velocidades em ambos os eixos s\~ao constantes, tal que 
+      $$
+         \left\{\begin{array}{ll}
+            x(t) = x_{0} + v_{x}t - t = \frac{x-x_{0}}{v_{x}}\\
+            y(t) = y_{0} + v_{y}t.
+          \end{array}\right.
+      $$
+      A trajet\'oria ser\'a $y=y_{0} + \frac{v_{y}}{v_{x}}(x-x_{0}).$ 
+\subsubsection{Trajet\'oria de Proj\'eteis}
+      Vimos tamb\'em sobre o movimento de proj\'eteis. Nele, a velocidade no eixo x \'e constante; No eixo y, $v_{y}(t) = v_{y}^{0} + at$,
+      $a\neq0$. Assim, $x(t) = x_{0} + v_{x}^{0}t$ e $y(t) = y_{0} + v_{y}^{0}t$. Al\'em disso, a trajet\'oria \'e dada por 
+        $$
+        y = \tan{\theta }x - \frac{gx^{2}}{2|v_{0}|^{2}\cos^{2}{(\theta )}}
+        $$
+      Utilizando esses dados, a altura m\'axima de um objeto em trajet\'oria de proj\'etil, $(x_{m}, y_{m})$, ocorre quando
+      $v_{y}(t_{m}) = 0$, tal que $t_{m}=\frac{|\vec{v}_{0}|\sin{(\theta )}}{g}, y_{m}=\frac{1}{2}\frac{|v_{0}|^{2}\sin^{2}{(\theta )}}{g}.$ 
+      Finalmente, vimos o alcance de um objeto em lan\c camento, o qual \'e dado pelo ponto cartesiano $(x_{r}, 0)$: 
+        $$
+        x_{r} = \frac{v_{0}^{2}}{g}\sin{\theta }\cos{\theta },\quad t_{m} = \frac{2|\vec{v}_{0}|\sin{(\theta)}}{g} = 2t_{m}
+        $$
+\subsubsection{Movimento Circular}
+        Al\'em desses tipos de movimentos, aprendemos sobre o movimento circular, sumarizado na tabela
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & \textbf{Vetoriais} & \textbf{Variáveis angulares} & \textbf{Variáveis escalares} \\
+        \hline
+        \textbf{Posição} & $\vec{r}(t)$ & $\theta(t)$ & $s(t) = R\theta(t)$ \\
+        \hline
+        \textbf{Velocidade} & $\vec{v}(t)$ & $\omega(t) = \frac{d \theta(t)}{dt}$ & $v(t) = \frac{d s(t)}{dt} = R\omega(t)$ \\
+        \hline
+        \textbf{Aceleração} & $\vec{a}(t)$ & $\alpha(t) = \frac{d\omega(t)}{dt} = \frac{d^2\theta(t)}{dt^2}$ & $|\vec{a}(t)| = \frac{dv(t)}{dt} = R\alpha(t),\quad |\vec{a}_{cp}| = \frac{v^2}{R}$ \\
+        \hline
+    \end{tabular}
+    \caption{Resumo movimento circular.}
+    \label{Resumo2MCU}
+  \end{table}
+
+\subsection{Revis\~ao de Din\^amica}
+  A din\^amica \'e a rela\c c\~ao entre o movimento e as intera\c c\~oes/for\c cas.
+  \subsubsection{Leis de Newton}
+  A primeira Lei de Newton \'e a seguinte:
+ \begin{quote}
+   ``Um corpo em repouso ou em Movimento Uniforme matn\'em o seu estado a n\~ao ser que haja uma for\c ca.''
+ \end{quote}
+  A segunda relaciona massa e acelera\c c\~ao para descrever a intera\c c\~ao: 
+    $$
+      \vec{F}_{r} = m \vec{a}.
+    $$
+  A terceira e \'ultima \'e a chamada lei da a\c c\~ao e rea\c c\~ao 
+ \begin{quote}
+   ``Para toda for\c ca que \'e aplicada, ocorrer\'a uma for\c ca de rea\c c\~ao com mesma intensidade, mas dire\c c\~ao oposta''
+ \end{quote}
+ \subsubsection{Tipos de For\c ca}
+ Em seguida, vimos os tipos de for\c ca, sendo elas 
+\begin{itemize}
+  \item[1)] For\c ca Peso: $\vec{P} = m \vec{g}.$
+  \item[2)] For\c ca Normal: Aparece em corpos que est\~ao em contato, respons\'avel por impedir objetos de entrarem um no outro.
+  Caso o contato suma, a normal tamb\'em desparece, ou seja, se perde o contato, $\vec{N} = 0.$
+  \item[3)] For\c ca de Tra\c c\~ao $(\vec{T})$: Atua no contexto de cordas, polias, etc.
+  \item[4)] For\c ca El\'astica: For\c ca restaurativa quando uma mola \'e distorcida. $\vec{F} = -k \vec{x}.$
+\end{itemize}
+\subsection{Exemplos}
+\begin{example}
+  Considere um forno esquentado at\'e 200 graus. Num peda\c co deste forno, h\'a um pequeno buraco. Al\'em disso, h\'a algo dentro do forno.
+Atrav\'es desse buraco, h\'a um feixe de part\'iculas saindo com velocidade $\vec{v}_{0}$. Na dire\c c\~ao pela qual elas est\~ao saindo,
+h\'a um gradiente de campo magn\'etico $B'$ com uma for\c ca de origem magn\'etica agindo nele, dada por $\vec{F}\approx \mu_{B}\vec{B}'$,
+em que $\mu_{B}$ \'e uma constante chamada magneton de Bohr com valor $\mu_{B}=9.27 \cdot 10^{-24}J/T.$ Quando a part\'icula passa pelo
+campo ap\'os percorrer a dist\^ancia D, a for\c ca far\'a com que ela mude sua trajet\'oria e comece a mover-se para baixo. No fim do sistema, tem uma m\'aquina
+que registrar\'a a posi\c c\~ao em que a part\'icula ir\'a parar, ou seja, um desvio $\Delta y$ de onde ela originalmente
+teria parado caso continuasse a seguir reto.
+Temos $|v_{0}|=400m/s, D = 10m, \Delta y = 19cm, B' = 2.5T/m.$ Qual \'e o \'atomo? 
+
+Vamos separar em eixos. No eixo x, 
+  $$
+    v_{x} = v_{0}^{x} = |\vec{v}_{0}|,\quad x(t) = |\vec{v}_{0}|t.
+  $$
+  Disto segue que $t = \frac{D}{|\vec{v}_{0}|} = 0.025s.$
+
+  No eixo y, 
+    $$
+      y(t) = \frac{1}{2}at^{2}.
+    $$
+  Podemos encontrar a acelera\c c\~ao notando que $F = ma = \mu_{B}B',$ ou seja, $\vec{a} = \frac{\mu_{B}B'}{m}$. Assim, 
+    $$
+      y(t) = \frac{1}{2}\frac{\mu_{B}B'}{m}t^{2}.
+    $$
+  No instante final, 
+    $$
+      \Delta y=\frac{1}{2}\frac{\mu_{B}B'}{m}t_{f}^{2} \Rightarrow m = \frac{1}{2}\frac{\mu_{B}B'}{\Delta y}t_{f}^{2}.
+    $$
+  Podemos resolver essa conta com os dados do enunciado: 
+    $$
+      m = \frac{1}{2}\frac{9.27 \cdot 10^{-24}\cdot 2.5}{0.19}(0.025)^{2} = 3.81 \cdot 10^{-26}kg.
+    $$
+  Pela tabela peri\'odica, utilizando a unidade de massa at\^omica como $1.66 \cdot 10^{-27}kg,$ temos 
+    $$
+      m = m^{*}\cdot u,
+    $$
+  sendo $m^{*}$ o n\'umero de massa at\^omica. Assim, 
+    $$
+      m^{*} = \frac{m}{u}\approx 22.9\approx 2 \cdot 11.
+    $$
+  Portanto, os \'atomos saindo pelo fog\~ao s\~ao de s\'odio.
+\end{example}
+\begin{example}
+  Seuponha que tem um jogador de futebol a uma dist\^ancia d do gol. Ele chuta a bola, a qual faz um \^angulo $\theta $ com o 
+eixo horizontal. O gol possui uma altura h. Qual \'e a menor e a maior velocidade para fazer o gol? Dados d = 9m, h = 2.4m, $\theta =30^{\circ}, g=9.8m/s^{2}.$
+
+  Para entrar no gol, a bola deve percorrer toda a d e ficar no ch\~ao, ou acertar um lugar menor que h. Em outras palavras,
+  temos uma restri\c c\~ao com rela\c c\~ao \`a trajet\'oria (Sempre que houver uma restri\c c\~ao de trajet\'oria, utilize a equa\c c\~ao da trajet\'oria.).
+  Segue que 
+    $$
+    y = \tan{(\theta)}x - \frac{gx^{2}}{2v_{0}^{2}\cos^{2}{(\theta )}}.
+    $$
+  Em x = d, $0\leq y\leq h$, tal que 
+    $$
+    0\leq \tan{(\theta)}d - \frac{gd^{2}}{2v_{0}^{2}\cos^{2}{(\theta )}}\leq h.
+    $$
+  Vamos quebrar o problema em duas partes. Na primeira, 
+ \begin{align*}
+   &\frac{gd^{2}}{2v_{0}^{2}\cos^{2}{\theta }}\leq \tan{(\theta )}d \Rightarrow gd^{2}\leq \tan{(\theta )}d \cdot 2v_{0}^{2}\cos^{2}{(\theta)}\\
+   & \Rightarrow \frac{gd^{2}}{\tan{(\theta )}d \cdot 2\cos^{2}{(\theta )}}\leq v_{0}^{2} \Rightarrow  \frac{gd}{2\sin{\theta }\cos{\theta }}\leq v_{0}^{2}\\
+   & \Rightarrow v_{0}\geq 10.09m/s.
+ \end{align*}  
+ Para a parte 2,
+ \begin{align*}
+   &\tan{(\theta )}d - \frac{gd^{2}}{2v_{0}^{2}\cos^{2}{(\theta )}}\leq  h \Rightarrow \tan{(\theta )}d - h\leq \frac{gd^{2}}{2v_{0}^{2}\cos^{2}{(\theta )}}\\
+   & \Rightarrow v_{0}^{2}(\tan{(\theta )}d - h)\leq \frac{gd^{2}}{2\cos^{2}{(\theta )}} \Rightarrow  v_{0}^{2}\leq \frac{gd^{2}}{2\cos^{2}{(\theta )}(\tan{(\theta )}d-h)}\\
+   & v_{0}\leq 13.76m/s.
+ \end{align*}
+ Portanto, $10.09m/s\leq v_{0}\leq 13.76m/s.$
+\end{example}
 \end{document}
+
+

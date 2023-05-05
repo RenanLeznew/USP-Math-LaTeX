@@ -1,35 +1,61 @@
 \babel@toc {portuguese}{}\relax 
-\contentsline {section}{\numberline {1}Aula 00 - 23/03/2023}{3}{section.1}%
-\contentsline {section}{\numberline {2}Aula 01 - 27/03/2023}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Movimentos 1D}{3}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Aula 02 - 29/03/2023}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Motiva\c c\~oes}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Acelera\c c\~ao}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Movimento Retil\'ineo Uniformemente Variado.}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4} Aula 03 - 30/03/2023}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Motiva\c c\~oes}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Exerc\'icio 29 - Tipler}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Exerc\'icio 44 - Tipler}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Exerc\'icio 58 - Tipler}{10}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Exerc\'icio 67 - Tipler}{10}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Exerc\'icio 72 - Tipler}{10}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Exemplo - Aula 06 Vanderlei}{11}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Aula 04 - 10/04/2023}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Motiva\c c\~oes}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Vetores}{13}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Movimento Uniforme Bidimensional}{15}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Aula 06 - 13/04/2023}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Motiva\c c\~oes}{16}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Movimento Relativo}{16}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Aula 7 - 17/03/2023}{18}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{18}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Movimento Circular}{18}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Acelera\c c\~oes no Movimento Circular.}{19}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Movimento Circular Uniforme}{20}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Aula 8 - 19/04/2023}{22}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Motiva\c c\~oes}{22}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Exemplo de MCU - 67 Tiples}{22}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Din\^amica e Leis de Newton}{22}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}O que esperar}{22}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}Leis de Newton}{23}{subsubsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3}Exemplo 4.2 - Tipler}{24}{subsubsection.8.3.3}%
+\contentsline {section}{\numberline {1}Aula 00 - 23/03/2023}{4}{section.1}%
+\contentsline {section}{\numberline {2}Aula 01 - 27/03/2023}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Movimentos 1D}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Aula 02 - 29/03/2023}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motiva\c c\~oes}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Acelera\c c\~ao}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Movimento Retil\'ineo Uniformemente Variado.}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4} Aula 03 - 30/03/2023}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motiva\c c\~oes}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Exerc\'icio 29 - Tipler}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Exerc\'icio 44 - Tipler}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Exerc\'icio 58 - Tipler}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Exerc\'icio 67 - Tipler}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Exerc\'icio 72 - Tipler}{11}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Exemplo - Aula 06 Vanderlei}{12}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Aula 04 - 10/04/2023}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motiva\c c\~oes}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Vetores}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Movimento Uniforme Bidimensional}{16}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Aula 06 - 13/04/2023}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Motiva\c c\~oes}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Movimento Relativo}{17}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Aula 7 - 17/03/2023}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Motiva\c c\~oes}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Movimento Circular}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Acelera\c c\~oes no Movimento Circular.}{20}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Movimento Circular Uniforme}{21}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Aula 8 - 19/04/2023}{23}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Motiva\c c\~oes}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Exemplo de MCU - 67 Tiples}{23}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Din\^amica e Leis de Newton}{23}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}O que esperar}{23}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Leis de Newton}{24}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Exemplo 4.2 - Tipler}{25}{subsubsection.8.3.3}%
+\contentsline {section}{\numberline {9}Aula 09 - 20/04/2023}{26}{section.9}%
+\contentsline {section}{\numberline {10}Aula 10 - 24/04/2023}{27}{section.10}%
+\contentsline {subsection}{\numberline {10.1}O que esperar?}{27}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Motiva\c c\~ao}{27}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Tipos de For\c ca}{28}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}As Quatro For\c cas Fundamentais de Forma Breve}{28}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}For\c ca Peso}{29}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}For\c ca Normal}{29}{subsubsection.10.3.3}%
+\contentsline {section}{\numberline {11}Aula 11 - 25/04/2023 (INCOMPLETO!!!)}{32}{section.11}%
+\contentsline {subsection}{\numberline {11.1}O que esperar?}{32}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}For\c ca de Tens\~ao}{32}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Aula 12 - 27/04/2023}{33}{section.12}%
+\contentsline {subsection}{\numberline {12.1}O que esperar?}{33}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}For\c ca de Mola}{33}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}For\c ca de Tra\c c\~ao}{33}{subsection.12.3}%
+\contentsline {section}{\numberline {13}Aula 13 - 03/05/2023}{34}{section.13}%
+\contentsline {subsection}{\numberline {13.1}O que Esperar?}{34}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Cinem\'atica}{34}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}Movimento Unidimensional}{34}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}Movimento Bidimensional}{34}{subsubsection.13.2.2}%
+\contentsline {subsubsection}{\numberline {13.2.3}Trajet\'oria de Proj\'eteis}{34}{subsubsection.13.2.3}%
+\contentsline {subsubsection}{\numberline {13.2.4}Movimento Circular}{35}{subsubsection.13.2.4}%
+\contentsline {subsection}{\numberline {13.3}Revis\~ao de Din\^amica}{35}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Leis de Newton}{35}{subsubsection.13.3.1}%
+\contentsline {subsubsection}{\numberline {13.3.2}Tipos de For\c ca}{35}{subsubsection.13.3.2}%
+\contentsline {subsection}{\numberline {13.4}Exemplos}{35}{subsection.13.4}%

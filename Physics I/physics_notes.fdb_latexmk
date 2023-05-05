@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1681914763 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1681914767 0
+["pdflatex"] 1683124942 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1683124946 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
-  "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1681742047 84647 7e5abdd0624797a4563ca4ce8a66548c ""
+  "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1682036850 84647 7e5abdd0624797a4563ca4ce8a66548c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1655166133 11548 2f99fce5cae9ccd9882913d55e2ae310 ""
   "C:/Users/renan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1669959708 10804632 69bb159aecd433ed655feba531b189ca ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
@@ -231,10 +231,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "physics_notes.aux" 1681914767 5317 7e355365e3bb26a0d85d915bd5185a80 "pdflatex"
-  "physics_notes.out" 1681914767 5419 e97602e5c2e116263c4f301ab076bdb1 "pdflatex"
-  "physics_notes.tex" 1681914762 56059 8c93cd9027608183fb74a03c03f66e4b ""
-  "physics_notes.toc" 1681914767 2955 3459f41a7240f32fbec8a6f7a8e82a15 "pdflatex"
+  "physics_notes.aux" 1683124946 8926 677ee9f9faa06dc15ff0a1da8b0538de "pdflatex"
+  "physics_notes.out" 1683124946 9491 89807019f9161d0b5ff6e00a7f626829 "pdflatex"
+  "physics_notes.tex" 1683124936 83039 305d19f1cc2a89a7396318199be71235 ""
+  "physics_notes.toc" 1683124946 5293 4f92af42ebf1627cf2452a56e364d970 "pdflatex"
   (generated)
   "physics_notes.aux"
   "physics_notes.log"

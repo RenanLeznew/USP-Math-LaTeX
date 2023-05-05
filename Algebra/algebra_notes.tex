@@ -41,7 +41,7 @@
 
  \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
 
- \title{Notas de }
+ \title{Notas de Algebra}
  \author{Renan Wenzel}
  \date{\today}
 
@@ -1439,5 +1439,473 @@ maneira eficiente.
      $$
      com $d_{i} > 1$ e $d_{i}\bigl|\bigr. d_{i+1}, i=1,\cdots,r-1.$ 
  \end{theorem*}
-\end{document}
+\newpage
 
+\section{Aula 09 - 25/04/2023}
+\subsection{O que esperar}
+\begin{itemize}
+  \item Transforma\c c\~oes que preservam dist\^ancias - Isometrias;
+  \item Caracteriza\c c\~oes de Isometrias.
+\end{itemize}
+
+\subsection{Motiva\c c\~ao para Aula}
+  Ações de grupos são um conceito importante na álgebra, que estuda a interação entre grupos e estruturas algébricas. 
+Elas descrevem como os elementos de um grupo atuam em outro conjunto, preservando a estrutura desse conjunto.
+
+  Formalmente, uma ação de grupo é uma função que mapeia cada par formado por um elemento do grupo e um elemento do
+conjunto em outro elemento do conjunto, obedecendo às seguintes propriedades:
+\begin{itemize}
+  \item[i)] Identidade: A ação do elemento neutro do grupo (normalmente denotado por "e") em qualquer elemento do conjunto é o próprio elemento, ou seja, $e \cdot x = x.$
+  \item[ii)] Compatibilidade: A ação de um produto de elementos do grupo é a mesma que a ação dos elementos 
+  individuais na sequência, ou seja, $(gh)x = g(h \cdot x)$, para todos g, h pertencentes ao grupo e x pertencente ao conjunto.
+\end{itemize}
+Num contexto mais aplicado, as a\c c\~oes de grupos surgem em \'areas como f\'isica, qu\'imica, computa\c c\~ao, etc.
+Na forma de 
+\begin{itemize}
+  \item[1)] Simetrias: Em geometria, ações de grupos são usadas para analisar simetrias de formas geométricas, como rotações e reflexões.
+  \item[2)] Teoria dos Grafos: Ações de grupos ajudam a estudar a simetria e as propriedades de grafos em teoria dos grafos.
+  \item[3)] Química: Ações de grupos são aplicadas na análise das simetrias moleculares, especialmente na teoria dos grupos de pontos, que é fundamental para a compreensão da espectroscopia e da estrutura molecular.
+  \item[4)] Criptografia: Em ciência da computação, as ações de grupos são utilizadas em algoritmos criptográficos e na teoria da codificação.
+\end{itemize}
+  Uma analogia que podemos utilizar para compreender a ideia \'e a de crian\c cas com um brinquedo: Imagina que
+você tem um grupo de amiguinhos e alguns brinquedos. Os amiguinhos são como os elementos do grupo, e os brinquedos
+são como os elementos do conjunto. Quando seus amiguinhos brincam com os brinquedos, eles podem trocar os brinquedos
+de lugar, girá-los ou virá-los de cabeça para baixo. Essa brincadeira segue algumas regrinhas, e é isso que chamamos de "ações de grupos".
+Essa ideia nos ajuda a entender padrões e simetrias em coisas do nosso mundo, como formas geométricas e até moléculas!
+
+  De maneira geral, as ações de grupos são uma maneira de descrever como um grupo de elementos interage com outro conjunto de elementos. Essa 
+interação segue algumas regras e ajuda a entender padrões, simetrias e propriedades em várias áreas do conhecimento, como geometria, química e ciência da computação.
+
+  Come\c caremos introduzindo este assunto por meio das simetrias, partindo do ponto das isometrias.
+\subsection{Isometrias}
+  Aqui, considere $\left< \cdot , \cdot  \right>:\mathbb{R}^{n}\times \mathbb{R}^{n}\rightarrow \mathbb{R}$ o produto interno usual.
+ \begin{def*}
+   Uma isometria $f:\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}$ \'e uma fun\c c\~ao que preserva dist\^ancia, isto \'e,
+   dados u, v em $\mathbb{R}^{n},$ 
+     $$
+       |f(u)-f(v)| = |u-v|.
+     $$
+ \end{def*}
+ \begin{example*}
+   O operador linear ortogonal $\varphi :\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}$ \'e uma isometria.
+ \end{example*}
+\begin{example*}
+  Se $a\in \mathbb{R}^{n}, t_{a}:\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}, v\mapsto v+a$ \'e uma isometria chamada
+de transla\c c\~ao.
+\end{example*}
+\begin{example*}
+  A fun\c c\~ao $\varphi :\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}, \varphi (x,y)=(x\cos{\theta }-y\sin{\theta }, x\sin{\theta }+y\cos{\theta })$
+  \'e uma isometria.
+\end{example*}
+\begin{example*}
+  A composta de isometrias \'e uma isometria.
+\end{example*}
+\begin{lemma*}
+  Sejam $x,y\in \mathbb{R}^{n}$ tais que $\left< x, x \right> = \left< x, y \right> = \left< y, y \right>.$ Ent\~ao,
+  $x = y.$
+\end{lemma*}
+\begin{proof*}
+  Segue que 
+    $$
+      \left< x-y, x-y \right> = \left< x, x \right>-2\left< x, y \right>+\left< y, y \right> = 0.
+    $$
+  Portanto, $x-y =0$, ou seja, $x=y.$ \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja $\varphi :\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}.$ S\~ao equivalentes:
+ \begin{itemize}
+   \item[i)] $\varphi $ \'e isometria e $\varphi (0)=0;$
+   \item[ii)] $\left< \varphi (u), \varphi (v) \right> = \left< u, v \right>\forall u, v\in \mathbb{R}^{n};$
+   \item[iii)]$\varphi $ \'e um operador linear ortogonal.
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  $c)\Rightarrow a)$ Ok;
+
+  $a)\Rightarrow b)$ Pela defini\c c\~ao de isometria, temos 
+    $$
+      |\varphi (u)-\varphi (v)| = |u-v| \Longleftrightarrow \left< \varphi (u)-\varphi (v), \varphi (u)-\varphi (v) \right> = 
+      \left< u-v, u-v \right>.
+    $$
+  Fazendo u = 0, temos 
+  $$
+    \left< \varphi (v), \varphi (v) \right> = \left< v, v \right>.
+  $$
+  Analogamente, para v =0, temos 
+    $$
+      \left< \varphi (u), \varphi (u) \right> = \left< u, u \right>.
+    $$
+  Como o produto interno \'e bilinear, 
+    \begin{align*} 
+      &\left< \varphi (u), \varphi (u) \right> - 2\left< \varphi (u), \varphi (v) \right> + \left< \varphi (v), \varphi (v) \right>\\
+      &=\left< u, u \right> - 2\left< u, v \right> + \left< v, v \right>.
+    \end{align*}
+    Logo, 
+      $$
+        \left< \varphi (u), \varphi (v) \right> = \left< u, v \right>.
+      $$
+
+    $b)\Rightarrow c)$ Basta mostrar que $\varphi (u+v)=\varphi (u)+\varphi (v)$ e $\varphi (\alpha u) = \alpha \varphi (u).$
+    para todos u, v em $\mathbb{R}^{n}, \alpha \in \mathbb{R}.$ 
+
+    Sejam $x=\varphi (u+v), y=\varphi (u)+\varphi (v).$ Observe que 
+   \begin{align*}
+     &\circ{}\left< x, x \right>=\left< \varphi (u+v), \varphi (u+v) \right> = \left< u+v, u+v \right>\\
+     &\circ{}\left< y, y \right> = \left< \varphi (a)+\varphi (v), \varphi (a)+\varphi (v) \right> =\\
+     &=\left< \varphi (u), \varphi (u) \right> + 2\left< \varphi (u),\varphi (v) \right> + \left< \varphi (v), \varphi (v) \right>\\
+     &=\left< u, v \right> +2\left< u, v \right> + \left< v, v \right> = \left< u+v, u+v \right>.\\
+     &\circ{}\left< x, y \right>=\left< \varphi (u+v), \varphi (u)+\varphi (v) \right>=\left< u+v, u \right>+\left< u+v, v \right>=\left< u+v, u+v. \right>
+   \end{align*}
+    Assim, pelo lema anterior, x=y. Analogamente, se $x=\varphi (\alpha u)$ e $y=\alpha \varphi (u),$ temos x=y (exerc\'icio). \qedsymbol
+\end{proof*}
+ \begin{crl*}
+   Todo isomorfismo f de $\mathbb{R}^{n}$ \'e uma composi\c c\~ao de um operador ortogonal com uma transla\c c\~ao. Mais precisamente,
+   $f=t_{a}\varphi,$ sendo $\varphi $ ortogonal a $a=f(0).$ Al\'em disso, essa decomposi\c c\~ao \'e \'unica.
+ \end{crl*}
+\begin{proof*}
+  Observe que $t_{a}^{-1}f(0)=(t_{a}^{-1})(a)=0.$ Logo, $t_{a}^{-1}f$ \'e uma isometria que leva 0 em 0. Pelo teorema, $\varphi =t_{a}^{-1}f$
+  \'e um operador linear ortogonal. Deste modo, $f=t_{a}\varphi .$ \qedsymbol
+\end{proof*}
+\begin{prop*}
+ \begin{itemize}
+   \item[1)] Se $\varphi $ \'e um operador linear ortogonal, ent\~ao $\varphi ^{-1}$ \'e um operador linear ortogonal.
+   \item[2)] Se $\varphi , \psi$ s\~ao operadores ortogonais, net\~ao $\varphi\circ{\psi}$ \'e operador ortogonal.
+   \item[3)] $t_{a}\circ{t_{b}}=t_{a+b};$
+     \item[4)] $\varphi\circ{t_{a}}=t_{a'}\circ{\varphi },$ em que $a'=\varphi (a)$ e $\varphi $ \'e operador linear.
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  Exerc\'icio.
+\end{proof*}
+\begin{crl*}
+  Corol\'ario 1: Seja $\mathcal{O}_{n}\coloneqq\{\varphi :\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}: \varphi \text{ \'e operador linear}\}$.
+  Ent\~ao, $(\mathcal{O}_{n}, \circ)$ \'e um grupo.
+\end{crl*}
+\begin{crl*}
+  Corol\'ario 2: Seja $T=\{ta:a\in \mathbb{R}^{n}\}$. Ent\~ao $(T, \circ)$ \'e um grupo.
+\end{crl*}
+\begin{crl*}
+  Corol\'ario 3: Se $M_{n}$ \'e o conjunto de todas as isometrias de $\mathbb{R}^{n}$, net\~ao $(M_{n}, \circ)$ \'e um grupo.
+\end{crl*}
+\begin{proof*}
+  J\'a sabemos que a composta de isometrias \'e uma isometria e que a opera\c c\~ao de composi\c c\~ao de fun\c c\~oes \'e associativa.
+  Observe que $Id_{\mathbb{R}^{n}}=Id\in M_{n}$, logo dado $f\in M_{n},$ 
+    $$
+      f\circ{Id}=Id\circ{f}=f.
+    $$
+    Agora, se $f\in M_{n}$, do teorema anterior, $f = t_{a}\varphi ,$ sendo a um vetor de $\mathbb{R}^{n}$ e $\varphi $
+    um operador linear ortogonal. Net\~ao, 
+      $$
+        f^{-1}\coloneqq\varphi ^{-1}\circ{t_{-a}}=t_{a'}\circ{\varphi ^{-1}},\quad a'=\varphi ^{-1}(-a).
+      $$
+      Logo, $f^{-1}\in M_{n}.$ Ainda mais, 
+        $$
+          f\circ{f^{-1}} = t_{a}\varphi \varphi ^{-1}t_{-a}=t_{a}t_{-a}=t_{a A}=t_{0}=Id.
+        $$
+      e, portanto, $f^{-1}\circ{f}=Id.$ \qedsymbol
+\end{proof*}
+\begin{prop*}
+  Seja $a\in \mathbb{R}^{n}$ e $\pi :M_{n}\rightarrow \mathcal{O}_{n}, f=t_{a}p\mapsto \varphi $, ent\~ao $\pi $
+  \'e um morfismo sobrejetor cujo n\'ucleo \'e T. Em particular, $T\trianglelefteq{M_{n}}.$
+\end{prop*}
+\begin{proof*}
+  Sejam $f, g\in M_{n}.$ Ent\~ao, existem $a, b\in \mathbb{R}^{n}$ e $\varphi , \psi\in \mathcal{O}_{n}$ tais que 
+  $f=t_{a}\varphi $ e $g=t_{b}\psi.$ Desta forma, 
+ \begin{align*}
+   \pi (fg) &= \pi (t_{a}\varphi t_{b}\psi)=\pi (t_{a}t_{b'}\varphi\circ{\psi})&\\
+            &=\pi (t_{a+b'}(\varphi\circ{\psi}))\\
+            &=\varphi \psi = \pi (f)\pi (g).\text{ \qedsymbol}
+ \end{align*}
+\end{proof*}
+  Em particular, pelo Teorema do Isomorfismo, uma consequ\^encia desta proposi\c c\~ao \'e que 
+    $$
+      \frac{M_{n}}{T}\cong{\mathcal{O}_{n}}.
+    $$
+\newpage
+
+\section{Aula 10 - 27/04/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Tipos de Isometrias Principais.
+\end{itemize}
+\subsection{Principais Isometrias em $\mathbb{R}^{n}$}
+\begin{lemma*}
+  Sejam $\eta, f\in M_{n}, x, y\in \mathbb{R}^{n}$ tais que f(x) = y. Suponha que $\eta(x) = x', \eta(y) = y'.$
+Considere $f'\in M_{n}$ tal que $f'(x')=y'$ para todos x, y em $\mathbb{R}^{n}.$ Ent\~ao, $f' = \eta f\eta^{-1}$.
+  Em outras palavras, o diagrama abaixo comuta: 
+\begin{center}
+ \begin{tikzcd}
+   \mathbb{R}^{n} \arrow[d, "\eta "] \arrow[r, "f"] & \mathbb{R}^{n}\arrow[d,"\eta =t_{v}"]\\
+   \mathbb{R}^{n} \arrow[r, "f'"] & \mathbb{R}^{n}
+ \end{tikzcd}
+\end{center}
+\end{lemma*}
+\begin{proof*}
+  Se f(x) = y, ent\~ao $f\eta ^{-1}(u') = \eta ^{-1}(y')$, ou seja, $\eta f\eta ^{-1}(x')=y'$. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  O morfismo $\pi :M_{n}\rightarrow O_{n}$ n\~ao muda por transla\c c\~ao de origem
+\end{crl*}
+\begin{proof*}
+  Sejam $t_{a}$ uma translação em $\mathbb{R}^{n}, a\in \mathbb{R}^{n}, f\in M_{n}$. Então, do lema anterior, f,
+  após a mudança de coordenadas por $t_{a}$, é dado por 
+    $$
+      f'=t_{a}f(ta)^{-1} = t_{a}ft_{-a}.
+    $$
+    Então, $\pi (f') = \pi (t_{a}ft_{-a}) = \pi (t_{a})\pi (f)\varphi (t_{-a}) = \pi (f).$ \qedsymbol
+\end{proof*}
+  Lembre-se que se $\varphi \in \mathcal{O}_{n}$ e $M_{\varphi }$ é sua matriz, então $M_{\varphi }$ é uma matriz ortogonal e,
+  assim, $M_{\varphi }^{-1} = M_{\varphi }^{t}.$ Logo, 
+    $$
+    1 = \det{(M_{\varphi }M_{\varphi }^{-1})} = \det{M_{\varphi }^{2}} \Rightarrow \det{M_{\varphi }} = Id.
+    $$
+   \begin{def*}
+     Um operador ortogonal $\varphi \in \mathcal{O}_{n}$ preserva orientação se o determinante de sua matriz vale 1. Analogamente,
+     diremos que ele reverte orientação se seu determinante vale -1. $\square$.
+   \end{def*}
+   \begin{def*}
+     Uma função $f\in M_{n}$ preserva orientação se $f=t_{a}\varphi $, sendo $a\in \mathbb{R}^{n}$ e $\det{(M_{\varphi })} = 1.$
+     Caso contrário, diremos que f reverte orientação. $\square$
+   \end{def*}
+   \begin{lemma*}
+     O mapa $\sigma :M_{n}\rightarrow \{\pm1\}, \sigma =t_{a}\varphi\mapsto \det{(M_{\varphi })}$ é um morfismo de grupos.
+   \end{lemma*}
+   \begin{proof*}
+     Sejam $f, g\in M_{n}, f = t_{a}\varphi , g = t_{b}\psi$ com $a, b\in \mathbb{R}^{n}$. Então, 
+       $$
+         \sigma (f\circ{}g) = \sigma (t_{a}\varphi t_{b}\psi) = \sigma (t_{a}t_{b'}\sigma \psi),
+       $$ 
+    sendo b'=$\varphi (b).$ Portanto, 
+      $$
+      \det{(M_{\varphi \psi})} = \det{(M_{\varphi }M_{\psi})} = \det{M_{\varphi }}\det{M_{\psi}}=\sigma (f)\sigma (g).\text{ \qedsymbol}
+      $$
+   \end{proof*}
+   \begin{def*}
+     Define-se $M_{2}$ o grupo das isometrias no plano $\mathbb{R}^{2}.\square$ 
+   \end{def*}
+   Considere
+  \begin{itemize}
+    \item[1)] Translação: $t_{a}:\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}, x\mapsto x+a, a\in \mathbb{R}^{2}.$
+    \item[2)] Rotação: $\rho_{\theta }:\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}, (x,y)\mapsto \begin{pmatrix}
+        \cos{\theta } & -\sin{\theta } \\
+        \sin{\theta } & \cos{\theta }
+      \end{pmatrix} \begin{pmatrix}
+        x\\
+        y
+      \end{pmatrix}$
+    \item[3)] Reflexão em Torno do Eixo -x: $\sigma :\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}, (x,y)\mapsto \begin{pmatrix}
+        1 & 0\\
+          0 & -1
+    \end{pmatrix}\begin{pmatrix}
+      x\\
+      y
+    \end{pmatrix}$
+   \end{itemize}
+   É preciso, no entanto, conferir que essas funções pertencem a $M_{2}.$
+ \begin{lemma*}
+   $t_{a},\rho_{\theta },\sigma \in M_{2}$
+ \end{lemma*}
+ \begin{proof*}
+   Imediato. \qedsymbol
+ \end{proof*}
+\begin{lemma*}
+  Este lema será um exercício de álgebra linear.
+ \begin{itemize}
+   \item[1)] Uma matriz ortogonal cujo determinante vale 1 é da forma 
+     $$
+       \rho_{\theta } = \begin{pmatrix}
+         \cos{\theta } & -\sin{\theta } \\
+         \sin{\theta } & \cos{\theta }
+       \end{pmatrix}
+     $$
+     para algum $\theta \in[0,2\pi )$ único.
+   \item[2)] Uma matriz ortogonal de determinante -1 é da forma $\rho_{\theta }\sigma ,$ em que $\theta \in[0, 2\pi)$ é único e 
+     $$
+       \sigma \in \begin{pmatrix}
+         1 & 0 \\
+         0 & -1
+       \end{pmatrix}.
+     $$
+ \end{itemize}
+\end{lemma*}
+\begin{theorem*}
+  Se $f\in M_{2},$ então $f=t_{a}\rho_{\theta },$ ou $f = t_{a}\rho_{\theta }\sigma  $ para únicos $a\in \mathbb{R}^{2},\theta \in[0,2\pi)$
+  e $\sigma = \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+  \end{pmatrix}$. Em outras palavras, $M_{2} = \langle t_{a}, \rho_{\theta }, \sigma \rangle, a \in \mathbb{R}^{2}, \theta \in[0,2\pi).$
+\end{theorem*}
+Antes de demonstrar, um comentário sobre este teorema: Segundo ele, \textbf{qualquer} isometria no plano $\mathbb{R}^{2}$ é
+descrita por uma composição de isometrias elementares - translação, reflexão e rotação! 
+\begin{proof*}
+  Seja $f\in M_{2}.$ Já sabemos que $f = t_{a}\varphi $, sendo $\varphi \in \mathcal{O}_{2}, a\in \mathbb{R}^{2}.$ Logo, segue do lema
+  anterior que 
+    $$
+    f = t_{a}\rho _{\theta }\quad\text{ ou } f = t_{a}\rho_{\theta }\sigma . \text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{crl*}
+  Isometrias $t_{a}\rho_{\theta }$ preservam orientação, enquanto $t_{a}\rho_{\theta }\sigma $ revertem orientação.
+\end{crl*}
+\begin{proof*}
+  Seja $f=t_{a}\rho_{\theta }.$ Então, como $\det{\rho_{\theta }} =1,$ f preserva orientação. Por outro lado, se $f=t_{a}\rho_{\theta }\sigma ,$
+  então $\det{(\rho_{\theta }\sigma )} = \det{\rho_{\theta }}\det{\sigma } = 1 \cdot (-1) = -1.$ Portanto, f reverte orientação. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Em $M_{2},$
+ \begin{align*}
+   &1)\quad \rho_{\theta }t_{a} = t_{a'}\rho_{\theta },\quad a'=\rho_{\theta }(a);\\
+   &2)\quad \sigma t_{a} = t_{a'}\sigma , \quad a'= \sigma(a);\\
+   &3)\quad \sigma \rho_{\theta } = \rho_{-\theta }\sigma;\\
+   &4)\quad t_{a}t_{b} = t_{a+b};\\
+   &5)\quad \rho_{\theta }\rho_{\theta '} = \rho_{\theta +\theta '};\\
+   &6)\quad \sigma \sigma = \begin{pmatrix}
+     1 & 0 \\
+     0 & 1
+   \end{pmatrix}\text{ i.e. } ord(\sigma ) = 2.
+ \end{align*}
+\end{crl*}
+\begin{proof*}
+
+  1) $\rho_{\theta }t_{a}(t_{a'}\rho_{\theta })^{-1} = \rho_{\theta }t_{a}\rho_{\theta }^{-1}t_{a'}^{-1} = \rho_{\theta }\rho_{\theta }^{-1}t_{\rho_{\theta }^{-1}(a)}t_{-\theta '}
+  = t_{a'}t_{-a'} = t_{a'-a'} = Id.$
+
+  2) $(rta)(ta'\sigma )^{-1} = \sigma t_{a}r^{-1}t_{-a'} = \sigma \sigma^{-1}t_{r^{-1}(a)}t_{-a'} = t_{a'}t_{-a'} = Id.$
+
+  3) $\sigma \rho_{\theta } = \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+  \end{pmatrix}\begin{pmatrix}
+    \cos{\theta } & -\sin{\theta }\\ 
+    \sin{(\theta )} & \cos{(\theta )}
+  \end{pmatrix} = \begin{pmatrix}
+    \cos{(\theta )} & -\sin{(\theta )}\\
+    -\sin{(\theta )} & -\cos{(\theta )}
+  \end{pmatrix} = \begin{pmatrix}
+    \cos{(\theta )} & -\sin{(-\theta )}\\
+    \sin{(\theta )} & \cos{(\theta )}
+  \end{pmatrix}\begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{pmatrix} = \rho_{-\theta }\sigma.$ \qedsymbol
+\end{proof*}
+\newpage
+\section{Aula 11 - 02/05/2023}
+  Preciso de fotos dessa aula RS
+\newpage
+\section{Aula 12 - 04/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Outra Caracterização das Isometrias em $\mathbb{R}^{2}$
+\end{itemize}
+\subsection{Isometrias em $\mathbb{R}^{2}$ - Relação com a Geometria.}
+\begin{theorem*}
+  Toda isometria do plano é da forma:
+ \begin{enumerate}
+   \item Isometrias que preservam orientação:
+    \begin{enumerate}
+      \item Translações;
+      \item Rotação do plano por ângulo $\theta $ em torno de algum ponto;
+    \end{enumerate}
+  \item Isometrias que não preservam orientação são:
+   \begin{enumerate}
+     \item[(c)] Reflexão com respeito a uma reta l;
+     \item[(d)] Reflexão com respeito a uma reta l seguida de uma translação por um vetor não-nulo e
+       paralelo a l.
+   \end{enumerate}
+ \end{enumerate}
+\end{theorem*}
+\begin{proof*}
+  (i) Seja $f\in M_{2}$ que preserva orientação e que não é translação, então 
+    $$
+      f = t_{a}\rho_{\theta }
+    $$
+    para algum $a\in \mathbb{R}^{2}$ e $\theta \neq0.$ Logo, queremos mostrar que existe $p\in \mathbb{R}^{2}$
+    tal que $t_{p}^{-1}ft_{p}=\rho_{\theta }.$
+
+    No entanto, $t_{p}^{-1}ft_{p}=t_{-t}t_{a}\rho _{\theta }t_{p} = t_{a-p+\rho (p)}\rho _{\theta }.$
+Então, queremos $p\in \mathbb{R}^{2}$ tal que $a - p + \rho (p) = (Id - \rho )(p).$ Considere o operador linear 
+  $$
+    Id - \rho _{\theta } = \begin{pmatrix}
+      1 - \cos{(\theta )} & \sin{(\theta )}\\
+      -\sin{(\theta )} & 1-\cos{(\theta )}
+    \end{pmatrix}
+  $$
+  e observe que $\det{(Id-\rho _{\theta })} = (1-\cos{(\theta )})^{2} +\sin{(\theta )}^{2} = 2-2\cos{(\theta )}.$
+  Além disso, $2-2\cos{(\theta )} = 0$ equivale $\cos{(\theta )}=1,$ ou seja, $\theta =0.$ Portanto, existe
+  $p\in \mathbb{R}^{2}$ tal que $t_{p}^{-1}ft_{p}=t_{\theta },$ ou seja, 
+    $$
+      f = t_{p}\rho _{\theta }t_{p}^{-1}.
+    $$ 
+
+  (ii) Seja $f\in M_{2}$ que reverte orientação. Então, 
+    $$
+      f = t_a\rho _{\theta }\sigma.
+    $$ 
+    Note que $\rho _{\theta }\sigma $ é a reflexão por uma reta passando pela origem. Assim, a menos de mudança de coordenada,
+    podemos supor $\theta =0$, isto é, $f = t_{a}\sigma .$
+
+    Agora, seja $(x, y)\in \mathbb{R}^{2}.$ Logo, $f(x,y) = t_{a}(x, -y)=(x+a_{1}, -y+a_{2}),$ sendo $a = (a_{1}, a_{2})$.
+    Se $a_{1}=0,$ então $f(x, y) = (x, -y+a_{2}),$ tal que f é uma reflexão com respeito à reta $l=\{y=\frac{1}{2}a_{2}\}.$
+
+    Por outro lado, se $a_{1}\neq0,$ então f é reflexão com respeito à reta l com uma translação por $(a_{1}, 0).$ \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Se $f\in M_{2}$ é como na demonstração do Teorema(i)(b). Então, o p como na demonstração é um ponto fixo de f.
+\end{crl*}
+\begin{proof*}
+  $f(p)=t_{a}\rho _{\theta }(p) = t_{a}(p-a) = p.$ \qedsymbol
+\end{proof*}
+\begin{crl*}
+  A composição de rotações por (possivelmente) pontos diferentes é ainda uma rotação por (possivelmente) um terceiro ponto,
+a menos que tal composição seja uma translação.
+\end{crl*}
+\begin{proof*}
+  Composição de isomorfismo que possuem orientação é uma isometria que preserva orientação.
+\end{proof*}
+\begin{example*}
+  Se $\rho _{1}$ é a rotação centrada em (1, 0) com $\theta = \pi $ e se $\rho _{2}$ é a rotação centrada em (3,0) com
+  $\gamma =\pi ,$ então $\rho _{2}\rho _{1}=t_{a}, a = (4, 0)$ \qedsymbol 
+\end{example*}
+\begin{crl*}
+  A composição de composição de reflexões $\sigma _{1}, \sigma _{2}$ por retas não paralelas $l_{1}, l_{2}$ é uma rotação no ponto
+  $p=l_{1}\cap l_{2}.$
+\end{crl*}
+\begin{proof*}
+  $\sigma_{1}\sigma _{2}$ preserva orientação. Do teorema, 
+    $$
+    \sigma _{1}\sigma _{2} = ta\text{ ou } \rho _{\theta }.
+    $$
+  No entanto, $\sigma _{1}\sigma _{2}(p) = p.$ Portanto, $\sigma _{1}\sigma _{2} = \rho _{\theta }$ centrada em p. \qedsymbol
+\end{proof*}
+\begin{crl*}
+  A composição de reflexões $\sigma _{1}$ e $\sigma _{2}$ por retas paralelas distintas é uma translação por um vetor ortogonal
+  às retas paralelas.
+\end{crl*}
+\begin{proof*}
+  Do teorema, $\sigma _{1}\sigma _{2} = t_{a},$ ou $\sigma _{1}\sigma _{2} = \rho _{\theta }.$ Como $\sigma _{1}, \sigma _{2}$
+  não têm ponto fixo, então $\sigma _{1}\sigma _{2} = t_{a}.$
+
+  A menos de mudança de coordenada, podemos supor $\sigma _{2}$ reflexão no eixo x e $\sigma _{1}$ reflexão $l=\{y=\frac{b}{2}\}.$ Assim,
+  $\sigma _{2}(x, y) = (x, -y), \sigma _{1}(x,y) = (x, -y+b)$ e $\sigma _{1}\sigma _{2}(x, y)=\sigma _{1}(x, -y) = (x, y+b).$ Portanto,
+    $$
+    \sigma _{1}\sigma _{2}(x,y) = t_{(0, b)}(x,y)\quad\text{ e }(0,b)\perp l.\text{ \qedsymbol}
+    $$
+\end{proof*}
+\begin{prop*}
+  Seja $\mathcal{O}_{2}$ o grupo dos operadores ortogonais. Escolha um sistema de coordenadas. Então, 
+ \begin{itemize}
+   \item[a)] $\mathcal{O}_{2}\leq M_{2}$ é o subgrupo das isometrias que fixam a origem.
+     \item[b)] Se $H\leq M_{2}$ das isometrias que fixam um ponto p de $\mathbb{R}^{2},$ então $H = t_{p}\mathcal{O}_{2}t_{p}^{-1}.$
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  a) Ok.
+
+  b) Seja $f\in H, f(p) = p.$ Então, 
+    $$
+    \underbrace{t_{p}^{-1}ft_{p}(0)}_{\in \mathcal{O}_{2}} = t_{p}^{-1}f(p) = t_{p}^{-1}(p) = 0.
+    $$
+    Logo, existe $g\in \mathcal{O}_{2}$ tal que $t_{p}^{-1}ft_{p} = g.$ Portanto, $f = t_{p}gt_{p}^{-1}.$ \qedsymbol
+\end{proof*}
+\end{document}

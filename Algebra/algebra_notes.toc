@@ -29,3 +29,14 @@
 \contentsline {subsection}{\numberline {8.2}Motiva\c c\~ao para a Aula}{22}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Grupos Quociente}{22}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Primeiro Teorema do Isomorfismo}{23}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Aula 09 - 25/04/2023}{24}{section.9}%
+\contentsline {subsection}{\numberline {9.1}O que esperar}{24}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Motiva\c c\~ao para Aula}{24}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Isometrias}{24}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Aula 10 - 27/04/2023}{27}{section.10}%
+\contentsline {subsection}{\numberline {10.1}O que esperar?}{27}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Principais Isometrias em $\mathbb {R}^{n}$}{27}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Aula 11 - 02/05/2023}{29}{section.11}%
+\contentsline {section}{\numberline {12}Aula 12 - 04/05/2023}{30}{section.12}%
+\contentsline {subsection}{\numberline {12.1}O que esperar?}{30}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Isometrias em $\mathbb {R}^{2}$ - Relação com a Geometria.}{30}{subsection.12.2}%
