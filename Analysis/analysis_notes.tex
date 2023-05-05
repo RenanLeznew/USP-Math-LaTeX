@@ -2893,5 +2893,183 @@ e portanto tem uma subsequ\^encia $\{x_{\varphi(n)}\}$ convergente com limite $\
 e $\overline{x}\neq y_{n}$ para todo natural n. Portanto, F \'e n\~ao-enumer\'avel, pois a sequ\^encia ``n\~ao enche F'' (N\~ao abrange
 todos os pontos de F). \qedsymbol
 \end{proof*}
-\end{document}
+\newpage
 
+\section{Aula 17 - 05/04/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Coberturas e Teorema de Borel-Lebesgue;
+  \item Compactos da Reta;
+  \item Continuidade Uniforme.
+\end{itemize}
+\subsection{Motivações}
+Um subconjunto de $\mathbb{R}$ é dito compacto se satisfaz uma das condições abaixo - a caracterização por coberturas, por sequências, ou
+por fechados.
+
+Um conjunto $K$ é compacto se, para toda cobertura aberta do conjunto, existe uma subcobertura finita que ainda cobre o conjunto.
+Ou seja, se temos um conjunto de intervalos abertos que cobrem todo o conjunto, sempre podemos encontrar um número finito desses intervalos
+que ainda cobrem o conjunto.
+
+Um conjunto $K$ é compacto se toda sequência de pontos do conjunto tem uma subsequência que converge para um ponto ainda dentro
+do conjunto. Ou seja, se pegarmos uma lista infinita de pontos no conjunto, sempre poderemos encontrar uma "sublista" infinita 
+desses pontos que se aproxima cada vez mais de um único ponto no conjunto.
+
+Um conjunto $K$ é fechado se contém todos os seus pontos de acumulação, e é limitado se existe um número real que é maior que todos os elementos do conjunto.
+
+Além dos compactos, estaremos abordando outro tipo de continuidade. A continuidade uniforme é uma noção mais forte do que a continuidade regular. Seja $f: X \rightarrow Y$ uma função entre espaços métricos. Uma função é dita continua se, para todo $\varepsilon > 0$, existe um $\delta > 0$ tal que, para todos $x, y \in X$, se $|x - y| < \delta$ então $|f(x) - f(y)| < \varepsilon$.
+
+A continuidade uniforme fortalece essa condição ao exigir que a escolha de $\delta$ não dependa de $x$. Em outras palavras,
+para toda $\varepsilon > 0$, existe um $\delta > 0$ tal que, para todos $x, y \in X$, se $|x - y| < \delta$ então 
+$|f(x) - f(y)| < \varepsilon$. Isso implica que podemos encontrar um único "tamanho de passo" $\delta$ que funciona para todo
+o domínio da função, em vez de precisar de um passo diferente para cada ponto.
+Isso tem implicações importantes quando estamos trabalhando com conjuntos compactos, pois toda função contínua em um
+conjunto compacto é uniformemente contínua. Isso é útil porque as funções uniformemente contínuas têm propriedades muito agradáveis,
+como a capacidade de serem estendidas de um modo contínuo a partir de um conjunto denso.
+
+A diferença entre continuidade e continuidade uniforme é sutil. No entanto, essa diferença é importante em muitos contextos. 
+Por exemplo, a função $f(x) = \frac{1}{x}$ é contínua em todos os pontos do seu domínio (todos os números reais não nulos), 
+mas não é uniformemente contínua. Isso ocorre porque, conforme nos aproximamos de zero, precisamos escolher $\delta$ cada vez
+menor para garantir que $d(f(x), f(x')) < \varepsilon$ para um $\varepsilon$ fixo. Não podemos encontrar um único $\delta$ que
+funcione para todos os pontos do domínio.
+
+Outro fato importante é que toda função contínua em um conjunto compacto é uniformemente contínua. Isso se deve às propriedades
+dos conjuntos compactos, que garantem que podemos encontrar um $\delta$ que funcione para todo o conjunto. Isso é uma
+propriedade muito útil, pois a continuidade uniforme garante algumas propriedades agradáveis para as funções, como a
+capacidade de serem estendidas de maneira contínua a partir de um conjunto denso.
+
+A seguir, vamos elaborar cada um destes conceitos, a fim de obter um entendimento mais profundo sobre o estudo de funções e da 
+topologia da reta.
+
+\subsection{Compactos e Coberturas}
+ \begin{def*}
+   Seja $A\subseteq{\mathbb{R}}$ e $\Lambda $ um conjunto. Uma coleção $\{A_{\lambda }\}_{\lambda \in\Lambda }$ de conjuntos
+   é chamada uma cobertura de A se $A\subseteq{\bigcup_{\lambda \in\Lambda }^{}{A_{\lambda }}}.\square$
+ \end{def*}
+\begin{def*}
+  Se $\{A_{\lambda }\}_{\lambda \in\Lambda }$ é uma cobertura, $\Lambda '\subseteq{\Lambda }$ e $A\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{A_{\lambda '}}},
+  \{A_{\lambda '}\}_{\lambda '\in\Lambda '}$ é dita uma subcobertura da cobertura $\{A_{\lambda }\}_{\lambda \in\Lambda }.$
+  Se os conjuntos da cobertura são todos abertos, ela é dita uma cobertura aberta. $\square$
+\end{def*}
+\begin{theorem*}
+  Este resultado é conhecido como Teorema de Borel-Lebesgue. Dada uma cobertura $\{I_{\lambda }\}_{\lambda \in\Lambda }$ de [a, b]
+  em que cada $I_{\lambda }$ é um intervalo aberto, existe $\Lambda '\subseteq{\Lambda }$ finito tal que $[a, b]\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{I_{\lambda '}.}}$
+\end{theorem*}
+\begin{proof*}
+  Seja $A=\{x\in[a,b]: \exists \Lambda'\subseteq{\Lambda }\text{ finito }\&[a,x]\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{I_{\lambda '}}}\}$.
+  Note que $A \neq\emptyset.$ Seja $s=\sup{A}.$ Segue que $s\in[a, b]$ e que existe $\lambda _{s}$ tal que $s\in I_{\lambda _{s}}.$
+  Como $I_{\lambda _{s}}$ é aberto, $I_{\lambda _{s}}\cap A \neq\emptyset$. Portanto, s = b e $[a, b]$ está contido em uma
+  união finita de $I_{\lambda }'s.$ \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Dada uma cobertura aberta $\{A_{\lambda }\}_{\lambda \in\Lambda }$ de [a, b], existe $\Lambda '\subseteq{\Lambda }$ finito
+  tal que $[a,b]\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{A_{\lambda'}}}.$
+\end{crl*}
+  Basta lembrar que cada aberto da cobertura pode ser escrito como a união enumerável de intervalos abertos disjuntos.
+ \begin{crl*}
+   Dada uma cobertura aberta $\{A_{\lambda }\}_{\lambda \in\Lambda }$ de um conjunto fechado e limitado F existe $\Lambda '\subseteq{\Lambda }$
+   finito tal que $F\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{A_{\lambda '}}}$
+ \end{crl*}
+ \begin{proof*}
+   Como F é fechado e limitado, $F\subseteq{[a,b]}$. Como $A=[a,b]^{c}$ é aberto e $[a,b]\subseteq{\bigcup_{\lambda \in\Lambda }^{}{A_{\lambda }}\cup{A}}$, temos
+   a existência de $\Lambda '\subseteq{\Lambda }$ finito tal que 
+     $$
+     [a,b] \subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{A_{\lambda '}}\cup{A}}.
+     $$
+     Portanto, $F\subseteq{\bigcup_{\lambda '\in\Lambda '}^{}{A_{\lambda '}}}.$ \qedsymbol
+ \end{proof*}
+ \begin{theorem*}
+   Dado $K\subseteq{\mathbb{R}}$ são equivalente: 
+  \begin{itemize}
+    \item[1)] K é fechado e limitado;
+    \item[2)] Toda cobertura aberta de K possui uma subcobertura finita;
+    \item[3)] Todo subconjunto infinito de K possui um ponto de acumulação pertencente a K;
+    \item[4)] Toda sequência de pontos de K possui uma subsequência que converge para um ponto de K.
+  \end{itemize}
+ \end{theorem*}
+\begin{proof*}
+  $1) \Rightarrow 2):$ Segue diretamente do corolário anterior.
+
+  $2) \Rightarrow 3):$ Se $A\subseteq{K}$ é infinito e não tem pontos de acumulação em K, para cada k em K existe $I_{k}=r_{k} > 0$
+  tal que $(k-r_{k}, k+r_{k})\cap{A} = \{k\}$ ou  $I_{k}\cap A = \emptyset.$ Segue que $\bigcup_{k\in K}^{}{I_{a}}\supseteq{K}$ é
+  uma cobertura aberta sem subcobertura finita.
+
+  $3) \Rightarrow 4):$ Dada uma sequência de pontos $\{k_{n}\}$ em K, ela pode ter um número finito ou infinito de valores.
+  Em qualquer um dos casos, possui uma subsequência convergente.
+
+  $4) \Rightarrow 1):$ É claro que K é limitado, visto que, caso contrário, existiria uma sequência $\{x_{n}\}$ em K com $x_{0}\in K$
+  e $|x_{n}|\geq |x_{n-1}| + 1$ e esta não teria subsequência convergente. Para ver que K é fechado, basta notar que, se $x\in K^{-}$,
+  existe sequência $x_{n}\in K$ tal que $x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}x$. Portanto, pela hipótese de 4, $x\in K.$\qedsymbol
+\end{proof*}
+\begin{def*}
+  Um conjunto é compacto se satisfaz qualquer uma das condições do teorema anterior. $\square$
+\end{def*}
+  Como corolário do teorema passado, temos o Teorema de Bolzano-Weierstrass!
+\begin{crl*}
+  Todo conjunto infinito e limitado de número reais possui um ponto de acumulação. 
+\end{crl*}
+\begin{crl*}
+  Toda sequência decrescente de compactos não vazio têm interseção não vazia.
+\end{crl*}
+\begin{def*}
+  Seja $A\subseteq{\mathbb{R}}$ e $B\subseteq{A}$, diremos que B é aberto em A se, para cada $b\in B$, existe um $r_{b}>0$ tal 
+  que $A\cap (b-r_{b}, b + r_{b})\subseteq{B}.\square$
+\end{def*}
+  Note que todo conjunto é aberto nele mesmo. Além disso, se $A\subseteq{\mathbb{R}}$ e $B\subseteq{A}$, então B é aberto em A
+  se, e somente se, existe um aberto $\mathcal{O}_{B}$ de $\mathbb{R}$ tal que $B=\mathcal{O}_{B}\cap A.$ Além disso,
+  se B é aberto, $A\subseteq{B}$ é aberto em B se, e somente se, B é aberto em $\mathbb{R}.$
+
+  Lembre-se que, se $f:D\rightarrow \mathbb{R}$ é uma função, $f^{-1}(\mathcal{O})=\{d\in D: f(d)\in \mathcal{O}\}.$
+
+ \begin{theorem*}
+   Seja $D\subseteq{\mathbb{R}}$ e $f:D\rightarrow \mathbb{R}.$ A função f é contínua se, e somente se, para todo
+   $\mathcal{O}$ de $\mathbb{R}, f^{-1}(\mathcal{O})$ é aberto em D.
+ \end{theorem*}
+ \begin{proof*}
+   Se $f:D\rightarrow \mathbb{R}$ é contínua, $\mathcal{O}$ é um aberto de $\mathbb{R}$ e $d\in f^{-1}(\mathcal{O}),$
+   então $f(d)\in \mathcal{O}$ e dado $\varepsilon  > 0$ tal que $(f(d)-\varepsilon , f(d)+\varepsilon )\subseteq{\mathcal{O}},$
+   existe $\delta >0$ tal que $f((d-\delta , d+\delta )\cap D)\subseteq{(f(d)-\varepsilon , f(d)+\varepsilon ).}$ Isot mostra que
+   $(d-\delta , d+\delta )\cap D\subseteq{f^{-1}(\mathcal{O})}$ e que $f^{-1}(\mathcal{O})$ é aberto em D.
+
+   Por outro lado, de $f^{-1}(\mathcal{O})$ ser aberto em D para cada $\mathcal{O}$ aberto em $\mathbb{R},$ se d é um elemento
+   de D, dado $\varepsilon  > 0$, seja $\mathcal{O} = (f(d)-\varepsilon , f(d)+\varepsilon ).$ Como $d\in f^{-1}((f(d)-\varepsilon , f(d)+\varepsilon ))$
+   é aberto em D, existe $\delta >0$ tal que $(d-\lambda , d+\delta )\cap D\subseteq{f^{-1}((f(d)-\varepsilon , f(d)+\varepsilon ))},$
+   ou seja, 
+     $$
+       x\in D, |x-d| < \delta \Rightarrow |f(x)-f(d)| < \varepsilon 
+     $$
+    e f é contínua em d. \qedsymbol
+ \end{proof*}
+ \begin{theorem*}
+   Se $I\subseteq{\mathbb{R}}$ é um intervalo e $f:I\rightarrow \mathbb{R}$ é uma função contínua, então f(I) é um intervalo.
+ \end{theorem*}
+\begin{proof*}
+  Basta notar que, dados dois pontos $f(a)\neq f(b)$ em f(I) com $a < b,$ tomando a restrição de f ao intervalo [a, b],
+  segue do teorema do valor intermediário que, para todo k entre f(a) e f(b), existe um c em (a, b) tal que f(c) = k. Portanto,
+  f(I) é um intervalo. \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se $K\subseteq{\mathbb{R}}$ é um conjunto compacto e $f:K\rightarrow \mathbb{R}$ é uma função contínua, então f(K) é compacto.
+\end{theorem*}
+\begin{proof*}
+  Seja $\{\mathcal{O}_{\lambda }:\lambda \in\Lambda \}$ uma cobertura aberta de f(K). Como, para cada $\lambda \in \Lambda, f^{-1}(\mathcal{O}_{\lambda })$ 
+  é aberto em K, existe $U_{\lambda }$ aberto em $\mathbb{R}$ tal que $U_{\lambda }\cap K = f^{-1}(\mathcal{O}_{\lambda }).$
+  Assim, $\{U_{\lambda }:\lambda \in\Lambda \}$ é uma cobertura aberta de K. Como K é compacto, existe $\lambda '\subseteq{\Lambda }$
+  finito tal que $\bigcup_{\lambda '\in\Lambda '}^{}{U_{\lambda '}}\supseteq{K}.$ Segue que $\{\mathcal{O}_{\lambda '}: \lambda '\in\Lambda '\}$
+  é uma subcobertura finita da cobertura $\{\mathcal{O}_{\lambda }:\lambda \in \Lambda \}$ de f(K). Portanto, f(K) é compacto. \qedsymbol
+\end{proof*}
+\begin{proof*}
+  Uma prova alternativa faz uso de sequências: Seja $\{y_{n}\}$ uma sequência em f(K). Então, existe uma sequência
+  $\{x_{n}\}$ em K tal que $y_{n}=f(x_{n}).$ Como K é compacto, $\{x_{n}\}$ tem uma subsequência $\{x_{\varphi (n)}\}(\varphi :\mathbb{N}\rightarrow \mathbb{N}$
+  estritamente crescente) convergente com limite $\overline{x}\in K.$ Como $x_{\varphi (n)}\overbracket[0pt]{\longrightarrow}^{n\to \infty}\overline{x},
+  y_{\varphi (n)}=f(x_{\varphi (n)})\overbracket[0pt]{\longrightarrow}^{n\to \infty}f(x)$ e $\{y_{n}\}$ tem uma
+  subsequência convergente com limite em f(K). Portanto, f(K) é compacto. \qedsymbol
+\end{proof*} 
+\begin{theorem*}
+  Se $K\subseteq{\mathbb{R}}$ é um conjunto compacto e $f:K\rightarrow \mathbb{R}$ é contínua, existem $x_{1},x_{2}\in K$ tal que
+  $f(x_{1})\leq f(x)\leq f(x_{2})$ para todo x em K.
+\end{theorem*}
+\begin{proof*}
+  Como f(K) é compacto, $L=\sup{\{y:y\in f(K)\}}$ e $l=\inf{\{y:y\in f(K)\}}$ pertencem a f(K). Portanto, existem $x_{1},x_{2}\in K$
+  tais que $f(x_{1})=l\leq f(x)\leq L = f(x_{2})$ para todo x de K. \qedsymbol
+\end{proof*}
+\end{document}

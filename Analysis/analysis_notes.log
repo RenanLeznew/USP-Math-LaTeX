@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  3 MAY 2023 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.2)  5 MAY 2023 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -984,12 +984,12 @@ Package hyperref Info: Link coloring ON on input line 45.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 45.
-<../icmc.png, id=254, 376.40625pt x 188.20313pt>
+<../icmc.png, id=270, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 48.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=256, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=272, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 50.
@@ -1100,18 +1100,18 @@ mr/m/it/10 existe se, e so-mente se, $[][] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10
  f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$
  []
 
-[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
-
+[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
+[55] 
 AED: lastpage setting LastPage
-[53] (analysis_notes.aux)
+[56] (analysis_notes.aux)
 Package rerunfilecheck Info: File `analysis_notes.out' has not changed.
-(rerunfilecheck)             Checksum: EF7074FEE794F91D9A4A0713104E022D;10648.
+(rerunfilecheck)             Checksum: C54339FBC45704D4D0BA3D5594CBE8E5;11230.
  ) 
 Here is how much of TeX's memory you used:
- 34240 strings out of 475284
- 799499 string characters out of 2774105
- 1269014 words of memory out of 3000000
- 54983 multiletter control sequences out of 15000+600000
+ 34255 strings out of 475284
+ 799702 string characters out of 2774105
+ 1269017 words of memory out of 3000000
+ 54991 multiletter control sequences out of 15000+600000
  479887 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,103p,734b,2140s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1138,9 +1138,9 @@ ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Us
 ers/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb><C:/Users/renan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb>
-Output written on analysis_notes.pdf (53 pages, 2189834 bytes).
+Output written on analysis_notes.pdf (56 pages, 2211064 bytes).
 PDF statistics:
- 794 PDF objects out of 1000 (max. 8388607)
- 174 named destinations out of 1000 (max. 500000)
- 523 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
+ 555 words of extra memory for PDF output out of 10000 (max. 10000000)
 
