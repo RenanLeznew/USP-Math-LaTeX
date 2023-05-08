@@ -16,6 +16,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usetikzlibrary{angles,quotes}
+\usetikzlibrary{calc,arrows.meta,patterns}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -710,9 +711,80 @@ independe do tempo, isto \'e, a rela\c c\~ao temporal \'e dada de forma implicit
     $$
     y(t) - y_{0} = \tan{\theta_{0}}(x(t)-x_{0}) \Rightarrow y = \tan{(\theta_{0})}x - \tan{(\theta_{0})}x_{0} + y_{0},
     $$
-    ou seja, y tem a forma de um equa\c c\~ao da reta com inclina\c c\~ao constante e igual a $\tan{\theta_{0}}.$
+    ou seja, y tem a forma de um elua\c c\~ao da reta com inclina\c c\~ao constante e igual a $\tan{\theta_{0}}.$
 \newpage
 
+\section{Aula 05 - 12/04/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Lançamento de Projéteis;
+  \item Alcance e altura máximos.
+\end{itemize}
+\subsection{Lançamento de Projéteis}
+  Para descrevermos a trajetória de um objeto lançado, utilizamos a equação 
+    $$
+    y = v_{0}\sin{(\theta )}\frac{x}{v_{0}\cos{(\theta _0)}j} - \frac{1}{2}g\biggl[\frac{x}{v_{0}\cos{(\theta _0)}}\biggr]^{2} = \tan{(\theta _{0})}x-\frac{1}{2}\frac{g}{v_{0}\cos{(\theta _{0})}}x^{2}.
+    $$
+  Desta equação, podemos deduzir algumas informações sobre o movimento de tal objeto. Por exemplo, qual é a altura máxima
+  que um objeto atingirá? E onde ele estará neste instante? Quanto tempo levará para atingir este ponto máximo de altura?  
+  Vamos responder cada uma dessas situações. Para a terceira, note que, ao chegar no ponto máximo, $v_{y}=0.$ Assim, 
+    $$
+    0 = v_{0}\sin{(\theta_{0})}-gt_{m} \Rightarrow \boxed{t_{m} = \frac{v_{0}\sin{(\theta_{0})}}{g}.}
+    $$
+    Sabendo o tempo, podemos encontrar o valor dela com reação ao eixo y: 
+      $$
+      y_{m} = v_{0}\sin{(\theta )}\biggl[\frac{v_{0}\sin{(\theta )}}{g}\biggr] - \frac{1}{2}g\biggl[\frac{v_{0}\sin{(\theta )}}{g}\biggr]^{2} \Rightarrow 
+      $$
+      $$
+      \boxed{y_{m}=\frac{v_{0}^{2}\sin{(\theta )}}{g}}
+      $$
+    Tendo estas duas informações, somos capazes de encontrar a informação restante - qual o valor da posição no eixo x. 
+      $$
+      x_{m} = v_{0}\cos{(\theta )}\frac{v_{0}\sin{(\theta )}}{g} \Rightarrow \boxed{x_{m} = \frac{v_{0}^{2}}{g}\cos{(\theta )}\sin{(\theta )}}
+      $$
+    Ao lançar um objeto, não apenas terá uma altura máxima, mas alguma hora ele atingirá o chão ou um obstáculo (espero). Esse valor é
+    conhecido como alcance e descreve, como indica o nome, o alcance que o arremesso terá. Com um processo similar ao da
+    altura máxima, podemos encontrar valores para o tempo que ele leva até atingir este alcance e a posição. A ideia por trás deste
+    raciocínio é pegar o caso em que o objeto atinge o chão, pois, assim, teremos y=0. Com isso, 
+      $$
+        0 = v_{0}\sin{(\theta )}t - \frac{1}{2}gt^{2} \Rightarrow t_{a}(v_{0}\sin{(\theta )}-\frac{1}{2}gt)
+      $$
+    Para esta equação mais à direita zerar, duas coisas podem ocorrer - Ou $t_{a} = 0$, ou $v_{0}\sin{(\theta )} - \frac{1}{2}gt_{a}=0.$
+    Portanto, 
+      $$
+      \boxed{t_{a} = \frac{2v_{0}\sin{(\theta )}}{g}}
+      $$
+    E quanto à posição? Agora que encontramos o valor do tempo, é possível resolver este problema sem muitas complicações, pois 
+      $$
+        x_{a} = v_{0}\cos{(\theta )}2\frac{v_{0}\sin{(\theta )}}{g} \Rightarrow x_{a} = \frac{2v_{0}^{2}}{g}\cos{(\theta )}\sin{(\theta )} = 2x_{m}.
+      $$
+    Isso responde uma parte das nossas questões com relação ao deslocamento no espaço. No entanto, além disso, como o ângulo que
+    lançamos o objeto altera o alcance? 
+
+    Dada uma função qualquer f(t), no ponto p' tal que f(t') tenha seu valor máximo, podemos utilizar a derivada, especificamente
+    o momento em que a derivada é nula. Neste raciocínio, o anglo máximo pode ser encontrado através de 
+      $$
+        \frac{dx_{a}}{d\theta _{0}} \biggl|_{\theta_{0}=\theta_{ao}}^{}\biggr. = 0.
+      $$
+    Logo, utilizando $x_{a}(\theta_{0}) = \frac{2v_{0}^{2}}{g}\cos{(\theta_{0})}\sin{(\theta_{0})}$ juntamente da regra do produto,
+   \begin{align*}
+     \frac{dx_{a}}{d\theta _{0}} &= -\frac{2v_{0}^{2}}{g}\sin{(\theta_{0})}\cdot \sin{(\theta_{0})} + \frac{2v_{0}^{2}}{g}\cos{(\theta_{0})}\cos{(\theta_{0})}\\
+                                 &= \biggl[\frac{2v_{0}^{2}}{g}(-\sin^{2}{(\theta_{0})}+\cos^{2}{(\theta_{0})})\biggr]\biggl|_{\theta_{0}=\theta_{am}}^{}\biggr. = 0
+                                 &\Rightarrow \sin^{2}{(\theta_{am})}=\pm\cos^{2}{(\theta_{am})} \Rightarrow \boxed{\theta =45^{\circ}}
+   \end{align*}
+    Tendo as informações de deslocamento, conseguimos, por fim, encontrar a velocidade com que atingirá o solo. Temos
+    $t_{A} = \frac{2v_{0}\sin{(\theta_{0})}}{g}$, tal que 
+   \begin{align*}
+     &v_{x}(t_{a}) = v_{x_{0}} = v_{0}\cos{(\theta_{0})}\\
+     &v_{y}(t_{a}) = v_{0}\sin{(\theta_{0})}-gt_{a} = v_{0}\sin{(\theta )} - \frac{g2v_{0}\sin{(\theta _0)}}{g}\\
+     &\Rightarrow  v_{y}(t_{a}) = -v_{0}\sin{(\theta )} = -v_{y_{0}} \Rightarrow \vec{v}(t_{a}) = v_{0}\cos{(\theta_{0})}\hat{i} - v_{0}\sin{(\theta_{0})}\hat{j} \\
+     & |\vec{v}(t_{a})| = \sqrt[]{v_{0}^{2}[\cos^{2}{(\theta )}+\sin^{2}{(\theta )}]} = v_{0}.
+   \end{align*}
+
+   \subsection{Movimento Uniformemente Variado em Duas Dimensões}
+
+
+\newpage
 \section{Aula 06 - 13/04/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
@@ -853,7 +925,6 @@ A resposta est\'a na decomposi\c c\~ao de $\vec{v}_{av}$, pois
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
   \item Come\c car a estudar o movimento circular;
-  \item 
 \end{itemize}
 
 \subsection{Movimento Circular}
@@ -1020,6 +1091,7 @@ $\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j}$ e
      $$ 
     Tendo isso em mente, definimos tamb\'em a frequ\^encia como o n\'umero de ocorr\^encias. Ele vale o inverso do per\'iodo T, i.e., $f = \frac{1}{T}$.
 \newpage
+
 \section{Aula 8 - 19/04/2023}
 \subsection{Motiva\c c\~oes}
 \begin{itemize}
@@ -1147,10 +1219,6 @@ agindo sobre ela. Segue que
     x(t) = x_{0} + v_{0}t + \frac{1}{2}at^{2} \Rightarrow \Delta x = x(3) - x(0) = \frac{1}{2}a3^{2} = \frac{9}{2}a = 2.25m
   $$
   Isolando a equa\c c\~ao, encontra-se que $a = 0.5m/s^{2}.$ Com isso, como $|\vec{F}| = |m \vec{a}| = 68 \cdot 0.5 = 34N$. \qedsymbol
-\newpage
-
-\section{Aula 09 - 20/04/2023}
-
 \newpage
 
 \section{Aula 10 - 24/04/2023}
@@ -1419,7 +1487,7 @@ for\c ca gravitacoinal \'e
   \end{example}
 \newpage
 
-\section{Aula 11 - 25/04/2023 (INCOMPLETO!!!)}
+\section{Aula 11 - 25/04/2023}
 \subsection{O que esperar?}
 \begin{itemize}
   \item For\c ca de Tens\~ao;
@@ -1452,9 +1520,87 @@ for\c ca gravitacoinal \'e
     $$
 
   Para o segundo, decomp\~oe-se a tra\c c\~ao nas suas componentes x e y:
+ \begin{itemize}
+   \item[Em x:] $T_{1}\cos{(\theta )}-T_{2}=0$
+   \item[Em y:] $T_{1}\sin{(\theta )}-T_{3}=0.$
+ \end{itemize}
+ Pela segunda equação, utilizando o valor para $T_{3}$ previamente encontrado, segue que 
+   $$
+      T_{1}\sin{(\theta )} - T_{3}\Rightarrow T_{1}=\frac{mg}{\sin{(\theta )}}.
+   $$
+   Logo, combinando isso com a primeira equação, 
+     $$
+       T_{2}=T_{1}\cos{(\theta )} - \frac{mg}{\sin{(\theta )}}\cos{(\theta )} = \frac{mg}{\tan{(\theta )}}.
+     $$
+  Portanto, usando $\alpha =90^{\circ} - \theta $, segue que 
+    $$
+       \left\{\begin{array}{ll}
+          T_{1}=\frac{mg}{\sin{(\theta )}} \Rightarrow 1.29mg\\
+          T_{2}=\frac{mg}{\tan{(\theta )}} \Rightarrow 0.83mg\\
+          T_{3}=mg.
+        \end{array}\right.
+    $$
 \end{example}
+  O próximo exemplo ilustra as situações de polias num de seus contextos mais comuns - Máquina de Atwood.
+ \begin{example}
+   A máquina de Atwood consiste em uma polia presa ao teto com um bloco em cada ponta. O primeiro bloco tem massa
+   $m_{1}$ e o segundo tem $m_{2}$. A corda exerce uma tração T e os blocos têm pesos $P_{1}, P_{2}.$ 
 
-\newpage
+   Se $m_{1}>m_{2}$, segue que $m_{1}$ desce e $m_{2}$ sobe. Também é possível relacionar cada quantidade.
+   Se o deslocamento, a velocidade e a aceleração do primeiro bloco são $\Delta d_{1}, v_{1}, a_{1}$ e, do segundo bloco,
+   $\Delta d_{2}, v_{2}, a_{2}$, essas quantias vinculam-se da seguinte forma:
+  \begin{align*}
+    &|\Delta d_{1}| = |\Delta d_{2}|\\
+    &|v_{1}| = |v_{2}|\\
+    &|a_{1}| = |a_{2}|.
+  \end{align*}
+    As forças atuando no bloco 1 são a tração para cima, a peso $P_{1}$ para baixo e a aceleração como consequência da
+    diferença de massas entre os blocos, a qual aponta para baixo também. Por outro lado, no bloco 2, as forças são
+    a tração para cima, a peso $P_{2}$ para baixo e, como consequência da diferença de massas, a aceleração que surge,
+    dessa vez apontando para cima, já que este sobe. Em outras palavras, as seguintes equações descrevem o movimento no
+    eixo y:
+   \begin{align*}
+     &1:\quad T-P_{1} = -m_{1}a\\
+     &2:\quad T-P_{2} = m_{2}a.
+   \end{align*}
+   As equações que descrevem o bloco subindo podem ser encontradas notando que $-P_{1}+P_{2}=-m_{1}a-m_{2}a \Longleftrightarrow 
+   -m_{1}g + m_{2}g = -(m_{1}+m_{2})a \Longleftrightarrow  g(m_{1}-m_{2}) = (m_{1}+m_{2})a.$ Disto, concluímos que 
+     $$
+       a = \frac{(m_{1}-m_{2})}{(m_{1}+m_{2})},\quad g>0, m_{1}>m_{2}.
+     $$
+     Além disso, 
+       $$
+         T = \frac{2m_{1}m_{2}}{(m_{1}+m_{2})}g
+       $$
+ \end{example}
+\begin{example}
+   O próximo exemplo que veremos é o de blocos numa mesa: Há dois blocos presos por uma corda que passa por uma polia.
+  O primeiro bloco encontra-se na parte superior da mesa, possuindo massa $m_{1}$. O segundo bloco está suspenso, sendo
+  sua massa $m_{2}.$ Nesse contexto, o bloco 2 puxa o bloco 1, que desloca-se $\Delta x_{1}$ unidades com aceleração em sua direção
+  $a_{1},$ resultando no próprio movimento de $\Delta y_{2}$ com uma aceleração de $a_{2}$ para baixo.
+
+  Para lidar com esse sistema, observe as forças que atuam em cada bloco - No bloco 1, a gravidade resulta na força
+  peso $P_{1}$ para baixo e, pela Terceira Lei, há a consequência da normal $N_{1}.$ Além delas, há a tração T da corda.
+  Com relação ao bloco 2, não há força de contato, então ele é governado pelo par ação reação da Tração T e da força
+  peso $P_{2}.$
+
+  Agora, analisando os vínculos dos valores, observa-se que $|\Delta x_{1}|=|\Delta y_{2}|$ e $|a_{1}| = |a_{2}| = a.$
+  Podemos dar continuidade e estudar as equações. Começando pelo bloco 1, 
+ \begin{align*}
+   &\text{Eixo x: } F_{r} = T = m_{1}\cdot a\\
+   &\text{Eixo y: } N_{1} - P_{1} = 0 (\text{Sem movimento.})
+ \end{align*}
+ Estudando, então, o bloco 2, o único movimento sendo no eixo y: 
+\begin{align*}
+  F_{r} &= T - P_{2} = -m_{2}a\\
+        &\Rightarrow m_{1}a - P_{2} = -m_{2}a\\
+        &\Rightarrow m_{1}a - m_{2}g = -m_{2}a\\
+        &\Rightarrow (m_{1}+m_{2})a = m_{2}g\\
+        &\Rightarrow a = \frac{m_{2}}{m_{1}+m_{2}}g.
+\end{align*}
+
+\end{example}
+ \newpage
 
 \section{Aula 12 - 27/04/2023}
 \subsection{O que esperar?} 
@@ -1683,6 +1829,231 @@ eixo horizontal. O gol possui uma altura h. Qual \'e a menor e a maior velocidad
  \end{align*}
  Portanto, $10.09m/s\leq v_{0}\leq 13.76m/s.$
 \end{example}
+\newpage
+
+\section{Aula 14 - 08/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Força de Atrito;
+  \item Diferença entre atrito estático e dinâmico.
+\end{itemize}
+\subsection{Força de Atrito.}
+  A força de atrito ocorre como uma forma de resistência ao movimento, é uma interação que precisa ser superada para que ocorra
+  o movimento de dado objeto. Uma de suas característica é que ela será sempre tangencial à superfície de contato.
+  Por experiência na vida real, é mais fácil mover um objeto que está em movimento do que um parado, o que sugere dois tipos diferentes
+  de forças de atrito. De fato, ela pode ser categorizada em ``Força de Atrito Estático'' e ``Força de Atrito Cinético''.
+\begin{center}
+\begin{tikzpicture}[scale=1, transform shape]
+
+% Draw surface
+  \draw[thick] (0,0) -- (10,0) node[right] {$\mu_e \text{ é igual nos dois blocos.}$};
+
+% Draw the first block (smaller base, taller)
+\draw[fill=blue!30] (2,0) rectangle (4,4);
+\node at (3,2) {Bloco 1};
+
+% Draw the second block (larger base, shorter)
+\draw[fill=red!30] (6,0) rectangle (9,3);
+\node at (7.5,1.5) {Bloco 2};
+
+% Draw weight forces (W1 and W2)
+\draw[-{Latex[length=3mm]}, thick] (3,2) -- (3,-1) node[midway, left] {$\vec{P_1}$};
+\draw[-{Latex[length=3mm]}, thick] (7.5,1.5) -- (7.5,-1) node[midway, left] {$\vec{P_2}$};
+
+% Draw normal forces (N1 and N2)
+\draw[-{Latex[length=3mm]}, thick] (3,4) -- (3,6) node[midway, right] {$\vec{N_1}$};
+\draw[-{Latex[length=3mm]}, thick] (7.5,3) -- (7.5,5) node[midway, right] {$\vec{N_2}$};
+
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Força de Atrito Estático}
+  Esta forma de atrito surge em objetos que têm resistência ao começo do movimento. Numericamente, segue que 
+    $$
+      F_{e} = \mu_{e}|\vec{N}|,
+    $$
+  em que $\mu_{e} < 1$ é um coeficiente chamado ``coeficiente de atrito estático'', um valo que altera com base na natureza
+  dos materiais de contato. Note que a força de atrito independe da área de contato! Além disso, o coeficiente é um valor
+  puramente numérico. Observemos essas situações mais a fundo.
+
+   Considere um bloco em contato com uma superfície tal que há uma força $\vec{F}$ agindo sobre ele. Além disso,
+   suponha que essa força tem um valor em módulo menor que a força de atrito estático $\vec{F}_{e}.$ Vamos analisar as forças:
+  \begin{align*}
+    &y:\quad -P + n = 0 \Rightarrow N = P\\
+    &x:\quad F - F_{at} = 0 \Rightarrow F_{at} = F.
+  \end{align*}
+  Quando $|\vec{F}|<F_{e},$ o bloco mantém-se ausente de movimento, mas, quando $|\vec{F}| > F_{e},$ o bloco anda!
+ \subsubsection{Força de Atrito Cinético}
+ Essa versão da força surge para objetos que já estão em movimento, mas continuam em contato com uma superfície. Neste caso,
+ novamente, a descrição dessa interação é dada por um coeficiente adimensional, dessa vez conhecido como ``coeficiente de atrito
+ cinético'', $\mu_{c} < 1$. A força será dada por 
+   $$
+     F_{at}^{c} = \mu_{c}|\vec{N}|.
+   $$
+  O fenômeno previamente mencionado de haver uma facilidade maior para mover algo que já estava em movimento é explicado observando
+  que $\mu_{c} < \mu_{e}!$
+
+ \begin{example}
+   Considere um bloco em um plano inclinado que tenha ângulo $\theta $ com a superfície. Qual é o ângulo máximo para que não haja movimento?
+
+   Começamos decompondo as forças do bloco: 
+  \begin{align*}
+    &y:\quad -P_{y} + N = 0 \Rightarrow -P\cos{(\theta )} = N\\
+    &x: P_{x} - F_{at} = 0 \Rightarrow F_{at} = P\sin{(\theta )} = F_{e}
+  \end{align*}
+  Para resolver o problema, podemos escrever $F_{e} = P\sin{(\theta_{max} )}$, visto que o movimento ocorrerá
+  apenas se a a força em x for maior que o atrito estático. Com isso, 
+ \begin{align*}
+   \mu_{e}N &= P\sin{(\theta_{max})} \Rightarrow \mu_{e}P\cos{(\theta_{max})} = P\sin{(\theta_{max})}\\
+            &\Rightarrow \tan{(\theta_{max})} = \mu_{e}.
+ \end{align*}
+ \end{example}
+\begin{example}
+  Considere um piso escorregadio e um trenó em cima dele com massa m. Ele é puxado com força $\vec{F}$ por uma pessoa utilizando uma corda,
+  a qual faz um ângulo horizontal $\theta $. Para qual valor de $\vec{F}$ o trenó começa a andar?
+ \begin{center}
+   \begin{tikzpicture}[scale=1, transform shape]
+
+% Draw slippery floor
+\draw[thick] (0,0) -- (10,0);
+
+% Draw sled
+\draw[fill=blue!30] (4,0) rectangle (7,2);
+\node at (5.5,1) {$m$};
+
+% Draw force vector and rope
+\coordinate (A) at (7,2);
+\draw[dashed] (A) -- ++(30:4);
+\draw[-{Latex[length=3mm]}, thick] (A) -- ++(30:3) node[midway, above] {$\vec{F}$};
+
+% Draw angle theta
+\draw[-{Latex[length=2mm]}, thick] (A) -- ++(0:2);
+\draw (A) ++(30:1) arc (30:0:1);
+\node[anchor=west] at (7.9,2.3) {$\theta$};
+
+\end{tikzpicture}
+ \end{center}
+
+  Novamente decompondo o problema em suas forças componentes, temos 
+ \begin{align*}
+   &y: -P + N + F_{y} = 0 \Rightarrow N = P - F_{y} = P - F\sin{(\theta )}\\
+   &x: -F_{at} + F_{x} = 0 \Rightarrow F_{x} = F_{at} \text{ (Até que } F_{at}=\mu_{e}|\vec{N}|).
+ \end{align*}
+ Para que o movimento aconteça, é preciso que $F_{x} > F_{at}^{e} = F_{e}$, ou seja, 
+   $$
+     F\cos{(\theta )} > \mu_{e}(P-F\sin{(\theta )}) \Rightarrow  F > \frac{\mu_{e}P}{\cos{(\theta )}+\mu_{e}\sin{(\theta )}}.
+   $$
+   Agora podemos calcular, dados os valores m=50kg, $\mu_{e}=0.20, \mu_{c}=0.15, \theta =40^{\circ}$, podemos encontrar
+   $|\vec{F}_{at}|$ e a aceleração do trenó nos casos 
+
+  \begin{itemize}
+    \item[a)] $|\vec{F}|=100N;$
+    \item[b)] $|\vec{F}|=140N$
+  \end{itemize}
+  
+  Antes de mais nada, observe que, com a fórmula que encontramos, para que haja movimento é preciso que 
+    $$
+      F_{c} > \frac{0.20 \cdot 50 \cdot 9.8}{0.766+0.20 \cdot 0.693} \cong{109N}
+    $$
+
+  a) $|\vec{F}|= 100N < F_{c}$, ou seja, o bloco está parado! Assim, sua aceleração será 0 e o valor da força de atrito será
+    $$
+      -F_{at} + F_{x} = 0 \Rightarrow  F_{at} = 100\cos{(\theta )} = 77N.
+    $$
+
+  b) $|\vec{F}| = 140N > F_{c}$, tal que o bloco, neste caso, anda. Com isso, ele terá aceleração não-nula e força de atrito com valor 
+    $$
+      F_{at} = F_{at}^{c} = \mu_{c}|\vec{N}| = \mu_{c}(|P-F_{y}|) = \mu_{c}(|P-F\sin{(\theta )}|) = 0.15(50 \cdot 9.8 - 140\sin{(40^{\circ})}) = 60N.
+    $$
+    Em particular, note o valor da força de atrito inferior ao do item (a). Para encontrarmos a aceleração, segue que, no eixo x,
+   \begin{align*}
+     x:\quad -F_{at}^{c} + F_{x} &= ma\neq0 \Rightarrow a = -\frac{F_{at}^{c}+F_{x}}{m} =\\
+                                 &\frac{-60+140\cos{(40^{\circ})}}{50} = 0.94m/s^{2}.
+   \end{align*}
+
+  \begin{example}
+    Considere um sistema de caixas dentro de um trem em movimento, sua velocidade inicial sendo $v_{0}$. Passado um tempo,
+    o trem passa a desacelerar constantemente com aceleração a. Qual é a menor distância para parar o trem sem mover as caixas? Tome
+    $\mu_{e}=0.25, v_{0}=48km/h.$
+
+    Para as caixas continuarem paradas, é preciso que a força $F$ atuando numa caixa satisfaça $F\leq F_{at}^{e} = \mu_{e}N$.
+    Quebrando a situação em eixos x e y, 
+   \begin{align*}
+     &y: N = P \\
+     &x: F_{at} = F.
+   \end{align*}
+   Utilizando essas informações, obtemos que a condição torna-se $F\leq \mu_{e}mg.$ Elaborando mais, segue que 
+     $$
+       ma\leq \mu_{e}mg \Rightarrow  a\leq \mu_{e}g.
+     $$
+    Através da Equação de Torricelli, 
+      $$
+        v_{f}^{2} = v_{0}^{2} + 2a\Delta x \Rightarrow 0 = v_{0}^{2} - 2|\vec{A}|\Delta x \Rightarrow \Delta x = \frac{v_{0}^{2}}{2|\vec{A}|}.
+      $$
+      Portanto, 
+        $$
+          \Delta x^{(min)} = \frac{v_{0}^{2}}{2\mu_{e}g} = 36m.
+        $$
+  \end{example}
+  \begin{example}
+    Considere um chão com coeficiente de atrito estático $\mu_{e}.$ Nele, há dois blocos, A e B, cujas massas são
+    $m_{A}, m_{B}$. Eles estão presos por uma corda e sendo puxados por outra corda com força $\vec{F}.$ Qual é a força 
+    cinética $F_{c}$ para entrar em movimento?
+   \begin{center}
+     \begin{tikzpicture}[scale=1, transform shape]
+
+% Draw ground
+\draw[thick, pattern=north east lines] (0,0) rectangle (12,0.25);
+\node at (6,-0.5) {$\mu_e$};
+
+% Draw block A
+\draw[fill=blue!30] (3,0.25) rectangle (5,2.25);
+\node at (4,1.25) {$m_A$};
+
+% Draw block B
+\draw[fill=red!30] (7,0.25) rectangle (9,3.25);
+\node at (8,1.75) {$m_B$};
+
+% Draw ropes
+\draw (5,1.25) -- (7,1.25);
+\draw[-{Latex[length=3mm]}, thick] (9,1.75) -- ++(0:2) node[midway, above] {$\vec{F}$};
+
+% Draw normal force and weight for block A
+\draw[-{Latex[length=3mm]}, thick] (4,2.25) -- ++(90:1.5) node[midway, left] {$\vec{N_A}$};
+\draw[-{Latex[length=3mm]}, thick] (4,0.25) -- ++(270:1.5) node[midway, left] {$\vec{P_A}$};
+
+% Draw normal force and weight for block B
+\draw[-{Latex[length=3mm]}, thick] (8,3.25) -- ++(90:1.5) node[midway, left] {$\vec{N_B}$};
+\draw[-{Latex[length=3mm]}, thick] (8,0.25) -- ++(270:1.5) node[midway, left] {$\vec{P_B}$};
+
+% Draw force F_c for block A
+\draw[-{Latex[length=3mm]}, thick] (3,1.25) -- ++(180:1.5) node[midway, above] {$\vec{F_c}$};
+
+% Draw force F_c for block B
+\draw[-{Latex[length=3mm]}, thick] (7,1.75) -- ++(180:1.5) node[midway, above] {$\vec{F_c}$};
+
+\end{tikzpicture}
+   \end{center}
+
+    Analisaremos as forças para cada um dos blocos, decompondo-as em coordenadas.
+
+    \textbf{Bloco A:} 
+   \begin{align*}
+     &y: N_{A} = P_{A}\\
+     &x: T - F_{at}^{A} = 0 \Rightarrow F_{at}^{A} = T \Rightarrow T_{e} = F_{at}^{a}=\mu_{e}m_{A}g
+   \end{align*}
+
+   \textbf{Bloco B:}
+  \begin{align*}
+    &y: N_{B} = P_{B}\\
+    &x: F - T - F_{at}^{B} = 0 \Rightarrow F_{c} = T_{c} + F_{at}^{e(B)} = \mu_{e}m_{A}g + \mu_{e}m_{B}g.
+  \end{align*}
+  Portanto, 
+    $$
+      F_{c} =\mu_{e}g(m_{A}+m_{B}).
+    $$
+  Em particular, note como seria possível tratar os dois blocos como um só com massa $m_{A}+m_{B}!$
+  \end{example}
+\end{example}
+
 \end{document}
-
-

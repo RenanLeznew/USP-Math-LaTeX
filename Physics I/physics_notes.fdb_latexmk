@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1683124942 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1683124946 0
+["pdflatex"] 1683556313 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1683556318 0
   "../brasao_usp_cor.jpg" 1649205735 1576381 cf2150612fa843c20860dcc9ff67eecf ""
   "../icmc.png" 1649205735 90993 78a44f2b8e319718d9f8b9fc4db49e6c ""
   "C:/Users/renan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1682036850 84647 7e5abdd0624797a4563ca4ce8a66548c ""
@@ -81,6 +81,7 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex" 1621073245 5493 23e371e6fe3e7e42533d6d6c15662e0d ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex" 1621073245 321 cdd11262840e01e25374a2d458f15e99 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex" 1621073245 1319 0b2de5126c6cbc295f0eb77f7344b34d ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex" 1621073245 770 82e332cc9cc48e06b8070d74393a185a ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex" 1621073245 325 36322b0789619b270aec5993d5a9ed08 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex" 1621073245 3931 8b99416ab2e0d0d6af4e0cc444f11055 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1621073245 11518 738408f795261b70ce8dd47459171309 ""
@@ -88,7 +89,9 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex" 1621073245 8843 5533436db3e30fbad1e0440db6027dac ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex" 1621073245 7474 f05a7223b140f230922562ac6a9fede5 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibraryarrows.code.tex" 1621073245 31874 89148c383c49d4c72114a76fd0062299 ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1621073245 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibraryfpu.code.tex" 1621073245 85938 8e4ba97c5906e1c0d158aea81fe29af7 ""
+  "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex" 1621073245 7936 49e55444d57eb69a380c6baa35094828 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1621073245 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex" 1621073245 14524 e1074042dc8f19d631452e43073ea3ba ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.tex" 1621073245 3063 8c415c68a0f3394e45cfeca0b65f6ee6 ""
@@ -231,10 +234,10 @@
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/renan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "physics_notes.aux" 1683124946 8926 677ee9f9faa06dc15ff0a1da8b0538de "pdflatex"
-  "physics_notes.out" 1683124946 9491 89807019f9161d0b5ff6e00a7f626829 "pdflatex"
-  "physics_notes.tex" 1683124936 83039 305d19f1cc2a89a7396318199be71235 ""
-  "physics_notes.toc" 1683124946 5293 4f92af42ebf1627cf2452a56e364d970 "pdflatex"
+  "physics_notes.aux" 1683556317 9986 d36b3a22f2e7806d9564080f21dab281 "pdflatex"
+  "physics_notes.out" 1683556317 10891 bb4a5343b40769905cc51b95e499fa72 "pdflatex"
+  "physics_notes.tex" 1683556313 102050 d4c0b483c94d8f99830400080e88418f ""
+  "physics_notes.toc" 1683556317 6025 a22ac39d466255e1135d50ed0f77d90e "pdflatex"
   (generated)
   "physics_notes.aux"
   "physics_notes.log"
