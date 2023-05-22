@@ -88,3 +88,5 @@
 \contentsline {subsection}{\numberline {22.2}Medida Exterior}{71}{subsection.22.2}%
 \contentsline {section}{\numberline {23}Aula 23 - 22/05/2023}{73}{section.23}%
 \contentsline {subsection}{\numberline {23.1}O que esperar?}{73}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}Recobrimento de Vitali}{73}{subsection.23.2}%
+\contentsline {section}{\numberline {24}Aula 23 - 24/05/2023}{76}{section.24}%

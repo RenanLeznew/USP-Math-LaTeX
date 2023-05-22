@@ -4025,4 +4025,146 @@ em que \(L > 0\) é a constante de Lipschitz.
   \item Continuando medida exterior;
   \item Relacionando medida e derivada;
 \end{itemize}
+\subsection{Recobrimento de Vitali}
+  Dado um conjunto E, uma cobertura de Vitali dele é uma cole\c cão de intervalos
+  \(\mathcal{I}\) tal que para todo x em E e \(\varepsilon  > 0\), existe \(I\in \mathcal{I}\) tal que
+  \(x\in I\) e \(m^{*}(I) < \varepsilon .\) 
+\begin{lemma*}
+  Seja \(E\subseteq{[a, b]}\), tal que \(m^{*}(E)\leq b-a.\) Se \(\mathcal{I}\)
+  é uma cobertura de E por intervalos não degenerados (Não é um ponto só) e tal que, dados \(x\in E\) e
+  \(\varepsilon >0\), existe \(I\in \mathcal{I}\) tal que \(x\in I\) e \(l(I) < \varepsilon .\)
+  Então, dado \(\varepsilon  > 0\), exsite uma cole\c cão finita e disjunta \(\{I_{1}, \cdots, I_{N}\}\subseteq{\mathcal{I}}\)
+  tal que 
+    \[
+      m^{*}\biggl(E\biggl\backslash\biggr. \bigcup_{n=1}^{N}{I_{n}}\biggr) < \varepsilon .
+    \]
+\end{lemma*}
+\begin{proof*}
+  Basta considerar o caso com cada intervalo de \(\mathcal{I}\) fechado. Podemos assumir que
+  \(\mathcal{I}\ni I \subseteq{\mathcal{O}=(b-1, b+1)}\) e que \(I\cap E \neq\emptyset\) para todo I
+  de \(\mathcal{I}\). 
+
+  Escolhemos uma sequência \(\{I_{n}\}\) de intervalos disjuntos de \(\mathcal{I}\) da
+  seguinte forma: Seja \(I_{1}\in \mathcal{I}\) qualquer e se \(I_{1}, \cdots, I_{n}\) já foram
+  escolhidos, seja \(r_{n}\) o supremo dos comprimentos dos intervalos de \(\mathcal{I}\) que não interseptam
+  nenhum dos \(I_{1}, \cdots, I_{n}\). Claramente, \(r_{n} <  l(\mathcal{O}).\) Se 
+  \(E\not\subseteq{\bigcup_{i=1}^{n}{I_{i}}},\) encontramos \(I_{n+1}\in \mathcal{I}\)
+  disjunto de \(I_{1}, \cdots, I_{n}\) e tal que \(l(I_{n+1}) > \frac{1}{2}r_{n}\).
+
+  Assim, \(\{I_{n}\}\) é uma sequência disjunta de intervalos em \(\mathcal{I}\) e, como
+  \(\bigcup_{}^{}{I_{n}\subseteq{\mathcal{O}}}, \sum\limits_{}^{}l(I_{n})\leq l(\mathcal{O}).\) Logo,
+  existe \(N\in \mathbb{N}\) tal que 
+    \[
+      \sum\limits_{N+1}^{\infty} l(I_{n}) < \frac{\varepsilon }{5}.
+    \]
+  Seja 
+    \[
+      R = E\biggl\backslash\bigcup_{n=1}^{N}{I_{n}}\biggr.
+    \]
+  Mostraremos que \(m^{*}(R) < \varepsilon .\) Se \(x\in R,\) como \(F = \bigcup_{n=1}^{N}{I_{n}}\) é
+  fechado e \(x\not\in F,\) existe \(I\) em \(\mathcal{I}, x\in I\) e \(I\cap F=\emptyset.\)
+
+  Agora, se \(I\cap I_{i} = \emptyset\) para \(i\leq \kappa \), temos \(l(I)\leq r_{\kappa } < 2l(I_{\kappa +1}.\)
+  Como \(\lim_{\kappa \to \infty}l(I_{\kappa }) = 0,\) o intervalo I deve intersectar
+  pelo menos um dos intervalos \(I_{\kappa }.\)
+
+  Seja n o menor inteiro tal que \(I\cap I_{n} \neq\emptyset\). Claramente \(n > N\), e
+  \(l(I)\leq r_{n-1} < 2l(I_{n}).\) Como \(x\in I\) e \(I\cap I_{n} \neq\emptyset\), a distância de
+  x ao ponto médio de \(I_{n}\) é no máximo \(l(I) + \frac{1}{2}l(I_{n}) < \frac{5}{2} l(I_{n}).\)
+
+  Logo, x pertence ao intervalo \(J_{n}\) tendo o mesmo ponto médio que \(I_{n}\) e 
+  o quíntuplo do comprimento. Desta forma, 
+    \[
+      R\subseteq{\bigcup_{N+1}^{\infty}{J_{n}}}
+    \]
+  e, portanto, 
+    \[
+      m^{*}(R)\leq \sum\limits_{n=N+1}^{\infty}l(J_{n}) = 5\sum\limits_{n=N+1}^{\infty}l(I_{n}) < \frac{5\varepsilon }{5} = \varepsilon .\text{ \qedsymbol}
+    \]
+\end{proof*}
+\begin{lemma*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é monótona, então f é diferenciável exceto 
+  possivelmente em um conjunto \(E\subseteq{[a, b]}\) com \(m^{*}(E) = 0\).
+\end{lemma*}
+\begin{proof*}
+  Faremos apenas o caso f não-decrescente. Considere 
+ \begin{align*}
+   &\overline{d^{+}}f(x) = \limsup_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\overline{d^{-}}f(x) = \limsup_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+   &\underline{d^{+}}f(x) = \liminf_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\underline{d^{-}}f(x) = \liminf_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+ \end{align*}
+ Provemos que o conjunto dos \(x\in[a, b]\) tais que \(\underline{d^{-}}f(x) < \overline{d^{+}}f(x)\) 
+ ou \(\overline{d^{-}}f(x) > \underline{d^{+}}f(x)\) tem medida exterior nula.
+ Vamos apenas considerar o conjunto E dos pontos \(x\in[a, b]\) para os quais
+ \(\overline{d^{+}}f(x) > \underline{d^{-}}f(x).\) O conjunto E é a união
+ dos conjunto 
+   \[
+   E_{u, v} = \{x: \overline{d^{+}}f(x) > u > v > \underline{d^{-}}f(x) \}
+   \]
+ para todos os racionais u e v. Logo, basta mostrar que \(m^{*}(E_{u, v}) = 0.\)
+Seja s = \(m^{*}(E_{u,v })\) e, escolhendo \(\varepsilon >0, E_{u, v}\) está contido
+em um aberto O tal que \(m^{*}(O) < s + \varepsilon .\)
+
+  Para cada \(x\in E_{u, v},\) existe um intervalo \([x-h, x]\) contido em O tal que 
+    \[
+      f(x) - f(x-h) < vh.
+    \]
+  Do \hyperlink{vitali_covering}{Lema de Vitali,} escolhemos uma cole\c cão \(\{I_{1}, \cdots, I_{N}\} \)
+disjunta desses intervalos cujos interiores cobre \(A\subseteq{E_{u, v}}\) com
+ \(m^{*}(A) > s-\varepsilon .\) Somando \(f(x) - f(x-h) < vh\) para todos estes intervalos, 
+   \[
+     \sum\limits_{n=1}^{N}[f(x_{n}) - f(x_{n}-h_{n})] < v \sum\limits_{n=1}^{N}h_{n} < vm^{*}(O) < v(s+\varepsilon )
+   \]
+   Agora, para cada y em A e k arbitrariamente pequeno, \([y, y+k]\subseteq{I_{n}}\) e 
+     \[
+       f(y+k)-f(y) > uk.
+     \]
+     Novamente, usando o \hyperlink{vitali_covering}{Lema de Vitali,} temos uma cole\c cão
+     disjunta \(\{J_{1}, \cdots, J_{M}\}\) desses intervalos cuja união contém um 
+    subconjunto de A com medida exterior maior que \(s-2\varepsilon .\) Assim,
+    adicionando
+   \[
+     \sum\limits_{n=1}^{N}[f(x_{n}) - f(x_{n}-h_{n})] < v \sum\limits_{n=1}^{N}h_{n} < vm^{*}(O) < v(s+\varepsilon )
+   \]
+    para todos os invervalos, temos 
+      \[
+        \sum\limits_{i=1}^{M}f(y_{i}-k_{i})-f(y_{i}) > u\sum k_{i} > u (s-2\varepsilon ).
+      \]
+    Cada intervalo \(J_{i}\) está contido em algum intervalo \(I_{n}\) e, como f é
+crescente, se somarmos para todos os i para os quais \(J_{i}\subseteq{I_{n}},\) temos 
+        \[
+          \sum\limits_{}^{}f(y_{i}+k_{i}) - f(y_{i})\leq f(x_{n}) - f(x_{n}-h_{n}).
+        \]
+    Logo, 
+        \[
+          \sum\limits_{n=1}^{N}f(x_{n})-f(x_{n}-h_{n})\geq \sum\limits_{i=1}^{M}f(y_{i}+k_{i}) - f(y_{i})
+        \]
+    e 
+        \[
+          v(s+\varepsilon ) > u(s-2\varepsilon ).
+        \]
+    Como isso vale para todo \(\varepsilon >0, vs\geq us.\) Além disso, já que 
+    \(u > v, s=0.\) Portanto, 
+      \[
+        \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+      \]
+    existe exceto possivelmente em um conjunto E com \(m^{*}(E) = 0.\) \qedsymbol
+\end{proof*}
+ \begin{crl*}
+   Seja \(I\subseteq{\mathbb{R}}\) um intervalo aberto e \(f:I\rightarrow \mathbb{R}\) Lipschitz contínua em I.
+  Então, f é diferenciável exceto possivelmente em um conjunto E com \(m^{*}(E) = 0.\)
+ \end{crl*}
+\begin{crl*}
+  Seja \(I\subseteq{\mathbb{R}}\) um intervalo aberto e \(f:I\rightarrow \mathbb{R}\) Lipschitz contínua em I. Então, f é diferenciável em um
+  subconjunto denso de I.
+\end{crl*}
+ \begin{theorem*}
+   Seja I um intervalo aberto da reta e \(g:I\rightarrow \mathbb{R}\) Lipschitz contínua
+   em I. Então, g é continuamente diferenciável se, e somente se, para cada \(x_{0}\in I,\) 
+     \[
+       \biggl|\frac{g(x_{0}+s+h)-g(x_{0}+s)}{h}-\frac{g(x_{0}+h)+g(x_{0})}{h}\biggr|\overbracket[0pt]{\longrightarrow}^{|s|+|h|\to 0}0.
+     \]
+ \end{theorem*}
+\newpage
+
+\section{Aula 23 - 24/05/2023}
 \end{document}
