@@ -3072,4 +3072,957 @@ topologia da reta.
   Como f(K) é compacto, $L=\sup{\{y:y\in f(K)\}}$ e $l=\inf{\{y:y\in f(K)\}}$ pertencem a f(K). Portanto, existem $x_{1},x_{2}\in K$
   tais que $f(x_{1})=l\leq f(x)\leq L = f(x_{2})$ para todo x de K. \qedsymbol
 \end{proof*}
+
+\section{Aula 18 - 10/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Semicontinuidades;
+  \item Diferenciabilidade.
+\end{itemize}
+\subsection{Semicontinuidade}
+\begin{def*}
+  Se \(D\subseteq{\mathbb{R}}\), c é um ponto de acumula\c cão de D e \(f:D\rightarrow \mathbb{R}\) 
+  é uma fun\c cão que é limitada em uma vizinhan\c ca de c em \(\mathbb{R}\), definimos 
+    \[
+      \limsup_{x\to c}f(x)\limsup_{r\to 0^{+}}\{f(x):x\in D, 0 < |x-c|< r\}\quad\text{ e } \liminf_{x\to c}f(x)=\liminf_{r\to 0^{+}}{f(x):x\in D, 0 < |x-c|<r}.
+    \]
+    Definimos os análogos para pontos em \(c\in D^{-}\) como
+      \[
+        \overline{\text{Lim}}_{x\to p}f(x)\coloneqq \limsup_{x\to p}f(x)\coloneqq \limsup_{r\to 0^{+}}\{f(x):x\in D, |x-p| < r\}\quad\text{ e } \underline{\text{Lim}}_{x\to p}f(x)\coloneqq \liminf_{r\to 0^{+}}\{f(x):x\in D, |x-p|<r||\}square
+      \]
+\end{def*}
+\begin{def*}
+  Seja \(f:D\rightarrow \mathbb{R}\) e c um ponto de D. Então, f é semicontínua
+  superiormente em c se 
+    \[
+      f(c) = \overline{Lim}_{x\to c}f(x) \quad(f(c)\geq \limsup_{x\to p}f(x))
+    \]
+    e semicontínua inferiormente se 
+      \[
+        f(c) = \underline{Lim}_{x\to c}f(x) \quad(f(c)\leq \liminf_{x\to p}f(x))
+      \]
+    Se f é semicontínua superiormente (inferiormente) em todos os pontos de D, dizemos
+    que f é semicontínua superiormente (inferiormente). \(\square\)
+\end{def*}
+ \begin{theorem*}
+   Seja \(f:D\rightarrow \mathbb{R}\) uma fun\c cão semicontínua superiormente (inferiormente).
+   Se k é um número real, então existe um aberto \(O_{k}\) de \(\mathbb{R}\) tal que 
+     \[
+       O_{k}\cap D = \underbrace{\{x\in D: f(x)<k\}}_{f^{-1}((-\infty, k))} \quad(O_{k}\cap D=\underbrace{\{x\in D: f(x)>k\}}_{f^{-1}((k, \infty))})
+     \]
+ \end{theorem*}
+\begin{proof*}
+  Para c em D com \(f(c) < k,\), da defini\c cão de semicontinuidade, segue que
+  existe \(r_{c}>0\) tal que \(f(x) < k\) para todo x em D, \(|x-c| < r_{c}.\) Seja
+  \(I_{c} = (c-r_{c}, c+r_{c})\) e defina 
+    \[
+      O_{k} = \bigcup_{c\in f^{-1}((-\infty, k))}^{}{I_{c}.}
+    \] 
+    De fato, se c pertence a esta interse\c cão, então \(f(c) < k\). Com isso, 
+      \[
+        k > f(c) = \overline{Lim}_{x\to c}f(x) = \limsup_{r\to 0^{+}}\{f(s):s\in D, |s-c|< r\}
+      \]
+      Logo, existe \(r_{c}\) tal que \(\sup\{f(s):s\in D, |s-c|<r_{c}\} < k.\) Assim,
+      \(f(s)<k\) para todo s em \((c-r_{c}, c+r_{c})\) e em D. Finalmente, por conta disso,
+      \(c\in D\cap(c-r_{c}, c+r_{c})\subseteq{f^{-1}((-\infty, k))}\) e \(\bigcup_{c\in f^{-1}((-\infty, k))}^{}{D\cap (c-r_{c}, c+r_{c})} = f^{-1}(-\infty, k)\)
+  É claro que, para todo x em \(O_{i}\cap D = f^{-1}((-\infty, k))\).
+\end{proof*}
+
+\subsection{Motiva\c cão para Diferenciabilidade}
+ A diferenciabilidade é um conceito fundamental na análise matemática, que
+estende o conceito de derivada de uma função em um ponto. Uma função é dita
+diferenciável em um ponto se existe um número que pode ser interpretado como
+a inclinação da reta tangente à curva representativa da função naquele ponto.
+
+ Seja $f: \mathbb{R} \to \mathbb{R}$ uma função. Dizemos que $f$ é 
+diferenciável em $x_0 \in \mathbb{R}$ se o seguinte limite existe:
+
+\begin{equation}
+f'(x_0) = \lim_{{h \to 0}} \frac{f(x_0 + h) - f(x_0)}{h}
+\end{equation}
+
+O número $f'(x_0)$ é chamado de derivada de $f$ em $x_0$.
+
+A diferenciabilidade tem diversas aplicações em matemática e ciências. 
+Ela permite, por exemplo, calcular a taxa de variação de uma quantidade, 
+otimizar funções e resolver equações diferenciais. Alguns exemplos incluem
+
+\subsubsection{Função Linear}
+
+Considere a função linear $f(x) = mx + b$, onde $m$ e $b$ são constantes. A derivada de $f$ em qualquer ponto $x_0$ é $f'(x_0) = m$, que é a inclinação da reta.
+
+\subsubsection{Função Quadrática}
+
+Considere a função quadrática $f(x) = ax^2 + bx + c$, onde $a$, $b$ e $c$ são constantes. A derivada de $f$ em qualquer ponto $x_0$ é $f'(x_0) = 2ax_0 + b$.
+
+Pense na diferenciabilidade como uma maneira de medir o quão "suave" é uma função. Se você pode desenhar a curva de uma função sem levantar a caneta do papel, então a função é provavelmente diferenciável. A derivada em um ponto é simplesmente a inclinação da reta que melhor se ajusta à curva naquele ponto.
+Vamos entrar mais a fundo nessas ideias
+
+\subsection{Derivadas}
+\begin{def*}
+  Seja \(f:D_{f}\rightarrow \mathbb{R}\) uma fun\c cão e \(p\in D_{f}\) um ponto de
+  acumula\c cão de \(D_{f}\). Se existir o limite 
+    \[
+      \lim_{x\to p}\frac{f(x)-f(p)}{x-p} = L\in \mathbb{R},
+    \]
+    diremos que L é a derivada de f em p e escrevemos 
+      \[
+        f'(p) = L = \lim_{x\to p}\frac{f(x)-f(p)}{x-p}=\lim_{h\to 0}\frac{f(p+h)-f(p)}{h}. \square
+      \]
+\end{def*}
+
+  Se \(f:D\rightarrow \mathbb{R}\) possui derivada num ponto d de D que é também um
+  ponto de acumula\c cão de D, para \(h\in \mathbb{R}\) tal que d+h pertence a D, escrevemos 
+    \[
+      r(h) = f(d+h)-f(d)-f'(d)h.
+    \]
+    Nesses pontos, definimos \(r:\{h\in \mathbb{R}: d+h\in D_{f}\}\rightarrow \mathbb{R}\)
+    e escrevemos \(f(d+h) = f(d)+f'(d)h + r(h)\) e, fazendo \(\sigma (h) = \frac{r(h)}{h}, h\neq 0,\)
+    temos \(\lim_{h\to 0}\sigma (h)=0.\)
+
+    Note que f é diferenciável em d se, e somente se, existe fun\c cão \(\sigma \)
+    com \(\lim_{h\to 0}\sigma (h)=0\) tal que \(f(d+h)=f(d)+[f'(d)+\sigma (h)]h\).
+    \begin{def*}
+      Sejam \(f:D_{f}\rightarrow \mathbb{R}\) uma fun\c cão e \(p\in D_{f}\) um ponto
+      de acumula\c cão à direita de \(D_{f}\). Se existir o limite 
+        \[
+          \lim_{x\to p^{+}}\frac{f(x)-f(p)}{x-p}=L^+\in \mathbb{R},
+        \]
+        diremos que \(L^+\) é a derivada à direita de f em p e escrevemos 
+          \[
+            f'(p^+) = L^+=\lim_{x\to p^+}\frac{f(x)-f(p)}{x-p}= \lim_{h\to 0^{+}}\frac{f(p+h)-f(p)}{h}
+          \]
+          Analogamente, define-se derivada à esquerda. \(\square\)
+    \end{def*}
+      Já definimos a derivada de \(f:D_{f}\rightarrow \mathbb{R}\) em pontos p de
+      \(D_{f}\) que também são pontos de acumula\c cão de \(D_{f}\). Sendo assim, 
+      se 
+        \[
+          D_{f'}= \biggl\{x\in D_{f}:x\text{ é um ponto de acumula\c cão de $D_{f}$ e }\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\text{ existe.}\biggr\}\subseteq{D_{f}},
+        \]
+    definimos a fun\c cão \(f':D_{f'}\rightarrow \mathbb{R}\) por 
+      \[
+        f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}, \quad x\in D_{f'}.
+      \]
+    A fun\c cão f' é dita a fun\c cão derivada ou apenas derivada de f.
+    \hypertarget{diff_cont}{
+     \begin{theorem*}
+       Se f for diferenciável em p de \(D_{f}\), então f será contínua em p.
+     \end{theorem*}
+    }
+
+   \begin{proof*}
+     Recorde que \(p\in D_{f}\) é um ponto de acumula\c cão de \(D_{f}\).
+     Vamos mostrar que \(\lim_{x\to p}f(x)=f(p)\) ou que \(\lim_{x\to p}(f(x)-f(p))=0.\)
+     Escrevemos 
+       \[
+         f(x)-f(p) = \frac{f(x)-f(p)}{x-p}(x-p).
+       \]
+       Assim, 
+         \[
+           \lim_{x\to p}(f(x)-f(p)) = \lim_{x\to p}\frac{f(x)-f(p)}{x-p}\lim_{x\to p}(x-p) = f'(p)\cdot 0 = 0.
+         \]
+
+         Portanto, f é contínua em p.
+   \end{proof*}
+   Note que a recíproca não vale. A fun\c cão \(f(x) = |x|\) é contínua em x, mas
+   não é diferenciável em x=0.
+   \hypertarget{negative_diff}{   \begin{example}
+        Se f não é contínua em p, então f não é diferenciável em p.
+      \end{example}}
+   \begin{example}
+     A fun\c cão 
+       \[
+         f(x) = \left\{\begin{array}{ll}
+             x^2,\quad x\geq 2\\
+             2,\quad x\leq 2
+           \end{array}\right.
+       \]
+       não é contínua, logo não diferenciável.
+   \end{example}
+   \begin{def*}
+     Seja f derivável em \(D_{f'}\). A fun\c cão \(f':D_{f'}\rightarrow \mathbb{R}\)
+     é dita derivada de f ou derivada primeira de f. Definimos a derivada segunda de f
+     como 
+       \[
+         (f')'(x) = \lim_{h\to 0}\frac{f(x+h)-f'(x)}{h}
+       \]
+       quando o limite existe. Escrevemos \(f''=f^{(2)} = (f')'\) para denotá-la.
+
+       Para \(n \in\mathbb{N}^{\times}\), podemos definir a derivada n-ésima analogamente. \(\square\).
+   \end{def*}
+   \begin{theorem*}
+     Se \(k\in \mathbb{R}\) e \(n\in \mathbb{N}^{\times}\), valem as propriedades
+     de derivada vistas em cálculo I. Além disso, valem as regras
+     da derivada do produto, quociente, soma e multiplica\c cão por constante.
+   \end{theorem*}
+   Lembrando: 
+     \[
+       (f(x)g(x))' = f'(x)g(x) + f(x)g'(x)\quad \biggl(\frac{f}{g}\biggr)' = \frac{f'(x)g(x) - g'(x)f(x)}{g(x)^2}
+     \]
+
+     \hypertarget{chain_rule}{
+      \begin{theorem*}
+        Sejam \(f:D_{f}\rightarrow \mathbb{R}, g:D_{g}\rightarrow \mathbb{R}\) diferenciáveis com 
+        \(Im(g)\subseteq{D_{f}.}\) Se g é diferenciável em p, g(p) é ponto de acumula\c cão de \(D_{f}\),
+        f é diferenciável em g(p) e \(h=f\circ{g}\), então h é diferenciável em p e 
+          \[
+            h'(p) = f'(g(p))g'(p).
+          \]
+      \end{theorem*}
+     }
+    \begin{proof*}
+       Fa\c ca q = g(p). Sejam \(\sigma _{g}\) e \(\sigma _{f}\) definidas em vizinhan\c cas
+       de 0 com \(\lim_{h\to 0}\sigma_{g}(h) = 0\) e \(\lim_{k\to 0}\sigma _{f}(k) = 0\) tais que 
+      \begin{align*}
+        &g(p+h) = g(p) + [g'(p) + \sigma _{g}(h)]h\\
+        &f(q+k) = f(q) + [f'(q) + \sigma _{f}(k)]k.
+      \end{align*}
+      Fazendo \(k=g(p+h)-g(p) = [g'(p)+\sigma _{g}(h)]h\), temos \(g(p+h) = q + k\) e
+     \begin{align*}
+       f(g(p+h)) = f(q+k) &= f(q) + [f'(q) + \sigma _{f}(k)]k\\
+                          &= f(q) + [f'(q) + \sigma _{f}(k)][g'(p)+\sigma _{g}(h)]h\\
+                          &=f(g(p))+f'(f(p))g'(p)h + [\sigma _{f}(g(p+h)-g(p))[g'(p)+\sigma _{g}(h)]+f'(q)\sigma _{g}(h)]h.
+     \end{align*}
+ Agora, se \(\sigma _{f\circ{g}}(h) =[\sigma _{f}(g(p+h)-g(p))[g'(p)+\sigma _{g}(h)]+f'(q)\sigma _{g}(h)]h\),
+     temos \(\lim_{h\to 0}\sigma _{f\circ{g}}(h)=0.\) \qedsymbol
+    \end{proof*}
+    Seja \(f:D_{f}\rightarrow \mathbb{R}\) uma fun\c cão que tem inversa, \(D_{f^{-1}}=Im(f)\)
+    e \(f^{-1}:D_{f^{-1}}\rightarrow \mathbb{R}\). Então, para todo x em \(D_{f^{-1}}\), 
+      \[
+        f(f^{-1}(x)) = x.
+      \]
+    Vimos que se f é contínua em um compacto, \(f^{-1}\) é contínua. Se, além disso,
+    \(f \) e \(f^{-1}\) forem deriváveis, pela \hyperlink{chain_rule}{Regra da Cadeia,}
+      \[
+        f'(f^{-1}(x))(f^{-1})'(x) = x' = 1.
+      \]
+    Logo, \(f'(f^{-1}(x))\neq0\) e 
+      \[
+        (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
+      \]
+    Esse estudo sobre a inversa é sumarizado no próximo resultado: 
+   \begin{theorem*}
+    Seja f injetiva, p um ponto de acumula\c cão de Im(f). Se f for diferenciável em \(q=f^{-1}(p)\) e
+    \(f^{-1}\) é contínua em p, então \(f^{-1}\) é diferenciável em p se, e somente se,
+    \(f'(f^{-1}(p))\neq 0.\) Neste caso, 
+      \[
+    (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
+      \]
+   \end{theorem*}
+   \begin{proof*}
+     Se \(f'(f^{-1}(p))\neq0\), como \(f^{-1}\) é contínua em p, \(\lim_{h\to 0}f^{-1}(p+h)=f^{-1}(p)\).
+     Usando \(f(f^{-1}(x)), x\in D_{f^{-1}}\), temos 
+    \begin{align*}
+      (f^{-1})'(p) &= \lim_{h\to 0}\frac{f^{-1}(p+h)-f^{-1}(p)}{h} = \lim_{h\to 0}\frac{1}{\frac{h}{f^{-1}(p+h)-f^{-1}(p)}}\\
+                   &= \lim_{h\to 0}\frac{1}{\frac{f(f^{-1}(p+h))-f(f^{-1}(p))}{f^{-1}(p+h)-f^{-1}(p)}} = \frac{1}{f'(f^{-1}(p))}
+    \end{align*} 
+    Por outro lado, se \(f^{-1}\) é diferenciável em p, da \hyperlink{chain_rule}{regra da cadeia}
+    aplicada a \(f\circ{f^{-1}}\), temos \(f'(f^{-1}(p))\cdot (f^{-1})'(p)=1\) e \(f'(f^{-1}(p))\neq0\).
+   \end{proof*}
+   \begin{example}
+     Se \(g(x)=x^{\frac{1}{n}}\), então \(g'(x) = \frac{1}{n}x^{\frac{1}{n}-1}, 2\leq n\in \mathbb{N}\). 
+     Lembre-se que, \(x > 0\) se n for par e \(x\neq0\) se n for ímpar.
+    
+     Com efeito, note que \(g(x) = x^{\frac{1}{n}} = f^{-1}(x)\), em que \(f(u) = u^n.\) Então, 
+       \[
+         g'(x) = (f^{-1})(x) = \frac{1}{f'(f^{-1}(x))} = \frac{1}{n(x^{\frac{1}{n}})^{n-1}} = \frac{1}{n(x^{\frac{n-1}{n}})} = \frac{1}{n}x^{\frac{1}{n}-1}.
+       \]
+   \end{example}
+\newpage
+
+\section{Aula 19 - 12/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Fun\c cões Deriváveis em Intervalos; 
+  \item Teorema de Darboux;
+  \item Descontinuidades da Derivada.
+\end{itemize}
+
+\subsection{Fun\c cões Deriváveis em Intervalos}
+ \begin{example}
+   Seja \(f:\mathbb{R}\rightarrow \mathbb{R}\) dada por \(f(x) = x^{3}\). Já 
+sabemos que f é contínua. Como 
+\begin{align*}
+  f(x) - f(y) &=(x-y)(x^{2}+xy+y^{2})\\
+              &=(x-y)((x+\frac{y}{2})^{2}+\frac{3}{4}y^{2})\\
+              &=(x-y)((\frac{x}{2}+y)^{2}+\frac{3}{4}x^{2}).
+\end{align*}
+  Segue que \(x\neq y\) implica \(f(x)\neq f(y)\) e f é injetora. Além disso,
+\(\lim_{x\to \pm\infty}f(x)=\pm\infty\)e, pelo teorema do valor intermediário,
+f é uma bije\c cão de \(\mathbb{R}\) em \(\mathbb{R}\). Além disso,
+\(f^{-1}:\mathbb{R}\rightarrow \mathbb{R}\) é contínua pois ela é contínua em
+qualquer intervalo compacto. A inversa de f é denotada \(f^{-1}(x) = x^{\frac{1}{3}} = \sqrt[3]{x}.\)
+  Do teorema sobre a derivada da inversa e do fato que \(f'(x) = 3x^{2}\) 
+deduzimos que \(f^{-1}:\mathbb{R}\rightarrow \mathbb{R}\) é diferenciável se,
+e somente se, \(x\in \mathbb{R}\backslash\{0\}\) e, para estes valores de x. 
+  \[
+    \overbrace{(\sqrt[3]{x})'}^{(f^{-1})'(x)} = \frac{1}{f'(f^{-1}(x))} = \frac{1}{3(\sqrt[3]{x})^{2}} = \frac{1}{3x^{\frac{2}{3}}}.
+  \]
+\end{example}
+ \begin{def*}
+   Seja \(f:D\rightarrow \mathbb{R}\). Dizemos que f tem um máximo (mínimo) local no
+   ponto de em D se existe \(\delta >0\) tal que \(f(x)\leq f(d) (f(x)\geq f(d))\)
+   para todo x em D com \(|x-d| < \delta .\) Quando a desigualdade é estrita,
+   dizemos que f tem um máximo (mínimo) local estrito. Os máximos e mínimos locais
+   serão chamados de valores extremos e os pontos em que a fun\c cão assume valores máximos
+   ou mínimos são chamados de pontos de máximo ou de mínimo. \(\square\)
+ \end{def*}
+  Pela defini\c cão de derivada (à direita), segue que 
+ \begin{enumerate}
+ \item Se \(f:D\rightarrow \mathbb{R}\) é não-decrescente (não-crescente) e é
+diferenciável em um ponto d de D, então \(f'(d)\geq 0 (f'(d)\leq 0)\). Vale o mesmo
+para fun\c cões diferenciáveis à direita.
+ \item Se \(f:D\rightarrow \mathbb{R}\) é derivável à direita (esquerda) em um ponto
+\(d\in D\) e \(f'(d^{+}) > 0 (f'(d^{-}) > 0)\) então existe \(\delta >0\) tal que
+\(x\in D, x\in (d, d+\delta )(x\in (d-\delta , d)\) implica \(f(x) > f(d) (f(x) < f(d)).\)
+ \item Se \(f:D\rightarrow \mathbb{R}\) é derivável à direita (esquerda) em um 
+ponto \(d\in D\) e \(f(d^{-}) < 0 (f'(d^{-}) < 0)\), então existe \(\delta >0\) tal que
+\(x\in D, x\in(d, d+\delta )(x\in (d-\delta, d))\) implica \(f(x) < f(d) (f(x) > f(d)).\)
+  \item Se \(f:D\rightarrow \mathbb{R}\) é derivável em um ponto \(d\in D\),
+d sendo ponto de acumula\c cão à direita e à esquerda e \(f'(d) > 0\), existe \(\delta  > 0\)
+tal que \(x\in D, d-\delta < x < d < y < d+\delta\) implica \(f(x) < f(d) < f(y).\)
+\item \(f:D\rightarrow \mathbb{R}\) é derivável em um ponto d em D, d é um ponto
+de acumula\c cão à direita e à esquerda e f tem um valor extremo local em d, então \(f'(d) = 0.\)
+ \end{enumerate}
+\begin{def*}
+  Seja I um intervalo e \(f:I\rightarrow \mathbb{R}\) uma fun\c cão diferenciável.
+Se \(f':I\rightarrow \mathbb{R}\) for contínua diremos que f é continuamente diferenciável
+em I, ou simplesmente f é de classe \(C^{1}\) em I.
+\end{def*}
+  Note que existe fun\c cão diferenciável em um intervalo I que não é 
+continuamente diferenciável.
+ \begin{example}
+   Seja \(f:\mathbb{R}\rightarrow \mathbb{R}\) dada por 
+     \[
+       f(x) = \left\{\begin{array}{ll}
+           x^{2}\sin{(\frac{1}{x})},\quad x\neq0\\
+           f(0) = 0.
+         \end{array}\right.
+     \]
+     Então, f é diferenciável, mas f' não é contínua em x = 0.
+ \end{example}
+ \hypertarget{darboux}{
+\begin{theorem*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é diferenciável com \(f'(a)\neq f'(b)\), então,
+  para todo C entre \(f'(a)\) e \(f'(b)\), existe \(c\in (a, b)\) tal que 
+  \(f'(c) = C\).
+\end{theorem*}}
+\begin{proof*}
+  Suponha que \(f'(a) < 0 < f'(b)\). Segue que, para x próximo a a em \([a, b], f(x) < f(a)\)
+e, para x próximo a b em \([a, b], f(x) < f(b).\) Logo, o ponto de mínimo (que existe pelo
+\hyperlink{weierstrass}{Teorema de Weierstrass} c de f ocorre em \((a, b)\) e 
+portanto \(f'(c) = 0.\) Para o caso geral, consideramos 
+\begin{itemize}
+  \item Se \(f'(a) < C < f'(b), g(x) = f(x) - C \cdot x\)
+  \item Se \(f'(a) > C > f'(b), g(x) = C \cdot x - f(x).\)
+\end{itemize}
+\end{proof*}
+\begin{theorem*}
+  Se I é um intervalo e \(f:I\rightarrow \mathbb{R}\) é diferenciável, então
+  f' não tem descontinuidades de primeira espécie.
+\end{theorem*}
+\begin{proof*}
+  Se a é um ponto de acumula\c cão à direita de I e \(L^{+}=\lim_{x\to a^{+}}f(x)\)
+existe, mostremos que \(L^{+} = f'(a).\)
+
+  De modo análogo (exercício), se a é um ponto de acumula\c cão à esquerda de I 
+e \(L^{-}=\lim_{x\to a^{-}}f'(x)\) existe, mostre que \(f'(a) = L^{-}.\)
+
+  Se \(L^{+} > f'(a)\) e \(C\in(f'(a), L^{+})\), existe \(\delta >0\) tal que
+ \(f'(x) > C\) para todo \(x\in(a, a-\delta ).\) Escolhendo \(b\in(a, a+\delta )\),
+ temos \(f'(b) > C > f'(a)\), uma contradi\c cão com o \hyperlink{darboux}{Teorema de Darboux},
+ pois este implica a existência de \(c\in(a, b)\) tal que \(f'(c) = C.\) Logo,
+ \(f'(a)\geq L^{+}.\)
+
+  Se \(f'(a) > L^{+}\) e \(C\in(L^{+}, f'(a))\), existe \(\delta >0\) tal que 
+ \(f'(x) < C\) para todo x em \((a, a+\delta )\). Escolhendo b em \((a, a+\delta )\),
+ temos \(f'(b) < C < f'(a)\), novamente contradizendo o \hyperlink{darboux}{Teorema de Darboux},
+ visto que ele implica que deve existir c em \((a, b)\) tal que \(f'(c) = C.\) Assim,
+ \(f'(a)\leq L^{+}.\) Portanto, \(L^{+} = f'(a).\) \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se \(f:[a, b)\rightarrow \mathbb{R}\) é contínua e diferenciável à direita com 
+derivada à direita, \(D^{+}f:[a, b)\rightarrow \mathbb{R}.\) Se \(D^{+}f(x)\leq 0 (D^{+}f(x)\geq 0)\)
+para todo x em \([a, b)\) e \(f(a) = 0\), então \(f(x)\leq 0 (f(x)\geq 0)\) em \([a, b).\)
+\end{theorem*}
+\begin{proof*}
+  Suponha primeiramente que \(D^{+}f(x) < 0\) para todo \(x\in[a, b).\) Se o resultado
+é falso, existe ao menos um \(x\in(a, b)\) tal que \(f(x) > 0.\) Seja
+\(x_{0}=\inf\{x\in(a, b): f(x) > 0\}.\)
+
+  Da continuidade de f, \(f(x_{0}) = 0\) e da defini\c cão de \(x_{0}\) existe 
+uma sequência \(x_{n}\in(x_{0}, b)\) tal que \(x_{n}\overbracket[0pt]{\longrightarrow}^{n\to \infty}x_{0}.\)
+Assim, 
+  \[
+    D^{+}f(x_{0}) = \lim_{n\to \infty}\frac{f(x_{n})-f(x_{0})}{x_{n}-x_{0}}\geq 0,
+  \]
+uma contradi\c cão. Logo, \(f(x)\leq 0\) para todo x em \([a, b)\).
+
+  Agora, consideramos o caso geral \(D^{+}f(x)\leq 0\) para todo \(x\in[a, b).\)
+Neste caso, consideramos a fun\c cão auxiliar \(f_{\varepsilon }(x) = f(x) - \varepsilon (x-a)\) 
+e temos \(f_{\varepsilon }(x)\leq 0\) para todo \(x\in[a, b)\) e \(\varepsilon >0.\)
+Disto segue que, para todo \(x\in[a, b), f(x)\leq 0\). O outro caso será deixado como
+exercício. \qedsymbol
+\end{proof*}
+\begin{example}
+  Encontre uma fun\c cão \(f:\mathbb{R}\rightarrow \mathbb{R}\) que é diferenciável
+  à direita, tal que \(D^{+}f(x) < 0\) para todo \(x\neq0, D^{+}f(0)=0,\) f é positiva
+  para \(x > 0\) e negativa para \(x < 0 (f(x)\overbracket[0pt]{\longrightarrow}^{x\to \pm\infty}\pm\infty.)\)
+\end{example}
+ \begin{crl*}
+   Se \(f:[a, b)\rightarrow \mathbb{R}\) é contínua e diferenciável à direita com derivada
+à direita \(D^{+}f:[a, b)\rightarrow \mathbb{R}.\) Se \(D^{+}f(x)\leq 0\) para todo x em \([a, b)\),
+então f é não-crescente em \([a, b).\)
+ \end{crl*}
+\begin{proof*}
+  Se \(a\leq c < d < b,\) seja \(g:[c, b)\rightarrow \mathbb{R}\) definida por 
+ \(g(x) = f(x) - f(x)\) e \(D^{+}g(x)\leq 0\) para todo x em \([c, b)\). Segue do 
+ teorema que \(g(x)\leq 0\) para todo x em \([c, b).\) Em particular, \(g(d) = f(d) - f(c)\leq 0\). \qedsymbol
+\end{proof*}
+\begin{crl*}
+  Se \(f:[a, b)\rightarrow \mathbb{R}\) é contínua e diferenciável à direita com
+derivada à direita \(D^{+}f:[a, b)\rightarrow \mathbb{R}.\) Se \(D^{+}f(x)\geq 0\)
+para todo x em \([a, b)\), então f é não-decrescente em \([a, b).\)
+\end{crl*}
+  A prova deste exercício é deixada como exercício. Além disso, como exercício,
+enuncie e prove resultados semelhantes aos anteriores para a derivada à esquerda.
+\newpage
+
+\section{Aula 20 - 15/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Teorema do Valor Médio;
+  \item Consequências do TVM;
+  \item Regra de L'Hospital;
+  \item Teorema de Taylor.
+\end{itemize}
+\subsection{Teorema do Valor Médio}
+  O resultado a seguir não pode ser completado até o futuro, no entanto, pode
+ser útil já afirmá-lo.
+\hypertarget{incomplete_1}{\begin{crl*}
+  Se \(f:[a, b)\rightarrow \mathbb{R}\) é contínua e diferenciável à direita com 
+  derivada à direita \(D^{+}f:[a, b]\rightarrow \mathbb{R}\) contínua, então f é de classe
+  \(C^{1}\).
+\end{crl*}}
+\begin{proof*}
+  Seja \(g = D^{+}f\) e defina 
+    \[
+      h(t) = f(a) + \int_{a}^{t} g(\tau )d\tau.
+    \]
+  A fun\c cão h é continuamente diferenciável em \([a, b)\). Se \(\varphi (t) = h(t)-f(t)\),
+  então \(\varphi (a) = 0\) e \(D^{+}\varphi (t) = 0\) em [a, b). Do teorema anterior,
+  \(\varphi (t)\leq 0\) em \([a, b)\).
+
+  Como \(-\varphi (t)\) também satisfaz as hipóteses do teorema anterior, \(\varphi (t)\geq 0\).
+  Portanto, \(\varphi = 0\), ou seja, f = h em \([a, b)\). \qedsymbol
+\end{proof*}
+  O Teorema do Valor Médio é um dos teoremas fundamentais da análise. Segue sua formula\c cão segundo
+  Cauchy
+  \hypertarget{cauchy_mvt}{
+ \begin{theorem*}
+   Se \(f, g:[a, b]\rightarrow \mathbb{R}\) são fun\c cões contínuas que são
+   diferenciáveis em \((a, b)\), existe c em \((a, b)\) tal que 
+     \[
+       [f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c).
+     \]
+ \end{theorem*}}
+  Um de seus corolários é o teorema de Rolle
+  \hypertarget{Rolle}{
+ \begin{crl*}
+   Se \(f:[a, b]\rightarrow \mathbb{R}\) é contínua em \([a, b]\) e diferenciável
+ em \((a, b)\) e \(f(a)=f(b),\) então existe um c em (a, b) tal que \(f'(c) = 0.\)
+ \end{crl*}}
+\begin{proof*}
+  Segue fazendo \(g(x) = 1\) no teorema anterior. \qedsymbol
+\end{proof*}
+ Outro corolário é o Teorema do Valor Médio em sua versão mais simplificada e mais usada
+ \hypertarget{mean_value}{
+\begin{crl*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é contínua em \([a, b]\) e diferenciável em
+  \((a, b)\), então existe \(c\in (a, b)\) tla que 
+    \[
+      f(b) - f(a) = f'(c)(b-a),
+    \]
+    ou seja, 
+      \[
+        f'(c) = \frac{f(b)-f(a)}{b-a}.
+      \]
+\end{crl*}}
+\begin{proof*}
+  Basta tomar \(g(x) = x\) no teorema anterior. \qedsymbol
+\end{proof*}
+  Vamos provar o \hyperlink{cauchy_mvt}{teorema do valor médio de Cauchy}.
+ \begin{proof*}
+   Se 
+     \[
+       h(x) = [f(b)-f(a)]g(x) - [g(b)-g(a)]f(x),\quad (a\leq x\leq b),
+     \]
+  então h é contínua em \([a, b]\), diferenciável em \((a, b)\) e 
+    \[
+      h(a) = f(b)g(a) - f(a)g(b) = h(b).\quad \text{(para verificar isso, basta abrir as contas)}
+    \] 
+  Para provar o teorema, basta mostrarmos que \(h'(c) = 0\) para algum c em \((a, b)\).
+
+Se h é constante, isto vale para todo c em \((a, b).\) 
+Se\(h(x) > h(a)\) para algum \( x\in (a, b),\) seja c um ponto de \([a, b]\) 
+no qual h atinge seu máximo. Como \(h(a) = h(b),\) segue que c pertence a \((a, b)\) e \(h'(c) = 0\).
+
+Se \(h(x) < h(a)\) para algum x em \((a, b)\), escolhemos c em \([a, b]\)
+para o qual h atinge seu mínimo. Portanto, assim como antes, \(c\in (a, b)\) e
+ \(f'(c) = 0.\) \qedsymbol
+ \end{proof*}
+
+  Algumas outras consequências do \hyperlink{mean_value}{TVM} são:
+ \begin{crl*}
+  \begin{itemize}
+    \item[a)] Se \(f'(x)\geq  0,\) então f é não-decrescente em \((a, b)\);
+      \item[b)] Se \(f'(x) > 0,\) então f é crescente em \((a, b)\)
+        \item[c)]  Se \(f'(x) = 0,\) então f é constante em \((a, b)\)
+          \item[d)] Se \(f'(x)\leq  0,\) então f é não-crescente em \((a, b)\)
+            \item[e)] Se \(f'(x)\leq  0,\) então f é decrescente em \((a, b)\)
+  \end{itemize}
+ \end{crl*}
+ Uma observa\c cão, também, é o Teorema da Fun\c cão Inversa
+\begin{theorem*}
+  Se \(I\subseteq{\mathbb{R}}\) é um intervalo aberto, \(x_{0}\) um ponto de I,
+  \(f:I\rightarrow \mathbb{R}\) uma fun\c cão \(C^{1}\) e \(f'(x_{0})\neq 0\), então
+  existe \(\delta >0\) tal que \(f:(x_{0}-\delta, x_{0}+\delta )\rightarrow \mathbb{R}\) 
+  é injetora, \(f((x_{0}-\delta ,x_{0}+\delta )) = J\) é um intervalo e \(f^{-1}:J\rightarrow I\)
+  é continuamente diferenciável com 
+    \[
+      (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
+    \]
+\end{theorem*}
+  O resultado a seguir é conhecido como Regra de L'Hospital, um dos resultados
+  mais úteis no cálculo de limites indeterminados de fun\c cões.
+\hypertarget{Lhospital}{ 
+  \begin{theorem*}
+   Sejam \(f, g\) diferenciáveis em \((a, b)\) e \(g'(x)\neq0\) para todo
+   x em \((a, b)\), em que \(-\infty\leq a < b\leq +\infty\) e 
+     \[
+       \frac{f'(x)}{g'(x)}\overbracket[0pt]{\longrightarrow}^{x\to a}A.
+     \]
+  Se 
+    \[
+      f(x)\overbracket[0pt]{\longrightarrow}^{x\to a}0\text{ e }g(x)\overbracket[0pt]{\longrightarrow}^{x\to a}0
+    \]
+  ou se 
+    \[
+      g(x)\overbracket[0pt]{\longrightarrow}^{x\to a}+\infty,
+    \]
+  então 
+    \[
+      \frac{f(x)}{g(x)}\overbracket[0pt]{\longrightarrow}^{x\to a}A.
+    \]
+  O resultado permanece válido se \(x\overbracket[0pt]{\longrightarrow}b\), ou se
+  \(g(x)\longrightarrow+\infty.\)
+ \end{theorem*}
+}
+ \begin{proof*}
+   Primeiramente, consideramos o caso \(-\infty\leq A < +\infty\). Se \(q > r > A\),
+   existe c em \((a, b)\) tal que, se \(a < x < c\), então 
+     \[
+       \frac{f'(x)}{g'(x)} < r.
+     \]
+    Se \(a < x < y < c,\) do \hyperlink{cauchy_mvt}{Teorema do Valor Médio de Cauchy}, existe 
+    \(t\in (x, y)\) tal que 
+      \[
+        \frac{f(x) - f(y)}{g(x) - g(y)} = \frac{f'(t)}{g'(t)} < r,
+      \] 
+    visto que, se \(\lim_{x\to a}\frac{f'(x)}{g'(x)} = A\), fazendo \(q > r > A, q\in \mathbb{R},\)
+    deve existir \(c > a\) tal que, para todo x em \((a, c)\), 
+    \[
+      \frac{f'(x)}{g'(x)} < r.
+    \]
+
+    Se a primeira condi\c cão vale, então, fazendo \(x\rightarrow a\) na desigualdade acima, 
+      \[
+        \frac{f(y)}{g(y)}\leq r < q \quad (a < y < c),
+      \]
+
+    Caso a segunda condi\c cão seja verdadeira, mantendo y fixado na equa\c cão em que aplicamos o TVM de Cauchy anterior,
+    podemos escolher \(c_{1}\in (a, y)\) tal que \(g(x) > g(y) \) e \(g(x) > 0\) se 
+    \(a < x < c_{1}.\) Multiplicando ela por \(\frac{g(x)-g(y)}{g(x)},\) obtemos 
+      \[
+        \frac{f(x)}{g(x)} < r - r\frac{g(y)}{g(x)} + \frac{f(y)}{g(x)}\quad (a < x < c_{1})
+      \]
+    Fazendo x tender para a nesta desigualdade, segue que existe \(c_{2}\in (a, c_{1})\)
+    tal que 
+      \[
+        \frac{f(x)}{g(x)} < q\quad (a < x < c_{2}).
+      \]
+    Assim, temos para qualquer \(q > A\), existe \(c_{2}\) tal que \(\frac{f(x)}{g(x)} < q\) se \(a < x < c_{2}.\)
+      \[
+        \lim_{x\to a^{+}} \frac{f(x)}{g(x)}\leq q \quad\forall q > A.
+      \]
+      Do mesmo modo, se \(-\infty < A\leq +\infty\) e \(p < A,\) podemos encontrar
+    \(c_{3}\) tal que 
+      \[
+        p < \frac{f(x)}{g(x)}\quad (a < x < c_{3}).
+      \]
+      Disto segue o resultado. \qedsymbol
+ \end{proof*}
+  O próximo resultado é conhecido como Teorema de Taylor, e permite-nos quebrar
+  uma fun\c cão com várias derivadas em um polinômio com derivadas mais simples.
+  Ele pode ser visto como uma generaliza\c cão do \hyperlink{mean_value}{TVM}.
+  \hypertarget{taylor}{
+ \begin{theorem*}
+   Se \(n\in \mathbb{N}^{\times}, f:[a, b]\rightarrow \mathbb{R}\) é uma fun\c cão
+   n-1 vezes diferenciável em \([a, b]\) e n-vezes diferenciável em \((a, b)\) com
+   \(f^{(n-1)}:[a, b]\rightarrow \mathbb{R}\) contínua. Sejam \(\alpha , \beta \in[a, b]\) diferentes
+   e 
+     \[
+       P(t) = \sum\limits_{k=0}^{n-1}\frac{f^{(k)}(\alpha )}{k!}(t-\alpha )^{k}.
+     \]
+    Então, existe \(\xi\) entre \(\alpha  \) e \(\beta \) tal que 
+      \[
+        f(\beta ) = P(\beta ) + \frac{f^{(n)}(\xi)}{n!}(\beta -\alpha )^{n}.
+      \]
+    Para n=1, este é o \hyperlink{mean_value}{TVM}. Em geral, o teorema mostra
+    como aproximar f por polinômios e fornece uma maneira de estimar o erro
+    se conhecermos limita\c cões para \(|f^{(n)}(\xi)|.\)
+ \end{theorem*}}
+ \begin{proof*}
+   Seja M o número definido por 
+     \[
+       f(\beta ) = P(\beta ) + M(\beta -\alpha )^{n}.
+     \]
+    Fazendo 
+      \[
+        g(t) = f(t) - P(t) - M(t-\alpha )^{n}\quad (a\leq t\leq b).
+      \]
+    Precisamos mostrar que \(n!M = f^{(n)}(\xi)\) para algum \(\xi\) entre 
+  \(\alpha \) e \(\beta \). Segue que 
+    \[
+      g^{(n)}(t) = f^{(n)}(t) - n!M\quad (a < t < b).
+    \]
+    Resta mostrar que \(g^{(n)}(\xi) = 0\) para algum \(\alpha \leq \xi\leq \beta .\) 
+    Como \(P^{(k)}(\alpha ) = f^{(k)}(\alpha ), k=0, \cdots, n-1,\) temos 
+      \[
+        g(\alpha ) = g'(\alpha ) = \cdots = g^{(n-1)}(\alpha ) = 0.
+      \]
+    Nossa escolha de M implica que \(g(\beta ) = 0\) e, do \hyperlink{mean_value}{Teorema
+    do Valor Médio,} \(g'(x_{1}) = 0\) para algum \(x_{1}\) entre \(\alpha \) e \(\beta \).
+    Como \(g'(\alpha ) = 0\), de modo semelhante, \(g''(x_{2}) = 0\) para algum
+    \(x_{2}\) entre \(\alpha \) e \(x_{1} \). Portanto, depois de n, chegamos à conclusão
+    que \(g^{(n)}(x_{n}) = 0\) para algum \(x_{n}\) entre \(\alpha \) e \(x_{n-1}\), isto é,
+    entre \(\alpha \) e \(\beta \). \qedsymbol
+ \end{proof*}
+ \subsection{Fun\c cões Convexas}
+\begin{def*}
+  Seja I um intervalo. Uma fun\c cão \(f:I\rightarrow \mathbb{R}\) é convexa quando,
+  dados \(a < x < b\) em I, o ponto \((x, f(x))\) fica abaixo da reta que
+  liga os pontos \((a, f(a))\) e \((b, f(b))\). \(\square\)
+\end{def*}
+A equa\c cão da reta é 
+  \[
+    y = \frac{f(b)-f(a)}{b-a}(x-a)+f(a) \text{ ou } y = \frac{f(b)-f(a)}{b-a}(x-b)+f(b).
+  \]
+  Logo, \(f:I\rightarrow \mathbb{R}\) é convexa se uma das desigualdades 
+    \[
+      \frac{f(x) - f(a)}{x-a}\leq \frac{f(b) - f(a)}{b-a}\leq \frac{f(b)-f(x)}{b-x}
+    \]
+    está sempre satisfeita sempre que \(a < x < b\) em I. 
+\hypertarget{convex_characterization}{ \begin{theorem*}
+   Seja \(I\subseteq{\mathbb{R}}\) um intervalo e \(f:I\rightarrow \mathbb{R}\) duas vezes diferenciável.
+   Então, f é convexa se, e somente se, \(f''(x)\geq 0\) para todo x em I.
+ \end{theorem*}}
+\newpage
+\section{Aula 21 - 17/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Fun\c cões convexas;
+  \item Séries de Taylor;
+  \item Fun\c cões analíticas;
+  \item Fun\c cões de varia\c cão limitada.
+\end{itemize}
+\subsection{Fun\c cões Convexas}
+  Vamos relembrar o que foi visto na última aula sobre fun\c cões convexas antes de mais nada.
+  \begin{def*}
+  Seja I um intervalo. Uma fun\c cão \(f:I\rightarrow \mathbb{R}\) é convexa quando,
+  dados \(a < x < b\) em I, o ponto \((x, f(x))\) fica abaixo da reta que
+  liga os pontos \((a, f(a))\) e \((b, f(b))\). \(\square\)
+\end{def*}
+A equa\c cão da reta é 
+  \[
+    y = \frac{f(b)-f(a)}{b-a}(x-a)+f(a) \text{ ou } y = \frac{f(b)-f(a)}{b-a}(x-b)+f(b).
+  \]
+  Logo, \(f:I\rightarrow \mathbb{R}\) é convexa se uma das desigualdades 
+    \[
+      \frac{f(x) - f(a)}{x-a}\leq \frac{f(b) - f(a)}{b-a}\leq \frac{f(b)-f(x)}{b-x}
+    \]
+    está sempre satisfeita sempre que \(a < x < b\) em I. 
+\begin{theorem*}
+   Seja \(I\subseteq{\mathbb{R}}\) um intervalo e \(f:I\rightarrow \mathbb{R}\) duas vezes diferenciável.
+   Então, f é convexa se, e somente se, \(f''(x)\geq 0\) para todo x em I.
+ \end{theorem*}
+ Come\c camos agora por provar esse resultado.
+ \begin{proof*}
+   Se \(f''(x)\geq 0\) para todo x em I, então dados a, a+h em I, existe
+c entre a e a+h tal que \(f(a+h) = f(a) + f'(a)\cdot h + \frac{f''(c)}{2}\cdot h^{2}.\)
+Como \(f''(c)\geq 0, f(a+h)\geq f(a) + f'(a)\cdot h.\) Disto segue que 
+ \(\frac{f(a+h)-f(a)}{h}\leq f'(a)\) se \(h < 0\) e \(\frac{f(a+h)-f(a)}{h}\geq f'(a)\)
+ se \(h > 0.\) Em outras palavras, se \(a < x < b\) em I, então \(\frac{f(x)-f(a)}{x-a}\leq \frac{f(b)-f(x)}{b-x}\)
+ ou seja, 
+   \[
+     (f(x)-f(a))(b-x)\leq (f(b)-f(x))(x-a).
+   \]
+   Deste modo, 
+  \begin{align*}
+    (f(x)-f(a))(b-a-(x-a)) &\leq (f(b)-f(a)-(f(x)-f(a)))(x-a)\text{ e }\\
+                           &(f(x)-f(a))(b-a)\leq (f(b)-f(a))(x-a).
+  \end{align*}
+  Com isso, provamos a convexidade de f.
+
+  Reciprocamente, se f é convexa, dados \(a < x < b\) em I, temos 
+    \[
+      \frac{f(x)-f(a)}{x-a}\leq \frac{f(b)-f(a)}{b-a}\leq \frac{f(x) - f(b)}{x-b}.
+    \]
+  Fazendo \(x\rightarrow a\) e \(x\rightarrow b\), 
+    \[
+      f'(a)\leq \frac{f(b)-f(a)}{b-a}\leq f'(b)
+    \]
+  e f é não-decrescente em I. Portanto, \(f''(x)\geq 0\) para todo x em I. \qedsymbol
+ \end{proof*}
+  Observe que, se f é diferenciável, então \(f'\) é crescente se, e somente se,
+f é convexa. Além disso, podemos mostrar analogamente que, se \(f''(x) > 0\) para
+todo x em I, então f é estritamente convexa em I. A recíproca é falsa, no entanto.
+Basta tomar \(f(x) = x^{4}\), a qual é estritamente convexa em \(\mathbb{R}\), mas
+ \(f''(0) = 0.\)
+
+  Seja \(f:I\rightarrow \mathbb{R}\) de classe \(C^{\infty}.\) Se \(a, x\in I^{o},\) então
+podemos escrever, para todo \(k\in \mathbb{N},\) 
+  \[
+  f(x) = f(a) - f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^{2} + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1} + r_{n}((x-a)),
+  \]
+  em que \(r_{n}((x-a))=\frac{f^{(n)}((1-\theta_{n})a+\theta_{n}x)}{n!}(x-a)^{n},\) com
+ \(0 < \theta_{n} < 1.\) A série 
+   \[
+     \sum\limits_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^{n}
+   \]
+chama-se a série de Taylor da fun\c cão f em torno do ponto a. Esta série
+pode ou não convergir e, mesmo que convirja, sua soma pode ser diferente
+de f(x).
+\begin{example}
+  Seja \(f:\mathbb{R}\rightarrow \mathbb{R}\) definida por \(f(0)=0\) e 
+ \(f(x)=e^{-\frac{1}{x^{2}}}\) se \(x\neq0.\) Mostre que f é \(C^{\infty}, f^{(n)}(0)=0\)
+ para todo n natural e portanto a série de Taylor de f em \(x=0\) é convergente para
+ \(f(0)\), mas não coincide com f para nenhum \(x\neq0.\)
+\end{example}
+\begin{def*}
+  Se \(I\subseteq{\mathbb{R}}\) é um intervalo aberto e \(f:I\rightarrow \mathbb{R}\)
+é uma fun\c cão, dizemos que f é analítica em I se, para cada \(a\in I\), existe
+ \(\varepsilon >0\) tal que a série de Taylor \(\sum\limits_{n=0}^{\infty}\frac{f^{(n)(a)}}{n!}\cdot (x-a)^{n}\)
+ é convergente com soma \(f(x)\) para todo x em \((a-\varepsilon, a+\varepsilon ).\square\)
+\end{def*}
+  É claro que a série de Taylor \(\sum\limits_{}^{}\frac{f^{(n)}(a)}{n!}\cdot (x-a)^{n}\) converge
+  para f(x) se, e somente se, \(\lim_{n\to a}r_{n}((x-a))=0.\)
+ \begin{example}
+   A série de Taylor da fun\c cão seno é dada por 
+     \[
+       \sin{(x)} = \sum\limits_{n=0}^{\infty}\frac{(-1)^{n}}{(2n+1)!}x^{2n+1}.
+     \]
+ \end{example}
+  Veremos mais tarde que, se a série de potências \(\sum\limits_{n=1}^{\infty}a_{n}(x-a)^{n}\)
+tem raio de convergência \(R>0\), então a fun\c cão definida por 
+  \[
+    f(x) = \sum\limits_{n=0}^{\infty}a_{n}(x-a)^{n}, \quad x\in(a-R, a+R)
+  \]
+  é analítica.
+\subsection{Fun\c cões de Varia\c cão Limitada (BV)}
+  Se r é um número real, colocamos \(r^{+}=\max\{r, 0\}, r^{-}=\max\{-r, 0\}\).
+ \begin{def*}
+   Uma cole\c cão \(\{a_{0}, \cdots, a_{k}\}\) de pontos em \([a, b]\) é chamada
+uma parti\c cão do intervalo \([a, b]\) se \(a=a_{0} < a_{1} < a_{2} < \cdots<a_{k}=b.\)
+Seja \(f:[a, b]\rightarrow \mathbb{R}\) e \(\{a_{0},\cdots,a_{k}\}\) uma parti\c cão
+de \([a, b]\). Escrevemos 
+ \begin{align*}
+   &p=\sum\limits_{n=1}^{k}[f(a_{i})-f(a_{i-1})]^{+},\\
+   &n=\sum\limits_{i=1}^{k}[f(a_{i})-f(a_{i-1})]^{-},\\
+   &t=\sum\limits_{i-1}^{k}[f(a_{i})-f(a_{i-1})]=p+n,\\
+   &f(b)-f(a)=p-n.
+ \end{align*}
+ \end{def*}
+ Sejam 
+\begin{align*}
+  &P_{a}^{b}=\sup\{p:k\in \mathbb{N}, a=a_{0} < a_{1} < \cdots < a_{k}=b\text{ parti\c cão de [a, b]}\}
+  &N_{a}^{b}=\sup\{n:k\in \mathbb{N}, a=a_{0} < a_{1} < \cdots < a_{k}=b\text{ parti\c cão de [a, b]}\}
+  &T_{a}^{b}=\sup\{t:k\in \mathbb{N}, a=a_{0} < a_{1} < \cdots < a_{k}=b\text{ parti\c cão de [a, b]}\}
+\end{align*}
+  Dizemos que \(P_{a}^{b}, N_{a}^{b}\) e \(T_{a}^{b}\) são as varia\c cões positiva,
+  negativa e total de f. É claro que 
+    \[
+      \max\{P_{a}^{b}, N_{a}^{b}\}\leq T_{a}^{b}\leq P_{a}^{b} + N_{a}^{b}\quad\text{ e } f(b)-f(a) = P_{a}^{b} - N_{a}^{b}.
+    \]
+\begin{def*}
+  A fun\c cão \(f:[a, b]\rightarrow \mathbb{R}\) é de varia\c cão limitada se \(T_{a}^{b} < \infty.\) Denotamos
+isso por \(f\in BV([a, b]). \square\)
+\end{def*}
+\begin{theorem*}
+ \begin{itemize}
+\item[1)] Se \(f:[a, b]\rightarrow \mathbb{R}\) é Lipschitz contínua, então \(f:[a, b]\rightarrow \mathbb{R}\)
+  é de varia\c cão limitada.
+\item[2)] Se \(f:[a, b]\rightarrow \mathbb{R}\) é monótona, então \(f:[a, b]\rightarrow \mathbb{R}\) é
+  de varia\c cão limitada.
+\item[3)] Se \(f:[a, b]\rightarrow \mathbb{R}\) é de varia\c cão limitada, existem
+  fun\c cões não-decrescente \(g, h:[a, b]\rightarrow \mathbb{R}\) tais que \(f(x) = g(x)-h(x).\)
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  \(1. \Rightarrow )\) Se f é Lipschitz, \(\max\{P_{a}^{b}, N_{a}^{b}\leq T_{a}^{b}\leq L(b-a) < \infty,\}\)
+em que \(L > 0\) é a constante de Lipschitz.
+
+  \(2. \Rightarrow )\) Se f é monótona, então \(T_{a}^{b} = [f(b)-f(a)] < \infty.\)
+
+  \(3. \Rightarrow )\) Se \(T_{a}^{b} < \infty,\) defina \(g, h:[a, b]\rightarrow \mathbb{R}\) por 
+ \(g(x) = f(a) + P_{a}^{x}\) e \(h(x) = N_{a}^{x}\) para cada x de \([a, b]\). Portanto,
+ \(g, h\) são não-decrescentes e \(f(x) = g(x) - h(x).\) \qedsymbol
+\end{proof*}
+\newpage
+\section{Aula 22 - 19/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Medida exterior;
+  \item Continuidade Lipschitz;
+\end{itemize}
+\subsection{Medida Exterior}
+\begin{def*}
+  Se \(I=(a, b)\), defina \(l(I) = b-a.\) Dado \(A\subseteq{\mathbb{R}}\), existe
+  uma família contável de intervalos abertos que cobrem A. Seja \(\mathcal{U}_{A}\)
+  a cole\c cão de todas as coberturas contáveis de intervalos abertos de A. Então,
+  definimos a medida exterior de A como 
+    \[
+      m^{*}(A) = \inf\{\sum\limits_{}^{}l(I_{n}):\{I_{n}\}\in \mathcal{U}_{A}\}.\square
+    \]
+\end{def*}
+  É claro que \(m^{*}(\emptyset) = 0, m^{*}((a, b))\leq b-a, m^{*}(\{x\}) = 0\) para todo
+  x real e que, se \(A\subseteq{B}, m^{*}(A)\leq m^{*}(B).\)
+ \begin{lemma*}
+   Temos \(m^{*}[a, b]=m^{*}(a, b]=m^{*}[a, b)=m^{*}(a, b) = b-a.\)
+ \end{lemma*}
+\begin{proof*}
+  Como \([a, b]\subseteq{(a-\frac{\varepsilon }{2}, b+\frac{\varepsilon }{2})}\), para todo \(\varepsilon >0\), temos
+  \(m^{*}([a, b])\leq b-a.\) Por outro lado, se \(\{I_{n}\}\in \mathcal{U}_{[a, b]}\) existe
+  uma subcole\c cão finita \(\{I_{n_{1}}, \cdots, I_{n_{k}}\}\) de \(\{I_{n}\}\) tal que
+  \(\bigcup_{i=1}^{k}{I_{n_{i}}}\supseteq{[a, b]}\) e 
+    \[
+      \sum\limits_{i=1}^{k}l(I_{n_{i}})\leq \sum\limits_{}^{}l(I_{n}).
+    \]
+    Podemos tomar uma subcobertura de \(\{I_{n_{1}}, \cdots, I_{n_{k}}\}\) de forma que
+    \(a\in I_{n_{j_{1}}} = (y_{1}, x_{1})\) e, recursivamente, se \(x_{j}\leq b, x_{j}\in I_{n_{i_{j+1}}} = (y_{j+1},x_{j+1})\)
+    parando para \(j_{0}\leq k\) tal que \(I_{n_{i_{j_{0}}}}\ni b\). Assim, como
+    \(y_{j} < x_{j-1} < x_{j},\) 
+      \[
+        \sum\limits_{j=1}^{j_{0}}l(I_{n_{i_{j}}}) = \sum\limits_{}^{}(x_{j} - y_{j}) > x_{j_{0}} - y_{1} > b - a
+      \]
+      e \(m^{*}([a, b]) = b-a.\) \qedsymbol
+\end{proof*}
+ \begin{lemma*}
+   Se \(\{A_{n}\}\) é uma família contável de subconjuntos de \(\mathbb{R}\), então 
+     \[
+       m^{*}\biggl(\bigcup_{}^{}{A_{n}}\biggr)\leq \sum\limits_{}^{}m^{*}(A_{n}).
+     \]
+ \end{lemma*}
+\begin{proof*}
+  Só temos que considerar o caso em que \(\sum\limits_{}^{}m^{*}(A_{n}) < \infty.\) Como
+  \(m^{*}(A_{n})\) é finita, dado \(\varepsilon  > 0\), seja \(\{I_{n, i}\}_{i}\in \mathcal{U}_{A_{n}}\) tal que
+  \(A_{n}\subseteq{\bigcup_{i}^{}{I_{n, i}}}\) e \(\sum\limits_{i}^{}l(I_{n, i}) < m^{*}(A_{n}) + 2^{-n}\varepsilon\)
+  Logo, \(\{I_{n, i}\}_{n, i}\in \mathcal{U}_{\bigcup_{}^{}{A_{n}}}\) e 
+    \[
+      m^{*}\biggl(\bigcup_{n}^{}{A_{n}}\biggr)\leq \sum\limits_{n, i}^{}l(I_{n, i}) = \sum\limits_{n}^{}\sum\limits_{i}^{}l(I_{n, i}) < \sum\limits_{n}^{}(m^{*}(A_{n}) + \varepsilon 2^{-n}).
+    \]
+  Portanto, \(m^{*}\biggl(\bigcup_{n}^{}{A_{n}}\biggr) = \sum\limits_{}^{}m^{*}(A_{n}) + \varepsilon\) e, como \(\varepsilon \) é arbitrário, o resultado segue.
+\end{proof*}
+\begin{crl*}
+ \begin{itemize}
+   \item[1)] Se \(A\subseteq{\mathbb{R}}\) é enumerável, \(m^{*}(A) = 0.\)
+     \item[2)] Se \(\{A_{n}\}\) é uma família contável de subconjuntos de \(\mathbb{R}\) e
+       \(m^{*}(A_{n}) = 0\) para todo n, então \(m^{*}(\bigcup_{n}^{}A_{n} = 0.\)
+ \end{itemize}
+\end{crl*}
+\begin{example}
+  Seja \(I_{j} = [a_{j}, b_{j}], 1\leq j\leq n\) com \(b_{j} < a_{j+1}, 1\leq j\leq n-1.\) Mostre que 
+    \[
+      m^{*}\biggl(\bigcup_{j=1}^{n}{I_{j}}\biggr) = \sum\limits_{j=1}^{n}(b_{j}-a_{j}).
+    \]
+\end{example}
+  Dado um conjunto E, uma cobertura de Vitali dele é uma cole\c cão de intervalos
+  \(\mathcal{I}\) tal que para todo x em E e \(\varepsilon  > 0\), existe \(I\in \mathcal{I}\) tal que
+  \(x\in I\) e \(m^{*}(I) < \varepsilon .\) 
+\hypertarget{vitali_covering}{
+\begin{lemma*}
+  Seja \(E\subseteq{[a, b]}\), tal que \(m^{*}(E)\leq b-a.\) Se \(\mathcal{I}\)
+  é uma cobertura de E por intervalos não degenerados (Não é um ponto só) e tal que, dados \(x\in E\) e
+  \(\varepsilon >0\), existe \(I\in \mathcal{I}\) tal que \(x\in I\) e \(l(I) < \varepsilon .\)
+  Então, dado \(\varepsilon  > 0\), exsite uma cole\c cão finita e disjunta \(\{I_{1}, \cdots, I_{N}\}\subseteq{\mathcal{I}}\)
+  tal que 
+    \[
+      m^{*}\biggl(E\biggl\backslash\biggr. \bigcup_{n=1}^{N}{I_{n}}\biggr) < \varepsilon .
+    \]
+\end{lemma*}}
+\begin{proof*}
+  Basta considerar o caso com cada intervalo de \(\mathcal{I}\) fechado. Podemos assumir que
+  \(\mathcal{I}\ni I \subseteq{\mathcal{O}=(b-1, b+1)}\) e que \(I\cap E \neq\emptyset\) para todo I
+  de \(\mathcal{I}\). 
+
+  Escolhemos uma sequência \(\{I_{n}\}\) de intervalos disjuntos de \(\mathcal{I}\) da
+  seguinte forma: Seja \(I_{1}\in \mathcal{I}\) qualquer e se \(I_{1}, \cdots, I_{n}\) já foram
+  escolhidos, seja \(r_{n}\) o supremo dos comprimentos dos intervalos de \(\mathcal{I}\) que não interseptam
+  nenhum dos \(I_{1}, \cdots, I_{n}\). Claramente, \(r_{n} <  l(\mathcal{O}).\) Se 
+  \(E\not\subseteq{\bigcup_{i=1}^{n}{I_{i}}},\) encontramos \(I_{n+1}\in \mathcal{I}\)
+  disjunto de \(I_{1}, \cdots, I_{n}\) e tal que \(l(I_{n+1} > \frac{1}{2}r_{n}\).
+
+  Assim, \(\{I_{n}\}\) é uma sequência disjunta de intervalos em \(\mathcal{I}\) e, como
+  \(\bigcup_{}^{}{I_{n}\subseteq{\mathcal{O}}}, \sum\limits_{}^{}l(I_{n})\leq l(\mathcal{O}).\) Logo,
+  existe \(N\in \mathbb{N}\) tal que 
+    \[
+      \sum\limits_{N+1}^{\infty} l(I_{n}) < \frac{\varepsilon }{5}.
+    \]
+  Seja 
+    \[
+      R = E\biggl\backslash\bigcup_{n=1}^{N}{I_{n}}\biggr.
+    \]
+  Mostraremos que \(m^{*}(R) < \varepsilon .\) Se \(x\in R,\) como \(F = \bigcup_{n=1}^{N}{I_{n}}\) é
+  fechado e \(x\not\in F,\) existe \(I\) em \(\mathcal{I}, x\in I\) e \(I\cap F=\emptyset.\)
+
+  Agora, se \(I\cap I_{i} = \emptyset\) para \(i\leq \kappa \), temos \(l(I)\leq r_{\kappa } < 2l(I_{\kappa +1}.\)
+  Como \(\lim_{\kappa \to \infty}l(I_{\kappa }) = 0,\) o intervalo I deve intersectar
+  pelo menos um dos intervalos \(I_{\kappa }.\)
+
+  Seja n o menor inteiro tal que \(I\cap I_{n} \neq\emptyset\). Claramente \(n > N\), e
+  \(l(I)\leq r_{n-1} < 2l(I_{n}).\) Como \(x\in I\) e \(I\cap I_{n} \neq\emptyset\), a distância de
+  x ao ponto médio de \(I_{n}\) é no máximo \(l(I) + \frac{1}{2}l(I_{n}) < \frac{5}{2} l(I_{n}).\)
+
+  Logo, x pertence ao intervalo \(J_{n}\) tendo o mesmo ponto médio que \(I_{n}\) e 
+  o quíntuplo do comprimento. Desta forma, 
+    \[
+      R\subseteq{\bigcup_{N+1}^{\infty}{J_{n}}}
+    \]
+  e, portanto, 
+    \[
+      m^{*}(R)\leq \sum\limits_{n=N+1}^{\infty}l(J_{n}) = 5\sum\limits_{n=N+1}^{\infty}l(I_{n}) < \frac{5\varepsilon }{5} = \varepsilon .\text{ \qedsymbol}
+    \]
+\end{proof*}
+\begin{lemma*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é monótona, então f é diferenciável exceto 
+  possivelmente em um conjunto \(E\subseteq{[a, b]}\) com \(m^{*}(E) = 0\).
+\end{lemma*}
+\begin{proof*}
+  Faremos apenas o caso f não-decrescente. Considere 
+ \begin{align*}
+   &\overline{d^{+}}f(x) = \limsup_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\overline{d^{-}}f(x) = \limsup_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+   &\underline{d^{+}}f(x) = \liminf_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\underline{d^{-}}f(x) = \liminf_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+ \end{align*}
+ Provemos que o conjunto dos \(x\in[a, b]\) tais que \(\underline{d^{-}}f(x) < \overline{d^{+}}f(x)\) 
+ ou \(\overline{d^{-}}f(x) < \underline{d^{+}}f(x)\) tem medida exterior nula.
+\end{proof*}
+\newpage
+
+\section{Aula 23 - 22/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Continuando medida exterior;
+  \item Relacionando medida e derivada;
+\end{itemize}
 \end{document}

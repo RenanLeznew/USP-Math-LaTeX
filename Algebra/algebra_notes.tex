@@ -1,6 +1,6 @@
  \documentclass{article}
  \usepackage{amsmath}
- \usepackage{ stmaryrd }
+ \usepackage{stmaryrd}
  \usepackage{amsthm}
  \usepackage{amssymb}
  \usepackage{pgfplots}
@@ -1908,4 +1908,410 @@ a menos que tal composição seja uma translação.
     $$
     Logo, existe $g\in \mathcal{O}_{2}$ tal que $t_{p}^{-1}ft_{p} = g.$ Portanto, $f = t_{p}gt_{p}^{-1}.$ \qedsymbol
 \end{proof*}
+\newpage
+
+\section{Aula 13 - 09/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Grupos diedrais;
+  \item Subgrupos discretos;
+  \item A\c cão de grupo;
+  \item Teorema do Ponto Fixo.
+\end{itemize}
+\subsection{Grupos Diedrais}
+\begin{def*}
+  Seja \(D_{n}\) o subgrupo de \(M_{2}\) gerado por \(\rho _{\theta }\) e r,
+  em que \(\theta =\frac{2\pi }{n}\) e \(r = \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix}\), i.e., \(D_{n}=\left< \rho _{\theta }, r \right>.\) Chamamos
+  \(D_{n}\) de grupo diedral. \(\square\)
+\end{def*} 
+\begin{prop*}
+  Vale que \(|D_{n}|=2n\) e \(D_{n}\cong{\left< x, y \right>}\), em que \(x^{n} = y^2=1\) e
+  \(xy=x^{-1}y\).
+\end{prop*}
+\begin{proof*}
+  Observe que \(\rho _{\theta }^{n} = Id\) e \(r^2 = id\). Além disso, \(\rho _{\theta }r = r\rho_{\theta }^{-1}\), ou seja, 
+    \[
+      \begin{pmatrix}
+        \cos{(\theta )} & -\sin{(\theta )}\\
+        \sin{(\theta )} & \cos{(\theta )}
+      \end{pmatrix}\begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+      \end{pmatrix} = \begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+      \end{pmatrix}\begin{pmatrix}
+        \cos{(\theta )} & \sin{(\theta )}\\
+        -\sin{(\theta )} & \cos{(\theta )}.
+      \end{pmatrix}
+    \]
+    Logo, os elementos de \(D_{n}\) são \(Id, \rho _{\theta }, \rho _{\theta }^2, \cdots, \rho _{\theta }^{n-1},
+    r, r\rho _{\theta }, r\rho _{t}^{2}, \cdots, r\rho _{\theta }^{n-1}\). Portanto,
+    \(|D_{n}| = 2n\). Fica como exercício mostrar que \(D_{n}\cong{\left< x, y \right>}\) utilizando 
+      \[
+        \rho \mapsto x, \quad r\mapsto y.\text{ \qedsymbol}
+      \]
+\end{proof*}
+\begin{example*}
+ \begin{itemize}
+   \item[1)] \(D_{1}\cong{\mathbb{Z}/2 \mathbb{Z}}\);
+   \item[2)] \(D_{2} = \left< Id, r, \rho , r\rho  \right>\), em que \(\rho = \rho _{\theta }, \theta =\pi \).
+   \item[3)] \(D_{3}\cong{S_{3}} = \left< (12), (123) \right>\)\text{ (Exercício).}
+ \end{itemize}
+\end{example*}
+Observe que \(D_{n}\) é o grupo de simetrias do polígono regular de n-lados. 
+Além disso, \(D_{n}\neq S_{n}, n >3\).
+\begin{def*}
+  Um subgrupo \(\Gamma\leq (\mathbb{R}, +)\) é chamado subgrupo discreto se existe
+  \(\varepsilon  \in \mathbb{R}_{\geq 0}\) tal que para todo \(x\in\Gamma/\{0\}, |x| > \varepsilon .\)
+\end{def*}
+\begin{lemma*}
+  Suponha que \(\Gamma\leq (\mathbb{R}, +)\) é discreto. Então, \(\Gamma =\{0\}, \Gamma =a \mathbb{Z}\)
+  para algum a real.
+\end{lemma*}
+\begin{proof*}
+  Sejam x, y em \(\Gamma \) distintos. Como \(\Gamma\leq (\mathbb{R}, +)\), 
+    \[
+      x - y\in \Gamma  \text{ i.e. }  |x-y| > \varepsilon 
+    \]
+    Logo, um intervalo limitado de \(\mathbb{R}\) só pode conter uma quantidade finita
+    de elementos de \(\Gamma \). 
+      \[
+        \biggl((an)\subseteq{(a,b)\subseteq{\mathbb{R}}}, a_{n}\in \Gamma \Rightarrow \text{ se } a_{n_{0}} < a_{n}\text{ e se } a_{n_{+}} > a_{n}\text{ para todo } n \text{, então } |a_{n_{0}}-a_{n_{+}}| > |b-a| \biggr)
+      \]
+      Suponha \(\Gamma \neq\{0\}\), então existe \(b\in \Gamma , b\neq0\). Como
+      \(\Gamma\leq (\mathbb{R}, +)\), então \(-b\in \Gamma \). Logo, \(\Gamma \) contém 
+      algum número real positivo. Seja \(a\in\Gamma \) o menor elemento positivo.
+
+      \textbf{Afirmativo: } \(\Gamma =a \mathbb{Z}\). 
+
+      De fato, se é claro que \(a \mathbb{Z} \subseteq{\Gamma }\). Para \(\Gamma \subseteq{a \mathbb{Z}}\),
+      seja \(b\in \Gamma.\) Existe r real tal que \(b=ar\). Agora, sejam m em \(\mathbb{Z}\) 
+      e \(0\leq r_{0} < 1\) tais que \(r = m + r_{0}\). Logo, 
+        \[
+          b = am + ar_{0} \Rightarrow b-am = ar_{0}\in\Gamma.
+        \]
+        Pela escolha de a, temos \(r_{0} = 0\), ou seja, \(b=am\in a \mathbb{Z}\). \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Seja \(G\leq O_{2}, |G| < \infty\). Então, existe um \(n\in \mathbb{Z}_{\geq 0}\) tal que 
+ \begin{itemize}
+   \item[a)] \(G\cong{\mathbb{Z}/n \mathbb{Z}}, G = <\rho >, \rho = \rho _{\theta }, \theta =\frac{2\pi }{n}\);
+     \item[b)] \(G\cong{D_{n} = <r, \rho >}, \rho  = \rho _{\theta }, \theta =\frac{2\pi }{n}\).
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  Lembre-se que \(\mathcal{O}_{2} = \left< r, \rho _{\theta } \right>\). Vamos separar em casos.
+
+  \textbf{Caso 1 - G só contém rota\c cões:}
+
+  Seja \(H\coloneqq \{\theta \in \mathbb{R}: \rho _{\theta }\in G\}\). Como
+  \(G\leq \mathcal{O}_{2}\) e \(|G| < \infty,\) então \(H\leq (\mathbb{R}, +)\)
+  é discreto. Do lema anterior, \(H = a \mathbb{Z}\) para algum a real.
+
+  Logo, G é o grupo das rota\c cões por ângulos múltiplos inteiros de a. Em
+  particular, G é cíclico. 
+
+  Por fim, observe que \(2\pi \in H,\) logo existe n inteiro tal que \(2\pi =an\),
+  ou seja, \(a = \frac{2\pi }{n}.\) Portanto, \(G = <\rho_{0}>, \theta =\frac{2\pi }{n}\).
+
+  \textbf{Caso 2 - r pertence a G:}
+
+  Seja \(H\leq G\) das rota\c cões em G. Do caso 1, \(H = <\rho >, \rho = \rho _{\theta }, \theta =\frac{2\pi }{n}, n\in \mathbb{Z}\).
+  Assim, \(r\rho^{j}\in G\) para todo \(j=0, \cdots, n-1.\) Isto é, \(D_{n}\subseteq{G}\).
+
+  Afirmamos que \(G=D_{n}\). De fato, seja g em G. Se g é uma rota\c cão, então
+  g pertence a H, mas como \(H\subseteq{D_{n}}\), então g pertence a \(D_{n}\).
+  Se g é uma reflexão, então \(g=\rho^{j}r\) para algum j. Mas, \(r\in G,\) então
+  \(gr = \rho^{j}\in G,\) então \(\rho ^{j}=\rho _{\theta }^{i}\) para algum i,
+  e assim \(g=\rho _{\theta }^{i}r\in D_{n}\). \qedsymbol
+\end{proof*}
+\begin{lemma*}
+  Seja \(S = \left< s_{1}, \cdots, s_{n} \right>\subseteq{\mathbb{R^{2}}}\) e
+  p o seu centroide, isto é, \(p=\frac{1}{n}(s_{1} + \cdots + s_{n})\). Seja \(f\in M_{2}\)
+  e \(h_{i}=f(s_{i}), q=f(p), i = 1,\cdots,n.\) Então q é o centroide de 
+  \(\{h_{1}, \cdots, h_{n}\}\).
+\end{lemma*}
+\begin{proof*}
+  Seja \(f\in M_{2}\), podemos escrever \(f=t_{a}\varphi \) para \(a\in \mathbb{R}^{2}, \varphi \in O_{2}\).
+
+  Se \(f=t_{a}\), então 
+ \begin{align*}
+   q = p + a &=\frac{1}{n}(s_{1}+\cdots+s_{n})+a \\
+             &=\frac{1}{n}((h_{1}-a)+\cdots+(h_{n}-a)) + a = \frac{1}{n}(h_{1}+\cdots+h_{n}).
+ \end{align*}
+ Se \(f=\varphi \),  
+\begin{align*}
+  q = \varphi (p) &= \varphi \biggl(\frac{1}{n}(s_{1}+\cdots+s_{n})\biggr)\\
+                  &=\frac{1}{n}\biggl(\varphi (s_{1})+\cdots+\varphi (s_{n})\biggr) = \frac{1}{n}(h_{1}+\cdots+h_{n}).\text{ \qedsymbol}
+\end{align*}
+\end{proof*}
+\begin{crl*}
+  Seja \(G\leq M_{2}, |G| < \infty,\) então existe n em \(\mathbb{Z}_{\geq 0}\) tal que 
+ \begin{itemize}
+   \item[a)] \(G\cong{\mathbb{Z}/n \mathbb{Z}}, G = <\rho >, \rho =\rho _{\theta }, \theta =\frac{2\pi }{n}\);
+   \item[b)] \(G\cong{D_{n}}=\left< r, \rho  \right>, \rho =\rho _{\theta }, \theta =\frac{2\pi }{n}\).
+ \end{itemize}
+\end{crl*}
+\subsection{A\c cões de Grupos}
+\begin{def*}
+  Seja G um grupo e X um conjunto. Uma a\c cão de G em X é um mapa 
+    \[
+      G\times{X}\rightarrow X, (g,x)\mapsto g \cdot x
+    \]
+  satisfazendo 
+ \begin{itemize}
+   \item[i)] \(1 \cdot x = x;\)
+   \item[ii)] \((gh)\cdot x= g \cdot (h \cdot x). \square\)
+ \end{itemize}
+\end{def*}
+  Denotamos a frase `` G é um grupo agindo em X'' por \(G \curvearrowright X\).
+  \begin{example*}
+   \begin{itemize}
+     \item[i)] \(M_{2} \curvearrowright \mathbb{R}^{2}, \mathcal{O}_{2} \curvearrowright \mathbb{R}^{2}\);
+     \item[ii)] \(S_{n}\curvearrowright \{1, \cdots, n\}\);
+     \item[iii)] \(G \curvearrowright G\).
+   \end{itemize}
+  \end{example*}
+  Observe que, dado \(G \curvearrowright X\), temos 
+    \[
+      m_{g}:X\rightarrow X, x\mapsto gx
+    \]
+  como uma bije\c cão cuja inversa é \(m_{g^{-1}}\).
+ \begin{def*}
+   Dada uma a\c cão \(G \curvearrowright X\) e \(x\in X\), defina 
+     \[
+       \mathcal{O}(x)\coloneqq \{x'\in X: x'=gx, g\in G\}
+     \]
+     como a orbita de x sob a a\c cão \(G \curvearrowright X.\square\)
+ \end{def*}
+\hypertarget{fixed_pt}{
+ \begin{theorem*}
+   Seja \(G\leq M_{2}\) finito. Então, existe p em \(\mathbb{R}^{2}\) tal que
+   \(g(p)=p\) para todo g em G.
+ \end{theorem*}
+}
+\begin{proof*}
+  Seja a em \(\mathbb{R}^{2}\) e 
+    \[
+      \mathcal{O}(a)\coloneqq \{g(a):g\in G\}
+    \]
+  Como \(|G| < \infty,\) podemos escrever 
+    \[
+      \mathcal{}(a) = \{s_{1},\cdots, s_{n}\}\subseteq{\mathbb{R}^{2}}.
+    \]
+  Além disso, se g pertence a G, então 
+    \[
+      m_{g}:\mathcal{O}(a)\rightarrow \mathcal{O}(a), \quad s_{i}\mapsto g(s_{i})
+    \]
+    Com isso, se p é o centroide de \(\mathcal{O}(a)\),
+   \begin{align*}
+     g(p) &= g(\frac{1}{n}(s_{1}+\cdots+s_{n}))\\
+          &= \frac{1}{n}(g(s_{1})+\cdots+g(s_{n}))\\
+          &= \frac{1}{n}(s_{1}+\cdots+s_{n}) = p.
+   \end{align*}
+   Portanto, \(g(p)=p\) para todo g em G. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula - 11/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Estabilizadores e Teorema da Orbita-Estabilizador;
+  \item Representa\c cão por Permuta\c cão;
+  \item A\c cões Fiéis.
+\end{itemize}
+\subsection{Motiva\c cão}
+  Nesta introdu\c cão, discutiremos a intuição por trás dos estabilizadores de grupos e do Teorema da Órbita-Estabilizador. Também comentaremos sobre a
+  Representação por Permutação e suas aplicações na vida real.
+
+  Um estabilizador de um grupo é um conceito fundamental na teoria dos grupos. Dado um grupo de ação $G$ em um conjunto $X$, o estabilizador de um elemento
+  $x$ em $X$ é o conjunto de todos os elementos em $G$ que fixam $x$.
+
+  O Teorema da Órbita-Estabilizador é um resultado fundamental na teoria dos grupos que relaciona o tamanho de uma órbita de um elemento sob a ação de um grupo
+  com o tamanho do estabilizador desse elemento. O teorema é enunciado da seguinte forma:
+ \begin{quote}
+   Seja $G$ um grupo finito que age em um conjunto $X$ e seja $x$ um elemento de $X$. Então, o tamanho da órbita de $x$ sob a ação de $G$ é igual ao
+   índice do estabilizador de $x$ em $G$.
+ \end{quote}
+
+  A representação por permutação é uma maneira de representar os elementos de um grupo como permutações de um conjunto, o que é útil para visualizar e entender
+  a estrutura do grupo.
+
+  Os conceitos de estabilizadores de grupos, o Teorema da Órbita-Estabilizador e a representação por permutação têm aplicações em várias áreas, incluindo
+  física, química, ciência da computação e matemática. 
+  Na física, eles são usados para descrever simetrias em sistemas físicos. Por exemplo, as simetrias de rotação e translação em física são exemplos de ações de grupo, onde o estabilizador de um ponto no espaço é o conjunto de todas as rotações e translações que deixam o ponto inalterado.
+  Na química, eles são usados para descrever a simetria de moléculas. A título de exemplo, a molécula de água tem uma simetria de rotação, onde a rotação em torno do eixo que passa pelo átomo de oxigênio e o centro da linha entre os dois átomos de hidrogênio deixa a molécula inalterada. Esta é uma ação de grupo, e o estabilizador é o conjunto de todas as rotações que deixam a molécula inalterada.
+  Na ciência da computação, eles são usados em algoritmos de busca e ordenação. Por exemplo, o algoritmo de ordenação por permutação é baseado na ideia de representar as permutações de um conjunto como um grupo.
+
+  Intuitivamente, imagine que você tem um conjunto de objetos e um conjunto de operações que você pode realizar nesses objetos. Um grupo é apenas um
+  conjunto de tais operações. Um estabilizador é o conjunto de operações que deixam um objeto específico inalterado. A órbita de um objeto é o conjunto de
+  todos os estados que esse objeto pode alcançar através das operações do grupo. Para ilustrar, imagine que você tem um cubo e as operações são rotações do cubo.
+  O estabilizador de uma face do cubo é o conjunto de rotações que deixam essa face no mesmo lugar. 
+  A órbita de uma face é o conjunto de todas as posições que essa face pode ocupar através das rotações do cubo. O Teorema da Órbita-Estabilizador nos diz que
+  o número de estados possíveis (a órbita) é igual ao número de operações, dividido pelo número de operações que deixam o objeto inalterado (o estabilizador).
+  A representação por permutação é uma maneira de visualizar essas operações como rearranjos dos objetos. Assim, se você tem três objetos e uma operação que troca
+  o primeiro e o segundo objeto, isso pode ser representado como uma permutação (2,1,3).
+\subsection{Estabilizadores}
+\begin{prop*}
+  Se \(G \curvearrowright X\), o conjunto das órbitas dessa a\c cão são classes de equivalência para a seguinte rela\c cão: 
+    \[
+      x\sim y \Longleftrightarrow \exists g\in G: y = gx.
+    \]
+    Em particular, se \(x\sim y\), então \(\mathcal{O}(x) = \mathcal{O}(y)\) e X é particionado pelas órbitas.
+\end{prop*}
+\begin{proof*}
+  Se x pertence a X, \(Cl(x)\coloneqq \{y\in X: y\sim x\} = \{y\in X: y=gx, g\in G\} = \{gx: g\in G\}= \mathcal{O}(x)\). \qedsymbol
+\end{proof*}
+\begin{def*}
+  Seja \(G \curvearrowright X\). Dado \(x\in X\), definimos 
+    \[
+      E(x)\coloneqq \{g\in G: gx = x\}
+    \]
+    como o estabilizador de x. \(\square\).
+\end{def*}
+\begin{example*}
+  Se x pertence a X é um ponto fixo para \(G \curvearrowright X\), então \(E(x) = G.\)
+\end{example*}
+\begin{prop*}
+  \(E(x)\leq G\).
+\end{prop*}
+\begin{proof*}
+  Como 1x = x, \(1\in E(x)\). Sejam \(a, b\in E(x)\), então \((ab)x = a(bx) = ax = x\). Logo, \(ab\in E(x)\). Agora, \(ax = x \) implica que \( x = a^{-1}x \),
+  tal que \(a^{-1}\in E(x)\). Portanto, \(E(x)\leq G.\) \qedsymbol
+\end{proof*}
+\begin{example*}
+ \begin{itemize}
+   \item[1)] \(S_{n} \curvearrowright \{1, \cdots, n\}, E(n) = S_{n-1};\)
+     \item[2)] \(M_{2} \curvearrowright \mathbb{R}^{2}, E((a, 0)) = \mathcal{O}_{2}.\)
+ \end{itemize}
+\end{example*}
+\begin{prop*}
+  Seja \(G \curvearrowright X, x\in X, H\coloneqq E(x)\). Então, 
+ \begin{itemize}
+   \item[i)] Se a, b pertencem a G, então ax = bx se, e somente se, \(ab^{-1}\in H\) se, e somente se, \(b\in aH\);
+     \item[ii)] Se ax=y, então \(E(y) = aHa^{-1}\).
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  (i) Se \(ax = bx,\) então \(b^{-1}ax = x\), ou seja, \(b^{-1}a\in H, b\in aH\) e existe h em H tal que \(b^{-1}a = h\) e \(b = ah^{-1}\).
+
+  (ii) Seja \(b\in E(y)\), i.e., \(by=y.\) Segue que 
+    \[
+      bax = ax \Longleftrightarrow a^{-1}bax = x \Longleftrightarrow a^{-1}ba\in H \Longleftrightarrow b\in aHa^{-1}.
+    \]
+    Logo, \(E(y)\subseteq{aHa^{-1}}\). 
+
+    Por outro lado, se \(b\in aHa^{-1}\), existe h em H tal que \(b = aha^{-1}\), de forma que 
+      \[
+        by = (aha^{-1})y = (ah)x = ax = y,
+      \]
+    ou seja, b pertence a E(y) e \(aHa^{-1}\subseteq{E(y)}\). Portanto, \(E(y) = aHa^{-1}.\) \qedsymbol
+\end{proof*}
+\begin{example*}
+  Se \(H\leq G\) e \(G/H = \{aH: a \in G\}\), então \(G \curvearrowright  G/H\) por \(g(aH) = gaH.\) Fica como exercício mostrar que essa a\c cão
+  é transitiva e \(E(1 \cdot H) = 1 \cdot H\).
+\end{example*}
+\begin{example*}
+  Sejam \(G = S_{3}\) e \(H = \{1, y\}, y = (23).\). Se \(x=(123)\), 
+    \[
+      G/H = \{H, \underbrace{xH}_{\{x, xy\}}, \underbrace{x^{2}H}_{x^{2}, x^{2}y}\} = \{[1], [x], [x^{2}]\} = \{\overline{1}, \overline{2}, \overline{3}\}.
+    \]
+  Temos \(S_{3} \curvearrowright S_{3}/H\) como acima e, para \(y\in S_{3}\), 
+     \begin{align*}
+       m_{g}:&G/H\rightarrow G/H\\
+             &[1]\mapsto[1]\\
+             &[x]\mapsto\{x^{2}y, x^{2}\} = [x^{2}]\\
+             &[x^{2}]\mapsto[x].
+     \end{align*}
+    Logo, y age em \(G/H\) como age em \(\{1, 2, 3\}\) (Verifique que o mesmo acontece para x).
+\end{example*} 
+  O resultado a seguir relaciona a órbita com o estabilizador, conhecido como Teorema Órbita-Estabilizador.
+    \hypertarget{orbit_stabilizer}{
+     \begin{theorem*}
+       Se \(G \curvearrowright X, x\in X\) temos uma bije\c cão \(\varepsilon :G/E(x)\rightarrow \mathcal{O}(x), [aE(x)]\mapsto ax\). Além disso,
+       \(\varepsilon (g*aE(x)) = g\varepsilon (aE(x))\).
+     \end{theorem*}
+    }
+   \begin{proof*}
+     Vamos come\c car mostrando que \(\varepsilon \) está bem-definida. De fato, seja \(H = E(x)\). Note que \(\varepsilon (aH) = ax\in \mathcal{O}(x)\).
+     Ainda se \(aH = bH\), então \(b^{-1}a\in H.\) Logo, existe \(h\in H\) tal que a = bh e, assim, \(ax = bhx = bx.\) Por isso, \(\varepsilon (aH) = \varepsilon (bH)\).
+
+     Note que \(\varepsilon  \) é sobrejetora diretamente. Para ver que \(\varepsilon \) é injetora, seja \(\varepsilon (aH) = \varepsilon (bH)\). Segue que 
+       \[
+         ax = bx \Longleftrightarrow b^{-1}ax = x \Longleftrightarrow b^{-1}a\in H.
+       \]
+       Portanto, \(b\in aH\) é equivalente a \(aH = bH\). \qedsymbol
+   \end{proof*}
+   \begin{example*}
+      Temos \(M_{2} \curvearrowright \mathbb{R}^{2}\) transitiva e \(E((0, 0)) = \mathcal{O}_{2}\). Logo, do \hyperlink{orbit_stabilizer}{Teorema Órbita-Estabilizador},
+      \(|\cdot |:M_{2}/\mathcal{O}_{2}\rightarrow \mathbb{R}^{2}\).
+   \end{example*}
+  \begin{crl*}
+    Se X é um conjunto finito e \(G \curvearrowright X, x\in X\), então 
+      \[
+        |G| = |E(x)|\cdot |\mathcal{O}(x)|.
+      \]
+  \end{crl*}
+ \begin{proof*}
+   Segue de 
+     \[
+       |G| = |E(x)|\cdot [G:E(x)] = \underbrace{|E(x)|\cdot |\mathcal{O}(x)|}_{\hyperlink{orbit_stabilizer}{\text{Teorema Órbita-Estabilizador}}}.\text{ \qedsymbol}
+     \]
+ \end{proof*}
+  Algumas observa\c cões devem ser feitas. Primeiramente, se \(G \curvearrowright X\) e \(H\leq G\), então \(H \curvearrowright X\).
+  Além disso, se \(G \curvearrowright X\) e \(X'\subseteq{X}, |X'| = r\), então 
+    \[
+      gX' = \{gy: y\in X'\}
+    \]
+  também tem ordem r. Logo, G age no conjunto dos subconjuntos de ordem r de X.
+\subsection{Representa\c cões por Permuta\c cões}
+ \begin{def*}
+   Uma representa\c cão por permuta\c cão do grupo G é um morfismo \(\varphi :G\rightarrow S_{n}. \square\)
+ \end{def*}
+\begin{prop*}
+  Se \(X = \{1, \cdots, n\}\), então temos 
+    \[
+      |\cdot |:\biggl\{\text{A\c cões de G em X}\biggr\}\rightarrow \biggl\{\text{Representa\c cão por Permuta\c cão}\biggr\}
+    \]
+    uma bije\c cão.
+\end{prop*}
+\begin{proof*}
+  Dado \(G \curvearrowright X\), para cada g de G, temos 
+    \[
+      m_{g}:X\rightarrow X,\quad x\mapsto gx.
+    \]
+  Logo, temos \(\varphi :G\rightarrow S_{n}, g\mapsto m_{g}.\) Por outro lado, dado um morfismo \(\varphi :G\rightarrow S_{n}\), temos 
+    \[
+      G\times{}X\rightarrow X,\quad (g, x)\mapsto gx = \varphi (g)x.\text{ \qedsymbol}
+    \]
+\end{proof*}
+\begin{example*}
+  Segue que \(D_{n}\curvearrowright \{v_{1}, \cdots, v_{n}\}\) equivale aos vértices de um polígono regular de n-lados. Com isso, temos um morfismo
+  \(D_{n}\rightarrow S_{n}\).
+\end{example*}
+\begin{prop*}
+  Se X é um conjunto qualquer e Perm(X) = \(\{f:X\rightarrow X: f \text{ é bije\c cão}\}\) é o grupo das permuta\c cões de X, então temos 
+    \[
+      |\cdot |:\biggl\{\text{A\c cões de G em X}\biggr\}\rightarrow\biggl\{\text{Morfismos de G em Perm(X)}\biggr\}
+    \]
+\end{prop*}
+\begin{def*}
+  A a\c cão \(G \curvearrowright X\) é dita fiel se o morfismo correspondente de G em Perm(X) é injetor. \(\square\)
+\end{def*}
+\begin{example*}
+  (Exercícios: )Mostre que \(G = GL_{2}(\mathbb{Z}/2 \mathbb{Z})\cong{S_{3}}\).
+
+  Se \(e_{1}=(1, 0), e_{2} = (0, 1), e_{1}+e_{2} = (1, 1) = e_{3}\), mostre que \(G \curvearrowright \{e_{1}, e_{2}, e_{3}\}\) fielmente, de maneira que 
+    \[
+      G\hookrightarrow S_{3}\text{ é injetora}
+    \]
+    e, como \(|G| = |S_{3}|\), vale que \(G\cong{S_{3}.}\)
+
+    \(G \curvearrowright X\) é fiel se \(gx=x\) para todo x em X implica em g = 1.
+\end{example*}
+
 \end{document}

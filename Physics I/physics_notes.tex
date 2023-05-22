@@ -1739,16 +1739,16 @@ for\c ca gravitacoinal \'e
   \subsubsection{Leis de Newton}
   A primeira Lei de Newton \'e a seguinte:
  \begin{quote}
-   ``Um corpo em repouso ou em Movimento Uniforme matn\'em o seu estado a n\~ao ser que haja uma for\c ca.''
- \end{quote}
+   \hypertarget{first_newton}{``Um corpo em repouso ou em Movimento Uniforme matn\'em o seu estado a n\~ao ser que haja uma for\c ca.''}
+    \end{quote}
   A segunda relaciona massa e acelera\c c\~ao para descrever a intera\c c\~ao: 
     $$
-      \vec{F}_{r} = m \vec{a}.
+    \hypertarget{second_newton}{\vec{F}_{r} = m \vec{a}.}
     $$
   A terceira e \'ultima \'e a chamada lei da a\c c\~ao e rea\c c\~ao 
  \begin{quote}
-   ``Para toda for\c ca que \'e aplicada, ocorrer\'a uma for\c ca de rea\c c\~ao com mesma intensidade, mas dire\c c\~ao oposta''
- \end{quote}
+   \hypertarget{third_newton}{``Para toda for\c ca que \'e aplicada, ocorrer\'a uma for\c ca de rea\c c\~ao com mesma intensidade, mas dire\c c\~ao oposta''}
+  \end{quote}
  \subsubsection{Tipos de For\c ca}
  Em seguida, vimos os tipos de for\c ca, sendo elas 
 \begin{itemize}
@@ -2055,5 +2055,556 @@ eixo horizontal. O gol possui uma altura h. Qual \'e a menor e a maior velocidad
   Em particular, note como seria possível tratar os dois blocos como um só com massa $m_{A}+m_{B}!$
   \end{example}
 \end{example}
+\newpage
 
+\section{Aula 15 - 10/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item For\c ca de Arrasto;
+  \item Resistência do Ar.
+\end{itemize}
+\subsection{For\c ca de Arrasto}
+  Imagina um objeto se movendo por um fluído. Para o objeto mover-se, ele deve deslocar-se o fluído também. O que influencia na dificuldade para fazer isso?
+Por experiências cotidianas, sabemos que a forma do objeto afetará nisso. Além disso, a rapidez com que o objeto anda também é um fator que influencia, junto com o próprio tipo de fluído.
+Assim, a forma de arraste é oposta ao movimento! Podemos definí-la com melhor precisão agora: 
+  \[
+    |\vec{F}_{a}| \varpropto v^{n}.
+  \]
+  Para baixas velocidades, n =1, enquanto que, para altas velocidades, normalmente n=2. Uma das mais conhecidas formas de for\c ca de arrasto é a resistência do ar: 
+    \[
+      |\vec{F}_{a}| = b |\vec{v}|^{2}.
+    \]
+    Temos 
+      \[
+        P - F_{a} = ma_{y} \Rightarrow a_{y} = \frac{mg - bv^{2}}{m}.
+      \]
+    Observe que, por conta da diferen\c ca de for\c cas na fórmula da acelera\c cão, pode chegar um momento em que ela passa a valer zero. Ao chegar neste momento,
+    diremos que o objeto atingiu sua velocidade terminal. Definimos ela como 
+      \[
+        \hypertarget{terminal_velocity}{\boxed{v_{T}=\sqrt[]{\frac{mg}{b}}}}
+      \]
+    Mas o que é essa constante b que está aparecendo? Explicitamente, ela vale 
+      \[
+        b=\frac{1}{2}C_{a}\rho_{f}A,
+      \]
+      em que \(C_{a}\) é o coeficiente de arrasto, \(\rho_{f}\) é a densidade do fluído e A é a se\c cão de área transversal do objeto. Disso, conseguimos tirar
+    algumas conclusões. Por exemplo, quanto mais denso o fluído ou quanto maior o objeto, mais ele terá resistência ao movimento e menor será sua velocidade terminal.
+
+   \begin{example}
+     Considere uma gotinha de chuva perfeitamente esférica. Consideremos seu raio como aproximadamente 1 milímetro.
+     Sua massa será dada por \(m_{\text{gota}}=\rho_{\text{água}}V_{\text{gota}}\), e vale aproximadamente \(4 \cdot 10^{-6}kg\). Assuma o coeficiente de arrasto como
+     1 e a densidade do ar como \(\rho_{\text{ar}}=1.27kg/m^3\) e a área de se\c cão transversal da gota valendo \(A_{\text{gota}=\pi r^2\approx3 \cdot 10^{-6}m^2}\).
+
+     Com esses dados, segue que 
+       \[
+         b = \frac{1}{2}C_{A}\rho_{\text{ar}}A_{\text{gota}}\approx 1.9 \cdot 10^{-6} \Rightarrow v_{T} = \sqrt[]{\frac{mg}{b}}\approx 4m/s.
+       \]
+   \end{example}
+  \begin{example}
+    Exepmlo 58 Tipler. Considere uma pessoa caindo com um paraquedas. Sabe-se que sua massa é de 64kg e que a velocidade terminal vale \(v_{T}=180km/h\). Qual é
+    \(|\vec{F}_{a}|\)? Quanto vale b?
+
+    Com efeito, 
+      \[
+        F_{R}^{y} = 0 = P-F_{a} \Rightarrow F_{a} = P = mg = 628N.
+      \]
+
+    Quanto ao item  b, temos 
+      \[
+        |\vec{F}_{a}| = b |\vec{v}| \Rightarrow  b = \frac{|\vec{F}_{a}|}{|\vec{v_{T}}^2|} \Rightarrow b = \frac{628}{50^2} = 0.251 \frac{kg}{m}.
+      \]
+  \end{example}
+  O próximo exemplo é o de uma outra for\c ca de arrasto.
+ \begin{example}
+  Suponha um barco na água. Como evolui a velocidade dele com o tempo?
+
+  Como ele está se movendo no fluído água, a for\c ca responsável por movê-lo para
+  a frente resulta no surgimento de uma for\c ca resposta, justamente a de arrasto.
+  Pela segunda \hyperlink{second_newton}{lei de Newton}, 
+    \[
+      F_{R} = F_{a} = -bv = m \cdot a = m \frac{dv}{dt}.
+    \] 
+  Assim, 
+    \[
+      -b dt = m \frac{dv}{v} \Rightarrow \int_{0}^{t}-\frac{b}{m}dt = \int_{v_{0}}^{v(t)}\frac{dv}{v}
+      \Rightarrow -\frac{b}{m}\int_{0}^{t}dt = \ln{(v)}\biggl|_{v_{0}}^{v(t)}\biggr. = \ln{(v(t))} - \ln{v_{0}} = \ln{\frac{v(t)}{v_{0}}}
+    \]
+    (Nota: A integral \(\int_{}^{}\frac{1}{x}dx = \ln{(x)}\) é definida assim.)
+
+  Faremos as contas a seguir: 
+ \begin{align*}
+   &-\frac{b}{m}t \biggl|_{0}^{t}\biggr. = \ln{(\frac{v(t)}{v_{0}})}\\
+   &-\frac{b}{m}t = \ln{(\frac{v(t)}{v_{0}})}\\
+   &e^{-\frac{b}{m}t} = \frac{v(t)}{v_{0}}\\
+   &v(t) = v_{0}e^{-\frac{b}{m}t}
+ \end{align*}
+  
+ Dados os valores \(v_{f}=44km/h, v_{0} = 97km/h, m=900kg, b=68\), por exemplo,
+ o tempo para o barco parar será 
+   \[
+     t_{f} = -\frac{m}{b}\ln{(\frac{v(t_{f})}{v_{0}})} = \frac{900}{68}\ln{(\frac{12}{2t})}.
+   \]
+ \end{example}
+
+\subsection{Movimentos Curvos}
+  Quando um objeto realiza um movimento de curva, ele tem uma tendência
+  a ter uma rota restrita. Essa tendência pode ser descrita pro uma for\c ca ``imaginária´´
+  que surge da restri\c cão da trajetória do objeto, conhecida como
+  for\c ca centrípeta, a qual foi estudada previamente, sendo ela descrita como 
+    \[
+      \vec{F}_{cp} = m \vec{a}_{cp}.
+    \]
+    A dire\c cão da varia\c cão da velocidade em dois pontos do movimento curvo 
+    é paralelo à acelera\c cão centrípeta mencionada.
+   \begin{example}
+     Considere uma bolinha que gira e está presa por duas cordas a uma haste.
+     As for\c cas atuando sobre ela incluem a Peso P, a tensão da corda 1 \(T_{1}\)
+     e a tensão da corda 2 \(T_{2}\). Como a bolinha realiza um movimento circular,
+     há uma acelera\c cão resultante que aponta para o centro do raio que a bolinha faz,
+     a chamada acelera\c cão centípeta. Sendo o comprimento das cordas L e L, o ângulo
+     da bolinha com a horizontal da haste \(\theta \), descreva sua dinâmica.
+
+     Vamos descrever essa situa\c cão para cada eixo. Com efeito, segue que 
+
+     \textbf{Eixo x:}
+    \begin{align*}
+      &-T_{1}\cos{(\theta )} - T_{2}\cos{(\theta )} = F_{R}^{x} = m(-a_{cp})\\
+      &\Rightarrow (T_{1}+T_{2})\cos{(\theta )}=m \frac{v^2}{R} = mR\omega ^2.
+    \end{align*}
+    \textbf{Eixo y:}
+   \begin{align*}
+     &-P + T_{1}\sin{(\theta )}-T_{2}\sin{(\theta )}=F_{R}^y = 0\\
+     &\Rightarrow T_{2} = T_{1} - \frac{mg}{\sin{(\theta )}} = 9.5N.
+   \end{align*}
+   
+   Além disso, 
+     \[
+       \omega ^2 = \frac{(T_{1}+T_{2})}{mR}\cos{(\theta )}\approx 20 \Rightarrow \omega \approx 4.5rad/s.
+     \]
+
+
+   \end{example}
+
+\section{Aula 17 - 15/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Continua\c cão de Energia Cinética e Trabalho;
+  \item Exemplo de trabalho com molas;
+  \item Movimento tridimensional.
+\end{itemize}
+\subsection{Trabalho e Energia Cinética}
+  Na aula passada, vimos o Teorema da Energia Cinética, escrito como 
+    \[
+      \hypertarget{kin_en_theo}{W_{1\rightarrow 2} = \int_{x_1}^{x_2}Fdx = \Delta E_{\text{cin}}}
+    \]
+    e que afirma que o trabalho realizado por uma intera\c cão é calculado segundo a variação
+    da energia cinética. Caso a for\c ca seja constante, note que 
+      \[
+        \hypertarget{fcon_kin}{W_{1\rightarrow 2} = \int_{x_1}^{x_2} Fdx = F\int_{x_1}^{x_2}dx = F\Delta x.}
+      \]
+    Por outro lado, se F for uma for\c ca variável, como a integral representa a área
+    abaixo da curva da fun\c cão, o Trabalho será dado pela área debaixo da curva do 
+    gráfico de F(x)
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+
+\addplot [
+    domain=2:4, 
+    samples=100, 
+    color=red,
+    pattern=north east lines,
+    pattern color=red,
+] {x^3} \closedcycle;
+
+\addplot[domain=0:5, samples=100, color=black]{x^3};
+
+\draw [dashed, thick] (axis cs: 2,0) -- (axis cs:2,{2^3});
+\draw [dashed, thick] (axis cs: 4,0) -- (axis cs:4,{4^3});
+
+\node at (axis cs: 3,30) {$W_{1\rightarrow 2}$};
+
+\end{axis}
+\end{tikzpicture}
+
+\begin{example}
+   Considere um bloquinho preso a uma parede por uma mola. A posi\c cão de equilíbrio 
+   desta mola é \(x_{0}=0\) e a for\c ca resultante é, também, 0. Qual é o trabalho 
+   da for\c ca restauradora quando puxamos o bloco até uma posi\c cão \(x_{1}\) para ela
+   voltar até um ponto \(x_{2}\)?
+
+   Temos 
+     \[
+       W_{1\rightarrow 2} = \int_{x_1}^{x_2}F_{\text{mola}}dx = \int_{x_1}^{x_2} -kxdx = 
+       k \int_{x_1}^{x_2}xdx = -k \frac{x^{2}}{2}\biggl|_{x_1}^{x_2}\biggr. = -\frac{k}{2}(x_{2}^{2} - x_{1}^{2}.)
+     \]
+     Em particular, se \(|x_{1} > |x_{2}|,\) a deforma\c cão da mola irá aumentar e o trabalho será negativo. 
+     Por outro lado, se \(|x_{1}| < |x_{2}|, \) o trabalho é positivo. 
+
+    \begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = $x$,
+    ylabel = {$F_{\text{mola}}$},
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+]
+
+\addplot [
+    domain=-4:-2, 
+    samples=100, 
+    color=yellow,
+    pattern=north east lines,
+    pattern color=yellow,
+] {-x} \closedcycle;
+
+\addplot [
+    domain=2:4, 
+    samples=100, 
+    color=orange,
+    pattern=north east lines,
+    pattern color=orange,
+] {-x} \closedcycle;
+
+\addplot[domain=-5:5, samples=100, color=black]{-x};
+
+\draw [dashed, thick] (axis cs: -4,0) -- (axis cs:-4,4);
+\draw [dashed, thick] (axis cs: -2,0) -- (axis cs:-2,2);
+\draw [dashed, thick] (axis cs: 2,0) -- (axis cs:2,-2);
+\draw [dashed, thick] (axis cs: 4,0) -- (axis cs:4,-4);
+
+\node at (axis cs: -3,2) {$F_{\text{mola}}$};
+\node at (axis cs: 3,-2) {$F_{\text{mola}}$};
+
+\end{axis}
+\end{tikzpicture}
+  Neste gráfico, a parte amarela demonstra um momento em que o trabalho é positivo,
+  tal que há uma compressão da mola. A parte laranja, por outro lado, representa um
+  trabalho negativo e, assim, uma disten\c cão da mola.
+\end{example}
+
+\subsection{Movimento Tridimensional.}
+  O objetivo desta se\c cão é estudar os conceitos de trabalho, energia cinética,
+etc. Num contexto de eixos x, y e z. Aqui, vamos utilizar deslocamentos infinitesimais
+ao longo de um caminho \(C\), denotado \(\vec{dr}\), mais rigorosamente dado por 
+  \[
+    \vec{dr} = dx\hat{i} + dy\hat{j} + dz\hat{k}.
+  \]
+  Em três dimensões, a for\c ca será dada por 
+    \[
+      \vec{F} = F_{x}\hat{i} + F_{y}\hat{j} + F_{z}\hat{k}.
+    \]
+  Vejamos como o trabalho funciona neste caso: 
+ \begin{align*}
+   W_{1\rightarrow 2} &= \int_{\vec{r_{1}}}^{\vec{r_{2}}}\underbrace{\vec{F}\cdot \vec{dr}}_{\text{produto escalar}}\\
+                      & \left\{\begin{array}{ll}
+                          \vec{F}\cdot \vec{dr} = f_{x}dx + F_{y}dy + F_{z}dz\\
+                          \vec{F}\cdot \vec{dr} = |\vec{F}||\vec{dr}|\cos{(\theta )}
+                      \end{array}\right.
+ \end{align*}
+  Então, 
+    \[
+      W_{1\rightarrow 2} = \int_{\vec{r_{1}}}^{\vec{r_{2}}}(F_{x}dx + F_{y}d_{y} + F_{z}dz) = \int_{\vec{r_{1}}}^{\vec{r_{2}}}|\vec{F}|\cos{(\theta )}|\vec{dr}|.
+    \]
+  Este tipo de integral é conhecido como integral de linha, pois ela é restrita ao caminho 
+  C
+
+\begin{center}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[scale=3,tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+
+\tdplotsetcoord{P}{1.414213}{54.735610}{45}
+
+\draw[-stealth,color=red] (O) -- (P) node[above right] {$C$};
+
+\draw[dashed, color=red] (O) -- (Pxy);
+\draw[dashed, color=red] (P) -- (Pxy);
+
+\draw (1,0,0) arc (0:45:1);
+\tdplotdrawarc{(O)}{0.2}{0}{54.735610}{anchor=north}{$\theta$}
+
+\tdplotsetthetaplanecoords{45}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.5}{0}{54.735610}{anchor=south west}{$\phi$}
+
+\end{tikzpicture}
+\end{center}
+
+ \begin{example}
+   Um exemplo simples é o de uma partícula que move-se apenas no eixo z, ou seja,
+   \(x = y = 0.\) Neste caso, o deslocamento será \(\vec{dr} = dz \hat{k}\). Suponha,
+   também, que a for\c ca é constante e que \(\theta \) seja constante. Então, o
+   trabalho realizado por esta for\c ca será 
+     \[
+       W_{1\rightarrow2} = \int_{\vec{r_{1}}}^{\vec{r_{2}}}\vec{F}\cdot \vec{dr} = \int_{z_{1}}^{z_{2}}|\vec{F}|\cos{(\theta )}|dz| = |\vec{F}|\cos{(\theta )}\Delta z.
+     \]
+ \end{example}
+ Quando fazemos o produto escalar, essencialmente estamos fazendo a proje\c cão de um
+vetor no outro. Por isso que há o termo cosseno, estamos projetando a for\c ca F
+no eixo desejado.
+
+  Além disso, note que, sempre que a for\c ca e \(\vec{dr}\) forem perpendiculares,
+o trabalho será 0, pois o cosseno será nulo! Em particular, com rela\c cão
+ao eixo y sem movimento, então \(\vec{P}, \vec{N}\) são perpendiculares a \(\vec{v}, \vec{dr}\), tal que
+o trabalho vale 0. No eixo x, \(F_{r} = F_{x} = |\vec{F}|\cos{(\theta )} = ma,\)
+de modo que \(F_{x}\) é paralelo a \(\vec{v}, \vec{dr}\). Assim, 
+  \[
+    W_{1\rightarrow 2} = \int_{x_{1}}^{x_{2}}F_{x}dx = \int_{x_{1}}^{x_{2}}|\vec{F}|\cos{(\theta )}dx.
+  \]
+
+  No quesito da energia cinética, o trabalho resultante num caminho C será 
+    \[
+      W_{R_{1\rightarrow 2}} = \int_{\vec{r}_{1}}^{\vec{r}_{2}}\vec{F}_{R}\cdot \vec{dr} = \int_{\vec{r}_{1}}^{\vec{r}_{2}}m \frac{\vec{dv}}{dt}\cdot \vec{dr}.
+    \]
+  Note o uso da \hyperlink{second_law}{segunda lei de newton} para decompor a resultante em \(m \frac{\vec{dv}}{dt}.\)
+  Agora, ``multiplicando'' a parte de dentro da integral por \(\frac{dt}{dt},\) 
+    \[
+      W_{1\rightarrow 2} = \int_{\vec{r}_{1}}^{\vec{r}_{2}}m \frac{\vec{dv}}{dt}\cdot \frac{\vec{dr}}{dt}dt = \int_{\vec{v}_{1}}^{\vec{v}_{2}}m \vec{dv}\vec{v(t)}.
+    \]
+  Logo, 
+    \[
+      W_{1\rightarrow 2} = \int_{\vec{v}_{1}}^{\vec{v}_{2}}m \vec{dv}\vec{v} = \int_{\vec{v}_{1}}^{\vec{v}_{2}}m \vec{v}\vec{dv}.
+    \]
+  No entanto, observe que 
+    \[
+       \left\{\begin{array}{ll}
+          \vec{v} = v_{x}\hat{i} + v_{y}\hat{j} + v_{z}\hat{k}\\
+          \vec{dv} = dv_{x}\hat{i} + dv_{y}\hat{j} + dv_{z}\hat{k}.
+        \end{array}\right.
+    \]
+  Reescrevendo o trabalho utilizando isso, obtemos 
+ \begin{align*}
+   W_{1\rightarrow 2} &= \int_{\vec{v}_{1}}^{\vec{v}_{2}}m\biggl[v_{x}dv_{x} + v_{y}dv_{y}+v_{z}dv_{z}\biggr]\\
+                      &= \int_{\vec{v}_{1}}^{\vec{v}_{2}}mv_{x}dv_{x} + \int_{\vec{v}_{1}}^{\vec{v}_{2}}mv_{y}dv_{y} + \int_{\vec{v}_{1}}^{\vec{v}_{2}}mv_{z}dv_{z}\\
+                      &= m\biggl[\int_{\vec{v}_{1}}^{\vec{v}_{2}}v_{x}dv_{x}+v_{y}dv_{y}+v_{z}dv_{z}\biggr]\\
+                      &= m\biggl[\frac{v_{x}^{2}}{2}\biggl|_{v_{1}}^{v_{2}}\biggr. + \frac{v_{y}^{2}}{2}\biggl|_{v_{1}}^{v_{2}}\biggr. + \frac{v_{z}^{2}}{2}\biggl|_{v_{1}}^{v_{2}}\biggr.\biggr]\\
+                      &= \frac{m}{2}\biggl[(v_{x_{2}}^{2} + v_{y_{2}}^{2} + v_{z_{2}}^{2}) - (v_{x_{1}}^{2} + v_{y_{1}}^{2} + v_{z_{1}}^{2})\biggr]\\
+                      &= \frac{m}{2}|\vec{v}_{2}|^{2} - \frac{m}{2}|\vec{v_{1}}^{2}| = \Delta E_{cin}
+ \end{align*}
+ Em outras palavras, 
+\begin{quote}
+  \hypertarget{work_kin_3d}{``O trabalho realizado pela for\c ca resultante em um corpo é igual à varia\c cão da sua energia cinética''.}
+\end{quote}
+\begin{example}
+  Vamos ver um exemplo de integral de linha. Considere uma bolinha caindo de um ponto I até
+  outro ponto II. Primeiro, ela come\c ca caindo até o chão e depois empurrada até o ponto. Na segunda op\c cão de caminho, ela cai em linha diagonal até o ponto. No terceiro,
+  ela é lan\c cada de forma parabólica. Estudemos o trabalho em cada caso.
+
+  Para o primeiro, decomponha o caminho todo em \(C_{I} = c_{1} + c_{2}\), sendo 
+  \(c_{1}\) a queda até o chão e \(c_{2}\) a empurrada até o ponto. Temos 
+    \[
+      W_{1\rightarrow 2 }^{C_{I}} = \int_{c_{1}}^{}\vec{F}\vec{dr} + \int_{c_{2}}^{}\vec{F}\vec{dr} = \int_{c_{1}}^{}\vec{F}dy \hat{j} + \int_{c_{2}}^{}\vec{F}dx \hat{i}
+    \]
+    Calculando, segue que
+   \begin{align*}
+     W_{1\rightarrow 2} &= \int_{c_{1}}^{}-mg \hat{j}\cdot dy \hat{j} + \int_{c_{2}}^{}-mg \hat{j}\cdot dx \hat{i}.\\
+                        &= \int_{c_{1}}^{}-mg dy + 0 = -mg y\biggl|_{c_{1}(1)}^{c_{2}(2)}\biggr. = -mg(0-h)mgh.
+   \end{align*}
+
+   Para o segundo, precisamos descrever a trajetória do caminho \(C_{II}\). Com isso,
+   podemos definir \(y(x) = a + bx\), já que é uma diagonal. Sabemos que 
+     \[
+       y(0) = h\quad\text{ e } y(d) = 0.
+     \]
+    Com isso, segue que \(a = h\) e \(h + bd = 0\), tal que \(b = \frac{-h}{d}.\) Utilizando estes dados,
+    reescrevemos y como \(y(x) = h - \frac{h}{d}x\). Assim, 
+      \[
+        W_{1\rightarrow 2}^{C_{II}} = \int_{\vec{r}_{1}}^{\vec{r}_{2}}\vec{F} \cdot \vec{dr}.
+      \]
+      Note também que \(dy = -\frac{h}{d}dx\). Destarte, 
+     \begin{align*}
+       W_{1\rightarrow 2}^{C_{II}} &= \int_{\vec{r}_{1}}^{\vec{r}_{2}}-mg \hat{j}\cdot (dx \hat{i} - \frac{h}{d}dx \hat{j})\\
+                                   &= \int_{\vec{r}_{1}}^{\vec{r}_{2}}-mg \hat{j}dx \hat{i} + mg \hat{j}\frac{h}{d}dx \hat{j}\\
+                                   &= \int_{\vec{r}_{1}}^{\vec{r}_{2}}mg \frac{h}{d} dx = mg \frac{h}{d}x \biggl|_{x_{1}}^{x_{2}}\biggr. = mg \frac{h}{d}(d-0) = mgh.
+     \end{align*}
+\end{example}
+\newpage
+
+\section{Aula 18 - 17/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item For\c cas Conservativas;
+\end{itemize}
+\subsection{Trabalho da For\c ca Peso}
+  De forma geral, qual é o trabalho da for\c ca peso? Temos 
+    \[
+      \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k},\quad \vec{dr} = dx \hat{i} + dy \hat{j} + dz \hat{k}.
+    \]
+  Considerando pontos \(\vec{r}_{1} = (x_{1}, y_{1}, z_{1})\) inicial e \(\vec{r}_{2} = (x_{2}, y_{2}, z_{2})\) final, o trabalho da for\c ca peso será 
+    \[
+      W_{P}^{C} = \int_{C}^{} \vec{P} \vec{dr} = \int_{C}^{}(-mg \vec{k})\cdot (dx \hat{i} + dy \hat{j} + dz \hat{k}) = - \int_{C}^{}mgdz = -mg\Delta z.
+    \]
+  Em outras palavras, a for\c ca peso não depende do caminho!
+
+  Esse raciocínio acima é um exemplo de um tipo de for\c ca conhecida como ``For\c ca Conservativa'', aquelas para as quais o trabalho realizado entre dois pontos
+  não depende do caminho e apenas das posi\c cões deles.  Outro conceito importante é o de caminho fechado, que consiste na classe de caminhos nos quais o ponto inicial
+  e final coincidem (Por exemplo, um círculo fechado). A importância destes dois conceitos está em sua união, pois eles permitem deduzir que a for\c ca conservativa em
+  um caminho fechado sempre realizará um trabalho nulo. Matematicamente, 
+    \[
+      \hypertarget{neccessary_conservative}{W_{P}^{C} = \oint_{C}\vec{F}\cdot \vec{dr} = 0}
+    \]
+    Exemplos de for\c cas conservativas incluem a for\c ca gravitacional, a for\c ca elástica, uma for\c ca constante, entre outras.
+    Em uma dimensão, F = F(x) é conservativa.
+   \begin{example}
+     Exemplo 7.1 do Tipler - Integral em um caminho fechado.
+
+     a) Calcule o trabalho realizado por \(\vec{F} = Ax \hat{i}\). 
+
+     Existem quatro possíveis caminhos. O primeiro, definiremos por \(\vec{r}_{1} = x\hat{i} + 0\hat{j}, dr_{1} = dx\hat{i}\). Para o segundo, consideraremos
+     \(\vec{r}_{2} = x_{m}\hat{i} + y\hat{j}, dr_{2} = dy\hat{j}.\) No terceiro, faremos \(\vec{r}_{3} = x\hat{i} + y_{m}\hat{j}\). Finalmente, para o quarto,
+     tomaremos \(\vec{r}_{4} = 0\hat{i} + y\hat{j}, dr_{4} = dy\hat{j}.\) Assim, 
+    \begin{align*}
+      W_{C} &= \oint_{C}\vec{F}\cdot \vec{dr} = \int_{c_{1}}^{}Ax\hat{i}\cdot dx\hat{i} + \int_{c_{2}}^{}Ax\hat{i}\cdot dy\hat{j} + \int_{c_{3}}^{}Ax\hat{i}\cdot dx\hat{i}+ \int_{c_{4}}^{}Ax\hat{i}\cdot dy\hat{j}\\
+            &= A \frac{x^{2}}{2}\biggl|_{0}^{x_{m}}\biggr. + \frac{Ax^{2}}{2}\biggl|_{x_{m}}^{0}\biggr.\\
+            &= \frac{Ax_{m}^{2}}{2} - 0 + 0 - \frac{Ax_{m}^{2}}{2} = 0.
+    \end{align*}
+
+    v) Fa\c ca o mesmo para \(\vec{F} = Bxy\hat{i}\).
+
+      Com o mesmo raciocínio de antes, 
+        \[
+          W_{C} = \int_{c_{1}}^{}Bxy\hat{i}\cdot dx\hat{i} + \int_{c_{3}}^{}Bxy\hat{i}\cdot dx\hat{i} = \frac{Byx^{2}}{2}\biggl|_{c_{1}}^{}\biggr. + \frac{byx^{2}}{2}\biggl|_{c_{3}}^{}\biggr. .
+        \]
+        Assim, concluimos que, como \(c_{1} \coloneqq (0, 0)->(x_{m}, 0)\) e \(c_{3} = (x_{m}, y_{m})->(0, y_{m})\),
+          \[
+            W_{C} = \frac{-By_{m}x_{m}^{2}}{2}\neq0,
+          \]
+          ou seja, a for\c ca nõa é conesrvativa!!
+   \end{example}
+   \begin{example}
+      Seja \(\vec{F} = (\frac{F_{0}}{r}(y\hat{i}-x\hat{j}\). a) Qual é o valor de \(|\vec{F}|\)? b) Mostre que a dire\c cão de F é perpendicular à \(\vec{r}\).
+      c) Quanto vale \(W_{F}\) ao longo de um círculo?
+
+      A priori, note que 
+     \begin{align*}
+       |\vec{F}| &= [F_{x}^{2} + F_{y}^{2}]^{\frac{1}{2}} = \biggl[\biggl(\frac{F_{0}}{x}\biggr)^{2}y^{2} + \biggl(\frac{-F_{0}}{r}x\biggr)^{2}\biggr]^{2}\\
+                 &= \frac{F_{0}}{r}(y^{2}+x^{2})^{\frac{1}{2}} = F_{0}.
+     \end{align*}
+     Em outras palavras, F tem módulo constante.
+
+     Por outro lado, considere o produto escalar entre \(\vec{F}\) e \(\vec{r}\): 
+       \[
+         \vec{F}\cdot \vec{r} = |\vec{F}||\vec{r}|\cos{(\theta )}.
+       \]
+      Temos que mostrar que \(\theta = 90^{\circ}\), pois ser perpendicular significa que o produto interno anula-se. Segue que 
+        \[
+          \vec{F}\cdot \vec{r} = F_{x}x + F_{y}y = (\frac{F_{0}}{r})yx - \frac{(F_{0}}{r})xy = 0.
+        \]
+      Portanto, \(\cos{(\theta )} = 0 \Rightarrow \theta =90^{\circ}\).
+
+      Por fim, colocamos \(\vec{r}(t) = R\cos{(\theta (t))}\hat{i} + R\sin{(\theta (t))}\hat{j}, 0\leq \theta \leq 2\pi \) para descrever um caminho circular 
+      no plano xy num caminho que depende de apenas uma variável \(\theta (t)\). Com isso,
+      \[
+        \vec{dr} = R(-\sin{(\theta )})d\theta \hat{i} + R\cos{(\theta )}d\theta \hat{j}.
+      \]
+      Portanto, 
+     \begin{align*}
+       W_{C} = \oint_{C}\vec{F}\cdot \vec{dr} &= \oint_{C}[(\frac{f_{0}}{r})(y\hat{i}-x\hat{j})]\cdot [-R\sin{(\theta )}d\theta \hat{i} + R\cos{(\theta )}d\theta \hat{j}] \\
+                                              &= \int_{0}^{2\pi }\biggl(\frac{F_{0}}{R}\biggr)y(-R\sin{(\theta )d\theta } + \biggl(\frac{F_{0}}{R}\biggr)(-x)R\cos{(\theta )}d\theta \\
+                                              &= \int_{0}^{2\pi }-\biggl(\frac{F_{0}}{R}\biggr)R^{2}\sin^{2}{(\theta )}d\theta  + \biggl(\frac{F_{0}}{R}\biggr)(-R^{2}\cos^{2}{(\theta )}d\theta \\
+                                              &= -F_{0}R \int_{}^{}(\sin^{2}{(\theta )} + \cos^{2}{(\theta )})d\theta  = -F_{0}R\theta \biggl|_{0}^{2\pi }\biggr. = -F_{0}2\pi R.
+     \end{align*}
+   \end{example}
+
+\section{Aula 19 - 18/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Outras for\c cas na perspectiva de trabalho;
+  \item Energia Potencial;
+\end{itemize}
+\subsection{Trabalho e Energia Cinética - Parte II}
+  Vimos o trabalho de algumas for\c cas explicitamente, como a for\c ca gravitacional,
+  e estudamos também o tipo de for\c ca conhecida como conservativa. Analisaremos
+  a situa\c cão de algumas outras a seguir.
+
+  Para come\c car, qual é o trabalho da for\c ca atrito? Lembrando que existem dois tipos,
+é notável que, como a for\c ca de atrito estático está relacionada com a ausência de movimento,
+i.e., um objeto estático, o trabalho dela será nulo. Com rela\c cão ao
+atrito cinético, no entanto, a questão deve ser elaborada.
+
+  Suponha que um bloco realiza duas trajetórias - primeiro de \(x_1\) até \(x_2\)
+e em segundo de \(x_2\) até \(x_1\) - tal que a trajetória total é a ``soma das duas trajetórias.''
+Assim, 
+  \[
+    W_{F_{at}}^{TT} = W_{F_{at}}^{T_1} + W_{F_{at}}^{T_2} = \int_{x_{1}}^{x_{2}}(-F_{at})\cdot dx + \int_{x_{2}}^{x_{1}}F_{at}\cdot dx
+  \]
+Como \(|F_{at}^{c}| = \mu_{c}N = \mu_{c}mg\) , concluímos que 
+\begin{align*}
+    W_{F_{at}}^{TT} &= -\int_{x_{1}}^{x_{2}}\mu_{c}mgdx + \int_{x_{2}}^{x_{1}}\mu_{c}mgdx\\
+                    &= -\mu_{c}mg(x_{2}-x_{1}) + \mu_{c}mg(x_{1}-x_{2}) = -2\mu_{c}mg\Delta x\neq 0.
+\end{align*}
+Portanto, a for\c ca de atrito não é conservativa, ou seja, ela é dissipativa.
+
+  Voltando às for\c cas conservativas, podemos representá-la como a varia\c cão de uma quantidade.
+  Essa quantidade será chamada de Energia Potencial, e escrevemos 
+    \[
+      W_{1\rightarrow2}^{C} = \int_{C}^{}\vec{F}\cdot \vec{dr} = -\Delta U = -(U(\vec{r}_{2}) - U(\vec{r}_{1})).
+    \]
+    Formalmente, iremos definir a energia potencial como 
+      \[
+      \hypertarget{potential_energy}{\boxed{U(\vec{r}) = -\int_{\vec{r}_{0}}^{\vec{r}}\vec{F}\cdot \vec{dr}}}
+      \]
+      sendo \(\vec{r}_{0}\) o ponto no espa\c co para o qual a energia potencial é nula \((U(\vec{r}_{0} = 0))\).
+     \begin{example}
+       Vamos considerar um objeto caindo livremente de uma altura h. Encontraremos sua energia potencial.
+       Nesta situa\c cão, defina \(\vec{r}_{0}\) = (0, 0), tal que \(U(0, 0) = 0.\) Assim,
+       \[
+        U(P) = -\int_{0}^{h}\vec{P}\cdot dy\hat{j} = \int_{0}^{h}(-mg)dy = mgh.
+      \]
+      Vejamos o que ocorre se mudarmos o ponto inicial para metade do caminho - \(\vec{r}_{0} = \frac{h}{2}\). Neste caso,  
+        \[
+          U(P) = -\int_{\frac{h}{2}}^{h}(-mg)dy = mgy \biggl|_{\frac{h}{2}}^{h}\biggr. = mg \frac{h}{2}.
+        \]
+      No entanto, apesar do resultado diferente, ao calcularmos a varia\c cão da energia potencial,
+      sempre chegaremos ao mesmo resultado - \(\Delta U = mgh.\)
+     \end{example}
+    \begin{example}
+      Agora, suponha um sistema massa-mola, com ponto \(x_{0} = 0, U(x_{0}) = 0\)
+      e F = 0. Então, como a for\c ca da mola é -kx, a energia potencial será 
+        \[
+          U(x) = -\int_{0}^{x}F_{mola}dx'= - \int_{0}^{x}(-kx')dx' = \frac{kx^{2}}{2}
+        \]
+    \end{example} 
+      
+      Observe que, pelo \hyperlink{work_kin_3d}{Teorema da Energia Cinética}, 
+        \[
+          W_{1\rightarrow2}^{C} = -\Delta U = \Delta E_{cin}.
+        \]
+      Manipulando esta equa\c cão, obtemos 
+        \[
+          \Delta E_{cin} + \Delta U = 0 \Rightarrow (E_{cin}^{x_2} + U^{x_2}) - (E_{cin}^{x_1} + U^{x_1}) = 0
+        \]
+        Definimos os termos da forma \((E_{cin}^{x_2} + U^{x_2})\) como a Energia Mecânica do sistema. Mais precisamente, 
+        \[
+          \hypertarget{mechanical_energy}{E_{T} = E_{cin} + U_{R}}
+        \] 
+        Em particular, observe que \(\Delta E_{T} = 0\), ou seja, a energia
+        mecânica é conservada no sistema. A quantidade \(U_{R}\) é análoga à 
+        forma que escrevemos a for\c ca resultante, no sentido de que ela é a soma
+        de todas as energias potenciais. Vamos ver agora como aplicar a conserva\c cão de energia
+       \begin{example}
+         Considere uma bolinha que come\c ca com \(v_{0} = 0m/s\) e atinge o chão com velocidade
+         \(v_{2}\). Buscamos o valor dessa velocidade 2. Temos 
+           \[
+             \Delta E = E_{2} - E_{1} = 0.
+           \]
+          Sabemos que 
+            \[
+              E_{1} = E_{cin} + U_{1} = 0 + mgh = mgh
+            \]
+          e 
+            \[
+              E_{2} = E_{cin} + U_{2} = \frac{1}{2}mv_{2}^{2}.
+            \]
+          Logo, 
+            \[
+              E_{1} = \frac{1}{2}mv_{2}^{2} - mgh = 0 \Rightarrow v_{2}^{2} = 2gh \Rightarrow v_{2} = \sqrt[]{2gh}.
+            \]
+       \end{example}
 \end{document}

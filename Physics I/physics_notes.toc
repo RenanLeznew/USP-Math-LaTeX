@@ -67,3 +67,17 @@
 \contentsline {subsection}{\numberline {14.2}Força de Atrito.}{39}{subsection.14.2}%
 \contentsline {subsubsection}{\numberline {14.2.1}Força de Atrito Estático}{39}{subsubsection.14.2.1}%
 \contentsline {subsubsection}{\numberline {14.2.2}Força de Atrito Cinético}{39}{subsubsection.14.2.2}%
+\contentsline {section}{\numberline {15}Aula 15 - 10/05/2023}{43}{section.15}%
+\contentsline {subsection}{\numberline {15.1}O que esperar?}{43}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}For\c ca de Arrasto}{43}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Movimentos Curvos}{44}{subsection.15.3}%
+\contentsline {section}{\numberline {16}Aula 17 - 15/05/2023}{45}{section.16}%
+\contentsline {subsection}{\numberline {16.1}O que esperar?}{45}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Trabalho e Energia Cinética}{45}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Movimento Tridimensional.}{46}{subsection.16.3}%
+\contentsline {section}{\numberline {17}Aula 18 - 17/05/2023}{49}{section.17}%
+\contentsline {subsection}{\numberline {17.1}O que esperar?}{49}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Trabalho da For\c ca Peso}{49}{subsection.17.2}%
+\contentsline {section}{\numberline {18}Aula 19 - 18/05/2023}{50}{section.18}%
+\contentsline {subsection}{\numberline {18.1}O que esperar?}{50}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Trabalho e Energia Cinética - Parte II}{50}{subsection.18.2}%
