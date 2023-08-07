@@ -22,6 +22,8 @@ If everything goes accordingly, this repository will be updated (at least) month
 - [🚀Algebra](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Algebra)
 
 - [🚀Physics](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20I)
+
+- [🚀Physics II](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20II)
 ### Summer Course
 - [🚀Complex Analysis](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis)
 
