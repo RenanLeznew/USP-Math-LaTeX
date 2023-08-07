@@ -2511,6 +2511,7 @@ de modo que \(F_{x}\) é paralelo a \(\vec{v}, \vec{dr}\). Assim,
                                               &= -F_{0}R \int_{}^{}(\sin^{2}{(\theta )} + \cos^{2}{(\theta )})d\theta  = -F_{0}R\theta \biggl|_{0}^{2\pi }\biggr. = -F_{0}2\pi R.
      \end{align*}
    \end{example}
+\newpage
 
 \section{Aula 19 - 18/05/2023}
 \subsection{O que esperar?}
@@ -2607,4 +2608,236 @@ Portanto, a for\c ca de atrito não é conservativa, ou seja, ela é dissipativa
               E_{1} = \frac{1}{2}mv_{2}^{2} - mgh = 0 \Rightarrow v_{2}^{2} = 2gh \Rightarrow v_{2} = \sqrt[]{2gh}.
             \]
        \end{example}
+\newpage
+
+\section{Aula 20 - 29/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Potência;
+  \item For\c cas não-conservativas.
+\end{itemize}
+\subsection{Potência}
+  Suponha um sistema em que há um bloquinho de massa m sofrendo a a\c cão de uma for\c ca F
+  em dire\c cão ao eixo x positivo. Ele sai de uma posi\c cão \(x_{1}\) até outra
+  \(x_{2}\), um deslocamento de \(\Delta x\). Sabemos que o trabalho dessa for\c ca será 
+  dado por 
+    \[
+      W_{1\rightarrow2} = \int_{x_{1}}^{x_{2}}.
+    \]
+    Nessa linha, pergunta-se: Qual é o tempo para realizar esse trabalho?
+  
+  É para essa pergunta que definimos a no\c cão de potência, sendo ela 
+    \[
+      \hypertarget{power}{\boxed{P = \frac{dW}{dt},\quad P_{m} = \frac{\Delta W}{\Delta t}.}}
+    \]
+    As dimensões da potência são \([P]=\frac{[W]}{[T]}\), o que, no S.I., corresponde ao Watt (W), dado por
+  \(W = \frac{J}{s}.\). Sabemos, em particular, que \(dW = Fdx.\) Utilizando isso, 
+    \[
+      P = \frac{dW}{dt} = F \frac{dx}{dt} = Fv.
+    \]
+    Ainda mais, como \(F = m a = m \frac{dv}{dt}, P=m \frac{dv}{dt}v = mv \frac{dv}{dt} = \frac{d}{dt}\biggl(\frac{1}{2}mv^{2}\biggr) = \frac{dE_{cin}}{dt}\)
+\subsection{For\c cas Não-Conservativas}
+  As for\c cas não-conservativas têm a tendência de dissipar a energia do sistema, donde vem o 
+outro nome delas, for\c cas dissipativas. Imagine que temos um corpo qualquer, no qual
+agem for\c cas conservatias e não-conservativas. A for\c ca resultante nesse corpo
+é dado pela soma de todas elas, ou seja, 
+  \[
+    \vec{F_{R}} = \vec{F}_{1}^{c} + \vec{F}_{2}^{c} + \cdots +\vec{F}_{1}^{nc} + \vec{F}_{2}^{nc} + \cdots.
+  \]
+  Como o \hyperlink{kin_en_theo}{Teorema do Trabalho-Energia Cinética} é válido, temos 
+    \[
+      W_{1\rightarrow2} = \Delta E_{cin}.
+    \]
+  Deste modo, 
+    \[
+      \int_{\vec{r}_{1}}^{\vec{r}_{2}}\vec{F}_{R}\vec{dr} = \int_{\vec{r}_{1}}^{\vec{r}_{2}}( \vec{F}_{1}^{c} + \vec{F}_{2}^{c} + \cdots +\vec{F}_{1}^{nc} + \vec{F}_{2}^{nc} + \cdots)\vec{dr}.
+    \]
+    Elaboremos esta expressão: 
+   \begin{align*}
+      \int_{\vec{r}_{1}}^{\vec{r}_{2}}\vec{F}_{R}\vec{dr} &= \int_{\vec{r}_{1}}^{\vec{r}_{2}}( \vec{F}_{1}^{c} + \vec{F}_{2}^{c} + \cdots +\vec{F}_{1}^{nc} + \vec{F}_{2}^{nc} + \cdots)\vec{dr}.\\
+                                                          &= \sum\limits_{i}^{}W_{1\rightarrow2}^{c_{i}} + \sum\limits_{i}^{}W_{1\rightarrow2}W^{nc_{i}} = \Delta E_{cin}\\
+                                                          &W_{1\rightarrow2}^{c_{i}} = -\Delta U_{i} \Rightarrow \sum\limits_{i}^{}(-\Delta U_{i}) + \sum\limits_{i}^{}W_{1\rightarrow2}^{nc_{i}} = \Delta E_{cin}\\
+                                                          &\sum\limits_{i}^{}W_{1\rightarrow2}^{nc_{i}}=\Delta E_{cin}+\sum\limits_{i}^{}\Delta U_{i} = \Delta (E_{cin}+U_{total}) = \Delta E.
+   \end{align*}
+   Portanto, sempre que temos for\c cas dissipativas, a energia do sistema não se conserva, visto que 
+     \[
+       \sum\limits_{i}^{}W_{1\rightarrow2}^{nc_{i}} = \Delta E\neq 0.
+     \]
+    \begin{example}
+      Vamos considerar um bloco acima de um plano inclinado, preso por uma mola e sendo sua massa 10kg.
+    Ele faz um ângulo de \(\theta =45^{\circ}\) com o eixo horizontal. A mola contrai e o bloco desliza pelo plano em uma distância \(d=2m\),
+    com atrito \(\mu_{c}=0.5\) e constante elástica \(k=800N/m\). Neste ponto, a velocidade do bloco é nula e
+    sua energia cinética anula-se. Qual é o tamanho da contra\c cão da mola?
+
+      Vamos come\c car expressando a posi\c cão do bloco em x e y.
+       
+      \textbf{Eixo x}: \(\hat{x}: -P\sin{(\theta )} + F_{at} = ma_{x}\)
+
+      \textbf{Eixo y}: \(\hat{y}: N = P\cos{(\theta )} \Rightarrow F_{at}=\mu_{c}N = \mu_{c}mg\cos{(\theta )}.\)
+
+      Com isso, a energia potencial no primeiro instante tem a expressão 
+        \[
+          U_{1} = mg(h_{1}+h_{2}) = mg(d+\Delta x)\sin{(\theta )},
+        \]
+        sendo \(h_{1}\)a altura entre a mola e o bloco e \(h_{2}\) a altura do bloco. Logo, 
+          \[
+            E_{1} = E_{cin}^{1} + U_{1} = 0 + U_{1} = mg(d + \Delta x)\sin(\theta )
+          \]
+        Agora, no segundo instante, 
+          \[
+            E_{2} = E_{cin}^{2} + U_{2} = 0 + U_{el} = \frac{1}{2}k\Delta x^{2}.
+          \]
+        Assim, 
+       \begin{align*}
+         \Delta E = W_{F_{at}} &= \int_{1}^{2} F_{at}\cdot dx = -\mu_{c}mg\cos{(\theta )}(d+\Delta x)\\
+                               &\frac{1}{2}k\Delta x^{2} - mg(d+\Delta x)\sin{(\theta )} = -\mu_{c}mg\cos{(\theta )}(d+\Delta x)\\
+                               &\frac{1}{2}k\Delta x^{2} - mg\Delta x(\sin{(\theta )}-\mu_c\cos{(\theta )}) - mgd(\sin{(\theta )}-\mu_{c}\cos{(\theta )})=0\\
+                               &\Rightarrow \Delta x=0.46m
+       \end{align*}
+    \end{example}
+\newpage
+
+\section{Revisão P2 - 31/05/2023}
+\subsection{Dinâmica}
+\subsubsection{Leis de Newton}
+  As equa\c cões presentes nas duas leis de Newton são 
+    \[
+      \vec{F} = m \vec{a},\quad \vec{a} = \frac{d \vec{v}}{dt}= \frac{d^{2}\vec{r}}{dt^{2}}.
+    \]
+\subsubsection{For\c ca de Atrito}
+  Existem dois tipos de for\c cas de atrito - o estático, quando o objeto está parado, para o qual 
+    \[
+      F_{at}^{e(max)} = \mu_{e}N
+    \]
+  e o cinético, quando o objeto está em movimento, dado por 
+    \[
+      F_{at}^{c} = \mu_{c}N.
+    \]
+  Lembrando que \(\mu_{c} < \mu_{e}\). Ela é responsável, por exemplo, por fazer
+o carro andar, resultante do atrito dele com o chão. Outras formas incluem a for\c ca de 
+arraste, como a resistência do ar.
+
+\subsubsection{Trabalho e Energia Cinética}
+\subsubsection{Teorema do Trabalho e Energia Cinética}
+  Definimos o trabalho realizado por uma for\c ca para deslocar um objeto de um caminho 1 até 
+um ponto 2 como 
+  \[
+    W_{1\rightarrow2}^{C} = \int_{1}^{2}\vec{F}\cdot \vec{dr}.
+  \]
+  Além disso, o Teorema do trabalho e da energia cinética afirma que, para um objeto indo de um
+caminho 1 até um caminho 2 sofrendo a a\c cão de alguma for\c ca F, então
+    \[
+      W_{1\rightarrow2} = \Delta E_{cin},
+    \]
+  ou seja, o trabalho realizado pela for\c ca \(\vec{F}\) é igual à varia\c cão
+da energia cinética do corpo. Vale lembrar que foi definido que 
+  \[
+    E_{cin}=\frac{1}{2}mv^{2}.
+  \]
+\subsubsection{For\c cas Conservativas}
+  São aquelas para as quais
+ \begin{itemize}
+   \item[1)] O trabalho não depende do caminho;
+   \item[2)] O trabalho em um caminho fechado é nulo;
+   \item[3)] Tem energia potencial associada a ela.
+ \end{itemize}
+  Essa energia potencial associada é dada por 
+    \[
+      U(r) = -\int_{\vec{r}_{0}}^{\vec{r}}\vec{F}\cdot \vec{dr}
+    \]
+  sendo \(\vec{r}_{0}\) a posi\c cão para \(U(\vec{r}_{0}) = 0.\)
+
+  Alguns exemplos de for\c cas conservativas incluem a for\c ca peso e a elástica.
+\subsubsection{Trabalho e Energia Potencial}
+  Segue que 
+    \[
+      W_{1\rightarrow2}^{C} = -\Delta U = \Delta E_{cin}.
+    \]
+  Em particular, 
+    \[
+      \Delta U + \Delta E_{cin} = 0.
+    \]
+  Definindo a quantidade \(E = U + E_{cin}\) como a energia mecânica, vale que ela
+é conservada 
+  \[
+    \Delta U + \Delta E_{cin} = \Delta (U + E_{cin}) = \Delta E = 0.
+  \]
+  No caso unidimensional, sempre que a for\c ca puder ser escrita como \(F = F(x),\)
+ela será conservativa (e.g. For\c ca Elástica). Além disso, 
+  \[
+    U(x) = - \int_{x_{0}}^{x}F dx \Rightarrow F(x) = -\frac{dU(x)}{dx}
+  \]
+  Disto conseguimos encontrar os chamados pontos de equilíbrio, dados pelos valores
+de x nos quais \(\frac{dU}{dx} = 0.\) Ademais, diremos que o ponto de equilíbrio é
+\begin{itemize}
+  \item Estável se \(\frac{d^{2}U}{dx^{2}} > 0\);
+  \item Instável se \(\frac{d^{2}U}{dx^{2}} < 0\).
+\end{itemize}
+\subsubsection{For\c cas Dissipativas}
+  Também conhecidas como for\c cas não-conservativas, para elas vale que 
+    \[
+      \Delta E = W^{nc}\neq 0.
+    \]
+  For\c cas dissipativas incluem atrito, resistência do ar, entre outras.
+\subsection{Potência}
+  A potência é a taxa de trabalho feita por tempo, ou seja, 
+    \[
+      P = \frac{dW}{dt}.
+    \]
+\subsection{Conceitos Necessários}
+\subsubsection{Equilíbrio}
+  Um corpo é dito em equilíbrio se \(F_{R} = 0\). Isso ocorre quando ele 
+está parado ou se move com velocidade constante.
+\subsubsection{Perdeu o contato}
+  Diremos que um objeto perdeu o contato quando a for\c ca normal atuando sobre ele fica nula.
+\subsubsection{Movimento circular uniforme}
+  Um corpo que está em movimento circular uniforme tem como for\c ca resultante o
+produto da massa pela acelera\c cão centrípeta 
+  \[ 
+    F_{R} = ma_{c}.
+  \]
+
+\subsection{Exercícios Pré-Prova}
+\subsubsection{Ex. 1 - Movimento no Loop}
+  Temos um carrinho no topo de uma rampa que leva num loop. Suponha que este lugar
+em que ele encontra-se está a uma altura H do chão. Além disso, ele parte do repouso, com \(v_{0}=0m/s\). O loop é suposto ter raio R. Qual
+é o menor H para o corpo fazer o loop?
+
+  Come\c camos escrevendo as energias presentes no sistema. Chamando de instante 1 o
+ponto que o carro está no topo e de instante 2 o ponto crítico do sistema, isto é, o ponto que o carrinho encontra-se no
+topo do loop, temos a energia mecânica como
+  \[
+    E_{1} = E_{cin} + U_{1} = 0 + mgH.
+  \]
+No instante 2, ela vale 
+  \[
+    E_{2} = E_{cin}^{2} + U_{2} = \frac{1}{2}mv^{2} + mg(2R)
+  \]
+Utilizando a conserva\c cão de energia, sabemos que 
+  \[
+    E_{1} = E_{2} \Rightarrow mgH = \frac{1}{2}mv^{2} + mg(2R).
+  \]
+Assim, 
+\begin{align*}
+  mgH = \frac{1}{2}mv^{2} + mg(2R) &\Rightarrow g(H-2R)=\frac{1}{2}v^{2}\\
+                                   &\Rightarrow v^{2} = 2g(H-2R).
+\end{align*}
+Analisando as for\c cas que atuam sobre o carrinho no ponto 2, a peso e a normal estão na mesma dire\c cão e,
+como a for\c ca resultante no mcu é \(F_{R} = ma_{c},\) vale que 
+  \[
+    P + N = m_{ac} \Longleftrightarrow mg + N = m \frac{v^{2}}{R}.
+  \]
+Logo, \(N = m\biggl(\frac{v^{2}}{R} - g\biggr)\geq 0\). Já que a massa é sempre positiva,
+a condi\c cão buscada é totalmente determinada pelo termo entre parênteses. Ao
+observá-lo, portanto, chega-se que \(v\geq \sqrt[]{Rg}\) no alto do loop.
+
+  Voltando agora à equa\c cão anterior, temos , por fim,
+ \begin{align*}
+   &v^{2} = 2g(H-2R)\geq Rg\\
+   &(H-2R)\geq \frac{R}{2}\\
+   &H\geq \frac{5R}{2}.
+ \end{align*}
+
+\newpage
+
 \end{document}

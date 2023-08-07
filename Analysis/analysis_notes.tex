@@ -2519,7 +2519,7 @@ Come\c camos apresentando o resultado conhecido como Teorema da Conserva\c c\~ao
    Se $f:[a,b]\rightarrow \mathbb{R}$ \'e cont\'inua e $f(a)<0<f(b),$ ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x}) =0.$
  \end{theorem*}
 \begin{proof*}
-  Faremos apenas o caso $f(a)<0<g(b).$ Seja 
+  Faremos apenas o caso $f(a)<0<f(b).$ Seja 
     $$
     A = \{x\in[a,b]:f(s)>0 \forall s\in[x, b].\}
     $$
@@ -2558,8 +2558,8 @@ Todos eles possuem vers\~oes para trocas de sinais.
 \end{crl*}
 Vamos relembrar os resultados vistos na aula anterior.
  \begin{theorem*}
-   Seja $f:D_{f}\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e $\overline{x}\in D_{f}$ tal que $f(\overline{x})>0.$ 
-   Ent\~ao, existe $\delta>0$ tal que $f(x)>0$ para todo $x\in D_{f}$ e $x\in(\overline{x}-\delta, \overline{x}+\delta).$
+   Seja $f:D_{f}\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e $\overline{x}\in D_{f}$ tal que $f(\overline{x})>0(f(\overline{x})<0).$ 
+   Ent\~ao, existe $\delta>0$ tal que $f(x)>0(f(x)<0)$ para todo $x\in D_{f}$ e $x\in(\overline{x}-\delta, \overline{x}+\delta).$
  \end{theorem*}
  \begin{proof*}
    Como f \'e cont\'inua em $\overline{x},$ dado $\varepsilon = f(\overline{x}) >0$, exsite $\delta > 0$ tal que 
@@ -2571,10 +2571,10 @@ Vamos relembrar os resultados vistos na aula anterior.
  \end{proof*}
  O pr\'oximo \'e o Teorema do Anulamento.
  \begin{theorem*}
-   Se $f:[a,b]\rightarrow \mathbb{R}$ \'e cont\'inua e $f(a)<0<f(b),$ ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x}) =0.$
+   Se $f:[a,b]\rightarrow \mathbb{R}$ \'e cont\'inua e $f(a)<0<f(b) (f(a)>0>f(b)),$ ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x}) =0.$
  \end{theorem*}
 \begin{proof*}
-  Faremos apenas o caso $f(a)<0<g(b).$ Seja 
+  Faremos apenas o caso $f(a)<0<f(b).$ Seja 
     $$
     A = \{x\in[a,b]:f(s)>0 \forall s\in[x, b].\}
     $$
@@ -2584,7 +2584,7 @@ Vamos relembrar os resultados vistos na aula anterior.
 \end{proof*}
  A seguir, veremos o Teorema do Valor Intermedi\'ario.
 \begin{theorem*}
-  Seja $f:[a, b]\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e tal que  $f(a)<f(b)$. Se $f(a)<k<f(b),$
+  Seja $f:[a, b]\rightarrow \mathbb{R}$ uma fun\c c\~ao cont\'inua e tal que  $f(a)<f(b)(f(a)>f(b))$. Se $f(a)<k<f(b)(f(a)>k>f(b)),$
   ent\~ao existe $\overline{x}\in(a, b)$ tal que $f(\overline{x})=k.$
 \end{theorem*}
 \begin{proof*}
@@ -4167,4 +4167,550 @@ crescente, se somarmos para todos os i para os quais \(J_{i}\subseteq{I_{n}},\) 
 \newpage
 
 \section{Aula 23 - 24/05/2023}
+\begin{itemize}
+  \item Lipschitz e diferenciabilidade.
+\end{itemize}
+\subsection{Usos do Recobrimento de Vitali}
+\begin{lemma*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é monótona, então f é diferenciável exceto 
+  possivelmente em um conjunto \(E\subseteq{[a, b]}\) com \(m^{*}(E) = 0\).
+\end{lemma*}
+\begin{proof*}
+  Faremos apenas o caso f não-decrescente. Considere 
+ \begin{align*}
+   &\overline{d^{+}}f(x) = \limsup_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\overline{d^{-}}f(x) = \limsup_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+   &\underline{d^{+}}f(x) = \liminf_{h\to 0^{+}} \frac{f(x+h)-f(x)}{h}\text{ e }\underline{d^{-}}f(x) = \liminf_{h\to 0^{+}}\frac{f(x) - f(x-h)}{h}\\
+ \end{align*}
+ Provemos que o conjunto dos \(x\in[a, b]\) tais que \(\underline{d^{-}}f(x) < \overline{d^{+}}f(x)\) 
+ ou \(\overline{d^{-}}f(x) > \underline{d^{+}}f(x)\) tem medida exterior nula.
+ Vamos apenas considerar o conjunto E dos pontos \(x\in[a, b]\) para os quais
+ \(\overline{d^{+}}f(x) > \underline{d^{-}}f(x).\) O conjunto E é a união
+ dos conjunto 
+   \[
+   E_{u, v} = \{x: \overline{d^{+}}f(x) > u > v > \underline{d^{-}}f(x) \}
+   \]
+ para todos os racionais u e v. Logo, basta mostrar que \(m^{*}(E_{u, v}) = 0.\)
+Seja s = \(m^{*}(E_{u,v })\) e, escolhendo \(\varepsilon >0, E_{u, v}\) está contido
+em um aberto O tal que \(m^{*}(O) < s + \varepsilon .\)
+
+  Para cada \(x\in E_{u, v},\) existe um intervalo \([x-h, x]\) contido em O tal que 
+    \[
+      f(x) - f(x-h) < vh.
+    \]
+ Do \hyperlink{vitali_covering}{Lema de Vitali,} escolhemos uma cole\c cão \(\{I_{1}, \cdots, I_{N}\} \)
+disjunta desses intervalos cujos interiores cobre \(A\subseteq{E_{u, v}}\) com
+ \(m^{*}(A) > s-\varepsilon .\) Somando \(f(x) - f(x-h) < vh\) para todos estes intervalos, 
+   \[
+     \sum\limits_{n=1}^{N}[f(x_{n}) - f(x_{n}-h_{n})] < v \sum\limits_{n=1}^{N}h_{n} < vm^{*}(O) < v(s+\varepsilon )
+   \]
+   Agora, para cada y em A e k arbitrariamente pequeno, \([y, y+k]\subseteq{I_{n}}\) e 
+     \[
+       f(y+k)-f(y) > uk.
+     \]
+     Novamente, usando o \hyperlink{vitali_covering}{Lema de Vitali,} temos uma cole\c cão
+     disjunta \(\{J_{1}, \cdots, J_{M}\}\) desses intervalos cuja união contém um 
+    subconjunto de A com medida exterior maior que \(s-2\varepsilon .\) Assim,
+    adicionando
+   \[
+     \sum\limits_{n=1}^{N}[f(x_{n}) - f(x_{n}-h_{n})] < v \sum\limits_{n=1}^{N}h_{n} < vm^{*}(O) < v(s+\varepsilon )
+   \]
+    para todos os invervalos, temos 
+      \[
+        \sum\limits_{i=1}^{M}f(y_{i}-k_{i})-f(y_{i}) > u\sum k_{i} > u (s-2\varepsilon ).
+      \]
+    Cada intervalo \(J_{i}\) está contido em algum intervalo \(I_{n}\) e, como f é
+crescente, se somarmos para todos os i para os quais \(J_{i}\subseteq{I_{n}},\) temos 
+        \[
+          \sum\limits_{}^{}f(y_{i}+k_{i}) - f(y_{i})\leq f(x_{n}) - f(x_{n}-h_{n}).
+        \]
+    Logo, 
+        \[
+          \sum\limits_{n=1}^{N}f(x_{n})-f(x_{n}-h_{n})\geq \sum\limits_{i=1}^{M}f(y_{i}+k_{i}) - f(y_{i})
+        \]
+    e 
+        \[
+          v(s+\varepsilon ) > u(s-2\varepsilon ).
+        \]
+    Como isso vale para todo \(\varepsilon >0, vs\geq us.\) Além disso, já que 
+    \(u > v, s=0.\) Portanto, 
+      \[
+        \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+      \]
+    existe exceto possivelmente em um conjunto E com \(m^{*}(E) = 0.\) \qedsymbol
+\end{proof*}
+ \begin{crl*}
+   Seja \(I\subseteq{\mathbb{R}}\) um intervalo aberto e \(f:I\rightarrow \mathbb{R}\) Lipschitz contínua em I.
+  Então, f é diferenciável exceto possivelmente em um conjunto E com \(m^{*}(E) = 0.\)
+ \end{crl*}
+\begin{crl*}
+  Seja \(I\subseteq{\mathbb{R}}\) um intervalo aberto e \(f:I\rightarrow \mathbb{R}\) Lipschitz contínua em I. Então, f é diferenciável em um
+  subconjunto denso de I.
+\end{crl*}
+ \begin{theorem*}
+   Seja I um intervalo aberto da reta e \(g:I\rightarrow \mathbb{R}\) Lipschitz contínua
+   em I. Então, g é continuamente diferenciável se, e somente se, para cada \(x_{0}\in I,\) 
+     \[
+       \biggl|\frac{g(x_{0}+s+h)-g(x_{0}+s)}{h}-\frac{g(x_{0}+h)+g(x_{0})}{h}\biggr|\overbracket[0pt]{\longrightarrow}^{|s|+|h|\to 0}0.
+     \]
+ \end{theorem*}
+\begin{proof*}
+  Se f é \(C^{1}(I),\) existem \(\theta , \theta '\in(0, 1)\) tais que 
+    \[
+      |\frac{g(x_{0}+s+h)-g(x_{0}+s)}{h}-\frac{g(x_{0}+h)+g(x_{0})}{h}| = |g'(x_{0}+s+\theta h)-g'(x_{0}+\theta 'h)|\overbracket[0pt]{\longrightarrow}^{|s|+|h|\to 0}0.
+    \]
+  Agora, mostraremos que se \(g:I\rightarrow \mathbb{R}\) é diferenciável, a equa\c cão
+no enunciado implica que \(g:I\rightarrow \mathbb{R}\) é continuamente diferenciável. Segue que
+dado \(\varepsilon >0\), existe \(\delta >0\) tal que, se \(|x-x_{0}| < \delta \) e \(|h| < \delta ,\) 
+  \[
+    |\frac{g(x+h)-g(x)}{h}-\frac{g(x_{0}+h)+g(x_{0})}{h}| < \frac{\varepsilon }{2}.
+  \]
+Segue que, para \(|x-x_{0}| < \delta ,\) 
+  \[
+    |g(x)-g(x_{0})| = |\lim_{h\to 0}\biggl\{\frac{g(x+h)-g(x)}{h}-\frac{g(x_{0}+h)-g(x_{0})}{h}\biggr\}|\leq \frac{\varepsilon }{2} < \varepsilon  
+  \]
+e g' é contínua em \(x_{0}.\) Para concluir a prova, basta mostrar que \(g:I\rightarrow \mathbb{R}\) é diferenciável.
+
+Como g é Lipschitz contínua, ela é diferenciável em um conjunto denso de pontos.
+Para cada \(x_{0}\) em I, \(\varepsilon >0\), existe \(\delta >0\) tal que 
+  \[
+    |g(x+h)-g(x)-g(x_{0}+h)+g(x_{0})|\leq \frac{\varepsilon }{4}|h|,\quad|x-x_{0}|+|h|<\delta 
+  \]
+  e existe \(x^{*}\in(x_{0}-\delta ,x_{0}+\delta )\) tal que \(g'(x^{*})\) existe.
+  Logo, para \(h\neq0\) suficientemente pequeno,
+ \begin{align*}
+   &\biggl|\frac{g(x_{0}+h)-g(x_{0})}{h}-g'(x^{*})\biggr|\leq \frac{\varepsilon }{2},\\
+   &0\leq \biggl\{\limsup_{h\to 0}-\liminf_{h\to 0}\biggr\}\frac{g(x_{0}+h)-g(x_{0})}{h}\leq \varepsilon .
+ \end{align*}
+ Portanto, como \(\varepsilon\) é arbitrário, \(g'(x_{0})\) existe. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 26 - 29/05/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item A integral de Riemann e de Riemann-Stieltjes;
+  \item Integrais superiores e inferiores.
+\end{itemize}
+\subsection{Motiva\c cão}
+ \paragraph{Integrais de Riemann e Riemann-Stieltjes:}
+Em matemática, a integral de Riemann é uma forma de definir a integral de uma
+função sobre um intervalo. É definida como o limite dos somatórios de Riemann,
+que são somas aproximadas calculadas a partir de valores da função em um
+conjunto finito de pontos. A integral de Riemann usa partições do intervalo 
+de integração para calcular essas somas aproximadas. 
+
+\begin{tikzpicture}
+\draw[->] (0,0) -- (6,0) node[right] {$x$};
+\foreach \x in {1,2,3,4,5}
+\draw (\x cm,3pt) -- (\x cm,-3pt) node[below] {$x_{\x}$};
+\end{tikzpicture}
+
+No gráfico acima, o intervalo de integração foi dividido em quatro subintervalos,
+representados pelos pontos $x_1$, $x_2$, $x_3$, $x_4$ e $x_5$.
+Cada subintervalo contribui para a soma de Riemann com um termo que é o
+produto do valor da função em um ponto dentro do subintervalo pela largura do
+subintervalo. À medida que a largura dos subintervalos diminui (ou seja, à
+medida que aumentamos o número de pontos na partição), a soma de Riemann se
+aproxima da área real sob a curva, que é a integral de Riemann da função.
+
+A integral de Riemann-Stieltjes é uma generalização da integral de Riemann
+que permite integrar funções com respeito a outras funções. Ao contrário da
+integral de Riemann, que calcula a área sob uma curva em relação ao eixo x,
+a integral de Riemann-Stieltjes calcula a "área" sob a curva de uma função em
+relação a outra função.
+
+\begin{tikzpicture}
+\draw[->] (-3,0) -- (4.2,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,4.2) node[above] {$y$};
+\draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+\draw[scale=0.5,domain=-3:3,smooth,variable=\x,red] plot ({\x},{\x*\x*\x});
+\end{tikzpicture}
+
+O gráfico acima mostra duas funções representadas em azul e vermelho.
+A integral de Riemann da função azul seria a área sob a curva azul e acima
+do eixo x. A integral de Riemann-Stieltjes da função vermelha com respeito à função
+azul seria a "área" sob a curva vermelha e acima da curva azul. Podemos ter fun\c cões
+que são Riemann-Stieltjes integrável, mas não Riemann integrável.
+
+Considere a função de Dirichlet, que é definida como 1 para números racionais
+e 0 para números irracionais. Esta função é notória por ser descontínua em todos
+os pontos, o que a torna não integrável no sentido de Riemann.
+No entanto, é possível mostrar que a função de Dirichlet é integrável no sentido
+de Riemann-Stieltjes se a função que define a partição
+(ou seja, a função em relação à qual estamos integrando) é de variação limitada.
+
+\subsection{A Integral de Riemann}
+A seguir, vamos representar, para \(a < b,\) a seguinte nota\c cão - \(\mathcal{B}([a,b], \mathbb{R})=\{f:[a,b]\rightarrow \mathbb{R}: f\text{ é limitada}\}.\)
+\begin{def*}
+  Dizemos que \(\mathcal{P}=\{x_{0}, x_{1}, \cdots, x_{n}\}\) é uma parti\c cão de \([a, b]\) se 
+    \[
+      x_{0} = a < x_{1} < x_{2} < \cdots < x_{n-1} < x_{n} = b.
+    \]
+    Se \(\Delta x_{i}\coloneqq x_{i} - x_{i-1}, 1\leq i\leq n, ||P||\coloneqq \sup\{\Delta x_{i}: 1\leq i\leq n\}\) será chamada de
+    malha da parti\c cão \(\mathcal{P}.\)
+
+    Se \(f\in \mathcal{B}([a, b], \mathbb{R}), M_{i}=\sup_{x\in[x_{i-1},x_{i}]}f(x), m_{i}=\inf_{x\in[x_{i-1}, x_{i}]f(x)}\) e
+    chamamos de soma superior e inferior da fun\c cão f relativas à \(\mathcal{P},\) as somas 
+      \[
+        U(\mathcal{P}, f) = \sum\limits_{i=1}^{n}M_{i}\Delta x_{i},\quad L(\mathcal{P}, f)=\sum\limits_{i=1}^{n}m_{i}\Delta x_{i}.
+      \]
+\end{def*}
+  Note que 
+ \begin{itemize}
+   \item \(\sum\limits_{i=1}^{n}\Delta x_{i} = b-a\);
+   \item \(L(\mathcal{P}, f)\leq U(\mathcal{P}, f)\) pois \(m_{i}\leq M_{i}, 1\leq i\leq n\);
+   \item \(m=\inf_{x\in[a, b]}f(x)\) e \(M=\sup_{x\in[a, b]}f(x), m\leq m_{i}\leq M_{i}\leq M, 1\leq i\leq n\);
+   \item \(m(b-a)\leq L(\mathcal{P}, f) = \sum\limits_{i=1}^{n}m_{i}\Delta x_{i}\leq \sum\limits_{i=1}^{n} M_{i}\Delta x_{i}=U(\mathcal{P}, f)\leq M(b-a)\)
+   \item Os conjuntos \(\{U(\mathcal{P}, f): \mathcal{P}\in \mathfrak{P}_{[a, b]}\}\) e
+     \(\{L(\mathcal{P}, f): \mathcal{P}\in \mathfrak{P}_{[a, b]}\}\) são limitados inferiormente e superiormente, respecitvamente,
+     em que \(\mathfrak{P}_{[a, b]} = \{\mathcal{P}: \mathcal{P}\text{ é parti\c cão de }[a, b]\}\).
+ \end{itemize}
+\begin{def*}
+  Definimos a integral superior de Riemann de f em \([a, b]\) por 
+    \[
+      \overline{\int_{a}^{b}}f(x)dx = \inf_{\mathcal{P}\in \mathfrak{P}}U(\mathcal{P}, f)
+    \]
+  e a integral inferior de Riemann de f em \([a, b]\) por 
+    \[
+      \underline{\int_{a}^{b}}f(x)dx = \sup_{\mathcal{P}\in \mathfrak{P}}L(\mathcal{P}, f).
+    \]
+  Caso \(\overline{\int_{a}^{b}}f(x)dx = \underline{\int_{a}^{b}}f(x)dx\), diremos que f é Riemann
+  integrável em \([a, b]\). O valor comum acima é chamado integral de Riemann de f em
+  \([a, b]\), sendo denotado por \(\int_{a}^{b}f(x)dx\). Além disso,
+  \(\mathfrak{R}([a, b]) = \{f\in \mathfrak{B}([a, b], \mathbb{R}): f\text{ é Riemann integrável em }[a, b]\}.\square\)
+\end{def*}
+\begin{example}
+  Nem toda fun\c cão limitada é Riemann integrável. De fato, seja \(f:[0, 1]\rightarrow \mathbb{R}\) dada por 
+    \[
+      f(x) \coloneqq  \left\{\begin{array}{ll}
+          0,\quad x\in \mathbb{Q}\cap{[0, 1]}\\
+          1,\quad x\in \mathbb{I}\cap{[0, 1]}.
+        \end{array}\right.
+    \]
+    Vamos mostrar que, apesar de limitada, f não é Riemann integrável em \([0, 1].\)
+
+  De fato, se \(\mathcal{P} = \{0 = x_{0}, x_{1}, \cdots, x_{n} = 1\}\in \mathfrak{P}_{[0, 1]},\) como \(M_{i}=\sup_{x\in[x_{i-1}, x_{i}]} f(x) = 1\)
+  e \(m_{i} = \inf_{x\in[x_{i-1}, x_{i}]}f(x) = 0,\) 
+ \begin{align*}
+   &U(\mathcal{P}, f) = \sum\limits_{i=1}^{n}M_{i}\Delta x_{i} = \sum\limits_{i=1}^{n}\Delta x_{i} =1,\\
+   &L(\mathcal{P}, f) = \sum\limits_{i=1}^{n}m_{i}\Delta x_{i} = \sum\limits_{i=1}^{n}0\Delta x_{i} = 0.
+ \end{align*}
+ Sendo assim, 
+   \[
+     \overline{\int_{0}^{1}}f(x)dx = 1\neq \underline{\int_{0}^{1}}f(x)dx = 0.
+   \]
+   Portanto, f não é Riemann integrável em \([0, 1].\)
+  \end{example}
+\subsection{A Integral de Riemann-Stieltjes}
+Para introduzir a integral de Riemann-Stieltjes, seja \(\alpha :[a, b]\rightarrow \mathbb{R}\) não-crescente. Claramente, \(\alpha \) é limitada em \([a, b]\).
+Dada \(\mathcal{P}=\{x_{0}, x_{1}, \cdots, x_{n}\}\in \mathfrak{P}_{[a, b]}\) para \(1\leq i\leq n\), seja 
+  \[
+    \Delta \alpha 33 = \alpha (x_{i}) - \alpha (x_{i-1})\geq 0,\quad 1\leq i\leq n.
+  \]
+  Além disso, dada \(f\in \mathfrak{B}([a, b], \mathbb{R}),\) defina 
+ \begin{align*}
+   &U(\mathcal{P}, f, \alpha ) = \sum\limits_{i=1}^{n}M_{i}\Delta \alpha_{i},\\
+   &L(\mathcal{P}, f, \alpha ) = \sum\limits_{i=1}^{n}m_{i}\Delta \alpha_{i},
+ \end{align*}
+ sendo \(M_{i} = \sup_{x\in[x_{i-1}, x_{i}]}f(x), m_{i} = \inf_{x\in[x_{i-1}, x_{i}]}f(x),\) como antes.
+ Note que 
+   \[
+     \sum\limits_{i=1}^{n}\Delta \alpha_{i} = \alpha (b) - \alpha (a)
+   \]
+  e 
+ \begin{align*}
+      &L(\mathcal{P, f, \alpha }) = \sum\limits_{i=1}^{n}m_{i}\Delta \alpha_{i}\leq \sum\limits_{i=1}^{n}M_{i}\Delta \alpha_{i} = U(\mathcal{P}, f, \alpha )\\
+      &m[\alpha (b) - \alpha (a)] = \sum\limits_{i=1}^{n}m\Delta \alpha_{i}\leq \sum\limits_{i=1}^{n}M_{i}\Delta \alpha_{i} = U(\mathcal{P}, f, \alpha )\\
+      &L(\mathcal{P}, f, \alpha ) = \sum\limits_{i=1}^{n}m_{i}\Delta \alpha_{i}\leq M \sum\limits_{i=1}^{n}\Delta \alpha_{i} = M[\alpha (b)-\alpha (a)],
+ \end{align*}
+ em que \(m = \inf_{x\in[a,b]}f(x)\) e \(M=\sup_{x\in[a, b]}f(x).\) Disto segue que os conjuntos 
+   \[
+     \{L(\mathcal{P}, f, \alpha ): \mathcal{P}\in \mathfrak{P}_{[a, b]}\}\quad\text{ e } \{U(\mathcal{P}, f, \alpha ): \mathcal{P}\in \mathfrak{P}_{[a, b]}\}
+   \]
+são, respectivamente, limitado superiormente e inferiormente em \(\mathbb{R}.\) Definimos a integral superior
+e inferior de Riemann-Stieltjes para uma fun\c cão f em \([a, b]\) relativas à \(\alpha \) analogamente às de Riemann : 
+  \[
+    \overline{\int_{a}^{b}}f d\alpha =\inf_{P\in \mathfrak{P}}U(\mathcal{P}, f, \alpha ) \text{ e } \underline{\int_{a}^{b}}f d\alpha =\sup_{\mathcal{P}\in \mathfrak{P}}L(\mathcal{P}, f, \alpha ).
+  \]
+ \begin{def*}
+   A fun\c cão f é Riemann-Stieltjes integrável em \([a, b]\) relativamente a \(\alpha \) se 
+     \[
+       \overline{\int_{a}^{b}}f d\alpha  = \underline{\int_{a}^{b}}fd\alpha .
+     \]
+     O valor acima é chamado integral de Riemann-Stieltjes de f em \([a, b]\) relativamente à fun\c cão \(\alpha \), sendo denotado por 
+       \[
+         \int_{a}^{b} f d\alpha \text{ ou } \int_{a}^{b} f(x) d\alpha (x). \square
+       \]
+ \end{def*}
+ Denote por \(\mathfrak{R}(\alpha , [a, b]) = \{f\in \mathfrak{B}([a, b], \mathbb{R}): f\text{ é Riemann-Stieltjes integrável em }[a, b],\text{ relativamente a }\alpha \}\).
+
+ Se \(\alpha :[a, b]\rightarrow \mathbb{R}\) é dada por \(\alpha (x) = x, x\in[a, b]\), a integral de Riemann-Stieltjes, relativamente a \(\alpha \), coincide
+com a integral de Riemann, ou seja, 
+  \[
+    \int_{a}^{b}f d\alpha = \int_{a}^{b}f(x)dx
+  \]
+  pois, neste caso, \(\delta x_{i}=\alpha (x_{i}) - \alpha (x_{i=1}) = x_{i} - x_{i-1} = \Delta x_{i}, 1\leq i\leq n\).
+
+  Observe que \(\alpha :[a, b]\rightarrow \mathbb{R}\) só precisa ser não-decrescente em \([a, b],\) para
+  podermos definir a integral de Riemann-Stieltjes de fun\c cões \(f\in \mathfrak{B}([a, b], \mathbb{R})\) relativamente a \(\alpha .\)
+
+  Vamos supor, adiante, que \(\alpha (b) > \alpha (a).\) Caso contrário, a integral de Riemann-Stieltjes de f 
+  relativamente a \(\alpha \) seria nula para toda \(f\in \mathfrak{B}([a, b], \mathbb{R})\).
+ \begin{def*}
+   Sejam \(\mathcal{P}, \mathcal{P}^{*}\in \mathfrak{P}_{[a, b]}\). Dizemos que a parti\c cão \(\mathcal{P}^{*}\) é um
+   refinamento da parti\c cão \(\mathcal{P}\) se 
+     \[
+       \mathcal{P}\subseteq{\mathcal{P}^{*},}
+     \]
+     ou seja, todo ponto de \(\mathcal{P}\) é um ponto de \(\mathcal{P}^{*}. \square\) 
+ \end{def*}
+ Sejam \(\mathcal{P}_{1}, \mathcal{P}_{2}\in \mathfrak{P}_{[a, b]}.\) Definimos 
+   \[
+     \mathcal{P}^{*} = \mathcal{P}_{1}\cup \mathcal{P}_{2}.
+   \]
+   Então, \(\mathcal{P}\in \mathfrak{P}_{[a, b]}\) e \(\mathcal{P}^{*}\) é um refinamento comum
+   a \(\mathcal{P}_{1}\) e a \(\mathcal{P}_{2}.\)
+  \begin{prop*}
+    Sejam \(\mathcal{P}, \mathcal{P}^{*}\in \mathfrak{P}_{[a, b]}\) com \(\mathcal{P}^{*}\supseteq{\mathcal{P}.}\) Então, 
+   \begin{align*}
+     &L(\mathcal{P}, f, \alpha )\leq L(\mathcal{P}^{*}, f, \alpha )\\
+     &U(\mathcal{P}^{*}, f, \alpha )\leq U(\mathcal{P}, f, \alpha ).
+   \end{align*}
+  \end{prop*}
+ \begin{proof*}
+  Se \(\mathcal{P}^{*} = \mathcal{P}\), não há o que fazer. Se \(\mathcal{P}\subsetneq{P}^{*},\) seja \(x^{*}\in \mathcal{P}^{*}\backslash \mathcal{P}.\) Considere,
+  inicialmente, o caso 
+    \[
+      \mathcal{P}^{*} = \mathcal{P}\cup\{x^{*}\}.
+    \]
+  Logo, se \(\mathcal{P}\) tem n elementos, \(\mathcal{P}^{*}\) tem n+1 elementos e 
+ \begin{align*}
+   &\mathcal{P} = \{a = x_{0}, x_{1}, \cdots, x_{i_{0}-1}, x_{i_{0}}, \cdots, x_{n} = b\},\\
+   &\mathcal{P}^{*} = \{a = x_{0}^{*}, x_{1}^{*}, \cdots, x_{i_{0}-1}^{*}, x, x_{i_{0}+1}^{*}, \cdots, x_{n}^{*} = b\},\\
+   &=\{a = x_{0}^{*}, x_{1}^{*}, \cdots, x_{i_{0}-1}^{*}, x_{i_{0}}^{*}, \cdots, x_{n+1}^{*} = b\},\\ 
+ \end{align*}
+ se \(m_{i} = \inf_{x\in[x_{i-1}, x_{i}]}f(x), 1\leq i\leq n\) e \(m_{j}^{*} = \inf_{x\in[x_{j-1}^{*}, x_{j}^{*}}f(x), 1\leq j\leq n+1,\) colocamos
+ \(\Delta \alpha_{i} = \alpha (x_{i}) - \alpha (x_{i-1}), 1\leq i\leq n\) e \(\Delta \alpha_{j}^{*} = \alpha (x_{j}^{*}) - \alpha (x_{j-1}^{*}), 1\leq j\leq n+1.\)
+
+ Assim, 
+\begin{align*}
+  L(\mathcal{P}^{*}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) &= \sum\limits_{j=1}^{n+1}m_{j}^{*}\Delta \alpha_{j}^{*} - \sum\limits_{i=1}^{n}m_{i}\Delta \alpha_{i}\\
+                                                              &= m_{i_{0}}^{*}\Delta \alpha_{i_{0}}^{*} + m_{i_{0}+1}^{*}\Delta \alpha _{i_{0}+1}^{*} - m_{i_{0}}\Delta \alpha _{i_{0}}\\
+                                                              &= m_{i_{0}}^{*}\Delta \alpha_{i_{0}}^{*} + m_{i_{0}+1}^{*}\Delta \alpha _{i_{0}+1}^{*} - m_{i_{0}}[\alpha (x_{i_{0}}) - \alpha (x^{*})+\alpha (x^{*}) - \alpha (x_{i_{0}-1})\\
+                                                              &= [m_{i_{0}}^{*} - m_{i_{0}}][\alpha (x^{*}) - \alpha (x_{i_{0}-1})] + [m_{i_{0}+1}^{*} - m_{i_{0}}][\alpha (x_{i_{0}}) - \alpha (x^{*}]\geq 0.
+\end{align*}
+Em outras palavras, 
+  \[
+    L(\mathcal{P}^{*}, f, \alpha ) - L(\mathcal{P}, f, \alpha )\geq 0.
+  \]
+O caso geral segue por indu\c cão. A desigualdade para a soma superior é obtida de maneira análoga (Exercício). \(\square\)
+ \end{proof*}
+\begin{theorem*}
+  Seja \(f:[a, b]\rightarrow \mathbb{R}\) limitada em \([a, b]\). Então, 
+    \[
+      \underline{\int_{a}^{b}} f d\alpha\leq \overline{\int_{a}^{b}}f d\alpha .
+    \]
+\end{theorem*}
+\begin{proof*}
+  Do resultado anterior, se \(\mathcal{P}_{1}, \mathcal{P}_{2}\in \mathfrak{P}_{[a, b]}\) e \(\mathcal{P}^{*} = \mathcal{P}_{1}\cup \mathcal{P}_{2}\), 
+    \[
+      L(\mathcal{P}_{1}, f, \alpha )\leq L(\mathcal{P}^{*}, f, \alpha )\leq U(\mathcal{P}^{*}, f, \alpha )\leq U(P_{2}, f, \alpha ).
+    \]
+  Portanto, 
+    \[
+      \underline{\int_{a}^{b}}f d\alpha =\sup_{\mathcal{P_{1}}\in \mathfrak{P}}\leq \inf_{\mathcal{P}_{2}\in \mathfrak{P}} U(\mathcal{P}_{2}, f, \alpha ) = \overline{\int_{a}^{b}}f d\alpha .\text{ \qedsymbol}
+    \]
+\end{proof*}
+\begin{crl*}
+  Seja \(f:[a, b]\rightarrow \mathbb{R}\) uma fun\c cão limitada em \([a, b].\) Então, \(f\in \mathfrak{R}(\alpha , [a, b])\) se, e somente se, 
+  dado \(\varepsilon >0\), existe uma parti\c cão \(P\in \mathfrak{P}\) tal que 
+    \[
+      0\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) <\varepsilon .
+    \]
+\end{crl*}
+\begin{proof*}
+  Note que, dado \(\varepsilon  >0\), se \(\mathcal{P}\in \mathfrak{P}\) é tal que a desigualdade acima está satisfeita,
+ \begin{align*}
+   &L(\mathcal{P}, f, \alpha )\leq \sup_{\mathcal{P}'\in \mathfrak{P}}L(\mathcal{P}', f, \alpha ) = \underline{\int_{a}^{b}}f d\alpha \\
+   &\leq \overline{\int_{a}^{b}}f d\alpha = \inf_{\mathcal{P}'\in \mathfrak{P}}U(\mathcal{P}', f, \alpha )\leq U(\mathcal{P}, f, \alpha )
+ \end{align*}
+ e 
+   \[
+     0\leq \overline{\int_{a}^{b}}f d\alpha  - \underline{\int_{a}^{b}}f d\alpha\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f,\alpha ) <\varepsilon .
+   \]
+  Logo, \(f\in \mathfrak{R}(\alpha, [a,b])\).
+
+  Por outro lado, se \(f\in \mathfrak{R}(\alpha , [a,b]),\) 
+    \[
+      \inf_{P\in \mathfrak{P}}U(\mathcal{P}, f, \alpha ) = \sup_{P\in \mathfrak{P}}L(\mathcal{P}, f, \alpha ).
+    \]
+  Assim, dado \(\varepsilon >0\), existem parti\c cões \(\mathcal{P}_{1}, \mathcal{P}_{2}\in \mathfrak{P}\) tais que 
+    \[
+      U(\mathcal{P}, f, \alpha )\leq U(\mathcal{P}_{2}, f, \alpha ) < \overline{\int_{a}^{b}}f d\alpha +\frac{\varepsilon }{2} = \int_{a}^{b} f d\alpha  + \frac{\varepsilon }{2},
+    \]
+  e, 
+    \[
+      L(\mathcal{P}, f, \alpha )\geq L(\mathcal{P}_{1}, f, \alpha ) > \underline{\int_{a}^{b}} f d\alpha - \frac{\varepsilon }{2} = \int_{a}^{b}f d\alpha - \frac{\varepsilon }{2},
+    \]
+  em que \(\mathcal{P} = \mathcal{P}_{1}\cup \mathcal{P}_{2}.\) Portanto, \(0\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) < \varepsilon .\) \qedsymbol
+\end{proof*} 
+\begin{theorem*}
+  Seja \(f:[a, b]\rightarrow \mathbb{R}\) é limitada e \(\varepsilon  > 0\) dado.
+ \begin{itemize}
+   \item[1)] Se existe parti\c cão P tal que \(0\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha )  < \varepsilon \), então
+     \(0\leq U(\mathcal{P}^{*}, f, \alpha ) - L(\mathcal{P}^{*}, f, \alpha ) < \varepsilon \), para todo refinamento \(\mathcal{P}^{*}\) de \(\mathcal{P}.\)
+   \item[2)] Se existe \(P = \{a = x_{0}, x_{1}, \cdots, x_{n} = b\}\) tal que \(0\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) < \varepsilon \) e, para
+     cada \(1\leq i\leq n\), dados \(s_{i}, t_{i}\in [x_{i-1}, x_{i}], \) então 
+       \[
+         \sum\limits_{i=1}^{n}|f(s_{i}) - f(t_{i})|\Delta \alpha_{i} < \varepsilon  
+       \]
+       e, se \(f\in \mathfrak{R}(\alpha , [a, b]),\) 
+         \[
+           \biggl|\sum\limits_{i=1}^{n}f(t_{i})\Delta \alpha_{i} - \int_{a}^{b}f d\alpha\biggr| < \varepsilon . 
+         \]
+ \end{itemize}
+\end{theorem*}
+\begin{proof*}
+  1) Seja P uma parti\c cão tal que \(0\leq U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) < \varepsilon \) e 
+ \(\mathcal{P}^{*}\) um refinamento de \(\mathcal{P}.\) O resultado segue de 
+   \[
+     L(\mathcal{P}, f, \alpha )\leq L(\mathcal{P}^{*}, f, \alpha )\leq U(\mathcal{P}^{*}, f, \alpha )\leq U(\mathcal{P}, f, \alpha ).
+   \]
+
+  2) Sabemos que, para cada \(i\in\{1, 2, \cdots, n\}\), se \(s_{i}, t_{i}\in [x_{i-1}, x_{i}]\), então
+  \(f(s_{i}), f(t_{i})\in[m_{i}, M_{i}]\) e \(|f(s_{i})-f(t_{i})|\leq M_{i} - m_{i},\) em que 
+  \(m_{i} = \inf_{x\in[x_{i-1}, x_{i}]}f(x)\) e \(M_{i}=\sup_{x\in[x_{i-1}, x_{i}]}f(x)\). Portanto, 
+    \[
+      \sum\limits_{i=1}^{n}|f(s_{i})-f(t_{i})|\Delta \alpha_{i}\leq \sum\limits_{i=1}^{n}(M_{i}-m_{i})\Delta \alpha_{i} = U(\mathcal{P}, f, \alpha )-L(\mathcal{P}, f, \alpha ) <\varepsilon 
+    \]
+    e o resultado segue. Agora, se \(f\in \mathfrak{R}(\alpha , [a, b])\), dado \(\varepsilon >0\), existe uma 
+    parti\c cão P de \([a, b]\) tal que 
+      \[
+        L(\mathcal{P}, f, \alpha )\leq \int_{a}^{b}f d\alpha \leq U(\mathcal{P}, f, \alpha ) < L(\mathcal{P}, f, \alpha ) + \varepsilon .
+      \]
+      Escolhendo \(t_{i}\in[x_{i-1}, x_{i}], f(t_{i})\in[m_{i}, M_{i}],\) 
+     \begin{align*}
+       L(\mathcal{P}, f, \alpha ) &= \sum\limits_{i=1}^{n}m_{i}\Delta \alpha_{i}\leq \sum\limits_{i=1}^{n}f(t_{i})\Delta \alpha_{i}\\
+                                  &\leq \sum\limits_{i=1}^{n}M_{i}\Delta\alpha_{i} = U(\mathcal{P}, f, \alpha ) < L(\mathcal{P}, f, \alpha ) + \varepsilon. 
+     \end{align*}
+     Portanto, o resultado está provado. \qedsymbol
+\end{proof*}
+\newpage
+
+\section{Aula 27 - 05/06/2023}
+\subsection{O que esperar?}
+\begin{itemize}
+  \item Quais fun\c cões são Riemann-Stieltjes integráveis?
+  \item Propriedade de fun\c cões Riemann-Stieltjes integráveis.
+\end{itemize}
+\subsection{Classe de Fun\c cões Riemann-Stieltjes Integráveis}
+\begin{theorem*}
+  Toda fun\c cão contínua de um intervalo \([a, b]\) em \(\mathbb{R}\) é Riemann-Stieltjes
+integrável. No entanto, a volta não vale - existem fun\c cões Riemann-Stieltjes integráveis que
+não são contínuas. Matematicamente, 
+  \[
+    C([a, b]; \mathbb{R})\subsetneq{\mathfrak{R}(\alpha , [a,b])}
+  \]
+\end{theorem*}
+\begin{proof*}
+  Dado \(\varepsilon >0\), escolhamos \(\eta >0\) de modo que 
+    \[
+      \eta = \frac{\varepsilon }{\alpha (b) - \alpha (a)}
+    \]
+  e, como f é uniformemente contínua, seja \(\delta =\delta (\varepsilon ) > 0\) tal que
+x, t pertencem a \([a, b], |x-t| < \delta \) implica \(|f(x)-f(t)| < \eta \).
+
+  Seja \(\mathcal{P} = \{a=x_{0}, \cdots, x_{n} =b \}\) tal que \(||\mathcal{P}||=\sup\{\Delta x_{i}: 1\leq i\leq n\} < \delta.\)
+Como f é contínua, podemos escolher \(s_{i},t_{i}\in[x_{i-1}, x_{i}]\) tais que 
+ \(m_{i}=f(t_{i})\) e \(M_{i}=f(s_{i})\). Logo, \(|t_{i}-s_{i}|\leq \Delta x_{i} < \delta \) e 
+   \[
+     |M_{i}-m_{i}| = |f(x_{i}) - f(t_{i})| < \eta 
+   \]
+   e 
+     \[
+       U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) = \sum\limits_{i-1}^{n}(M_{i}-m_{i})\Delta \alpha_{i} < \eta \sum\limits_{i=1}^{n}\Delta \alpha_{i} = \varepsilon .
+     \]
+  Segue que \(f\in \mathfrak{R}(\alpha , [a, b]).\) \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se \(f:[a, b]\rightarrow \mathbb{R}\) é monótona em \([a, b]\) e \(\alpha :[a, b]\rightarrow \mathbb{R}\) é
+contínua e não-decrescente. Então, \(f\in \mathfrak{R}(\alpha, [a,b]).\)
+\end{theorem*}
+\begin{proof*}
+  Dado \(\varepsilon >0\) e \(n\in \mathbb{N}^{\times},\) escolha uma parti\c cão \(\mathcal{P}\) tal que 
+    \[
+      \Delta \alpha_{i} = \frac{\alpha (b) - \alpha (a)}{n},\quad 1\leq i\leq n.
+    \]
+    Isto é possível visto que \(\alpha \) satisfaz a propriedade do valor intermediário. Se
+  f é não-decrescente (o outro caso é análogo [exercício]). Então, 
+    \[
+      M_{i}=f(x_{i}),\quad m_{i}=f(x_{i-1}) (i=1, \cdots, n)
+    \]
+    e, portanto, 
+   \begin{align*}
+     U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) &= \frac{\alpha (b) - \alpha (a)}{n}\sum\limits_{i=1}^{n}[f(x_{i})-f(x_{i-1})]\\
+                                                             &= \frac{\alpha (b) - \alpha (a)}{n}[f(b)-f(a)] < \varepsilon 
+   \end{align*}
+  se n for suficientemente grande. Portanto \(f\in \mathfrak{R}(\alpha, [a,b])\). \qedsymbol
+\end{proof*}
+\begin{theorem*}
+  Se \(f\in \mathfrak{B}([a, b], \mathbb{R})\) possui somente um número finito de pontos de
+descontinuidade e \(\alpha :[a, b]\rightarrow \mathbb{R}\) uma fun\c cão não-decrescente que é
+contínua nos pontos onde f é descontínua. Então, \(f\in \mathfrak{R}(\alpha , [a, b]).\)
+\end{theorem*}
+\begin{proof*}
+  Dado \(\varepsilon >0\), se \(M=\sup\{|f(x)|\}\) e \(E = \{y_{1}, \cdots, y_{k}\}\) o
+conjunto (finito) das descontinuidades de f. Como \(\alpha \) é contínua em todos os 
+pontos de E, podem cobrir E por intervalos disjuntos \([a, b]\supseteq{[u_{j}, v_{j}]}\ni y_{j}, 1\leq j\leq k\)  tais que 
+  \[
+    \sum\limits_{j=1}^{k}(\alpha (v_{j})-\alpha (u_{j})) < \varepsilon .
+  \]
+  Podemos escolher estes intervalos de modo que cada \(y_{j}\in E\cap{(a, b)}\) está em \(I_{j}=(u_{j}, v_{j})\)
+(se \(y_{1}=a[y_{k}=b], I_{1}=[a, v_{1})[I_{k}=(u_{k}, b]].\)  
+
+O conjunto \(K=[a, b]\backslash{\bigcup_{j=1}^{k}{(u_{j},v_{j})}}\) é compacto e f é uniformemente
+contínua em K. Logo, existe \(\delta >0\) tal que \(s, t\in K, |s-t| < \delta \) tal que
+ \(|f(s) - f(t)| < \varepsilon .\)
+
+  Agora, escolhemos uma parti\c cão \(\mathcal{P} = \{x_{0}, x_{1}, \cdots, x_{n}\}\) de \([a, b]\), da
+seguinte forma: \(u_{j}, v_{j}\in \mathcal{P}, 1\leq j\leq k.\) Nenhum ponto
+de \((u_{j}, v_{j})\) pertence a \(\mathcal{P}\). Se \(x_{i-1}\neq u_{j}\) para todo \(1\leq j\leq k\), então
+ \(\Delta x_{i} < \delta.\) 
+
+  Note que \(M_{i}-m_{i}\leq 2M\) para todo i e \(M_{i} - m_{i}\leq \varepsilon \) exceto quando
+ \(x_{i-1}\) é algum dos \(u_{j}.\) Logo 
+   \[
+     U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha )\leq [\alpha (b) - \alpha (a)]\varepsilon  + 2M\varepsilon.
+   \]
+  Como \(\varepsilon >0\) é arbitrário, segue que \(f\in \mathfrak{R}(\alpha , [a, b]\). \qedsymbol
+\end{proof*}
+  Agora que entendemos um pouco melhor quais fun\c cões constituem essa classe, vamos
+  analisar mais a fundo os benefícios deu ma fun\c cão ser Riemann-Stieltjes integrável.
+\subsection{Propriedades das Fun\c cões Riemann-Stieltjes Integráveis}
+ \begin{theorem*}
+   Se \(f\in \mathfrak{R}(\alpha ,[a,b]), f([a, b])\subseteq{[m, M]}\) e \(\varphi :[m, M]\rightarrow \mathbb{R}\) é contínua,
+   então, \(h=\varphi\circ{f}\in \mathfrak{R}(\alpha , [a,b]).\)
+ \end{theorem*}
+\begin{proof*}
+  Dado \(\varepsilon >0\), como \(\varphi \) é uniformemente contínua em \([m, M]\)(Por ser compacto),
+existe \(0 < \delta  < \varepsilon \) tal que \(s, t\in[m, M], |s-t|\leq \delta \) implica em \(|\varphi (s)-\varphi (t)| < \varepsilon .\)
+Como \(f\in \mathfrak{R}(\alpha , [a, b]),\) existe \(\mathcal{P} = \{x_{0}, x_{1}, \cdots, x_{n}\}\in \mathfrak{P}_{[a, b]}\) tal que  
+  \[
+    U(\mathcal{P}, f, \alpha ) - L(\mathcal{P}, f, \alpha ) < \delta^{2}.
+  \]
+Se \(r\in \mathfrak{B}([a, b], \mathbb{R})\) e \(M_{i}^{r} = \sup_{x\in[x_{i-1}, x_{i}]}r(x), m_{i}^{r} = \inf_{x\in[x_{i-1}, x_{i}]r(x)}, 
+A = \{i: 1\leq i\leq n\text{ e } M_{i}^{f}-m_{i}^{f} < \delta \}\) e \(B = \{i: 1\leq i\leq n\text{ e } M_{i}^{f}-m_{i}^{f}\geq \delta\},\) então,
+para i em A, a escolha de \(\delta \) implica que \(M_{i}^{h} - m_{i}^{h}\leq \varepsilon .\) Agora, para i em B,
+\(M_{i}^{h}-m_{i}^{h}\leq 2K,\) em que \(K=\sup_{t\in[m, M]}|\varphi (t)|\). Logo, da escolha de \(\mathcal{P},\) 
+  \[
+    \delta \sum\limits_{i\in B}^{}\Delta \alpha_{i}\leq \sum\limits_{i\in B}^{}(M_{i}^{f}-m_{i}^{f})\Delta \alpha_{i} < \delta^{2}
+  \]
+e \(\sum\limits_{i\in B}^{}\Delta\alpha_{i} < \delta <\varepsilon .\) Segue que 
+\begin{align*}
+  U(\mathcal{P}, h, \alpha ) - L(\mathcal{P}, h, \alpha ) &= \sum\limits_{i\in A}^{}(M_{i}^{h}-m_{i}^{h})\Delta \alpha_{i} + \sum\limits_{i\in B}^{}(M_{i}^{h}-m_{i}^{h})\Delta\alpha_{i} \\
+                                                          &\leq \varepsilon [\alpha (b)-\alpha (a)]+2K\delta < \varepsilon [\alpha (b)-\alpha (a)+2K].
+\end{align*}
+  Portanto, como \(\varepsilon >0\) é arbitrário, segue que \(h\in \mathfrak{R}(\alpha , [a, b]).\)\qedsymbol
+   
+\end{proof*}
 \end{document}
