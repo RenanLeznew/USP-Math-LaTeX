@@ -13,6 +13,7 @@
  \usepackage{hyperref}
  \usepackage{lastpage}
  \usepackage{mathtools}
+ \setcounter{section}{-1}
 
  \pagestyle{fancy}
  \fancyhf{}
@@ -65,18 +66,144 @@
 
   \vspace{1.3cm}
   \large
-  \textbf{Professor - Marcassa}
+  \textbf{Professor - Luis Gustavo Marcassa}
+
+  \textbf{E-mail: marcassa@ifsc.usp.br}
 
   \vspace{1.3cm}
   \today
 \end{center}
 
  \newpage
+ \textbf{{\Huge Disclaimer}}
+ \vspace{5cm}
+
+  {\huge Essas notas não possuem relação com professor algum. 
+
+  Qualquer erro é responsabilidade solene do autor.
+
+Caso julgue necessário, contatar: renan.wenzel.rw@gmail.com}
+ \newpage
 
  \tableofcontents
 
  \newpage
 
- \section{Aula 01 - 07/08/2023}
+ \section{Aula 00 - 07/08/2023}
+   Avisos sobre o curso (Ler e baixar o pdf no e-disciplinas!!!!); 
 
- \end{document}
+\section{Aula 01 - 09/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Ângulos, velocidade angular e aceleração angular;
+  \item Energia em sistemas com rotação.
+\end{itemize}
+\subsection{Rotação}
+  Antes de qualquer coisa, convencionamos o sentido antihorário como aquele em que \(\Delta \theta >0\) e
+o sentido horário como o que \(\Delta \theta <0.\) Uma volta completa em torno do círculo é dada pela versão com \(2\pi\) da fórmula do arco de círculo
+ \(\Delta S_{i} = r_{i}\Delta \theta = 2\pi r_{i}\) e, com isso, a variação do ângulo em uma volta completa é dada por 
+   \[
+     \Delta \theta = \frac{S_{i}}{r_{i}} = \frac{2\pi r_{i}}{r_{i}} = 2\pi rad.
+   \]
+  Um dos assuntos de importância para nós é o estudo da variação temporal do ângulo. Definimos, nessa lógica, a 
+velocidade angular média por 
+  \[
+    \omega _{med} = \frac{\Delta \theta }{\Delta t}.
+  \]
+  De modo análogo ao que vimos com cinemática, existe também a velocidade angular instantânea, obtida tomando o limite: 
+    \[
+      \omega = \lim_{\Delta t\to 0}\frac{\Delta \theta }{\Delta t} = \frac{d\theta }{dt}.
+    \]
+    Observa-se de cara que, se \(\omega >0, \theta \) aumenta e, se \(\omega <0, \theta \) diminui. Assim como antes,
+  precisamos ver, também, a unidade. Em cinemática, a unidade de velocidade era metro por segundo. Dessa vez, já que
+  o ângulo move-se em radianos, mas há outras unidades, como a revolução e o grau. Logo, as unidades de \(\omega \) podem ser \([\omega ] = \frac{radianos}{tempo} = \frac{rad}{s}, \frac{graus}{s}, \frac{\text{revolução}}{s},\)
+  em que \(1\text{revolução} = 2\pi rad = 360\deg\)
+
+    Por exemplo, se um CD roda a 3000rpm, pode-se expressar essa velocidade de rotação como 
+      \[
+        \omega = 3000rpm = \frac{3000 \cdot 2\pi}{60} = \frac{600}{6}\pi = 100\pi \frac{rad}{s}.
+      \]
+
+  Analogamente, é possível analisar a variação da própria velocidade angular com o tempo, resultando na chamada
+  acelerações angulares média e instantânea: 
+    \[
+      \alpha_{med} = \frac{\Delta \omega }{\Delta t}\quad \alpha  = \frac{d\omega }{dt} = \frac{d}{dt}\biggl(\frac{d\theta }{dt}\biggr) = \frac{d^{2}\theta }{dt^{2}}.
+    \]
+    A unidade dessa grandeza, novamente, similar à versão linear dela, será dada em \([\alpha ]= \frac{radiano}{s^{2}}\), ou \([\alpha ]=\frac{grau}{s^{2}}\), etc. Nessas
+  situações todas, se \(\alpha >0, \omega \) aumenta e, se \(\alpha <0, \omega \) diminui. 
+
+    Agora, suponha que \(\alpha \) é constante. Todos os processos de movimento uniformemente acelerado são válidos aqui também:
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & \textbf{Variáveis angulares} & \textbf{Variáveis escalares} \\
+        \hline
+        \textbf{Posição} & $\theta(t) = \theta_{0} + \omega_{0}t + \frac{\alpha t^{2}}{2}$ & $s(t) = R\theta(t)$ \\
+        \hline
+        \textbf{Velocidade} & $\omega(t) = \omega_{0} + \alpha t = \frac{d\theta }{dt}$ & $v(t) = v_{0} + at = \frac{dx}{dt}$ \\
+        \hline
+        \textbf{Aceleração} & $\alpha(t) = \frac{d\omega(t)}{dt} = \frac{d^2\theta(t)}{dt^2}$ & $|\vec{a}(t)| = \frac{dv(t)}{dt} = R\alpha(t),\quad |\vec{a}_{cp}| = \frac{v^2}{R}$ \\
+        \hline
+        \textbf{Torricelli} & $\omega^{2}(t) = \omega_{0}^{2} + 2\alpha \Delta \theta $ & $v^{2} = v_{0}^{2} + 2a\Delta s.$ \\
+        \hline
+    \end{tabular}
+    \caption{Resumo movimento circular.}
+    \label{tab:my_label}
+  \end{table}
+
+\begin{example}
+  Suponha que há um CD que começa no repouso. Ele começa a girar, indo de 0 a 500rpm em 5.5s. Pergunta-se:
+ \begin{itemize}
+   \item[a)] Quanto vale \(\alpha \)?
+     \item[b)] Quantas voltas o CD dá em 5.5s?
+       \item[c)] Qual é a distância percorrida por uma ponta a 6cm do eixo de rotação?
+ \end{itemize}
+
+ \textbf{Soluções:}
+ \begin{itemize}
+   \item[a)] Temos \(\omega (0) = 0, \omega (5.5) = 500rpm.\) Segue que 
+     \[
+       \omega(t) = \omega_{0} + \alpha t \Rightarrow \alpha  = \frac{\omega (t)}{t} = \frac{500 \cdot 2\pi}{5.5 \cdot 60}\approx 9.52 \frac{rad}{s^{2}}
+     \]
+
+    \item[b)] Aplicamos o Torricelli angular com os dados que temos: 
+      \[
+        \omega^{2} = 2\alpha \Delta \theta \Rightarrow \delta \theta = \frac{\omega^{2}}{2\alpha }\approx 144 rad \Rightarrow \frac{144}{2\pi}rad\approx 23\text{rotações}.
+      \]
+
+    \item[c)] Por fim, multiplicando a variação do ângulo pelo raio, obtemos 
+      \[
+        \Delta S_{i} = r\Delta \theta = 6 \cdot 10^{-2}\cdot 144\approx 8.65m.
+      \]
+ \end{itemize}
+\end{example}
+
+  Olhando de forma cautelosa a fórmula de arco de circulo, podemos derivá-la com respeito ao tempo utilizando o que vimos até agora: 
+    \[
+      \frac{dS_{i}}{dt} = V_{t} = r_{i}\frac{d\theta }{dt} = r_{i}\omega.
+    \]
+  Essa derivação resulta em uma velocidade linear, que também pode ser derivada a fim de obter uma aceleração linear 
+    \[
+      \frac{dV_{t}}{dt} = r_{i}\frac{d\omega }{dt} \Rightarrow a_{t} = r_{i}\alpha.
+    \]
+    Note a relação entre as duas acelerações que obtivemos, \(a_{c} = \frac{V_{t}^{2}}{r_{i}}= \frac{r_{i}^{2}\omega^{2}}{r_{i}} = r_{i}\omega^{2}.\)
+
+\subsection{Energia Cinética de Rotação}
+  A energia cinética, como vista previamente, é dada por 
+    \[
+      \mathcal{K} = \frac{1}{2}m_{i}v_{i}^{2}.
+    \]
+  Agora, imagine um corpo discreto (formado por vários pontos). Somemos as energias deles, tal que a energia cinética total é 
+    \[
+      \mathcal{K}_{T} = \sum\limits_{}^{}\frac{1}{2}m_{i}v_{i}^{2}.
+    \]
+  Mas, sabemos que \(v_{i} = r_{i}\omega, \) tal que 
+    \[
+      \mathcal{K} = \frac{1}{2}\sum\limits_{}^{}m_{i}r_{i}^{2}\omega^{2} = \frac{1}{2}\biggl[\sum\limits_{}^{}m_{i}r_{i}^{2}\biggr]\omega^{2}
+    \]
+  Chamemos o termo em colchete de momento de inércia, denotado por \(I:= \sum\limits_{}^{}m_{i}r_{i}^{2} = \sum\limits_{}^{}I_{i}\). Logo, 
+    \[
+      \boxed{\hypertarget{kin_en}{\mathcal{K}_{T} = \frac{1}{2}I\omega^{2}.}}
+    \]
+\end{document}

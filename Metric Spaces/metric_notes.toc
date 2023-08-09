@@ -1,0 +1,8 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {0}Informações (Possivelmente) Úteis}{3}{section.0}%
+\contentsline {subsection}{\numberline {0.1}Datas das Provas:}{3}{subsection.0.1}%
+\contentsline {subsection}{\numberline {0.2}Bibliografia}{3}{subsection.0.2}%
+\contentsline {section}{\numberline {1}Aula 01 - 08/08/2023}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivações}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Aula 02 - 10/08/2023}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivações}{5}{subsection.2.1}%

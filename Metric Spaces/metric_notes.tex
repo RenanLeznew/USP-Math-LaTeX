@@ -1,0 +1,174 @@
+\documentclass{article}
+ \usepackage{amsmath}
+ \usepackage{amsthm}
+ \usepackage{amssymb}
+ \usepackage{pgfplots}
+ \usepackage[utf8]{inputenc}
+ \usepackage{amsfonts}
+ \usepackage[margin=2.5cm]{geometry}
+ \usepackage{graphicx}
+ \usepackage[export]{adjustbox}
+ \usepackage{fancyhdr}
+ \usepackage[portuguese]{babel}
+ \usepackage{hyperref}
+ \usepackage{lastpage}
+ \usepackage{mathtools}
+ \setcounter{section}{-1}
+
+ \pagestyle{fancy}
+ \fancyhf{}
+
+ \pgfplotsset{compat = 1.18}
+
+ \hypersetup{
+     colorlinks,
+     citecolor=black,
+     filecolor=black,
+     linkcolor=black,
+     urlcolor=black
+ }
+ \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+ \newtheorem*{theorem*}{\underline{Teorema}}
+ \newtheorem*{lemma*}{\underline{Lema}}
+ \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
+ \newtheorem{example}{\underline{Exemplo}}
+ \newtheorem*{proof*}{\underline{Prova}}
+ \renewcommand\qedsymbol{$\blacksquare$}
+ \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+ \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+ \begin{document}
+ \begin{figure}[ht]
+  \minipage{0.76\textwidth}
+    \includegraphics[width=4cm]{../icmc.png}
+    \hspace{7cm}
+    \includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+  \endminipage  
+\end{figure}
+
+\begin{center}
+  \vspace{1cm}
+  \LARGE
+  UNIVERSIDADE DE S\~AO PAULO
+
+  \vspace{1.3cm}
+  \LARGE
+  INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+  \vspace{1.7cm}
+  \Large
+  \textbf{Notas de Espaços Métricos}
+
+  \vspace{1.3cm}
+  \large
+  \textbf{Renan Wenzel - 11169472}
+
+  \vspace{1.3cm}
+  \large
+  \textbf{Professora - Thaís Jordão}
+
+  \textbf{E-mail: tjordao@icmc.usp.br}
+
+  \vspace{1.3cm}
+  \today
+\end{center}
+
+ \newpage
+
+ \tableofcontents
+ \newpage
+ \section{Informações (Possivelmente) Úteis}
+ \subsection{Datas das Provas:}
+\begin{itemize}
+  \item[P1)] 31/08 - Peso 1;
+  \item[P2)] 03/10 - Peso 2;
+  \item[P3)] 31/10 - Peso 2;
+  \item[P4)] 23/11 - Peso 3;
+  \item[P5)] 14/12 - Peso 3.
+\end{itemize}
+\subsection{Bibliografia}
+ \begin{itemize}
+   \item LIMA, E. L.  ``Espaços Métricos'', Rio de Janeiro: Projeto Euclides, 2005.
+   \item DOMINGUES, H. H. ``Espaços Métricos e Introdução à Topologia'', Atual Editora, 1982.
+ \end{itemize}
+\subsection*{Monitoria}
+  A ser definido. 
+
+ \newpage
+
+\section{Aula 01 - 08/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Introdução ao Material do Curso.
+\end{itemize}
+\subsection*{O que é um espaço métrico?}
+  Ao longo deste curso, trabalharemos com um conjunto M não-vazio.
+\hypertarget{def_metric}{ \begin{def*}
+   Uma função \(d:M\times M\rightarrow \mathbb{R}\) é dita ser uma métrica em M se: 
+  \begin{itemize}
+    \item[i)] \(d(x, y)\geq 0, x, y\in M\);
+    \item[ii)] \(d(x, y) = 0 \Leftrightarrow x = y, x, y\in M\);
+    \item[iii)] \(d(x, y) = d(y, x), x, y\in M\);
+    \item[iv)] \(d(x, y)\leq d(x, z) + d(z, y), x, y, z\in M\).
+  \end{itemize}
+  Neste caso, o par \((M, d)\) é chamado espaço métrico.
+ \end{def*}
+}
+\begin{example}
+ \begin{itemize}
+   
+   \item[1)] \((\mathbb{R}, d)\), em que \(d:\mathbb{R}\times \mathbb{R}\rightarrow [0, \infty)\) é dado por 
+    d(x, y) = \(|x-y|.\) É claro que, olhando para \(d(x,y),\) vale para quaisquer x, y reais que 
+      \[
+        d(x, y) = |x-y| = |-1(y-x)| = 1|y-x| = d(y, x).
+      \]
+    Assim, resta verificarmos os itens dois e quatro da \hyperlink{def_metric}{definição de métrica}. Para o item (ii), 
+    \[
+      |x-y| = 0 \Longleftrightarrow x = y.
+    \]
+    Com relação ao último item, observe que 
+    \[
+      |x+y|\leq |x| + |y|.
+    \]
+    De fato, como \(|a|\geq a\) para todo número real a, 
+    \[
+      |x+y|^{2} = (x+y)^{2} = x^{2} + 2xy +y^{2}\leq x^{2} + 2|x||y| + y^{2} = (|x| + |y|)^{2}.
+    \]
+    Logo, tomando a raíz dos dois lados, segue a afirmação:
+    \[
+        |x+y|\leq |x| + |y|.
+    \]
+    Com isso, temos 
+      \[
+        d(x, y) = |x-y| = |x-z+z-y| = |(x-z)-(y-z)|\leq |x-z| + |y-z|.
+      \]
+    Portanto, \(d(x, y)\leq d(x, z) + d(z, y)\), o que torna \((\mathbb{R}, d)\) um espaço métrico.
+
+    \item[2)] Seja X um conjunto não-vazio. Definimos 
+      \[
+        d:X\times X\rightarrow [0, \infty)
+      \]
+      por 
+        \[
+          d(x, y) = \left\{\begin{array}{ll}
+              0,\quad x = y\\
+              1,\quad x\neq y.
+            \end{array}\right.
+        \]
+      Esta métrica é conhecida como \textit{métrica discreta}. Verifiquemos as propriedades dela.
+
+Com efeito, como a imagem dela pode ser apenas 0 ou 1, o item 1 é trivial. Por definição, a métrica vale 0 se,
+e somente se, x e y são iguais, tal que o item (ii) está feito. O item (iii) segue automaticamente se x e y são iguais. Caso
+eles sejam diferentes, temos \(d(x, y) = 1, d(y, x) = 1\), ou seja, o item (iii) é válido para todos os casos. Por fim, a desigualdade triangular fica como exercício.
+ \end{itemize} 
+\end{example}
+\newpage
+
+\section{Aula 02 - 10/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item a
+\end{itemize}
+
+ \end{document}
