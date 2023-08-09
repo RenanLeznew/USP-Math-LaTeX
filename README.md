@@ -24,6 +24,10 @@ If everything goes accordingly, this repository will be updated (at least) month
 - [🚀Physics](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20I)
 
 - [🚀Physics II](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20II)
+
+- [🚀Metric Spaces](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Metric%20Spaces)
+
+- [🚀Probability](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Probability)
 ### Summer Course
 - [🚀Complex Analysis](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis)
 
