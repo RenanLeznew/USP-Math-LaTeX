@@ -1,4 +1,4 @@
-# ***VERSÃO EM PORTUGUÊS ***
+# ***VERSÃO EM PORTUGUÊS***
 # USP-Math-LaTeX
 Um repositório para enviar trabalhos em LaTeX feitos durante meus anos de graduação na Universidade de São Paulo - Brasil. 🌎
 
@@ -36,7 +36,7 @@ Se você quiser entrar em contato comigo para fazer perguntas sobre os PDFs, inf
 
 Outros E-mails*: renan.wenzel.rw@protonmail.com, renanw.science@gmail.com, 11169472@usp.br.
 
-# ***ENGLISH VERSION ***
+# ***ENGLISH VERSION***
 # USP-Math-LaTeX
 A respository to upload LaTeX works done during my undergradute years in University of São Paulo - Brazil. 🌎
 
