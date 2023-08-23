@@ -1,3 +1,42 @@
+# ***VERSÃO EM PORTUGUÊS ***
+# USP-Math-LaTeX
+Um repositório para enviar trabalhos em LaTeX feitos durante meus anos de graduação na Universidade de São Paulo - Brasil. 🌎
+
+## Sobre Mim e o Projeto 🎓
+
+Olá! Meu nome é Renan, atualmente estou cursando graduação em matemática na Universidade de São Paulo (USP). Estou usando este repositório para salvar algumas anotações e soluções de exercícios que me foram solicitados. Cada pasta corresponderá a uma disciplina, e talvez eu as organize por ano no futuro. Por enquanto, só espero que isso possa ser útil para outras pessoas que possam precisar.
+
+Se tudo correr conforme o planejado, este repositório será atualizado (pelo menos) mensalmente, e embora seja apenas para exercícios no momento em que escrevo isso, posso adicionar algumas anotações de aula e alguns projetos de estudo pessoal também. 😀
+## Itens Incluídos Aqui (Por ano) ✒️📜
+
+### Primeiro Ano (Ⅰ)
+- [🚀Cálculo 1 (Exercícios)](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Calculus1)
+- [🚀Cálculo 2 (W.I.P)](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Calculus2)
+- [🚀Álgebra Linear (W.I.P)](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Linear%20Algebra)
+- [🚀Pré-Cálculo](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/PreCalculus)
+
+### Segundo Ano (Ⅱ)
+- [🚀Análise](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Analysis)
+- [🚀Álgebra](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Algebra)
+- [🚀Física I](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20I)
+- [🚀Física II](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Physics%20II)
+- [🚀Espaços Métricos](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Metric%20Spaces)
+- [🚀Probabilidade](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/Probability)
+
+### Curso de Verão
+- [🚀Análise Complexa](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/ComplexAnalysis)
+
+### Diversos
+- [🚀Iniciação Científica](https://github.com/RenanLeznew/USP-Math-LaTeX/tree/master/SciInit)
+
+## Informações de Contato 📨
+Se você quiser entrar em contato comigo para fazer perguntas sobre os PDFs, informar-me sobre um erro ou apenas conversar sobre a vida, geralmente verifico meu e-mail diariamente, então aqui está:
+
+✉️*E-mail*: renan.wenzel.rw@gmail.com.*
+
+Outros E-mails*: renan.wenzel.rw@protonmail.com, renanw.science@gmail.com, 11169472@usp.br.
+
+# ***ENGLISH VERSION ***
 # USP-Math-LaTeX
 A respository to upload LaTeX works done during my undergradute years in University of São Paulo - Brazil. 🌎
 
