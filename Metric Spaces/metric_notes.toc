@@ -6,3 +6,13 @@
 \contentsline {subsection}{\numberline {1.1}Motivações}{4}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Aula 02 - 10/08/2023}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Motivações}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Uma nota histórica}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Exercício 1 da Lista 1}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Espaço de funções contínuas}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Espaço euclidiano n-dimensional}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Aula 03 - 17/08/2023}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motivações}{8}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Aula 04 - 21/08/2023}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivações}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Subespaços Métricos e Distância entre Conjuntos}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Topologia de Espaços Métricos}{10}{subsection.4.3}%

@@ -206,4 +206,429 @@ velocidade angular média por
     \[
       \boxed{\hypertarget{kin_en}{\mathcal{K}_{T} = \frac{1}{2}I\omega^{2}.}}
     \]
+\newpage
+\section{Aula 02 - 10/08/2023}
+\subsection{Motivações}
+ \begin{itemize}
+   \item Momento de Inércia
+ \end{itemize}
+\subsection{Distribuição Contínua de Massa}
+  No caso de distribuições discretas de massa, vimos que o momento de inércia é dado por 
+    \[
+      I=\sum\limits_{i}^{}m_{i}r_{i}^{2}.
+    \]
+No entanto, muitas situações do mundo precisam que tratemos a distribuição de massa como algo único, uma
+quantidade contínua. Para isso, passamos de somar cada massa para uma integral com respeito a ela: 
+  \[
+    \hypertarget{momentum_of_inertia_continuous}{\boxed{I = \int_{}^{}r^{2}dm.}}
+  \]
+  Para o caso de uma barra, por exemplo, na qual a distribuição de massa é dada por 
+    \[
+      \lambda = \frac{M}{L},
+    \]
+  segue que \(dm = \lambda dx \Rightarrow dI = x^{2}dm = x^{2}\lambda dx\). Portanto, 
+    \[
+      I = \lambda \int_{}^{}x^{2}dx = \lambda \frac{x^{3}}{3}.
+    \]
+  Por exemplo, se o tamanho da barra é 1 e o eixo de rotação está em uma extremidade, o momento de inércia será 
+    \[
+      I = \lambda \int_{0}^{1}x^{2}dx =\frac{1}{3}ML^{2}.
+    \]
+    Há outros casos importantes que devem ser tratados. O primeiro deles é o eixo central,
+  no qual o eixo de rotação é posicionado na metade do tamanho da barra. Assim, 
+    \[
+      I = \lambda \int_{-\frac{1}{2}}^{\frac{1}{2}}x^{2}dx = \lambda \frac{x^{3}}{3}\biggl|_{-\frac{1}{2}}^{\frac{1}{2}}\biggr. = \lambda \frac{L^{3}}{12} = \frac{ML^{2}}{12}.
+    \]
+  O outro engloba a situação em que toda a massa na mesma distância. Neste caso, \(\lambda = \frac{M}{2\pi R}\)
+    \[
+      I = R^{2} \int_{}^{}dm = MR^{2}, 
+    \]
+  que também pode ser obtido fazendo uma integral com respeito ao ângulo \(\theta \): 
+    \[
+      I = R^{2}\lambda \int_{0}^{2\pi } R d\theta = R^{2}\lambda R\times2\pi = MR^{2}.
+    \]
+  Por fim, é importante olhar o caso dos discos. Discos consistem de dois círculos, um maior e outro menor dentro dele.
+Chamaremos de R o raio do maior e de r o do menor. Para eles, há uma distribuição de massa
+ \(\sigma = \frac{M}{\pi R^{2}}\), de maneira que o diferencial de massa será 
+   \[
+     dm = 2\pi r dr\sigma.
+   \]
+   Com isso, conseguimos encontrar que o momento de inércia é 
+     \[
+       I = \int_{0}^{R}2\pi \sigma r^{3}dr = 2\pi \sigma \frac{\pi^{4}}{4}\biggl|_{0}^{R}\biggr. = \frac{1}{2}MR^{2}
+     \]
+
+\newpage
+
+\section{Aula 03 - 16/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Disco com buraco;
+  \item Rodando disco e cilindro em torno do plano.
+\end{itemize}
+\subsection{Momento de Inércia em um Disco}
+  Vamos considerar um disco de raio \(R_{2}\) que contém dentro de si um buraco de
+raio \(R_{1}\). Nisso, consideramos o momento de inércia do disco inteiro como 
+  \[
+    I = I^{+} + I^{-}.
+  \]
+  Aqui, \(I^{+}\) desconsidera a existência do buraco, ou seja, tem valor 
+    \[
+      I^{+} = \frac{\pi R_{2}^{2}\sigma R_{2}^{2}}{2} = \frac{1}{2}M^{+}R_{2}^{2}
+    \]
+  e o valor de \(I^{-}\) vale 
+    \[
+      I^{-} = \frac{1}{2}M^{-}R_{1}^{2} = \frac{\pi R_{1}^{2}}{2}\sigma R_{1}^{2}.
+    \]
+    Assim, considerando o valor total, obtivemos o mesmo resultado que o de antes: 
+      \[
+        I = \frac{\pi \sigma }{2}(R_{2}^{4} - R_{1}^{4}).
+      \]
+    Em particular, a densidade de massa após o buraco ser feito, \(\sigma^{*} \), valerá
+      \[
+        \sigma ^{*} = \frac{M}{\pi(R_{2}^{2} - R_{1}^{2})},
+      \]
+    de forma que, através de \(I = \frac{\pi \sigma^{*}}{2}(R_{2}^{4} - R_{1}^{4}\), obtemos 
+      \[
+        I = \frac{\pi M}{2} \frac{(R_{2}^{2}-R_{1}^{2})(R_{2}^{2}+R_{1}^{2})}{\pi (R_{2}^{2}-R_{1}^{2})} = \frac{M}{2}(R_{2}^{2}+R_{1}^{2}).
+      \]
+
+    Agora, suponha que deixamos um disco girar em torno de um eixo com velocidade \(\omega \). Como podemos descrever esse sistema e seu momento de inércia? 
+Faremos uso do Teorema dos Eixos Paralelos. Apesar de não conhecermos o momento de inércia, sabemos que em algum ponto, encontra-se o centro
+de massa do objeto, estando a uma distância h do eixo. Este centro de massa move-se com velocidade \(\vec{v}_{cm}\). Como a energia cinética total
+tem valor \(\mathbb{K}_{T} = \frac{1}{2}Mv_{cm}^{2} + \mathbb{K}_{relcm}\), utilizamos que \(\mathbb{K} = \frac{1}{2}I\omega^{2}\) e que \(\mathbb{K}_{relcm}=\frac{1}{2}I_{cm}\omega ^{2}\).
+Logo, como \(v_{cm} = h\omega ,\)
+ \begin{align*}
+   \frac{1}{2}I\omega^{2} &= \frac{1}{2} Mv_{cm}^{2} + \frac{1}{2}I_{cm}\omega^{2}\\
+                          &= Mh^{2}\omega^{2} + I_{cm}\omega ^{2}\\
+                          &\Rightarrow I = Mh^{2} + I_{cm}.
+ \end{align*}
+ \begin{example}
+   Considerando uma barra em a uma distância de \(\frac{L}{2}\) do eixo de rotação e com momento de inércia 
+  \(I = \frac{1}{3}ML^{2},\) podemos utilizar a fórmula para obter 
+ \begin{align*}
+   &I = Mh^{2} + I_{cm}\\
+   &\frac{1}{3}ML^{2} = M \frac{L^{2}}{4} + I_{cm}\\
+   &I_{cm} = \frac{1}{12}ML^{2}.
+ \end{align*}
+ \end{example}
+    Mas, o que aconteceria se o disco rodasse em eixos x, y contidos no plano do disco? O que sabemos é que 
+      \[
+        I_{z} = \sum\limits_{}^{}m_{i}r_{i}^{2}.
+      \]
+  Além disso, \(r_{i}^{2} = (x_{i}^{2} + y_{i}^{2})\), ou seja, 
+ \begin{align*}
+   I_{z} &= \sum\limits_{}^{}m_{i}x_{i}^{2} + \sum\limits_{}^{}m_{i}y_{i}^{2}\\
+         &= I_{x} + I_{y}.
+ \end{align*}
+  Este resultado é conhecido como teorema dos eixos perpendiculares, mas vale apenas para corpos bidimensionais.
+Em particular, no caso do cilindro, em que \(I_{x} = I_{y},\) 
+  \[
+    I_{x} = I_{y} \Rightarrow 2I_{x} = I_{z} \Rightarrow I_{x} = \frac{1}{4}MR^{2}.
+  \]
+  Além disso, considerando que \(dI_{x} = \frac{1}{4}dm R^{2} + dm z^{2}\), obtemos 
+    \[
+      I_{x} = \frac{1}{4}R^{2} \int_{}^{}dm + \int_{}^{}dm z^{2}.
+    \]
+    Como \(dm = \lambda dz = \frac{M}{L}dz\), em que L é o comprimento, segue o seguinte resultado 
+      \[
+        I_{x} = \frac{1}{4}R^{2}\int_{-\frac{L}{2}}^{\frac{L}{2}}\frac{M}{L}dz + \int_{-\frac{L}{2}}^{\frac{L}{2}}\frac{M}{L}z^{2}dz
+      \]
+    Assim, fazendo as contas, 
+      \[
+        I_{x} = \frac{1}{4}MR^{2} + \frac{ML^{2}}{12}
+      \]
+
+\begin{example}
+  Considere uma barra de tamanho L e massa M e deixe-a descer em um pivô. Qual é a força que ele terá que fazer?
+
+  Sabe-se que há uma força peso com módulo Mg agindo e que \(E_{mec_{i}} = E_{mec_{f}},\) tal que \(\mathbb{K}_{i} + U_{i} = \mathbb{K}_{f} + U_{f}\).
+Mas, \(\mathbb{K}_{i} = U_{i} = 0\) e \(\mathbb{K}_{f} = \frac{1}{2}I\omega_{f}^{2}, U_{f} = Mg(\frac{-L}{2}).\) Assim, 
+  \[
+    \frac{1}{2}I\omega_{f}^{2} - Mg \frac{L}{2} = 0 \Rightarrow \omega_{f}^{2} = \frac{MgL}{I} = \frac{MgL}{\frac{1}{3}ML^{2}} = \frac{3g}{L}.
+  \]
+  Assim, usando que \(a_{cm} = r\omega_{f}^{2},\)
+ \begin{align*}
+   F- Mg &= Ma_{cm} \Rightarrow F = Mg + M \frac{L}{2}\omega_{f}^{2}\\
+         &= Mg + \frac{ML}{2}\frac{3g}{L}\\
+         &=Mg + \frac{3}{2}Mg = \frac{5}{2}Mg.
+ \end{align*}
+\end{example}
+\begin{example}
+  Considere uma roldana de raio R e massa \(m_{r}\). Atrele a ela, com uma corda de massa \(m_{c}\) e tamanho L, um balde de massa \(m_{b}\). 
+Em seguida, solte-o para cair uma distância d. Qual é a velocidade do sistema?
+
+  Sabemos que \(E_{mec_i} = E_{mec_f}\), ou seja, 
+    \[
+      \mathbb{K}_{i} + U_{i} = \mathbb{K}_{f} + U_{f}.
+    \]
+  Suponha que \(\mathbb{K}_{i} = U_{i} = 0.\) Quando o balde descer, sendo \(m_{c}^{*} = \frac{d}{L}m_{c}\) a massa da fração de corda que desceu, a potencial final passará a valer
+ \(U_{f} = m_{b}(-d)g + m_{c}^{*}(\frac{-d}{2})g = -m_{b}gd - \frac{1}{2}m_{c}^{*}gd.\) Com relação à cinética, 
+   \[
+     \mathbb{K}_{f} = \frac{1}{2}m_{r}v^{2} + \frac{1}{2}m_{c}v^{2} + \frac{1}{2}m_{b}v^{2}.
+   \]
+   Utilizando as relações de energia que vimos, segue que 
+  \begin{align*}
+    &\mathbb{K}_{f} + U_{f} = 0\\
+    &\Rightarrow \frac{1}{2}(m_{c}+m_{r}+m_{b})v^{2} = m_{b}gd + \frac{1}{2}m_{c}^{*}gd\\
+    &\Rightarrow (m_{r}+m_{c}+m_{b})v^{2} = 2m_{b}gd + m_{c}g \frac{d^{2}}{L}\\
+    &\Rightarrow v^{2} = \frac{(2m_{b}L + m_{c}d)}{m_{r}+m_{c}+m_{b}}\frac{gd}{L}\\
+    &\Rightarrow v = \sqrt[]{\frac{(2m_{b}L + m_{c}d)}{m_{r}+m_{c}+m_{b}}\frac{gd}{L}}.
+  \end{align*}
+\end{example}
+\newpage
+\section{Aula 05 - 17/08/2023}
+\subsection{Motivações }
+\begin{itemize}
+  \item Segunda lei de Newton do Movimento Circular;
+  \item Torque da Gravidade.
+\end{itemize}
+\subsection{Segunda Lei de Newton}
+Ao considerarmos uma força aplicada a um objeto em torno de um círculo de raio r, essa força faz um ângulo
+ \(\theta \) com a paralela ao raio. Além disso, há uma componente dessa força que será tangente 
+ à trajetória do objeto ao longo do círculo. Denotando essa segunda por \(F_{t},\) há duas formas de expressá-la: 
+   \[
+     F\sin{(\theta )} = F_{t},\quad F_{t} = ma_{t}.
+   \]
+   Além disso, a aceleração tangencial \(a_{t}\) satisfaz \(a_{t} = r\alpha \). Assim, obtemos a relação 
+     \[
+       F sin(\theta ) = ma_{t} \Rightarrow F\sin{\theta } = mr\alpha \Longleftrightarrow rF\sin{(\theta )} = mr^{2}\alpha.
+     \]
+     Esse termo à esquerda é conhecido como \textbf{torque} 
+       \[
+         \hypertarget{torque}{\boxed{\tau = mr^{2}\alpha = rF\sin{(\theta )}}}
+       \]
+  Em particular, sendo o torque total a soma de todos os torques, obtemos 
+    \[
+      \tau = \sum\limits_{}^{}\tau_{i} = \sum\limits_{}^{}m_{i}r_{i}^{2}\alpha = I\alpha 
+    \]
+    Uma propriedade é que a soma dos torques das forças internas vale zero.
+
+    Olhando um caso mais específico, ao considerarmos um círculo de raio r e uma força que
+faz um ângulo \(\theta \) com a paralela ao raio e outro círculo menor de raio r' com a mesma força aplicada,
+mas ângulo \(\theta ',\) então \(l=r'\sin{(\theta ')}\) é a componente perpendicular à linha na qual a força está atuando.
+  A vantagem disso é que o torque pode ser, então, expresso através de \(\tau = Fl = F_{t}r'\)
+\subsection{O Torque da Força da Gravidade}
+  Se considerarmos um corpo sofrendo a ação da força peso, o torque desse corpo pode ser descrito por
+  \(\tau_{i} = m_{i}gx_{i}\) e, o torque total, será a soma desses torques: 
+    \[
+      \tau_{r} = \sum\limits_{}^{}\tau_{i} = \sum\limits_{}^{}[m_{i}x_{i}]g
+    \]
+  Mas, esse é exatamente o torque do centro de massa do objeto \(\tau_{r} = Mx_{cm}g\). Outro assunto que é
+importante ressaltar é que, durante os estudos de dinâmica, a forma de estudar as forças em um sistema é através
+dos chamados diagramas de força, o que traz à tona a questão do que funcionaria pro estudo do torque.
+\begin{example}
+  Considere uma roda de bicicleta e a catraca, que sofre uma força F de 18N. Suponha que o raio r
+da catraca é de 7cm e o da roda, R, vale 35cm. Além disso, a massa vale 2.4kg. Qual é a velocidade angular para t=5,5s?
+
+Começamos afirmando que o torque é \(\tau = I\alpha = Fr_{c}\). Assim, 
+\[
+  \alpha = \frac{Fr_{c}}{I} = \frac{Fr_{c}}{MR^{2}} = \frac{18 \cdot (0,07)}{2,4(0,35)^{2}}\frac{rad}{s^{2}}.
+\]
+Com isso, 
+  \[
+    \omega = \omega_{0} + \alpha t = \alpha t = \frac{18 \cdot (0,07)}{2,4(0,35)^{2}} \cdot 5,5 = 21,4 \frac{rad}{s}
+  \]
+\end{example}
+\begin{example}
+  Considere uma barra de massa m e comprimento l está presa por um pivô, o qual realiza uma força F. Após soltá-la, qual é a força que o pivô realiza?
+
+  Sabemos que \(\tau = mg \frac{l}{2} = I\alpha = \frac{1}{3}ml^{2}.\) Logo, 
+ \begin{align*}
+   &mg \frac{l}{2} = \frac{1}{3}ml^{2}\alpha \\
+   &\alpha = \frac{3}{2}\frac{g}{l}.
+ \end{align*}
+ Olhando no eixo y, sabemos que \(a_{cm_{y}} = r\alpha  = \frac{l}{2}\frac{3}{2}\frac{g}{l} = \frac{3}{4}g\), tal que 
+   \[
+     F - mg = -ma_{cm_y} \Rightarrow F = mg - \frac{3}{4}mg = \frac{1}{4}mg
+   \]
+\end{example}
+\begin{example}
+  Suponha que temos uma roldana de raio R e momento de inércia I. Pendura-se um corpo de massa m na roldana. Qual é a aceleração de queda do corpo?
+
+\textbf{Roldana:}
+As forças que atuam na roldana são o Peso dela, \(P_{r}\), a tensão T
+e a força resultante ao peso \(F_{r}\). Assim, 
+\begin{align*}
+  &F_{r} = P_{r} + T\\
+  &TR = I\alpha,\quad a = \alpha R. 
+\end{align*}
+
+\textbf{Corpo:}
+No corpo, por outro lado, tem-se apenas a tensão T e o peso mg, de forma que 
+  \[
+    mg-T = ma.\quad a = \alpha R
+  \]
+\end{example}
+  Continua na próxima aula...
+  \newpage
+
+\section{Aula 06 - 21/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Continuação do exemplo e outros;
+  \item Potência;
+  \item Corpos que rolam sem deslizar.
+\end{itemize}
+\subsection{Continuando o Exemplo}
+\begin{example}[continuando...]
+  Segue a relação de tração 
+    \[
+      TR = I \frac{a}{R} \Rightarrow T = \frac{I}{R^{2}}a.
+    \] 
+  Com isso, 
+    \[
+      mg = ma + T = ma + \frac{I}{R^{2}}a = a[1 + \frac{I}{mR^{2}} \Rightarrow a = \frac{g}{1 + \frac{I}{mR^{2}}}.
+    \]
+  Descobrimos, assim, os valores de T e de \(F_{s}\)
+ \begin{align*}
+   &T = \frac{I}{R^{2}}\frac{g}{1+ \frac{I}{mR^{2}}}\\
+   &F_{s} = Mg + \frac{I}{R^{2}}\frac{g}{1+\frac{I}{mR^{2}}}.
+ \end{align*}
+ \end{example} 
+\begin{example}
+  Considere a máquina de Atroos - dois blocos presos a uma roldana, um de massa \(m_{1}\) e outro de massa \(m_{2}\) tais que \(m_{1} > m_{2}\).
+A roldana tem massa M, momento de inércia I e raio R. Vejamos as forças
+
+  \textbf{Bloco 1:}
+    No primeiro bloco, agem forças de tração \(T_{1}\) e peso \(m_{1}g\). Escrevendo as equações,
+   \begin{align*}
+     m_{1}g - T_{1} = m_{1}a
+   \end{align*}
+
+  \textbf{Bloco 2:}
+    No bloco dois, agem a tração \(T_{2}\) e o peso \(m_{2}g\)
+   \begin{align*}
+     T_{2}-m_{2}g = m_{2}a
+   \end{align*}
+
+  \textbf{Roldana:}
+    Tem-se a equação 
+   \begin{align*}
+     (T_{1} - T_{2})R = I\alpha. \Longleftrightarrow T_{1} - T_{2} = \frac{I}{R}\frac{a}{R} = \frac{Ia}{R^{2}}
+   \end{align*}
+
+  Como a roldana está rodando, tem-se a relação \(m_{1g} > T_{1} > T_{2} > m_{2}g\)
+A seguir, soma-se a equação do bloco 2 com a da Roldana, tal que 
+  \[
+    m_{1}g - m_{2}g - (T_{1}-T_{2}) = (m_{1}+m_{2})a \Longleftrightarrow (m_{1}-m_{2})g - \frac{Ia}{R^{2}} = (m_{1}+m_{2})a
+  \]
+  Isola-se a equação no a: 
+    \[
+      a = \frac{(m_{1}-m_{2})g}{(m_{1}+m_{2})+\frac{I}{R^{2}}}
+    \]
+\end{example}
+\begin{example}
+  Considere uma roldana com massa M, momento de inércia I e raio R presa à quina uma mesa. Atrela-se a ela dois corpos, um com massa \(m_{1}\) e que está em cima da mesa
+e outro, de massa \(m_{2}\), suspenso pela corda. 
+  \textbf{Corpo 1:}
+    As forças atuando no bloco 1 são a normal \(F_{N_{1}}\), a peso \(m_{1}g\) e a tração \(T_{1}\), de forma que 
+      \[
+        T_{1}=m_{1}a
+      \]
+
+  \textbf{Corpo 2:}
+    Para o bloco 2, podemos descrever o sistema considerando a tração \(T_{2}\) e o peso \(m_{2}g\), tal que 
+      \[
+        m_{2}g - T_{2} = m_{2}a.
+      \]
+
+  \textbf{Roldana:}
+    As forças que atuam na roldana são a tração na direção do bloco 1, \(T_{1}\), a outra na do bloco 2, \(T_{2}\), o peso
+  \(Mg\) e uma força da quinta nela \(\vec{F_{s}}\). Além disso, \(a=R\alpha \). A equação do sistema será
+ \begin{align*}
+   (T_{2}-T_{1})R = I\alpha \Rightarrow  T_{2} - T_{1} = \frac{Ia}{R^{2}}.
+ \end{align*}
+
+  Somando a equação do bloco 1 e a do bloco 2, chega-se em 
+    \[
+      m_{2}g - (T_{2}-T_{1}) = (m_{1}+m_{2})a
+    \]
+  Assim, 
+ \begin{align*}
+   &T_{2} - T_{1} = \frac{Ia}{R^{2}}\\
+   &m_{2}g - \frac{Ia}{R^{2}} = (m_{1}+m_{2})a\\
+   &a = \frac{m_{2}g}{(m_{1}+m_2) + \frac{I}{R^{2}}}
+ \end{align*}
+ Além disso, 
+   \[
+     T_{1} = \frac{m_{1}m_{2}g}{(m_{1}+m_{2})+\frac{I}{R^{2}}}.
+   \]
+\end{example}
+\subsection{Potência}
+  Previamente, a potência era dada pela relação \(dW = F ds.\) Considerando o caso de uma força agindo
+emu ma situação circular, isso torna-se \(dW = FRd\theta \). No entanto, esse termo à direita lembra muito um torque. De fato,
+a relação que obtemos é que \(dW = \tau d\theta \). Portanto, 
+  \[
+    \hypertarget{power_torque}{\boxed{P = \frac{dW}{dt} = \tau \frac{d\theta }{dt} = \tau \omega }}
+  \]
+ \begin{example}
+   Um motor de combustão de um carro fornece um torque de \(\tau  = 678Nm\) e está rodando a \(\omega = 4500rpm \approx 471 \frac{rad}{s}\).
+Com isso, a potência será 
+  \[
+    P\approx 315kW.
+  \]
+ \end{example}
+\begin{example}
+  Tome uma roda gigante \textbf{(em Londres).} Ela tem um diâmetro de \(135m\), pesa 1600 toneladas e dá 2 revoluções por hora.
+Qual é o torque necessário para parar a roda em 10m?
+  
+  Para começar, observe que \(W = \tau \Delta \theta \) e que \(S = R\Delta \theta = 10m.\) Em particular, temos o valor de R, tal que 
+    \[
+      S = R\Delta \theta \Longleftrightarrow 10 = 67.5\Delta \theta \Rightarrow \Delta \theta \approx 0,148rad.
+    \]
+  Note que 
+    \[
+      W = -(\mathbb{K}_{f} - \mathbb{K}_{i}) \Longleftrightarrow \tau \Delta \theta = -\biggl[0 - \frac{I\omega^{2}}{2}\biggr].
+    \]
+  Logo, convertendo \(\omega \) para radianos por segundo (\(\omega = 3,5 \cdot 10^{-3}\frac{rad}{s}\),
+    \[
+      \tau = \frac{I\omega^{2}}{2\Delta \theta } = \frac{MR^{2}\omega^{2}}{2\Delta \theta } \approx 3 \cdot 10^{5}Nm.
+    \]
+    Em particular, 
+      \[
+        F = \frac{\tau }{R}\approx 4,4 \cdot 10^{3}N.
+      \]
+\end{example}
+\subsection{Corpos que Rolam sem Deslizar}
+  Imagine um sistema em que um disco de raio R está a rolar com velocidade do centro de massa \(\vec{v}_{cm}.\) Considerando o ponto que tangencia o chão, em que a velocidade é nula,
+ele se mexe com velocidade angular \(\omega \) em um raio \(\vec{r}\). Assim, a energia cinética desse sistema será 
+  \[
+    \mathbb{K}_{T} = \frac{1}{2} Mv_{cm}^{2} + \mathbb{K}_{rel} = \frac{1}{2}Mv_{cm}^{2} + \frac{1}{2}I_{cm}\omega ^{2},
+  \]
+  em que considera-se que \(v_{cm} = R\omega.\) 
+
+  Agora, considere um plano inclinado e uma bola de massa m, momento de inércia I e raio R que irá subir este plano inclinado até parar. Como podemos achar a altura que ela para, 
+fornecida velocidade inicial do centro de massa \(v_{cm}\). Utilizando a conservação da energia mecânica, 
+  \[
+    E_{mec_{i}} = E_{mec_{f}}.
+  \]
+  Sabemos que 
+    \[
+      E_{mec_{i}} = \frac{1}{2}mv_{cm}^{2} + \frac{I_{cm}}{2}\omega ^{2}\quad \& E_{mec_{f}} = mgh.
+    \]
+  Assim, 
+  \begin{align*}
+    &mgh = \frac{1}{2} mv_{cm}^{2} + \frac{I_{cm}}{2}\omega^{2}\\
+    &\Rightarrow h = \frac{1}{2}\biggl[v_{cm}^{2} + \frac{I_{cm}}{2m}\frac{v_{cm}^{2}}{R^{2}}\biggr]\\
+    &\Rightarrow h = \frac{v_{cm}^{2}}{2g}\biggl[1 + \frac{I_{cm}}{mR^{2}}\biggr].
+  \end{align*}
+ \begin{example}
+   Para o caso da esfera, em que \(I = \frac{2}{5}mR^{2},\) 
+     \[
+       h = \frac{v_{cm}^{2}}{2g}\biggl[1 + \frac{2}{5}\biggr] = \frac{7}{10}\frac{v_{cm}^{2}}{g}
+     \]
+ \end{example}
+\begin{example}
+  Considere um cenário de sinuca em que um taco aplica uma força F. Se ela é aplicada acima do eixo de rotação, a bola roda para frente. Caso seja exatamente no eixo de rotação,
+ela apenas deslizará. Por fim, se for atingida abaixo do eixo de rotação, ela rodará ao contrário. Como fazer ela não rodar?
+
+  Em qualquer um desses pontos, a força é \(F=ma.\) No caso em que ela roda para frente, ou seja, é atingida a uma distância d acima do eixo de rotação,
+temos \(\tau = Fd = I\alpha.\) Segue que, para que ela não rode, 
+\begin{align*}
+  & Fd = I\alpha = \frac{Ia}{R}\\
+  &\Rightarrow d = \frac{I}{mR} = \frac{2}{5}\frac{mR^{2}}{mR} = \frac{2}{5}R.
+\end{align*}
+\end{example}
 \end{document}
+

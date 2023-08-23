@@ -104,5 +104,84 @@
 \end{itemize}
 
  \newpage
+\section{Aula 01 - 22/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item O que é aleatoriedade e probabilidade?
+  \item Conceitos Fundamentais;
+\end{itemize}
+\subsection{Aleatoriedade, probabilidade e conceitos fundamentais}
+  A probabilidade está nos conceitos bases da ciência atual, sendo resultado de uma revolução na ciência há um século atrás.
+A noção de aleatoriedade, no entanto, é muito mais difícil de obter uma resposta.
 
- \end{document}
+  Começamos com um experimento E - um mecanismo gerado. Dele, obtemos um resultado \(\omega \). A estes resultados,
+associamos um conjunto, chamado de evento \(A = \{\omega_{1}, \cdots, \omega_{k}\}\). Com estas ideias, associa-se um valor
+a um evento, chamado probabilidade \(\mathbb{P}(A).\) Vamos compreender estas ideias mais a fundo.
+
+\subsubsection{Experimentos}
+  Experimentos podem ser distinguidos em alguns tipos. O primeiro deles é o determinístico. Nele,
+o resultado obtido é determinado pelas condições sob as quais o experimento foi executado. A outra forma 
+é conhecida como experimento aleatório, que engloba experimentos cujos resultados não sabemos \textit{a priori}, isto é,
+ ainda que as condições iniciais sejam fixas, os resultados não podem ser previstos. Eles possuem as seguintes características:
+ \begin{itemize}
+   \item[a)] Mesmo repetindo várias vezes com as mesmas condições iniciais, o resultado pode mudar;
+   \item[b)] Apesar da falta de exatidão, é possível descrever o conjunto de todos os resultados possíveis;
+   \item[c)] Há uma regularidade nos resultados após ele ser repetido muitas vezes, permitindo uma modelagem matemática dele.
+\subsubsection{Espaço Amostral}
+  O espaço amostral denota todos os resultados que podem ocorrer ao realizar um experimento aleatório.
+  
+  \textbf{Observação:} O mecanismo gerador está limitado a um determinado conjunto de possibilidades de saídas.
+ \end{itemize}
+\begin{example}
+  Se considerarmos características sócio demográficas de um grupo de pessoas, poderíamos ter
+ \begin{itemize}
+   \item[Sexo:)] \{Masculino, Feminino, Intersexo\}
+   \item[Idade:)] \{0, 1, 2, ...\}
+   \item[Estado civil:)] \{Solteiro, Casado, Viúvo, outros.\}
+   \item[Renda familiar:)] \(\{x: x\in \mathbb{R}^{+}\}\)
+ \end{itemize}
+\end{example}
+\begin{example}
+  Dados os experimentos aleatórios, quais são os espaços amostrais?
+ \begin{itemize}
+   \item[\(E_{1}\))] Lançar uma moeda 2 vezes e observar as faces obtidas; \(\Omega =\{(C, C), (C, K), (K, C), (K, K)\}\)
+   \item[\(E_{2}\))] Retirar uma carta de um barulho comum e observar o naipe; \(\Omega\)=\{``ouros'', ``copas'', ``paus'', ``espadas''\}
+   \item[\(E_{3}\))] Duração de lâmpadas, deixando-as acesas até que queimem; \(\Omega = \{t: t\geq 0\}\)
+   \item[\(E_{4}\))] Número de mensagens por dia entre uma empresa e um determinado cliente. \(\Omega = \{t: t\geq 0\}\)
+ \end{itemize}
+\end{example}
+\subsubsection{Evento}
+  Um evento representa qualquer dúvida que possa surgir sobre o resultado de um experimento. Em particular, podem ser visualizados como subconjuntos do espaço amostral. Com isso,
+o próprio amostral é um evento, chamado evento certo, assim como o vazio é um evento, dito evento impossível.
+\begin{example}
+  Considere o resultado obtido com o lançamento de um dado de seis faces, equilibrado. O espaço amostral é \(\{1, 2, 3, 4, 5, 6\}\). Descrevamos os seguintes eventos:
+ \begin{itemize}
+   \item[1)] A = ``ocorrência do número 3'' = \{3\};
+   \item[2)] B = ``sair a face de número 7'' = \(\emptyset\);
+   \item[3)] C = ``sair um número menor ou igual a 6'' = \(\Omega \).
+ \end{itemize}
+\end{example}
+\begin{example}
+  Podemos considerar experimentos cujos resultados podem ser vetores. A exemplo, o preço de fechamento de determinadas
+ações em uma data específica, como \(\omega = \)(PETR4, ITUB4, ..., AZUL4). Nesse contexto, um evento possível poderia ser 
+a situação em que a média desse vetor de preços seja maior do que a média do dia anterior.
+\end{example}
+\subsubsection{Operações com Eventos}
+  Veja que um experimento aleatório pode ser tão complicado quanto necessário. Buscamos, porém, buscar simplificações confiáveis para descrever com probabilidades
+estes comportamentos, ou seja, estabelecer as propriedades básicas da função de probabilidade. Antes de mais nada, porém, torna-se necessário
+saber como operar os eventos. 
+
+  Como eventos são subconjuntos do espaço amostral, a operação entre eles é dada por meio das operações entre conjuntos - 
+união, interseção, complemento, etc. Nesta lógica, compreendemos como
+\begin{itemize}
+  \item[] União de eventos - a capacidade do evento A OU do evento B ocorram;
+    \item[] Interseção de eventos - a capacidade do evento A E do evento B ocorrerem simultaneamente.
+      \item[] Complementar - a capacidade do evento A não acontecer
+        \item[] Eventos mutuamente exclusivos - A e B não ocorrem simultaneamente, isto é, \(A\cap B = \emptyset\)
+\end{itemize}
+\begin{example}
+  Um número entre 1 e 10 é selecionado ao acado. Considere A como o evento em que o número selecionado é múltiplo de 3 e B o conjunto em que o número selecionado é par. Então, 
+ \(\Omega = \{1, 2, \cdots, 10\}, A = \{3, 6, 9\}, B = \{2, 4, 6, 8, 10\}\). O evento que ocorre nos dois é \(A\cap B=\{6\}\). O evento representando que o número seja um múltiplo de 3 ou
+ um número par é \(A\cup B = \{2, 3, 4, 6, 8, 9, 10\}\). Alguns outros são: \(A\cap B^{c} = \{3, 9\}, A^{c}\cap B = \{2, 4, 8, 10\}.\)
+\end{example}
+\end{document}

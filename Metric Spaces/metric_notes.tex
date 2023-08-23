@@ -31,6 +31,7 @@
  \newtheorem*{theorem*}{\underline{Teorema}}
  \newtheorem*{lemma*}{\underline{Lema}}
  \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
+ \newtheorem*{crl*}{\underline{Corolário}}
  \newtheorem{example}{\underline{Exemplo}}
  \newtheorem*{proof*}{\underline{Prova}}
  \renewcommand\qedsymbol{$\blacksquare$}
@@ -168,7 +169,285 @@ eles sejam diferentes, temos \(d(x, y) = 1, d(y, x) = 1\), ou seja, o item (iii)
 \section{Aula 02 - 10/08/2023}
 \subsection{Motivações}
 \begin{itemize}
-  \item a
+  \item Exemplos de espaços métricos;
+  \item Similaridade entre métricas;  
+  \item Produto de espaços métricos.
 \end{itemize}
+\subsection{Uma nota histórica}
+  Algumas dessas informações podem ser vistas com mais detalhe do livro de espaços métricos
+de Jean Cerqueira, do IME. 
 
- \end{document}
+  Para um contexto temporal, em 1906, Maurice Fréchet publicou sua tese de doutorado, nomeada
+``Sus quelques du calcul functionnel''. A seguir, em 1910, David Hilbert faz sua tentativa de axiomatizar
+as ideias vistas na tese de Fréchet e, dois anos depois, Felix Hausdorff, trabalhando no conceito de separação de pontos
+a partir do ponto de vista de conjuntos, acaba contribuindo com essa axiomatização. Antes disso, Henri Poincaré, havia sistematizado as ideias
+de forma prototípica. Outro nome mencionável é o de Pavel Urysohnn, responsável por aprofundar-se na parte da separação de pontos.
+
+\subsection{Exercício 1 da Lista 1}
+  Considere \(d:\mathbb{R}^{2}\times \mathbb{R}^{2}\rightarrow [0, \infty) \) definida por 
+    \[
+      d((x_{1}, x_{2}), (y_{1}, y_{2})) = |x_{2}-y_{2}|.
+    \]
+  Então, d não é uma métrica. Chequemos este fato. 
+
+  Com efeito, considere x um número real qualquer. Assim, 
+    \[
+      d((1, x), (2, x)) = |x-x| = 0.
+    \]
+  No entanto, (1, x) não é igual a (2, x), ou seja, já falha logo na primeira condição de métrica!
+Portanto, conclui-se que d não pode ser métrica. Analogamente, definindo \(d':\mathbb{R}^{2}\times \mathbb{R}^{2}\rightarrow [0, \infty)\) por 
+ \(d'((x_{1}, x_{2}), (y_{1}, y_{2}))=|x_{1}-y_{1}|\), ela também não será métrica.
+
+ \textbf{Obs.:} Definiremos, ainda essa aula, a métrica \(d_{s}:\mathbb{R}^{2}\times \mathbb{R}^{2}\rightarrow [0, \infty)\) por 
+   \[
+     d_{s}((x_{1}, x_{2}), (y_{1}, y_{2})) = |x_{1}-y_{1}|+|x_{2}-y_{2}|,
+   \]
+   a qual torna \((\mathbb{R}^{2}, d_{s})\) num espaço métrico. Mostremos isso. Os itens \hyperlink{def_metric}{(i), (ii) e (iii)}
+da definição de métrica estão trivialmente cumpridos. Para a desigualdade triangular, observe que 
+\begin{align*}
+  d((x_{1}, x_{2}), (y_{1}, y_{2})) &= |x_{1}-y_{1}| + |x_{2}-y_{2}| \\
+                                    &\leq |x_{1}-z_{1}| + |z_{1}-y_{1}| + |x_{2}-z_{2}| + |x_{2}-y_{2}| \\
+                                    &=d((x_{1}, x_{2}), (z_{1}, z_{2})) + d((z_{1}, z_{2}), (y_{1}, y_{2}))
+\end{align*}
+\subsection{Espaço de funções contínuas}
+   Considere o intervalo I=[0, 1] e tome o conjunto 
+     \[
+       \mathcal{C}(I, \mathbb{R})\coloneqq \{f:I\rightarrow \mathbb{R}: f \text{ contínua}\}.
+     \]
+     Então, são métrica em \(\mathcal{C}(I, \mathbb{R})\) as funções \(d:\mathcal{C}(I, \mathbb{R})\rightarrow [0, \infty), (f, g)\mapsto \sup_{x\in I}\{|f(x)-g(x)|\}\)
+e \(\rho :\mathcal{C}(I, \mathbb{R})\times \mathcal{C}(I, \mathbb{R})\rightarrow [0, +\infty)\) definida por 
+  \[
+    \rho(f, g) = \int_{0}^{1}|f(x)-g(x)|dx,\quad f, g\in \mathcal{C}(I, \mathbb{R}).
+  \]
+    Mostremos que elas são \hyperlink{def_metric}{métricas}, começando pela d.
+
+    Observe que, se \(d(f, g) = 0,\), então 
+      \[
+        |f(y)-g(y)|\leq \sup_{x\in I}\{|f(x)-g(x)|\}\quad \forall y\in I.
+      \]
+    Logo, \(|f(y) - g(y)| = 0\) para todo y em I, garantindo que f e g são as mesmas.
+    Para a desigualdade triangular, observe que, para qualquer y em I, e h em \(\mathcal{C}(I, \mathbb{R}),\) vale que
+    \[
+      |f(y)\pm h(y) - g(y)|\leq |f(y) - h(y)| + |h(y) - g(y)|.
+    \]
+    Tomando o supremo, obtemos 
+      \[
+        d(f, g)\leq d(f, h) + d(h, g).
+      \]
+    Assim, \((\mathcal{C}(I, \mathbb{R}), d)\) é um espaço métrico.
+
+    Agora, analisando a questão de \(\rho\), se \(\rho (f, g) = 0,\) então 
+      \[
+        \int_{0}^{1}|f(x)-g(x)|dx = 0
+      \]
+    Como o Teorema da Conservação de Sinal implicaria em \(\int_{0}^{1}|f(x)-g(x)|dx > 0\) se \(|f(x)-g(x)| > 0\) para algum x em I.
+    Logo, \(|f(x)-g(x)|=0\) para todo x em I. Para mostrar a desigualdade triangular, considere \(f, g, h\in \mathcal{C}(I, \mathbb{R}).\)
+    Temos, para todo \(x\in I\), 
+      \[
+        |f(\overbrace{x)-g(}^{\pm h(x)}x)|\leq |f(x) - h(x)| + |h(x) - g(x)|
+      \]
+    Integrando os dois lados da desigualdade, 
+      \[
+        \int_{0}^{1}|f(x)-g(x)|\leq \int_{0}^{1}|f(x) - h(x)|dx + \int_{0}^{1}|h(x) - g(x)|dx,
+      \]
+      de onde segue a desigualdade triangular. Portanto, \((\mathcal{C}(I, \mathbb{R}), \rho)\) é um espaço métrico.
+\subsection{Espaço euclidiano n-dimensional}
+  Seja n um natural, \(n\geq 1.\) O espaço euclidiano é 
+    \[
+      \mathbb{R}^{n}\coloneqq \{(x_{1}, \cdots, x_{n}): x_{i}\in \mathbb{R}, i = 1, 2, \cdots, n\},
+    \]
+    munido da métrica usual/euclidiana, definida por 
+      \[
+        d(x, y) = \biggl(\sum\limits_{i=1}^{n}(x_{i}-y_{i})^{2}\biggr)^{\frac{1}{2}},
+      \]
+      em que \(x=(x_{1}, x_{2}, \cdots, x_{n})\) e \(y = (y_{1}, y_{2}, \cdots, y_{n}\) são elementos de \(\mathbb{R}^{n}.\)
+  Sobre \(\mathbb{R}^{n}\), podemos considerar duas outras métricas, a métrica da soma e do máximo. Definimo-las, respectivamente, por
+ \begin{align*}
+   &d_{s}(x, y)\coloneqq \sum\limits_{i=1}^{n}|x_{i}-y_{i}|\\
+   &d_{m}(x, y)\coloneqq \max\{|x_{i}-y_{i}|, i = 1, 2, \cdots, n\},
+ \end{align*}
+ para  \(x=(x_{1}, x_{2}, \cdots, x_{n})\) e \(y = (y_{1}, y_{2}, \cdots, y_{n}\) são elementos de \(\mathbb{R}^{n}.\) Vamos mostrar que a primeira d é métrica.
+ 
+  Pra começar, não é difícil ver que os itens \hyperlink{def_metric}{(i) e (ii)} da definição são satisfeitos. Para mostrar a desigualdade triangular, será necessário
+utilizar Cauchy-Schwarz: 
+\begin{lemma*}[Desigualdade de Cauchy-Schwars]Dados \((x_{1}, \cdots, x_{n})\) e \((y_{1}, \cdots, y_{n})\), vale a desigualdade
+  \[
+    \hypertarget{cauchy_schwarz}{\sum\limits_{i=1}^{n}|x_{i}\cdot y_{i}|\leq \biggl(\sum\limits_{i=1}^{n}|x_{i}|^{2}\biggr)^{\frac{1}{2}}\biggl(\sum\limits_{i=1}^{n}|y_{i}|^{2}\biggr)^{\frac{1}{2}} }
+  \]
+\end{lemma*}
+\begin{proof*}
+  Observe que, dados \(x, y\in \mathbb{R}\), vale que \(2xy\leq x^{2} + y^{2}\).
+  Temos, para \(x=(\sum\limits_{i=1}^{n}|x_{i}|^{2})^{\frac{1}{2}}\) e \(y=(\sum\limits_{i=1}^{n}|y_{i}|^{2})^{\frac{1}{2}}\). Com isso, aplicando a desigualdade vista para
+  \(\frac{|x_{i}|}{x}\) e \(\frac{|y_{i}|}{y}\), ganhamos 
+    \[
+      2\frac{|x_{i}||y_{i}|}{xy}\leq \frac{|x_{i}|^{2}}{x^{2}} + \frac{|y_{i}|^{2}}{y^{2}}.
+    \]
+    Somando de \(i=1, \cdots, n,\) obtemos 
+      \[
+        \frac{2}{xy}\sum\limits_{i=1}^{n}|x_{i}||y_{i}| \leq \frac{1}{x^{2}}\sum\limits_{i=1}^{n}|x_{i}|^{2} + \frac{1}{y^{2}}\sum\limits_{i=1}^{n}|y_{i}|^{2} = 1 + 1 = 2.
+      \]
+    Portanto, isolando a soma à esquerda, temos 
+      \[
+        \sum\limits_{i=1}^{n}|x_{i}||y_{i}|\leq \frac{2}{2}\cdot xy = xy.\text{\qedsymbol}
+      \]
+    \end{proof*}
+  A desigualdade triangular seguirá do seguinte 
+  \begin{align*}
+    \bigl[d(\overline{x}, \overline{y})\bigr]^{2} = \sum\limits_{i=1}^{n}(x_{i}-y_{i})^{2} &=\sum\limits_{i=1}^{n}(x_{i}-z_{i}+z_{i}-y_{i})^{2}\\
+                                                                                           &=\sum\limits_{i=1}^{n}(x_{i}-z_{i})^{2} + 2\sum\limits_{i=1}^{n}(x_{i}-z_{i})(z_{i}-y_{i}) + \sum\limits_{i=1}^{n}(z_{i}-y_{i})^{2}\\
+                                                                                           &\leq \sum\limits_{i=1}^{n}(x_{i}-z_{i})^{2} + 2\biggl(\sum\limits_{i=1}^{n}|x_{i}-z_{i}|^{2}\biggr)^{\frac{1}{2}}\biggl(\sum\limits_{i=1}^{n}|z_{i}-y_{i}|^{2}\biggr)^{\frac{1}{2}} + \sum\limits_{i=1}^{n}(z_{i}-y_{i})^{2}\\
+                                                                                           &=\bigl[d(\overline{x}, \overline{y})\bigl]^{2} + 2 d(\overline{x}, \overline{z})d(\overline{z}, \overline{y}) + \bigl[d(\overline{z}, \overline{y})\bigr]^{2} \\
+                                                                                           & = (d(\overline{x}, \overline{z})+d(\overline{z}, \overline{y}))^{2}.
+  \end{align*}
+  O fim da prova da desigualdade triangular é um exercício.
+\newpage
+
+\section{Aula 03 - 17/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item 
+\end{itemize}
+\newpage
+
+\section{Aula 04 - 21/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Subespaços métricos e distância entre conjuntos;
+  \item Conjuntos limitados, abertos e fechados;
+  \item A topologia de espaços métricos.
+\end{itemize}
+\subsection{Subespaços Métricos e Distância entre Conjuntos}
+\begin{def*}
+  Seja (X, d) um espaço métrico e \(M\subseteq{X}.\) Então, \(d|_{M}M\times M:\rightarrow \mathbb{R}\)
+define uma métrica, chamada métrica induzida em M. Isso faz de \((M, d|_M)\) um subespaço métrico. \(\square\)
+\end{def*}
+  Além da distância entre pontos, pode-se falar da distância entre um ponto e um subconjunto do espaço métrico
+e da distância entre dois subconjuntos de um espaço métrico. Para isso, considere \((X, \rho )\) um espaço métrico, 
+ \(x\in X\) e \(E, F\subseteq{X}.\) Definimos, então,
+\begin{align*}
+  &d(x, E)\coloneqq \inf\{\rho (x, e): e\in E\}\\
+  &d(E, F)\coloneqq \inf\{d(e, F): e\in E\}.
+\end{align*}
+\textbf{Observação:} O nome ``distância'', aqui, não é sinônimo de métrico. De fato, há um exercício na lista que mostra que a distância entre conjuntos
+\textbf{NÃO} é simétrica, ou seja, não define uma métrica.
+\begin{prop*}
+  Seja \((X, \rho )\) um espaço métrico e \(E\subseteq{X}.\) Então, 
+    \[
+      |d(x, E) - d(y, E)|\leq \rho (x, y) \quad \forall x, y\in X.
+    \]
+\end{prop*}
+\begin{proof*}
+  Note que, para todo e em E, 
+    \[
+      d(x, E)\leq \rho (x, e)\leq \rho (x, y) + \rho (y, E).
+    \]
+  Logo, para todo \(x, y\in X\), 
+    \[
+      d(x, E)\leq \rho (x, y) + d(y, E).
+    \]
+  Assim, temos 
+    \[
+      d(x, E) - d(y, E)\leq \rho (x, y).
+    \]
+  Analogamente, 
+    \[
+      d(y, E) - d(x, E)\leq \rho (x, y)
+    \]
+  Portanto, 
+    \[
+      |d(x, E) - d(y, E)|\leq \rho (x, y).\quad\text{\qedsymbol}
+    \]
+\end{proof*}
+\begin{example}
+  Considere \((\mathbb{R}, |\cdot |), A = (-1, 0]\) e x = -2. Por definição, 
+    \[
+      d(x, A) = \inf\{|-2-a|: a\in A\} = \inf\{|2+a|: a\in A\} = 1\quad [d(-2, 1+\varepsilon )= 1 +\varepsilon \forall \varepsilon >0]
+    \]
+  No entanto, \(d(-2, a) > 1\) para todo a em A.
+\end{example}
+\begin{crl*}
+   Seja \((X, \rho )\) um espaço métrico. Vale a desigualdade 
+     \[
+       |\rho (x, z) - \rho (y, z)|\leq \rho (x, y).
+     \]
+ \end{crl*}
+\begin{proof*}
+  Seja \(E=\{z\}\). Pela proposição, o resultado já segue. \qedsymbol 
+\end{proof*}
+\subsection{Topologia de Espaços Métricos}
+\begin{def*}
+  Seja \((X, d)\) um espaço métrico. Dado x em X e \(r > 0\), o conjunto 
+    \[
+      B_{r}(x)\coloneqq \{y\in X: d(x, y) < r\}
+    \]
+  é chamado bola aberta de centro em x e raio r. O conjunto
+    \[
+      D_{r}(x)\coloneqq \{y\in X: d(x, y)\leq r\}
+    \]
+  é chamado bola fechada de centro em x e raio r. \(\square\)
+\end{def*}
+\begin{example}
+  Considere \((\mathbb{R}^{2}, d_{p})\), em que \(d_{p}(x, y)=||x-y||_{p}, 1\leq p\leq \infty.\)
+ \begin{align*}
+   &d_{2}((x_{1}, y_{1}), (x_{2}, y_{2})) = [(x_{1}-x_{2})^{2}+(y_{1}-y_{2})^{2}]^{\frac{1}{2}} \Rightarrow B_{1}(0) = \{(x, y)\in \mathbb{R}^{2}: d_{2}((0, 0), (x, y)) < 1\}\\
+   &d_{\infty}((x_{1}, y_{1}), (x_{2}, y_{2})) = \max\{|x_{1} - x_{2}|, |y_{1} - y_{2}|\} \Rightarrow B_{1}(0) = \{(x, y)\in \mathbb{R}^{2}: \max\{|x|, |y|\} < 1\}\\
+   &d_{1}((x_{1}, y_{1}), (x_{2}, y_{2})) = |x_{1}-y_{1}| + |x_{2} - y_{2}| \Rightarrow B_{1}(0)=\{(x, y)\in \mathbb{R}^{2}: |x|+|y| < 1\}
+ \end{align*}
+\end{example}
+\begin{def*}
+  Seja \((X, d)\) um espaço métrico e x um ponto de X. Chamamos x de ponto isolado se existe \(r > 0\) tal que \(B_{r}(x) = \{x\}. \quad\square\)
+\end{def*}
+\begin{example}
+  Seja \(S = [0, 1]\cup \{2\}\) munido da métrica usual, induzida da reta. Temos 
+    \[
+      B_{\frac{1}{2}}(2)=\{y\in S: |x-2| < \frac{1}{2}\} = \{2\}.
+    \]
+\end{example}
+\begin{example}
+  Seja \(X \neq\emptyset\) e d a métrica discreta. Então, 
+ \begin{itemize}
+   \item[-] Todo ponto é isolado;
+   \item[-] \(D_{r}(x) = \{x\}\) se \(r > 1\);
+   \item[-] \(B_{1}(x) = \{x\}\) e \(D_{1}(x) = X;\)
+   \item[-] \(B_{r}(x) = X\) se \(r > 1\).
+  De fato, \(D_{r}(x) = \{y\in X: d(x, y)\leq r\}.\) Por isso, se r = 1, \(D_{1}(x) = X.\) Pela mesma lógica, prova-se os outros itens.
+ \end{itemize}
+\end{example}
+\begin{example}
+\begin{itemize}
+  \item[i)] Dado \((\mathbb{R}, d),\) d a métrica usual, nenhum ponto é isolado e \(B_{r}(x) = (x-r, x+r), x\in \mathbb{R}, r > 0.\)
+  \item[ii)] Se \(M=[0, 2]\) com métrica induzida, \(B_{1}(0) = [0, 1).\)
+  \item[iii)] Se \(M=\mathbb{Z}\) com a métrica induzida, então \(B_{1}(n) = \{n\}\)
+  \item[iv)] Se \(M=\{\frac{1}{n}:n\in \mathbb{N}, n\neq0\}\cup\{0\}\), com a métrica induzida, então \(B_{1}(0)\neq\{0\}\) para todo \(r>0.\) 
+Neste caso, se \(n, m\neq 0\), então existe \(r > 0\) tal que \(B_{r}\biggl(\frac{1}{n}\biggr)=\{\frac{1}{n}\}\) e \(B_{r}\biggl(\frac{1}{m}\biggr)=\{\frac{1}{m}\}.\) Porém,
+para qualquer \(r> 0\), seja \(n_{0}\) tal que \(0 < \frac{1}{n_{0}} < \frac{r}{2}\) e \(\frac{1}{n_{0}}\in B_{r}(0).\) Portanto, \(B_{r}(0)\neq\{0\}\) para todo \(r> 0\).
+\end{itemize}
+\end{example}
+\begin{example}
+  Considere \((C([a, b]), ||\cdot ||_{\infty}\), com \(||f||_{\infty} = \sup\{|f(x)|: x\in[a, b]\}.\) Seja
+ \(h\in C([a, b])\) e \(r > 0\). Temos 
+   \[
+     B_{r}(h) = \{f\in C([a, b]): ||f-h||_{\infty} < r\} = \{f\in C([a, b]):\max_{x\in[a, b]}\{|f(x)-h(x)|\} < r\}.
+   \]
+\end{example}
+\begin{def*}
+  Um subconjunto \(M \neq\emptyset\) de um espaço métrico (X, d) é limitado se 
+    \[
+      diam(X)\coloneqq \sup\{d(x, y):x, y\in X\} < \infty.
+    \]
+    Neste caso, diam(X) é chamado diâmetro de X. Caso contrário, diz-se que M é ilimitado e \(diam(X) = \infty.\quad\square\)
+  \end{def*}
+\begin{example}
+  Seja \((X, d)\) métrico. Para todo x em X e \(r>0, B_{r}(x)\) é ilimitado e, além disso, \(diam(B_{r}(x))\leq 2r\), o que segue da relação
+ \(d(y, z)\leq d(y, x) + d(x, z)\leq r + r = 2r.\) Além disso, se \((X, ||\cdot ||)\) é um espaço vetorial normado e a métrica d é induzida pela norma,
+ então \(diam(B_{r}(x)) = 2r.\) Com efeito, seja \(s < 2r.\) Tome y em X com \(x\neq0.\) Definimos 
+   \[
+     v = \frac{t}{||y||}y,
+   \]
+   para algum t satisfazendo \(s < 2t < 2r.\) Neste caso, \(x-v, x+v\in B_{r}(x)\)  e 
+     \[
+       d(x+v, x-v) = 2||v|| = 2t > s,
+     \]
+     ou seja, a afirmação feita está garantida.
+\end{example}
+\end{document}

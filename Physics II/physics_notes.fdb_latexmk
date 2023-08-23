@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1691590543 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1691590545 0
+["pdflatex"] 1692628108 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1692628110 0
   "../brasao_usp_cor.jpg" 1683673143 1576381 b77ec44f41562c1b9d07dacd42600056 ""
   "../icmc.png" 1683673143 90993 abeca978b10dde82d5fba541f35c48a5 ""
   "/etc/texmf/web2c/texmf.cnf" 1683681533 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -33,8 +33,10 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuguese.ldf" 1625860693 6599 898431e984e4e8b6d8aa6cdcb036f8db ""
@@ -222,10 +224,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683688450 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685539087 6505866 65e1bd121e248efd90cff22f3510bdd9 ""
-  "physics_notes.aux" 1691590545 1600 b31de47b78119162548c774d69caa473 "pdflatex"
-  "physics_notes.out" 1691590545 725 bb559d94bbf9526699c289b5045bfc29 "pdflatex"
-  "physics_notes.tex" 1691590541 8086 12f4552dae6ef4b4d6f65647416f0afa ""
-  "physics_notes.toc" 1691590545 434 fa495e914839234edde17528ef06110b "pdflatex"
+  "physics_notes.aux" 1692628109 3483 9be8fc1b075153af0a29ca730c3c8e7b "pdflatex"
+  "physics_notes.out" 1692628109 3132 6f82ec7fc44445454408a5373fa78320 "pdflatex"
+  "physics_notes.tex" 1692628108 27516 addeee8252e715b96397bed1aad941e8 ""
+  "physics_notes.toc" 1692628109 1697 c3f6078ef2499cb590a1c4c1fd0f1641 "pdflatex"
   (generated)
   "physics_notes.aux"
   "physics_notes.log"

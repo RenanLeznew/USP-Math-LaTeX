@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.31)  9 AUG 2023 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.31)  21 AUG 2023 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -686,12 +686,12 @@ Package hyperref Info: Link coloring ON on input line 41.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 41.
-<../icmc.png, id=27, 376.40625pt x 188.20313pt>
+<../icmc.png, id=87, 376.40625pt x 188.20313pt>
 File: ../icmc.png Graphic file (type png)
 <use ../icmc.png>
 Package pdftex.def Info: ../icmc.png  used on input line 44.
 (pdftex.def)             Requested size: 113.81102pt x 56.90648pt.
-<../brasao_usp_cor.jpg, id=29, 361.35pt x 517.6941pt>
+<../brasao_usp_cor.jpg, id=89, 361.35pt x 517.6941pt>
 File: ../brasao_usp_cor.jpg Graphic file (type jpg)
 <use ../brasao_usp_cor.jpg>
 Package pdftex.def Info: ../brasao_usp_cor.jpg  used on input line 46.
@@ -723,25 +723,25 @@ Overfull \hbox (46.95068pt too wide) in paragraph at lines 85--86
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4] 
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] 
 AED: lastpage setting LastPage
-[5] (./physics_notes.aux)
+[14] (./physics_notes.aux)
 Package rerunfilecheck Info: File `physics_notes.out' has not changed.
-(rerunfilecheck)             Checksum: BB559D94BBF9526699C289B5045BFC29;725.
+(rerunfilecheck)             Checksum: 6F82EC7FC44445454408A5373FA78320;3132.
  ) 
 Here is how much of TeX's memory you used:
- 33369 strings out of 477958
- 771817 string characters out of 5838580
- 1869330 words of memory out of 5000000
- 52954 multiletter control sequences out of 15000+600000
+ 33427 strings out of 477958
+ 772483 string characters out of 5838580
+ 1871330 words of memory out of 5000000
+ 52972 multiletter control sequences out of 15000+600000
  518147 words of font info for 53 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
- 99i,12n,103p,737b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/rnzl/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on physics_notes.pdf (5 pages, 1850457 bytes).
+ 99i,14n,103p,737b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/rnzl/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on physics_notes.pdf (14 pages, 1915441 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 314 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 
