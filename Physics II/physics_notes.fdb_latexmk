@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692628108 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1692628110 0
+["pdflatex"] 1693406065 "physics_notes.tex" "physics_notes.pdf" "physics_notes" 1693406067 0
   "../brasao_usp_cor.jpg" 1683673143 1576381 b77ec44f41562c1b9d07dacd42600056 ""
   "../icmc.png" 1683673143 90993 abeca978b10dde82d5fba541f35c48a5 ""
   "/etc/texmf/web2c/texmf.cnf" 1683681533 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -223,11 +223,11 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683688450 165012 f177baa1c39a3ebd62c3096a43521a0d ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685539087 6505866 65e1bd121e248efd90cff22f3510bdd9 ""
-  "physics_notes.aux" 1692628109 3483 9be8fc1b075153af0a29ca730c3c8e7b "pdflatex"
-  "physics_notes.out" 1692628109 3132 6f82ec7fc44445454408a5373fa78320 "pdflatex"
-  "physics_notes.tex" 1692628108 27516 addeee8252e715b96397bed1aad941e8 ""
-  "physics_notes.toc" 1692628109 1697 c3f6078ef2499cb590a1c4c1fd0f1641 "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692766036 6555296 68ac46c43b26ac69cf6109b75af6cc14 ""
+  "physics_notes.aux" 1693406066 5327 35ef6f3ee969f7e2ac6e2462f4bc0ed4 "pdflatex"
+  "physics_notes.out" 1693406066 5280 9b4248c27a57b31b6fd21ff20e78221a "pdflatex"
+  "physics_notes.tex" 1693406064 48122 585c554f581fece3bd5be5f6e83710db ""
+  "physics_notes.toc" 1693406066 2926 8a9c2b015ee82943442b8ad221dc3c2c "pdflatex"
   (generated)
   "physics_notes.aux"
   "physics_notes.log"

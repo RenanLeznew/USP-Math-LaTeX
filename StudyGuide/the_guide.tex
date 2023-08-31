@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{fancyhdr}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage[style=abnt]{biblatex}
+\addbibresource{ref}
+
+ \pagestyle{fancy}
+ \fancyhf{}
+
+ \pgfplotsset{compat = 1.18}
+
+ \hypersetup{
+     colorlinks,
+     citecolor=black,
+     filecolor=black,
+     linkcolor=black,
+     urlcolor=black
+ }
+ \newtheorem*{def*}{\underline{Defini\c c\~ao}}
+ \newtheorem*{theorem*}{\underline{Teorema}}
+ \newtheorem*{lemma*}{\underline{Lema}}
+ \newtheorem*{prop*}{\underline{Proposi\c c\~ao}}
+ \newtheorem{example}{\underline{Exemplo}}
+ \newtheorem*{proof*}{\underline{Prova}}
+ \renewcommand\qedsymbol{$\blacksquare$}
+ \newcommand{\Lin}[1]{Lin_{\mathbb{K}}({#1})}
+
+ \rfoot{P\'agina \thepage \hspace{1pt} de \pageref{LastPage}}
+
+ \begin{document}
+ \begin{figure}[ht]
+  \minipage{0.76\textwidth}
+    \includegraphics[width=4cm]{../icmc.png}
+    \hspace{7cm}
+    \includegraphics[height=4.9cm,width=4cm]{../brasao_usp_cor.jpg}
+  \endminipage  
+\end{figure}
+
+\begin{center}
+  \vspace{1cm}
+  \LARGE
+  UNIVERSIDADE DE S\~AO PAULO
+
+  \vspace{1.3cm}
+  \LARGE
+  INSTITUTO DE CI\^ENCIAS MATEM\'ATICAS E COMPUTACIONAIS - ICMC
+
+  \vspace{1.7cm}
+  \Large
+  \textbf{UM GUIA DE BOAS PRÁTICAS NO ESTUDO}
+
+  \vspace{1.3cm}
+  \large
+  \textbf{Renan Wenzel - 11169472}
+
+  \vspace{6.3cm}
+  \today
+\end{center}
+
+ \newpage
+\textbf{{\Huge Disclaimer}}
+ \vspace{5cm}
+
+  {\huge Essas notas não possuem relação com professor algum. 
+
+  Qualquer erro é responsabilidade solene do autor.
+
+Caso julgue necessário, contatar: renan.wenzel.rw@gmail.com}
+\newpage
+\tableofcontents
+
+\newpage
+\section{Afinal, o que e para quem é esse PDF?}
+\paragraph{} Todo e qualquer estudante que se preze já passou pela terrível fase de não saber como estudar,
+organizar os estudos e qualquer coisa do tipo. Quando chega-se nesse ponto, alguns comportamentos podem acontecer, 
+tais como procurar ajuda na internet, falar com um docente, organizar um grupo de estudos, etc. Tendo em mente 
+essa necessidade, escrevo este PDF com base em artigos, conselhos e minha própria experiência como um caçador de conhecimento nesse
+mundo complexo e estranho.
+
+\paragraph{} A estrutura desse texto é relativamente simples, afinal, o propósito não é o de complicar o assunto (Já tem a internet pra isso!). Abordarei
+ao longo dos capítulos alguns tópicos recorrentes na área da pesquisa da aprendizagem. Para as informações utilizadas, deixarei ao final as referências
+que utilizei, até porque, como qualquer pessoa, não faz sentido confiar apenas na minha palavra, sempre posso estar errado. Sendo assim, para quem quiser 
+conferir o que está sendo dito e aprofundar-se nessa bela área que é o estudo das conexões cerebrais, aprendizagem e memória, as referências podem ser 
+um bom ponto de partida.
+
+\paragraph{} Ao final do texto, acrescentei dois apêndices, um mais focado na minha área de estudo e outro sobre pesquisa em geral (no momento em que isso está sendo escrito). O primeiro contém algumas luzes quanto à escrita matemática,
+a qual pode, muitas vezes, parecer desafiadora, especialmente no começo. Quando eu passei por essa situação, deparei-me com um ótimo texto do matemático J. M. Lee sobre
+boas práticas de demonstração, então pretendo incluir algumas coisas sobre o assunto. 
+O segundo apêndice é mais geral e expositivo, visando oferecer auxílio àqueles que buscam começar um hábito de leitura de artigos científicos, como procurar eles, a ordem de leitura de cada parte, entre outros 
+aspectos que podem ajudar na compreensão. 
+
+\paragraph{} Por fim, vale mencionar que incluirei algumas fontes extras para estudos e tópicos mais específicos, sendo estas fontes as que eu gosto de usar na maioria das vezes. Espero que tenha uma leitura agradável,
+caro leitor, e que suas dúvidas e amarguras sejam minimamente aquietadas ao final da jornada.
+\newpage
+\section{Um Pouco Sobre nossa Memória}
+\newpage
+\section{As Pausas Durante Atividades}
+\newpage
+\section{Digitar vs Escrever à Mão}
+\newpage
+\section{Kinestesia}
+\newpage
+\section{A Questão do Sono}
+\newpage
+\section{Apêndices}
+\subsection{Apêndice A: A Escrita Matemática}
+\subsection{Apêndice B: A Prática da Leitura Acadêmica}
+\newpage
+
+\printbibliography
+%\begin{thebibliography}{9}
+%\bibitem{texbook}
+%Donald E. Knuth (1986) \emph{The \TeX{} Book}, Addison-Wesley Professional.
+%\end{thebibliography}
+ 
+
+ \end{document}

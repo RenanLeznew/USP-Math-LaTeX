@@ -305,8 +305,178 @@ utilizar Cauchy-Schwarz:
 \section{Aula 03 - 17/08/2023}
 \subsection{Motivações}
 \begin{itemize}
-  \item 
+  \item Métricas similares;
+  \item Produtos de Espaços Métricos;
+  \item Espaços vetoriais normados;
+  \item Desigualdade de Hölder e de Minkowski.
 \end{itemize}
+\subsection{Similaridade de Métricas}
+ \begin{def*}
+   Seja M um conjunto não vazio. Duas métricas d e \(\rho \) em M são similares se existem \(c_{1}, c_{2} > 0\) tais que 
+     \[
+       c_{1}d(x, y)\leq \rho (x, y)\leq c_{2}d(x, y)
+     \]
+ \end{def*}
+\begin{example}
+  Seja d a métrica usual e \(\delta  \) a métrica discreta em \(\mathbb{R}\). Para todo c positivo, existem
+x, y em \(\mathbb{R}\) tais que \(d(x, y) > c\delta (x, y)\), ou seja, não vale \(d(z, w)\leq c\delta (z, w)\) para todos
+z, w reais. 
+
+  De fato, dado \(c > 0\), tome \(x=2c\) e \(y=c-1.\) Tem-se \(d(x, y) = c + 1\) e \(\delta (x, y) = 1\). Logo, não são similares.
+\end{example}
+\begin{prop*}
+  Para quaisquer x, y em \(\mathbb{R}^{n},\) vale a desigualdade 
+    \[
+      d_{m}(x,y)\leq d(x,y)\leq d_{s}(x, y)\leq nd_{m}(x,y)
+    \]
+\end{prop*}
+\begin{proof*}
+  Seja \(x=(x_{1}, x_{2}, \cdots, x_{n}), y = (y_{1}, \cdots, y_{n})\). Temos: 
+    \[
+      d_{m}(x, y) = \max \biggl\{(|x_{i}-y_{i}|^{2})^{\frac{1}{2}}\biggr\}\leq \biggl(\sum\limits_{i=1}^{n}|x_{i}-y_{i}|^{2}\biggr)^{\frac{1}{2}} = d(x, y)
+    \]
+  e também \(d_{s}(x, y) = \sum\limits_{i=1}^{n}|x_{i}-y_{i}|\leq n\max \biggl\{|x_{i}-y_{i}|\biggr\}\),
+  provando a desigualdade do meio  
+  \[
+    (d(x,y))^{2} = \sum\limits_{i=1}^{n}(x_{i}-y_{i})^{2} = \underbrace{\biggl(\sum\limits_{i=1}^{n}|x_{i}-y_{i}|\biggr)}_{d_{s}(x, y)^{2}} - A,\quad A\geq 0,
+  \]
+  de onde segue que \((d(x, y))^{2}\leq (d_{s}(x, y))^{2} - A\) e prova a desigualdade. \qedsymbol
+\end{proof*}
+\subsection{Produto de Espaços Métricos}
+Considere \((M_{1}, d_{2}), (M_{2}, d_{2}), \cdots, (M_{n}, d_{n})\) espaços métricos. Para \(M=\Pi_{i=1}^{n}M_{i}\) e definimos as métricas anteriores
+\begin{itemize}
+  \item \(d(x, y) = \biggl\{\sum\limits_{i=1}^{n}[d_{i}(x_{i}, y_{i})]^{2}\biggr\}^{\frac{1}{2}}\)
+  \item \(d_{s}(x, y) = \sum\limits_{i=1}^{n}d_{i}(x_{i}, y_{i})\);
+  \item \(d_{max}(x, y) = \max\{d_{i}(x_{i}, y_{i})\}\).
+\end{itemize}
+\begin{example}
+  Tome \(M = \mathcal{C}(I, \mathbb{R})\times \mathbb{R}\). Se \(x = (f, s), y=(h, t)\), então 
+    \[
+      d_{m}(x, y) = \max \biggl\{\rho (f, h), d(s, t)\biggr\}
+    \]
+\end{example}
+\subsection{Espaços Vetoriais Normados}
+\begin{def*}
+  Dado V um espaço vetorial, uma norma em V é uma função \(||\cdot ||:V\rightarrow [0, +\infty)\) que satisfaz
+ \begin{itemize}
+   \item[i)] \(||\vec{v}|| = 0 \Longleftrightarrow \vec{v}=0\);
+   \item[ii)] \(||\lambda \vec{v}|| = |\lambda |||\vec{v}||\);
+   \item[iii)] \(||\vec{v}+\vec{w}||\leq ||\vec{v}|| + ||\vec{w}||\).
+ \end{itemize}
+\end{def*}
+\begin{example}
+  Seja \((\mathbb{R}^{2n}, +, \cdot )\) é um espaço vetorial e \(||\cdot ||:\mathbb{R}^{n}\rightarrow [0, \infty)\) dada por 
+    \[
+      x\mapsto ||x|| = \sqrt[]{\sum\limits_{i=1}^{n}x_{i}^{2}}
+    \]
+\end{example}
+\begin{example}
+  Considere \((\mathcal{C}(I, \mathbb{R}), +, \cdot )\) e defina \(||f||_{\infty} = \max \biggl\{|f(x)|: x\in I\biggr\}, f\in \mathcal{C}(I, \mathbb{R}).\) Isto define uma norma em
+ \(\mathcal{C}(I, \mathbb{R}).\) 
+
+  Note que \(||f||_{\infty} = 0 = \max\{|f(x)|\}.\) Logo, \(|f(y)| = |f|_{\infty} = 0\) para todo y em I e \(f(y) = 0\) para todo y em I.
+Isso demonstra a primeira propriedade. Para a segunda propriedade, 
+  \[
+    ||\lambda f||_{\infty} = \max\{|\lambda f(x)|: x\in I\} = |\lambda |||f||_{\infty}
+  \]
+  pelas propriedades de módulo. Por fim, temos 
+    \[
+      ||f+g||_{\infty} = \max\{|f(x)+g(x)|: x\in I\}\leq \max\{|f(x)| + |g(x)|: x\in I\}\leq \max\{|f(x)|\} + \max\{|g(x)|\}\leq ||f||_{\infty} + ||g||_{\infty}.
+    \]
+\end{example}
+\begin{example}
+  Definiremos a norma p em \(\mathbb{R}^{n}\). Se \(p=\infty,\) coloquemos 
+    \[
+      ||x||_{\infty} = \sup\{|x_{i}|: 1\leq i\leq n\}.
+    \]
+  Se \(p\neq\infty\), definimos 
+    \[
+      ||x||_{p} = \biggl(\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr)^{\frac{1}{p}}
+    \]
+\end{example}
+\subsection{A Desigualdade de Minkowski}
+\begin{lemma*}
+  Se \(p, q\in (1, \infty)\) é tal que \(\frac{1}{p} + \frac{1}{q} = 1\) e \(a, b\in [0, \infty),\) então 
+    \[
+      a^{\frac{1}{p}} + b^{\frac{1}{q}}\leq \frac{a}{q} + \frac{b}{q}.
+    \]
+\end{lemma*}
+\begin{proof*}
+  Se \(b > 0\), então \(\frac{a^{\frac{1}{p}}+b^{\frac{1}{q}}}{b} = \frac{a}{bp} + \frac{1}{q}\), isto é, 
+    \[
+      \biggl(\frac{a}{b}\biggr)^{\frac{1}{p}}\leq \frac{a}{bp} + \frac{1}{q}.
+    \]
+    Tomando \(z=\frac{a}{b}\) e \(\alpha =\frac{1}{p},\) segue que \(t^{\alpha }\leq \alpha t + 1 - \alpha.\) Com isso, defina 
+  \(f_{\alpha }:\mathbb{R}^{+}\rightarrow \mathbb{R}\) por 
+    \[
+      f_{\alpha }(t) = \alpha t +1 - \alpha - z^{\alpha }.
+    \]
+    Segue que \(f_{\alpha }(t)\geq 0\) pela sua derivada. \qedsymbol
+\end{proof*} 
+\begin{lemma*}[Desigualdade de Hölder]
+  Se \(p\in(1, \infty), q\in (1, \infty)\) é tal que \(\frac{1}{p}+\frac{1}{q}=1\) e \(a, b\in [0, \infty),\) então 
+    \[
+      \sum\limits_{i=1}^{n}|x_{i}y_{i}|\leq \biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}|y_{i}|^{q}\biggr]^{\frac{1}{q}}
+    \] 
+  para todo \(x=(x_{1}, \cdots, y_{n}), y=(y_{1}, \cdots, y_{n}) \in \mathbb{R}^{n}.\)
+\end{lemma*}
+\begin{proof*}
+  Se x = 0 ou y = 0, a desigualdade é trivial. Se \(x\neq0\) e \(y\neq0\), então defina 
+    \[
+      a_{j} = \frac{|x_{j}|^{p}}{\sum\limits_{i=1}^{n}|x_{i}|^{p}}\quad b_{j}=\frac{|y_{j}|^{q}}{\sum\limits_{i=1}^{n}|y_{i}|^{q}}.
+    \] 
+  Observamos que \(\sum\limits_{j=1}^{n}a_{j} = \sum\limits_{j=1}^{n}b_{j}=1.\) Aplicando a desigualdade de Young, 
+    \[
+    a_{j}^{\frac{1}{p}}b_{j}^{\frac{1}{q}} = \frac{|x_{j}y_{j}|}{\biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}|y_{i}|^{q}\biggr]^{\frac{1}{q}}}\leq \frac{1}{p}a_{j} + \frac{1}{q}b_{j},
+    \]
+  para \(j=1, \cdots, n.\) Assim, 
+    \[
+      \frac{\sum\limits_{j=1}^{n}|x_{j}y_{j}|}{\biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}|y_{i}|^{q}\biggr]^{\frac{1}{q}}}\leq \frac{1}{p} + \frac{1}{q}=1,
+    \]
+  donde segue a desigualdade. \qedsymbol
+\end{proof*}
+\begin{prop*}
+  Se \(p\in[1, \infty)\), então 
+    \[
+      \biggl[\sum\limits_{i=1}^{n}|x_{i}+y_{i}|^{p}\biggr]^{\frac{1}{p}}\leq \biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}} + \biggl[\sum\limits_{i=1}^{n}|y_{i}|^{p}\biggr]^{\frac{1}{p}},
+    \]
+  para todo \(x=(x_{1}, \cdots, x_{n}), y=(y_{1}, \cdots, y_{n})\in \mathbb{R}^{n}\).
+\end{prop*}
+\begin{proof*}
+  Os casos \(p=1, \infty\) são deixados como exercício. Se \(p\in(1, \infty),\) então 
+    \[
+      \biggl[\sum\limits_{i=1}^{n}|x_{i}+y_{i}|^{p}\biggr]^{\frac{1}{p}}\leq \biggl[\sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p}\biggr]^{\frac{1}{p}}.
+    \]
+  Podemos escrever 
+    \[
+      (|x_{i}|+|y_{i}|)^{p} = (|x_{i}|+|y_{i}|)^{p-1}|x_{i}|+(|x_{i}|+|y_{i}|)^{p-1}|y_{i}|,\quad i = 1, \cdots, n.
+    \]
+    Somando os elementos à esquerda da desigualdade anterior, obtemos 
+      \[
+        \sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p} = x_{n}+y_{n}
+      \]
+    com 
+      \[
+        x_{n} + y_{n}\coloneqq \sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p-1}|x_{i}| + \sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p-1}|y_{i}|.
+      \]
+    Aplicando a Desigualdade de Hölder, temos 
+   \begin{align*}
+     x_{n}&\leq \biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{(p-1)q}\biggr]^{\frac{1}{q}}\\
+          &\leq \biggl[\sum\limits_{i=1}^{n}|x_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p}\biggr]^{\frac{1}{q}}.
+   \end{align*}
+   De forma análoga, temos 
+     \[
+       y_{n}\leq \biggl[\sum\limits_{i=1}^{n}|y_{i}|^{p}\biggr]^{\frac{1}{p}}\biggl[\sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p}\biggr]^{\frac{1}{q}}.
+     \]
+  Portanto, 
+    \[
+      \sum\limits_{i=1}^{n}(|x_{i}|+|y_{i}|)^{p} = x_{n} + y_{n}\leq \cdots.\quad\text{\qedsymbol}
+    \]
+\end{proof*}
+\begin{example}
+  Dado \(p\in[0, \infty], (\mathbb{R}^{n}, d_{p})\) é um espaço métrico, em que \(d_{p}\) está representando a métrica induzida por \(||\cdot ||_{p}.\) Então, para \(p=2\),
+recuperamos o espaço euclidiano n-dimensional.
+\end{example}
 \newpage
 
 \section{Aula 04 - 21/08/2023}
@@ -450,4 +620,66 @@ para qualquer \(r> 0\), seja \(n_{0}\) tal que \(0 < \frac{1}{n_{0}} < \frac{r}{
      \]
      ou seja, a afirmação feita está garantida.
 \end{example}
+\newpage
+
+\section{Aula 05 - 24/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Propriedades do diâmetro;
+  \item Exemplo de limitado;
+  \item Conjuntos abertos;
+  \item Propriedade dos abertos.
+\end{itemize}
+\subsection{Propriedades do Diâmetro}
+ \begin{example}
+   A função 
+     \[
+       \rho_{p}(x,y) = \frac{||x-y||_{p}}{1+||x-y||_{p}},\quad \forall x, y\in \mathbb{R}^{n}
+     \]
+     é uma métrica em \(\mathbb{R}^{n}\). Para ver isso, comece definindo \(f(t) = \frac{t}{1+t}\) e exiba que essa função é
+crescente, de forma que \(f(||x-y||_{p}\leq f(||x-z||_{p}+||z-y||_{p})\). Com essa métrica, afirmamos que o seguinte ocorre: 
+  \[
+    \mathbb{R}^{n} = B_{1}(0)\quad\&\quad diam(\mathbb{R}^{n})\leq 1.
+  \]
+  A inclusão \(B_{1}(0)\subseteq{\mathbb{R}^{n}}\) é automática. Por outro lado, seja \(y\in \mathbb{R}^{n}.\) Temos 
+    \[
+      \rho_{p}(y, 0) = \frac{||y||_{p}}{1 + ||y||_{p}} < 1. \Rightarrow \mathbb{R}^{n}\subseteq{B_{1}(0)}.
+    \]
+  Portanto, \(\mathbb{R}^{n}\) é limitado no espaço métrico \((\mathbb{R}^{n}, \rho_{p}),\) mas não é limitado em \((\mathbb{R}^{n}, d_{p})\).
+ \end{example}
+ Vale uma observação - apesar dessa diferença entre \(\rho_{p}\) e \(d_{p}\), veremos futuramente que as duas métricas induzem a mesma
+estrutura de formato do espaço - em outras palavras, a mesma topologia.
+\begin{prop*}
+  Seja \((X, \rho )\) um espaço métrico.
+ \begin{itemize}
+   \item[1)] \(E\subseteq{X}\) é limitado se, e somente se, existe \(r>0\) tal que \(E\subseteq{B_{r}(x)}\) para todo \(x\in E\).
+     \item[2)] Se \(E\subseteq{X}\) é limitado e não-vazio, então 
+       \[
+         diam(E) = \inf\{r > 0: E \subseteq{B_{r}(x)}, x \in E\}.
+       \]
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  \(1 \Rightarrow )\) A volta é simples, segue das propriedades do supremo. Por outro lado, se E é limitado, então \(diam(E) < \infty\). Seja
+ \(r=2diam(E)\) e \(B_{r}(x)\supseteq{E}\) para todo x em E. De fato, se \(e\in E\), temos 
+   \[
+     d(e, x)\leq diam(E) < r.
+   \]
+
+   \(2 \Rightarrow )\) Seja \(A = \{r>0: E \subseteq{B_{r}(x)}, x\in E\}\). Mostremos que \(diam(E) = \inf{(A)}.\) Se \(r > diam(E)\) e x
+é um ponto de E, então 
+  \[
+    d(x, y)\leq diam(E) < r\quad \forall y\in E,
+  \]
+  logo, \(E\subseteq{B_{r}(x)}\). Assim, o intervalo \((diam(E), \infty)\subseteq{A}.\) Deste modo, \(\inf{(A)}\leq diam(E).\)
+  Por outro lado, se \(r < diam(E),\) então existem \(x, y\in E\) tais que 
+    \[
+      d(x, y) > r,\quad y\not\in B_{r}(x),\quad \&\quad r\not\in A.
+    \]
+    Consequentemente, \((0, diam(E))\cap A = \emptyset.\) Portanto, \(diam(E) = \inf{(A)}.\) \qedsymbol 
+\end{proof*}
+\begin{def*}
+  Seja \((X, d)\) um espaço métrico. Um subconjunto \(E\subseteq{X}\) é dito aberto em \((X, d)\) se, para cada
+x em E, existir \(r_{x} > 0\) tal que \(B_{r_{x}}(x)\subseteq{E}.\quad\square\)
+\end{def*}
 \end{document}

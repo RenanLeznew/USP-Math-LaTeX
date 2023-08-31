@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692730825 "metric_notes.tex" "metric_notes.pdf" "metric_notes" 1692730828 0
+["pdflatex"] 1693252700 "metric_notes.tex" "metric_notes.pdf" "metric_notes" 1693252702 0
   "../brasao_usp_cor.jpg" 1683673143 1576381 b77ec44f41562c1b9d07dacd42600056 ""
   "../icmc.png" 1683673143 90993 abeca978b10dde82d5fba541f35c48a5 ""
   "/etc/texmf/web2c/texmf.cnf" 1683681533 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -221,11 +221,11 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683688450 165012 f177baa1c39a3ebd62c3096a43521a0d ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685539087 6505866 65e1bd121e248efd90cff22f3510bdd9 ""
-  "metric_notes.aux" 1692730827 2943 2f4b8d8970456866576582b070ba25cb "pdflatex"
-  "metric_notes.out" 1692730827 2867 be29f4d2081fbb72aff1d6c072a26668 "pdflatex"
-  "metric_notes.tex" 1692730821 19557 998491a38cbf989223fb364741a92458 ""
-  "metric_notes.toc" 1692730827 1485 6fb7d101a095f7c7a4ec24694e84b4fe "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692766036 6555296 68ac46c43b26ac69cf6109b75af6cc14 ""
+  "metric_notes.aux" 1693252702 3853 f27f35d921be8b441291fd2d9a4e8cc4 "pdflatex"
+  "metric_notes.out" 1693252702 4115 a6ea24f4e1b24f3cc0447e7f3cd3b361 "pdflatex"
+  "metric_notes.tex" 1693252698 30736 1d78e6adeb99d8263996891ebc92a0c2 ""
+  "metric_notes.toc" 1693252702 2108 22b4e104baee6e9ec1041b16178290d1 "pdflatex"
   (generated)
   "metric_notes.aux"
   "metric_notes.log"

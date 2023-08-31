@@ -12,7 +12,14 @@
 \contentsline {subsection}{\numberline {2.5}Espaço euclidiano n-dimensional}{6}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Aula 03 - 17/08/2023}{8}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Motivações}{8}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Aula 04 - 21/08/2023}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Motivações}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Subespaços Métricos e Distância entre Conjuntos}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Topologia de Espaços Métricos}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {3.2}Similaridade de Métricas}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Produto de Espaços Métricos}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Espaços Vetoriais Normados}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}A Desigualdade de Minkowski}{9}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Aula 04 - 21/08/2023}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivações}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Subespaços Métricos e Distância entre Conjuntos}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Topologia de Espaços Métricos}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Aula 05 - 24/08/2023}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motivações}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Propriedades do Diâmetro}{15}{subsection.5.2}%

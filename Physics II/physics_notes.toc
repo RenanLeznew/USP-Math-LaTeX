@@ -10,12 +10,27 @@
 \contentsline {section}{\numberline {3}Aula 03 - 16/08/2023}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Motivações}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Momento de Inércia em um Disco}{7}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Aula 05 - 17/08/2023}{10}{section.4}%
+\contentsline {section}{\numberline {4}Aula 04 - 17/08/2023}{10}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Motivações }{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Segunda Lei de Newton}{10}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}O Torque da Força da Gravidade}{10}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Aula 06 - 21/08/2023}{12}{section.5}%
+\contentsline {section}{\numberline {5}Aula 05 - 21/08/2023}{12}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Motivações}{12}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Continuando o Exemplo}{12}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Potência}{13}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Corpos que Rolam sem Deslizar}{14}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Aula 06 - 23/08/2023}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Motivações}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Objeto Rolante em Plano Inclinado}{15}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Simetrias}{15}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Bola Deslizando}{16}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Aula 07 - 24/08/2023}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Motivações}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Vetores}{18}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Aula 08 - 28/08/2023}{19}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Motivações}{19}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Um pouco mais de produto vetorial.}{19}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Momento Angular}{20}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Aula 09 - 30/08/2023}{22}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Motivações}{22}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}O Giroscópio}{22}{subsection.9.2}%

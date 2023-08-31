@@ -175,13 +175,105 @@ saber como operar os eventos.
 união, interseção, complemento, etc. Nesta lógica, compreendemos como
 \begin{itemize}
   \item[] União de eventos - a capacidade do evento A OU do evento B ocorram;
-    \item[] Interseção de eventos - a capacidade do evento A E do evento B ocorrerem simultaneamente.
-      \item[] Complementar - a capacidade do evento A não acontecer
-        \item[] Eventos mutuamente exclusivos - A e B não ocorrem simultaneamente, isto é, \(A\cap B = \emptyset\)
+  \item[] Interseção de eventos - a capacidade do evento A E do evento B ocorrerem simultaneamente.
+  \item[] Complementar - a capacidade do evento A não acontecer
+  \item[] Eventos mutuamente exclusivos - A e B não ocorrem simultaneamente, isto é, \(A\cap B = \emptyset\)
 \end{itemize}
 \begin{example}
   Um número entre 1 e 10 é selecionado ao acado. Considere A como o evento em que o número selecionado é múltiplo de 3 e B o conjunto em que o número selecionado é par. Então, 
  \(\Omega = \{1, 2, \cdots, 10\}, A = \{3, 6, 9\}, B = \{2, 4, 6, 8, 10\}\). O evento que ocorre nos dois é \(A\cap B=\{6\}\). O evento representando que o número seja um múltiplo de 3 ou
  um número par é \(A\cup B = \{2, 3, 4, 6, 8, 9, 10\}\). Alguns outros são: \(A\cap B^{c} = \{3, 9\}, A^{c}\cap B = \{2, 4, 8, 10\}.\)
+\end{example}
+\newpage
+\section{Aula 02 - 24/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item As definições de probabilidade;
+  \item A probabilidade segundo Kolmogorov.
+\end{itemize}
+\subsection{Conceitos}
+\paragraph{}As ideias desenvolvidas até aqui são as que Laplace desenvolveu, contendo toda a parte do cálculo
+de probabilidade por meio da contagem de casos favoráveis e dos possíveis. No entanto, foram desenvolvidas outras
+abordagens para lidar com as limitações da dependência na uniformidade das saídas, no número finito de resultados possíveis, etc.
+A definição clássica de probabilidade é a razão entre o número de casos favoráveis e o de possíveis, ou seja, 
+\begin{def*}
+  Seja o evento A, associado a um espaço amostral finito e equiprovável, \(\Omega \). Definimos a probabilidade de ocorrência do evento A por: 
+    \[
+      \mathbb{P}(A) = \frac{\#(A)}{\#(\Omega )}.\quad \square
+    \]
+\end{def*}
+  Richard von Mises buscou enxergar a probabilidade como algo que pode ser definido apenas para um gerador aleatório capaz de produzir uma sequência infinita de resultados.
+A probabilidade, aqui, será a frequência limite do resultado nessa sequência. Ele baseou isso na ideia de que a aleatoriedade é um processo que produz resultados imprevisíveis
+e não claramente determinados.
+\begin{def*}
+  Seja \(n_{A}\) o número de vezes que o evento A ocorre em n repetições independente de um mesmo experimento. Então, 
+    \[
+      \mathbb{P}(A) = \lim_{n\to \infty}\frac{n_{A}}{n},
+    \]
+    desde que o limite exista. \(\square\)
+\end{def*}
+ Essa definição mostrou-se importante até durante a contemporaneidade. No entanto, não é muito prático para fazer contas e encontrar probabilidades, 
+sua força está em exibir a noção que a aplicabilidade traz. Além disso, ela funciona como uma ponte entre a primeira definição e a próxima que será vista.
+Outro problema com essa é que, quando quantidades enormes de saídas surgem, torna-se impossível de usá-lo, pois não dá para saber o total de possibilidades.
+  
+  Assim, Kolmogorov estende a definição de probabilidade para espaços mais gerais, conhecido como a pessoa que formalizou a teoria da probabilidade. A ideia dele permite que
+propostas mais flexíveis de probabilidades sejam usadas, saindo do limite de contabilidade finita e equiprovável da ideia de Laplace.
+\begin{def*}
+  Seja E um experimento aleatório e \(\Omega \) o espaço amostral associado. A cada evento A associamos um número real
+ \(\mathbb{P}(A)\), denominado probabilidade de A, que satisfaz 
+\begin{itemize}
+  \item[P1)] \(\mathbb{P}(\Omega )=1;\)
+    \item[P2)] \(0\leq \mathbb{P}(A)\leq 1,\) para todo A decorrente de \(\Omega \);
+      \item[P3)] Se A e B forem eventos mutuamente exclusivos, então 
+        \[
+          \mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B);
+        \]
+      \item[P4)] Para qualquer sequência de eventos disjuntos dois-a-dois, \(A_{1}, A_{2}, \cdots, A_{n}\), tem-se 
+        \[
+          \mathbb{P}\biggl(\bigcup_{i=1}^{n}A_{i}\biggr) = \sum\limits_{i=1}^{n}\mathbb{P}(A_{i}).\quad \square
+        \]
+\end{itemize}
+\end{def*}
+  Seguem algumas propriedades:
+ \begin{theorem*}
+   Se \(\emptyset\) é um evento impossível, então \(\mathbb{P}(\emptyset) = 0.\)
+ \end{theorem*}
+ \begin{theorem*}
+  Se \(A^{c}\) for o complementar de A, então \(\mathbb{P}(A^{c}) = 1 - \mathbb{P}(A).\)
+ \end{theorem*}
+\begin{theorem*}
+  Se A e B são dois eventos quaisquer de \(\Omega \), então 
+    \[
+      \mathbb{P}(A\cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A\cap B).
+    \]
+\end{theorem*}
+\begin{theorem*}
+  Se \(A_{1}, A_{2}, \cdots, A_{i}\) são eventos dois-a-dois disjuntos, então 
+  \begin{align*}
+    \mathbb{P}(A_{1}\cup \cdots\cup A_{i}) &= \sum\limits_{i=1}^{n}\mathbb{P}(A_{i}) - \sum\limits_{i < j}^{n} \mathbb{P}(A_{i}\cap A_{j}) + \sum\limits_{i < j < r}^{n} \mathbb{P}(A_{i}\cap A_{j}\cap A_{r}) + \cdots\\
+                                           &\cdots + (-1)^{n-1}\mathbb{P}(A_{1}\cap \cdots A_{n})
+  \end{align*}
+\end{theorem*}
+\begin{example}
+  Um lote é formado por 10 peças boas, 4 com defeitos menores e 2 com defeitos graves. Uma peça é escolhida ao acaso. Calcule a probabilidade de que 
+ \begin{itemize}
+   \item[a)] A peça não tenha defeito grave;
+   \item[b)] A peça não tenha defeito;
+   \item[c)] A peça seja boa ou tenha defeito grave.
+ \end{itemize}
+  a) Considerando A o conjunto de peças boas, B o de peças levemente defeituosas e C o de peças gravemente defeituosas, esses conjuntos são dois-a-dois disjuntos. Assim, 
+    \[
+      \mathbb{P}(C^{c}) = 1 - \mathbb{P}(C) = 1 - \frac{2}{16} = \frac{7}{8}.
+    \]
+    
+  b) Com a notação anterior, 
+    \[
+      \mathbb{P}((B\cup C)^{c}) = \mathbb{P}(B^{c}\cap C^{c}) = \mathbb{P}(B^{c}) + \mathbb{P}(C^{c}) - \mathbb{P}(C^{c}\cup B^{c}) = \mathbb{P}(A) = \frac{10}{16} = \frac{5}{8}.
+    \]
+
+  c) Novamente, mantendo a anotação, 
+    \[
+      \mathbb{P}(A\cup C) = \mathbb{P}(A) + \mathbb{P}(C) = \frac{10}{16} + \frac{2}{16} = \frac{12}{16} = \frac{3}{4}.
+    \]
 \end{example}
 \end{document}

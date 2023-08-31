@@ -1,0 +1,9 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'the_guide.blg'
+[67] biber:340> INFO - === Wed Aug 23, 2023, 13:09:10
+[78] Biber.pm:418> INFO - Reading 'the_guide.bcf'
+[132] Biber.pm:978> INFO - Found 0 citekeys in bib section 0
+[142] bbl.pm:654> INFO - Writing 'the_guide.bbl' with encoding 'UTF-8'
+[142] bbl.pm:757> INFO - Output to the_guide.bbl
+[142] Biber.pm:130> WARN - The file 'the_guide.bcf' does not contain any citations!
+[142] Biber.pm:132> INFO - WARNINGS: 1

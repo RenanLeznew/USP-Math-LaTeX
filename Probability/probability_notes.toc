@@ -7,3 +7,7 @@
 \contentsline {subsubsection}{\numberline {1.2.2}Espaço Amostral}{4}{subsubsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3}Evento}{5}{subsubsection.1.2.3}%
 \contentsline {subsubsection}{\numberline {1.2.4}Operações com Eventos}{5}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}Aula 02 - 24/08/2023}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivações}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Conceitos}{6}{subsection.2.2}%
+\contentsline {paragraph}{}{6}{section*.7}%
