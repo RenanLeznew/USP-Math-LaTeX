@@ -682,4 +682,88 @@ estrutura de formato do espaço - em outras palavras, a mesma topologia.
   Seja \((X, d)\) um espaço métrico. Um subconjunto \(E\subseteq{X}\) é dito aberto em \((X, d)\) se, para cada
 x em E, existir \(r_{x} > 0\) tal que \(B_{r_{x}}(x)\subseteq{E}.\quad\square\)
 \end{def*}
+\newpage
+
+\section{Aula 06 - 29/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Propriedades dos abertos;
+  \item Propriedades dos fechados.
+\end{itemize}
+\subsection{Propriedades de Abertos e Fechados}
+\begin{example}
+  Considere \((\mathbb{R}, |\cdot |)\). Com \(E = B_{\frac{1}{2}}\biggl(\frac{1}{2}\biggr) = (0, 1)\) é aberto. De fato, se \(x\in(0, 1)\),
+então consideramos \(0 < r < \min\{x, 1-x\}.\) Neste caso, temos 
+  \[
+    B_{r}(x) = (x-r, x+r)\subseteq{(0, 1)}\quad \text{Exercício.]}
+  \]
+\end{example}
+\begin{prop*}
+  Seja \((X, \rho )\) um espaço métrico. Então,
+ \begin{itemize}
+   \item[a)] X e \(\emptyset\) são abertos;
+   \item[b)] \(B_{r}(x)\) é aberto;
+   \item[c)] A união arbitrária de abertos é um aberto;
+   \item[d)] A intersecção finita de abertos é aberto.
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  O item a é trivial.
+
+  Para o item b, dado y em \(B_{r}(x)\), consideramos \(0 < r_{y} < r - \rho (x, y)\). Se z pertence a \(B_{r_{y}}(y)\), a desigualdade triangular implica 
+    \[
+      \rho (x, z)\leq \rho (x, y)\leq \rho (y, z) < \rho (x, y) + r_{y} < r.
+    \]
+  Logo, \(\rho_{r_{y}}(y)\subseteq{B_{r}(x)}\), ou seja, a bola aberta é aberta.
+
+  Quanto ao c, seja \(\{A_{\lambda }\}_{\lambda \in I}\) uma coleção de abertos de X e \(A = \bigcup_{\lambda \in I}^{}{A_{\lambda }}\). Vamos mostrar que A é aberto.
+  Com efeito, dado x em A, segue que \(x\in A_{\lambda}\) para algum \(\lambda \in I.\) Como \(A_{\lambda }\) é aberto, existe \(r_{x} > 0\) tal que \(B_{r_{x}}(x)\subseteq{A_{\lambda}}\subseteq{A}.\)
+  Destarte, A é aberto.
+
+  Finalmente, para o item d, tome \(\{A_{i}\}_{i=1}^{n}\) uma coleção finita de abertos em X e seja \(A = \bigcap_{i=1}^{n}{A_{i}}\). Seja \(x\in A\). Temos x pertencente a \(A_{i}\) para algum \(i=1, 2, \cdots, n\).
+Como \(A_{i}\) é sempre aberto, existe \(r_{i} > 0\) tal que \(B_{r_{i}}(x)\subseteq{A_{i}}.\) Fazendo \(r=\min\{r_{i}: 1\leq i\leq n\}\), segue que 
+  \[
+    B_{r}(x)\subseteq{A_{i}},\quad \forall i=1, \cdots, n.
+  \]
+Deste modo, 
+  \[
+    B_{r}(x)\subseteq{\bigcap_{i=1}^{n}{A_{i}}} = A.
+  \]
+  Portanto, A é aberto. \qedsymbol
+\end{proof*}
+\begin{def*}
+  Um subconjunto \(F\subseteq{X}\) é dito fechado em \((X, d)\) se \(F^{c}\) é aberto em \((X, d).\quad\square\)
+\end{def*}
+  Para proceder, vale a pena relembrar uma das formas mais úteis de manipulação de operações de conjuntos, as chamadas Leis de deMorgan. Com a forma que abertos e fechados foram definidos,
+torna-se fundamental entender como complementares agem. Sem mais delongas, as Leis de deMorgan são as seguintes: 
+  \[
+    \hypertarget{demorgan}{\boxed{\biggl(\bigcap_{i\in I}^{}{A_{i}}\biggr)^{c} = \bigcup_{i\in I}^{}{A_{i}^{c}}}\quad\boxed{\biggl(\bigcup_{i\in I}^{}{A_{i}}\biggr)^{c} = \bigcap_{i\in I}^{}{A_{i}^{c}}}}
+  \]
+  \textbf{\underline{Observação}:} Pessoalmente, gosto de pensar que a ação do complementar é ``virar'' o sinal da operação de cabeça pra baixo, então \(\cup\) vira \(\cap\) e vice-versa.
+\begin{prop*}
+  Seja \((X, \rho )\) um espaço métrico. Então, 
+ \begin{itemize}
+   \item[a)] \(X, \emptyset\) são fechados;
+   \item[b)] \(D_{r}(x)\) é fechado;
+   \item[c)] A intersecção arbitrária de fechados é um conjunto fechado;
+   \item[d)] A união finita de fechados é um fechado.
+ \end{itemize}
+\end{prop*}
+\begin{proof*}
+  As provas de todos os itens, menos do b, seguem a partir das \hyperlink{demorgan}{Leis de DeMorgan}
+
+  Para o item b, dado y fora de \(D_{r}(x)\), vale \(d(x, y) < r.\) Seja \(0 < r_{y} < \rho (x, y) - r.\) Se z pertence a \(B_{r_{y}}(y),\), pela desigualdade triangular, 
+    \[
+      \rho (x, z)\geq \rho (x, y) - \rho (y, z)\geq \rho (x, y) - r_{y} > r.
+    \]
+    Logo, \(z\not\in D_{r}(x)\) e \(B_{r_{y}}(y)\subseteq{(D_{r}(x))^{c}}.\) \qedsymbol
+\end{proof*}
+\begin{example}
+  Seja \(\mathbb{R}\) com a métrica usual. Temos:
+ \begin{align*}
+   &[x-r, x+r]=\bigcap_{n=1}^{\infty}{(x-r-\frac{1}{n}, x+r+\frac{1}{n})}\\
+   &\{x\} = \bigcap_{i=1}^{n}{(x-\frac{1}{n}, x+\frac{1}{n})}.
+ \end{align*}
+\end{example}
+
 \end{document}

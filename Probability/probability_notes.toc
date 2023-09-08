@@ -11,3 +11,6 @@
 \contentsline {subsection}{\numberline {2.1}Motivações}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Conceitos}{6}{subsection.2.2}%
 \contentsline {paragraph}{}{6}{section*.7}%
+\contentsline {section}{\numberline {3}Aula 03 - 31/08/2023}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motivações}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}A Probabilidade Condicional}{8}{subsection.3.2}%

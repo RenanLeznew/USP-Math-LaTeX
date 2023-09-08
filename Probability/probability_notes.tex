@@ -276,4 +276,115 @@ propostas mais flexíveis de probabilidades sejam usadas, saindo do limite de co
       \mathbb{P}(A\cup C) = \mathbb{P}(A) + \mathbb{P}(C) = \frac{10}{16} + \frac{2}{16} = \frac{12}{16} = \frac{3}{4}.
     \]
 \end{example}
+\newpage
+
+\section{Aula 03 - 31/08/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Probabilidade Condicional;
+  \item Dependência de Eventos.
+\end{itemize}
+\subsection{A Probabilidade Condicional}
+\begin{def*}
+  Sejam dois eventos A e B associados ao mesmo espaço amostral \(\Omega \). A probabilidade condicional de A 
+dado que ocorreu B é representada por \(\mathbb{P}(A|B\) e dada por 
+  \[
+    \mathbb{P}(A|B) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)},\quad \mathbb{P}(B) > 0\quad \square.
+  \]
+\end{def*}
+  Em particular, seguem duas representações para a probabilidade de dois eventos ocorrerem simultaneamente, sendo elas
+  \begin{align*}
+    &\mathbb{P}(A|B) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)} \Rightarrow \mathbb{P}(A\cap B) = \mathbb{P}(A|B)\mathbb{P}(B)\\
+    &\mathbb{P}(B|A) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)} \Rightarrow \mathbb{P}(A\cap B) = \mathbb{P}(B|A)\mathbb{P}(A)\\
+  \end{align*}
+  \begin{example}
+    Um dado de seis faces, equilibrado, é lançado e o número voltado para cima é obsecrado.
+    \begin{itemize}
+      \item[(a)] Se o resultado obtido for par, qual a probabilidade dele ser maior ou igual a 5?
+      
+    \item[(b)] Se o resultado obtido for maior ou igual a 5, qual a probabilidade dele ser par?
+\end{itemize}
+
+    Para o item a, o espaço amostral é \(\Omega = \{1, 2, 3, 4, 5, 6\}\). Considere os eventos
+    A como o resultado de ser par e B o resultado obtido sendo maior ou igual a 5. Então, 
+      \[
+        \mathbb{P}(B|A) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)} = \frac{\mathbb{P}(\{6\})}{\mathbb{P}(\{2, 4, 6\})} = \frac{1}{3};
+      \]
+
+      Para o item b, temos 
+        \[
+          \mathbb{P}(A|B) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)} = \frac{\mathbb{P}(\{6\})}{\mathbb{P}(\{5, 6\})} = \frac{\frac{1}{6}}{\frac{2}{6}} = \frac{1}{2}.
+        \]
+  \end{example}
+ \begin{def*}
+   Os eventos A e B são independentes se a informação da ocorrência de B não altera a probabilidade atribuída ao evento A, isto é, 
+     \[
+       \mathbb{P}(A|B) = \mathbb{P}(A),
+     \]
+    ou, equivalentemente, 
+    \[
+      \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B).\quad\square
+    \]
+ \end{def*}
+\begin{example}
+  Uma moeda é viciada, de modo que a chance de sair cara é o dobro da de sair coroa.
+  \begin{itemize}
+    \item[(a)] Dê o espaço amostral
+
+  \item[(b)] Calcule a probabilidade de ocorrer cara no lançamento desta moeda.
+\end{itemize}
+
+  (a) O espaço amostral desse evento é \(\Omega = \{\text{Cara, Coroa}\}\). Seja A o evento que cai cara e B o que cai coroa.
+
+  (b) Sabemos que \(\mathbb{P}(A) + \mathbb{P}(B) = 1\) e que \(\mathbb{P}(A) = 2 \mathbb{P}(B)\), ou seja, 
+    \[
+      \mathbb{P}(A) + \frac{\mathbb{P}(A)}{2} = 1 \Rightarrow \mathbb{P}(A) = \frac{2}{3}.
+    \]
+\end{example}
+\begin{example}
+  Duas lâmpadas queimadas foram acidentalmente misturadas com seis boas. Se vamos testar as lâmpadas, uma por uma, até
+encontrar duas defeituosas, qual é a probabilidade de que a última defeituosa seja encontrada no quarto teste?
+
+  Estamos interessados em calcular a probabilidade do seguinte evento:
+ \begin{align*}
+   (\overline{D_{1}}\cap \overline{D_{2}}\cap D_{3}\cap D_{4})\cup(\overline{D_{1}}\cap D_{2}\cap \overline{D_{3}}\cap D_{4})\cup(D_{1}\cap \overline{D_{2}}\cap \overline{D_{3}}\cap D_{4})\\
+   &\Rightarrow \mathbb{P}(\overline{D_{1}}\cap \overline{D_{2}}\cap D_{3}\cap D_{4})\cup(\overline{D_{1}}\cap D_{2}\cap \overline{D_{3}}\cap D_{4})\cup(D_{1}\cap \overline{D_{2}}\cap \overline{D_{3}}\cap D_{4})\\
+   &= \mathbb{P}(\overline{D_{1}}\cap \overline{D_{2}}\cap D_{3}\cap D_{4}) + \mathbb{P}(\overline{D_{1}}\cap D_{2}\cap \overline{D_{3}}\cap D_{4}) + \mathbb{P}(D_{1}\cap \overline{D_{2}}\cap \overline{D_{3}}\cap D_{4}).
+ \end{align*}
+  Após manipulações algébricas e contas, chegamos em 
+    \[
+      \frac{1}{28} + \frac{1}{28} + \frac{1}{28} = \frac{3}{28}\approx 0,1071.
+    \]
+\end{example}
+\begin{def*}
+  Dizemos que \(A_{1}, A_{2}, \cdots, A_{n}\) formam uma partição de \(\Omega \) se eles são dois-a-dois disjuntos e a sua união é \(\Omega.\quad\square \)
+\end{def*}
+\begin{theorem*}
+  Suponha que os eventos \(A_{1}, A_{2}, \cdots, A_{n}\) formam uma partição de \(\Omega \) e que todos têm probabilidade positiva. Então, para qualquer evento B, 
+    \[
+      \mathbb{P}(B) = \sum\limits_{i=1}^{n}\mathbb{P}(B|A_{i})\mathbb{P}(A_{i})
+    \]
+\end{theorem*}
+\begin{example}
+  Uma companhia produz circuitos integrados em três fábricas, sendo elas A, B e C. A fábrica A produz 40\% deles, e as outras produzem 30\% cada. As probabilidades de que um circuito integrado produzido por essas fábricas não funcione são 
+ \(0,01; 0,04; 0,03\) respectivamente. Escolhido um circuito da produção conjunta das três fábricas, qual a probabilidade dele não funcionar? 
+  
+  Sendo D o evento em que o circuito é defeituoso e A, B, C os eventos de cada fábrica, sabemos que 
+    \[
+      \mathbb{P}(A) = 0,40,\quad \mathbb{P}(B) = 0,30,\quad \mathbb{P}(C) = 0,30.
+    \]
+    Além disso, sabemos que 
+    \[
+      \mathbb{P}(D|A) = 0,02,\quad \mathbb{P}(D|B) = 0,04,\quad \& \mathbb{P}(D|C) = 0,03
+    \]
+    Segue do teorema que 
+      \[
+        \mathbb{P}(D) = \sum\limits_{i=1}^{n}\mathbb{P}(D|A_{i})\mathbb{P}(A_{i}) = 0,025.
+      \]
+
+    Determine a probabilidade do defeituoso ter sido produzido pela empresa A. 
+      \[
+        \mathbb{P}(A|D) = \frac{\mathbb{P}(A\cap D)}{\mathbb{P}(D)} = \frac{\mathbb{P}(D|A)\mathbb{P}(A)}{\mathbb{P}(D)} = \frac{0,01\times 0,4}{0,025} = \frac{0,004}{0,025} = 0,16.
+      \]
+\end{example}
 \end{document}

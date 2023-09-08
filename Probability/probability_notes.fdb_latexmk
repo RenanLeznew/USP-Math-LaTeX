@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692909341 "probability_notes.tex" "probability_notes.pdf" "probability_notes" 1692909343 0
+["pdflatex"] 1693514943 "probability_notes.tex" "probability_notes.pdf" "probability_notes" 1693514945 0
   "../brasao_usp_cor.jpg" 1683673143 1576381 b77ec44f41562c1b9d07dacd42600056 ""
   "../icmc.png" 1683673143 90993 abeca978b10dde82d5fba541f35c48a5 ""
   "/etc/texmf/web2c/texmf.cnf" 1683681533 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -18,6 +18,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
@@ -220,10 +221,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683688450 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692766036 6555296 68ac46c43b26ac69cf6109b75af6cc14 ""
-  "probability_notes.aux" 1692909343 2280 e182dc62312c02f991a3c2191e475c4d "pdflatex"
-  "probability_notes.out" 1692909343 1753 0654ec181457c37aa6262b96c558a1e7 "pdflatex"
-  "probability_notes.tex" 1692909339 13260 63cda5e7ea2565d29a7bb6dbbdb5df9a ""
-  "probability_notes.toc" 1692909343 1032 3a29cba903e18f188743454493bdf64e "pdflatex"
+  "probability_notes.aux" 1693514944 2650 a834ff203c0082056571c894d9f362de "pdflatex"
+  "probability_notes.out" 1693514944 2219 f33a0cdffb5231c79bd08aa600c18dbf "pdflatex"
+  "probability_notes.tex" 1693514942 18865 27d510a222e8646d45b8866c53330a8e ""
+  "probability_notes.toc" 1693514944 1279 e704c33a20585ec44f0c8193594d5ea6 "pdflatex"
   (generated)
   "probability_notes.aux"
   "probability_notes.log"
