@@ -1,0 +1,45 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {section}{\numberline {0}Aula 00 - 07/08/2023}{5}{section.0}%
+\contentsline {section}{\numberline {1}Aula 01 - 09/08/2023}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivações}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rotação}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Energia Cinética de Rotação}{6}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Aula 02 - 10/08/2023}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivações}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Distribuição Contínua de Massa}{7}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Aula 03 - 16/08/2023}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motivações}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Momento de Inércia em um Disco}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Aula 04 - 17/08/2023}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivações }{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Segunda Lei de Newton}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}O Torque da Força da Gravidade}{11}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Aula 05 - 21/08/2023}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motivações}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Continuando o Exemplo}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Potência}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Corpos que Rolam sem Deslizar}{15}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Aula 06 - 23/08/2023}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Motivações}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Objeto Rolante em Plano Inclinado}{16}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Simetrias}{16}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Bola Deslizando}{17}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Aula 07 - 24/08/2023}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Motivações}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Vetores}{19}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Aula 08 - 28/08/2023}{20}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Motivações}{20}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Um pouco mais de produto vetorial.}{20}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Momento Angular}{21}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Aula 09 - 30/08/2023}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Motivações}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}O Giroscópio}{23}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Aula 0 - 31/08/2023}{25}{section.10}%
+\contentsline {section}{\numberline {11}Aula 11 - 11/09/2023}{26}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Motivações}{26}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Exercícios}{26}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Exercício 1}{26}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Exercício 2}{27}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Exercício 3}{27}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Exercício 4}{28}{subsubsection.11.2.4}%
+\contentsline {subsubsection}{\numberline {11.2.5}Exercício 5}{28}{subsubsection.11.2.5}%

@@ -6,7 +6,7 @@ Um repositório para enviar trabalhos em LaTeX feitos durante meus anos de gradu
 
 Olá! Meu nome é Renan, atualmente estou cursando graduação em matemática na Universidade de São Paulo (USP). Estou usando este repositório para salvar algumas anotações e soluções de exercícios que me foram solicitados. Cada pasta corresponderá a uma disciplina, e talvez eu as organize por ano no futuro. Por enquanto, só espero que isso possa ser útil para outras pessoas que possam precisar.
 
-Se tudo correr conforme o planejado, este repositório será atualizado (pelo menos) mensalmente, e embora seja apenas para exercícios no momento em que escrevo isso, posso adicionar algumas anotações de aula e alguns projetos de estudo pessoal também. 😀
+Se tudo correr conforme o planejado, este repositório será atualizado (pelo menos) mensalmente.😀
 ## Itens Incluídos Aqui (Por ano) ✒️📜
 
 ### Primeiro Ano (Ⅰ)
@@ -44,7 +44,7 @@ A respository to upload LaTeX works done during my undergradute years in Univers
 
 Hello! My name is Renan, I'm currently going through an undegraduation on mathematics at University of São Paulo (USP). I'm using this repository to save some notes and solutions to exercises that have been asked to be done. Each folder will correspond to a subject, and I might organize them by year in the future. For now, I just hope this may be useful to other people who might need this. 
 
-If everything goes accordingly, this repository will be updated (at least) monthly, and while it is just for exercises at the moment I'm writing this, I might add in some classes notes and some personal study projects too. 😀
+If everything goes as expected, this repository shall be updated (at least) monthly.😀
 
 ## Items Included Here (By year) ✒️📜
 ### First Year Ⅰ
