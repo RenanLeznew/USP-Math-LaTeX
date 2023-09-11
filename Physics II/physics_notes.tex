@@ -1016,5 +1016,153 @@ Escolhendo o centro das coordenadas, o momento angular \(\vec{L}\) será na dire
   Considerando, por outro lado, um ponto abaixo do plano xy, formando um comprimento \(\vec{R}'\) até o círculo de antes, seguirá que \(\vec{L}'\), perpendicular a 
  \(\vec{R}'\), não será na direção z. Além disso, conforme a partícula precessiona, ele também moverá-se, formando um cone. Num sistema em que há uma outra partícula diametralmente
  oposta fazendo a mesma coisa, a soma dos dois momentos angulares apontaria, sim, para o eixo z.
-\end{document}
+\newpage
+\section{Aula 0 - 31/08/2023}
+\newpage
+\section{Aula 11 - 11/09/2023}
+\subsection{Motivações}
+\begin{itemize}
+  \item Aula de Exercícios.
+\end{itemize}
+\subsection{Exercícios}
+\subsubsection{Exercício 1}
+  Considere um plano inclinado com ângulo \(\theta \), sobre o qual há um objeto de massa M, raio R e momento de inércia I.
+Este objeto está posicionado a uma altura h em relação ao chão. Qual é a velocidade do centro de massa após o objeto rolar sem deslizar pelo plano?
 
+  Começamos com o princípio da conservação de energia - \(E_{mec_{i}} = E_{_mec_{f}}\). Para esse sistema, a energia mecânica inicial
+vale Mgh, enquanto que a final vale 
+  \[
+    E_{mec_{f}} = \frac{1}{2}Mv_{cm}^{2} + \frac{1}{2}I\omega^{2}.
+  \]
+  Colocando os valores na equivalência, obtemos 
+    \[
+      Mgh = \frac{1}{2}Mv_{cm}^{2} + \frac{1}{2}I\omega^{2}.
+    \]
+  Sabe-se que, quando o disco rola sem deslizar, \(v_{cm} = R\omega \). Com isso,
+ \begin{align*}
+   &2Mgh = Mv_{cm}^{2} + I \frac{v_{cm}^{2}}{R^{2}}\\
+   \Rightarrow &2gh = v_{cm}^{2}\biggl[1 + \frac{I}{MR^{2}}\biggr]\\
+   \Rightarrow &v_{cm}^{2} = \frac{2gh}{\biggl[1 + \frac{I}{MR^{2}}\biggr]}.
+ \end{align*}
+ Para o aro, \(I = MR^{2},\) ou seja, 
+   \[
+     v_{cm}^{2} = \frac{2gh}{2} \Rightarrow v_{cm}=\sqrt[]{gh}.
+   \]
+  Quando é um disco, \(I=\frac{1}{2}MR^{2}\), tal que 
+    \[
+      v_{cm}^{2} = \frac{2gh}{1 + \frac{1}{2}} = \frac{4gh}{3} \Rightarrow v_{cm} = \frac{2}{\sqrt[]{3}}\sqrt[]{gh}
+    \]
+  Assim, \(v_{cm_{disco}} > v_{cm_{aro}}\)
+    \[
+      \frac{v_{cm_{disco}}}{v_{cm_{aro}}} = \frac{2}{\sqrt[]{3}}.
+    \]
+  Elaborando, sabemos que 
+    \[
+      E_{mec_{f}} = \mathbb{K}_{trans} + \mathbb{K}_{rot}.
+    \]
+  Essas duas quantidades relacionam-se com 
+    \[
+      \frac{\mathbb{K}_{trans}}{\mathbb{K}_{rot}} = \frac{1}{2}\frac{Mv_{cm}^{2}}{\frac{1}{2}I\omega^{2}} = \frac{Mv_{cm}^{2}}{I\omega^{2}}.
+    \]
+  Como \(v_{cm}=R\omega \), 
+    \[
+      \frac{\mathbb{K}_{tran}}{\mathbb{K}_{rot}} = \frac{Mv_{cm}^{2}}{I\omega^{2}}=\frac{Mv_{cm}^{2}}{I \frac{v_{cm}^{2}}{R^{2}}} = \frac{MR^{2}}{I}.
+    \]
+  Para o aro, isto torna-se 
+    \[
+      \frac{\mathbb{K}_{trans}}{\mathbb{K}_{rot}} = 1
+    \]
+  e, para o disco, 
+    \[
+      \frac{\mathbb{K}_{trans}}{\mathbb{K}_{rot}} = 2
+    \]
+\subsubsection{Exercício 2}
+  Considere uma situação em que um disco de raio R tem um buraco, de raio \(\frac{R}{2}\), centrado no eixo x. Buscamos o momento de inércia do disco com relação ao eixo z. 
+Dado que o sistema tem massa M, começamos definindo a densidade superficial de massa 
+  \[
+    \sigma = \frac{M}{\pi \biggl(R^{2}-\frac{R^{2}}{4}\biggr)} = \frac{4M}{3\pi R^{2}}.
+  \]
+Sabemos que 
+  \[
+    I_{z} = I_{z}^{+} + I_{z}^{-} 
+  \]
+  e que 
+  \[
+    I_{z} = \frac{\pi R^{2}\sigma R^{2}}{2} - \frac{\pi R^{2}}{4}\frac{\sigma }{2}\frac{R^{2}}{4} - \frac{M'R^{2}}{4},
+  \]
+  em que \(M'\) é a massa ``removida'' do buraco. Assim, 
+  \begin{align*}
+    I_{z} &= \frac{\pi R^{4}\sigma }{2} - \frac{\pi R^{4}\sigma }{2}\frac{1}{16} - \frac{\pi R^{2}\sigma }{4}\frac{R^{2}}{4}\\
+    &= \frac{\pi \sigma R^{4}}{2}\biggl[1-\frac{1}{16}-\frac{2}{16}\biggr] = \frac{2}{3}MR^{2}\biggl(\frac{13}{16}\biggr)\\
+    &= \frac{13}{24}MR^{2}.
+  \end{align*}
+  Usando que \(I_{z} = I_{x} + I_{y},\) podemos encontrar 
+ \begin{align*}
+   &I_{x} = \frac{M^{+}R^{2}}{4} - \frac{M^{-}}{4}\frac{R^{2}}{4}\\
+   &I_{y} = \frac{M^{+}R^{2}}{4} - \frac{M^{-}}{4}\frac{R^{2}}{4} - M^{-}\frac{R^{2}}{4}.
+ \end{align*}
+\subsubsection{Exercício 3}
+  Considere um ioiô - um objeto circular de peso Mg, raio R, aceleração vertical \(\vec{a},\) tração \(\vec{T}\) e momento de inércia I. Quanto vale a aceleração e a tração?
+
+  Sabe-se pelo diagrama de forças que \(TR = I\alpha \), já que a tração é a única força aqui que pode gerar torque, e 
+    \[
+      Mg - T = Ma,\quad a = \alpha R.
+    \]
+    Somando as duas coisas, 
+      \[
+        Mg = Ma + \frac{I\alpha }{R} \Rightarrow Mg = Ma + \frac{Ia}{R^{2}}.
+      \]
+    Com isso, 
+      \[
+        Mg = Ma \biggl[1 + \frac{I}{MR^{2}}\biggr] \Rightarrow a = \frac{g}{\biggl[1 + \frac{I}{MR^{2}}\biggr]}.
+      \]
+    Portanto, a tração vale 
+      \[
+        T = \frac{I\alpha }{R} = \frac{I}{R^{2}}\frac{g}{\biggl[1 + \frac{I}{MR^{2}}\biggr]}.
+      \]
+\subsubsection{Exercício 4}
+  Novamente, considerando um ioiô, apoie-o sobre uma mesa. Dessa vez, o ioiô é composto de 3 cilindros curtos, tal que a parte interna desse disco tem um raio r e,
+nesse disco de dentro, há uma corda aplicando uma força \(F\) (O ioiô de perfil, enrolado, parece um H). Qual é o ângulo que ele deve ser lançado para rolar
+sem deslizar?
+
+  A pergunte equivale a achar o ângulo pelo qual a força deve passar sem que haja torque no ponto de apoio. Com isso, percebe-se que 
+    \[
+      \frac{r}{R} = \cos{(\theta )}.
+    \]
+    Portanto, \(\theta = \arccos{\biggl(\frac{r}{R}\biggr)}\)
+\subsubsection{Exercício 5}
+  Considere um sistema de dois discos, ambos com massa m, mas o segundo com o raio duas vezes maior que o primeiro. Posicionando-os centrados no mesmo eixo vertical, mas
+o menor acima do primeiro, considere que ele roda com velocidade \(\omega_{0}\) no sentido horário e que o maior roda, também com velocidade \(\omega_{0}\), no sentido anti-horário. 
+Postulando que o primeiro tem momento angular negativo e, o segundo, positivo, assume-se que os discos colidem. Qual será a frequência de rotação após a colisão?
+E a razão entre \(\mathbb{K}_{inicial}\) e \(\mathbb{K}_{final}\)?
+
+  Pela conservação de momento angular, sabe-se que 
+    \[
+      L_{i} = L_{f}.
+    \]
+  Além disso, 
+  \[
+  L_{i} = L^{+}-L^{-} = I_{1}\omega_{0} - I_{2}\omega_{0} = \frac{1}{2}m(2r^{2})\omega_{0} - \frac{1}{2}mr^{2}\omega_{0} = \frac{3}{2}mr^{2}\omega_{0}
+  \]
+  Com relação ao momento angular final, 
+ \begin{align*}
+   L_{f} &= I_{f}\omega_{f} = (I_{2} + I_{1})\omega_{f} = \biggl(\frac{1}{2}m4r^{2}+\frac{1}{2}mr^{2}\biggr)\omega_{f}\\
+         &=\frac{5}{2}mr^{2}\omega_{f}.
+ \end{align*}
+ Portanto, 
+   \[
+     \frac{3}{2}mr^{2}\omega_{0} = \frac{5}{2}mr^{2}\omega_{f} \Rightarrow \omega_{f}=\frac{3}{5}\omega_{0}.
+   \]
+  Agora, vejamos a questão das energias cinéticas. A inicial vale 
+    \[
+      \mathbb{K}_{i} = \frac{1}{2}I_{1}\omega_{0}^{2} + \frac{1}{2}I_{2}\omega_{0}^{2} = \frac{1}{2}\omega_{0}^{2}\frac{5}{2}mr^{2}. 
+    \]
+  A final, por outro lado, é dada por 
+    \[
+      \mathbb{K}_{f} = \frac{1}{2}(I_{1}+I_{2})\omega_{f}^{2} = \frac{1}{2}\frac{5}{2}mr^{2}\frac{9}{25}\omega_{0}^{2} = \frac{1}{4}\frac{9}{5}mr^{2}\omega_{0}^{2}.
+    \]
+  Dividindo um valor pelo outro, 
+    \[
+      \frac{\mathbb{K}_{i}}{\mathbb{K}_{f}} = \frac{5}{4}\frac{1}{\frac{9}{5}\frac{1}{4}} = \frac{25}{9}.
+    \]
+\end{document}

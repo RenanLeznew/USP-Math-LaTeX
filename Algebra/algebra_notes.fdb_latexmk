@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1685824641 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1685824644 0
+["pdflatex"] 1694442133 "algebra_notes.tex" "algebra_notes.pdf" "algebra_notes" 1694442135 0
   "../brasao_usp_cor.jpg" 1683673143 1576381 b77ec44f41562c1b9d07dacd42600056 ""
   "../icmc.png" 1683673143 90993 abeca978b10dde82d5fba541f35c48a5 ""
   "/etc/texmf/web2c/texmf.cnf" 1683681533 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -251,11 +251,11 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683688450 165012 f177baa1c39a3ebd62c3096a43521a0d ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685539087 6505866 65e1bd121e248efd90cff22f3510bdd9 ""
-  "algebra_notes.aux" 1685824644 8121 6cb0c23c122b4f24bc0e5a6f80ac6601 "pdflatex"
-  "algebra_notes.out" 1685824644 8977 bfd30e8c6a56a9e7ba55af6f0142c26d "pdflatex"
-  "algebra_notes.tex" 1685824640 126770 febe68b4e7154bf0b3e2d10f3f5b7bef ""
-  "algebra_notes.toc" 1685824644 4980 dba0e2ad07a94fb57ff02650035990e0 "pdflatex"
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692766036 6555296 68ac46c43b26ac69cf6109b75af6cc14 ""
+  "algebra_notes.aux" 1694442135 8121 6cb0c23c122b4f24bc0e5a6f80ac6601 "pdflatex"
+  "algebra_notes.out" 1694442135 8977 bfd30e8c6a56a9e7ba55af6f0142c26d "pdflatex"
+  "algebra_notes.tex" 1685824780 126770 febe68b4e7154bf0b3e2d10f3f5b7bef ""
+  "algebra_notes.toc" 1694442135 4980 dba0e2ad07a94fb57ff02650035990e0 "pdflatex"
   (generated)
   "algebra_notes.aux"
   "algebra_notes.log"
